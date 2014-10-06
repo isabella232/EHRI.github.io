@@ -4,8 +4,12 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+This site contains EHRI documentation, mostly about the software and therfore it can be a bit technical. 
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+### Other EHRI sites
+* [Project Home](http://ehri-project.eu/)
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+* [Portal](http://portal.ehri-project.eu/)
+
+* [Github](https://github.com/EHRI/)
+

@@ -1,4 +1,3 @@
 EHRI documentation site
 =======================
-Technical documenation generated with Jekyll
-
+Documentation generated with [Jekyll](http://jekyllrb.com/ "Jekyll site"). 
