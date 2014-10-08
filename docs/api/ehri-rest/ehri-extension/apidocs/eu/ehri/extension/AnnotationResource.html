@@ -97,11 +97,11 @@ Class AnnotationResource</H2>
           <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>eu.ehri.extension.AnnotationResource</B>
 </PRE>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../eu/ehri/extension/TxCheckedResource.html" title="interface in eu.ehri.extension">TxCheckedResource</A></DD>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../eu/ehri/extension/base/DeleteResource.html" title="interface in eu.ehri.extension.base">DeleteResource</A>, <A HREF="../../../eu/ehri/extension/base/GetResource.html" title="interface in eu.ehri.extension.base">GetResource</A>, <A HREF="../../../eu/ehri/extension/base/ListResource.html" title="interface in eu.ehri.extension.base">ListResource</A>, <A HREF="../../../eu/ehri/extension/base/TxCheckedResource.html" title="interface in eu.ehri.extension.base">TxCheckedResource</A>, <A HREF="../../../eu/ehri/extension/base/UpdateResource.html" title="interface in eu.ehri.extension.base">UpdateResource</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>AnnotationResource</B><DT>extends <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</A>&lt;<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/Annotation.html?is-external=true" title="class or interface in eu.ehri.project.models">Annotation</A>&gt;</DL>
+<DT><PRE>public class <B>AnnotationResource</B><DT>extends <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</A>&lt;<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/Annotation.html?is-external=true" title="class or interface in eu.ehri.project.models">Annotation</A>&gt;<DT>implements <A HREF="../../../eu/ehri/extension/base/GetResource.html" title="interface in eu.ehri.extension.base">GetResource</A>, <A HREF="../../../eu/ehri/extension/base/ListResource.html" title="interface in eu.ehri.extension.base">ListResource</A>, <A HREF="../../../eu/ehri/extension/base/UpdateResource.html" title="interface in eu.ehri.extension.base">UpdateResource</A>, <A HREF="../../../eu/ehri/extension/base/DeleteResource.html" title="interface in eu.ehri.extension.base">DeleteResource</A></DL>
 </PRE>
 
 <P>
@@ -159,7 +159,7 @@ Provides a RESTful(ish) interface for creating.
 <TH ALIGN="left"><B>Fields inherited from class eu.ehri.extension.<A HREF="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#COUNT_PARAM">COUNT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#database">database</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PAGE_PARAM">PAGE_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</A></CODE></TD>
+<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#COUNT_PARAM">COUNT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#database">database</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PAGE_PARAM">PAGE_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -189,6 +189,14 @@ Provides a RESTful(ish) interface for creating.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#count()">count</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count the number of available resources.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#createAnnotationFor(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)">createAnnotationFor</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
                     <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
@@ -211,26 +219,26 @@ Provides a RESTful(ish) interface for creating.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#deleteAnnotation(java.lang.String)">deleteAnnotation</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#delete(java.lang.String)">delete</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete an annotation.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete a resource.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#getAction(java.lang.String)">getAction</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#get(java.lang.String)">get</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retrieve an annotation by id.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch a resource by id.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#listAnnotations()">listAnnotations</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#list()">list</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List all annotations.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List available resources.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -248,11 +256,19 @@ Provides a RESTful(ish) interface for creating.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#updateAnnotation(java.lang.String, eu.ehri.project.persistence.Bundle)">updateAnnotation</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update an annotation.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update a resource.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AnnotationResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+       <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update a resource.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.extension.AbstractAccessibleEntityResource"><!-- --></A>
@@ -261,7 +277,7 @@ Provides a RESTful(ish) interface for creating.
 <TH ALIGN="left"><B>Methods inherited from class eu.ehri.extension.<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#count()">count</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List)">create</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">create</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler, eu.ehri.project.views.impl.LoggingCrudViews)">create</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#delete(java.lang.String)">delete</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#delete(java.lang.String, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">delete</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List, eu.ehri.project.models.base.Accessor)">getAccessors</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getCacheControl(E)">getCacheControl</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#page()">page</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#retrieve(java.lang.String)">retrieve</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#update(eu.ehri.project.persistence.Bundle)">update</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></CODE></TD>
+<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#countItems()">countItems</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle, java.util.List)">createItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">createItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler, eu.ehri.project.views.impl.LoggingCrudViews)">createItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String)">deleteItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">deleteItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List, eu.ehri.project.models.base.Accessor)">getAccessors</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getCacheControl(E)">getCacheControl</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getItem(java.lang.String)">getItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#listItems()">listItems</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(eu.ehri.project.persistence.Bundle)">updateItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(java.lang.String, eu.ehri.project.persistence.Bundle)">updateItem</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.extension.AbstractRestResource"><!-- --></A>
@@ -313,19 +329,23 @@ public <B>AnnotationResource</B>(<FONT SIZE="-1">@Context</FONT>
 </TR>
 </TABLE>
 
-<A NAME="getAction(java.lang.String)"><!-- --></A><H3>
-getAction</H3>
+<A NAME="get(java.lang.String)"><!-- --></A><H3>
+get</H3>
 <PRE>
-public javax.ws.rs.core.Response <B>getAction</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
-                                    throws <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                           <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A>,
-                                           <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+public javax.ws.rs.core.Response <B>get</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
+                              throws <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                     <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A>,
+                                     <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
 <DL>
-<DD>Retrieve an annotation by id.
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/GetResource.html#get(java.lang.String)">GetResource</A></CODE></B></DD>
+<DD>Fetch a resource by id.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>id</CODE> - The item's id
-<DT><B>Returns:</B><DD>The serialized annotation
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/GetResource.html#get(java.lang.String)">get</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/GetResource.html" title="interface in eu.ehri.extension.base">GetResource</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The requested item id
+<DT><B>Returns:</B><DD>A serialized item representation
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A></CODE>
@@ -334,19 +354,65 @@ public javax.ws.rs.core.Response <B>getAction</B>(<A HREF="http://docs.oracle.co
 </DL>
 <HR>
 
-<A NAME="listAnnotations()"><!-- --></A><H3>
-listAnnotations</H3>
+<A NAME="list()"><!-- --></A><H3>
+list</H3>
 <PRE>
-public javax.ws.rs.core.Response <B>listAnnotations</B>()
-                                          throws <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                 <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+public javax.ws.rs.core.Response <B>list</B>()
+                               throws <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
 <DL>
-<DD>List all annotations.
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html#list()">ListResource</A></CODE></B></DD>
+<DD>List available resources. The default behaviour is to
+ return a page of 20 items.
+ <p/>
+ The default list limit can be overridden using the <code>limit</code>
+ parameter, and disabled completely using a value of -1.
+ <p/>
+ Item lists are paginated using the <code>page</code> parameter.
+ <p/>
+ The page, limit, and total number of items is returned in the Content-Range response
+ header in the form:
+
+ <pre><code>page=1; count=20; total=50</code></pre>
+
+ If the header <code>X-Stream</code> is set to <code>true</code>
+ no count of total items will be performed. This is more efficient when returning large
+ numbers of items or when limiting is disabled completely.
+ <p/>
+ Example:
+ <pre>
+     <code>
+ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
+     </code>
+ </pre>
 <P>
 <DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html#list()">list</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html" title="interface in eu.ehri.extension.base">ListResource</A></CODE></DL>
+</DD>
+<DD><DL>
 
+<DT><B>Returns:</B><DD>A list of serialized item representations
 <DT><B>Throws:</B>
-<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="count()"><!-- --></A><H3>
+count</H3>
+<PRE>
+public long <B>count</B>()
+           throws <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html#count()">ListResource</A></CODE></B></DD>
+<DD>Count the number of available resources.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html#count()">count</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html" title="interface in eu.ehri.extension.base">ListResource</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>The total number of applicable items
+<DT><B>Throws:</B>
 <DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
 </DD>
 </DL>
@@ -368,6 +434,9 @@ public javax.ws.rs.core.Response <B>createAnnotationFor</B>(<A HREF="http://docs
 <DL>
 <DD>Create an annotation for a particular item.
 <P>
+<DD><DL>
+</DL>
+</DD>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>id</CODE> - The ID of the item being annotation<DD><CODE>bundle</CODE> - The JSON representation of the annotation<DD><CODE>accessors</CODE> - User IDs who can access the annotation
 <DT><B>Returns:</B><DD>The annotation
@@ -401,6 +470,9 @@ public javax.ws.rs.core.Response <B>createAnnotationFor</B>(<A HREF="http://docs
 <DD>Create an annotation for a dependent node on a given item.
 <P>
 <DD><DL>
+</DL>
+</DD>
+<DD><DL>
 <DT><B>Parameters:</B><DD><CODE>id</CODE> - The ID of the item being annotation<DD><CODE>did</CODE> - The ID of the description being annotated<DD><CODE>bundle</CODE> - The JSON representation of the annotation<DD><CODE>accessors</CODE> - User IDs who can access the annotation
 <DT><B>Returns:</B><DD>The annotation
 <DT><B>Throws:</B>
@@ -432,6 +504,9 @@ public javax.ws.rs.core.Response <B>listAnnotationsForSubtree</B>(<A HREF="http:
  child items.
 <P>
 <DD><DL>
+</DL>
+</DD>
+<DD><DL>
 <DT><B>Parameters:</B><DD><CODE>id</CODE> - The item ID
 <DT><B>Returns:</B><DD>A list of annotations on the item and it's dependent children.
 <DT><B>Throws:</B>
@@ -443,56 +518,96 @@ public javax.ws.rs.core.Response <B>listAnnotationsForSubtree</B>(<A HREF="http:
 </DL>
 <HR>
 
-<A NAME="updateAnnotation(java.lang.String, eu.ehri.project.persistence.Bundle)"><!-- --></A><H3>
-updateAnnotation</H3>
+<A NAME="update(java.lang.String, eu.ehri.project.persistence.Bundle)"><!-- --></A><H3>
+update</H3>
 <PRE>
-public javax.ws.rs.core.Response <B>updateAnnotation</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-                                                  <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)
-                                           throws <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A>,
-                                                  <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                                  <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                  <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A>,
-                                                  <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A>,
-                                                  <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</A>,
-                                                  <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/IntegrityError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">IntegrityError</A></PRE>
+public javax.ws.rs.core.Response <B>update</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)
+                                 throws <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A>,
+                                        <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/IntegrityError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">IntegrityError</A></PRE>
 <DL>
-<DD>Update an annotation.
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/UpdateResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">UpdateResource</A></CODE></B></DD>
+<DD>Update a resource.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>id</CODE> - The annotation ID
-<DT><B>Returns:</B><DD>The updated item
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/UpdateResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/UpdateResource.html" title="interface in eu.ehri.extension.base">UpdateResource</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The resource ID.<DD><CODE>bundle</CODE> - A resource bundle, with or without an ID.
+<DT><B>Returns:</B><DD>A serialized representation of the updated resource.
 <DT><B>Throws:</B>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A></CODE>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A></CODE>
 <DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE>
-<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A></CODE>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</A></CODE>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/IntegrityError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">IntegrityError</A></CODE></DL>
 </DD>
 </DL>
 <HR>
 
-<A NAME="deleteAnnotation(java.lang.String)"><!-- --></A><H3>
-deleteAnnotation</H3>
+<A NAME="update(eu.ehri.project.persistence.Bundle)"><!-- --></A><H3>
+update</H3>
 <PRE>
-public javax.ws.rs.core.Response <B>deleteAnnotation</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
-                                           throws <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A>,
-                                                  <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                                  <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                  <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A>,
-                                                  <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+public javax.ws.rs.core.Response <B>update</B>(<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)
+                                 throws <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A>,
+                                        <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/IntegrityError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">IntegrityError</A></PRE>
 <DL>
-<DD>Delete an annotation.
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/UpdateResource.html#update(eu.ehri.project.persistence.Bundle)">UpdateResource</A></CODE></B></DD>
+<DD>Update a resource.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>id</CODE> - The annotation ID
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/UpdateResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/UpdateResource.html" title="interface in eu.ehri.extension.base">UpdateResource</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - A resource bundle, including its ID.
+<DT><B>Returns:</B><DD>A serialized representation of the updated resource.
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A></CODE>
 <DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE>
-<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A></CODE></DL>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</A></CODE>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/IntegrityError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">IntegrityError</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="delete(java.lang.String)"><!-- --></A><H3>
+delete</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>delete</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
+                                 throws <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A>,
+                                        <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/DeleteResource.html#delete(java.lang.String)">DeleteResource</A></CODE></B></DD>
+<DD>Delete a resource.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/DeleteResource.html#delete(java.lang.String)">delete</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/DeleteResource.html" title="interface in eu.ehri.extension.base">DeleteResource</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The resource ID.
+<DT><B>Returns:</B><DD>A response with 200 representing a successful deletion.
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A></CODE>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

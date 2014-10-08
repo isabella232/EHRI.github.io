@@ -97,11 +97,11 @@ Class ContentTypeResource</H2>
           <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>eu.ehri.extension.ContentTypeResource</B>
 </PRE>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../eu/ehri/extension/TxCheckedResource.html" title="interface in eu.ehri.extension">TxCheckedResource</A></DD>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../eu/ehri/extension/base/GetResource.html" title="interface in eu.ehri.extension.base">GetResource</A>, <A HREF="../../../eu/ehri/extension/base/ListResource.html" title="interface in eu.ehri.extension.base">ListResource</A>, <A HREF="../../../eu/ehri/extension/base/TxCheckedResource.html" title="interface in eu.ehri.extension.base">TxCheckedResource</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public class <B>ContentTypeResource</B><DT>extends <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</A>&lt;<A HREF="../../../eu/ehri/project/models/ContentType.html" title="interface in eu.ehri.project.models">ContentType</A>&gt;</DL>
+<DT><PRE>public class <B>ContentTypeResource</B><DT>extends <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</A>&lt;<A HREF="../../../eu/ehri/project/models/ContentType.html" title="interface in eu.ehri.project.models">ContentType</A>&gt;<DT>implements <A HREF="../../../eu/ehri/extension/base/GetResource.html" title="interface in eu.ehri.extension.base">GetResource</A>, <A HREF="../../../eu/ehri/extension/base/ListResource.html" title="interface in eu.ehri.extension.base">ListResource</A></DL>
 </PRE>
 
 <P>
@@ -161,7 +161,7 @@ Provides a RESTful interface for the ContentType class. Note: ContentType instan
 <TH ALIGN="left"><B>Fields inherited from class eu.ehri.extension.<A HREF="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#COUNT_PARAM">COUNT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#database">database</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PAGE_PARAM">PAGE_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</A></CODE></TD>
+<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#COUNT_PARAM">COUNT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#database">database</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PAGE_PARAM">PAGE_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -191,19 +191,27 @@ Provides a RESTful interface for the ContentType class. Note: ContentType instan
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/ContentTypeResource.html#getContentType(java.lang.String)">getContentType</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
+<CODE>&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ContentTypeResource.html#count()">count</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count the number of available resources.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/ContentTypeResource.html#listContentTypes()">listContentTypes</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ContentTypeResource.html#get(java.lang.String)">get</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch a resource by id.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ContentTypeResource.html#list()">list</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List available resources.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.extension.AbstractAccessibleEntityResource"><!-- --></A>
@@ -212,7 +220,7 @@ Provides a RESTful interface for the ContentType class. Note: ContentType instan
 <TH ALIGN="left"><B>Methods inherited from class eu.ehri.extension.<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#count()">count</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List)">create</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">create</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler, eu.ehri.project.views.impl.LoggingCrudViews)">create</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#delete(java.lang.String)">delete</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#delete(java.lang.String, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">delete</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List, eu.ehri.project.models.base.Accessor)">getAccessors</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getCacheControl(E)">getCacheControl</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#page()">page</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#retrieve(java.lang.String)">retrieve</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#update(eu.ehri.project.persistence.Bundle)">update</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></CODE></TD>
+<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#countItems()">countItems</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle, java.util.List)">createItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">createItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler, eu.ehri.project.views.impl.LoggingCrudViews)">createItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String)">deleteItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">deleteItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List, eu.ehri.project.models.base.Accessor)">getAccessors</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getCacheControl(E)">getCacheControl</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getItem(java.lang.String)">getItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#listItems()">listItems</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(eu.ehri.project.persistence.Bundle)">updateItem</A>, <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(java.lang.String, eu.ehri.project.persistence.Bundle)">updateItem</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.extension.AbstractRestResource"><!-- --></A>
@@ -264,16 +272,23 @@ public <B>ContentTypeResource</B>(<FONT SIZE="-1">@Context</FONT>
 </TR>
 </TABLE>
 
-<A NAME="getContentType(java.lang.String)"><!-- --></A><H3>
-getContentType</H3>
+<A NAME="get(java.lang.String)"><!-- --></A><H3>
+get</H3>
 <PRE>
-public javax.ws.rs.core.Response <B>getContentType</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
-                                         throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                                <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+public javax.ws.rs.core.Response <B>get</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
+                              throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                     <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
+                                     <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/GetResource.html#get(java.lang.String)">GetResource</A></CODE></B></DD>
+<DD>Fetch a resource by id.
+<P>
 <DD><DL>
-
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/GetResource.html#get(java.lang.String)">get</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/GetResource.html" title="interface in eu.ehri.extension.base">GetResource</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The requested item id
+<DT><B>Returns:</B><DD>A serialized item representation
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
 <DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
@@ -282,17 +297,65 @@ public javax.ws.rs.core.Response <B>getContentType</B>(<A HREF="http://docs.orac
 </DL>
 <HR>
 
-<A NAME="listContentTypes()"><!-- --></A><H3>
-listContentTypes</H3>
+<A NAME="list()"><!-- --></A><H3>
+list</H3>
 <PRE>
-public javax.ws.rs.core.Response <B>listContentTypes</B>()
-                                           throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                  <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+public javax.ws.rs.core.Response <B>list</B>()
+                               throws <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html#list()">ListResource</A></CODE></B></DD>
+<DD>List available resources. The default behaviour is to
+ return a page of 20 items.
+ <p/>
+ The default list limit can be overridden using the <code>limit</code>
+ parameter, and disabled completely using a value of -1.
+ <p/>
+ Item lists are paginated using the <code>page</code> parameter.
+ <p/>
+ The page, limit, and total number of items is returned in the Content-Range response
+ header in the form:
+
+ <pre><code>page=1; count=20; total=50</code></pre>
+
+ If the header <code>X-Stream</code> is set to <code>true</code>
+ no count of total items will be performed. This is more efficient when returning large
+ numbers of items or when limiting is disabled completely.
+ <p/>
+ Example:
+ <pre>
+     <code>
+ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
+     </code>
+ </pre>
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html#list()">list</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html" title="interface in eu.ehri.extension.base">ListResource</A></CODE></DL>
+</DD>
 <DD><DL>
 
+<DT><B>Returns:</B><DD>A list of serialized item representations
 <DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="count()"><!-- --></A><H3>
+count</H3>
+<PRE>
+public long <B>count</B>()
+           throws <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html#count()">ListResource</A></CODE></B></DD>
+<DD>Count the number of available resources.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html#count()">count</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/ListResource.html" title="interface in eu.ehri.extension.base">ListResource</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>The total number of applicable items
+<DT><B>Throws:</B>
 <DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
 </DD>
 </DL>

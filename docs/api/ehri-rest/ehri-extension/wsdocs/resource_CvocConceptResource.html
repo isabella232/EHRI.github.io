@@ -61,7 +61,6 @@
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
                 <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
-                <li><a href="resource_EventResource.html">EventResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
                 <li><a href="resource_HistoricalAgentResource.html">HistoricalAgentResource</a></li>
@@ -71,6 +70,7 @@
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
                 <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
+                <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_UserProfileResource.html">UserProfileResource</a></li>
                 <li><a href="resource_VirtualUnitResource.html">VirtualUnitResource</a></li>
                 <li><a href="resource_VocabularyResource.html">VocabularyResource</a></li>
@@ -110,9 +110,6 @@ Vocabulary is not possible via this API</p>
         <a href="#path__cvocConcept_-id-_narrower_-idNarrower-.html">/cvocConcept/{id}/narrower/{idNarrower}</a>
         </li>
         <li>
-        <a href="#path__cvocConcept_-id-_narrower_list.html">/cvocConcept/{id}/narrower/list</a>
-        </li>
-        <li>
         <a href="#path__cvocConcept_-id-_related_-idRelated-.html">/cvocConcept/{id}/related/{idRelated}</a>
         </li>
         <li>
@@ -133,6 +130,9 @@ Vocabulary is not possible via this API</p>
       <p class="note">Mount Point: <a href="../cvocConcept">/cvocConcept</a></p>
       <a name="PUT"></a>
       <h2>PUT</h2>
+      <p>
+            Update a resource.
+          </p>
       <h3>Request Body</h3>
       <table>
         <tr>
@@ -144,7 +144,7 @@ Vocabulary is not possible via this API</p>
           <td>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A resource bundle, including its ID.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -156,7 +156,7 @@ Vocabulary is not possible via this API</p>
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A serialized representation of the updated resource.</p>
         <a name="path__cvocConcept_-id-.html"></a>
       <h1>/cvocConcept/{id}</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}">/cvocConcept/{id}</a></p>
@@ -170,6 +170,9 @@ Vocabulary is not possible via this API</p>
       </ul>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Fetch a resource by id.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -181,7 +184,7 @@ Vocabulary is not possible via this API</p>
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The requested item id
           </td>
           <td>path</td>
           <td></td>
@@ -198,9 +201,12 @@ Vocabulary is not possible via this API</p>
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A serialized item representation</p>
       <a name="PUT"></a>
       <h2>PUT</h2>
+      <p>
+            Update a resource.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -212,7 +218,7 @@ Vocabulary is not possible via this API</p>
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The resource ID.
           </td>
           <td>path</td>
           <td></td>
@@ -229,7 +235,7 @@ Vocabulary is not possible via this API</p>
           <td>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A resource bundle, with or without an ID.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -241,9 +247,12 @@ Vocabulary is not possible via this API</p>
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A serialized representation of the updated resource.</p>
       <a name="DELETE"></a>
       <h2>DELETE</h2>
+      <p>
+            Delete a resource.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -255,7 +264,7 @@ Vocabulary is not possible via this API</p>
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The resource ID.
           </td>
           <td>path</td>
           <td></td>
@@ -272,7 +281,7 @@ Vocabulary is not possible via this API</p>
           <td>*/*<br/>application/xml</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A response with 200 representing a successful deletion.</p>
         <a name="path__cvocConcept_-id-_broader_list.html"></a>
       <h1>/cvocConcept/{id}/broader/list</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/broader/list">/cvocConcept/{id}/broader/list</a></p>
@@ -312,6 +321,9 @@ Vocabulary is not possible via this API</p>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/count">/cvocConcept/{id}/count</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Count the number of available resources subordinate to this item.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -323,10 +335,19 @@ Vocabulary is not possible via this API</p>
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The requested item id
           </td>
           <td>path</td>
           <td></td>
+        </tr>
+        <tr>
+          <td>all</td>
+          <td>
+            Whether to count all child items, or just those at the
+immediate sub-level.
+          </td>
+          <td>query</td>
+          <td>false</td>
         </tr>
       </table>
       <h3>Response Body</h3>
@@ -340,14 +361,14 @@ Vocabulary is not possible via this API</p>
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>The total number of applicable items</p>
         <a name="path__cvocConcept_-id-_cvocConcept.html"></a>
       <h1>/cvocConcept/{id}/cvocConcept</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/cvocConcept">/cvocConcept/{id}/cvocConcept</a></p>
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Create a top-level concept unit for this vocabulary.
+            Create a subordinate resource.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -360,7 +381,7 @@ Vocabulary is not possible via this API</p>
         <tr>
           <td>id</td>
           <td>
-            The vocabulary id
+            The parent resource ID.
           </td>
           <td>path</td>
           <td></td>
@@ -368,7 +389,7 @@ Vocabulary is not possible via this API</p>
         <tr>
           <td>accessibleTo</td>
           <td>
-            (no documentation provided)
+            The users/groups who can access this item.
           </td>
           <td>query</td>
           <td></td>
@@ -385,7 +406,7 @@ Vocabulary is not possible via this API</p>
           <td>application/json</td>
         </tr>
       </table>
-      <p>The new concept data</p>
+      <p>A resource bundle.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -397,12 +418,15 @@ Vocabulary is not possible via this API</p>
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>The new concept</p>
+      <p>A serialized representation of the created resource.</p>
         <a name="path__cvocConcept_-id-_list.html"></a>
       <h1>/cvocConcept/{id}/list</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/list">/cvocConcept/{id}/list</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            'related' concepts
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -418,6 +442,14 @@ Vocabulary is not possible via this API</p>
           </td>
           <td>path</td>
           <td></td>
+        </tr>
+        <tr>
+          <td>all</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td>false</td>
         </tr>
       </table>
       <h3>Response Body</h3>
@@ -519,43 +551,6 @@ the narrower concept
         <tr>
           <td align="right">media types:</td>
           <td>*/*<br/>application/xml</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__cvocConcept_-id-_narrower_list.html"></a>
-      <h1>/cvocConcept/{id}/narrower/list</h1>
-      <p class="note">Mount Point: <a href="../cvocConcept/{id}/narrower/list">/cvocConcept/{id}/narrower/list</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            'related' concepts
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
         </tr>
       </table>
       <p>(no documentation provided)</p>
@@ -721,6 +716,9 @@ concept
       <p class="note">Mount Point: <a href="../cvocConcept/count">/cvocConcept/count</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Count the number of available resources.
+          </p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -732,12 +730,37 @@ concept
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>The total number of applicable items</p>
         <a name="path__cvocConcept_list.html"></a>
       <h1>/cvocConcept/list</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/list">/cvocConcept/list</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            List available resources. The default behaviour is to
+return a page of 20 items.
+<p/>
+The default list limit can be overridden using the <tt>limit</tt>
+parameter, and disabled completely using a value of -1.
+<p/>
+Item lists are paginated using the <tt>page</tt> parameter.
+<p/>
+The page, limit, and total number of items is returned in the Content-Range response
+header in the form:
+
+<pre><code>page=1; count=20; total=50</code></pre>
+
+If the header <tt>X-Stream</tt> is set to <tt>true</tt>
+no count of total items will be performed. This is more efficient when returning large
+numbers of items or when limiting is disabled completely.
+<p/>
+Example:
+<pre>
+<code>
+curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
+</code>
+</pre>
+          </p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -749,7 +772,7 @@ concept
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A list of serialized item representations</p>
 
       <div class="clear" />
     </div>

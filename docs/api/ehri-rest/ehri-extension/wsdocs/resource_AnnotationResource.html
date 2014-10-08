@@ -61,7 +61,6 @@
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
                 <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
-                <li><a href="resource_EventResource.html">EventResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
                 <li><a href="resource_HistoricalAgentResource.html">HistoricalAgentResource</a></li>
@@ -71,6 +70,7 @@
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
                 <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
+                <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_UserProfileResource.html">UserProfileResource</a></li>
                 <li><a href="resource_VirtualUnitResource.html">VirtualUnitResource</a></li>
                 <li><a href="resource_VocabularyResource.html">VocabularyResource</a></li>
@@ -87,10 +87,16 @@
       <p>The following resources are applicable:</p>
       <ul>
         <li>
+        <a href="#path__annotation.html">/annotation</a>
+        </li>
+        <li>
         <a href="#path__annotation_-id-.html">/annotation/{id}</a>
         </li>
         <li>
         <a href="#path__annotation_-id-_-did-.html">/annotation/{id}/{did}</a>
+        </li>
+        <li>
+        <a href="#path__annotation_count.html">/annotation/count</a>
         </li>
         <li>
         <a href="#path__annotation_for_-id-.html">/annotation/for/{id}</a>
@@ -99,6 +105,38 @@
         <a href="#path__annotation_list.html">/annotation/list</a>
         </li>
       </ul>
+        <a name="path__annotation.html"></a>
+      <h1>/annotation</h1>
+      <p class="note">Mount Point: <a href="../annotation">/annotation</a></p>
+      <a name="PUT"></a>
+      <h2>PUT</h2>
+      <p>
+            Update a resource.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>bundle</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>A resource bundle, including its ID.</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>A serialized representation of the updated resource.</p>
         <a name="path__annotation_-id-.html"></a>
       <h1>/annotation/{id}</h1>
       <p class="note">Mount Point: <a href="../annotation/{id}">/annotation/{id}</a></p>
@@ -114,7 +152,7 @@
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            Retrieve an annotation by id.
+            Fetch a resource by id.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -127,7 +165,7 @@
         <tr>
           <td>id</td>
           <td>
-            The item's id
+            The requested item id
           </td>
           <td>path</td>
           <td></td>
@@ -144,7 +182,7 @@
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>The serialized annotation</p>
+      <p>A serialized item representation</p>
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
@@ -202,7 +240,7 @@
       <a name="PUT"></a>
       <h2>PUT</h2>
       <p>
-            Update an annotation.
+            Update a resource.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -215,7 +253,7 @@
         <tr>
           <td>id</td>
           <td>
-            The annotation ID
+            The resource ID.
           </td>
           <td>path</td>
           <td></td>
@@ -232,7 +270,7 @@
           <td>*/*<br/>application/xml</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A resource bundle, with or without an ID.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -244,11 +282,11 @@
           <td>*/*<br/>application/xml</td>
         </tr>
       </table>
-      <p>The updated item</p>
+      <p>A serialized representation of the updated resource.</p>
       <a name="DELETE"></a>
       <h2>DELETE</h2>
       <p>
-            Delete an annotation.
+            Delete a resource.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -261,7 +299,7 @@
         <tr>
           <td>id</td>
           <td>
-            The annotation ID
+            The resource ID.
           </td>
           <td>path</td>
           <td></td>
@@ -278,7 +316,7 @@
           <td>*/*<br/>application/xml</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A response with 200 representing a successful deletion.</p>
         <a name="path__annotation_-id-_-did-.html"></a>
       <h1>/annotation/{id}/{did}</h1>
       <p class="note">Mount Point: <a href="../annotation/{id}/{did}">/annotation/{id}/{did}</a></p>
@@ -344,6 +382,26 @@
         </tr>
       </table>
       <p>The annotation</p>
+        <a name="path__annotation_count.html"></a>
+      <h1>/annotation/count</h1>
+      <p class="note">Mount Point: <a href="../annotation/count">/annotation/count</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Count the number of available resources.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>The total number of applicable items</p>
         <a name="path__annotation_for_-id-.html"></a>
       <h1>/annotation/for/{id}</h1>
       <p class="note">Mount Point: <a href="../annotation/for/{id}">/annotation/for/{id}</a></p>
@@ -420,7 +478,29 @@ child items.
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            List all annotations.
+            List available resources. The default behaviour is to
+return a page of 20 items.
+<p/>
+The default list limit can be overridden using the <tt>limit</tt>
+parameter, and disabled completely using a value of -1.
+<p/>
+Item lists are paginated using the <tt>page</tt> parameter.
+<p/>
+The page, limit, and total number of items is returned in the Content-Range response
+header in the form:
+
+<pre><code>page=1; count=20; total=50</code></pre>
+
+If the header <tt>X-Stream</tt> is set to <tt>true</tt>
+no count of total items will be performed. This is more efficient when returning large
+numbers of items or when limiting is disabled completely.
+<p/>
+Example:
+<pre>
+<code>
+curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
+</code>
+</pre>
           </p>
       <h3>Response Body</h3>
       <table>
@@ -433,7 +513,7 @@ child items.
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A list of serialized item representations</p>
 
       <div class="clear" />
     </div>

@@ -61,7 +61,6 @@
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
                 <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
-                <li><a href="resource_EventResource.html">EventResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
                 <li><a href="resource_HistoricalAgentResource.html">HistoricalAgentResource</a></li>
@@ -71,6 +70,7 @@
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
                 <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
+                <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_UserProfileResource.html">UserProfileResource</a></li>
                 <li><a href="resource_VirtualUnitResource.html">VirtualUnitResource</a></li>
                 <li><a href="resource_VocabularyResource.html">VocabularyResource</a></li>
@@ -87,6 +87,9 @@
       <p>The following resources are applicable:</p>
       <ul>
         <li>
+        <a href="#path__link.html">/link</a>
+        </li>
+        <li>
         <a href="#path__link_-id-.html">/link/{id}</a>
         </li>
         <li>
@@ -94,6 +97,9 @@
         </li>
         <li>
         <a href="#path__link_accessPoint_-id-.html">/link/accessPoint/{id}</a>
+        </li>
+        <li>
+        <a href="#path__link_count.html">/link/count</a>
         </li>
         <li>
         <a href="#path__link_for_-id-.html">/link/for/{id}</a>
@@ -105,6 +111,38 @@
         <a href="#path__link_list.html">/link/list</a>
         </li>
       </ul>
+        <a name="path__link.html"></a>
+      <h1>/link</h1>
+      <p class="note">Mount Point: <a href="../link">/link</a></p>
+      <a name="PUT"></a>
+      <h2>PUT</h2>
+      <p>
+            Update a resource.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>bundle</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>A resource bundle, including its ID.</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>A serialized representation of the updated resource.</p>
         <a name="path__link_-id-.html"></a>
       <h1>/link/{id}</h1>
       <p class="note">Mount Point: <a href="../link/{id}">/link/{id}</a></p>
@@ -119,7 +157,7 @@
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            Retrieve an annotation by id.
+            Fetch a resource by id.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -132,7 +170,7 @@
         <tr>
           <td>id</td>
           <td>
-            The annotation ID
+            The requested item id
           </td>
           <td>path</td>
           <td></td>
@@ -149,11 +187,11 @@
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>The annotation</p>
+      <p>A serialized item representation</p>
       <a name="PUT"></a>
       <h2>PUT</h2>
       <p>
-            Update a link,
+            Update a resource.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -166,7 +204,7 @@
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The resource ID.
           </td>
           <td>path</td>
           <td></td>
@@ -183,7 +221,7 @@
           <td>*/*<br/>application/xml</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A resource bundle, with or without an ID.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -195,7 +233,7 @@
           <td>*/*<br/>application/xml</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A serialized representation of the updated resource.</p>
       <a name="DELETE"></a>
       <h2>DELETE</h2>
       <p>
@@ -340,6 +378,23 @@
         </tr>
       </table>
       <p>(no documentation provided)</p>
+        <a name="path__link_count.html"></a>
+      <h1>/link/count</h1>
+      <p class="note">Mount Point: <a href="../link/count">/link/count</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
         <a name="path__link_for_-id-.html"></a>
       <h1>/link/for/{id}</h1>
       <p class="note">Mount Point: <a href="../link/for/{id}">/link/for/{id}</a></p>
@@ -428,9 +483,6 @@ the access point associated with the link will also be deleted.
       <p class="note">Mount Point: <a href="../link/list">/link/list</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
-      <p>
-            List all annotations.
-          </p>
       <h3>Response Body</h3>
       <table>
         <tr>

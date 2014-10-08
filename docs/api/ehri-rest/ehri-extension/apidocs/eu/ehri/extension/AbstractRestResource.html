@@ -95,14 +95,14 @@ Class AbstractRestResource</H2>
   <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>eu.ehri.extension.AbstractRestResource</B>
 </PRE>
 <DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../eu/ehri/extension/TxCheckedResource.html" title="interface in eu.ehri.extension">TxCheckedResource</A></DD>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../eu/ehri/extension/base/TxCheckedResource.html" title="interface in eu.ehri.extension.base">TxCheckedResource</A></DD>
 </DL>
 <DL>
 <DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</A>, <A HREF="../../../eu/ehri/extension/AdminResource.html" title="class in eu.ehri.extension">AdminResource</A>, <A HREF="../../../eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</A>, <A HREF="../../../eu/ehri/extension/PermissionGrantResource.html" title="class in eu.ehri.extension">PermissionGrantResource</A>, <A HREF="../../../eu/ehri/extension/PermissionsResource.html" title="class in eu.ehri.extension">PermissionsResource</A>, <A HREF="../../../eu/ehri/extension/PromotionResource.html" title="class in eu.ehri.extension">PromotionResource</A></DD>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public abstract class <B>AbstractRestResource</B><DT>extends <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="../../../eu/ehri/extension/TxCheckedResource.html" title="interface in eu.ehri.extension">TxCheckedResource</A></DL>
+<DT><PRE>public abstract class <B>AbstractRestResource</B><DT>extends <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="../../../eu/ehri/extension/base/TxCheckedResource.html" title="interface in eu.ehri.extension.base">TxCheckedResource</A></DL>
 </PRE>
 
 <P>
@@ -147,7 +147,7 @@ Base class for web service resources.
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Header names</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -276,6 +276,14 @@ Base class for web service resources.
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Header names</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -760,13 +768,23 @@ public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/
 </DL>
 <HR>
 
+<A NAME="RANGE_HEADER_NAME"><!-- --></A><H3>
+RANGE_HEADER_NAME</H3>
+<PRE>
+public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>RANGE_HEADER_NAME</B></PRE>
+<DL>
+<DD>Header names
+<P>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#eu.ehri.extension.AbstractRestResource.RANGE_HEADER_NAME">Constant Field Values</A></DL>
+</DL>
+<HR>
+
 <A NAME="AUTH_HEADER_NAME"><!-- --></A><H3>
 AUTH_HEADER_NAME</H3>
 <PRE>
 public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>AUTH_HEADER_NAME</B></PRE>
 <DL>
-<DD>Header names
-<P>
 <DL>
 <DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#eu.ehri.extension.AbstractRestResource.AUTH_HEADER_NAME">Constant Field Values</A></DL>
 </DL>
@@ -906,7 +924,7 @@ getGraph</H3>
 public com.tinkerpop.frames.FramedGraph&lt;<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/utils/TxCheckedNeo4jGraph.html?is-external=true" title="class or interface in eu.ehri.project.utils">TxCheckedNeo4jGraph</A>&gt; <B>getGraph</B>()</PRE>
 <DL>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/TxCheckedResource.html#getGraph()">getGraph</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/TxCheckedResource.html" title="interface in eu.ehri.extension">TxCheckedResource</A></CODE></DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/TxCheckedResource.html#getGraph()">getGraph</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/TxCheckedResource.html" title="interface in eu.ehri.extension.base">TxCheckedResource</A></CODE></DL>
 </DD>
 <DD><DL>
 </DL>

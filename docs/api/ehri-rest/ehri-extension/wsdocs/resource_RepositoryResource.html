@@ -61,7 +61,6 @@
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
                 <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
-                <li><a href="resource_EventResource.html">EventResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
                 <li><a href="resource_HistoricalAgentResource.html">HistoricalAgentResource</a></li>
@@ -71,6 +70,7 @@
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
                 <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
+                <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_UserProfileResource.html">UserProfileResource</a></li>
                 <li><a href="resource_VirtualUnitResource.html">VirtualUnitResource</a></li>
                 <li><a href="resource_VocabularyResource.html">VocabularyResource</a></li>
@@ -113,6 +113,9 @@
       <p class="note">Mount Point: <a href="../repository">/repository</a></p>
       <a name="PUT"></a>
       <h2>PUT</h2>
+      <p>
+            Update a resource.
+          </p>
       <h3>Request Body</h3>
       <table>
         <tr>
@@ -124,7 +127,7 @@
           <td>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A resource bundle, including its ID.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -136,7 +139,7 @@
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A serialized representation of the updated resource.</p>
         <a name="path__repository_-id-.html"></a>
       <h1>/repository/{id}</h1>
       <p class="note">Mount Point: <a href="../repository/{id}">/repository/{id}</a></p>
@@ -150,6 +153,9 @@
       </ul>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Fetch a resource by id.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -161,7 +167,7 @@
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The requested item id
           </td>
           <td>path</td>
           <td></td>
@@ -178,9 +184,12 @@
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A serialized item representation</p>
       <a name="PUT"></a>
       <h2>PUT</h2>
+      <p>
+            Update a resource.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -192,7 +201,7 @@
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The resource ID.
           </td>
           <td>path</td>
           <td></td>
@@ -209,7 +218,7 @@
           <td>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A resource bundle, with or without an ID.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -221,9 +230,12 @@
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A serialized representation of the updated resource.</p>
       <a name="DELETE"></a>
       <h2>DELETE</h2>
+      <p>
+            Delete a resource.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -235,7 +247,7 @@
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The resource ID.
           </td>
           <td>path</td>
           <td></td>
@@ -252,12 +264,15 @@
           <td>*/*<br/>application/xml</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A response with 200 representing a successful deletion.</p>
         <a name="path__repository_-id-_count.html"></a>
       <h1>/repository/{id}/count</h1>
       <p class="note">Mount Point: <a href="../repository/{id}/count">/repository/{id}/count</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Count the number of available resources subordinate to this item.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -269,7 +284,7 @@
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The requested item id
           </td>
           <td>path</td>
           <td></td>
@@ -277,7 +292,8 @@
         <tr>
           <td>all</td>
           <td>
-            (no documentation provided)
+            Whether to count all child items, or just those at the
+immediate sub-level.
           </td>
           <td>query</td>
           <td>false</td>
@@ -294,7 +310,7 @@
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>The total number of applicable items</p>
         <a name="path__repository_-id-_documentaryUnit.html"></a>
       <h1>/repository/{id}/documentaryUnit</h1>
       <p class="note">Mount Point: <a href="../repository/{id}/documentaryUnit">/repository/{id}/documentaryUnit</a></p>
@@ -357,6 +373,17 @@
       <p class="note">Mount Point: <a href="../repository/{id}/list">/repository/{id}/list</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            List available resources subordinate to this item. Behaviour is the same
+as the general list method with respect to parameters.
+<p/>
+Example:
+<pre>
+<code>
+curl http://localhost:7474/ehri/[RESOURCE]/[ID]/list
+</code>
+</pre>
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -393,12 +420,15 @@
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A list of serialized item representations</p>
         <a name="path__repository_count.html"></a>
       <h1>/repository/count</h1>
       <p class="note">Mount Point: <a href="../repository/count">/repository/count</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Count the number of available resources.
+          </p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -410,12 +440,37 @@
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>The total number of applicable items</p>
         <a name="path__repository_list.html"></a>
       <h1>/repository/list</h1>
       <p class="note">Mount Point: <a href="../repository/list">/repository/list</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            List available resources. The default behaviour is to
+return a page of 20 items.
+<p/>
+The default list limit can be overridden using the <tt>limit</tt>
+parameter, and disabled completely using a value of -1.
+<p/>
+Item lists are paginated using the <tt>page</tt> parameter.
+<p/>
+The page, limit, and total number of items is returned in the Content-Range response
+header in the form:
+
+<pre><code>page=1; count=20; total=50</code></pre>
+
+If the header <tt>X-Stream</tt> is set to <tt>true</tt>
+no count of total items will be performed. This is more efficient when returning large
+numbers of items or when limiting is disabled completely.
+<p/>
+Example:
+<pre>
+<code>
+curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
+</code>
+</pre>
+          </p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -427,7 +482,7 @@
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A list of serialized item representations</p>
 
       <div class="clear" />
     </div>
