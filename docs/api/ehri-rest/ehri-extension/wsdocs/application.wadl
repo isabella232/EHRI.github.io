@@ -2172,9 +2172,6 @@
     <wadl:resource path="/authoritativeSet/{id}/all">
       <wadl:param name="id" style="template"/>
       <wadl:method name="DELETE">
-        <wadl:doc>
-          <![CDATA[HistoricalAgent manipulation]]>
-        </wadl:doc>
         <wadl:request/>
         <wadl:response>
           <wadl:representation mediaType="*/*"/>
@@ -2212,23 +2209,27 @@
     <wadl:resource path="/authoritativeSet/{id}/historicalAgent">
       <wadl:param name="id" style="template">
         <wadl:doc>
-          <![CDATA[The set ID]]>
+          <![CDATA[The parent resource ID.]]>
         </wadl:doc>
       </wadl:param>
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Create a top-level agent unit for this set.]]>
+          <![CDATA[Create a subordinate resource.]]>
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
-            <![CDATA[The item data]]>
+            <![CDATA[A resource bundle.]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
-          <wadl:param name="accessibleTo" style="query"/>
+          <wadl:param name="accessibleTo" style="query">
+            <wadl:doc>
+              <![CDATA[The users/groups who can access this item.]]>
+            </wadl:doc>
+          </wadl:param>
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A new item]]>
+            <![CDATA[A serialized representation of the created resource.]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -2292,7 +2293,8 @@
       <wadl:param name="id" style="template"/>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[List available resources subordinate to this item. Behaviour is the same]]>
+          <![CDATA[List avai]]>
+<![CDATA[lable resources subordinate to this item. Behaviour is the same]]>
 <![CDATA[as the general list method with respect to parameters.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Example:]]>
@@ -2360,8 +2362,7 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[Th]]>
-<![CDATA[e total number of applicable items]]>
+            <![CDATA[The total number of applicable items]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -2402,12 +2403,23 @@
       <wadl:param name="id" style="template"/>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA['related' concepts]]>
+          <![CDATA[List available resources subordinate to this item. Behaviour is the same]]>
+<![CDATA[as the general list method with respect to parameters.]]>
+<![CDATA[<p/>]]>
+<![CDATA[Example:]]>
+<![CDATA[<pre>]]>
+<![CDATA[<code>]]>
+<![CDATA[curl http://localhost:7474/ehri/[RESOURCE]/[ID]/list]]>
+<![CDATA[</code>]]>
+<![CDATA[</pre>]]>
         </wadl:doc>
         <wadl:request>
           <wadl:param name="all" style="query"/>
         </wadl:request>
         <wadl:response>
+          <wadl:doc>
+            <![CDATA[A list of serialized item representations]]>
+          </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -2416,9 +2428,6 @@
     <wadl:resource path="/cvocVocabulary/{id}/all">
       <wadl:param name="id" style="template"/>
       <wadl:method name="DELETE">
-        <wadl:doc>
-          <![CDATA[Concept manipulation **]]>
-        </wadl:doc>
         <wadl:request/>
         <wadl:response>
           <wadl:representation mediaType="*/*"/>
@@ -2456,23 +2465,28 @@
     <wadl:resource path="/cvocVocabulary/{id}/cvocConcept">
       <wadl:param name="id" style="template">
         <wadl:doc>
-          <![CDATA[The vocabulary ID]]>
+          <![CDATA[The parent resource ID.]]>
         </wadl:doc>
       </wadl:param>
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Create a top-level concept unit for this vocabulary.]]>
+          <![CDATA[Create a subordinate resource.]]>
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
-            <![CDATA[The new concept data]]>
+            <![CDATA[A resource bundle.]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
-          <wadl:param name="accessibleTo" style="query"/>
+          <wadl:param name="accessibleTo" style="query">
+            <wadl:doc>
+              <![CDATA[The users/groups who can access this item.]]>
+            </wadl:doc>
+          </wadl:param>
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[The new concept]]>
+            <![CDATA[A serialized representation of th]]>
+<![CDATA[e created resource.]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -2771,7 +2785,8 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A list of grants for the given scope]]>
+            <![CDATA[A]]>
+<![CDATA[list of grants for the given scope]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -2836,7 +2851,8 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[The total number of applicable items]]>
+            <![CDATA[The total number of applicabl]]>
+<![CDATA[e items]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -3176,23 +3192,39 @@
       </wadl:method>
     </wadl:resource>
     <wadl:resource path="/cvocConcept/{id}/broader/list">
-      <wadl:param name="id" style="template"/>
+      <wadl:param name="id" style="template">
+        <wadl:doc>
+          <![CDATA[The item ID]]>
+        </wadl:doc>
+      </wadl:param>
       <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[List broader concepts.]]>
+        </wadl:doc>
         <wadl:request/>
         <wadl:response>
+          <wadl:doc>
+            <![CDATA[A list of broader resources]]>
+          </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
     <wadl:resource path="/cvocConcept/{id}/narrower/{idNarrower}">
-      <wadl:param name="id" style="template"/>
-      <wadl:param name="idNarrower" style="template"/>
+      <wadl:param name="id" style="template">
+        <wadl:doc>
+          <![CDATA[The item ID]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:param name="idNarrower" style="template">
+        <wadl:doc>
+          <![CDATA[The narrower item ID]]>
+        </wadl:doc>
+      </wadl:param>
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Add an existing concept to the list of 'narrower' of this existing]]>
-<![CDATA[Concepts No vertex is created, but the 'narrower' edge is created between]]>
-<![CDATA[the two concept vertices.]]>
+          <![CDATA[Add an existing concept to the list of 'narrower' relations.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -3202,8 +3234,7 @@
       </wadl:method>
       <wadl:method name="DELETE">
         <wadl:doc>
-          <![CDATA[Removing the narrower relation by deleting the edge, not the vertex of]]>
-<![CDATA[the narrower concept]]>
+          <![CDATA[Remove a narrower relationship between two concepts.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -3213,22 +3244,40 @@
       </wadl:method>
     </wadl:resource>
     <wadl:resource path="/cvocConcept/{id}/related/list">
-      <wadl:param name="id" style="template"/>
+      <wadl:param name="id" style="template">
+        <wadl:doc>
+          <![CDATA[The item ID]]>
+        </wadl:doc>
+      </wadl:param>
       <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[List concepts related to another concept.]]>
+        </wadl:doc>
         <wadl:request/>
         <wadl:response>
+          <wadl:doc>
+            <![CDATA[A list of related resources]]>
+          </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
     <wadl:resource path="/cvocConcept/{id}/related/{idRelated}">
-      <wadl:param name="id" style="template"/>
-      <wadl:param name="idRelated" style="template"/>
+      <wadl:param name="id" style="template">
+        <wadl:doc>
+          <![CDATA[The item ID]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:param name="idRelated" style="template">
+        <wadl:doc>
+          <![CDATA[The related item ID]]>
+        </wadl:doc>
+      </wadl:param>
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Add a relation by creating the 'related' edge between the two concepts,]]>
-<![CDATA[no vertex created]]>
+          <![CDATA[Add a relation by creating the 'related' edge between the two <em>existing</em>]]>
+<![CDATA[items.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -3239,7 +3288,7 @@
       <wadl:method name="DELETE">
         <wadl:doc>
           <![CDATA[Remove a relation by deleting the edge, not the vertex of the related]]>
-<![CDATA[concept]]>
+<![CDATA[concept.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -3249,10 +3298,22 @@
       </wadl:method>
     </wadl:resource>
     <wadl:resource path="/cvocConcept/{id}/relatedBy/list">
-      <wadl:param name="id" style="template"/>
+      <wadl:param name="id" style="template">
+        <wadl:doc>
+          <![CDATA[The item ID]]>
+        </wadl:doc>
+      </wadl:param>
       <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[List concepts related to another concept. This is the]]>
+<![CDATA[&quot;reverse&quot; form of the &quot;/related&quot;]]>
+<![CDATA[method.]]>
+        </wadl:doc>
         <wadl:request/>
         <wadl:response>
+          <wadl:doc>
+            <![CDATA[A list of related resources]]>
+          </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -3276,8 +3337,7 @@
       <wadl:param name="linkId" style="template"/>
       <wadl:method name="DELETE">
         <wadl:doc>
-          <![CDATA[Delete a link. If the opt]]>
-<![CDATA[ional ?accessPoint=[ID] parameter is also given]]>
+          <![CDATA[Delete a link. If the optional ?accessPoint=[ID] parameter is also given]]>
 <![CDATA[the access point associated with the link will also be deleted.]]>
         </wadl:doc>
         <wadl:request/>

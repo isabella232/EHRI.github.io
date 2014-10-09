@@ -83,8 +83,8 @@
     <div id="main" class="column first last span-20">
       <h1>VocabularyResource</h1>
 
-      <p>Provides a RESTful interface for the Vocabulary Also for managing the
-Concepts that are in the Vocabulary</p>
+      <p>Provides a RESTful interface for the Vocabulary items. Vocabularies are
+containers for Concepts.</p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
@@ -320,9 +320,6 @@ Concepts that are in the Vocabulary</p>
       <p class="note">Mount Point: <a href="../cvocVocabulary/{id}/all">/cvocVocabulary/{id}/all</a></p>
       <a name="DELETE"></a>
       <h2>DELETE</h2>
-      <p>
-            Concept manipulation **
-          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -404,7 +401,7 @@ immediate sub-level.
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Create a top-level concept unit for this vocabulary.
+            Create a subordinate resource.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -417,7 +414,7 @@ immediate sub-level.
         <tr>
           <td>id</td>
           <td>
-            The vocabulary ID
+            The parent resource ID.
           </td>
           <td>path</td>
           <td></td>
@@ -425,7 +422,7 @@ immediate sub-level.
         <tr>
           <td>accessibleTo</td>
           <td>
-            (no documentation provided)
+            The users/groups who can access this item.
           </td>
           <td>query</td>
           <td></td>
@@ -442,7 +439,7 @@ immediate sub-level.
           <td>application/json</td>
         </tr>
       </table>
-      <p>The new concept data</p>
+      <p>A resource bundle.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -454,7 +451,7 @@ immediate sub-level.
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>The new concept</p>
+      <p>A serialized representation of the created resource.</p>
         <a name="path__cvocVocabulary_-id-_list.html"></a>
       <h1>/cvocVocabulary/{id}/list</h1>
       <p class="note">Mount Point: <a href="../cvocVocabulary/{id}/list">/cvocVocabulary/{id}/list</a></p>

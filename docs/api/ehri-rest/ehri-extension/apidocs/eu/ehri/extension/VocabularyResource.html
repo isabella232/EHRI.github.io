@@ -105,14 +105,14 @@ Class VocabularyResource</H2>
 </PRE>
 
 <P>
-Provides a RESTful interface for the Vocabulary Also for managing the
- Concepts that are in the Vocabulary
+Provides a RESTful interface for the Vocabulary items. Vocabularies are
+ containers for Concepts.
 <P>
 
 <P>
 <DL>
 <DT><B>Author:</B></DT>
-  <DD>Paul Boon (http://github.com/PaulBoon)</DD>
+  <DD>Paul Boon (http://github.com/PaulBoon), Mike Bryant (http://github.com/mikesname)</DD>
 </DL>
 <HR>
 
@@ -222,7 +222,7 @@ Provides a RESTful interface for the Vocabulary Also for managing the
             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessors)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a top-level concept unit for this vocabulary.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a subordinate resource.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -238,7 +238,7 @@ Provides a RESTful interface for the Vocabulary Also for managing the
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/VocabularyResource.html#deleteAllVocabularyConcepts(java.lang.String)">deleteAllVocabularyConcepts</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Concept manipulation **</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -620,8 +620,6 @@ public javax.ws.rs.core.Response <B>deleteAllVocabularyConcepts</B>(<A HREF="htt
                                                              <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</A>,
                                                              <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</A></PRE>
 <DL>
-<DD>Concept manipulation **
-<P>
 <DD><DL>
 </DL>
 </DD>
@@ -649,14 +647,15 @@ public javax.ws.rs.core.Response <B>createChild</B>(<A HREF="http://docs.oracle.
                                              <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
                                              <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
 <DL>
-<DD>Create a top-level concept unit for this vocabulary.
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/ParentResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)">ParentResource</A></CODE></B></DD>
+<DD>Create a subordinate resource.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/ParentResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)">createChild</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/ParentResource.html" title="interface in eu.ehri.extension.base">ParentResource</A></CODE></DL>
 </DD>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>id</CODE> - The vocabulary ID<DD><CODE>bundle</CODE> - The new concept data<DD><CODE>accessors</CODE> - The users/groups who can access this item.
-<DT><B>Returns:</B><DD>The new concept
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The parent resource ID.<DD><CODE>bundle</CODE> - A resource bundle.<DD><CODE>accessors</CODE> - The users/groups who can access this item.
+<DT><B>Returns:</B><DD>A serialized representation of the created resource.
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A></CODE>

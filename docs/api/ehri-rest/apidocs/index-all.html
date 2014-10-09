@@ -287,9 +287,7 @@ Method in class eu.ehri.project.models.cvoc.<A HREF="./eu/ehri/project/models/cv
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/CvocConceptResource.html#addNarrowerCvocConcept(java.lang.String, java.lang.String)"><B>addNarrowerCvocConcept(String, String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</A>
-<DD>Add an existing concept to the list of 'narrower' of this existing
- Concepts No vertex is created, but the 'narrower' edge is created between
- the two concept vertices.
+<DD>Add an existing concept to the list of 'narrower' relations.
 <DT><A HREF="./eu/ehri/project/importers/EadHandler.html#addOtherIdentifier(java.util.Map, java.lang.String)"><B>addOtherIdentifier(Map&lt;String, Object&gt;, String)</B></A> - 
 Method in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers/EadHandler.html" title="class in eu.ehri.project.importers">EadHandler</A>
 <DD>Helper method to add identifiers to the list of other identifiers.
@@ -316,8 +314,8 @@ Method in class eu.ehri.project.models.cvoc.<A HREF="./eu/ehri/project/models/cv
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/CvocConceptResource.html#addRelatedCvocConcept(java.lang.String, java.lang.String)"><B>addRelatedCvocConcept(String, String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</A>
-<DD>Add a relation by creating the 'related' edge between the two concepts,
- no vertex created
+<DD>Add a relation by creating the 'related' edge between the two <em>existing</em>
+ items.
 <DT><A HREF="./eu/ehri/project/persistence/Bundle.Builder.html#addRelation(java.lang.String, eu.ehri.project.persistence.Bundle)"><B>addRelation(String, Bundle)</B></A> - 
 Method in class eu.ehri.project.persistence.<A HREF="./eu/ehri/project/persistence/Bundle.Builder.html" title="class in eu.ehri.project.persistence">Bundle.Builder</A>
 <DD>&nbsp;
@@ -458,8 +456,7 @@ Static variable in class eu.ehri.project.definitions.<A HREF="./eu/ehri/project/
 <DT><A HREF="./eu/ehri/project/models/cvoc/AuthoritativeItem.html" title="interface in eu.ehri.project.models.cvoc"><B>AuthoritativeItem</B></A> - Interface in <A HREF="./eu/ehri/project/models/cvoc/package-summary.html">eu.ehri.project.models.cvoc</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/models/cvoc/AuthoritativeSet.html" title="interface in eu.ehri.project.models.cvoc"><B>AuthoritativeSet</B></A> - Interface in <A HREF="./eu/ehri/project/models/cvoc/package-summary.html">eu.ehri.project.models.cvoc</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/models/cvoc/AuthoritativeSet.Impl.html" title="class in eu.ehri.project.models.cvoc"><B>AuthoritativeSet.Impl</B></A> - Class in <A HREF="./eu/ehri/project/models/cvoc/package-summary.html">eu.ehri.project.models.cvoc</A><DD>Implementation of complex methods.<DT><A HREF="./eu/ehri/project/models/cvoc/AuthoritativeSet.Impl.html#AuthoritativeSet.Impl()"><B>AuthoritativeSet.Impl()</B></A> - 
 Constructor for class eu.ehri.project.models.cvoc.<A HREF="./eu/ehri/project/models/cvoc/AuthoritativeSet.Impl.html" title="class in eu.ehri.project.models.cvoc">AuthoritativeSet.Impl</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension"><B>AuthoritativeSetResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a RESTful interface for the AuthoritativeSet Also for managing the
- HistoricalAgents that are in the AuthoritativeSet<DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html#AuthoritativeSetResource(org.neo4j.graphdb.GraphDatabaseService)"><B>AuthoritativeSetResource(GraphDatabaseService)</B></A> - 
+<DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension"><B>AuthoritativeSetResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a RESTful interface for the AuthoritativeSet items.<DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html#AuthoritativeSetResource(org.neo4j.graphdb.GraphDatabaseService)"><B>AuthoritativeSetResource(GraphDatabaseService)</B></A> - 
 Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</A>
 <DD>&nbsp;
 </DL>
@@ -865,7 +862,7 @@ Variable in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)"><B>createChild(String, Bundle, List&lt;String&gt;)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</A>
-<DD>Create a top-level agent unit for this set.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/base/ParentResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)"><B>createChild(String, Bundle, List&lt;String&gt;)</B></A> - 
 Method in interface eu.ehri.extension.base.<A HREF="./eu/ehri/extension/base/ParentResource.html" title="interface in eu.ehri.extension.base">ParentResource</A>
 <DD>Create a subordinate resource.
@@ -883,7 +880,7 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/RepositoryResourc
 <DD>Create a documentary unit for this repository.
 <DT><A HREF="./eu/ehri/extension/VocabularyResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)"><B>createChild(String, Bundle, List&lt;String&gt;)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/VocabularyResource.html" title="class in eu.ehri.extension">VocabularyResource</A>
-<DD>Create a top-level concept unit for this vocabulary.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/VirtualUnitResource.html#createChildVirtualUnit(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List, java.util.List)"><B>createChildVirtualUnit(String, Bundle, List&lt;String&gt;, List&lt;String&gt;)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/VirtualUnitResource.html" title="class in eu.ehri.extension">VirtualUnitResource</A>
 <DD>&nbsp;
@@ -1002,7 +999,7 @@ Static variable in class eu.ehri.project.definitions.<A HREF="./eu/ehri/project/
 <DT><A HREF="./eu/ehri/project/definitions/Entities.html#CVOC_VOCABULARY"><B>CVOC_VOCABULARY</B></A> - 
 Static variable in class eu.ehri.project.definitions.<A HREF="./eu/ehri/project/definitions/Entities.html" title="class in eu.ehri.project.definitions">Entities</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension"><B>CvocConceptResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a RESTful interface for the cvoc.Concept.<DT><A HREF="./eu/ehri/extension/CvocConceptResource.html#CvocConceptResource(org.neo4j.graphdb.GraphDatabaseService)"><B>CvocConceptResource(GraphDatabaseService)</B></A> - 
+<DT><A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension"><B>CvocConceptResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a RESTful interface for the Concept items.<DT><A HREF="./eu/ehri/extension/CvocConceptResource.html#CvocConceptResource(org.neo4j.graphdb.GraphDatabaseService)"><B>CvocConceptResource(GraphDatabaseService)</B></A> - 
 Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</A>
 <DD>&nbsp;
 </DL>
@@ -1152,10 +1149,10 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/LinkResource.html
 <DD>Delete an access point.
 <DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html#deleteAllAuthoritativeSetHistoricalAgents(java.lang.String)"><B>deleteAllAuthoritativeSetHistoricalAgents(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</A>
-<DD>HistoricalAgent manipulation
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/VocabularyResource.html#deleteAllVocabularyConcepts(java.lang.String)"><B>deleteAllVocabularyConcepts(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/VocabularyResource.html" title="class in eu.ehri.extension">VocabularyResource</A>
-<DD>Concept manipulation **
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/persistence/utils/BundleUtils.html#deleteBundle(eu.ehri.project.persistence.Bundle, java.lang.String)"><B>deleteBundle(Bundle, String)</B></A> - 
 Static method in class eu.ehri.project.persistence.utils.<A HREF="./eu/ehri/project/persistence/utils/BundleUtils.html" title="class in eu.ehri.project.persistence.utils">BundleUtils</A>
 <DD>XPath-like method for deleting a node from a nested tree, i.e:
@@ -2124,13 +2121,13 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResou
  BadRequest if it's invalid.
 <DT><A HREF="./eu/ehri/extension/CvocConceptResource.html#getCvocBroaderConcepts(java.lang.String)"><B>getCvocBroaderConcepts(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</A>
-<DD>&nbsp;
+<DD>List broader concepts.
 <DT><A HREF="./eu/ehri/extension/CvocConceptResource.html#getCvocRelatedByConcepts(java.lang.String)"><B>getCvocRelatedByConcepts(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</A>
-<DD>&nbsp;
+<DD>List concepts related to another concept.
 <DT><A HREF="./eu/ehri/extension/CvocConceptResource.html#getCvocRelatedConcepts(java.lang.String)"><B>getCvocRelatedConcepts(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</A>
-<DD>&nbsp;
+<DD>List concepts related to another concept.
 <DT><A HREF="./eu/ehri/project/importers/ImportLog.html#getData()"><B>getData()</B></A> - 
 Method in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A>
 <DD>&nbsp;
@@ -3956,7 +3953,7 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/CountryResource.h
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/CvocConceptResource.html#listChildren(java.lang.String, boolean)"><B>listChildren(String, boolean)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</A>
-<DD>'related' concepts
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/DocumentaryUnitResource.html#listChildren(java.lang.String, boolean)"><B>listChildren(String, boolean)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/DocumentaryUnitResource.html" title="class in eu.ehri.extension">DocumentaryUnitResource</A>
 <DD>&nbsp;
@@ -4586,8 +4583,7 @@ Method in interface eu.ehri.project.models.cvoc.<A HREF="./eu/ehri/project/model
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/CvocConceptResource.html#removeNarrowerCvocConcept(java.lang.String, java.lang.String)"><B>removeNarrowerCvocConcept(String, String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</A>
-<DD>Removing the narrower relation by deleting the edge, not the vertex of
- the narrower concept
+<DD>Remove a narrower relationship between two concepts.
 <DT><A HREF="./eu/ehri/project/models/base/Promotable.html#removePromotion(eu.ehri.project.models.UserProfile)"><B>removePromotion(UserProfile)</B></A> - 
 Method in interface eu.ehri.project.models.base.<A HREF="./eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>
 <DD>&nbsp;
@@ -4597,7 +4593,7 @@ Method in interface eu.ehri.project.models.cvoc.<A HREF="./eu/ehri/project/model
 <DT><A HREF="./eu/ehri/extension/CvocConceptResource.html#removeRelatedCvocConcept(java.lang.String, java.lang.String)"><B>removeRelatedCvocConcept(String, String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</A>
 <DD>Remove a relation by deleting the edge, not the vertex of the related
- concept
+ concept.
 <DT><A HREF="./eu/ehri/project/persistence/Bundle.html#removeRelation(java.lang.String, eu.ehri.project.persistence.Bundle)"><B>removeRelation(String, Bundle)</B></A> - 
 Method in class eu.ehri.project.persistence.<A HREF="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>
 <DD>Remove a single relation.
@@ -5755,8 +5751,7 @@ Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/VirtualUnit
 Constructor for class eu.ehri.project.views.<A HREF="./eu/ehri/project/views/VirtualUnitViews.html" title="class in eu.ehri.project.views">VirtualUnitViews</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/models/cvoc/Vocabulary.html" title="interface in eu.ehri.project.models.cvoc"><B>Vocabulary</B></A> - Interface in <A HREF="./eu/ehri/project/models/cvoc/package-summary.html">eu.ehri.project.models.cvoc</A><DD>A collection of 'related' concepts, or maybe a bit like the SKOS Concept Scheme
- Note that any concept in this Vocabulary that has no parent might be considered a topConcept.<DT><A HREF="./eu/ehri/extension/VocabularyResource.html" title="class in eu.ehri.extension"><B>VocabularyResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a RESTful interface for the Vocabulary Also for managing the
- Concepts that are in the Vocabulary<DT><A HREF="./eu/ehri/extension/VocabularyResource.html#VocabularyResource(org.neo4j.graphdb.GraphDatabaseService)"><B>VocabularyResource(GraphDatabaseService)</B></A> - 
+ Note that any concept in this Vocabulary that has no parent might be considered a topConcept.<DT><A HREF="./eu/ehri/extension/VocabularyResource.html" title="class in eu.ehri.extension"><B>VocabularyResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a RESTful interface for the Vocabulary items.<DT><A HREF="./eu/ehri/extension/VocabularyResource.html#VocabularyResource(org.neo4j.graphdb.GraphDatabaseService)"><B>VocabularyResource(GraphDatabaseService)</B></A> - 
 Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/VocabularyResource.html" title="class in eu.ehri.extension">VocabularyResource</A>
 <DD>&nbsp;
 </DL>

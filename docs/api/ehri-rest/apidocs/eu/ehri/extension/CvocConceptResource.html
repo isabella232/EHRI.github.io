@@ -105,9 +105,9 @@ Class CvocConceptResource</H2>
 </PRE>
 
 <P>
-Provides a RESTful interface for the cvoc.Concept. Note that the concept
+Provides a RESTful interface for the Concept items. Note that the concept
  creation endpoint is part of the VocabularyResource and creation without a
- Vocabulary is not possible via this API
+ Vocabulary is not possible via this API.
 <P>
 
 <P>
@@ -196,9 +196,7 @@ Provides a RESTful interface for the cvoc.Concept. Note that the concept
                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idNarrower)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add an existing concept to the list of 'narrower' of this existing
- Concepts No vertex is created, but the 'narrower' edge is created between
- the two concept vertices.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add an existing concept to the list of 'narrower' relations.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -207,8 +205,8 @@ Provides a RESTful interface for the cvoc.Concept. Note that the concept
                       <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idRelated)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a relation by creating the 'related' edge between the two concepts,
- no vertex created</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a relation by creating the 'related' edge between the two <em>existing</em>
+ items.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -259,7 +257,7 @@ Provides a RESTful interface for the cvoc.Concept. Note that the concept
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/CvocConceptResource.html#getCvocBroaderConcepts(java.lang.String)">getCvocBroaderConcepts</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List broader concepts.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -267,7 +265,7 @@ Provides a RESTful interface for the cvoc.Concept. Note that the concept
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/CvocConceptResource.html#getCvocRelatedByConcepts(java.lang.String)">getCvocRelatedByConcepts</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List concepts related to another concept.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -275,7 +273,7 @@ Provides a RESTful interface for the cvoc.Concept. Note that the concept
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/CvocConceptResource.html#getCvocRelatedConcepts(java.lang.String)">getCvocRelatedConcepts</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List concepts related to another concept.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -292,7 +290,7 @@ Provides a RESTful interface for the cvoc.Concept. Note that the concept
              boolean&nbsp;all)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'related' concepts</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List available resources subordinate to this item.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -301,8 +299,7 @@ Provides a RESTful interface for the cvoc.Concept. Note that the concept
                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idNarrower)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removing the narrower relation by deleting the edge, not the vertex of
- the narrower concept</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a narrower relationship between two concepts.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -312,7 +309,7 @@ Provides a RESTful interface for the cvoc.Concept. Note that the concept
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a relation by deleting the edge, not the vertex of the related
- concept</TD>
+ concept.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -583,7 +580,16 @@ public javax.ws.rs.core.Response <B>listChildren</B>(<A HREF="http://docs.oracle
                                        throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
                                               <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
 <DL>
-<DD>'related' concepts
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/ParentResource.html#listChildren(java.lang.String, boolean)">ParentResource</A></CODE></B></DD>
+<DD>List available resources subordinate to this item. Behaviour is the same
+ as the general list method with respect to parameters.
+ <p/>
+ Example:
+ <pre>
+     <code>
+ curl http://localhost:7474/ehri/[RESOURCE]/[ID]/list
+     </code>
+ </pre>
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/ParentResource.html#listChildren(java.lang.String, boolean)">listChildren</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/ParentResource.html" title="interface in eu.ehri.extension.base">ParentResource</A></CODE></DL>
@@ -623,178 +629,6 @@ public long <B>countChildren</B>(<A HREF="http://docs.oracle.com/javase/6/docs/a
 </DL>
 <HR>
 
-<A NAME="addNarrowerCvocConcept(java.lang.String, java.lang.String)"><!-- --></A><H3>
-addNarrowerCvocConcept</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>addNarrowerCvocConcept</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-                                                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idNarrower)
-                                                 throws <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                                        <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                                        <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                        <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Add an existing concept to the list of 'narrower' of this existing
- Concepts No vertex is created, but the 'narrower' edge is created between
- the two concept vertices.
-<P>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="removeNarrowerCvocConcept(java.lang.String, java.lang.String)"><!-- --></A><H3>
-removeNarrowerCvocConcept</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>removeNarrowerCvocConcept</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-                                                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idNarrower)
-                                                    throws <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                                           <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                                           <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                           <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Removing the narrower relation by deleting the edge, not the vertex of
- the narrower concept
-<P>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getCvocBroaderConcepts(java.lang.String)"><!-- --></A><H3>
-getCvocBroaderConcepts</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>getCvocBroaderConcepts</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
-                                                 throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                        <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                                        <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getCvocRelatedConcepts(java.lang.String)"><!-- --></A><H3>
-getCvocRelatedConcepts</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>getCvocRelatedConcepts</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
-                                                 throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                        <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                                        <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getCvocRelatedByConcepts(java.lang.String)"><!-- --></A><H3>
-getCvocRelatedByConcepts</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>getCvocRelatedByConcepts</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
-                                                   throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                          <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                                          <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="addRelatedCvocConcept(java.lang.String, java.lang.String)"><!-- --></A><H3>
-addRelatedCvocConcept</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>addRelatedCvocConcept</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-                                                       <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idRelated)
-                                                throws <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                                       <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                                       <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                       <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Add a relation by creating the 'related' edge between the two concepts,
- no vertex created
-<P>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="removeRelatedCvocConcept(java.lang.String, java.lang.String)"><!-- --></A><H3>
-removeRelatedCvocConcept</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>removeRelatedCvocConcept</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-                                                          <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idRelated)
-                                                   throws <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                                          <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                                          <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                                          <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Remove a relation by deleting the edge, not the vertex of the related
- concept
-<P>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
 <A NAME="createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)"><!-- --></A><H3>
 createChild</H3>
 <PRE>
@@ -824,6 +658,187 @@ public javax.ws.rs.core.Response <B>createChild</B>(<A HREF="http://docs.oracle.
 <DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
 <DD><CODE><A HREF="../../../eu/ehri/project/exceptions/IntegrityError.html" title="class in eu.ehri.project.exceptions">IntegrityError</A></CODE>
 <DD><CODE><A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addNarrowerCvocConcept(java.lang.String, java.lang.String)"><!-- --></A><H3>
+addNarrowerCvocConcept</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>addNarrowerCvocConcept</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+                                                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idNarrower)
+                                                 throws <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
+                                                        <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
+                                                        <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                                        <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+<DL>
+<DD>Add an existing concept to the list of 'narrower' relations.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The item ID<DD><CODE>idNarrower</CODE> - The narrower item ID
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="removeNarrowerCvocConcept(java.lang.String, java.lang.String)"><!-- --></A><H3>
+removeNarrowerCvocConcept</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>removeNarrowerCvocConcept</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+                                                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idNarrower)
+                                                    throws <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
+                                                           <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
+                                                           <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                                           <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+<DL>
+<DD>Remove a narrower relationship between two concepts.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The item ID<DD><CODE>idNarrower</CODE> - The narrower item ID
+<DT><B>Throws:</B>
+<DD><CODE>PermissionDenied,</CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getCvocBroaderConcepts(java.lang.String)"><!-- --></A><H3>
+getCvocBroaderConcepts</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>getCvocBroaderConcepts</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
+                                                 throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                                        <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
+                                                        <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+<DL>
+<DD>List broader concepts.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The item ID
+<DT><B>Returns:</B><DD>A list of broader resources
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getCvocRelatedConcepts(java.lang.String)"><!-- --></A><H3>
+getCvocRelatedConcepts</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>getCvocRelatedConcepts</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
+                                                 throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                                        <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
+                                                        <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+<DL>
+<DD>List concepts related to another concept.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The item ID
+<DT><B>Returns:</B><DD>A list of related resources
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getCvocRelatedByConcepts(java.lang.String)"><!-- --></A><H3>
+getCvocRelatedByConcepts</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>getCvocRelatedByConcepts</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
+                                                   throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                                          <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
+                                                          <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+<DL>
+<DD>List concepts related to another concept. This is the
+ &quot;reverse&quot; form of the &quot;/related&quot;
+ method.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The item ID
+<DT><B>Returns:</B><DD>A list of related resources
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="addRelatedCvocConcept(java.lang.String, java.lang.String)"><!-- --></A><H3>
+addRelatedCvocConcept</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>addRelatedCvocConcept</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+                                                       <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idRelated)
+                                                throws <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
+                                                       <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
+                                                       <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                                       <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+<DL>
+<DD>Add a relation by creating the 'related' edge between the two <em>existing</em>
+ items.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The item ID<DD><CODE>idRelated</CODE> - The related item ID
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="removeRelatedCvocConcept(java.lang.String, java.lang.String)"><!-- --></A><H3>
+removeRelatedCvocConcept</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>removeRelatedCvocConcept</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+                                                          <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;idRelated)
+                                                   throws <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
+                                                          <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
+                                                          <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                                          <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
+<DL>
+<DD>Remove a relation by deleting the edge, not the vertex of the related
+ concept.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - The item ID<DD><CODE>idRelated</CODE> - The related item ID
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
 <DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
 <DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
 </DD>

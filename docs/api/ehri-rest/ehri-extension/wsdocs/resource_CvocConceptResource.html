@@ -83,9 +83,9 @@
     <div id="main" class="column first last span-20">
       <h1>CvocConceptResource</h1>
 
-      <p>Provides a RESTful interface for the cvoc.Concept. Note that the concept
+      <p>Provides a RESTful interface for the Concept items. Note that the concept
 creation endpoint is part of the VocabularyResource and creation without a
-Vocabulary is not possible via this API</p>
+Vocabulary is not possible via this API.</p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
@@ -287,6 +287,9 @@ Vocabulary is not possible via this API</p>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/broader/list">/cvocConcept/{id}/broader/list</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            List broader concepts.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -298,7 +301,7 @@ Vocabulary is not possible via this API</p>
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The item ID
           </td>
           <td>path</td>
           <td></td>
@@ -315,7 +318,7 @@ Vocabulary is not possible via this API</p>
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A list of broader resources</p>
         <a name="path__cvocConcept_-id-_count.html"></a>
       <h1>/cvocConcept/{id}/count</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/count">/cvocConcept/{id}/count</a></p>
@@ -425,7 +428,15 @@ immediate sub-level.
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            'related' concepts
+            List available resources subordinate to this item. Behaviour is the same
+as the general list method with respect to parameters.
+<p/>
+Example:
+<pre>
+<code>
+curl http://localhost:7474/ehri/[RESOURCE]/[ID]/list
+</code>
+</pre>
           </p>
       <h3>Parameters</h3>
       <table>
@@ -463,16 +474,14 @@ immediate sub-level.
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A list of serialized item representations</p>
         <a name="path__cvocConcept_-id-_narrower_-idNarrower-.html"></a>
       <h1>/cvocConcept/{id}/narrower/{idNarrower}</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/narrower/{idNarrower}">/cvocConcept/{id}/narrower/{idNarrower}</a></p>
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Add an existing concept to the list of 'narrower' of this existing
-Concepts No vertex is created, but the 'narrower' edge is created between
-the two concept vertices.
+            Add an existing concept to the list of 'narrower' relations.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -485,7 +494,7 @@ the two concept vertices.
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The item ID
           </td>
           <td>path</td>
           <td></td>
@@ -493,7 +502,7 @@ the two concept vertices.
         <tr>
           <td>idNarrower</td>
           <td>
-            (no documentation provided)
+            The narrower item ID
           </td>
           <td>path</td>
           <td></td>
@@ -514,8 +523,7 @@ the two concept vertices.
       <a name="DELETE"></a>
       <h2>DELETE</h2>
       <p>
-            Removing the narrower relation by deleting the edge, not the vertex of
-the narrower concept
+            Remove a narrower relationship between two concepts.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -528,7 +536,7 @@ the narrower concept
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The item ID
           </td>
           <td>path</td>
           <td></td>
@@ -536,7 +544,7 @@ the narrower concept
         <tr>
           <td>idNarrower</td>
           <td>
-            (no documentation provided)
+            The narrower item ID
           </td>
           <td>path</td>
           <td></td>
@@ -560,8 +568,8 @@ the narrower concept
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Add a relation by creating the 'related' edge between the two concepts,
-no vertex created
+            Add a relation by creating the 'related' edge between the two <em>existing</em>
+items.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -574,7 +582,7 @@ no vertex created
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The item ID
           </td>
           <td>path</td>
           <td></td>
@@ -582,7 +590,7 @@ no vertex created
         <tr>
           <td>idRelated</td>
           <td>
-            (no documentation provided)
+            The related item ID
           </td>
           <td>path</td>
           <td></td>
@@ -604,7 +612,7 @@ no vertex created
       <h2>DELETE</h2>
       <p>
             Remove a relation by deleting the edge, not the vertex of the related
-concept
+concept.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -617,7 +625,7 @@ concept
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The item ID
           </td>
           <td>path</td>
           <td></td>
@@ -625,7 +633,7 @@ concept
         <tr>
           <td>idRelated</td>
           <td>
-            (no documentation provided)
+            The related item ID
           </td>
           <td>path</td>
           <td></td>
@@ -648,6 +656,9 @@ concept
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/related/list">/cvocConcept/{id}/related/list</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            List concepts related to another concept.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -659,7 +670,7 @@ concept
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The item ID
           </td>
           <td>path</td>
           <td></td>
@@ -676,12 +687,17 @@ concept
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A list of related resources</p>
         <a name="path__cvocConcept_-id-_relatedBy_list.html"></a>
       <h1>/cvocConcept/{id}/relatedBy/list</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/relatedBy/list">/cvocConcept/{id}/relatedBy/list</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            List concepts related to another concept. This is the
+&quot;reverse&quot; form of the &quot;/related&quot;
+method.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -693,7 +709,7 @@ concept
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The item ID
           </td>
           <td>path</td>
           <td></td>
@@ -710,7 +726,7 @@ concept
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A list of related resources</p>
         <a name="path__cvocConcept_count.html"></a>
       <h1>/cvocConcept/count</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/count">/cvocConcept/count</a></p>

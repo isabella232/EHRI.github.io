@@ -83,8 +83,9 @@
     <div id="main" class="column first last span-20">
       <h1>AuthoritativeSetResource</h1>
 
-      <p>Provides a RESTful interface for the AuthoritativeSet Also for managing the
-HistoricalAgents that are in the AuthoritativeSet</p>
+      <p>Provides a RESTful interface for the AuthoritativeSet items.
+Authoritative Sets are containers for Historical Agents
+(authority files.)</p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
@@ -320,9 +321,6 @@ HistoricalAgents that are in the AuthoritativeSet</p>
       <p class="note">Mount Point: <a href="../authoritativeSet/{id}/all">/authoritativeSet/{id}/all</a></p>
       <a name="DELETE"></a>
       <h2>DELETE</h2>
-      <p>
-            HistoricalAgent manipulation
-          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -404,7 +402,7 @@ immediate sub-level.
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Create a top-level agent unit for this set.
+            Create a subordinate resource.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -417,7 +415,7 @@ immediate sub-level.
         <tr>
           <td>id</td>
           <td>
-            The set ID
+            The parent resource ID.
           </td>
           <td>path</td>
           <td></td>
@@ -425,7 +423,7 @@ immediate sub-level.
         <tr>
           <td>accessibleTo</td>
           <td>
-            (no documentation provided)
+            The users/groups who can access this item.
           </td>
           <td>query</td>
           <td></td>
@@ -442,7 +440,7 @@ immediate sub-level.
           <td>application/json</td>
         </tr>
       </table>
-      <p>The item data</p>
+      <p>A resource bundle.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -454,7 +452,7 @@ immediate sub-level.
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>A new item</p>
+      <p>A serialized representation of the created resource.</p>
         <a name="path__authoritativeSet_-id-_list.html"></a>
       <h1>/authoritativeSet/{id}/list</h1>
       <p class="note">Mount Point: <a href="../authoritativeSet/{id}/list">/authoritativeSet/{id}/list</a></p>
