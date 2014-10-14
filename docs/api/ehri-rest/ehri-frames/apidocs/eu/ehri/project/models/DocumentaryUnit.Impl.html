@@ -206,11 +206,11 @@ Implementation of complex methods.
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.Impl.html#getAncestors()">getAncestors</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetches a list of all ancestors (parent -> parent -> parent)</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</A></CODE></FONT></TD>
+<CODE>&nbsp;long</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.Impl.html#getChildCount()">getChildCount</A></B>()</CODE>
 
 <BR>
@@ -422,10 +422,10 @@ public void <B>updateChildCountCache</B>()</PRE>
 <A NAME="getChildCount()"><!-- --></A><H3>
 getChildCount</H3>
 <PRE>
-public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</A> <B>getChildCount</B>()</PRE>
+public long <B>getChildCount</B>()</PRE>
 <DL>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A></CODE></DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html" title="interface in eu.ehri.project.models.base">ItemHolder</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A></CODE></DL>
 </DD>
 <DD><DL>
 </DL>
@@ -446,7 +446,7 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html
 </DD>
 <DD><DL>
 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Returns:</B><DD>an Iterable of DocumentaryUnits that are children</DL>
 </DD>
 </DL>
 <HR>
@@ -509,7 +509,7 @@ public <A HREF="../../../../eu/ehri/project/models/Repository.html" title="inter
 </DD>
 <DD><DL>
 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Returns:</B><DD>the Repository that holds this DocumentaryUnit</DL>
 </DD>
 </DL>
 <HR>
@@ -519,11 +519,15 @@ getAncestors</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&gt; <B>getAncestors</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html#getAncestors()">DocumentaryUnit</A></CODE></B></DD>
+<DD>Fetches a list of all ancestors (parent -> parent -> parent)
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html#getAncestors()">getAncestors</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an Iterable of DocumentaryUnits that are ancestors</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

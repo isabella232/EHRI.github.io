@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>DescriptionViews xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../apidocs/eu/ehri/project/views/DescriptionViews.html">View Javadoc</a></div><pre>
+
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> eu.ehri.project.views;
+<a class="jxr_linenumber" name="2" href="#2">2</a>   
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> com.google.common.base.Optional;
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.acl.PermissionType;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManager;
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManagerFactory;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.EventTypes;
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.PermissionDenied;
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.SerializationError;
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.*;
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.*;
+<a class="jxr_linenumber" name="15" href="#15">15</a>  
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_javadoccomment"> * @author Mike Bryant (<a href="http://github.com/mikesname)" target="alexandria_uri">http://github.com/mikesname)</a></em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/views/DescriptionViews.html">DescriptionViews</a> &lt;E <strong class="jxr_keyword">extends</strong> DescribedEntity&gt; {
+<a class="jxr_linenumber" name="20" href="#20">20</a>  
+<a class="jxr_linenumber" name="21" href="#21">21</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> FramedGraph&lt;?&gt; graph;
+<a class="jxr_linenumber" name="22" href="#22">22</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/core/GraphManager.html">GraphManager</a> manager;
+<a class="jxr_linenumber" name="23" href="#23">23</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Crud&lt;E&gt; crud;
+<a class="jxr_linenumber" name="24" href="#24">24</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/views/ViewHelper.html">ViewHelper</a> helper;
+<a class="jxr_linenumber" name="25" href="#25">25</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/persistence/Serializer.html">Serializer</a> serializer;
+<a class="jxr_linenumber" name="26" href="#26">26</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a> actionManager;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  
+<a class="jxr_linenumber" name="28" href="#28">28</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/views/DescriptionViews.html">DescriptionViews</a>(FramedGraph&lt;?&gt; graph, Class&lt;E&gt; parentClass) {
+<a class="jxr_linenumber" name="29" href="#29">29</a>          <strong class="jxr_keyword">this</strong>.graph = graph;
+<a class="jxr_linenumber" name="30" href="#30">30</a>          <strong class="jxr_keyword">this</strong>.manager = GraphManagerFactory.getInstance(graph);
+<a class="jxr_linenumber" name="31" href="#31">31</a>          <strong class="jxr_keyword">this</strong>.crud = ViewFactory.getCrudNoLogging(graph, parentClass);
+<a class="jxr_linenumber" name="32" href="#32">32</a>          <strong class="jxr_keyword">this</strong>.helper = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/views/ViewHelper.html">ViewHelper</a>(graph);
+<a class="jxr_linenumber" name="33" href="#33">33</a>          <strong class="jxr_keyword">this</strong>.serializer = <strong class="jxr_keyword">new</strong> Serializer.Builder(graph).dependentOnly().build();
+<a class="jxr_linenumber" name="34" href="#34">34</a>          <strong class="jxr_keyword">this</strong>.actionManager = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(graph);
+<a class="jxr_linenumber" name="35" href="#35">35</a>      }
+<a class="jxr_linenumber" name="36" href="#36">36</a>  
+<a class="jxr_linenumber" name="37" href="#37">37</a>      <strong class="jxr_keyword">public</strong> Integer delete(String parentId, String id, <a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user, Optional&lt;String&gt; logMessage)
+<a class="jxr_linenumber" name="38" href="#38">38</a>              <strong class="jxr_keyword">throws</strong> ItemNotFound, PermissionDenied, <a href="../../../../eu/ehri/project/exceptions/SerializationError.html">SerializationError</a> {
+<a class="jxr_linenumber" name="39" href="#39">39</a>          E parent = crud.detail(parentId, user);
+<a class="jxr_linenumber" name="40" href="#40">40</a>          <a href="../../../../eu/ehri/project/models/base/Description.html">Description</a> desc = manager.getFrame(id, Description.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="41" href="#41">41</a>          <strong class="jxr_keyword">if</strong> (!parent.equals(desc.getDescribedEntity())) {
+<a class="jxr_linenumber" name="42" href="#42">42</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html">PermissionDenied</a>(<span class="jxr_string">"Given description does not belong to its parent item"</span>);
+<a class="jxr_linenumber" name="43" href="#43">43</a>          }
+<a class="jxr_linenumber" name="44" href="#44">44</a>          helper.checkEntityPermission(parent, user, PermissionType.UPDATE);
+<a class="jxr_linenumber" name="45" href="#45">45</a>          actionManager.setScope(parent)
+<a class="jxr_linenumber" name="46" href="#46">46</a>                  .logEvent(parent, manager.<strong class="jxr_keyword">cast</strong>(user, Actioner.<strong class="jxr_keyword">class</strong>),
+<a class="jxr_linenumber" name="47" href="#47">47</a>                          EventTypes.deleteDependent, logMessage)
+<a class="jxr_linenumber" name="48" href="#48">48</a>                  .createVersion(desc);
+<a class="jxr_linenumber" name="49" href="#49">49</a>          <strong class="jxr_keyword">return</strong> getPersister(parent).delete(serializer.vertexFrameToBundle(desc));
+<a class="jxr_linenumber" name="50" href="#50">50</a>      }
+<a class="jxr_linenumber" name="51" href="#51">51</a>  
+<a class="jxr_linenumber" name="52" href="#52">52</a>      <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Frame&gt; T create(String parentId, <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> data,
+<a class="jxr_linenumber" name="53" href="#53">53</a>              Class&lt;T&gt; descriptionClass, <a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user, Optional&lt;String&gt; logMessage)
+<a class="jxr_linenumber" name="54" href="#54">54</a>              <strong class="jxr_keyword">throws</strong> ItemNotFound, PermissionDenied, <a href="../../../../eu/ehri/project/exceptions/ValidationError.html">ValidationError</a> {
+<a class="jxr_linenumber" name="55" href="#55">55</a>          E parent = crud.detail(parentId, user);
+<a class="jxr_linenumber" name="56" href="#56">56</a>          helper.checkEntityPermission(parent, user, PermissionType.UPDATE);
+<a class="jxr_linenumber" name="57" href="#57">57</a>          T out = getPersister(parent).create(data, descriptionClass);
+<a class="jxr_linenumber" name="58" href="#58">58</a>          actionManager.setScope(parent).logEvent(parent,
+<a class="jxr_linenumber" name="59" href="#59">59</a>                  manager.<strong class="jxr_keyword">cast</strong>(user, Actioner.<strong class="jxr_keyword">class</strong>),
+<a class="jxr_linenumber" name="60" href="#60">60</a>                  EventTypes.createDependent, logMessage);
+<a class="jxr_linenumber" name="61" href="#61">61</a>          <strong class="jxr_keyword">return</strong> out;
+<a class="jxr_linenumber" name="62" href="#62">62</a>      }
+<a class="jxr_linenumber" name="63" href="#63">63</a>  
+<a class="jxr_linenumber" name="64" href="#64">64</a>      <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Frame&gt; Mutation&lt;T&gt; update(String parentId, <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> data,
+<a class="jxr_linenumber" name="65" href="#65">65</a>                  Class&lt;T&gt; descriptionClass, <a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user, Optional&lt;String&gt; logMessage)
+<a class="jxr_linenumber" name="66" href="#66">66</a>              <strong class="jxr_keyword">throws</strong> ItemNotFound, PermissionDenied, <a href="../../../../eu/ehri/project/exceptions/ValidationError.html">ValidationError</a> {
+<a class="jxr_linenumber" name="67" href="#67">67</a>          E parent = crud.detail(parentId, user);
+<a class="jxr_linenumber" name="68" href="#68">68</a>          helper.checkEntityPermission(parent, user, PermissionType.UPDATE);
+<a class="jxr_linenumber" name="69" href="#69">69</a>          Mutation&lt;T&gt; out = getPersister(parent).update(data, descriptionClass);
+<a class="jxr_linenumber" name="70" href="#70">70</a>          <strong class="jxr_keyword">if</strong> (!out.unchanged()) {
+<a class="jxr_linenumber" name="71" href="#71">71</a>              actionManager.setScope(parent)
+<a class="jxr_linenumber" name="72" href="#72">72</a>                      .logEvent(parent, manager.<strong class="jxr_keyword">cast</strong>(user, Actioner.<strong class="jxr_keyword">class</strong>),
+<a class="jxr_linenumber" name="73" href="#73">73</a>                              EventTypes.modifyDependent, logMessage)
+<a class="jxr_linenumber" name="74" href="#74">74</a>                      .createVersion(out.getNode(), out.getPrior().get());
+<a class="jxr_linenumber" name="75" href="#75">75</a>          }
+<a class="jxr_linenumber" name="76" href="#76">76</a>          <strong class="jxr_keyword">return</strong> out;
+<a class="jxr_linenumber" name="77" href="#77">77</a>      }
+<a class="jxr_linenumber" name="78" href="#78">78</a>  
+<a class="jxr_linenumber" name="79" href="#79">79</a>      <em class="jxr_comment">// Helpers</em>
+<a class="jxr_linenumber" name="80" href="#80">80</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a> getPersister(<a href="../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope) {
+<a class="jxr_linenumber" name="81" href="#81">81</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a>(graph, scope.idPath());
+<a class="jxr_linenumber" name="82" href="#82">82</a>      }
+<a class="jxr_linenumber" name="83" href="#83">83</a>  }
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

@@ -75,9 +75,9 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_top"></A>
@@ -115,11 +115,19 @@ Load data from YAML fixtures.
  single item and it will be loaded as if it were a list containing just one
  item, i.e, instead of writing
  <p/>
+ <pre>
+     <code>
  relationships: heldBy: - some-repo
+     </code>
+ </pre>
  <p/>
  we can just write:
  <p/>
+ <pre>
+     <code>
  relationships: heldBy: some-repo
+     </code>
+ </pre>
 <P>
 
 <P>
@@ -130,32 +138,7 @@ Load data from YAML fixtures.
 <HR>
 
 <P>
-<!-- =========== FIELD SUMMARY =========== -->
 
-<A NAME="field_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Field Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../../eu/ehri/project/utils/fixtures/impl/YamlFixtureLoader.html#DEFAULT_FIXTURE_FILE">DEFAULT_FIXTURE_FILE</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../../eu/ehri/project/utils/fixtures/impl/YamlFixtureLoader.html#GENERATE_ID_PLACEHOLDER">GENERATE_ID_PLACEHOLDER</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-</TABLE>
-&nbsp;
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 
 <A NAME="constructor_summary"><!-- --></A>
@@ -190,14 +173,6 @@ Load data from YAML fixtures.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../../eu/ehri/project/utils/fixtures/impl/YamlFixtureLoader.html#loadFixtureFileStream(java.io.InputStream)">loadFixtureFileStream</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;yamlStream)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/utils/fixtures/impl/YamlFixtureLoader.html#loadTestData()">loadTestData</A></B>()</CODE>
 
 <BR>
@@ -209,7 +184,7 @@ Load data from YAML fixtures.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/utils/fixtures/impl/YamlFixtureLoader.html#loadTestData(java.io.InputStream)">loadTestData</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;stream)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load a given InputStream as test data.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load test data from an input stream.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -217,16 +192,16 @@ Load data from YAML fixtures.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/utils/fixtures/impl/YamlFixtureLoader.html#loadTestData(java.lang.String)">loadTestData</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourceNameOrPath)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load a given file as test data.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load fixtures from a resource or file path.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
+<CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/utils/fixtures/impl/YamlFixtureLoader.html" title="class in eu.ehri.project.utils.fixtures.impl">YamlFixtureLoader</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/utils/fixtures/impl/YamlFixtureLoader.html#setInitializing(boolean)">setInitializing</A></B>(boolean&nbsp;initialize)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Toggle whether or not initialization occurs before
- loading (default: true)</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Perform graph initialization (creating the event log structure and
+ default nodes) prior to importing fixtures.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -240,35 +215,6 @@ Load data from YAML fixtures.
 </TABLE>
 &nbsp;
 <P>
-
-<!-- ============ FIELD DETAIL =========== -->
-
-<A NAME="field_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Field Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="DEFAULT_FIXTURE_FILE"><!-- --></A><H3>
-DEFAULT_FIXTURE_FILE</H3>
-<PRE>
-public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>DEFAULT_FIXTURE_FILE</B></PRE>
-<DL>
-<DL>
-<DT><B>See Also:</B><DD><A HREF="../../../../../../constant-values.html#eu.ehri.project.utils.fixtures.impl.YamlFixtureLoader.DEFAULT_FIXTURE_FILE">Constant Field Values</A></DL>
-</DL>
-<HR>
-
-<A NAME="GENERATE_ID_PLACEHOLDER"><!-- --></A><H3>
-GENERATE_ID_PLACEHOLDER</H3>
-<PRE>
-public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>GENERATE_ID_PLACEHOLDER</B></PRE>
-<DL>
-<DL>
-<DT><B>See Also:</B><DD><A HREF="../../../../../../constant-values.html#eu.ehri.project.utils.fixtures.impl.YamlFixtureLoader.GENERATE_ID_PLACEHOLDER">Constant Field Values</A></DL>
-</DL>
 
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 
@@ -317,17 +263,17 @@ public <B>YamlFixtureLoader</B>(com.tinkerpop.frames.FramedGraph&lt;? extends co
 <A NAME="setInitializing(boolean)"><!-- --></A><H3>
 setInitializing</H3>
 <PRE>
-public void <B>setInitializing</B>(boolean&nbsp;initialize)</PRE>
+public <A HREF="../../../../../../eu/ehri/project/utils/fixtures/impl/YamlFixtureLoader.html" title="class in eu.ehri.project.utils.fixtures.impl">YamlFixtureLoader</A> <B>setInitializing</B>(boolean&nbsp;initialize)</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../eu/ehri/project/utils/fixtures/FixtureLoader.html#setInitializing(boolean)">FixtureLoader</A></CODE></B></DD>
-<DD>Toggle whether or not initialization occurs before
- loading (default: true)
+<DD>Perform graph initialization (creating the event log structure and
+ default nodes) prior to importing fixtures.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../eu/ehri/project/utils/fixtures/FixtureLoader.html#setInitializing(boolean)">setInitializing</A></CODE> in interface <CODE><A HREF="../../../../../../eu/ehri/project/utils/fixtures/FixtureLoader.html" title="interface in eu.ehri.project.utils.fixtures">FixtureLoader</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>initialize</CODE> - Whether or not to initialize the graph: default
+                   </DL>
 </DD>
 </DL>
 <HR>
@@ -337,14 +283,14 @@ loadTestData</H3>
 <PRE>
 public void <B>loadTestData</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;resourceNameOrPath)</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../eu/ehri/project/utils/fixtures/FixtureLoader.html#loadTestData(java.lang.String)">FixtureLoader</A></CODE></B></DD>
-<DD>Load a given file as test data.
+<DD>Load fixtures from a resource or file path.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../eu/ehri/project/utils/fixtures/FixtureLoader.html#loadTestData(java.lang.String)">loadTestData</A></CODE> in interface <CODE><A HREF="../../../../../../eu/ehri/project/utils/fixtures/FixtureLoader.html" title="interface in eu.ehri.project.utils.fixtures">FixtureLoader</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>resourceNameOrPath</CODE> - Either a classloader-accessible
+                           resource, or a local file path.</DL>
 </DD>
 </DL>
 <HR>
@@ -354,29 +300,13 @@ loadTestData</H3>
 <PRE>
 public void <B>loadTestData</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;stream)</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../eu/ehri/project/utils/fixtures/FixtureLoader.html#loadTestData(java.io.InputStream)">FixtureLoader</A></CODE></B></DD>
-<DD>Load a given InputStream as test data. The stream
- will be closed automatically.
+<DD>Load test data from an input stream.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../eu/ehri/project/utils/fixtures/FixtureLoader.html#loadTestData(java.io.InputStream)">loadTestData</A></CODE> in interface <CODE><A HREF="../../../../../../eu/ehri/project/utils/fixtures/FixtureLoader.html" title="interface in eu.ehri.project.utils.fixtures">FixtureLoader</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="loadFixtureFileStream(java.io.InputStream)"><!-- --></A><H3>
-loadFixtureFileStream</H3>
-<PRE>
-public void <B>loadFixtureFileStream</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;yamlStream)</PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>stream</CODE> - A input stream of valid YAML data.</DL>
 </DD>
 </DL>
 <HR>
@@ -448,9 +378,9 @@ public void <B>loadTestData</B>()</PRE>
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_bottom"></A>

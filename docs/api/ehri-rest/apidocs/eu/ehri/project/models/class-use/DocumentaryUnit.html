@@ -137,6 +137,15 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B>IcaAtomEadImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/IcaAtomEadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit, eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;frame,
+                               <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;descBundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
 <TD><CODE><B>EadImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/EadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit, eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit,
                                <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;descBundle)</CODE>
 
@@ -148,15 +157,6 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
                         Leonhard (* 11.5.1886)</persname>
 
  it works in unison with the extractRelations() method.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>IcaAtomEadImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/IcaAtomEadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit, eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;frame,
-                               <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;descBundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -245,7 +245,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TD><CODE><B>DocumentaryUnit.</B><B><A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html#getAncestors()">getAncestors</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetches a list of all ancestors (parent -> parent -> parent)</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -329,7 +329,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
+<CODE>&nbsp;boolean</CODE></FONT></TD>
 <TD><CODE><B>VirtualUnit.</B><B><A HREF="../../../../../eu/ehri/project/models/VirtualUnit.html#addIncludedUnit(eu.ehri.project.models.DocumentaryUnit)">addIncludedUnit</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit)</CODE>
 
 <BR>
@@ -337,7 +337,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
+<CODE>&nbsp;boolean</CODE></FONT></TD>
 <TD><CODE><B>VirtualUnit.Impl.</B><B><A HREF="../../../../../eu/ehri/project/models/VirtualUnit.Impl.html#addIncludedUnit(eu.ehri.project.models.DocumentaryUnit)">addIncludedUnit</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit)</CODE>
 
 <BR>
@@ -385,6 +385,17 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add documentary units to be included in a virtual unit as child items.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B>VirtualUnitViews.</B><B><A HREF="../../../../../eu/ehri/project/views/VirtualUnitViews.html#moveIncludedUnits(eu.ehri.project.models.VirtualUnit, eu.ehri.project.models.VirtualUnit, java.lang.Iterable, eu.ehri.project.models.base.Accessor)">moveIncludedUnits</A></B>(<A HREF="../../../../../eu/ehri/project/models/VirtualUnit.html" title="interface in eu.ehri.project.models">VirtualUnit</A>&nbsp;from,
+                  <A HREF="../../../../../eu/ehri/project/models/VirtualUnit.html" title="interface in eu.ehri.project.models">VirtualUnit</A>&nbsp;to,
+                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&gt;&nbsp;included,
+                  <A HREF="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">

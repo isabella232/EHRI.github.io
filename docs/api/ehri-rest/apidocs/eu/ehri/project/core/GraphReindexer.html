@@ -75,9 +75,9 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_top"></A>
@@ -89,20 +89,18 @@ DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor
 <FONT SIZE="-1">
 eu.ehri.project.core</FONT>
 <BR>
-Class GraphReindexer&lt;T extends com.tinkerpop.blueprints.TransactionalGraph & com.tinkerpop.blueprints.IndexableGraph&gt;</H2>
+Class GraphReindexer</H2>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>eu.ehri.project.core.GraphReindexer&lt;T&gt;</B>
+  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>eu.ehri.project.core.GraphReindexer</B>
 </PRE>
 <HR>
 <DL>
-<DT><PRE>public class <B>GraphReindexer&lt;T extends com.tinkerpop.blueprints.TransactionalGraph & com.tinkerpop.blueprints.IndexableGraph&gt;</B><DT>extends <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+<DT><PRE>public class <B>GraphReindexer</B><DT>extends <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
 </PRE>
 
 <P>
-Reindex a graph
- <p/>
- Should be part of SingleIndexGraphManager, so implicitly assumed it is compatible
+Reindex the internal graph index.
 <P>
 
 <P>
@@ -113,24 +111,7 @@ Reindex a graph
 <HR>
 
 <P>
-<!-- =========== FIELD SUMMARY =========== -->
 
-<A NAME="field_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Field Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/core/GraphReindexer.html#INDEX_NAME">INDEX_NAME</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-</TABLE>
-&nbsp;
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 
 <A NAME="constructor_summary"><!-- --></A>
@@ -140,7 +121,7 @@ Reindex a graph
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/core/GraphReindexer.html#GraphReindexer(com.tinkerpop.frames.FramedGraph)">GraphReindexer</A></B>(com.tinkerpop.frames.FramedGraph&lt;<A HREF="../../../../eu/ehri/project/core/GraphReindexer.html" title="type parameter in GraphReindexer">T</A>&gt;&nbsp;graph)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/core/GraphReindexer.html#GraphReindexer(com.tinkerpop.frames.FramedGraph)">GraphReindexer</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -158,7 +139,7 @@ Reindex a graph
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/core/GraphReindexer.html#reindex(java.lang.String)">reindex</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;indexName)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/core/GraphReindexer.html#reindex()">reindex</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recreate the index for all the Entity vertices</TD>
@@ -176,25 +157,6 @@ Reindex a graph
 &nbsp;
 <P>
 
-<!-- ============ FIELD DETAIL =========== -->
-
-<A NAME="field_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Field Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="INDEX_NAME"><!-- --></A><H3>
-INDEX_NAME</H3>
-<PRE>
-public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>INDEX_NAME</B></PRE>
-<DL>
-<DL>
-<DT><B>See Also:</B><DD><A HREF="../../../../constant-values.html#eu.ehri.project.core.GraphReindexer.INDEX_NAME">Constant Field Values</A></DL>
-</DL>
-
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 
 <A NAME="constructor_detail"><!-- --></A>
@@ -208,7 +170,7 @@ public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/
 <A NAME="GraphReindexer(com.tinkerpop.frames.FramedGraph)"><!-- --></A><H3>
 GraphReindexer</H3>
 <PRE>
-public <B>GraphReindexer</B>(com.tinkerpop.frames.FramedGraph&lt;<A HREF="../../../../eu/ehri/project/core/GraphReindexer.html" title="type parameter in GraphReindexer">T</A>&gt;&nbsp;graph)</PRE>
+public <B>GraphReindexer</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph)</PRE>
 <DL>
 </DL>
 
@@ -222,10 +184,10 @@ public <B>GraphReindexer</B>(com.tinkerpop.frames.FramedGraph&lt;<A HREF="../../
 </TR>
 </TABLE>
 
-<A NAME="reindex(java.lang.String)"><!-- --></A><H3>
+<A NAME="reindex()"><!-- --></A><H3>
 reindex</H3>
 <PRE>
-public void <B>reindex</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;indexName)</PRE>
+public void <B>reindex</B>()</PRE>
 <DL>
 <DD>recreate the index for all the Entity vertices
 <P>
@@ -285,9 +247,9 @@ public void <B>reindex</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/jav
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_bottom"></A>

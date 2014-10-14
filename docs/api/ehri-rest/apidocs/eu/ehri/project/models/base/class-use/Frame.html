@@ -153,6 +153,41 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title
 <TD NOWRAP><FONT SIZE="-1">
 <CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; 
 <BR>
+javax.ws.rs.core.CacheControl</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B>AbstractRestResource.</B><B><A HREF="../../../../../../eu/ehri/extension/AbstractRestResource.html#getCacheControl(T)">getCacheControl</A></B>(T&nbsp;item)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a cache control header based on the access restrictions
+ set on the item.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected 
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; 
+<BR>
+javax.ws.rs.core.Response</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B>AbstractRestResource.</B><B><A HREF="../../../../../../eu/ehri/extension/AbstractRestResource.html#single(T)">single</A></B>(T&nbsp;item)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a default response from a single frame item.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected 
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; 
+<BR>
 javax.ws.rs.core.Response</CODE></FONT></TD>
 </TR>
 </TABLE>
@@ -176,42 +211,6 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 </CODE></FONT></TD>
 <TD><CODE><B>AbstractRestResource.</B><B><A HREF="../../../../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable, eu.ehri.project.persistence.Serializer)">streamingList</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;T&gt;&nbsp;list,
               <A HREF="../../../../../../eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</A>&nbsp;serializer)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a streaming response from an iterable, using the given
- entity converter.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected 
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
-<TR ALIGN="right" VALIGN="">
-<TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; 
-<BR>
-javax.ws.rs.core.Response</CODE></FONT></TD>
-</TR>
-</TABLE>
-</CODE></FONT></TD>
-<TD><CODE><B>AbstractRestResource.</B><B><A HREF="../../../../../../eu/ehri/extension/AbstractRestResource.html#streamingMultimap(com.google.common.collect.ListMultimap)">streamingMultimap</A></B>(com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,T&gt;&nbsp;map)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a streaming response from an iterable.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected 
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
-<TR ALIGN="right" VALIGN="">
-<TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; 
-<BR>
-javax.ws.rs.core.Response</CODE></FONT></TD>
-</TR>
-</TABLE>
-</CODE></FONT></TD>
-<TD><CODE><B>AbstractRestResource.</B><B><A HREF="../../../../../../eu/ehri/extension/AbstractRestResource.html#streamingMultimap(com.google.common.collect.ListMultimap, eu.ehri.project.persistence.Serializer)">streamingMultimap</A></B>(com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,T&gt;&nbsp;map,
-                  <A HREF="../../../../../../eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</A>&nbsp;serializer)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a streaming response from an iterable, using the given
@@ -441,24 +440,6 @@ T</CODE></FONT></TD>
 </TR>
 </TABLE>
 </CODE></FONT></TD>
-<TD><CODE><B>Neo4jGraphManager.</B><B><A HREF="../../../../../../eu/ehri/project/core/impl/Neo4jGraphManager.html#cast(eu.ehri.project.models.base.Frame, java.lang.Class)">cast</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame,
-     <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;T&gt;&nbsp;cls)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
-<TR ALIGN="right" VALIGN="">
-<TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; 
-<BR>
-T</CODE></FONT></TD>
-</TR>
-</TABLE>
-</CODE></FONT></TD>
 <TD><CODE><B>BlueprintsGraphManager.</B><B><A HREF="../../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#cast(eu.ehri.project.models.base.Frame, java.lang.Class)">cast</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame,
      <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;T&gt;&nbsp;cls)</CODE>
 
@@ -485,34 +466,8 @@ T</CODE></FONT></TD>
 </TR>
 </TABLE>
 </CODE></FONT></TD>
-<TD><CODE><B>Neo4jGraphManager.</B><B><A HREF="../../../../../../eu/ehri/project/core/impl/Neo4jGraphManager.html#cast(eu.ehri.project.models.base.Frame, java.lang.Class)">cast</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame,
-     <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;T&gt;&nbsp;cls)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
-<TR ALIGN="right" VALIGN="">
-<TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; 
-<BR>
-T</CODE></FONT></TD>
-</TR>
-</TABLE>
-</CODE></FONT></TD>
 <TD><CODE><B>BlueprintsGraphManager.</B><B><A HREF="../../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#cast(eu.ehri.project.models.base.Frame, java.lang.Class)">cast</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame,
      <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;T&gt;&nbsp;cls)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</A></CODE></FONT></TD>
-<TD><CODE><B>Neo4jGraphManager.</B><B><A HREF="../../../../../../eu/ehri/project/core/impl/Neo4jGraphManager.html#getEntityClass(eu.ehri.project.models.base.Frame)">getEntityClass</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -528,23 +483,7 @@ T</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B>Neo4jGraphManager.</B><B><A HREF="../../../../../../eu/ehri/project/core/impl/Neo4jGraphManager.html#getId(eu.ehri.project.models.base.Frame)">getId</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
 <TD><CODE><B>BlueprintsGraphManager.</B><B><A HREF="../../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getId(eu.ehri.project.models.base.Frame)">getId</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B>Neo4jGraphManager.</B><B><A HREF="../../../../../../eu/ehri/project/core/impl/Neo4jGraphManager.html#getType(eu.ehri.project.models.base.Frame)">getType</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>

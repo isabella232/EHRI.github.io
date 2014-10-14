@@ -83,7 +83,8 @@
     <div id="main" class="column first last span-20">
       <h1>GenericResource</h1>
 
-      <p>Provides a RESTful interface for generic items.</p>
+      <p>Provides a means of fetching items and lists of items
+regardless of their specific type.</p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
@@ -99,38 +100,11 @@
         <a name="path__entities.html"></a>
       <h1>/entities</h1>
       <p class="note">Mount Point: <a href="../entities">/entities</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            POST alternative to 'list', which allows passing a much larger
-list of ids to fetch via a JSON body.
-          </p>
-      <h3>Request Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-            <td>json</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Fetch a list of items by their ID.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -142,7 +116,7 @@ list of ids to fetch via a JSON body.
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            A list of string IDs
           </td>
           <td>query</td>
           <td></td>
@@ -159,12 +133,44 @@ list of ids to fetch via a JSON body.
           <td>application/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A serialized list of items</p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Fetch a list of items by their ID.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>json</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>A JSON-encoded list of string IDs</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A serialized list of items</p>
         <a name="path__entities_-id-.html"></a>
       <h1>/entities/{id}</h1>
       <p class="note">Mount Point: <a href="../entities/{id}">/entities/{id}</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Fetch an item of any type by ID.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -176,7 +182,7 @@ list of ids to fetch via a JSON body.
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The item's ID
           </td>
           <td>path</td>
           <td></td>
@@ -193,38 +199,16 @@ list of ids to fetch via a JSON body.
           <td>application/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A serialized representation.</p>
         <a name="path__entities_listByGraphId.html"></a>
       <h1>/entities/listByGraphId</h1>
       <p class="note">Mount Point: <a href="../entities/listByGraphId">/entities/listByGraphId</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <h3>Request Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-            <td>json</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>*/*<br/>application/xml<br/></td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Fetch a list of items by their internal graph ID (gid), which is
+provided in the bundle metadata section of the default response.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -236,7 +220,7 @@ list of ids to fetch via a JSON body.
         <tr>
           <td>gid</td>
           <td>
-            (no documentation provided)
+            A list of graph IDs
           </td>
           <td>query</td>
           <td></td>
@@ -253,7 +237,37 @@ list of ids to fetch via a JSON body.
           <td>application/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>A serialized list of items</p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Fetch a list of items by their internal graph ID (gid), which is
+provided in the bundle metadata section of the default response.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>json</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>A JSON-encoded list of graph IDs</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A serialized list of items</p>
 
       <div class="clear" />
     </div>

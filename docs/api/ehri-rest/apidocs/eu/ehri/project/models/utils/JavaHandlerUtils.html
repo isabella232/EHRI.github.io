@@ -96,16 +96,19 @@ Class JavaHandlerUtils</H2>
 </PRE>
 <HR>
 <DL>
-<DT><PRE>public class <B>JavaHandlerUtils</B><DT>extends <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
+<DT><PRE>public final class <B>JavaHandlerUtils</B><DT>extends <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
 </PRE>
 
 <P>
-User: mike
- <p/>
- Utilities for dealing with Gremlin pipelines.
+Utilities for dealing with Gremlin pipelines and common
+ graph-manipulation functions.
 <P>
 
 <P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (http://github.com/mikesname)</DD>
+</DL>
 <HR>
 
 <P>
@@ -247,7 +250,7 @@ User: mike
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/utils/JavaHandlerUtils.html#maxLoopFuncFactory(int)">maxLoopFuncFactory</A></B>(int&nbsp;maxLoops)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pipe function that quits after a certain number of loops</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pipe function that quits after a certain number of loops.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -296,17 +299,17 @@ public static final org.slf4j.Logger <B>logger</B></PRE>
 <A NAME="LOOP_MAX"><!-- --></A><H3>
 LOOP_MAX</H3>
 <PRE>
-public static int <B>LOOP_MAX</B></PRE>
+public static final int <B>LOOP_MAX</B></PRE>
 <DL>
 <DL>
-</DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#eu.ehri.project.models.utils.JavaHandlerUtils.LOOP_MAX">Constant Field Values</A></DL>
 </DL>
 <HR>
 
 <A NAME="defaultMaxLoops"><!-- --></A><H3>
 defaultMaxLoops</H3>
 <PRE>
-public static com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.pipes.branch.LoopPipe.LoopBundle&lt;com.tinkerpop.blueprints.Vertex&gt;,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&gt; <B>defaultMaxLoops</B></PRE>
+public static final com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.pipes.branch.LoopPipe.LoopBundle&lt;com.tinkerpop.blueprints.Vertex&gt;,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&gt; <B>defaultMaxLoops</B></PRE>
 <DL>
 <DD>Pipe function with a max loop clause with the default of 20.
 <P>
@@ -318,7 +321,7 @@ public static com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.pipes.branch.Loo
 <A NAME="noopLoopFunc"><!-- --></A><H3>
 noopLoopFunc</H3>
 <PRE>
-public static com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.pipes.branch.LoopPipe.LoopBundle&lt;com.tinkerpop.blueprints.Vertex&gt;,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&gt; <B>noopLoopFunc</B></PRE>
+public static final com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.pipes.branch.LoopPipe.LoopBundle&lt;com.tinkerpop.blueprints.Vertex&gt;,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&gt; <B>noopLoopFunc</B></PRE>
 <DL>
 <DD>Pipe function that always allows looping to continue.
 <P>
@@ -358,10 +361,11 @@ maxLoopFuncFactory</H3>
 <PRE>
 public static &lt;S&gt; com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.pipes.branch.LoopPipe.LoopBundle&lt;S&gt;,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&gt; <B>maxLoopFuncFactory</B>(int&nbsp;maxLoops)</PRE>
 <DL>
-<DD>Pipe function that quits after a certain number of loops
+<DD>Pipe function that quits after a certain number of loops.
 <P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>maxLoops</CODE> - The number of loops to run
+<DT><B>Returns:</B><DD>A pipe function</DL>
 </DD>
 </DL>
 <HR>

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Wp2KeywordsTest xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../testapidocs/eu/ehri/project/importers/cvoc/Wp2KeywordsTest.html">View Javadoc</a></div><pre>
+
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> eu.ehri.project.importers.cvoc;
+<a class="jxr_linenumber" name="2" href="#2">2</a>   
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.AccessibleEntity;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> java.io.InputStream;
+<a class="jxr_linenumber" name="10" href="#10">10</a>  
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="12" href="#12">12</a>  
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
+<a class="jxr_linenumber" name="14" href="#14">14</a>  
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
+<a class="jxr_linenumber" name="17" href="#17">17</a>  
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <em class="jxr_javadoccomment"> * @author Linda Reijnhoudt (https://github.com/lindareijnhoudt)</em>
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="21" href="#21">21</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/cvoc/Wp2KeywordsTest.html">Wp2KeywordsTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="22" href="#22">22</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(Wp2KeywordsTest.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="23" href="#23">23</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SKOS_FILE = <span class="jxr_string">"cvoc/wp2_skos_keywords.xml"</span>;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  
+<a class="jxr_linenumber" name="25" href="#25">25</a>      @Test
+<a class="jxr_linenumber" name="26" href="#26">26</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testImportItemsT() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="27" href="#27">27</a>          <strong class="jxr_keyword">final</strong> String logMessage = <span class="jxr_string">"Importing a SKOS file"</span>;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  
+<a class="jxr_linenumber" name="29" href="#29">29</a>          Vocabulary vocabulary = manager.getFrame(<span class="jxr_string">"cvoc1"</span>, Vocabulary.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="30" href="#30">30</a>  
+<a class="jxr_linenumber" name="31" href="#31">31</a>          <strong class="jxr_keyword">int</strong> count = getNodeCount(graph);
+<a class="jxr_linenumber" name="32" href="#32">32</a>          <strong class="jxr_keyword">int</strong> voccount = toList(vocabulary.getConcepts()).size();
+<a class="jxr_linenumber" name="33" href="#33">33</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(SKOS_FILE);
+<a class="jxr_linenumber" name="34" href="#34">34</a>          SkosImporter importer = SkosImporterFactory.newSkosImporter(graph, validUser, vocabulary);
+<a class="jxr_linenumber" name="35" href="#35">35</a>          importer.setTolerant(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="36" href="#36">36</a>          ImportLog log = importer.importFile(ios, logMessage);
+<a class="jxr_linenumber" name="37" href="#37">37</a>          log.printReport();
+<a class="jxr_linenumber" name="38" href="#38">38</a>  
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <em class="jxr_comment">//        printGraph(graph);</em>
+<a class="jxr_linenumber" name="40" href="#40">40</a>          <em class="jxr_comment">/*<em class="jxr_comment">  How many new nodes will have been created? We should have</em></em>
+<a class="jxr_linenumber" name="41" href="#41">41</a>  <em class="jxr_comment">         * 388 more Concepts</em>
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_comment">       	 * 368 more english ConceptDescription</em>
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <em class="jxr_comment">         * 29 german</em>
+<a class="jxr_linenumber" name="44" href="#44">44</a>  <em class="jxr_comment">         * 381 czech</em>
+<a class="jxr_linenumber" name="45" href="#45">45</a>  <em class="jxr_comment">	 * 389 more import Event links (388 for every Unit, 1 for the User)</em>
+<a class="jxr_linenumber" name="46" href="#46">46</a>  <em class="jxr_comment">         * 1 more import Event</em>
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <em class="jxr_comment">         */</em>
+<a class="jxr_linenumber" name="48" href="#48">48</a>          
+<a class="jxr_linenumber" name="49" href="#49">49</a>          <strong class="jxr_keyword">int</strong> afterNodeCount = count + 1556;
+<a class="jxr_linenumber" name="50" href="#50">50</a>          assertEquals(afterNodeCount, getNodeCount(graph));
+<a class="jxr_linenumber" name="51" href="#51">51</a>          assertEquals(voccount + 388, toList(vocabulary.getConcepts()).size());
+<a class="jxr_linenumber" name="52" href="#52">52</a>  
+<a class="jxr_linenumber" name="53" href="#53">53</a>          Concept concept = graph.frame(getVertexByIdentifier(graph, <span class="jxr_string">"KEYWORD.JMP.847"</span>), Concept.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="54" href="#54">54</a>          assertEquals(<span class="jxr_string">"KEYWORD.JMP.847"</span>, concept.getIdentifier());
+<a class="jxr_linenumber" name="55" href="#55">55</a>          <strong class="jxr_keyword">for</strong>(Concept parent : concept.getBroaderConcepts()){
+<a class="jxr_linenumber" name="56" href="#56">56</a>              assertEquals(<span class="jxr_string">"KEYWORD.JMP.103"</span>, parent.getIdentifier());
+<a class="jxr_linenumber" name="57" href="#57">57</a>          }
+<a class="jxr_linenumber" name="58" href="#58">58</a>  
+<a class="jxr_linenumber" name="59" href="#59">59</a>          Concept c103 = graph.frame(getVertexByIdentifier(graph, <span class="jxr_string">"KEYWORD.JMP.103"</span>), Concept.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="60" href="#60">60</a>          <strong class="jxr_keyword">boolean</strong> found847 = false;
+<a class="jxr_linenumber" name="61" href="#61">61</a>          <strong class="jxr_keyword">for</strong>(Concept child : c103.getNarrowerConcepts()){
+<a class="jxr_linenumber" name="62" href="#62">62</a>              <strong class="jxr_keyword">if</strong>(child.getIdentifier().equals(<span class="jxr_string">"KEYWORD.JMP.847"</span>))
+<a class="jxr_linenumber" name="63" href="#63">63</a>                  found847=<strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="64" href="#64">64</a>          }
+<a class="jxr_linenumber" name="65" href="#65">65</a>          assertTrue(found847);
+<a class="jxr_linenumber" name="66" href="#66">66</a>          
+<a class="jxr_linenumber" name="67" href="#67">67</a>          <em class="jxr_comment">// Check permission scopes</em>
+<a class="jxr_linenumber" name="68" href="#68">68</a>          <strong class="jxr_keyword">for</strong> (AccessibleEntity e : log.getAction().getSubjects()) {
+<a class="jxr_linenumber" name="69" href="#69">69</a>              assertEquals(vocabulary, e.getPermissionScope());
+<a class="jxr_linenumber" name="70" href="#70">70</a>          }
+<a class="jxr_linenumber" name="71" href="#71">71</a>      }
+<a class="jxr_linenumber" name="72" href="#72">72</a>  }
+<a class="jxr_linenumber" name="73" href="#73">73</a>  
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

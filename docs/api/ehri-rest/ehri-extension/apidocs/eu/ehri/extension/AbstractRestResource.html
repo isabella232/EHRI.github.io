@@ -361,6 +361,24 @@ Base class for web service resources.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected 
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T extends <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</A>&gt; 
+<BR>
+javax.ws.rs.core.CacheControl</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getCacheControl(T)">getCacheControl</A></B>(T&nbsp;item)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a cache control header based on the access restrictions
+ set on the item.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/UserProfile.html?is-external=true" title="class or interface in eu.ehri.project.models">UserProfile</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getCurrentUser()">getCurrentUser</A></B>()</CODE>
 
@@ -487,6 +505,31 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 </TR>
 </TABLE>
 </CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#single(T)">single</A></B>(T&nbsp;item)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a default response from a single frame item.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#single(com.tinkerpop.blueprints.Vertex)">single</A></B>(com.tinkerpop.blueprints.Vertex&nbsp;item)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a default response from a single vertex.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected 
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T extends <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</A>&gt; 
+<BR>
+javax.ws.rs.core.Response</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable)">streamingList</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;T&gt;&nbsp;list)</CODE>
 
 <BR>
@@ -506,42 +549,6 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 </CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable, eu.ehri.project.persistence.Serializer)">streamingList</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;T&gt;&nbsp;list,
               <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</A>&nbsp;serializer)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a streaming response from an iterable, using the given
- entity converter.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected 
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
-<TR ALIGN="right" VALIGN="">
-<TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T extends <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</A>&gt; 
-<BR>
-javax.ws.rs.core.Response</CODE></FONT></TD>
-</TR>
-</TABLE>
-</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingMultimap(com.google.common.collect.ListMultimap)">streamingMultimap</A></B>(com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,T&gt;&nbsp;map)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a streaming response from an iterable.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected 
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
-<TR ALIGN="right" VALIGN="">
-<TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T extends <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</A>&gt; 
-<BR>
-javax.ws.rs.core.Response</CODE></FONT></TD>
-</TR>
-</TABLE>
-</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingMultimap(com.google.common.collect.ListMultimap, eu.ehri.project.persistence.Serializer)">streamingMultimap</A></B>(com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,T&gt;&nbsp;map,
-                  <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</A>&nbsp;serializer)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a streaming response from an iterable, using the given
@@ -588,16 +595,6 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <CODE>protected &nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingVertexList(java.lang.Iterable, eu.ehri.project.persistence.Serializer)">streamingVertexList</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;com.tinkerpop.blueprints.Vertex&gt;&nbsp;list,
                     <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</A>&nbsp;serializer)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a streaming response from an iterable, using the given
- entity converter.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingVertexMap(java.util.Map, eu.ehri.project.persistence.Serializer)">streamingVertexMap</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,com.tinkerpop.blueprints.Vertex&gt;&nbsp;map,
-                   <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</A>&nbsp;serializer)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a streaming response from an iterable, using the given
@@ -1089,6 +1086,41 @@ protected boolean <B>isStreaming</B>()</PRE>
 </DL>
 <HR>
 
+<A NAME="single(eu.ehri.project.models.base.Frame)"><!-- --></A><A NAME="single(T)"><!-- --></A><H3>
+single</H3>
+<PRE>
+protected &lt;T extends <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</A>&gt; javax.ws.rs.core.Response <B>single</B>(T&nbsp;item)</PRE>
+<DL>
+<DD>Return a default response from a single frame item.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - The item's generic type<DT><B>Parameters:</B><DD><CODE>item</CODE> - The item
+<DT><B>Returns:</B><DD>A serialized representation, with location and cache control
+         headers.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="single(com.tinkerpop.blueprints.Vertex)"><!-- --></A><H3>
+single</H3>
+<PRE>
+protected javax.ws.rs.core.Response <B>single</B>(com.tinkerpop.blueprints.Vertex&nbsp;item)</PRE>
+<DL>
+<DD>Create a default response from a single vertex.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - A graph vertex
+<DT><B>Returns:</B><DD>A serialized representation.</DL>
+</DD>
+</DL>
+<HR>
+
 <A NAME="streamingPage(eu.ehri.project.views.Query.Page)"><!-- --></A><H3>
 streamingPage</H3>
 <PRE>
@@ -1182,63 +1214,6 @@ protected javax.ws.rs.core.Response <B>streamingVertexList</B>(<A HREF="http://d
 </DL>
 <HR>
 
-<A NAME="streamingVertexMap(java.util.Map, eu.ehri.project.persistence.Serializer)"><!-- --></A><H3>
-streamingVertexMap</H3>
-<PRE>
-protected javax.ws.rs.core.Response <B>streamingVertexMap</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,com.tinkerpop.blueprints.Vertex&gt;&nbsp;map,
-                                                       <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</A>&nbsp;serializer)</PRE>
-<DL>
-<DD>Return a streaming response from an iterable, using the given
- entity converter.
- <p/>
- FIXME: I shouldn't be here, or the other method should. Redesign API.
-<P>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>map</CODE> - A map of vertices
-<DT><B>Returns:</B><DD>A streaming response</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="streamingMultimap(com.google.common.collect.ListMultimap)"><!-- --></A><H3>
-streamingMultimap</H3>
-<PRE>
-protected &lt;T extends <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</A>&gt; javax.ws.rs.core.Response <B>streamingMultimap</B>(com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,T&gt;&nbsp;map)</PRE>
-<DL>
-<DD>Return a streaming response from an iterable.
-<P>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>map</CODE> - A multimap of vertices
-<DT><B>Returns:</B><DD>A streaming response</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="streamingMultimap(com.google.common.collect.ListMultimap, eu.ehri.project.persistence.Serializer)"><!-- --></A><H3>
-streamingMultimap</H3>
-<PRE>
-protected &lt;T extends <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</A>&gt; javax.ws.rs.core.Response <B>streamingMultimap</B>(com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,T&gt;&nbsp;map,
-                                                                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</A>&nbsp;serializer)</PRE>
-<DL>
-<DD>Return a streaming response from an iterable, using the given
- entity converter.
-<P>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>map</CODE> - A map of vertices<DD><CODE>serializer</CODE> - A custom serializer
-<DT><B>Returns:</B><DD>A streaming response</DL>
-</DD>
-</DL>
-<HR>
-
 <A NAME="getItemUri(eu.ehri.project.models.base.Frame)"><!-- --></A><H3>
 getItemUri</H3>
 <PRE>
@@ -1312,6 +1287,25 @@ protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.htm
 <DT><B>Returns:</B><DD>The string representation, according to media type
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/SerializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">SerializationError</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getCacheControl(eu.ehri.project.models.base.Frame)"><!-- --></A><A NAME="getCacheControl(T)"><!-- --></A><H3>
+getCacheControl</H3>
+<PRE>
+protected &lt;T extends <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</A>&gt; javax.ws.rs.core.CacheControl <B>getCacheControl</B>(T&nbsp;item)</PRE>
+<DL>
+<DD>Get a cache control header based on the access restrictions
+ set on the item. If it is restricted, instruct clients not
+ to cache the response.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - The item
+<DT><B>Returns:</B><DD>A cache control object.</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

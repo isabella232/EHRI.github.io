@@ -470,7 +470,8 @@ Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/SystemEv
 <A NAME="_G_"><!-- --></A><H2>
 <B>G</B></H2>
 <DL>
-<DT><A HREF="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension"><B>GenericResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a RESTful interface for generic items.<DT><A HREF="./eu/ehri/extension/GenericResource.html#GenericResource(org.neo4j.graphdb.GraphDatabaseService)"><B>GenericResource(GraphDatabaseService)</B></A> - 
+<DT><A HREF="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension"><B>GenericResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a means of fetching items and lists of items
+ regardless of their specific type.<DT><A HREF="./eu/ehri/extension/GenericResource.html#GenericResource(org.neo4j.graphdb.GraphDatabaseService)"><B>GenericResource(GraphDatabaseService)</B></A> - 
 Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/AnnotationResource.html#get(java.lang.String)"><B>get(String)</B></A> - 
@@ -496,7 +497,7 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/DocumentaryUnitRe
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/GenericResource.html#get(java.lang.String)"><B>get(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</A>
-<DD>&nbsp;
+<DD>Fetch an item of any type by ID.
 <DT><A HREF="./eu/ehri/extension/GroupResource.html#get(java.lang.String)"><B>get(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/GroupResource.html" title="class in eu.ehri.extension">GroupResource</A>
 <DD>&nbsp;
@@ -524,8 +525,8 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/VocabularyResourc
 <DT><A HREF="./eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List, eu.ehri.project.models.base.Accessor)"><B>getAccessors(List&lt;String&gt;, Accessor)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/extension/AbstractAccessibleEntityResource.html#getCacheControl(E)"><B>getCacheControl(E)</B></A> - 
-Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</A>
+<DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#getCacheControl(T)"><B>getCacheControl(T)</B></A> - 
+Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
 <DD>Get a cache control header based on the access restrictions
  set on the item.
 <DT><A HREF="./eu/ehri/extension/PermissionsResource.html#getCacheControl()"><B>getCacheControl()</B></A> - 
@@ -792,7 +793,7 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/DocumentaryUnitRe
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/GenericResource.html#list(java.util.List)"><B>list(List&lt;String&gt;)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</A>
-<DD>&nbsp;
+<DD>Fetch a list of items by their ID.
 <DT><A HREF="./eu/ehri/extension/GroupResource.html#list()"><B>list()</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/GroupResource.html" title="class in eu.ehri.extension">GroupResource</A>
 <DD>&nbsp;
@@ -826,10 +827,12 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/UserProfileResour
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/GenericResource.html#listByGid(java.util.List)"><B>listByGid(List&lt;Long&gt;)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</A>
-<DD>&nbsp;
+<DD>Fetch a list of items by their internal graph ID (gid), which is
+ provided in the bundle metadata section of the default response.
 <DT><A HREF="./eu/ehri/extension/GenericResource.html#listByGidFromJson(java.lang.String)"><B>listByGidFromJson(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</A>
-<DD>&nbsp;
+<DD>Fetch a list of items by their internal graph ID (gid), which is
+ provided in the bundle metadata section of the default response.
 <DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html#listChildren(java.lang.String, boolean)"><B>listChildren(String, boolean)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</A>
 <DD>&nbsp;
@@ -872,8 +875,7 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/UserProfileResour
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/GenericResource.html#listFromJson(java.lang.String)"><B>listFromJson(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</A>
-<DD>POST alternative to 'list', which allows passing a much larger
- list of ids to fetch via a JSON body.
+<DD>Fetch a list of items by their ID.
 <DT><A HREF="./eu/ehri/extension/VirtualUnitResource.html#listIncludedVirtualUnits(java.lang.String)"><B>listIncludedVirtualUnits(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/VirtualUnitResource.html" title="class in eu.ehri.extension">VirtualUnitResource</A>
 <DD>&nbsp;
@@ -1060,6 +1062,12 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AccessResource.ht
 <DT><A HREF="./eu/ehri/extension/SystemEventResource.html#SHOW"><B>SHOW</B></A> - 
 Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</A>
 <DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#single(T)"><B>single(T)</B></A> - 
+Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
+<DD>Return a default response from a single frame item.
+<DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#single(com.tinkerpop.blueprints.Vertex)"><B>single(Vertex)</B></A> - 
+Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
+<DD>Create a default response from a single vertex.
 <DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#SORT_PARAM"><B>SORT_PARAM</B></A> - 
 Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
 <DD>Query arguments.
@@ -1073,13 +1081,6 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResou
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
 <DD>Return a streaming response from an iterable, using the given
  entity converter.
-<DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#streamingMultimap(com.google.common.collect.ListMultimap)"><B>streamingMultimap(ListMultimap&lt;String, T&gt;)</B></A> - 
-Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
-<DD>Return a streaming response from an iterable.
-<DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#streamingMultimap(com.google.common.collect.ListMultimap, eu.ehri.project.persistence.Serializer)"><B>streamingMultimap(ListMultimap&lt;String, T&gt;, Serializer)</B></A> - 
-Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
-<DD>Return a streaming response from an iterable, using the given
- entity converter.
 <DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page)"><B>streamingPage(Query.Page&lt;T&gt;)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
 <DD>Stream a single page with total, limit, and offset info.
@@ -1088,10 +1089,6 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResou
 <DD>Stream a single page with total, limit, and offset info, using
  the given entity converter.
 <DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#streamingVertexList(java.lang.Iterable, eu.ehri.project.persistence.Serializer)"><B>streamingVertexList(Iterable&lt;Vertex&gt;, Serializer)</B></A> - 
-Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
-<DD>Return a streaming response from an iterable, using the given
- entity converter.
-<DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#streamingVertexMap(java.util.Map, eu.ehri.project.persistence.Serializer)"><B>streamingVertexMap(Map&lt;String, Vertex&gt;, Serializer)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
 <DD>Return a streaming response from an iterable, using the given
  entity converter.

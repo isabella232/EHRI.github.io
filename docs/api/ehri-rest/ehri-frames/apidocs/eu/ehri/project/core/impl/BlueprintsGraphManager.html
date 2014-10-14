@@ -75,9 +75,9 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_top"></A>
@@ -97,13 +97,19 @@ Class BlueprintsGraphManager&lt;T extends com.tinkerpop.blueprints.IndexableGrap
 <DL>
 <DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</A></DD>
 </DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../../eu/ehri/project/core/impl/Neo4jGraphManager.html" title="class in eu.ehri.project.core.impl">Neo4jGraphManager</A></DD>
+</DL>
 <HR>
 <DL>
-<DT><PRE>public final class <B>BlueprintsGraphManager&lt;T extends com.tinkerpop.blueprints.IndexableGraph&gt;</B><DT>extends <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</A></DL>
+<DT><PRE>public class <B>BlueprintsGraphManager&lt;T extends com.tinkerpop.blueprints.IndexableGraph&gt;</B><DT>extends <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</A></DL>
 </PRE>
 
 <P>
 Implementation of GraphManager that uses a single index to manage all nodes.
+
+ This class can be extended for when specific graph implementations (such
+ as Neo4j) can provide more efficient implementations of certain methods.
 <P>
 
 <P>
@@ -114,7 +120,40 @@ Implementation of GraphManager that uses a single index to manage all nodes.
 <HR>
 
 <P>
+<!-- =========== FIELD SUMMARY =========== -->
 
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;com.tinkerpop.frames.FramedGraph&lt;<A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="type parameter in BlueprintsGraphManager">T</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#graph">graph</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#INDEX_NAME">INDEX_NAME</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#METADATA_PREFIX">METADATA_PREFIX</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 
 <A NAME="constructor_summary"><!-- --></A>
@@ -358,6 +397,14 @@ T</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#rebuildIndex()">rebuildIndex</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rebuild the internal graph index.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#setProperty(com.tinkerpop.blueprints.Vertex, java.lang.String, java.lang.Object)">setProperty</A></B>(com.tinkerpop.blueprints.Vertex&nbsp;vertex,
             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</CODE>
@@ -399,6 +446,45 @@ T</CODE></FONT></TD>
 </TABLE>
 &nbsp;
 <P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="INDEX_NAME"><!-- --></A><H3>
+INDEX_NAME</H3>
+<PRE>
+protected static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>INDEX_NAME</B></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#eu.ehri.project.core.impl.BlueprintsGraphManager.INDEX_NAME">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="METADATA_PREFIX"><!-- --></A><H3>
+METADATA_PREFIX</H3>
+<PRE>
+protected static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>METADATA_PREFIX</B></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#eu.ehri.project.core.impl.BlueprintsGraphManager.METADATA_PREFIX">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="graph"><!-- --></A><H3>
+graph</H3>
+<PRE>
+protected final com.tinkerpop.frames.FramedGraph&lt;<A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="type parameter in BlueprintsGraphManager">T</A> extends com.tinkerpop.blueprints.IndexableGraph&gt; <B>graph</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
 
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 
@@ -901,6 +987,23 @@ public void <B>deleteVertex</B>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</PR
 <DT><B>Parameters:</B><DD><CODE>vertex</CODE> - The vertex to delete</DL>
 </DD>
 </DL>
+<HR>
+
+<A NAME="rebuildIndex()"><!-- --></A><H3>
+rebuildIndex</H3>
+<PRE>
+public void <B>rebuildIndex</B>()</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../eu/ehri/project/core/GraphManager.html#rebuildIndex()">GraphManager</A></CODE></B></DD>
+<DD>Rebuild the internal graph index.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../eu/ehri/project/core/GraphManager.html#rebuildIndex()">rebuildIndex</A></CODE> in interface <CODE><A HREF="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
 <!-- ========= END OF CLASS DATA ========= -->
 <HR>
 
@@ -953,9 +1056,9 @@ public void <B>deleteVertex</B>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</PR
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_bottom"></A>

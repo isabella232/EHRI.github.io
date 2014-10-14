@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Bbwo2HandlerTest xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../testapidocs/eu/ehri/project/importers/Bbwo2HandlerTest.html">View Javadoc</a></div><pre>
+
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> eu.ehri.project.importers;
+<a class="jxr_linenumber" name="2" href="#2">2</a>   
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.exceptions.InputParseError;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.XmlImportProperties;
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentDescription;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.PermissionScope;
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> java.io.IOException;
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> java.util.List;
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
+<a class="jxr_linenumber" name="15" href="#15">15</a>  
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_javadoccomment"> * @author Linda Reijnhoudt (https://github.com/lindareijnhoudt)</em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/importers/Bbwo2HandlerTest.html">Bbwo2HandlerTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="20" href="#20">20</a>  
+<a class="jxr_linenumber" name="21" href="#21">21</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String TEST_REPO = <span class="jxr_string">"r1"</span>;
+<a class="jxr_linenumber" name="22" href="#22">22</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String XMLFILE_NL = <span class="jxr_string">"bbwo2.xml"</span>;
+<a class="jxr_linenumber" name="23" href="#23">23</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String ARCHDESC = <span class="jxr_string">"1505"</span>;
+<a class="jxr_linenumber" name="24" href="#24">24</a>      DocumentaryUnit archdesc;
+<a class="jxr_linenumber" name="25" href="#25">25</a>      <strong class="jxr_keyword">int</strong> origCount = 0;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  
+<a class="jxr_linenumber" name="27" href="#27">27</a>      @Test
+<a class="jxr_linenumber" name="28" href="#28">28</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> bbwo2Test() <strong class="jxr_keyword">throws</strong> ItemNotFound, IOException, ValidationError, InputParseError {
+<a class="jxr_linenumber" name="29" href="#29">29</a>  
+<a class="jxr_linenumber" name="30" href="#30">30</a>          PermissionScope agent = manager.getFrame(TEST_REPO, PermissionScope.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="31" href="#31">31</a>          <strong class="jxr_keyword">final</strong> String logMessage = <span class="jxr_string">"Importing an example BBWO2 DC"</span>;
+<a class="jxr_linenumber" name="32" href="#32">32</a>          <em class="jxr_comment">// Before...</em>
+<a class="jxr_linenumber" name="33" href="#33">33</a>          List&lt;VertexProxy&gt; graphState1 = getGraphState(graph);
+<a class="jxr_linenumber" name="34" href="#34">34</a>  
+<a class="jxr_linenumber" name="35" href="#35">35</a>          origCount = getNodeCount(graph);
+<a class="jxr_linenumber" name="36" href="#36">36</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(XMLFILE_NL);
+<a class="jxr_linenumber" name="37" href="#37">37</a>          ImportLog log = <strong class="jxr_keyword">new</strong> SaxImportManager(graph, agent, validUser, EadImporter.<strong class="jxr_keyword">class</strong>, DcEuropeanaHandler.<strong class="jxr_keyword">class</strong>, <strong class="jxr_keyword">new</strong> XmlImportProperties(<span class="jxr_string">"dceuropeana.properties"</span>)).importFile(ios, logMessage);
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <em class="jxr_comment">//        printGraph(graph);</em>
+<a class="jxr_linenumber" name="39" href="#39">39</a>          <em class="jxr_comment">// After...</em>
+<a class="jxr_linenumber" name="40" href="#40">40</a>          List&lt;VertexProxy&gt; graphState2 = getGraphState(graph);
+<a class="jxr_linenumber" name="41" href="#41">41</a>          GraphDiff diff = diffGraph(graphState1, graphState2);
+<a class="jxr_linenumber" name="42" href="#42">42</a>          diff.printDebug(System.out);
+<a class="jxr_linenumber" name="43" href="#43">43</a>  
+<a class="jxr_linenumber" name="44" href="#44">44</a>          <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="45" href="#45">45</a>  <em class="jxr_javadoccomment">         * How many new nodes will have been created? We should have 1 more DocumentaryUnits (record) 1 more</em>
+<a class="jxr_linenumber" name="46" href="#46">46</a>  <em class="jxr_javadoccomment">         * DocumentDescription 1 more DatePeriod 3 more subject 1 more Place 2 more import Event links (1 for each Unit,</em>
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <em class="jxr_javadoccomment">         * 1 for the User) 1 more import Event --- = 10</em>
+<a class="jxr_linenumber" name="48" href="#48">48</a>  <em class="jxr_javadoccomment">         */</em>
+<a class="jxr_linenumber" name="49" href="#49">49</a>          <strong class="jxr_keyword">int</strong> newCount = origCount + 10;
+<a class="jxr_linenumber" name="50" href="#50">50</a>          assertEquals(newCount, getNodeCount(graph));
+<a class="jxr_linenumber" name="51" href="#51">51</a>  
+<a class="jxr_linenumber" name="52" href="#52">52</a>          DocumentaryUnit archdesc = graph.frame(getVertexByIdentifier(graph, ARCHDESC), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="53" href="#53">53</a>          <strong class="jxr_keyword">for</strong> (DocumentDescription d : archdesc.getDocumentDescriptions()) {
+<a class="jxr_linenumber" name="54" href="#54">54</a>              assertEquals(<span class="jxr_string">"More refugee children arrive from Germany - in time ..."</span>, d.getName());
+<a class="jxr_linenumber" name="55" href="#55">55</a>          }
+<a class="jxr_linenumber" name="56" href="#56">56</a>      }
+<a class="jxr_linenumber" name="57" href="#57">57</a>  }
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+
