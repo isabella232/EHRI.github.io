@@ -142,7 +142,7 @@
 <a class="jxr_linenumber" name="132" href="#132">132</a>             assertEquals(<span class="jxr_string">"Collections from Oddział Instytutu Pamięci Narodowej we Wrocławiu"</span>, d.getName());
 <a class="jxr_linenumber" name="133" href="#133">133</a>             <strong class="jxr_keyword">boolean</strong> hasProvenance=false;
 <a class="jxr_linenumber" name="134" href="#134">134</a>             <strong class="jxr_keyword">for</strong>(String property : d.asVertex().getPropertyKeys()){
-<a class="jxr_linenumber" name="135" href="#135">135</a>                 <strong class="jxr_keyword">if</strong>(property.equals(<span class="jxr_string">"provenance"</span>)){
+<a class="jxr_linenumber" name="135" href="#135">135</a>                 <strong class="jxr_keyword">if</strong>(property.equals(<span class="jxr_string">"processInfo"</span>)){
 <a class="jxr_linenumber" name="136" href="#136">136</a>                     hasProvenance=<strong class="jxr_keyword">true</strong>;
 <a class="jxr_linenumber" name="137" href="#137">137</a>                     System.out.println(d.asVertex().getProperty(property));
 <a class="jxr_linenumber" name="138" href="#138">138</a>                     assertTrue(d.asVertex().getProperty(property).toString().startsWith(<span class="jxr_string">"This selection has been "</span>));
@@ -228,7 +228,7 @@
 <a class="jxr_linenumber" name="218" href="#218">218</a>             assertEquals(<span class="jxr_string">"Collections from Biuro Udostępniania i Archiwizacji Dokumentów w Warszawie"</span>, d.getName());
 <a class="jxr_linenumber" name="219" href="#219">219</a>             <strong class="jxr_keyword">boolean</strong> hasProvenance=false;
 <a class="jxr_linenumber" name="220" href="#220">220</a>             <strong class="jxr_keyword">for</strong>(String property : d.asVertex().getPropertyKeys()){
-<a class="jxr_linenumber" name="221" href="#221">221</a>                 <strong class="jxr_keyword">if</strong>(property.equals(<span class="jxr_string">"provenance"</span>)){
+<a class="jxr_linenumber" name="221" href="#221">221</a>                 <strong class="jxr_keyword">if</strong>(property.equals(<span class="jxr_string">"processInfo"</span>)){
 <a class="jxr_linenumber" name="222" href="#222">222</a>                     hasProvenance=<strong class="jxr_keyword">true</strong>;
 <a class="jxr_linenumber" name="223" href="#223">223</a>                     System.out.println(d.asVertex().getProperty(property));
 <a class="jxr_linenumber" name="224" href="#224">224</a>                     assertTrue(d.asVertex().getProperty(property).toString().startsWith(<span class="jxr_string">"This selection has been "</span>));

@@ -90,7 +90,8 @@ Packages that use <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.importers"><B>eu.ehri.project.importers</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Handlers and Importers and supporting classes to import files into
+ the database.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.models"><B>eu.ehri.project.models</B></A></TD>
@@ -98,7 +99,9 @@ Packages that use <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views"><B>eu.ehri.project.views</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that provide data access &quot;views&quot; on the
+ graph that incorporate the permission and access-control
+ systems.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -137,15 +140,6 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>IcaAtomEadImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/IcaAtomEadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit, eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;frame,
-                               <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;descBundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;void</CODE></FONT></TD>
 <TD><CODE><B>EadImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/EadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit, eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit,
                                <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;descBundle)</CODE>
 
@@ -157,6 +151,15 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
                         Leonhard (* 11.5.1886)</persname>
 
  it works in unison with the extractRelations() method.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B>IcaAtomEadImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/IcaAtomEadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit, eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;frame,
+                               <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;descBundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -213,7 +216,8 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TD><CODE><B>DocumentaryUnit.</B><B><A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html#getAllChildren()">getAllChildren</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch <b>all</b> ancestor items, including children of
+ children to all depths.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -229,7 +233,8 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TD><CODE><B>Repository.</B><B><A HREF="../../../../../eu/ehri/project/models/Repository.html#getAllCollections()">getAllCollections</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch items at <b>all</b> levels (including children of top-level
+ items and their children, recursively.)</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -277,7 +282,8 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TD><CODE><B>Repository.</B><B><A HREF="../../../../../eu/ehri/project/models/Repository.html#getCollections()">getCollections</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch all top-level documentary unit items within this
+ repository.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -285,7 +291,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TD><CODE><B>VirtualUnit.</B><B><A HREF="../../../../../eu/ehri/project/models/VirtualUnit.html#getIncludedUnits()">getIncludedUnits</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch documentary unit items included in this virtual unit.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -301,7 +307,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TD><CODE><B>DocumentaryUnit.</B><B><A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html#addChild(eu.ehri.project.models.DocumentaryUnit)">addChild</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;child)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a child document to this one.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -314,15 +320,16 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>Repository.</B><B><A HREF="../../../../../eu/ehri/project/models/Repository.html#addCollection(eu.ehri.project.models.DocumentaryUnit)">addCollection</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;collection)</CODE>
+<TD><CODE><B>Repository.</B><B><A HREF="../../../../../eu/ehri/project/models/Repository.html#addCollection(eu.ehri.project.models.DocumentaryUnit)">addCollection</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a documentary unit as a top-level item in this
+ repository.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>Repository.Impl.</B><B><A HREF="../../../../../eu/ehri/project/models/Repository.Impl.html#addCollection(eu.ehri.project.models.DocumentaryUnit)">addCollection</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;collection)</CODE>
+<TD><CODE><B>Repository.Impl.</B><B><A HREF="../../../../../eu/ehri/project/models/Repository.Impl.html#addCollection(eu.ehri.project.models.DocumentaryUnit)">addCollection</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -333,7 +340,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TD><CODE><B>VirtualUnit.</B><B><A HREF="../../../../../eu/ehri/project/models/VirtualUnit.html#addIncludedUnit(eu.ehri.project.models.DocumentaryUnit)">addIncludedUnit</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a documentary unit to be included in this virtual unit.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -349,7 +356,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" tit
 <TD><CODE><B>VirtualUnit.</B><B><A HREF="../../../../../eu/ehri/project/models/VirtualUnit.html#removeIncludedUnit(eu.ehri.project.models.DocumentaryUnit)">removeIncludedUnit</A></B>(<A HREF="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a documentary unit item from this virtual unit.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">

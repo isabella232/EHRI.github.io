@@ -67,7 +67,7 @@
 <a class="jxr_linenumber" name="57" href="#57">57</a>          String skosConceptId = <span class="jxr_string">"675"</span>;
 <a class="jxr_linenumber" name="58" href="#58">58</a>          Query&lt;Concept&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;Concept&gt;(graph, Concept.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="59" href="#59">59</a>          <em class="jxr_comment">// Query for document identifier.</em>
-<a class="jxr_linenumber" name="60" href="#60">60</a>          List&lt;Concept&gt; list = toList(query.setCount(1).page(
+<a class="jxr_linenumber" name="60" href="#60">60</a>          List&lt;Concept&gt; list = toList(query.setLimit(1).page(
 <a class="jxr_linenumber" name="61" href="#61">61</a>                  Ontology.IDENTIFIER_KEY, skosConceptId, validUser));
 <a class="jxr_linenumber" name="62" href="#62">62</a>  
 <a class="jxr_linenumber" name="63" href="#63">63</a>          assertEquals(1, toList(list.get(0).getBroaderConcepts()).size());
@@ -106,7 +106,7 @@
 <a class="jxr_linenumber" name="96" href="#96">96</a>          String skosConceptId = <span class="jxr_string">"675"</span>;
 <a class="jxr_linenumber" name="97" href="#97">97</a>          Query&lt;Concept&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;Concept&gt;(graph, Concept.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="98" href="#98">98</a>          <em class="jxr_comment">// Query for document identifier.</em>
-<a class="jxr_linenumber" name="99" href="#99">99</a>          List&lt;Concept&gt; list = toList(query.setCount(1).page(
+<a class="jxr_linenumber" name="99" href="#99">99</a>          List&lt;Concept&gt; list = toList(query.setLimit(1).page(
 <a class="jxr_linenumber" name="100" href="#100">100</a>                 Ontology.IDENTIFIER_KEY, skosConceptId, validUser));
 <a class="jxr_linenumber" name="101" href="#101">101</a> 
 <a class="jxr_linenumber" name="102" href="#102">102</a>         assertEquals(1, toList(list.get(0).getBroaderConcepts()).size());

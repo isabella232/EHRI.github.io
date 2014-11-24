@@ -102,6 +102,15 @@ Interface Version</H2>
 </PRE>
 
 <P>
+Frame class representing a serialized version of
+ some other node.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (http://github.com/mikesname)</DD>
+</DL>
 <HR>
 
 <P>
@@ -137,15 +146,8 @@ Interface Version</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntity()">getEntity</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityClass()">getEntityClass</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loops up through the chain of versions until the latest and fetches
+ the item to which the events refer.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -153,7 +155,7 @@ Interface Version</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityData()">getEntityData</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serialized snapshot of the item's data.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch a serialized snapshot of the item's data in JSON format.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -161,7 +163,15 @@ Interface Version</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityId()">getEntityId</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the ID of the entity that this version pertains to.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityType()">getEntityType</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the class of the entity that this version pertains to.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -169,15 +179,7 @@ Interface Version</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getTriggeringEvent()">getTriggeringEvent</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The event that triggered this version.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/Version.html#setTriggeringEvent(eu.ehri.project.models.events.SystemEvent)">setTriggeringEvent</A></B>(<A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&nbsp;event)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the event that triggered this version.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.AccessibleEntity"><!-- --></A>
@@ -247,16 +249,19 @@ Interface Version</H2>
 </TR>
 </TABLE>
 
-<A NAME="getEntityClass()"><!-- --></A><H3>
-getEntityClass</H3>
+<A NAME="getEntityType()"><!-- --></A><H3>
+getEntityType</H3>
 <PRE>
-<A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</A> <B>getEntityClass</B>()</PRE>
+<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getEntityType</B>()</PRE>
 <DL>
+<DD>Fetch the class of the entity that this version pertains to.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an entity class enum value</DL>
 </DD>
 </DL>
 <HR>
@@ -266,11 +271,14 @@ getEntityId</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getEntityId</B>()</PRE>
 <DL>
+<DD>Fetch the ID of the entity that this version pertains to.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an ID string</DL>
 </DD>
 </DL>
 <HR>
@@ -280,13 +288,14 @@ getEntityData</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getEntityData</B>()</PRE>
 <DL>
-<DD>Serialized snapshot of the item's data.
+<DD>Fetch a serialized snapshot of the item's data in JSON format.
 <P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>JSON data representing a sub-graph</DL>
 </DD>
 </DL>
 <HR>
@@ -296,27 +305,14 @@ getTriggeringEvent</H3>
 <PRE>
 <A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A> <B>getTriggeringEvent</B>()</PRE>
 <DL>
-<DD>The event that triggered this version.
+<DD>Fetch the event that triggered this version.
 <P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
 
-<A NAME="setTriggeringEvent(eu.ehri.project.models.events.SystemEvent)"><!-- --></A><H3>
-setTriggeringEvent</H3>
-<PRE>
-void <B>setTriggeringEvent</B>(<A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&nbsp;event)</PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-</DL>
+<DT><B>Returns:</B><DD>a system event instance</DL>
 </DD>
 </DL>
 <HR>
@@ -326,11 +322,15 @@ getEntity</H3>
 <PRE>
 <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A> <B>getEntity</B>()</PRE>
 <DL>
+<DD>Loops up through the chain of versions until the latest and fetches
+ the item to which the events refer. If it has been
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>the entity to which this version refers.</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

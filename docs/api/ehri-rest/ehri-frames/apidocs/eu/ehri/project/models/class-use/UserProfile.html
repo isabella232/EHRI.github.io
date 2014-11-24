@@ -98,7 +98,9 @@ Packages that use <A HREF="../../../../../eu/ehri/project/models/UserProfile.htm
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views"><B>eu.ehri.project.views</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that provide data access &quot;views&quot; on the
+ graph that incorporate the permission and access-control
+ systems.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -155,7 +157,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#coGroupMembers()">coGroupMembers</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Users who share groups with this user.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch users who share groups with this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -171,7 +173,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#getBlocked()">getBlocked</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch users on this user's block list.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -179,7 +181,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#getFollowers()">getFollowers</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get users who follow this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -187,7 +189,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#getFollowing()">getFollowing</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get users who this user follows.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -200,15 +202,15 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#addBlocked(eu.ehri.project.models.UserProfile)">addBlocked</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#addBlocked(eu.ehri.project.models.UserProfile)">addBlocked</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a user to this user's block list.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>UserProfile.Impl.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.Impl.html#addBlocked(eu.ehri.project.models.UserProfile)">addBlocked</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B>UserProfile.Impl.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.Impl.html#addBlocked(eu.ehri.project.models.UserProfile)">addBlocked</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -219,7 +221,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#addFollowing(eu.ehri.project.models.UserProfile)">addFollowing</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a user the those this user follows.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -232,15 +234,15 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#isBlocking(eu.ehri.project.models.UserProfile)">isBlocking</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#isBlocking(eu.ehri.project.models.UserProfile)">isBlocking</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether this user is blocking another user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B>UserProfile.Impl.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.Impl.html#isBlocking(eu.ehri.project.models.UserProfile)">isBlocking</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B>UserProfile.Impl.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.Impl.html#isBlocking(eu.ehri.project.models.UserProfile)">isBlocking</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -251,7 +253,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#isFollower(eu.ehri.project.models.UserProfile)">isFollower</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;otherUser)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether the other user is following this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -267,7 +269,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#isFollowing(eu.ehri.project.models.UserProfile)">isFollowing</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;otherUser)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether this user is following another user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -280,15 +282,15 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#removeBlocked(eu.ehri.project.models.UserProfile)">removeBlocked</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#removeBlocked(eu.ehri.project.models.UserProfile)">removeBlocked</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a user from this user's block list.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>UserProfile.Impl.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.Impl.html#removeBlocked(eu.ehri.project.models.UserProfile)">removeBlocked</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B>UserProfile.Impl.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.Impl.html#removeBlocked(eu.ehri.project.models.UserProfile)">removeBlocked</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -299,7 +301,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <TD><CODE><B>UserProfile.</B><B><A HREF="../../../../../eu/ehri/project/models/UserProfile.html#removeFollowing(eu.ehri.project.models.UserProfile)">removeFollowing</A></B>(<A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a user from those this user follows.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -410,6 +412,16 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List items "interesting" for a user, optionally filtered by the `ShowType`
  to items they watch or users they follow.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B>EventViews.</B><B><A HREF="../../../../../eu/ehri/project/views/EventViews.html#listByUser(eu.ehri.project.views.Query, eu.ehri.project.models.UserProfile, eu.ehri.project.models.base.Accessor)">listByUser</A></B>(<A HREF="../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;&nbsp;query,
+           <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;byUser,
+           <A HREF="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;user)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">

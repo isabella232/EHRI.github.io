@@ -102,6 +102,14 @@ Interface UserProfile</H2>
 </PRE>
 
 <P>
+A frame class representing a user within the database.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (http://github.com/mikesname)</DD>
+</DL>
 <HR>
 
 <P>
@@ -175,10 +183,10 @@ Interface UserProfile</H2>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#addBlocked(eu.ehri.project.models.UserProfile)">addBlocked</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#addBlocked(eu.ehri.project.models.UserProfile)">addBlocked</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a user to this user's block list.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -186,7 +194,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#addFollowing(eu.ehri.project.models.UserProfile)">addFollowing</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a user the those this user follows.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -194,7 +202,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#addWatching(eu.ehri.project.models.base.Watchable)">addWatching</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add an item to this user's watch list.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -202,7 +210,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#coGroupMembers()">coGroupMembers</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Users who share groups with this user.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch users who share groups with this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -210,7 +218,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getAnnotations()">getAnnotations</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch annotations belonging to this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -218,7 +226,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getBlocked()">getBlocked</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch users on this user's block list.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -226,7 +234,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getFollowers()">getFollowers</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get users who follow this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -234,7 +242,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getFollowing()">getFollowing</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get users who this user follows.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -242,7 +250,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getGroups()">getGroups</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the groups to which this user belongs.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -250,7 +258,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getLinks()">getLinks</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch links belonging to this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -258,7 +266,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getVirtualUnits()">getVirtualUnits</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch virtual units created by this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -266,15 +274,15 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getWatching()">getWatching</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch items this user is watching.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isBlocking(eu.ehri.project.models.UserProfile)">isBlocking</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isBlocking(eu.ehri.project.models.UserProfile)">isBlocking</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether this user is blocking another user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -282,7 +290,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isFollower(eu.ehri.project.models.UserProfile)">isFollower</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;otherUser)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether the other user is following this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -290,7 +298,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isFollowing(eu.ehri.project.models.UserProfile)">isFollowing</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;otherUser)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether this user is following another user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -298,15 +306,15 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isWatching(eu.ehri.project.models.base.Watchable)">isWatching</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether this user is watching an item.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#removeBlocked(eu.ehri.project.models.UserProfile)">removeBlocked</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#removeBlocked(eu.ehri.project.models.UserProfile)">removeBlocked</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a user from this user's block list.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -314,7 +322,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#removeFollowing(eu.ehri.project.models.UserProfile)">removeFollowing</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a user from those this user follows.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -322,7 +330,7 @@ Interface UserProfile</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.html#removeWatching(eu.ehri.project.models.base.Watchable)">removeWatching</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove an item from this user's watch list.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.Accessor"><!-- --></A>
@@ -464,11 +472,14 @@ getGroups</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/Group.html" title="interface in eu.ehri.project.models">Group</A>&gt; <B>getGroups</B>()</PRE>
 <DL>
+<DD>Get the groups to which this user belongs.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of group frames</DL>
 </DD>
 </DL>
 <HR>
@@ -478,11 +489,14 @@ getFollowers</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&gt; <B>getFollowers</B>()</PRE>
 <DL>
+<DD>Get users who follow this user.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of user frames</DL>
 </DD>
 </DL>
 <HR>
@@ -492,11 +506,14 @@ getFollowing</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&gt; <B>getFollowing</B>()</PRE>
 <DL>
+<DD>Get users who this user follows.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of user frames</DL>
 </DD>
 </DL>
 <HR>
@@ -506,11 +523,13 @@ addFollowing</H3>
 <PRE>
 void <B>addFollowing</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</PRE>
 <DL>
+<DD>Add a user the those this user follows.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>user</CODE> - a user frame</DL>
 </DD>
 </DL>
 <HR>
@@ -520,11 +539,13 @@ removeFollowing</H3>
 <PRE>
 void <B>removeFollowing</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</PRE>
 <DL>
+<DD>Remove a user from those this user follows.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>user</CODE> - a user frame</DL>
 </DD>
 </DL>
 <HR>
@@ -534,11 +555,14 @@ isFollowing</H3>
 <PRE>
 boolean <B>isFollowing</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;otherUser)</PRE>
 <DL>
+<DD>Ascertain whether this user is following another user.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>otherUser</CODE> - a user frame
+<DT><B>Returns:</B><DD>whether this user is following the other</DL>
 </DD>
 </DL>
 <HR>
@@ -548,11 +572,14 @@ isFollower</H3>
 <PRE>
 boolean <B>isFollower</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;otherUser)</PRE>
 <DL>
+<DD>Ascertain whether the other user is following this user.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>otherUser</CODE> - a user frame
+<DT><B>Returns:</B><DD>whether the other user is following this user</DL>
 </DD>
 </DL>
 <HR>
@@ -562,11 +589,14 @@ getWatching</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&gt; <B>getWatching</B>()</PRE>
 <DL>
+<DD>Fetch items this user is watching.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of generic item frames</DL>
 </DD>
 </DL>
 <HR>
@@ -576,11 +606,14 @@ getLinks</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</A>&gt; <B>getLinks</B>()</PRE>
 <DL>
+<DD>Fetch links belonging to this user.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of link frames</DL>
 </DD>
 </DL>
 <HR>
@@ -590,11 +623,14 @@ getAnnotations</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</A>&gt; <B>getAnnotations</B>()</PRE>
 <DL>
+<DD>Fetch annotations belonging to this user.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/AnnotatableEntity.html#getAnnotations()">getAnnotations</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base">AnnotatableEntity</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/Annotator.html#getAnnotations()">getAnnotations</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of annotation frames</DL>
 </DD>
 </DL>
 <HR>
@@ -604,11 +640,14 @@ getVirtualUnits</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/VirtualUnit.html" title="interface in eu.ehri.project.models">VirtualUnit</A>&gt; <B>getVirtualUnits</B>()</PRE>
 <DL>
+<DD>Fetch virtual units created by this user.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of virtual unit frames</DL>
 </DD>
 </DL>
 <HR>
@@ -618,11 +657,13 @@ addWatching</H3>
 <PRE>
 void <B>addWatching</B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</PRE>
 <DL>
+<DD>Add an item to this user's watch list.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - a generic item frame</DL>
 </DD>
 </DL>
 <HR>
@@ -632,11 +673,13 @@ removeWatching</H3>
 <PRE>
 void <B>removeWatching</B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</PRE>
 <DL>
+<DD>Remove an item from this user's watch list.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - a generic item frame</DL>
 </DD>
 </DL>
 <HR>
@@ -644,13 +687,15 @@ void <B>removeWatching</B>(<A HREF="../../../../eu/ehri/project/models/base/Watc
 <A NAME="addBlocked(eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
 addBlocked</H3>
 <PRE>
-void <B>addBlocked</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</PRE>
+void <B>addBlocked</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</PRE>
 <DL>
+<DD>Add a user to this user's block list.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>user</CODE> - a user frame</DL>
 </DD>
 </DL>
 <HR>
@@ -658,13 +703,15 @@ void <B>addBlocked</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.h
 <A NAME="removeBlocked(eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
 removeBlocked</H3>
 <PRE>
-void <B>removeBlocked</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</PRE>
+void <B>removeBlocked</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</PRE>
 <DL>
+<DD>Remove a user from this user's block list.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>user</CODE> - a user frame</DL>
 </DD>
 </DL>
 <HR>
@@ -674,11 +721,14 @@ getBlocked</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&gt; <B>getBlocked</B>()</PRE>
 <DL>
+<DD>Fetch users on this user's block list.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of user frames</DL>
 </DD>
 </DL>
 <HR>
@@ -686,13 +736,16 @@ getBlocked</H3>
 <A NAME="isBlocking(eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
 isBlocking</H3>
 <PRE>
-boolean <B>isBlocking</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</PRE>
+boolean <B>isBlocking</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</PRE>
 <DL>
+<DD>Ascertain whether this user is blocking another user.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>user</CODE> - a user frame
+<DT><B>Returns:</B><DD>whther the other user is on this user's block list</DL>
 </DD>
 </DL>
 <HR>
@@ -702,13 +755,14 @@ coGroupMembers</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&gt; <B>coGroupMembers</B>()</PRE>
 <DL>
-<DD>Users who share groups with this user.
+<DD>Fetch users who share groups with this user.
 <P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of user frames</DL>
 </DD>
 </DL>
 <HR>
@@ -718,11 +772,14 @@ isWatching</H3>
 <PRE>
 boolean <B>isWatching</B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</PRE>
 <DL>
+<DD>Ascertain whether this user is watching an item.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - a generic item frame
+<DT><B>Returns:</B><DD>whether the item is in this user's watch list</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

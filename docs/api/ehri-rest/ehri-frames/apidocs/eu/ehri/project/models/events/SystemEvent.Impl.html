@@ -163,7 +163,7 @@ Implementation of complex methods.
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.Impl.html#getActioner()">getActioner</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the actioner who triggered this event.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -171,7 +171,7 @@ Implementation of complex methods.
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.Impl.html#getFirstSubject()">getFirstSubject</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the first subject of this event.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -179,7 +179,7 @@ Implementation of complex methods.
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.Impl.html#getSubjects()">getSubjects</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the subject items to whom this event pertains.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -298,11 +298,15 @@ getSubjects</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; <B>getSubjects</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getSubjects()">SystemEvent</A></CODE></B></DD>
+<DD>Fetch the subject items to whom this event pertains.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getSubjects()">getSubjects</A></CODE> in interface <CODE><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of frame items</DL>
 </DD>
 </DL>
 <HR>
@@ -312,11 +316,16 @@ getFirstSubject</H3>
 <PRE>
 public <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A> <B>getFirstSubject</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getFirstSubject()">SystemEvent</A></CODE></B></DD>
+<DD>Fetch the first subject of this event. This is a shortcut
+ method to avoid having to fetch many items.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getFirstSubject()">getFirstSubject</A></CODE> in interface <CODE><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an item frame</DL>
 </DD>
 </DL>
 <HR>
@@ -326,11 +335,15 @@ getActioner</H3>
 <PRE>
 public <A HREF="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A> <B>getActioner</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getActioner()">SystemEvent</A></CODE></B></DD>
+<DD>Fetch the actioner who triggered this event.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getActioner()">getActioner</A></CODE> in interface <CODE><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>A user profile instance</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

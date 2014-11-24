@@ -83,7 +83,7 @@
     <div id="main" class="column first last span-20">
       <h1>SystemEventResource</h1>
 
-      <p>Provides a RESTful interface for the Event class. Note: Event instances
+      <p>Provides a web service interface for the Event model. Note: Event instances
 are created by the system, so we do not have create/update/delete methods
 here.</p>
       <p>The following resources are applicable:</p>
@@ -93,6 +93,9 @@ here.</p>
         </li>
         <li>
         <a href="#path__systemEvent_-id-_subjects.html">/systemEvent/{id}/subjects</a>
+        </li>
+        <li>
+        <a href="#path__systemEvent_byUser_-userId-.html">/systemEvent/byUser/{userId}</a>
         </li>
         <li>
         <a href="#path__systemEvent_for_-id-.html">/systemEvent/for/{id}</a>
@@ -181,51 +184,11 @@ here.</p>
         </tr>
       </table>
       <p>A list of events</p>
-        <a name="path__systemEvent_for_-id-.html"></a>
-      <h1>/systemEvent/for/{id}</h1>
-      <p class="note">Mount Point: <a href="../systemEvent/for/{id}">/systemEvent/for/{id}</a></p>
+        <a name="path__systemEvent_byUser_-userId-.html"></a>
+      <h1>/systemEvent/byUser/{userId}</h1>
+      <p class="note">Mount Point: <a href="../systemEvent/byUser/{userId}">/systemEvent/byUser/{userId}</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
-      <p>
-            Lookup and page the history for a given item.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            The event id
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of events</p>
-        <a name="path__systemEvent_forUser_-userId-.html"></a>
-      <h1>/systemEvent/forUser/{userId}</h1>
-      <p class="note">Mount Point: <a href="../systemEvent/forUser/{userId}">/systemEvent/forUser/{userId}</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            List actions.
-          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -290,6 +253,129 @@ here.</p>
           <td>query</td>
           <td></td>
         </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__systemEvent_for_-id-.html"></a>
+      <h1>/systemEvent/for/{id}</h1>
+      <p class="note">Mount Point: <a href="../systemEvent/for/{id}">/systemEvent/for/{id}</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Lookup and page the history for a given item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            The event id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of events</p>
+        <a name="path__systemEvent_forUser_-userId-.html"></a>
+      <h1>/systemEvent/forUser/{userId}</h1>
+      <p class="note">Mount Point: <a href="../systemEvent/forUser/{userId}">/systemEvent/forUser/{userId}</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            List actions that are relevant to a given user based on
+the other users that they follow and the items they watch.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>userId</td>
+          <td>
+            The user's ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>et</td>
+          <td>
+            Filter events by type
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>
+            Filter events based on the item type of their subjects
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>item</td>
+          <td>
+            Filter events pertaining to specific item IDs
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>user</td>
+          <td>
+            Filter events based on the user IDs they involve
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>from</td>
+          <td>
+            Exclude events prior to this data
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>to</td>
+          <td>
+            Exclude events after this data
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
         <tr>
           <td>show</td>
           <td>
@@ -317,7 +403,7 @@ here.</p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            List actions.
+            List global events. Standard list parameters for paging apply.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -330,7 +416,7 @@ here.</p>
         <tr>
           <td>et</td>
           <td>
-            (no documentation provided)
+            Filter events by type
           </td>
           <td>query</td>
           <td></td>
@@ -338,7 +424,7 @@ here.</p>
         <tr>
           <td>type</td>
           <td>
-            (no documentation provided)
+            Filter events based on the item type of their subjects
           </td>
           <td>query</td>
           <td></td>
@@ -346,7 +432,7 @@ here.</p>
         <tr>
           <td>item</td>
           <td>
-            (no documentation provided)
+            Filter events pertaining to specific item IDs
           </td>
           <td>query</td>
           <td></td>
@@ -354,7 +440,7 @@ here.</p>
         <tr>
           <td>user</td>
           <td>
-            (no documentation provided)
+            Filter events based on the user IDs they involve
           </td>
           <td>query</td>
           <td></td>
@@ -362,7 +448,7 @@ here.</p>
         <tr>
           <td>from</td>
           <td>
-            (no documentation provided)
+            Exclude events prior to this data
           </td>
           <td>query</td>
           <td></td>
@@ -370,7 +456,7 @@ here.</p>
         <tr>
           <td>to</td>
           <td>
-            (no documentation provided)
+            Exclude events after this data
           </td>
           <td>query</td>
           <td></td>

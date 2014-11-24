@@ -88,10 +88,16 @@ and general graph-maintenance functionality.</p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
+        <a href="#path__admin__exportGraphSON.html">/admin/_exportGraphSON</a>
+        </li>
+        <li>
         <a href="#path__admin__findReplacePropertyName.html">/admin/_findReplacePropertyName</a>
         </li>
         <li>
         <a href="#path__admin__findReplacePropertyValue.html">/admin/_findReplacePropertyValue</a>
+        </li>
+        <li>
+        <a href="#path__admin__findReplacePropertyValueRE.html">/admin/_findReplacePropertyValueRE</a>
         </li>
         <li>
         <a href="#path__admin__rebuildChildCache.html">/admin/_rebuildChildCache</a>
@@ -100,6 +106,29 @@ and general graph-maintenance functionality.</p>
         <a href="#path__admin_createDefaultUserProfile.html">/admin/createDefaultUserProfile</a>
         </li>
       </ul>
+        <a name="path__admin__exportGraphSON.html"></a>
+      <h1>/admin/_exportGraphSON</h1>
+      <p class="note">Mount Point: <a href="../admin/_exportGraphSON">/admin/_exportGraphSON</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Export the DB as a stream of JSON in
+<a href="https://github.com/tinkerpop/blueprints/wiki/GraphSON-Reader-and-Writer-Library">GraphSON</a> format.
+<p/>
+The mode used is EXTENDED.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
         <a name="path__admin__findReplacePropertyName.html"></a>
       <h1>/admin/_findReplacePropertyName</h1>
       <p class="note">Mount Point: <a href="../admin/_findReplacePropertyName">/admin/_findReplacePropertyName</a></p>
@@ -107,6 +136,8 @@ and general graph-maintenance functionality.</p>
       <h2>POST</h2>
       <p>
             Change a property key name across an entire entity class.
+
+<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
           </p>
       <h3>Parameters</h3>
       <table>
@@ -162,6 +193,8 @@ and general graph-maintenance functionality.</p>
             Find an replace a property value across an entire entity class, e.g.
 if a DocumentaryUnit has a property with name &quot;foo&quot; and value &quot;bar&quot;,
 change the value to &quot;baz&quot; on all items.
+<p/>
+<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
           </p>
       <h3>Parameters</h3>
       <table>
@@ -199,6 +232,73 @@ change the value to &quot;baz&quot; on all items.
           <td>to</td>
           <td>
             The new value
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>How many items have been changed</p>
+        <a name="path__admin__findReplacePropertyValueRE.html"></a>
+      <h1>/admin/_findReplacePropertyValueRE</h1>
+      <p class="note">Mount Point: <a href="../admin/_findReplacePropertyValueRE">/admin/_findReplacePropertyValueRE</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Find an replace a regex-specified substring of a property value
+across an entire entity class e.g.
+if an Address has a property with name &quot;url&quot; and value &quot;www.foo.com/bar&quot;,
+providing a regex value <tt>^www</tt> and replacement <tt>http://www</tt> will
+give the property a value of &quot;http://www.foo.com/bar&quot;.
+<p/>
+<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>
+            The type of entity
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>
+            The name of the property to find and replace
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>pattern</td>
+          <td>
+            A regex specifying a substring of the property value
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>replace</td>
+          <td>
+            A replacement substring
           </td>
           <td>query</td>
           <td></td>

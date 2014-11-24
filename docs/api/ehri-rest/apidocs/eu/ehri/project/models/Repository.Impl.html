@@ -178,10 +178,11 @@ Implementation of complex methods.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.Impl.html#addCollection(eu.ehri.project.models.DocumentaryUnit)">addCollection</A></B>(<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;collection)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.Impl.html#addCollection(eu.ehri.project.models.DocumentaryUnit)">addCollection</A></B>(<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a documentary unit as a top-level item in this
+ repository.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -189,7 +190,8 @@ Implementation of complex methods.
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.Impl.html#getAllCollections()">getAllCollections</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch items at <b>all</b> levels (including children of top-level
+ items and their children, recursively.)</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -197,7 +199,8 @@ Implementation of complex methods.
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.Impl.html#getChildCount()">getChildCount</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count the number of top-level documentary unit items within
+ this repository.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -205,7 +208,7 @@ Implementation of complex methods.
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.Impl.html#setCountry(eu.ehri.project.models.Country)">setCountry</A></B>(<A HREF="../../../../eu/ehri/project/models/Country.html" title="interface in eu.ehri.project.models">Country</A>&nbsp;country)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The the country in which this repository resides.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -213,7 +216,8 @@ Implementation of complex methods.
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.Impl.html#updateChildCountCache()">updateChildCountCache</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update/reset the cache for the number of documentary unit
+ items within this repository.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -377,6 +381,10 @@ updateChildCountCache</H3>
 <PRE>
 public void <B>updateChildCountCache</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/Repository.html#updateChildCountCache()">Repository</A></CODE></B></DD>
+<DD>Update/reset the cache for the number of documentary unit
+ items within this repository.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/Repository.html#updateChildCountCache()">updateChildCountCache</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A></CODE></DL>
 </DD>
@@ -391,11 +399,16 @@ getChildCount</H3>
 <PRE>
 public long <B>getChildCount</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/Repository.html#getChildCount()">Repository</A></CODE></B></DD>
+<DD>Count the number of top-level documentary unit items within
+ this repository.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html" title="interface in eu.ehri.project.models.base">ItemHolder</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/Repository.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>the number of top-level items</DL>
 </DD>
 </DL>
 <HR>
@@ -403,13 +416,17 @@ public long <B>getChildCount</B>()</PRE>
 <A NAME="addCollection(eu.ehri.project.models.DocumentaryUnit)"><!-- --></A><H3>
 addCollection</H3>
 <PRE>
-public void <B>addCollection</B>(<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;collection)</PRE>
+public void <B>addCollection</B>(<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/Repository.html#addCollection(eu.ehri.project.models.DocumentaryUnit)">Repository</A></CODE></B></DD>
+<DD>Add a documentary unit as a top-level item in this
+ repository.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/Repository.html#addCollection(eu.ehri.project.models.DocumentaryUnit)">addCollection</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>unit</CODE> - a documentary unit item</DL>
 </DD>
 </DL>
 <HR>
@@ -419,11 +436,14 @@ setCountry</H3>
 <PRE>
 public void <B>setCountry</B>(<A HREF="../../../../eu/ehri/project/models/Country.html" title="interface in eu.ehri.project.models">Country</A>&nbsp;country)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/Repository.html#setCountry(eu.ehri.project.models.Country)">Repository</A></CODE></B></DD>
+<DD>The the country in which this repository resides.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/Repository.html#setCountry(eu.ehri.project.models.Country)">setCountry</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>country</CODE> - a country frame</DL>
 </DD>
 </DL>
 <HR>
@@ -433,11 +453,16 @@ getAllCollections</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&gt; <B>getAllCollections</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/Repository.html#getAllCollections()">Repository</A></CODE></B></DD>
+<DD>Fetch items at <b>all</b> levels (including children of top-level
+ items and their children, recursively.)
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/Repository.html#getAllCollections()">getAllCollections</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of documentary unit items</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

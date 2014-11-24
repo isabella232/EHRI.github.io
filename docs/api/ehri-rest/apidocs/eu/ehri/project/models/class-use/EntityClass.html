@@ -90,7 +90,8 @@ Packages that use <A HREF="../../../../../eu/ehri/project/models/EntityClass.htm
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.core"><B>eu.ehri.project.core</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes pertaining to the low-level
+ management of vertices and edges.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.core.impl"><B>eu.ehri.project.core.impl</B></A></TD>
@@ -98,7 +99,8 @@ Packages that use <A HREF="../../../../../eu/ehri/project/models/EntityClass.htm
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.importers"><B>eu.ehri.project.importers</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Handlers and Importers and supporting classes to import files into
+ the database.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.importers.properties"><B>eu.ehri.project.importers.properties</B></A></TD>
@@ -109,20 +111,19 @@ Packages that use <A HREF="../../../../../eu/ehri/project/models/EntityClass.htm
 <TD>&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><A HREF="#eu.ehri.project.models.events"><B>eu.ehri.project.models.events</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.models.utils"><B>eu.ehri.project.models.utils</B></A></TD>
 <TD>&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.persistence"><B>eu.ehri.project.persistence</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes dealing with persistence of
+ relational item data in sub-tree format.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views"><B>eu.ehri.project.views</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that provide data access &quot;views&quot; on the
+ graph that incorporate the permission and access-control
+ systems.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -550,31 +551,6 @@ the order they are declared.</TD>
 </TABLE>
 &nbsp;
 <P>
-<A NAME="eu.ehri.project.models.events"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-Uses of <A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</A> in <A HREF="../../../../../eu/ehri/project/models/events/package-summary.html">eu.ehri.project.models.events</A></FONT></TH>
-</TR>
-</TABLE>
-&nbsp;
-<P>
-
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left" COLSPAN="2">Methods in <A HREF="../../../../../eu/ehri/project/models/events/package-summary.html">eu.ehri.project.models.events</A> that return <A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</A></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</A></CODE></FONT></TD>
-<TD><CODE><B>Version.</B><B><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityClass()">getEntityClass</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-</TABLE>
-&nbsp;
-<P>
 <A NAME="eu.ehri.project.models.utils"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
@@ -714,6 +690,30 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B>Utilities.</B><B><A HREF="../../../../../eu/ehri/project/views/Utilities.html#findReplacePropertyValue(eu.ehri.project.models.EntityClass, java.lang.String, java.lang.String, java.lang.String)">findReplacePropertyValue</A></B>(<A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</A>&nbsp;entityClass,
+                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;existingValue,
+                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replace an existing property value with another value across an
+ entire class of items.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B>Utilities.</B><B><A HREF="../../../../../eu/ehri/project/views/Utilities.html#findReplacePropertyValueRE(eu.ehri.project.models.EntityClass, java.lang.String, java.util.regex.Pattern, java.lang.String)">findReplacePropertyValueRE</A></B>(<A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</A>&nbsp;entityClass,
+                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html?is-external=true" title="class or interface in java.util.regex">Pattern</A>&nbsp;pattern,
+                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;replacement)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replace a substring of a property value across an entire
+ item class.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../../eu/ehri/project/models/ContentType.html" title="interface in eu.ehri.project.models">ContentType</A></CODE></FONT></TD>
 <TD><CODE><B>ViewHelper.</B><B><A HREF="../../../../../eu/ehri/project/views/ViewHelper.html#getContentTypeNode(eu.ehri.project.models.EntityClass)">getContentTypeNode</A></B>(<A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</A>&nbsp;entityClass)</CODE>
 
@@ -729,6 +729,16 @@ Uses of <A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a Page instance containing a total of total items, and an iterable
  for the given page/count.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B>Utilities.</B><B><A HREF="../../../../../eu/ehri/project/views/Utilities.html#replacePropertyName(eu.ehri.project.models.EntityClass, java.lang.String, java.lang.String)">replacePropertyName</A></B>(<A HREF="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</A>&nbsp;entityClass,
+                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyName,
+                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newPropertyName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rename a property key across an entire class of items.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">

@@ -151,22 +151,6 @@ Base class for web service resources.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#COUNT_PARAM">COUNT_PARAM</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;org.neo4j.graphdb.GraphDatabaseService</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#database">database</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;int</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</A></B></CODE>
 
@@ -211,7 +195,7 @@ Base class for web service resources.
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serialization config parameters.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -233,6 +217,14 @@ Base class for web service resources.
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected static&nbsp;org.codehaus.jackson.map.ObjectMapper</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -264,7 +256,7 @@ Base class for web service resources.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PAGE_PARAM">PAGE_PARAM</A></B></CODE>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -323,7 +315,7 @@ Base class for web service resources.
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AbstractRestResource(org.neo4j.graphdb.GraphDatabaseService)">AbstractRestResource</A></B>(org.neo4j.graphdb.GraphDatabaseService&nbsp;database)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructer.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -341,7 +333,7 @@ Base class for web service resources.
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#checkMediaType()">checkMediaType</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the media type of the incoming request.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -392,7 +384,7 @@ javax.ws.rs.core.CacheControl</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getGraph()">getGraph</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the graph associated with the resource.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -401,7 +393,8 @@ javax.ws.rs.core.CacheControl</CODE></FONT></TD>
                  int&nbsp;defaultValue)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get an integer value for a given query parameter, falling back
+ on a default.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -434,7 +427,7 @@ javax.ws.rs.core.CacheControl</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getQuery(java.lang.Class)">getQuery</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;T&gt;&nbsp;cls)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a query object configured according to incoming parameters.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -463,11 +456,11 @@ javax.ws.rs.core.CacheControl</CODE></FONT></TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</A></CODE></FONT></TD>
+<CODE>protected &nbsp;<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getSerializer()">getSerializer</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a serializer according to passed-in serialization config.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -475,7 +468,7 @@ javax.ws.rs.core.CacheControl</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getStringListQueryParam(java.lang.String)">getStringListQueryParam</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a list of values for a given query parameter key.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -695,23 +688,23 @@ public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/
 </DL>
 <HR>
 
-<A NAME="COUNT_PARAM"><!-- --></A><H3>
-COUNT_PARAM</H3>
+<A NAME="LIMIT_PARAM"><!-- --></A><H3>
+LIMIT_PARAM</H3>
 <PRE>
-public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>COUNT_PARAM</B></PRE>
+public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>LIMIT_PARAM</B></PRE>
 <DL>
 <DL>
-<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#eu.ehri.extension.AbstractRestResource.COUNT_PARAM">Constant Field Values</A></DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#eu.ehri.extension.AbstractRestResource.LIMIT_PARAM">Constant Field Values</A></DL>
 </DL>
 <HR>
 
-<A NAME="PAGE_PARAM"><!-- --></A><H3>
-PAGE_PARAM</H3>
+<A NAME="OFFSET_PARAM"><!-- --></A><H3>
+OFFSET_PARAM</H3>
 <PRE>
-public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>PAGE_PARAM</B></PRE>
+public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>OFFSET_PARAM</B></PRE>
 <DL>
 <DL>
-<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#eu.ehri.extension.AbstractRestResource.PAGE_PARAM">Constant Field Values</A></DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#eu.ehri.extension.AbstractRestResource.OFFSET_PARAM">Constant Field Values</A></DL>
 </DL>
 <HR>
 
@@ -760,6 +753,8 @@ INCLUDE_PROPS_PARAM</H3>
 <PRE>
 public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>INCLUDE_PROPS_PARAM</B></PRE>
 <DL>
+<DD>Serialization config parameters.
+<P>
 <DL>
 <DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#eu.ehri.extension.AbstractRestResource.INCLUDE_PROPS_PARAM">Constant Field Values</A></DL>
 </DL>
@@ -830,16 +825,6 @@ uriInfo</H3>
 </DL>
 <HR>
 
-<A NAME="database"><!-- --></A><H3>
-database</H3>
-<PRE>
-protected final org.neo4j.graphdb.GraphDatabaseService <B>database</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
 <A NAME="graph"><!-- --></A><H3>
 graph</H3>
 <PRE>
@@ -875,6 +860,10 @@ AbstractRestResource</H3>
 public <B>AbstractRestResource</B>(<FONT SIZE="-1">@Context</FONT>
                             org.neo4j.graphdb.GraphDatabaseService&nbsp;database)</PRE>
 <DL>
+<DD>Constructer.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>database</CODE> - A Neo4j graph database</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -892,25 +881,14 @@ checkMediaType</H3>
 <PRE>
 protected javax.ws.rs.core.MediaType <B>checkMediaType</B>()</PRE>
 <DL>
+<DD>Fetch the media type of the incoming request.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
 
-<A NAME="getSerializer()"><!-- --></A><H3>
-getSerializer</H3>
-<PRE>
-public <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</A> <B>getSerializer</B>()</PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-</DL>
+<DT><B>Returns:</B><DD>a media type variant.</DL>
 </DD>
 </DL>
 <HR>
@@ -920,11 +898,35 @@ getGraph</H3>
 <PRE>
 public com.tinkerpop.frames.FramedGraph&lt;<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/utils/TxCheckedNeo4jGraph.html?is-external=true" title="class or interface in eu.ehri.project.utils">TxCheckedNeo4jGraph</A>&gt; <B>getGraph</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../eu/ehri/extension/base/TxCheckedResource.html#getGraph()">TxCheckedResource</A></CODE></B></DD>
+<DD>Fetch the graph associated with the resource.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../eu/ehri/extension/base/TxCheckedResource.html#getGraph()">getGraph</A></CODE> in interface <CODE><A HREF="../../../eu/ehri/extension/base/TxCheckedResource.html" title="interface in eu.ehri.extension.base">TxCheckedResource</A></CODE></DL>
 </DD>
 <DD><DL>
+
+<DT><B>Returns:</B><DD>a transactional graph database.</DL>
+</DD>
 </DL>
+<HR>
+
+<A NAME="getSerializer()"><!-- --></A><H3>
+getSerializer</H3>
+<PRE>
+protected <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</A> <B>getSerializer</B>()</PRE>
+<DL>
+<DD>Get a serializer according to passed-in serialization config.
+ <p/>
+ Currently the only parameter is <code>_ip=[propertyName]</code> which
+ ensures a given property is always included in the output.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a vertex serializer</DL>
 </DD>
 </DL>
 <HR>
@@ -934,11 +936,14 @@ getStringListQueryParam</H3>
 <PRE>
 protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getStringListQueryParam</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
 <DL>
+<DD>Get a list of values for a given query parameter key.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - the parameter name
+<DT><B>Returns:</B><DD>a list of string values</DL>
 </DD>
 </DL>
 <HR>
@@ -949,11 +954,15 @@ getIntQueryParam</H3>
 protected int <B>getIntQueryParam</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
                                int&nbsp;defaultValue)</PRE>
 <DL>
+<DD>Get an integer value for a given query parameter, falling back
+ on a default.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - the parameter name<DD><CODE>defaultValue</CODE> - the default value
+<DT><B>Returns:</B><DD>an integer value</DL>
 </DD>
 </DL>
 <HR>
@@ -963,11 +972,14 @@ getQuery</H3>
 <PRE>
 protected &lt;T extends <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/AccessibleEntity.html?is-external=true" title="class or interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/views/Query.html?is-external=true" title="class or interface in eu.ehri.project.views">Query</A>&lt;T&gt; <B>getQuery</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;T&gt;&nbsp;cls)</PRE>
 <DL>
+<DD>Get a query object configured according to incoming parameters.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the generic type of the query object<DT><B>Parameters:</B><DD><CODE>cls</CODE> - the class of the query object
+<DT><B>Returns:</B><DD>a query object</DL>
 </DD>
 </DL>
 <HR>
@@ -1099,7 +1111,7 @@ protected &lt;T extends <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/
 <DD><DL>
 <DT><B>Type Parameters:</B><DD><CODE>T</CODE> - The item's generic type<DT><B>Parameters:</B><DD><CODE>item</CODE> - The item
 <DT><B>Returns:</B><DD>A serialized representation, with location and cache control
-         headers.</DL>
+ headers.</DL>
 </DD>
 </DL>
 <HR>
@@ -1201,15 +1213,13 @@ protected javax.ws.rs.core.Response <B>streamingVertexList</B>(<A HREF="http://d
 <DL>
 <DD>Return a streaming response from an iterable, using the given
  entity converter.
- <p/>
- FIXME: I shouldn't be here, or the other method should. Redesign API.
 <P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>list</CODE> - A list of vertices
-<DT><B>Returns:</B><DD>A streaming response</DL>
+<DT><B>Parameters:</B><DD><CODE>list</CODE> - an iterable of vertices<DD><CODE>serializer</CODE> - a serializer object
+<DT><B>Returns:</B><DD>a streaming response</DL>
 </DD>
 </DL>
 <HR>

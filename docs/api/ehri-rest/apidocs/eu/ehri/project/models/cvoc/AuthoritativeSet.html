@@ -105,6 +105,12 @@ Interface AuthoritativeSet</H2>
 </PRE>
 
 <P>
+A frame class representing a item that holds other
+ <i>authoritative</i> items, such as concepts and
+ historical agents.
+<P>
+
+<P>
 <DL>
 <DT><B>Author:</B></DT>
   <DD>Linda Reijnhoudt (https://github.com/lindareijnhoudt)</DD>
@@ -162,7 +168,7 @@ Interface AuthoritativeSet</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/cvoc/AuthoritativeSet.html#addItem(eu.ehri.project.models.cvoc.AuthoritativeItem)">addItem</A></B>(<A HREF="../../../../../eu/ehri/project/models/cvoc/AuthoritativeItem.html" title="interface in eu.ehri.project.models.cvoc">AuthoritativeItem</A>&nbsp;item)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add an authoritative item to this set.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -170,7 +176,7 @@ Interface AuthoritativeSet</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/cvoc/AuthoritativeSet.html#getAuthoritativeItems()">getAuthoritativeItems</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch all items within this set.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -178,7 +184,8 @@ Interface AuthoritativeSet</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/cvoc/AuthoritativeSet.html#updateChildCountCache()">updateChildCountCache</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update the cache for the number of items within
+ this set.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.AccessibleEntity"><!-- --></A>
@@ -271,11 +278,14 @@ getAuthoritativeItems</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../eu/ehri/project/models/cvoc/AuthoritativeItem.html" title="interface in eu.ehri.project.models.cvoc">AuthoritativeItem</A>&gt; <B>getAuthoritativeItems</B>()</PRE>
 <DL>
+<DD>Fetch all items within this set.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of authoritative items</DL>
 </DD>
 </DL>
 <HR>
@@ -285,11 +295,13 @@ addItem</H3>
 <PRE>
 void <B>addItem</B>(<A HREF="../../../../../eu/ehri/project/models/cvoc/AuthoritativeItem.html" title="interface in eu.ehri.project.models.cvoc">AuthoritativeItem</A>&nbsp;item)</PRE>
 <DL>
+<DD>Add an authoritative item to this set.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - an authoritative item frame</DL>
 </DD>
 </DL>
 <HR>
@@ -299,6 +311,9 @@ updateChildCountCache</H3>
 <PRE>
 void <B>updateChildCountCache</B>()</PRE>
 <DL>
+<DD>Update the cache for the number of items within
+ this set.
+<P>
 <DD><DL>
 </DL>
 </DD>

@@ -174,10 +174,10 @@ Class UserProfile.Impl</H2>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#addBlocked(eu.ehri.project.models.UserProfile)">addBlocked</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#addBlocked(eu.ehri.project.models.UserProfile)">addBlocked</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a user to this user's block list.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -185,7 +185,7 @@ Class UserProfile.Impl</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#addFollowing(eu.ehri.project.models.UserProfile)">addFollowing</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a user the those this user follows.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -193,7 +193,7 @@ Class UserProfile.Impl</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#addWatching(eu.ehri.project.models.base.Watchable)">addWatching</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add an item to this user's watch list.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -201,15 +201,15 @@ Class UserProfile.Impl</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#coGroupMembers()">coGroupMembers</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Users who share groups with this user.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch users who share groups with this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#isBlocking(eu.ehri.project.models.UserProfile)">isBlocking</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#isBlocking(eu.ehri.project.models.UserProfile)">isBlocking</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether this user is blocking another user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -217,7 +217,7 @@ Class UserProfile.Impl</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#isFollower(eu.ehri.project.models.UserProfile)">isFollower</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;otherUser)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether the other user is following this user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -225,7 +225,7 @@ Class UserProfile.Impl</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#isFollowing(eu.ehri.project.models.UserProfile)">isFollowing</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;otherUser)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether this user is following another user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -233,15 +233,15 @@ Class UserProfile.Impl</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#isWatching(eu.ehri.project.models.base.Watchable)">isWatching</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ascertain whether this user is watching an item.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#removeBlocked(eu.ehri.project.models.UserProfile)">removeBlocked</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#removeBlocked(eu.ehri.project.models.UserProfile)">removeBlocked</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a user from this user's block list.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -249,7 +249,7 @@ Class UserProfile.Impl</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#removeFollowing(eu.ehri.project.models.UserProfile)">removeFollowing</A></B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a user from those this user follows.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -257,7 +257,7 @@ Class UserProfile.Impl</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#removeWatching(eu.ehri.project.models.base.Watchable)">removeWatching</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove an item from this user's watch list.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -394,11 +394,14 @@ addFollowing</H3>
 <PRE>
 public void <B>addFollowing</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#addFollowing(eu.ehri.project.models.UserProfile)">UserProfile</A></CODE></B></DD>
+<DD>Add a user the those this user follows.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#addFollowing(eu.ehri.project.models.UserProfile)">addFollowing</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>user</CODE> - a user frame</DL>
 </DD>
 </DL>
 <HR>
@@ -408,11 +411,14 @@ removeFollowing</H3>
 <PRE>
 public void <B>removeFollowing</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#removeFollowing(eu.ehri.project.models.UserProfile)">UserProfile</A></CODE></B></DD>
+<DD>Remove a user from those this user follows.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#removeFollowing(eu.ehri.project.models.UserProfile)">removeFollowing</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>user</CODE> - a user frame</DL>
 </DD>
 </DL>
 <HR>
@@ -422,11 +428,15 @@ isFollowing</H3>
 <PRE>
 public boolean <B>isFollowing</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;otherUser)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isFollowing(eu.ehri.project.models.UserProfile)">UserProfile</A></CODE></B></DD>
+<DD>Ascertain whether this user is following another user.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isFollowing(eu.ehri.project.models.UserProfile)">isFollowing</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>otherUser</CODE> - a user frame
+<DT><B>Returns:</B><DD>whether this user is following the other</DL>
 </DD>
 </DL>
 <HR>
@@ -436,11 +446,15 @@ isFollower</H3>
 <PRE>
 public boolean <B>isFollower</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;otherUser)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isFollower(eu.ehri.project.models.UserProfile)">UserProfile</A></CODE></B></DD>
+<DD>Ascertain whether the other user is following this user.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isFollower(eu.ehri.project.models.UserProfile)">isFollower</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>otherUser</CODE> - a user frame
+<DT><B>Returns:</B><DD>whether the other user is following this user</DL>
 </DD>
 </DL>
 <HR>
@@ -450,11 +464,14 @@ addWatching</H3>
 <PRE>
 public void <B>addWatching</B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#addWatching(eu.ehri.project.models.base.Watchable)">UserProfile</A></CODE></B></DD>
+<DD>Add an item to this user's watch list.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#addWatching(eu.ehri.project.models.base.Watchable)">addWatching</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - a generic item frame</DL>
 </DD>
 </DL>
 <HR>
@@ -464,11 +481,14 @@ removeWatching</H3>
 <PRE>
 public void <B>removeWatching</B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#removeWatching(eu.ehri.project.models.base.Watchable)">UserProfile</A></CODE></B></DD>
+<DD>Remove an item from this user's watch list.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#removeWatching(eu.ehri.project.models.base.Watchable)">removeWatching</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - a generic item frame</DL>
 </DD>
 </DL>
 <HR>
@@ -478,11 +498,15 @@ isWatching</H3>
 <PRE>
 public boolean <B>isWatching</B>(<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A>&nbsp;item)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isWatching(eu.ehri.project.models.base.Watchable)">UserProfile</A></CODE></B></DD>
+<DD>Ascertain whether this user is watching an item.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isWatching(eu.ehri.project.models.base.Watchable)">isWatching</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - a generic item frame
+<DT><B>Returns:</B><DD>whether the item is in this user's watch list</DL>
 </DD>
 </DL>
 <HR>
@@ -493,13 +517,14 @@ coGroupMembers</H3>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&gt; <B>coGroupMembers</B>()</PRE>
 <DL>
 <DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#coGroupMembers()">UserProfile</A></CODE></B></DD>
-<DD>Users who share groups with this user.
+<DD>Fetch users who share groups with this user.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#coGroupMembers()">coGroupMembers</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of user frames</DL>
 </DD>
 </DL>
 <HR>
@@ -507,13 +532,16 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html
 <A NAME="addBlocked(eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
 addBlocked</H3>
 <PRE>
-public void <B>addBlocked</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</PRE>
+public void <B>addBlocked</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#addBlocked(eu.ehri.project.models.UserProfile)">UserProfile</A></CODE></B></DD>
+<DD>Add a user to this user's block list.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#addBlocked(eu.ehri.project.models.UserProfile)">addBlocked</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>user</CODE> - a user frame</DL>
 </DD>
 </DL>
 <HR>
@@ -521,13 +549,16 @@ public void <B>addBlocked</B>(<A HREF="../../../../eu/ehri/project/models/UserPr
 <A NAME="removeBlocked(eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
 removeBlocked</H3>
 <PRE>
-public void <B>removeBlocked</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</PRE>
+public void <B>removeBlocked</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#removeBlocked(eu.ehri.project.models.UserProfile)">UserProfile</A></CODE></B></DD>
+<DD>Remove a user from this user's block list.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#removeBlocked(eu.ehri.project.models.UserProfile)">removeBlocked</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>user</CODE> - a user frame</DL>
 </DD>
 </DL>
 <HR>
@@ -535,13 +566,17 @@ public void <B>removeBlocked</B>(<A HREF="../../../../eu/ehri/project/models/Use
 <A NAME="isBlocking(eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
 isBlocking</H3>
 <PRE>
-public boolean <B>isBlocking</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;userProfile)</PRE>
+public boolean <B>isBlocking</B>(<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isBlocking(eu.ehri.project.models.UserProfile)">UserProfile</A></CODE></B></DD>
+<DD>Ascertain whether this user is blocking another user.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#isBlocking(eu.ehri.project.models.UserProfile)">isBlocking</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>user</CODE> - a user frame
+<DT><B>Returns:</B><DD>whther the other user is on this user's block list</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

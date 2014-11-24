@@ -166,7 +166,7 @@ Dump the complete graph as graphSON file, or import such a dump
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/GraphSON.html#getHelp()">getHelp</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get information about the functionality of the command.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -174,7 +174,8 @@ Dump the complete graph as graphSON file, or import such a dump
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/GraphSON.html#getUsage()">getUsage</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get information about the usage of the command, including
+ required and/or optional parameters.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -267,11 +268,15 @@ getHelp</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getHelp</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getHelp()">Command</A></CODE></B></DD>
+<DD>Get information about the functionality of the command.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getHelp()">getHelp</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands">Command</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#getHelp()">getHelp</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>a help text</DL>
 </DD>
 </DL>
 <HR>
@@ -281,11 +286,16 @@ getUsage</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getUsage</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getUsage()">Command</A></CODE></B></DD>
+<DD>Get information about the usage of the command, including
+ required and/or optional parameters.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getUsage()">getUsage</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands">Command</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#getUsage()">getUsage</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>a usage text</DL>
 </DD>
 </DL>
 <HR>
@@ -318,6 +328,7 @@ public int <B>execWithOptions</B>(com.tinkerpop.frames.FramedGraph&lt;? extends 
 </DD>
 <DD><DL>
 
+<DT><B>Returns:</B><DD>a status code (0 = success)
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
 </DD>

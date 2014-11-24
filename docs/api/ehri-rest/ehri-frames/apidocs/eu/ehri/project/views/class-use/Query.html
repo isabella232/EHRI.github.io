@@ -90,7 +90,9 @@ Packages that use <A HREF="../../../../../eu/ehri/project/views/Query.html" titl
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views"><B>eu.ehri.project.views</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that provide data access &quot;views&quot; on the
+ graph that incorporate the permission and access-control
+ systems.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -210,7 +212,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/views/Query.html" title="class i
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B>Query.</B><B><A HREF="../../../../../eu/ehri/project/views/Query.html#setCount(int)">setCount</A></B>(int&nbsp;count)</CODE>
+<TD><CODE><B>Query.</B><B><A HREF="../../../../../eu/ehri/project/views/Query.html#setLimit(int)">setLimit</A></B>(int&nbsp;limit)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the total applied to this query.</TD>
@@ -218,7 +220,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/views/Query.html" title="class i
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B>Query.</B><B><A HREF="../../../../../eu/ehri/project/views/Query.html#setPage(int)">setPage</A></B>(int&nbsp;page)</CODE>
+<TD><CODE><B>Query.</B><B><A HREF="../../../../../eu/ehri/project/views/Query.html#setOffset(int)">setOffset</A></B>(int&nbsp;offset)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the page applied to this query.</TD>
@@ -276,6 +278,16 @@ Uses of <A HREF="../../../../../eu/ehri/project/views/Query.html" title="class i
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List items "interesting" for a user, optionally filtered by the `ShowType`
  to items they watch or users they follow.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B>EventViews.</B><B><A HREF="../../../../../eu/ehri/project/views/EventViews.html#listByUser(eu.ehri.project.views.Query, eu.ehri.project.models.UserProfile, eu.ehri.project.models.base.Accessor)">listByUser</A></B>(<A HREF="../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;&nbsp;query,
+           <A HREF="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;byUser,
+           <A HREF="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;user)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;

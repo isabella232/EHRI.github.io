@@ -102,6 +102,15 @@ Interface SystemEvent</H2>
 </PRE>
 
 <P>
+Frame class representing an event that happened in the
+ graph.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (http://github.com/mikesname)</DD>
+</DL>
 <HR>
 
 <P>
@@ -137,7 +146,7 @@ Interface SystemEvent</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getActioner()">getActioner</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the actioner who triggered this event.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -154,7 +163,7 @@ Interface SystemEvent</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getEventType()">getEventType</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the event type of this event.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -162,7 +171,7 @@ Interface SystemEvent</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getFirstSubject()">getFirstSubject</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the first subject of this event.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -170,7 +179,7 @@ Interface SystemEvent</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getLogMessage()">getLogMessage</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the log message associated with this event.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -178,7 +187,8 @@ Interface SystemEvent</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getPriorVersions()">getPriorVersions</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If new versions have been created, fetch the prior versions
+ of the subjects that were affected by this event.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -186,7 +196,7 @@ Interface SystemEvent</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getSubjects()">getSubjects</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the subject items to whom this event pertains.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -194,7 +204,7 @@ Interface SystemEvent</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getTimestamp()">getTimestamp</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the time stamp of this event.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -202,7 +212,7 @@ Interface SystemEvent</H2>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#setEventScope(eu.ehri.project.models.base.Frame)">setEventScope</A></B>(<A HREF="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the scope of this event.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.AccessibleEntity"><!-- --></A>
@@ -277,11 +287,14 @@ getTimestamp</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getTimestamp</B>()</PRE>
 <DL>
+<DD>Fetch the time stamp of this event.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>a UTF timestamp string</DL>
 </DD>
 </DL>
 <HR>
@@ -291,11 +304,14 @@ getEventType</H3>
 <PRE>
 <A HREF="../../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</A> <B>getEventType</B>()</PRE>
 <DL>
+<DD>Fetch the event type of this event.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an <A HREF="../../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions"><CODE>EventTypes</CODE></A> value</DL>
 </DD>
 </DL>
 <HR>
@@ -305,11 +321,14 @@ getLogMessage</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getLogMessage</B>()</PRE>
 <DL>
+<DD>Fetch the log message associated with this event.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>A string</DL>
 </DD>
 </DL>
 <HR>
@@ -319,11 +338,14 @@ getActioner</H3>
 <PRE>
 <A HREF="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A> <B>getActioner</B>()</PRE>
 <DL>
+<DD>Fetch the actioner who triggered this event.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>A user profile instance</DL>
 </DD>
 </DL>
 <HR>
@@ -333,11 +355,14 @@ getSubjects</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; <B>getSubjects</B>()</PRE>
 <DL>
+<DD>Fetch the subject items to whom this event pertains.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of frame items</DL>
 </DD>
 </DL>
 <HR>
@@ -347,11 +372,15 @@ getPriorVersions</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../eu/ehri/project/models/events/Version.html" title="interface in eu.ehri.project.models.events">Version</A>&gt; <B>getPriorVersions</B>()</PRE>
 <DL>
+<DD>If new versions have been created, fetch the prior versions
+ of the subjects that were affected by this event.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of version nodes</DL>
 </DD>
 </DL>
 <HR>
@@ -361,11 +390,15 @@ getFirstSubject</H3>
 <PRE>
 <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A> <B>getFirstSubject</B>()</PRE>
 <DL>
+<DD>Fetch the first subject of this event. This is a shortcut
+ method to avoid having to fetch many items.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an item frame</DL>
 </DD>
 </DL>
 <HR>
@@ -383,7 +416,7 @@ getEventScope</H3>
 </DD>
 <DD><DL>
 
-<DT><B>Returns:</B><DD>The event scope</DL>
+<DT><B>Returns:</B><DD>the event scope</DL>
 </DD>
 </DL>
 <HR>
@@ -393,11 +426,13 @@ setEventScope</H3>
 <PRE>
 void <B>setEventScope</B>(<A HREF="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame)</PRE>
 <DL>
+<DD>Set the scope of this event.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>frame</CODE> - a scope item</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

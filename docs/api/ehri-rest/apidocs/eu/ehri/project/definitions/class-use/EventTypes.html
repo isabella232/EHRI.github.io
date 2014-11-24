@@ -90,7 +90,9 @@ Packages that use <A HREF="../../../../../eu/ehri/project/definitions/EventTypes
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.extension"><B>eu.ehri.extension</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Jersey resource classes for providing
+ web service access to the graph, via
+ the <A HREF="../../../../../eu/ehri/project/views/package-summary.html"><CODE>eu.ehri.project.views</CODE></A> layer.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.definitions"><B>eu.ehri.project.definitions</B></A></TD>
@@ -102,11 +104,14 @@ Packages that use <A HREF="../../../../../eu/ehri/project/definitions/EventTypes
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.persistence"><B>eu.ehri.project.persistence</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes dealing with persistence of
+ relational item data in sub-tree format.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views"><B>eu.ehri.project.views</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that provide data access &quot;views&quot; on the
+ graph that incorporate the permission and access-control
+ systems.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -136,7 +141,21 @@ Uses of <A HREF="../../../../../eu/ehri/project/definitions/EventTypes.html" tit
            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;to)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List actions.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List global events.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>SystemEventResource.</B><B><A HREF="../../../../../eu/ehri/extension/SystemEventResource.html#listEventsByUser(java.lang.String, java.util.List, java.util.List, java.util.List, java.util.List, java.lang.String, java.lang.String)">listEventsByUser</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;userId,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</A>&gt;&nbsp;eventTypes,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;itemTypes,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;itemIds,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;users,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;from,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;to)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -151,7 +170,8 @@ Uses of <A HREF="../../../../../eu/ehri/project/definitions/EventTypes.html" tit
                   <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../../eu/ehri/project/views/EventViews.ShowType.html" title="enum in eu.ehri.project.views">EventViews.ShowType</A>&gt;&nbsp;show)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List actions.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List actions that are relevant to a given user based on
+ the other users that they follow and the items they watch.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -210,7 +230,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/definitions/EventTypes.html" tit
 <TD><CODE><B>SystemEvent.</B><B><A HREF="../../../../../eu/ehri/project/models/events/SystemEvent.html#getEventType()">getEventType</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the event type of this event.</TD>
 </TR>
 </TABLE>
 &nbsp;

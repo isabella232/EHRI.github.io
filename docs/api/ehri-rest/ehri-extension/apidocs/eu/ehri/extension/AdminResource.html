@@ -147,7 +147,7 @@ Provides additional Admin methods needed by client systems
 <TH ALIGN="left"><B>Fields inherited from class eu.ehri.extension.<A HREF="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#COUNT_PARAM">COUNT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#database">database</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PAGE_PARAM">PAGE_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</A></CODE></TD>
+<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -187,6 +187,15 @@ Provides additional Admin methods needed by client systems
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AdminResource.html#getGraphSON()">getGraphSON</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Export the DB as a stream of JSON in
+ <a href="https://github.com/tinkerpop/blueprints/wiki/GraphSON-Reader-and-Writer-Library">GraphSON</a> format.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AdminResource.html#rebuildChildCache()">rebuildChildCache</A></B>()</CODE>
 
 <BR>
@@ -195,7 +204,7 @@ Provides additional Admin methods needed by client systems
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</A></CODE></FONT></TD>
+<CODE>&nbsp;long</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AdminResource.html#renamePropertyName(java.lang.String, java.lang.String, java.lang.String)">renamePropertyName</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;oldKeyName,
                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newKeyName)</CODE>
@@ -205,7 +214,7 @@ Provides additional Admin methods needed by client systems
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</A></CODE></FONT></TD>
+<CODE>&nbsp;long</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AdminResource.html#renamePropertyValue(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">renamePropertyValue</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
                     <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propName,
                     <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;oldValue,
@@ -213,6 +222,18 @@ Provides additional Admin methods needed by client systems
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find an replace a property value across an entire entity class, e.g.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AdminResource.html#renamePropertyValueRE(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">renamePropertyValueRE</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
+                      <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propName,
+                      <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;regex,
+                      <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;replace)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find an replace a regex-specified substring of a property value
+ across an entire entity class e.g.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.extension.AbstractRestResource"><!-- --></A>
@@ -310,10 +331,29 @@ public javax.ws.rs.core.Response <B>rebuildChildCache</B>()
 </DL>
 <HR>
 
+<A NAME="getGraphSON()"><!-- --></A><H3>
+getGraphSON</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>getGraphSON</B>()
+                                      throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
+<DL>
+<DD>Export the DB as a stream of JSON in
+ <a href="https://github.com/tinkerpop/blueprints/wiki/GraphSON-Reader-and-Writer-Library">GraphSON</a> format.
+ <p/>
+ The mode used is EXTENDED.
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
 <A NAME="renamePropertyValue(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
 renamePropertyValue</H3>
 <PRE>
-public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</A> <B>renamePropertyValue</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
+public long <B>renamePropertyValue</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propName,
                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;oldValue,
                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newValue)
@@ -322,6 +362,8 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html?is-
 <DD>Find an replace a property value across an entire entity class, e.g.
  if a DocumentaryUnit has a property with name &quot;foo&quot; and value &quot;bar&quot;,
  change the value to &quot;baz&quot; on all items.
+ <p/>
+ <strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
 <P>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>entityType</CODE> - The type of entity<DD><CODE>propName</CODE> - The name of the property to find and replace<DD><CODE>oldValue</CODE> - The property value to change<DD><CODE>newValue</CODE> - The new value
@@ -332,15 +374,43 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html?is-
 </DL>
 <HR>
 
+<A NAME="renamePropertyValueRE(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+renamePropertyValueRE</H3>
+<PRE>
+public long <B>renamePropertyValueRE</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
+                                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propName,
+                                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;regex,
+                                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;replace)
+                           throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
+<DL>
+<DD>Find an replace a regex-specified substring of a property value
+ across an entire entity class e.g.
+ if an Address has a property with name &quot;url&quot; and value &quot;www.foo.com/bar&quot;,
+ providing a regex value <code>^www</code> and replacement <code>http://www</code> will
+ give the property a value of &quot;http://www.foo.com/bar&quot;.
+ <p/>
+ <strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>entityType</CODE> - The type of entity<DD><CODE>propName</CODE> - The name of the property to find and replace<DD><CODE>regex</CODE> - A regex specifying a substring of the property value<DD><CODE>replace</CODE> - A replacement substring
+<DT><B>Returns:</B><DD>How many items have been changed
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
 <A NAME="renamePropertyName(java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
 renamePropertyName</H3>
 <PRE>
-public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</A> <B>renamePropertyName</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
+public long <B>renamePropertyName</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
                                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;oldKeyName,
                                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newKeyName)
                         throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
 <DL>
 <DD>Change a property key name across an entire entity class.
+
+ <strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
 <P>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>entityType</CODE> - The type of entity<DD><CODE>oldKeyName</CODE> - The existing property key name<DD><CODE>newKeyName</CODE> - The new property key name

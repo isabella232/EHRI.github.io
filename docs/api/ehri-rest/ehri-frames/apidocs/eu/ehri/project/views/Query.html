@@ -75,9 +75,9 @@ function windowTitle()
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_top"></A>
@@ -158,23 +158,6 @@ Handles querying Accessible Entities, with ACL semantics.
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Directions for sort.</TD>
-</TR>
-</TABLE>
-&nbsp;<!-- =========== FIELD SUMMARY =========== -->
-
-<A NAME="field_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Field Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;int</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/Query.html#DEFAULT_COUNT">DEFAULT_COUNT</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -395,7 +378,7 @@ Handles querying Accessible Entities, with ACL semantics.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/Query.html#setCount(int)">setCount</A></B>(int&nbsp;count)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/Query.html#setLimit(int)">setLimit</A></B>(int&nbsp;limit)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the total applied to this query.</TD>
@@ -403,7 +386,7 @@ Handles querying Accessible Entities, with ACL semantics.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/Query.html#setPage(int)">setPage</A></B>(int&nbsp;page)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/Query.html#setOffset(int)">setOffset</A></B>(int&nbsp;offset)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the page applied to this query.</TD>
@@ -438,25 +421,6 @@ Handles querying Accessible Entities, with ACL semantics.
 </TABLE>
 &nbsp;
 <P>
-
-<!-- ============ FIELD DETAIL =========== -->
-
-<A NAME="field_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Field Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="DEFAULT_COUNT"><!-- --></A><H3>
-DEFAULT_COUNT</H3>
-<PRE>
-public static final int <B>DEFAULT_COUNT</B></PRE>
-<DL>
-<DL>
-<DT><B>See Also:</B><DD><A HREF="../../../../constant-values.html#eu.ehri.project.views.Query.DEFAULT_COUNT">Constant Field Values</A></DL>
-</DL>
 
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 
@@ -649,10 +613,10 @@ public long <B>count</B>(<A HREF="../../../../eu/ehri/project/models/EntityClass
 </DL>
 <HR>
 
-<A NAME="setPage(int)"><!-- --></A><H3>
-setPage</H3>
+<A NAME="setOffset(int)"><!-- --></A><H3>
+setOffset</H3>
 <PRE>
-public <A HREF="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</A>&gt; <B>setPage</B>(int&nbsp;page)</PRE>
+public <A HREF="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</A>&gt; <B>setOffset</B>(int&nbsp;offset)</PRE>
 <DL>
 <DD>Set the page applied to this query.
 <P>
@@ -660,15 +624,15 @@ public <A HREF="../../../../eu/ehri/project/views/Query.html" title="class in eu
 </DL>
 </DD>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>page</CODE> - An integer page to the stream.</DL>
+<DT><B>Parameters:</B><DD><CODE>offset</CODE> - An integer page to the stream.</DL>
 </DD>
 </DL>
 <HR>
 
-<A NAME="setCount(int)"><!-- --></A><H3>
-setCount</H3>
+<A NAME="setLimit(int)"><!-- --></A><H3>
+setLimit</H3>
 <PRE>
-public <A HREF="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</A>&gt; <B>setCount</B>(int&nbsp;count)</PRE>
+public <A HREF="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</A>&gt; <B>setLimit</B>(int&nbsp;limit)</PRE>
 <DL>
 <DD>Set the total applied to this query.
 <P>
@@ -676,7 +640,7 @@ public <A HREF="../../../../eu/ehri/project/views/Query.html" title="class in eu
 </DL>
 </DD>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>count</CODE> - An integer total, or -1 for an unbounded stream.</DL>
+<DT><B>Parameters:</B><DD><CODE>limit</CODE> - An integer total, or -1 for an unbounded stream.</DL>
 </DD>
 </DL>
 <HR>
@@ -937,9 +901,9 @@ public <A HREF="../../../../eu/ehri/project/views/Query.html" title="class in eu
 </TR>
 <TR>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
 <TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
 </TR>
 </TABLE>
 <A NAME="skip-navbar_bottom"></A>

@@ -90,15 +90,19 @@ Packages that use <A HREF="../../../../../../eu/ehri/project/models/base/Accessi
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.extension"><B>eu.ehri.extension</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Jersey resource classes for providing
+ web service access to the graph, via
+ the <A HREF="../../../../../../eu/ehri/project/views/package-summary.html"><CODE>eu.ehri.project.views</CODE></A> layer.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.acl"><B>eu.ehri.project.acl</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes pertaining directly to the
+ access-control and permission system.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.importers"><B>eu.ehri.project.importers</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Handlers and Importers and supporting classes to import files into
+ the database.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.importers.cvoc"><B>eu.ehri.project.importers.cvoc</B></A></TD>
@@ -122,11 +126,14 @@ Packages that use <A HREF="../../../../../../eu/ehri/project/models/base/Accessi
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.persistence"><B>eu.ehri.project.persistence</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes dealing with persistence of
+ relational item data in sub-tree format.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views"><B>eu.ehri.project.views</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that provide data access &quot;views&quot; on the
+ graph that incorporate the permission and access-control
+ systems.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views.impl"><B>eu.ehri.project.views.impl</B></A></TD>
@@ -217,7 +224,7 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B>AbstractRestResource.</B><B><A HREF="../../../../../../eu/ehri/extension/AbstractRestResource.html#getQuery(java.lang.Class)">getQuery</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;T&gt;&nbsp;cls)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a query object configured according to incoming parameters.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -322,24 +329,24 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></CODE></FONT></TD>
-<TD><CODE><B>Wp2PersonalitiesImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/Wp2PersonalitiesImporter.html#importItem(java.util.Map)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
+<CODE>abstract &nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></CODE></FONT></TD>
+<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(java.util.Map)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></CODE></FONT></TD>
-<TD><CODE><B>VirtualEadImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/VirtualEadImporter.html#importItem(java.util.Map)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import an item representation into the graph, and return the Node.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></CODE></FONT></TD>
 <TD><CODE><B>UkrainianUnitImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/UkrainianUnitImporter.html#importItem(java.util.Map)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></CODE></FONT></TD>
+<TD><CODE><B>Wp2PersonalitiesImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/Wp2PersonalitiesImporter.html#importItem(java.util.Map)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -355,7 +362,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></CODE></FONT></TD>
-<TD><CODE><B>IcaAtomEadImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/IcaAtomEadImporter.html#importItem(java.util.Map)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
+<TD><CODE><B>VirtualEadImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/VirtualEadImporter.html#importItem(java.util.Map)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -370,11 +377,11 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>abstract &nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></CODE></FONT></TD>
-<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(java.util.Map)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
+<CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></CODE></FONT></TD>
+<TD><CODE><B>IcaAtomEadImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/IcaAtomEadImporter.html#importItem(java.util.Map)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import an item representation into the graph, and return the Node.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -384,6 +391,15 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>abstract &nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></CODE></FONT></TD>
+<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(java.util.Map, java.util.List)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData,
+           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import an item representation into the graph at a certain depth, and return the Node.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -402,15 +418,6 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>abstract &nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></CODE></FONT></TD>
-<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(java.util.Map, java.util.List)">importItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData,
-           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import an item representation into the graph at a certain depth, and return the Node.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -493,7 +500,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class representing an annotation.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -501,7 +508,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/ContentType.html" title="interface in eu.ehri.project.models">ContentType</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing a type of content in the
+ graph.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -509,9 +517,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/Country.html" title="interface in eu.ehri.project.models">Country</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User: michaelb
-
- Frame class representing a country.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing a country.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -519,7 +525,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class for graph nodes representing documentary
+ unit items.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -527,7 +534,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/DocumentDescription.html" title="interface in eu.ehri.project.models">DocumentDescription</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing the description of a document.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -535,7 +542,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/Group.html" title="interface in eu.ehri.project.models">Group</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing a group of users or other groups
+ that can be assigned permissions.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -543,7 +551,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/HistoricalAgent.html" title="interface in eu.ehri.project.models">HistoricalAgent</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class representing a historical agent item.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -551,7 +559,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/HistoricalAgentDescription.html" title="interface in eu.ehri.project.models">HistoricalAgentDescription</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing the description of a historical
+ agent.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -568,7 +577,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/MaintenanceEvent.html" title="interface in eu.ehri.project.models">MaintenanceEvent</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing a pre-ingest event that took place
+ upon some documentary unit item.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -576,7 +586,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/Permission.html" title="interface in eu.ehri.project.models">Permission</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing a type of permission.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -584,7 +594,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class for graph nodes representing repository
+ items.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -592,7 +603,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/RepositoryDescription.html" title="interface in eu.ehri.project.models">RepositoryDescription</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing the description of a repository.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -618,7 +629,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class representing a user within the database.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -698,7 +709,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B>Group.</B><B><A HREF="../../../../../../eu/ehri/project/models/Group.html#getAllUserProfileMembers()">getAllUserProfileMembers</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get <b>all</b> members of this group, including members of
+ groups within this group.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -852,7 +864,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/cvoc/AuthoritativeItem.html" title="interface in eu.ehri.project.models.cvoc">AuthoritativeItem</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An item that belongs in some authoritative set.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -860,7 +872,9 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/cvoc/AuthoritativeSet.html" title="interface in eu.ehri.project.models.cvoc">AuthoritativeSet</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class representing a item that holds other
+ <i>authoritative</i> items, such as concepts and
+ historical agents.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -938,7 +952,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing an event that happened in the
+ graph.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -946,7 +961,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/events/Version.html" title="interface in eu.ehri.project.models.events">Version</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing a serialized version of
+ some other node.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -986,7 +1002,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B>Version.</B><B><A HREF="../../../../../../eu/ehri/project/models/events/Version.html#getEntity()">getEntity</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loops up through the chain of versions until the latest and fetches
+ the item to which the events refer.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -994,8 +1011,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B>Version.Impl.</B><B><A HREF="../../../../../../eu/ehri/project/models/events/Version.Impl.html#getEntity()">getEntity</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loops up through the chain of hasPriorVersion until the end, until it
- has been deleted, will be a item.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -1003,7 +1019,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B>SystemEvent.</B><B><A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html#getFirstSubject()">getFirstSubject</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the first subject of this event.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -1027,7 +1043,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B>SystemEvent.</B><B><A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html#getSubjects()">getSubjects</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the subject items to whom this event pertains.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -1118,7 +1134,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud&lt;E extends AccessibleEntity&gt;</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interface for CRUD operations on types that derive
+ from <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base"><CODE>AccessibleEntity</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -1135,6 +1152,27 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableSubHeadingColor">
 <TH ALIGN="left" COLSPAN="2">Methods in <A HREF="../../../../../../eu/ehri/project/views/package-summary.html">eu.ehri.project.views</A> with type parameters of type <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; 
+<BR>
+T</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B>DescriptionViews.</B><B><A HREF="../../../../../../eu/ehri/project/views/DescriptionViews.html#create(java.lang.String, eu.ehri.project.persistence.Bundle, java.lang.Class, eu.ehri.project.models.base.Accessor, com.google.common.base.Optional)">create</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;parentId,
+       <A HREF="../../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;data,
+       <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;T&gt;&nbsp;descriptionClass,
+       <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;user,
+       com.google.common.base.Optional&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;logMessage)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -1168,6 +1206,27 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.
 </CODE></FONT></TD>
 <TD><CODE><B>ViewFactory.</B><B><A HREF="../../../../../../eu/ehri/project/views/ViewFactory.html#getCrudWithLogging(com.tinkerpop.frames.FramedGraph, java.lang.Class)">getCrudWithLogging</A></B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;E&gt;&nbsp;cls)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; 
+<BR>
+<A HREF="../../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</A>&lt;T&gt;</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B>DescriptionViews.</B><B><A HREF="../../../../../../eu/ehri/project/views/DescriptionViews.html#update(java.lang.String, eu.ehri.project.persistence.Bundle, java.lang.Class, eu.ehri.project.models.base.Accessor, com.google.common.base.Optional)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;parentId,
+       <A HREF="../../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;data,
+       <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;T&gt;&nbsp;descriptionClass,
+       <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;user,
+       com.google.common.base.Optional&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;logMessage)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>

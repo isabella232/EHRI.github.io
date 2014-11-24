@@ -169,6 +169,14 @@ Handle CRUD operations on AccessibleEntity's by using the
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#actionManager">actionManager</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#cls">cls</A></B></CODE>
 
@@ -206,7 +214,7 @@ Handle CRUD operations on AccessibleEntity's by using the
 <TH ALIGN="left"><B>Fields inherited from class eu.ehri.extension.<A HREF="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#COUNT_PARAM">COUNT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#database">database</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PAGE_PARAM">PAGE_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</A></CODE></TD>
+<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -307,7 +315,7 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
              <A HREF="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;current)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a set of accessor frames given a list of names.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -391,6 +399,16 @@ protected final <A HREF="../../../eu/ehri/project/views/impl/LoggingCrudViews.ht
 aclManager</H3>
 <PRE>
 protected final <A HREF="../../../eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</A> <B>aclManager</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="actionManager"><!-- --></A><H3>
+actionManager</H3>
+<PRE>
+protected final <A HREF="../../../eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</A> <B>actionManager</B></PRE>
 <DL>
 <DL>
 </DL>
@@ -732,8 +750,11 @@ getAccessors</H3>
 protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</A>&lt;<A HREF="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&gt; <B>getAccessors</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessorIds,
                                      <A HREF="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;current)</PRE>
 <DL>
+<DD>Get a set of accessor frames given a list of names.
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>accessorIds</CODE> - a list of accessor IDs<DD><CODE>current</CODE> - the current accessor
+<DT><B>Returns:</B><DD>a set a accessors</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

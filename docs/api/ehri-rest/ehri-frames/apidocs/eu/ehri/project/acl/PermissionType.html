@@ -104,6 +104,17 @@ Enum PermissionType</H2>
 </PRE>
 
 <P>
+An enum of permission types that can be assigned to
+ permission grants. Like the <A HREF="../../../../eu/ehri/project/acl/ContentTypes.html" title="enum in eu.ehri.project.acl"><CODE>ContentTypes</CODE></A> enum,
+ each permission value has an equivalent node in the grant
+ to which permission grants point.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (http://github.com/mikesname)</DD>
+</DL>
 <HR>
 
 <P>
@@ -174,7 +185,7 @@ Enum PermissionType</H2>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return whether a given other permission is encompassed
- by the current one...</TD>
+ by the current one.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -182,7 +193,7 @@ Enum PermissionType</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/PermissionType.html#getName()">getName</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch a textual representation of this permission.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -375,8 +386,11 @@ getName</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getName</B>()</PRE>
 <DL>
+<DD>Fetch a textual representation of this permission.
+<P>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>name string</DL>
 </DD>
 </DL>
 <HR>
@@ -401,11 +415,11 @@ contains</H3>
 public boolean <B>contains</B>(<A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&nbsp;other)</PRE>
 <DL>
 <DD>Return whether a given other permission is encompassed
- by the current one...
+ by the current one.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>other</CODE> - 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Parameters:</B><DD><CODE>other</CODE> - another permission
+<DT><B>Returns:</B><DD>if this permission is subordinate to the other</DL>
 </DD>
 </DL>
 <HR>

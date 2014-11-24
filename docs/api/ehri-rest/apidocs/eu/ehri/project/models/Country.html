@@ -102,13 +102,15 @@ Interface Country</H2>
 </PRE>
 
 <P>
-User: michaelb
-
- Frame class representing a country. It's identifier should
+Frame class representing a country. It's identifier should
  be represented by an ISO3166 Alpha 2 code, lower cased.
 <P>
 
 <P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (http://github.com/mikesname)</DD>
+</DL>
 <HR>
 
 <P>
@@ -170,7 +172,7 @@ User: michaelb
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Country.html#addRepository(eu.ehri.project.models.Repository)">addRepository</A></B>(<A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A>&nbsp;repository)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a repository to this country.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -178,7 +180,7 @@ User: michaelb
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Country.html#getChildCount()">getChildCount</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch a count of the number of repositories in this country.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -194,7 +196,7 @@ User: michaelb
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Country.html#getRepositories()">getRepositories</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch all repositories in this country.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -202,7 +204,8 @@ User: michaelb
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Country.html#updateChildCountCache()">updateChildCountCache</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update/reset the cache of the number of repositories
+ in this country.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.AccessibleEntity"><!-- --></A>
@@ -331,11 +334,14 @@ getChildCount</H3>
 <PRE>
 long <B>getChildCount</B>()</PRE>
 <DL>
+<DD>Fetch a count of the number of repositories in this country.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html" title="interface in eu.ehri.project.models.base">ItemHolder</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>the repository count</DL>
 </DD>
 </DL>
 <HR>
@@ -345,11 +351,14 @@ getRepositories</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A>&gt; <B>getRepositories</B>()</PRE>
 <DL>
+<DD>Fetch all repositories in this country.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of repository frames</DL>
 </DD>
 </DL>
 <HR>
@@ -359,11 +368,13 @@ addRepository</H3>
 <PRE>
 void <B>addRepository</B>(<A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A>&nbsp;repository)</PRE>
 <DL>
+<DD>Add a repository to this country.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>repository</CODE> - a repository frame</DL>
 </DD>
 </DL>
 <HR>
@@ -373,6 +384,9 @@ updateChildCountCache</H3>
 <PRE>
 void <B>updateChildCountCache</B>()</PRE>
 <DL>
+<DD>Update/reset the cache of the number of repositories
+ in this country.
+<P>
 <DD><DL>
 </DL>
 </DD>

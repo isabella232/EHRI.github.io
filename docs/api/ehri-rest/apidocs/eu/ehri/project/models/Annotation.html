@@ -99,6 +99,14 @@ Interface Annotation</H2>
 </PRE>
 
 <P>
+A frame class representing an annotation.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (http://github.com/mikesname)</DD>
+</DL>
 <HR>
 
 <P>
@@ -132,19 +140,11 @@ Interface Annotation</H2>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Annotation.html#addSource(eu.ehri.project.models.base.Annotator)">addSource</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</A>&nbsp;annotator)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Annotation.html#getAnnotations()">getAnnotations</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch annotations that have been made <i>on this annotation.</i></TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -152,7 +152,7 @@ Interface Annotation</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Annotation.html#getAnnotator()">getAnnotator</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the annotator of this annotation.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -160,7 +160,7 @@ Interface Annotation</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Annotation.html#getBody()">getBody</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the body of this annotation.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -168,7 +168,8 @@ Interface Annotation</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Annotation.html#getTargetParts()">getTargetParts</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch all targets of this annotation, including sub-parts
+ of an item.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -176,15 +177,15 @@ Interface Annotation</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Annotation.html#getTargets()">getTargets</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the targets of this annotation.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</A></CODE></FONT></TD>
+<CODE>&nbsp;void</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Annotation.html#setAnnotator(eu.ehri.project.models.base.Annotator)">setAnnotator</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</A>&nbsp;annotator)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the annotator of this annotation.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.Promotable"><!-- --></A>
@@ -268,11 +269,14 @@ getAnnotations</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</A>&gt; <B>getAnnotations</B>()</PRE>
 <DL>
+<DD>Fetch annotations that have been made <i>on this annotation.</i>
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/AnnotatableEntity.html#getAnnotations()">getAnnotations</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base">AnnotatableEntity</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of annotation frames</DL>
 </DD>
 </DL>
 <HR>
@@ -282,11 +286,14 @@ getAnnotator</H3>
 <PRE>
 <A HREF="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</A> <B>getAnnotator</B>()</PRE>
 <DL>
+<DD>Fetch the annotator of this annotation.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an annotator frame</DL>
 </DD>
 </DL>
 <HR>
@@ -294,13 +301,15 @@ getAnnotator</H3>
 <A NAME="setAnnotator(eu.ehri.project.models.base.Annotator)"><!-- --></A><H3>
 setAnnotator</H3>
 <PRE>
-<A HREF="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</A> <B>setAnnotator</B>(<A HREF="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</A>&nbsp;annotator)</PRE>
+void <B>setAnnotator</B>(<A HREF="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</A>&nbsp;annotator)</PRE>
 <DL>
+<DD>Set the annotator of this annotation.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>annotator</CODE> - an annotator frame</DL>
 </DD>
 </DL>
 <HR>
@@ -310,11 +319,15 @@ getTargetParts</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base">AnnotatableEntity</A>&gt; <B>getTargetParts</B>()</PRE>
 <DL>
+<DD>Fetch all targets of this annotation, including sub-parts
+ of an item.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of annotatable items</DL>
 </DD>
 </DL>
 <HR>
@@ -324,25 +337,14 @@ getTargets</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base">AnnotatableEntity</A>&gt; <B>getTargets</B>()</PRE>
 <DL>
+<DD>Fetch the targets of this annotation.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
 
-<A NAME="addSource(eu.ehri.project.models.base.Annotator)"><!-- --></A><H3>
-addSource</H3>
-<PRE>
-void <B>addSource</B>(<A HREF="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</A>&nbsp;annotator)</PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-</DL>
+<DT><B>Returns:</B><DD>an iterable of annotatable items</DL>
 </DD>
 </DL>
 <HR>
@@ -352,11 +354,14 @@ getBody</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getBody</B>()</PRE>
 <DL>
+<DD>Get the body of this annotation.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>the body text</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

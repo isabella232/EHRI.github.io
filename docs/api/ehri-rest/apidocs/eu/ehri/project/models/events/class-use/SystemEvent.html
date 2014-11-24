@@ -90,7 +90,8 @@ Packages that use <A HREF="../../../../../../eu/ehri/project/models/events/Syste
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.importers"><B>eu.ehri.project.importers</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Handlers and Importers and supporting classes to import files into
+ the database.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.models.base"><B>eu.ehri.project.models.base</B></A></TD>
@@ -102,11 +103,14 @@ Packages that use <A HREF="../../../../../../eu/ehri/project/models/events/Syste
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.persistence"><B>eu.ehri.project.persistence</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes dealing with persistence of
+ relational item data in sub-tree format.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views"><B>eu.ehri.project.views</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that provide data access &quot;views&quot; on the
+ graph that incorporate the permission and access-control
+ systems.&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -261,7 +265,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.htm
 <TD><CODE><B>Version.</B><B><A HREF="../../../../../../eu/ehri/project/models/events/Version.html#getTriggeringEvent()">getTriggeringEvent</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The event that triggered this version.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the event that triggered this version.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -283,22 +287,6 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.htm
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B>SystemEventQueue.Impl.</B><B><A HREF="../../../../../../eu/ehri/project/models/events/SystemEventQueue.Impl.html#getSystemEvents()">getSystemEvents</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-</TABLE>
-&nbsp;
-<P>
-
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left" COLSPAN="2">Methods in <A HREF="../../../../../../eu/ehri/project/models/events/package-summary.html">eu.ehri.project.models.events</A> with parameters of type <A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>Version.</B><B><A HREF="../../../../../../eu/ehri/project/models/events/Version.html#setTriggeringEvent(eu.ehri.project.models.events.SystemEvent)">setTriggeringEvent</A></B>(<A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&nbsp;event)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -424,6 +412,16 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.htm
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List items "interesting" for a user, optionally filtered by the `ShowType`
  to items they watch or users they follow.</TD>
 </TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B>EventViews.</B><B><A HREF="../../../../../../eu/ehri/project/views/EventViews.html#listByUser(eu.ehri.project.views.Query, eu.ehri.project.models.UserProfile, eu.ehri.project.models.base.Accessor)">listByUser</A></B>(<A HREF="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;&nbsp;query,
+           <A HREF="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;byUser,
+           <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;user)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
 </TABLE>
 &nbsp;
 <P>
@@ -451,6 +449,16 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.htm
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List items "interesting" for a user, optionally filtered by the `ShowType`
  to items they watch or users they follow.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B>EventViews.</B><B><A HREF="../../../../../../eu/ehri/project/views/EventViews.html#listByUser(eu.ehri.project.views.Query, eu.ehri.project.models.UserProfile, eu.ehri.project.models.base.Accessor)">listByUser</A></B>(<A HREF="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;&nbsp;query,
+           <A HREF="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;byUser,
+           <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;user)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;

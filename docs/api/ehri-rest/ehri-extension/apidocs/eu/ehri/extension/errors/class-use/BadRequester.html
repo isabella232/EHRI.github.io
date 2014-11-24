@@ -90,7 +90,9 @@ Packages that use <A HREF="../../../../../eu/ehri/extension/errors/BadRequester.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.extension"><B>eu.ehri.extension</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Jersey resource classes for providing
+ web service access to the graph, via
+ the <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/views/package-summary.html?is-external=true"><CODE>eu.ehri.project.views</CODE></A> layer.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.extension.base"><B>eu.ehri.extension.base</B></A></TD>
@@ -704,8 +706,8 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>DescriptionResource.</B><B><A HREF="../../../../../eu/ehri/extension/DescriptionResource.html#deleteDocumentaryUnitDescription(java.lang.String, java.lang.String)">deleteDocumentaryUnitDescription</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;did)</CODE>
+<TD><CODE><B>DescriptionResource.</B><B><A HREF="../../../../../eu/ehri/extension/DescriptionResource.html#deleteDescription(java.lang.String, java.lang.String)">deleteDescription</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;did)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -1127,11 +1129,7 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>AnnotationResource.</B><B><A HREF="../../../../../eu/ehri/extension/AnnotationResource.html#listAnnotationsForSubtree(java.lang.String, int, int, java.util.List, java.util.List)">listAnnotationsForSubtree</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-                          int&nbsp;page,
-                          int&nbsp;count,
-                          <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;order,
-                          <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;filters)</CODE>
+<TD><CODE><B>AnnotationResource.</B><B><A HREF="../../../../../eu/ehri/extension/AnnotationResource.html#listAnnotationsForSubtree(java.lang.String)">listAnnotationsForSubtree</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a map of annotations for the subtree of the given item and its
@@ -1247,7 +1245,21 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;to)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List actions.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List global events.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>SystemEventResource.</B><B><A HREF="../../../../../eu/ehri/extension/SystemEventResource.html#listEventsByUser(java.lang.String, java.util.List, java.util.List, java.util.List, java.util.List, java.lang.String, java.lang.String)">listEventsByUser</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;userId,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="https://github.com/EHRI/ehri-definitions/apidocs/eu/ehri/project/definitions/EventTypes.html?is-external=true" title="class or interface in eu.ehri.project.definitions">EventTypes</A>&gt;&nbsp;eventTypes,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;itemTypes,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;itemIds,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;users,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;from,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;to)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -1262,7 +1274,8 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
                   <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/views/EventViews.ShowType.html?is-external=true" title="class or interface in eu.ehri.project.views">EventViews.ShowType</A>&gt;&nbsp;show)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List actions.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List actions that are relevant to a given user based on
+ the other users that they follow and the items they watch.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">

@@ -102,6 +102,15 @@ Interface Repository</H2>
 </PRE>
 
 <P>
+A frame class for graph nodes representing repository
+ items.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (http://github.com/mikesname)</DD>
+</DL>
 <HR>
 
 <P>
@@ -152,10 +161,11 @@ Interface Repository</H2>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.html#addCollection(eu.ehri.project.models.DocumentaryUnit)">addCollection</A></B>(<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;collection)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.html#addCollection(eu.ehri.project.models.DocumentaryUnit)">addCollection</A></B>(<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a documentary unit as a top-level item in this
+ repository.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -163,7 +173,8 @@ Interface Repository</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.html#getAllCollections()">getAllCollections</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch items at <b>all</b> levels (including children of top-level
+ items and their children, recursively.)</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -171,7 +182,8 @@ Interface Repository</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.html#getChildCount()">getChildCount</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count the number of top-level documentary unit items within
+ this repository.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -179,7 +191,8 @@ Interface Repository</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.html#getCollections()">getCollections</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch all top-level documentary unit items within this
+ repository.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -187,7 +200,7 @@ Interface Repository</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.html#getCountry()">getCountry</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the country in which this repository resides.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -195,7 +208,7 @@ Interface Repository</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.html#setCountry(eu.ehri.project.models.Country)">setCountry</A></B>(<A HREF="../../../../eu/ehri/project/models/Country.html" title="interface in eu.ehri.project.models">Country</A>&nbsp;country)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The the country in which this repository resides.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -203,7 +216,8 @@ Interface Repository</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Repository.html#updateChildCountCache()">updateChildCountCache</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update/reset the cache for the number of documentary unit
+ items within this repository.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.DescribedEntity"><!-- --></A>
@@ -323,11 +337,15 @@ getChildCount</H3>
 <PRE>
 long <B>getChildCount</B>()</PRE>
 <DL>
+<DD>Count the number of top-level documentary unit items within
+ this repository.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html" title="interface in eu.ehri.project.models.base">ItemHolder</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>the number of top-level items</DL>
 </DD>
 </DL>
 <HR>
@@ -337,11 +355,15 @@ getCollections</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&gt; <B>getCollections</B>()</PRE>
 <DL>
+<DD>Fetch all top-level documentary unit items within this
+ repository.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of top-level items</DL>
 </DD>
 </DL>
 <HR>
@@ -351,11 +373,15 @@ getAllCollections</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&gt; <B>getAllCollections</B>()</PRE>
 <DL>
+<DD>Fetch items at <b>all</b> levels (including children of top-level
+ items and their children, recursively.)
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of documentary unit items</DL>
 </DD>
 </DL>
 <HR>
@@ -363,13 +389,16 @@ getAllCollections</H3>
 <A NAME="addCollection(eu.ehri.project.models.DocumentaryUnit)"><!-- --></A><H3>
 addCollection</H3>
 <PRE>
-void <B>addCollection</B>(<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;collection)</PRE>
+void <B>addCollection</B>(<A HREF="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A>&nbsp;unit)</PRE>
 <DL>
+<DD>Add a documentary unit as a top-level item in this
+ repository.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>unit</CODE> - a documentary unit item</DL>
 </DD>
 </DL>
 <HR>
@@ -379,11 +408,14 @@ getCountry</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/Country.html" title="interface in eu.ehri.project.models">Country</A>&gt; <B>getCountry</B>()</PRE>
 <DL>
+<DD>Fetch the country in which this repository resides.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>a country frame</DL>
 </DD>
 </DL>
 <HR>
@@ -393,11 +425,13 @@ setCountry</H3>
 <PRE>
 void <B>setCountry</B>(<A HREF="../../../../eu/ehri/project/models/Country.html" title="interface in eu.ehri.project.models">Country</A>&nbsp;country)</PRE>
 <DL>
+<DD>The the country in which this repository resides.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>country</CODE> - a country frame</DL>
 </DD>
 </DL>
 <HR>
@@ -407,6 +441,9 @@ updateChildCountCache</H3>
 <PRE>
 void <B>updateChildCountCache</B>()</PRE>
 <DL>
+<DD>Update/reset the cache for the number of documentary unit
+ items within this repository.
+<P>
 <DD><DL>
 </DL>
 </DD>

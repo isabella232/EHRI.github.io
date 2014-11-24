@@ -90,7 +90,8 @@ Packages that use <A HREF="../../../../../../eu/ehri/project/models/base/Accesso
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.acl"><B>eu.ehri.project.acl</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes pertaining directly to the
+ access-control and permission system.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.models"><B>eu.ehri.project.models</B></A></TD>
@@ -102,7 +103,9 @@ Packages that use <A HREF="../../../../../../eu/ehri/project/models/base/Accesso
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views"><B>eu.ehri.project.views</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that provide data access &quot;views&quot; on the
+ graph that incorporate the permission and access-control
+ systems.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views.impl"><B>eu.ehri.project.views.impl</B></A></TD>
@@ -390,7 +393,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" ti
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/Group.html" title="interface in eu.ehri.project.models">Group</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing a group of users or other groups
+ that can be assigned permissions.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -398,7 +402,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" ti
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class representing a user within the database.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -438,7 +442,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" ti
 <TD><CODE><B>VirtualUnit.</B><B><A HREF="../../../../../../eu/ehri/project/models/VirtualUnit.html#getAuthor()">getAuthor</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the author of this virtual unit.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -470,7 +474,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" ti
 <TD><CODE><B>Group.</B><B><A HREF="../../../../../../eu/ehri/project/models/Group.html#getMembers()">getMembers</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get members of this group.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -486,7 +490,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" ti
 <TD><CODE><B>Group.</B><B><A HREF="../../../../../../eu/ehri/project/models/Group.html#addMember(eu.ehri.project.models.base.Accessor)">addMember</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adds a Accessor as a member to this Group, so it has the permissions of the Group.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a Accessor as a member to this Group, so it has the permissions of the Group.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -502,7 +506,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" ti
 <TD><CODE><B>Group.</B><B><A HREF="../../../../../../eu/ehri/project/models/Group.html#removeMember(eu.ehri.project.models.base.Accessor)">removeMember</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes a member from this group.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -518,7 +522,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" ti
 <TD><CODE><B>VirtualUnit.</B><B><A HREF="../../../../../../eu/ehri/project/models/VirtualUnit.html#setAuthor(eu.ehri.project.models.base.Accessor)">setAuthor</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the author of this virtual unit.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -714,7 +718,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" ti
 <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
 <TR ALIGN="right" VALIGN="">
 <TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; 
+<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; 
 <BR>
 T</CODE></FONT></TD>
 </TR>
@@ -787,7 +791,7 @@ T</CODE></FONT></TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</A></CODE></FONT></TD>
+<CODE>&nbsp;int</CODE></FONT></TD>
 <TD><CODE><B>DescriptionViews.</B><B><A HREF="../../../../../../eu/ehri/project/views/DescriptionViews.html#delete(java.lang.String, java.lang.String, eu.ehri.project.models.base.Accessor, com.google.common.base.Optional)">delete</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;parentId,
        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
        <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;user,
@@ -842,6 +846,16 @@ T</CODE></FONT></TD>
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List items "interesting" for a user, optionally filtered by the `ShowType`
  to items they watch or users they follow.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B>EventViews.</B><B><A HREF="../../../../../../eu/ehri/project/views/EventViews.html#listByUser(eu.ehri.project.views.Query, eu.ehri.project.models.UserProfile, eu.ehri.project.models.base.Accessor)">listByUser</A></B>(<A HREF="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</A>&gt;&nbsp;query,
+           <A HREF="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;byUser,
+           <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;user)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -989,7 +1003,7 @@ T</CODE></FONT></TD>
 <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
 <TR ALIGN="right" VALIGN="">
 <TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; 
+<CODE>&lt;T extends <A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; 
 <BR>
 <A HREF="../../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</A>&lt;T&gt;</CODE></FONT></TD>
 </TR>

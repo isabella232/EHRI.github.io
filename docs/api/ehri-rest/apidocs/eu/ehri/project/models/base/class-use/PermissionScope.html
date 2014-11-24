@@ -90,15 +90,19 @@ Packages that use <A HREF="../../../../../../eu/ehri/project/models/base/Permiss
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.acl"><B>eu.ehri.project.acl</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes pertaining directly to the
+ access-control and permission system.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.commands"><B>eu.ehri.project.commands</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that represent actions that can
+ be run via the <A HREF="../../../../../../eu/ehri/project/commands/CmdEntryPoint.html" title="class in eu.ehri.project.commands"><CODE>CmdEntryPoint</CODE></A>
+ to manage the graph, e.g.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.importers"><B>eu.ehri.project.importers</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Handlers and Importers and supporting classes to import files into
+ the database.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.models"><B>eu.ehri.project.models</B></A></TD>
@@ -114,11 +118,14 @@ Packages that use <A HREF="../../../../../../eu/ehri/project/models/base/Permiss
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.models.idgen"><B>eu.ehri.project.models.idgen</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that handle the generation of string
+ identifiers for different kinds of resource.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views"><B>eu.ehri.project.views</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>Classes that provide data access &quot;views&quot; on the
+ graph that incorporate the permission and access-control
+ systems.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.views.impl"><B>eu.ehri.project.views.impl</B></A></TD>
@@ -272,7 +279,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A></CODE></FONT></TD>
-<TD><CODE><B>XmlImportManager.</B><B><A HREF="../../../../../../eu/ehri/project/importers/XmlImportManager.html#permissionScope">permissionScope</A></B></CODE>
+<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/AbstractImporter.html#permissionScope">permissionScope</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -280,7 +287,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;<A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A></CODE></FONT></TD>
-<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../../eu/ehri/project/importers/AbstractImporter.html#permissionScope">permissionScope</A></B></CODE>
+<TD><CODE><B>XmlImportManager.</B><B><A HREF="../../../../../../eu/ehri/project/importers/XmlImportManager.html#permissionScope">permissionScope</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -467,9 +474,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/Country.html" title="interface in eu.ehri.project.models">Country</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User: michaelb
-
- Frame class representing a country.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing a country.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -477,7 +482,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class for graph nodes representing documentary
+ unit items.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -485,7 +491,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/Group.html" title="interface in eu.ehri.project.models">Group</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame class representing a group of users or other groups
+ that can be assigned permissions.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -493,7 +500,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/HistoricalAgent.html" title="interface in eu.ehri.project.models">HistoricalAgent</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class representing a historical agent item.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -501,7 +508,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class for graph nodes representing repository
+ items.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -751,7 +759,9 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/cvoc/AuthoritativeSet.html" title="interface in eu.ehri.project.models.cvoc">AuthoritativeSet</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A frame class representing a item that holds other
+ <i>authoritative</i> items, such as concepts and
+ historical agents.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -857,6 +867,14 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</A></CODE></FONT></TD>
+<TD><CODE><B>AclViews.</B><B><A HREF="../../../../../../eu/ehri/project/views/AclViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/views/Scoped.html" title="type parameter in Scoped">T</A></CODE></FONT></TD>
 <TD><CODE><B>Scoped.</B><B><A HREF="../../../../../../eu/ehri/project/views/Scoped.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope)</CODE>
 
@@ -867,14 +885,6 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A></CODE></FONT></TD>
 <TD><CODE><B>Query.</B><B><A HREF="../../../../../../eu/ehri/project/views/Query.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/views/PromotionViews.html" title="class in eu.ehri.project.views">PromotionViews</A></CODE></FONT></TD>
-<TD><CODE><B>PromotionViews.</B><B><A HREF="../../../../../../eu/ehri/project/views/PromotionViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -897,8 +907,8 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.h
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</A></CODE></FONT></TD>
-<TD><CODE><B>AclViews.</B><B><A HREF="../../../../../../eu/ehri/project/views/AclViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope)</CODE>
+<CODE>&nbsp;<A HREF="../../../../../../eu/ehri/project/views/PromotionViews.html" title="class in eu.ehri.project.views">PromotionViews</A></CODE></FONT></TD>
+<TD><CODE><B>PromotionViews.</B><B><A HREF="../../../../../../eu/ehri/project/views/PromotionViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</A></B>(<A HREF="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>

@@ -18,35 +18,37 @@
 <a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> org.w3c.dom.Node;
 <a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> org.w3c.dom.NodeList;
 <a class="jxr_linenumber" name="10" href="#10">10</a>  
-<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
-<a class="jxr_linenumber" name="12" href="#12">12</a>  
-<a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="14" href="#14">14</a>  <em class="jxr_javadoccomment"> * Test for Bundle data conversion functions.</em>
-<a class="jxr_linenumber" name="15" href="#15">15</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/persistence/DataConverterTest.html">DataConverterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/test/AbstractFixtureTest.html">AbstractFixtureTest</a> {
-<a class="jxr_linenumber" name="17" href="#17">17</a>  
-<a class="jxr_linenumber" name="18" href="#18">18</a>      @Test
-<a class="jxr_linenumber" name="19" href="#19">19</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testBundleToXml() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="20" href="#20">20</a>          DocumentaryUnit c1 = manager.getFrame(<span class="jxr_string">"c1"</span>, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="21" href="#21">21</a>          Bundle bundle = <strong class="jxr_keyword">new</strong> Serializer(graph).vertexFrameToBundle(c1)
-<a class="jxr_linenumber" name="22" href="#22">22</a>                  .withDataValue(<span class="jxr_string">"testarray"</span>, <strong class="jxr_keyword">new</strong> String[] { <span class="jxr_string">"one"</span>, <span class="jxr_string">"two"</span>, <span class="jxr_string">"three"</span> })
-<a class="jxr_linenumber" name="23" href="#23">23</a>                  .withDataValue(<span class="jxr_string">"itemWithLt"</span>, <span class="jxr_string">"I should be escape because of: &lt;&gt;"</span>);
-<a class="jxr_linenumber" name="24" href="#24">24</a>  
-<a class="jxr_linenumber" name="25" href="#25">25</a>          Document document = bundle.toXml();
-<a class="jxr_linenumber" name="26" href="#26">26</a>          assertTrue(document.hasChildNodes());
-<a class="jxr_linenumber" name="27" href="#27">27</a>          NodeList root = document.getChildNodes();
-<a class="jxr_linenumber" name="28" href="#28">28</a>          assertEquals(1, root.getLength());
-<a class="jxr_linenumber" name="29" href="#29">29</a>          Node rootItem = root.item(0);
-<a class="jxr_linenumber" name="30" href="#30">30</a>          assertNotNull(rootItem.getAttributes().getNamedItem(Bundle.ID_KEY));
-<a class="jxr_linenumber" name="31" href="#31">31</a>          assertNotNull(rootItem.getAttributes().getNamedItem(Bundle.TYPE_KEY));
-<a class="jxr_linenumber" name="32" href="#32">32</a>          assertEquals(<span class="jxr_string">"c1"</span>, rootItem.getAttributes().getNamedItem(Bundle.ID_KEY).getNodeValue());
-<a class="jxr_linenumber" name="33" href="#33">33</a>          assertEquals(EntityClass.DOCUMENTARY_UNIT.getName(),
-<a class="jxr_linenumber" name="34" href="#34">34</a>                  rootItem.getAttributes().getNamedItem(Bundle.TYPE_KEY).getNodeValue());
-<a class="jxr_linenumber" name="35" href="#35">35</a>          assertTrue(rootItem.hasChildNodes());
-<a class="jxr_linenumber" name="36" href="#36">36</a>          <em class="jxr_comment">// TODO: Check properties and relationships are serialized properly</em>
-<a class="jxr_linenumber" name="37" href="#37">37</a>          System.out.println(bundle.toXmlString());
-<a class="jxr_linenumber" name="38" href="#38">38</a>      }
-<a class="jxr_linenumber" name="39" href="#39">39</a>  }
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertNotNull;
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
+<a class="jxr_linenumber" name="14" href="#14">14</a>  
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <em class="jxr_javadoccomment"> * Test for Bundle data conversion functions.</em>
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/persistence/DataConverterTest.html">DataConverterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/test/AbstractFixtureTest.html">AbstractFixtureTest</a> {
+<a class="jxr_linenumber" name="19" href="#19">19</a>  
+<a class="jxr_linenumber" name="20" href="#20">20</a>      @Test
+<a class="jxr_linenumber" name="21" href="#21">21</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testBundleToXml() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="22" href="#22">22</a>          DocumentaryUnit c1 = manager.getFrame(<span class="jxr_string">"c1"</span>, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="23" href="#23">23</a>          Bundle bundle = <strong class="jxr_keyword">new</strong> Serializer(graph).vertexFrameToBundle(c1)
+<a class="jxr_linenumber" name="24" href="#24">24</a>                  .withDataValue(<span class="jxr_string">"testarray"</span>, <strong class="jxr_keyword">new</strong> String[] { <span class="jxr_string">"one"</span>, <span class="jxr_string">"two"</span>, <span class="jxr_string">"three"</span> })
+<a class="jxr_linenumber" name="25" href="#25">25</a>                  .withDataValue(<span class="jxr_string">"itemWithLt"</span>, <span class="jxr_string">"I should be escape because of: &lt;&gt;"</span>);
+<a class="jxr_linenumber" name="26" href="#26">26</a>  
+<a class="jxr_linenumber" name="27" href="#27">27</a>          Document document = bundle.toXml();
+<a class="jxr_linenumber" name="28" href="#28">28</a>          assertTrue(document.hasChildNodes());
+<a class="jxr_linenumber" name="29" href="#29">29</a>          NodeList root = document.getChildNodes();
+<a class="jxr_linenumber" name="30" href="#30">30</a>          assertEquals(1, root.getLength());
+<a class="jxr_linenumber" name="31" href="#31">31</a>          Node rootItem = root.item(0);
+<a class="jxr_linenumber" name="32" href="#32">32</a>          assertNotNull(rootItem.getAttributes().getNamedItem(Bundle.ID_KEY));
+<a class="jxr_linenumber" name="33" href="#33">33</a>          assertNotNull(rootItem.getAttributes().getNamedItem(Bundle.TYPE_KEY));
+<a class="jxr_linenumber" name="34" href="#34">34</a>          assertEquals(<span class="jxr_string">"c1"</span>, rootItem.getAttributes().getNamedItem(Bundle.ID_KEY).getNodeValue());
+<a class="jxr_linenumber" name="35" href="#35">35</a>          assertEquals(EntityClass.DOCUMENTARY_UNIT.getName(),
+<a class="jxr_linenumber" name="36" href="#36">36</a>                  rootItem.getAttributes().getNamedItem(Bundle.TYPE_KEY).getNodeValue());
+<a class="jxr_linenumber" name="37" href="#37">37</a>          assertTrue(rootItem.hasChildNodes());
+<a class="jxr_linenumber" name="38" href="#38">38</a>          <em class="jxr_comment">// TODO: Check properties and relationships are serialized properly</em>
+<a class="jxr_linenumber" name="39" href="#39">39</a>          System.out.println(bundle.toXmlString());
+<a class="jxr_linenumber" name="40" href="#40">40</a>      }
+<a class="jxr_linenumber" name="41" href="#41">41</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

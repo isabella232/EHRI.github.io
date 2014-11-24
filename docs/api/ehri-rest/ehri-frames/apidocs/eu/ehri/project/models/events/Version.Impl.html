@@ -163,8 +163,8 @@ Implementation of complex methods.
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/events/Version.Impl.html#getEntity()">getEntity</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loops up through the chain of hasPriorVersion until the end, until it
- has been deleted, will be a item.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loops up through the chain of versions until the latest and fetches
+ the item to which the events refer.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -191,7 +191,7 @@ Implementation of complex methods.
 <TH ALIGN="left"><B>Methods inherited from interface eu.ehri.project.models.events.<A HREF="../../../../../eu/ehri/project/models/events/Version.html" title="interface in eu.ehri.project.models.events">Version</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityClass()">getEntityClass</A>, <A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityData()">getEntityData</A>, <A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityId()">getEntityId</A>, <A HREF="../../../../../eu/ehri/project/models/events/Version.html#getTriggeringEvent()">getTriggeringEvent</A>, <A HREF="../../../../../eu/ehri/project/models/events/Version.html#setTriggeringEvent(eu.ehri.project.models.events.SystemEvent)">setTriggeringEvent</A></CODE></TD>
+<TD><CODE><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityData()">getEntityData</A>, <A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityId()">getEntityId</A>, <A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntityType()">getEntityType</A>, <A HREF="../../../../../eu/ehri/project/models/events/Version.html#getTriggeringEvent()">getTriggeringEvent</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.AccessibleEntity"><!-- --></A>
@@ -283,15 +283,16 @@ getEntity</H3>
 <PRE>
 public <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A> <B>getEntity</B>()</PRE>
 <DL>
-<DD>Loops up through the chain of hasPriorVersion until the end, until it
- has been deleted, will be a item.
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntity()">Version</A></CODE></B></DD>
+<DD>Loops up through the chain of versions until the latest and fetches
+ the item to which the events refer. If it has been
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../eu/ehri/project/models/events/Version.html#getEntity()">getEntity</A></CODE> in interface <CODE><A HREF="../../../../../eu/ehri/project/models/events/Version.html" title="interface in eu.ehri.project.models.events">Version</A></CODE></DL>
 </DD>
 <DD><DL>
 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Returns:</B><DD>the entity to which this version refers.</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

@@ -102,6 +102,15 @@ Interface Group</H2>
 </PRE>
 
 <P>
+Frame class representing a group of users or other groups
+ that can be assigned permissions.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (http://github.com/mikesname)</DD>
+</DL>
 <HR>
 
 <P>
@@ -179,7 +188,7 @@ Interface Group</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Group.html#addMember(eu.ehri.project.models.base.Accessor)">addMember</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adds a Accessor as a member to this Group, so it has the permissions of the Group.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adds a Accessor as a member to this Group, so it has the permissions of the Group.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -187,7 +196,8 @@ Interface Group</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Group.html#getAllUserProfileMembers()">getAllUserProfileMembers</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get <b>all</b> members of this group, including members of
+ groups within this group.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -195,7 +205,7 @@ Interface Group</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Group.html#getChildCount()">getChildCount</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the number of items within this group.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -203,7 +213,7 @@ Interface Group</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Group.html#getGroups()">getGroups</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the groups to which this group belongs.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -211,7 +221,7 @@ Interface Group</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Group.html#getMembers()">getMembers</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get members of this group.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -227,7 +237,7 @@ Interface Group</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Group.html#removeMember(eu.ehri.project.models.base.Accessor)">removeMember</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removes a member from this group.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -235,7 +245,8 @@ Interface Group</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/models/Group.html#updateChildCountCache()">updateChildCountCache</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update/reset the cache of the number of items
+ in this group.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.Accessor"><!-- --></A>
@@ -358,11 +369,14 @@ getGroups</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/Group.html" title="interface in eu.ehri.project.models">Group</A>&gt; <B>getGroups</B>()</PRE>
 <DL>
+<DD>Fetch the groups to which this group belongs.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of group frames</DL>
 </DD>
 </DL>
 <HR>
@@ -388,11 +402,14 @@ getMembers</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&gt; <B>getMembers</B>()</PRE>
 <DL>
+<DD>Get members of this group.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of user or group frames</DL>
 </DD>
 </DL>
 <HR>
@@ -402,11 +419,14 @@ getChildCount</H3>
 <PRE>
 long <B>getChildCount</B>()</PRE>
 <DL>
+<DD>Get the number of items within this group.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html" title="interface in eu.ehri.project.models.base">ItemHolder</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>a count of group members</DL>
 </DD>
 </DL>
 <HR>
@@ -416,6 +436,9 @@ updateChildCountCache</H3>
 <PRE>
 void <B>updateChildCountCache</B>()</PRE>
 <DL>
+<DD>Update/reset the cache of the number of items
+ in this group.
+<P>
 <DD><DL>
 </DL>
 </DD>
@@ -430,13 +453,13 @@ addMember</H3>
 <PRE>
 void <B>addMember</B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
 <DL>
-<DD>adds a Accessor as a member to this Group, so it has the permissions of the Group.
+<DD>Adds a Accessor as a member to this Group, so it has the permissions of the Group.
 <P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>accessor</CODE> - a user or group frame</DL>
 </DD>
 </DL>
 <HR>
@@ -446,11 +469,13 @@ removeMember</H3>
 <PRE>
 void <B>removeMember</B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
 <DL>
+<DD>Removes a member from this group.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>accessor</CODE> - a user or group frame</DL>
 </DD>
 </DL>
 <HR>
@@ -460,11 +485,15 @@ getAllUserProfileMembers</H3>
 <PRE>
 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; <B>getAllUserProfileMembers</B>()</PRE>
 <DL>
+<DD>Get <b>all</b> members of this group, including members of
+ groups within this group.
+<P>
 <DD><DL>
 </DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of user or group frames</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
