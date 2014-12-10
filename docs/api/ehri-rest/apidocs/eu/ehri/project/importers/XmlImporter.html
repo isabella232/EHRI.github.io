@@ -96,7 +96,7 @@ Class XmlImporter&lt;T&gt;</H2>
       <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>eu.ehri.project.importers.XmlImporter&lt;T&gt;</B>
 </PRE>
 <DL>
-<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</A>, <A HREF="../../../../eu/ehri/project/importers/PersonalitiesImporter.html" title="class in eu.ehri.project.importers">PersonalitiesImporter</A>, <A HREF="../../../../eu/ehri/project/importers/UkrainianUnitImporter.html" title="class in eu.ehri.project.importers">UkrainianUnitImporter</A>, <A HREF="../../../../eu/ehri/project/importers/Wp2PersonalitiesImporter.html" title="class in eu.ehri.project.importers">Wp2PersonalitiesImporter</A></DD>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../eu/ehri/project/importers/CsvConceptImporter.html" title="class in eu.ehri.project.importers">CsvConceptImporter</A>, <A HREF="../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</A>, <A HREF="../../../../eu/ehri/project/importers/PersonalitiesImporter.html" title="class in eu.ehri.project.importers">PersonalitiesImporter</A>, <A HREF="../../../../eu/ehri/project/importers/UkrainianUnitImporter.html" title="class in eu.ehri.project.importers">UkrainianUnitImporter</A>, <A HREF="../../../../eu/ehri/project/importers/Wp2PersonalitiesImporter.html" title="class in eu.ehri.project.importers">Wp2PersonalitiesImporter</A></DD>
 </DL>
 <HR>
 <DL>
@@ -142,7 +142,7 @@ Class XmlImporter&lt;T&gt;</H2>
 <TH ALIGN="left"><B>Fields inherited from class eu.ehri.project.importers.<A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#createCallbacks">createCallbacks</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#documentContext">documentContext</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#framedGraph">framedGraph</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#log">log</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#manager">manager</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#permissionScope">permissionScope</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#unchangedCallbacks">unchangedCallbacks</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#updateCallbacks">updateCallbacks</A></CODE></TD>
+<TD><CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#callbacks">callbacks</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#documentContext">documentContext</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#framedGraph">framedGraph</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#log">log</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#manager">manager</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#permissionScope">permissionScope</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -198,12 +198,19 @@ Class XmlImporter&lt;T&gt;</H2>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/XmlImporter.html#importTopLevelExtraNodes(eu.ehri.project.models.base.AbstractUnit, java.util.Map)">importTopLevelExtraNodes</A></B>(<A HREF="../../../../eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base">AbstractUnit</A>&nbsp;topLevelUnit,
-                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/XmlImporter.html#getMaintenanceEvent(java.util.Map)">getMaintenanceEvent</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;event)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;all data that is stored above the first imported DocumentaryUnit will be processed here, and added to the DocumentDescriptions.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extract a representations of maintenance events from the maintenanceEvent data.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/models/MaintenanceEvent.html" title="interface in eu.ehri.project.models">MaintenanceEvent</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/XmlImporter.html#importMaintenanceEvent(java.util.Map)">importMaintenanceEvent</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;event)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -221,7 +228,7 @@ Class XmlImporter&lt;T&gt;</H2>
 <TH ALIGN="left"><B>Methods inherited from class eu.ehri.project.importers.<A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#addCreationCallback(eu.ehri.project.importers.ImportCallback)">addCreationCallback</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#addUnchangedCallback(eu.ehri.project.importers.ImportCallback)">addUnchangedCallback</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#addUpdateCallback(eu.ehri.project.importers.ImportCallback)">addUpdateCallback</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#changeForbiddenMultivaluedProperties(java.lang.String, java.lang.Object, eu.ehri.project.models.EntityClass)">changeForbiddenMultivaluedProperties</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#extractDates(T)">extractDates</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#getPermissionScope()">getPermissionScope</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister()">getPersister</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister(java.util.List)">getPersister</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#handleCallbacks(eu.ehri.project.persistence.Mutation)">handleCallbacks</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(java.util.Map)">importItem</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(java.util.Map, java.util.List)">importItem</A></CODE></TD>
+<TD><CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#addCallback(eu.ehri.project.importers.ImportCallback)">addCallback</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#changeForbiddenMultivaluedProperties(java.lang.String, java.lang.Object, eu.ehri.project.models.EntityClass)">changeForbiddenMultivaluedProperties</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#extractDates(T)">extractDates</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#getPermissionScope()">getPermissionScope</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister()">getPersister</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister(java.util.List)">getPersister</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#handleCallbacks(eu.ehri.project.persistence.Mutation)">handleCallbacks</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(java.util.Map)">importItem</A>, <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(java.util.Map, java.util.List)">importItem</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -324,21 +331,33 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html
 </DL>
 <HR>
 
-<A NAME="importTopLevelExtraNodes(eu.ehri.project.models.base.AbstractUnit, java.util.Map)"><!-- --></A><H3>
-importTopLevelExtraNodes</H3>
+<A NAME="getMaintenanceEvent(java.util.Map)"><!-- --></A><H3>
+getMaintenanceEvent</H3>
 <PRE>
-public void <B>importTopLevelExtraNodes</B>(<A HREF="../../../../eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base">AbstractUnit</A>&nbsp;topLevelUnit,
-                                     <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</PRE>
+public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt; <B>getMaintenanceEvent</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;event)</PRE>
 <DL>
-<DD><B>Description copied from class: <CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#importTopLevelExtraNodes(eu.ehri.project.models.base.AbstractUnit, java.util.Map)">AbstractImporter</A></CODE></B></DD>
-<DD>all data that is stored above the first imported DocumentaryUnit will be processed here, and added to the DocumentDescriptions.
- this might include MaintenanceEvents, or in the case of EAD there might be author/creation data.
+<DD>Extract a representations of maintenance events from the maintenanceEvent data.
 <P>
 <DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#importTopLevelExtraNodes(eu.ehri.project.models.base.AbstractUnit, java.util.Map)">importTopLevelExtraNodes</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&lt;<A HREF="../../../../eu/ehri/project/importers/XmlImporter.html" title="type parameter in XmlImporter">T</A>&gt;</CODE></DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#getMaintenanceEvent(java.util.Map)">getMaintenanceEvent</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&lt;<A HREF="../../../../eu/ehri/project/importers/XmlImporter.html" title="type parameter in XmlImporter">T</A>&gt;</CODE></DL>
 </DD>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>topLevelUnit</CODE> - the top level DocumentaryUnit to append the maintenanceEvents to (if any)<DD><CODE>itemData</CODE> - the item representation to import, in which to search for maintenanceEvents</DL>
+<DT><B>Parameters:</B><DD><CODE>event</CODE> - 
+<DT><B>Returns:</B><DD></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="importMaintenanceEvent(java.util.Map)"><!-- --></A><H3>
+importMaintenanceEvent</H3>
+<PRE>
+public <A HREF="../../../../eu/ehri/project/models/MaintenanceEvent.html" title="interface in eu.ehri.project.models">MaintenanceEvent</A> <B>importMaintenanceEvent</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;event)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#importMaintenanceEvent(java.util.Map)">importMaintenanceEvent</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&lt;<A HREF="../../../../eu/ehri/project/importers/XmlImporter.html" title="type parameter in XmlImporter">T</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
 </DD>
 </DL>
 <HR>

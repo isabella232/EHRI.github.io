@@ -107,68 +107,69 @@
 <a class="jxr_linenumber" name="97" href="#97">97</a>          <strong class="jxr_keyword">int</strong> countDocDesc = 0;
 <a class="jxr_linenumber" name="98" href="#98">98</a>          <strong class="jxr_keyword">while</strong>(i.hasNext()){
 <a class="jxr_linenumber" name="99" href="#99">99</a>              DocumentDescription desc  = i.next();
-<a class="jxr_linenumber" name="100" href="#100">100</a>             countDocDesc++;
-<a class="jxr_linenumber" name="101" href="#101">101</a>         }        
-<a class="jxr_linenumber" name="102" href="#102">102</a>         assertEquals(1, countDocDesc);
-<a class="jxr_linenumber" name="103" href="#103">103</a>         
+<a class="jxr_linenumber" name="100" href="#100">100</a>             assertEquals(<span class="jxr_string">"mul"</span>, desc.getLanguageOfDescription());
+<a class="jxr_linenumber" name="101" href="#101">101</a>             countDocDesc++;
+<a class="jxr_linenumber" name="102" href="#102">102</a>         }        
+<a class="jxr_linenumber" name="103" href="#103">103</a>         assertEquals(1, countDocDesc);
 <a class="jxr_linenumber" name="104" href="#104">104</a>         
-<a class="jxr_linenumber" name="105" href="#105">105</a> 
-<a class="jxr_linenumber" name="106" href="#106">106</a>         <em class="jxr_comment">// check the child items</em>
-<a class="jxr_linenumber" name="107" href="#107">107</a>         DocumentaryUnit c1_a = graph.frame(getVertexByIdentifier(graph, C1_A), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="108" href="#108">108</a>         DocumentaryUnit c1_b = graph.frame(getVertexByIdentifier(graph, C1_B), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="109" href="#109">109</a>         DocumentaryUnit c1_a_c2 = graph.frame(getVertexByIdentifier(graph, C1_A_C2), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="110" href="#110">110</a>         DocumentaryUnit c1_b_c2_a = graph.frame(getVertexByIdentifier(graph, C1_B_C2_A), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="111" href="#111">111</a>         DocumentaryUnit c1_b_c2_b = graph.frame(getVertexByIdentifier(graph, C1_B_C2_B), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="112" href="#112">112</a> 
-<a class="jxr_linenumber" name="113" href="#113">113</a>         assertEquals(fonds, c1_a.getParent());
-<a class="jxr_linenumber" name="114" href="#114">114</a>         assertEquals(fonds, c1_b.getParent());
-<a class="jxr_linenumber" name="115" href="#115">115</a>         
-<a class="jxr_linenumber" name="116" href="#116">116</a>         assertEquals(c1_a, c1_a_c2.getParent());
-<a class="jxr_linenumber" name="117" href="#117">117</a> 
-<a class="jxr_linenumber" name="118" href="#118">118</a>         assertEquals(c1_b, c1_b_c2_a.getParent());
-<a class="jxr_linenumber" name="119" href="#119">119</a>         assertEquals(c1_b, c1_b_c2_b.getParent());
-<a class="jxr_linenumber" name="120" href="#120">120</a> 
-<a class="jxr_linenumber" name="121" href="#121">121</a>         <em class="jxr_comment">// Ensure the import action has the right number of subjects.</em>
-<a class="jxr_linenumber" name="122" href="#122">122</a>         <em class="jxr_comment">//        Iterable&lt;Action&gt; actions = unit.getHistory();</em>
-<a class="jxr_linenumber" name="123" href="#123">123</a>         <em class="jxr_comment">// Check we've created 6 items</em>
-<a class="jxr_linenumber" name="124" href="#124">124</a>         assertEquals(6, logVC.getCreated());
-<a class="jxr_linenumber" name="125" href="#125">125</a>         assertTrue(logVC.getAction() instanceof SystemEvent);
-<a class="jxr_linenumber" name="126" href="#126">126</a>         assertEquals(logMessage, logVC.getAction().getLogMessage());
-<a class="jxr_linenumber" name="127" href="#127">127</a> 
-<a class="jxr_linenumber" name="128" href="#128">128</a>         <em class="jxr_comment">//assert keywords are matched to cvocs</em>
-<a class="jxr_linenumber" name="129" href="#129">129</a>         assertTrue(toList(c1_b.getLinks()).size() &gt; 0);
-<a class="jxr_linenumber" name="130" href="#130">130</a>         <strong class="jxr_keyword">for</strong>(Link a : c1_b.getLinks()){
-<a class="jxr_linenumber" name="131" href="#131">131</a>             logger.debug(a.getLinkType());
-<a class="jxr_linenumber" name="132" href="#132">132</a>         }
-<a class="jxr_linenumber" name="133" href="#133">133</a> 
-<a class="jxr_linenumber" name="134" href="#134">134</a>         List&lt;AccessibleEntity&gt; subjects = toList(logVC.getAction().getSubjects());
-<a class="jxr_linenumber" name="135" href="#135">135</a>         <strong class="jxr_keyword">for</strong> (AccessibleEntity subject : subjects) {
-<a class="jxr_linenumber" name="136" href="#136">136</a>             logger.info(<span class="jxr_string">"identifier: "</span> + subject.getId());
-<a class="jxr_linenumber" name="137" href="#137">137</a>         }
-<a class="jxr_linenumber" name="138" href="#138">138</a> 
-<a class="jxr_linenumber" name="139" href="#139">139</a>         assertEquals(6, subjects.size());
-<a class="jxr_linenumber" name="140" href="#140">140</a>         assertEquals(logVC.getChanged(), subjects.size());
-<a class="jxr_linenumber" name="141" href="#141">141</a> 
-<a class="jxr_linenumber" name="142" href="#142">142</a>         <em class="jxr_comment">// Check permission scopes</em>
-<a class="jxr_linenumber" name="143" href="#143">143</a>         assertEquals(agent, fonds.getPermissionScope());
-<a class="jxr_linenumber" name="144" href="#144">144</a>         assertEquals(fonds, c1_a.getPermissionScope());
-<a class="jxr_linenumber" name="145" href="#145">145</a>         assertEquals(fonds, c1_b.getPermissionScope());
-<a class="jxr_linenumber" name="146" href="#146">146</a>         assertEquals(c1_a, c1_a_c2.getPermissionScope());
-<a class="jxr_linenumber" name="147" href="#147">147</a>         assertEquals(c1_b, c1_b_c2_a.getPermissionScope());
-<a class="jxr_linenumber" name="148" href="#148">148</a>         assertEquals(c1_b, c1_b_c2_b.getPermissionScope());
-<a class="jxr_linenumber" name="149" href="#149">149</a>         
-<a class="jxr_linenumber" name="150" href="#150">150</a>         <em class="jxr_comment">// Check the author of the description</em>
-<a class="jxr_linenumber" name="151" href="#151">151</a>         <strong class="jxr_keyword">for</strong> (DocumentDescription d : c1_a.getDocumentDescriptions()){
-<a class="jxr_linenumber" name="152" href="#152">152</a>             assertEquals(<span class="jxr_string">"EHRI"</span>, d.asVertex().getProperty(EadHandler.AUTHOR));
-<a class="jxr_linenumber" name="153" href="#153">153</a>         }
-<a class="jxr_linenumber" name="154" href="#154">154</a> 
-<a class="jxr_linenumber" name="155" href="#155">155</a>         <em class="jxr_comment">// Check the importer is Idempotent</em>
-<a class="jxr_linenumber" name="156" href="#156">156</a>         ImportLog log2 = importManager.importFile(ClassLoader.getSystemResourceAsStream(SINGLE_EAD), logMessage);
-<a class="jxr_linenumber" name="157" href="#157">157</a>         assertEquals(6, log2.getUnchanged());
-<a class="jxr_linenumber" name="158" href="#158">158</a>         <em class="jxr_comment">//assertEquals(0, log2.getChanged());</em>
-<a class="jxr_linenumber" name="159" href="#159">159</a>         assertEquals(newCount, getNodeCount(graph));
-<a class="jxr_linenumber" name="160" href="#160">160</a>     }
-<a class="jxr_linenumber" name="161" href="#161">161</a> }
+<a class="jxr_linenumber" name="105" href="#105">105</a>         
+<a class="jxr_linenumber" name="106" href="#106">106</a> 
+<a class="jxr_linenumber" name="107" href="#107">107</a>         <em class="jxr_comment">// check the child items</em>
+<a class="jxr_linenumber" name="108" href="#108">108</a>         DocumentaryUnit c1_a = graph.frame(getVertexByIdentifier(graph, C1_A), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="109" href="#109">109</a>         DocumentaryUnit c1_b = graph.frame(getVertexByIdentifier(graph, C1_B), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="110" href="#110">110</a>         DocumentaryUnit c1_a_c2 = graph.frame(getVertexByIdentifier(graph, C1_A_C2), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="111" href="#111">111</a>         DocumentaryUnit c1_b_c2_a = graph.frame(getVertexByIdentifier(graph, C1_B_C2_A), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="112" href="#112">112</a>         DocumentaryUnit c1_b_c2_b = graph.frame(getVertexByIdentifier(graph, C1_B_C2_B), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="113" href="#113">113</a> 
+<a class="jxr_linenumber" name="114" href="#114">114</a>         assertEquals(fonds, c1_a.getParent());
+<a class="jxr_linenumber" name="115" href="#115">115</a>         assertEquals(fonds, c1_b.getParent());
+<a class="jxr_linenumber" name="116" href="#116">116</a>         
+<a class="jxr_linenumber" name="117" href="#117">117</a>         assertEquals(c1_a, c1_a_c2.getParent());
+<a class="jxr_linenumber" name="118" href="#118">118</a> 
+<a class="jxr_linenumber" name="119" href="#119">119</a>         assertEquals(c1_b, c1_b_c2_a.getParent());
+<a class="jxr_linenumber" name="120" href="#120">120</a>         assertEquals(c1_b, c1_b_c2_b.getParent());
+<a class="jxr_linenumber" name="121" href="#121">121</a> 
+<a class="jxr_linenumber" name="122" href="#122">122</a>         <em class="jxr_comment">// Ensure the import action has the right number of subjects.</em>
+<a class="jxr_linenumber" name="123" href="#123">123</a>         <em class="jxr_comment">//        Iterable&lt;Action&gt; actions = unit.getHistory();</em>
+<a class="jxr_linenumber" name="124" href="#124">124</a>         <em class="jxr_comment">// Check we've created 6 items</em>
+<a class="jxr_linenumber" name="125" href="#125">125</a>         assertEquals(6, logVC.getCreated());
+<a class="jxr_linenumber" name="126" href="#126">126</a>         assertTrue(logVC.getAction() instanceof SystemEvent);
+<a class="jxr_linenumber" name="127" href="#127">127</a>         assertEquals(logMessage, logVC.getAction().getLogMessage());
+<a class="jxr_linenumber" name="128" href="#128">128</a> 
+<a class="jxr_linenumber" name="129" href="#129">129</a>         <em class="jxr_comment">//assert keywords are matched to cvocs</em>
+<a class="jxr_linenumber" name="130" href="#130">130</a>         assertTrue(toList(c1_b.getLinks()).size() &gt; 0);
+<a class="jxr_linenumber" name="131" href="#131">131</a>         <strong class="jxr_keyword">for</strong>(Link a : c1_b.getLinks()){
+<a class="jxr_linenumber" name="132" href="#132">132</a>             logger.debug(a.getLinkType());
+<a class="jxr_linenumber" name="133" href="#133">133</a>         }
+<a class="jxr_linenumber" name="134" href="#134">134</a> 
+<a class="jxr_linenumber" name="135" href="#135">135</a>         List&lt;AccessibleEntity&gt; subjects = toList(logVC.getAction().getSubjects());
+<a class="jxr_linenumber" name="136" href="#136">136</a>         <strong class="jxr_keyword">for</strong> (AccessibleEntity subject : subjects) {
+<a class="jxr_linenumber" name="137" href="#137">137</a>             logger.info(<span class="jxr_string">"identifier: "</span> + subject.getId());
+<a class="jxr_linenumber" name="138" href="#138">138</a>         }
+<a class="jxr_linenumber" name="139" href="#139">139</a> 
+<a class="jxr_linenumber" name="140" href="#140">140</a>         assertEquals(6, subjects.size());
+<a class="jxr_linenumber" name="141" href="#141">141</a>         assertEquals(logVC.getChanged(), subjects.size());
+<a class="jxr_linenumber" name="142" href="#142">142</a> 
+<a class="jxr_linenumber" name="143" href="#143">143</a>         <em class="jxr_comment">// Check permission scopes</em>
+<a class="jxr_linenumber" name="144" href="#144">144</a>         assertEquals(agent, fonds.getPermissionScope());
+<a class="jxr_linenumber" name="145" href="#145">145</a>         assertEquals(fonds, c1_a.getPermissionScope());
+<a class="jxr_linenumber" name="146" href="#146">146</a>         assertEquals(fonds, c1_b.getPermissionScope());
+<a class="jxr_linenumber" name="147" href="#147">147</a>         assertEquals(c1_a, c1_a_c2.getPermissionScope());
+<a class="jxr_linenumber" name="148" href="#148">148</a>         assertEquals(c1_b, c1_b_c2_a.getPermissionScope());
+<a class="jxr_linenumber" name="149" href="#149">149</a>         assertEquals(c1_b, c1_b_c2_b.getPermissionScope());
+<a class="jxr_linenumber" name="150" href="#150">150</a>         
+<a class="jxr_linenumber" name="151" href="#151">151</a>         <em class="jxr_comment">// Check the author of the description</em>
+<a class="jxr_linenumber" name="152" href="#152">152</a>         <strong class="jxr_keyword">for</strong> (DocumentDescription d : fonds.getDocumentDescriptions()){
+<a class="jxr_linenumber" name="153" href="#153">153</a>             assertEquals(<span class="jxr_string">"EHRI"</span>, d.asVertex().getProperty(<span class="jxr_string">"processInfo"</span>));
+<a class="jxr_linenumber" name="154" href="#154">154</a>         }
+<a class="jxr_linenumber" name="155" href="#155">155</a> 
+<a class="jxr_linenumber" name="156" href="#156">156</a>         <em class="jxr_comment">// Check the importer is Idempotent</em>
+<a class="jxr_linenumber" name="157" href="#157">157</a>         ImportLog log2 = importManager.importFile(ClassLoader.getSystemResourceAsStream(SINGLE_EAD), logMessage);
+<a class="jxr_linenumber" name="158" href="#158">158</a>         assertEquals(6, log2.getUnchanged());
+<a class="jxr_linenumber" name="159" href="#159">159</a>         <em class="jxr_comment">//assertEquals(0, log2.getChanged());</em>
+<a class="jxr_linenumber" name="160" href="#160">160</a>         assertEquals(newCount, getNodeCount(graph));
+<a class="jxr_linenumber" name="161" href="#161">161</a>     }
+<a class="jxr_linenumber" name="162" href="#162">162</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

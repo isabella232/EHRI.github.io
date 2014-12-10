@@ -87,16 +87,19 @@
       <p>The following resources are applicable:</p>
       <ul>
         <li>
-        <a href="#path__promote_-id-.html">/promote/{id}</a>
+        <a href="#path__promote_-id-_down.html">/promote/{id}/down</a>
+        </li>
+        <li>
+        <a href="#path__promote_-id-_up.html">/promote/{id}/up</a>
         </li>
       </ul>
-        <a name="path__promote_-id-.html"></a>
-      <h1>/promote/{id}</h1>
-      <p class="note">Mount Point: <a href="../promote/{id}">/promote/{id}</a></p>
+        <a name="path__promote_-id-_down.html"></a>
+      <h1>/promote/{id}/down</h1>
+      <p class="note">Mount Point: <a href="../promote/{id}/down">/promote/{id}/down</a></p>
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Promote an item.
+            Down vote an item
           </p>
       <h3>Parameters</h3>
       <table>
@@ -130,7 +133,78 @@
       <a name="DELETE"></a>
       <h2>DELETE</h2>
       <p>
-            Demote an item (removing the user's promotion).
+            Remove a down vote.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            ID of item to remove
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>200 response</p>
+        <a name="path__promote_-id-_up.html"></a>
+      <h1>/promote/{id}/up</h1>
+      <p class="note">Mount Point: <a href="../promote/{id}/up">/promote/{id}/up</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Up vote an item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            ID of item to promote.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>200 response</p>
+      <a name="DELETE"></a>
+      <h2>DELETE</h2>
+      <p>
+            Remove an up vote.
           </p>
       <h3>Parameters</h3>
       <table>

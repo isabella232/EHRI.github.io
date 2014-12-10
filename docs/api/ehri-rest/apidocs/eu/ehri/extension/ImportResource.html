@@ -217,6 +217,17 @@ Resource class for import endpoints.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ImportResource.html#importCsv(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">importCsv</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scopeId,
+          <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage,
+          <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;importerClass,
+          <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;pathList)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import a set of CSV files.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/ImportResource.html#importEad(java.lang.String, java.lang.Boolean, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)">importEad</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scopeId,
           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&nbsp;tolerant,
           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage,
@@ -452,10 +463,62 @@ public javax.ws.rs.core.Response <B>importEad</B>(<A HREF="http://docs.oracle.co
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>scopeId</CODE> - The id of the import scope (i.e. repository)<DD><CODE>tolerant</CODE> - Whether or not to die on the first validation error<DD><CODE>logMessage</CODE> - Log message for import. If this refers to an accessible local file
                       its contents will be used.<DD><CODE>handlerClass</CODE> - The fully-qualified handler class name
-                      (defaults to IcaAtomEadHandler)<DD><CODE>importerClass</CODE> - The fully-qualified import class name
-                      (defaults to IcaAtomEadImporter)<DD><CODE>propertyFile</CODE> - A local file path pointing to an import properties
+                      (defaults to EadHandler)<DD><CODE>importerClass</CODE> - The fully-qualified import class name
+                      (defaults to EadImporter)<DD><CODE>propertyFile</CODE> - A local file path pointing to an import properties
                       configuration file.<DD><CODE>pathList</CODE> - A string containing a list of local file paths
                       to import.
+<DT><B>Returns:</B><DD>A JSON object showing how many records were created,
+         updated, or unchanged.
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
+<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="importCsv(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
+importCsv</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>importCsv</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scopeId,
+                                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage,
+                                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;importerClass,
+                                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;pathList)
+                                    throws <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A>,
+                                           <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                           <A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
+                                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                                           <A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A></PRE>
+<DL>
+<DD>Import a set of CSV files. The body of the POST
+ request should be a newline separated list of file
+ paths.
+ <p/>
+ The way you would run with would typically be:
+ <p/>
+ <pre>
+ <code>curl -X POST \
+      -H "Authorization: mike" \
+      --data-binary @csv-list.txt \
+      "http://localhost:7474/ehri/import/csv?scope=my-repo-id&log=testing"
+
+ # NB: Data is sent using --data-binary to preserve line-breaks - otherwise
+ # it needs url encoding.
+ </code>
+ </pre>
+ <p/>
+ (Assuming <code>csv-list.txt</code> is a list of newline separated CSV file paths.)
+ <p/>
+ (TODO: Might be better to use a different way of encoding the local file paths...)
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>scopeId</CODE> - The id of the import scope (i.e. repository)<DD><CODE>logMessage</CODE> - Log message for import. If this refers to a local file
+                      its contents will be used.<DD><CODE>importerClass</CODE> - The fully-qualified import class name<DD><CODE>pathList</CODE> - A string containing a list of local file paths
+                      to import.
+ 
+ There is no property file for this. Either the csv-heading is already in graph-compatible wording, or the Importer takes care of this.
 <DT><B>Returns:</B><DD>A JSON object showing how many records were created,
          updated, or unchanged.
 <DT><B>Throws:</B>

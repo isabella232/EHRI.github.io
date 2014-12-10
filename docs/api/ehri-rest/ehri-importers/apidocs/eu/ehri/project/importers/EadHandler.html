@@ -270,7 +270,7 @@ Handler of EAD files. Use to create a representation of the structure of Documen
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/EadHandler.html#extractTitle(java.util.Map)">extractTitle</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;currentGraph)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Handler-specific code for extraction or generation of unit titles.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if no NAME_KEY is provided, use the IDENTIFIER_KEY</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -303,6 +303,14 @@ Handler of EAD files. Use to create a representation of the structure of Documen
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a List of Strings containing files names of XML Schemas.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/EadHandler.html#getSourceFileId()">getSourceFileId</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -619,6 +627,18 @@ protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.htm
 </DL>
 <HR>
 
+<A NAME="getSourceFileId()"><!-- --></A><H3>
+getSourceFileId</H3>
+<PRE>
+protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getSourceFileId</B>()</PRE>
+<DL>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the <code><eadid></code>, extended with the languageTag or null if it was not parsed yet or empty</DL>
+</DD>
+</DL>
+<HR>
+
 <A NAME="getAuthor()"><!-- --></A><H3>
 getAuthor</H3>
 <PRE>
@@ -689,8 +709,7 @@ extractTitle</H3>
 <PRE>
 protected void <B>extractTitle</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;currentGraph)</PRE>
 <DL>
-<DD>Handler-specific code for extraction or generation of unit titles.
- Default method is empty; override when necessary.
+<DD>if no NAME_KEY is provided, use the IDENTIFIER_KEY
 <P>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>currentGraph</CODE> - Data at the current node level</DL>

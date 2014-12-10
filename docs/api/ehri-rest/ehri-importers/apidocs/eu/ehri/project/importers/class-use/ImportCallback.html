@@ -113,23 +113,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" t
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/AbstractImporter.html#createCallbacks">createCallbacks</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/AbstractImporter.html#unchangedCallbacks">unchangedCallbacks</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/AbstractImporter.html#updateCallbacks">updateCallbacks</A></B></CODE>
+<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/AbstractImporter.html#callbacks">callbacks</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -145,26 +129,41 @@ Uses of <A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" t
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/AbstractImporter.html#addCreationCallback(eu.ehri.project.importers.ImportCallback)">addCreationCallback</A></B>(<A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;cb)</CODE>
+<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/AbstractImporter.html#addCallback(eu.ehri.project.importers.ImportCallback)">addCallback</A></B>(<A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;callback)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a callback to run when an item is created.</TD>
 </TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/AbstractImporter.html#addUnchangedCallback(eu.ehri.project.importers.ImportCallback)">addUnchangedCallback</A></B>(<A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;cb)</CODE>
+</TABLE>
+&nbsp;
+<P>
 
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a callback to run when an item is left unchanged.</TD>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left" COLSPAN="2">Constructor parameters in <A HREF="../../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</A> with type arguments of type <A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B>AbstractImporter.</B><B><A HREF="../../../../../eu/ehri/project/importers/AbstractImporter.html#addUpdateCallback(eu.ehri.project.importers.ImportCallback)">addUpdateCallback</A></B>(<A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;cb)</CODE>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/importers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class, java.util.List)">SaxImportManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
+                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Actioner.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;&nbsp;callbacks)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a callback to run when an item is updated.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/importers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class, com.google.common.base.Optional, java.util.List)">SaxImportManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
+                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Actioner.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass,
+                 com.google.common.base.Optional&lt;<A HREF="../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</A>&gt;&nbsp;properties,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;&nbsp;callbacks)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
 </TR>
 </TABLE>
 &nbsp;

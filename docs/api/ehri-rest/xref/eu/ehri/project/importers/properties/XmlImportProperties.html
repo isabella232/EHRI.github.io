@@ -180,96 +180,97 @@
 <a class="jxr_linenumber" name="170" href="#170">170</a> <em class="jxr_javadoccomment">     * @throws IllegalArgumentException if the resource was not found and THROW_ON_LOAD_FAILURE is true</em>
 <a class="jxr_linenumber" name="171" href="#171">171</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="172" href="#172">172</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Properties loadProperties(String name, ClassLoader loader) {
-<a class="jxr_linenumber" name="173" href="#173">173</a>         <strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="174" href="#174">174</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"null input: name"</span>);
-<a class="jxr_linenumber" name="175" href="#175">175</a>         }
-<a class="jxr_linenumber" name="176" href="#176">176</a> 
-<a class="jxr_linenumber" name="177" href="#177">177</a>         <strong class="jxr_keyword">if</strong> (name.endsWith(SUFFIX)) {
-<a class="jxr_linenumber" name="178" href="#178">178</a>             name = name.substring(0, name.length() - SUFFIX.length());
-<a class="jxr_linenumber" name="179" href="#179">179</a>         }
-<a class="jxr_linenumber" name="180" href="#180">180</a> 
-<a class="jxr_linenumber" name="181" href="#181">181</a>         Properties result = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="182" href="#182">182</a> 
-<a class="jxr_linenumber" name="183" href="#183">183</a>         InputStream in = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="184" href="#184">184</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="185" href="#185">185</a>             <strong class="jxr_keyword">if</strong> (loader == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="186" href="#186">186</a>                 loader = ClassLoader.getSystemClassLoader();
-<a class="jxr_linenumber" name="187" href="#187">187</a>             }
-<a class="jxr_linenumber" name="188" href="#188">188</a> 
-<a class="jxr_linenumber" name="189" href="#189">189</a>             <strong class="jxr_keyword">if</strong> (LOAD_AS_RESOURCE_BUNDLE) {
-<a class="jxr_linenumber" name="190" href="#190">190</a>                 name = name.replace('/', '.');
-<a class="jxr_linenumber" name="191" href="#191">191</a>                 <em class="jxr_comment">// Throws MissingResourceException on lookup failures:</em>
-<a class="jxr_linenumber" name="192" href="#192">192</a>                 <strong class="jxr_keyword">final</strong> ResourceBundle rb = ResourceBundle.getBundle(name, Locale
-<a class="jxr_linenumber" name="193" href="#193">193</a>                         .getDefault(), loader);
-<a class="jxr_linenumber" name="194" href="#194">194</a> 
-<a class="jxr_linenumber" name="195" href="#195">195</a>                 result = <strong class="jxr_keyword">new</strong> Properties();
-<a class="jxr_linenumber" name="196" href="#196">196</a>                 <strong class="jxr_keyword">for</strong> (Enumeration&lt;String&gt; keys = rb.getKeys(); keys
-<a class="jxr_linenumber" name="197" href="#197">197</a>                         .hasMoreElements(); ) {
-<a class="jxr_linenumber" name="198" href="#198">198</a>                     <strong class="jxr_keyword">final</strong> String key = keys.nextElement();
-<a class="jxr_linenumber" name="199" href="#199">199</a>                     <strong class="jxr_keyword">final</strong> String value = rb.getString(key);
-<a class="jxr_linenumber" name="200" href="#200">200</a> 
-<a class="jxr_linenumber" name="201" href="#201">201</a>                     result.put(key, value);
-<a class="jxr_linenumber" name="202" href="#202">202</a>                 }
-<a class="jxr_linenumber" name="203" href="#203">203</a>             } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="204" href="#204">204</a> 
-<a class="jxr_linenumber" name="205" href="#205">205</a>                 name = name.replace('.', '/');
-<a class="jxr_linenumber" name="206" href="#206">206</a> 
-<a class="jxr_linenumber" name="207" href="#207">207</a>                 <strong class="jxr_keyword">if</strong> (!name.endsWith(SUFFIX)) {
-<a class="jxr_linenumber" name="208" href="#208">208</a>                     name = name.concat(SUFFIX);
-<a class="jxr_linenumber" name="209" href="#209">209</a>                 }
-<a class="jxr_linenumber" name="210" href="#210">210</a> 
-<a class="jxr_linenumber" name="211" href="#211">211</a>                 <em class="jxr_comment">// Returns null on lookup failures:</em>
-<a class="jxr_linenumber" name="212" href="#212">212</a>                 in = loader.getResourceAsStream(name);
-<a class="jxr_linenumber" name="213" href="#213">213</a>                 <strong class="jxr_keyword">if</strong> (in != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="214" href="#214">214</a>                     result = <strong class="jxr_keyword">new</strong> Properties();
-<a class="jxr_linenumber" name="215" href="#215">215</a>                     result.load(in); <em class="jxr_comment">// Can throw IOException</em>
-<a class="jxr_linenumber" name="216" href="#216">216</a>                 } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="217" href="#217">217</a>                     logger.error(name + <span class="jxr_string">" is not a Resource"</span>);
-<a class="jxr_linenumber" name="218" href="#218">218</a>                     FileInputStream ios = <strong class="jxr_keyword">new</strong> FileInputStream(name);
-<a class="jxr_linenumber" name="219" href="#219">219</a>                     logger.info(<span class="jxr_string">"trying to read "</span> + name + <span class="jxr_string">" as fileinputstream"</span>);
-<a class="jxr_linenumber" name="220" href="#220">220</a> 
-<a class="jxr_linenumber" name="221" href="#221">221</a>                     in = ios;
-<a class="jxr_linenumber" name="222" href="#222">222</a>                     result = <strong class="jxr_keyword">new</strong> Properties();
-<a class="jxr_linenumber" name="223" href="#223">223</a>                     result.load(in); <em class="jxr_comment">// Can throw IOException</em>
-<a class="jxr_linenumber" name="224" href="#224">224</a>                 }
-<a class="jxr_linenumber" name="225" href="#225">225</a>             }
-<a class="jxr_linenumber" name="226" href="#226">226</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="227" href="#227">227</a>             logger.error(e.getMessage());
-<a class="jxr_linenumber" name="228" href="#228">228</a>             result = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="229" href="#229">229</a>         } <strong class="jxr_keyword">finally</strong> {
-<a class="jxr_linenumber" name="230" href="#230">230</a>             <strong class="jxr_keyword">if</strong> (in != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="231" href="#231">231</a>                 <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="232" href="#232">232</a>                     in.close();
-<a class="jxr_linenumber" name="233" href="#233">233</a>                 } <strong class="jxr_keyword">catch</strong> (Throwable ignore) {
-<a class="jxr_linenumber" name="234" href="#234">234</a>                 }
-<a class="jxr_linenumber" name="235" href="#235">235</a>             }
-<a class="jxr_linenumber" name="236" href="#236">236</a>         }
-<a class="jxr_linenumber" name="237" href="#237">237</a> 
-<a class="jxr_linenumber" name="238" href="#238">238</a>         <strong class="jxr_keyword">if</strong> (THROW_ON_LOAD_FAILURE &amp;&amp; (result == <strong class="jxr_keyword">null</strong>)) {
-<a class="jxr_linenumber" name="239" href="#239">239</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"could not load ["</span>
-<a class="jxr_linenumber" name="240" href="#240">240</a>                     + name
-<a class="jxr_linenumber" name="241" href="#241">241</a>                     + <span class="jxr_string">"]"</span>
-<a class="jxr_linenumber" name="242" href="#242">242</a>                     + <span class="jxr_string">" as "</span>
-<a class="jxr_linenumber" name="243" href="#243">243</a>                     + (LOAD_AS_RESOURCE_BUNDLE ? <span class="jxr_string">"a resource bundle"</span>
-<a class="jxr_linenumber" name="244" href="#244">244</a>                     : <span class="jxr_string">"a classloader resource"</span>));
-<a class="jxr_linenumber" name="245" href="#245">245</a>         }
-<a class="jxr_linenumber" name="246" href="#246">246</a> 
-<a class="jxr_linenumber" name="247" href="#247">247</a>         <strong class="jxr_keyword">return</strong> result;
-<a class="jxr_linenumber" name="248" href="#248">248</a>     }
-<a class="jxr_linenumber" name="249" href="#249">249</a> 
-<a class="jxr_linenumber" name="250" href="#250">250</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="251" href="#251">251</a> <em class="jxr_javadoccomment">     * A convenience overload of {@link #loadProperties(String, ClassLoader)} that uses the current thread's context</em>
-<a class="jxr_linenumber" name="252" href="#252">252</a> <em class="jxr_javadoccomment">     * classloader.</em>
-<a class="jxr_linenumber" name="253" href="#253">253</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="254" href="#254">254</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Properties loadProperties(<strong class="jxr_keyword">final</strong> String name) {
-<a class="jxr_linenumber" name="255" href="#255">255</a>         <strong class="jxr_keyword">return</strong> loadProperties(name, Thread.currentThread()
-<a class="jxr_linenumber" name="256" href="#256">256</a>                 .getContextClassLoader());
-<a class="jxr_linenumber" name="257" href="#257">257</a>     }
-<a class="jxr_linenumber" name="258" href="#258">258</a> 
-<a class="jxr_linenumber" name="259" href="#259">259</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">boolean</strong> THROW_ON_LOAD_FAILURE = <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="260" href="#260">260</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">boolean</strong> LOAD_AS_RESOURCE_BUNDLE = false;
-<a class="jxr_linenumber" name="261" href="#261">261</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String SUFFIX = <span class="jxr_string">".properties"</span>;
-<a class="jxr_linenumber" name="262" href="#262">262</a> }
+<a class="jxr_linenumber" name="173" href="#173">173</a>         logger.debug(<span class="jxr_string">"loading "</span> + name + <span class="jxr_string">" ..."</span>);
+<a class="jxr_linenumber" name="174" href="#174">174</a>         <strong class="jxr_keyword">if</strong> (name == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="175" href="#175">175</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"null input: name"</span>);
+<a class="jxr_linenumber" name="176" href="#176">176</a>         }
+<a class="jxr_linenumber" name="177" href="#177">177</a> 
+<a class="jxr_linenumber" name="178" href="#178">178</a>         <strong class="jxr_keyword">if</strong> (name.endsWith(SUFFIX)) {
+<a class="jxr_linenumber" name="179" href="#179">179</a>             name = name.substring(0, name.length() - SUFFIX.length());
+<a class="jxr_linenumber" name="180" href="#180">180</a>         }
+<a class="jxr_linenumber" name="181" href="#181">181</a> 
+<a class="jxr_linenumber" name="182" href="#182">182</a>         Properties result = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="183" href="#183">183</a> 
+<a class="jxr_linenumber" name="184" href="#184">184</a>         InputStream in = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="185" href="#185">185</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="186" href="#186">186</a>             <strong class="jxr_keyword">if</strong> (loader == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="187" href="#187">187</a>                 loader = ClassLoader.getSystemClassLoader();
+<a class="jxr_linenumber" name="188" href="#188">188</a>             }
+<a class="jxr_linenumber" name="189" href="#189">189</a> 
+<a class="jxr_linenumber" name="190" href="#190">190</a>             <strong class="jxr_keyword">if</strong> (LOAD_AS_RESOURCE_BUNDLE) {
+<a class="jxr_linenumber" name="191" href="#191">191</a>                 name = name.replace('/', '.');
+<a class="jxr_linenumber" name="192" href="#192">192</a>                 <em class="jxr_comment">// Throws MissingResourceException on lookup failures:</em>
+<a class="jxr_linenumber" name="193" href="#193">193</a>                 <strong class="jxr_keyword">final</strong> ResourceBundle rb = ResourceBundle.getBundle(name, Locale
+<a class="jxr_linenumber" name="194" href="#194">194</a>                         .getDefault(), loader);
+<a class="jxr_linenumber" name="195" href="#195">195</a> 
+<a class="jxr_linenumber" name="196" href="#196">196</a>                 result = <strong class="jxr_keyword">new</strong> Properties();
+<a class="jxr_linenumber" name="197" href="#197">197</a>                 <strong class="jxr_keyword">for</strong> (Enumeration&lt;String&gt; keys = rb.getKeys(); keys
+<a class="jxr_linenumber" name="198" href="#198">198</a>                         .hasMoreElements(); ) {
+<a class="jxr_linenumber" name="199" href="#199">199</a>                     <strong class="jxr_keyword">final</strong> String key = keys.nextElement();
+<a class="jxr_linenumber" name="200" href="#200">200</a>                     <strong class="jxr_keyword">final</strong> String value = rb.getString(key);
+<a class="jxr_linenumber" name="201" href="#201">201</a> 
+<a class="jxr_linenumber" name="202" href="#202">202</a>                     result.put(key, value);
+<a class="jxr_linenumber" name="203" href="#203">203</a>                 }
+<a class="jxr_linenumber" name="204" href="#204">204</a>             } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="205" href="#205">205</a> 
+<a class="jxr_linenumber" name="206" href="#206">206</a>                 name = name.replace('.', '/');
+<a class="jxr_linenumber" name="207" href="#207">207</a> 
+<a class="jxr_linenumber" name="208" href="#208">208</a>                 <strong class="jxr_keyword">if</strong> (!name.endsWith(SUFFIX)) {
+<a class="jxr_linenumber" name="209" href="#209">209</a>                     name = name.concat(SUFFIX);
+<a class="jxr_linenumber" name="210" href="#210">210</a>                 }
+<a class="jxr_linenumber" name="211" href="#211">211</a> 
+<a class="jxr_linenumber" name="212" href="#212">212</a>                 <em class="jxr_comment">// Returns null on lookup failures:</em>
+<a class="jxr_linenumber" name="213" href="#213">213</a>                 in = loader.getResourceAsStream(name);
+<a class="jxr_linenumber" name="214" href="#214">214</a>                 <strong class="jxr_keyword">if</strong> (in != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="215" href="#215">215</a>                     result = <strong class="jxr_keyword">new</strong> Properties();
+<a class="jxr_linenumber" name="216" href="#216">216</a>                     result.load(in); <em class="jxr_comment">// Can throw IOException</em>
+<a class="jxr_linenumber" name="217" href="#217">217</a>                 } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="218" href="#218">218</a>                     logger.error(name + <span class="jxr_string">" is not a Resource"</span>);
+<a class="jxr_linenumber" name="219" href="#219">219</a>                     FileInputStream ios = <strong class="jxr_keyword">new</strong> FileInputStream(name);
+<a class="jxr_linenumber" name="220" href="#220">220</a>                     logger.info(<span class="jxr_string">"trying to read "</span> + name + <span class="jxr_string">" as fileinputstream"</span>);
+<a class="jxr_linenumber" name="221" href="#221">221</a> 
+<a class="jxr_linenumber" name="222" href="#222">222</a>                     in = ios;
+<a class="jxr_linenumber" name="223" href="#223">223</a>                     result = <strong class="jxr_keyword">new</strong> Properties();
+<a class="jxr_linenumber" name="224" href="#224">224</a>                     result.load(in); <em class="jxr_comment">// Can throw IOException</em>
+<a class="jxr_linenumber" name="225" href="#225">225</a>                 }
+<a class="jxr_linenumber" name="226" href="#226">226</a>             }
+<a class="jxr_linenumber" name="227" href="#227">227</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="228" href="#228">228</a>             logger.error(e.getMessage());
+<a class="jxr_linenumber" name="229" href="#229">229</a>             result = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="230" href="#230">230</a>         } <strong class="jxr_keyword">finally</strong> {
+<a class="jxr_linenumber" name="231" href="#231">231</a>             <strong class="jxr_keyword">if</strong> (in != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="232" href="#232">232</a>                 <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="233" href="#233">233</a>                     in.close();
+<a class="jxr_linenumber" name="234" href="#234">234</a>                 } <strong class="jxr_keyword">catch</strong> (Throwable ignore) {
+<a class="jxr_linenumber" name="235" href="#235">235</a>                 }
+<a class="jxr_linenumber" name="236" href="#236">236</a>             }
+<a class="jxr_linenumber" name="237" href="#237">237</a>         }
+<a class="jxr_linenumber" name="238" href="#238">238</a> 
+<a class="jxr_linenumber" name="239" href="#239">239</a>         <strong class="jxr_keyword">if</strong> (THROW_ON_LOAD_FAILURE &amp;&amp; (result == <strong class="jxr_keyword">null</strong>)) {
+<a class="jxr_linenumber" name="240" href="#240">240</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"could not load ["</span>
+<a class="jxr_linenumber" name="241" href="#241">241</a>                     + name
+<a class="jxr_linenumber" name="242" href="#242">242</a>                     + <span class="jxr_string">"]"</span>
+<a class="jxr_linenumber" name="243" href="#243">243</a>                     + <span class="jxr_string">" as "</span>
+<a class="jxr_linenumber" name="244" href="#244">244</a>                     + (LOAD_AS_RESOURCE_BUNDLE ? <span class="jxr_string">"a resource bundle"</span>
+<a class="jxr_linenumber" name="245" href="#245">245</a>                     : <span class="jxr_string">"a classloader resource"</span>));
+<a class="jxr_linenumber" name="246" href="#246">246</a>         }
+<a class="jxr_linenumber" name="247" href="#247">247</a> 
+<a class="jxr_linenumber" name="248" href="#248">248</a>         <strong class="jxr_keyword">return</strong> result;
+<a class="jxr_linenumber" name="249" href="#249">249</a>     }
+<a class="jxr_linenumber" name="250" href="#250">250</a> 
+<a class="jxr_linenumber" name="251" href="#251">251</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="252" href="#252">252</a> <em class="jxr_javadoccomment">     * A convenience overload of {@link #loadProperties(String, ClassLoader)} that uses the current thread's context</em>
+<a class="jxr_linenumber" name="253" href="#253">253</a> <em class="jxr_javadoccomment">     * classloader.</em>
+<a class="jxr_linenumber" name="254" href="#254">254</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="255" href="#255">255</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Properties loadProperties(<strong class="jxr_keyword">final</strong> String name) {
+<a class="jxr_linenumber" name="256" href="#256">256</a>         <strong class="jxr_keyword">return</strong> loadProperties(name, Thread.currentThread()
+<a class="jxr_linenumber" name="257" href="#257">257</a>                 .getContextClassLoader());
+<a class="jxr_linenumber" name="258" href="#258">258</a>     }
+<a class="jxr_linenumber" name="259" href="#259">259</a> 
+<a class="jxr_linenumber" name="260" href="#260">260</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">boolean</strong> THROW_ON_LOAD_FAILURE = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="261" href="#261">261</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">boolean</strong> LOAD_AS_RESOURCE_BUNDLE = false;
+<a class="jxr_linenumber" name="262" href="#262">262</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String SUFFIX = <span class="jxr_string">".properties"</span>;
+<a class="jxr_linenumber" name="263" href="#263">263</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

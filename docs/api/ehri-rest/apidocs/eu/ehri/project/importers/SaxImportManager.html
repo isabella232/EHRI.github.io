@@ -144,8 +144,8 @@ Class that provides a front-end for importing XML files like EAD and EAC and
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class)">SaxImportManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;framedGraph,
-                 <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;permissionScope,
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class)">SaxImportManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                 <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
                  <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass,
                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass)</CODE>
@@ -154,8 +154,31 @@ Class that provides a front-end for importing XML files like EAD and EAC and
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class, eu.ehri.project.importers.properties.XmlImportProperties)">SaxImportManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;framedGraph,
-                 <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;permissionScope,
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class, java.util.List)">SaxImportManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                 <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
+                 <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;&nbsp;callbacks)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class, com.google.common.base.Optional, java.util.List)">SaxImportManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                 <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
+                 <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass,
+                 com.google.common.base.Optional&lt;<A HREF="../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</A>&gt;&nbsp;properties,
+                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;&nbsp;callbacks)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class, eu.ehri.project.importers.properties.XmlImportProperties)">SaxImportManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                 <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
                  <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass,
                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass,
@@ -187,7 +210,7 @@ Class that provides a front-end for importing XML files like EAD and EAC and
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html" title="class in eu.ehri.project.importers">SaxImportManager</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#setProperties(java.lang.String)">setProperties</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;properties)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#withProperties(java.lang.String)">withProperties</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;properties)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -195,15 +218,7 @@ Class that provides a front-end for importing XML files like EAD and EAC and
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html" title="class in eu.ehri.project.importers">SaxImportManager</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#setProperties(eu.ehri.project.importers.properties.XmlImportProperties)">setProperties</A></B>(<A HREF="../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</A>&nbsp;properties)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#setVirtualCollection(eu.ehri.project.models.VirtualUnit)">setVirtualCollection</A></B>(<A HREF="../../../../eu/ehri/project/models/VirtualUnit.html" title="interface in eu.ehri.project.models">VirtualUnit</A>&nbsp;virtualcollection)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html#withProperties(eu.ehri.project.importers.properties.XmlImportProperties)">withProperties</A></B>(<A HREF="../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</A>&nbsp;properties)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -249,27 +264,46 @@ Class that provides a front-end for importing XML files like EAD and EAC and
 </TR>
 </TABLE>
 
-<A NAME="SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class)"><!-- --></A><H3>
+<A NAME="SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class, com.google.common.base.Optional, java.util.List)"><!-- --></A><H3>
 SaxImportManager</H3>
 <PRE>
-public <B>SaxImportManager</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;framedGraph,
-                        <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;permissionScope,
+public <B>SaxImportManager</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                        <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
                         <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass,
-                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass)</PRE>
+                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass,
+                        com.google.common.base.Optional&lt;<A HREF="../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</A>&gt;&nbsp;properties,
+                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;&nbsp;callbacks)</PRE>
 <DL>
 <DD>Constructor.
 <P>
 <DL>
-<DT><B>Parameters:</B><DD><CODE>framedGraph</CODE> - <DD><CODE>permissionScope</CODE> - <DD><CODE>actioner</CODE> - </DL>
+<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the framed graph<DD><CODE>scope</CODE> - the permission scope<DD><CODE>actioner</CODE> - the actioner</DL>
+</DL>
+<HR>
+
+<A NAME="SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class, java.util.List)"><!-- --></A><H3>
+SaxImportManager</H3>
+<PRE>
+public <B>SaxImportManager</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                        <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
+                        <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
+                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass,
+                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass,
+                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;&nbsp;callbacks)</PRE>
+<DL>
+<DD>Constructor.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the framed graph<DD><CODE>scope</CODE> - a permission scope<DD><CODE>actioner</CODE> - the actioner</DL>
 </DL>
 <HR>
 
 <A NAME="SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class, eu.ehri.project.importers.properties.XmlImportProperties)"><!-- --></A><H3>
 SaxImportManager</H3>
 <PRE>
-public <B>SaxImportManager</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;framedGraph,
-                        <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;permissionScope,
+public <B>SaxImportManager</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                        <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
                         <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass,
                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass,
@@ -278,7 +312,23 @@ public <B>SaxImportManager</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com
 <DD>Constructor.
 <P>
 <DL>
-<DT><B>Parameters:</B><DD><CODE>framedGraph</CODE> - <DD><CODE>permissionScope</CODE> - <DD><CODE>actioner</CODE> - </DL>
+<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the framed graph<DD><CODE>scope</CODE> - a permission scope<DD><CODE>actioner</CODE> - the actioner</DL>
+</DL>
+<HR>
+
+<A NAME="SaxImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class, java.lang.Class)"><!-- --></A><H3>
+SaxImportManager</H3>
+<PRE>
+public <B>SaxImportManager</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                        <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
+                        <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
+                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass,
+                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>&gt;&nbsp;handlerClass)</PRE>
+<DL>
+<DD>Constructor.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the framed graph<DD><CODE>scope</CODE> - a permission scope<DD><CODE>actioner</CODE> - the actioner</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -309,7 +359,7 @@ protected void <B>importFile</B>(<A HREF="http://docs.oracle.com/javase/6/docs/a
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/importers/XmlImportManager.html#importFile(java.io.InputStream, eu.ehri.project.persistence.ActionManager.EventContext, eu.ehri.project.importers.ImportLog)">importFile</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/importers/XmlImportManager.html" title="class in eu.ehri.project.importers">XmlImportManager</A></CODE></DL>
 </DD>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>ios</CODE> - <DD><CODE>eventContext</CODE> - <DD><CODE>log</CODE> - 
+<DT><B>Parameters:</B><DD><CODE>ios</CODE> - an input stream<DD><CODE>eventContext</CODE> - the event context<DD><CODE>log</CODE> - a logger object
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
 <DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
@@ -320,10 +370,10 @@ protected void <B>importFile</B>(<A HREF="http://docs.oracle.com/javase/6/docs/a
 </DL>
 <HR>
 
-<A NAME="setProperties(eu.ehri.project.importers.properties.XmlImportProperties)"><!-- --></A><H3>
-setProperties</H3>
+<A NAME="withProperties(eu.ehri.project.importers.properties.XmlImportProperties)"><!-- --></A><H3>
+withProperties</H3>
 <PRE>
-public <A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html" title="class in eu.ehri.project.importers">SaxImportManager</A> <B>setProperties</B>(<A HREF="../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</A>&nbsp;properties)</PRE>
+public <A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html" title="class in eu.ehri.project.importers">SaxImportManager</A> <B>withProperties</B>(<A HREF="../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</A>&nbsp;properties)</PRE>
 <DL>
 <DD><DL>
 </DL>
@@ -334,24 +384,10 @@ public <A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html" tit
 </DL>
 <HR>
 
-<A NAME="setProperties(java.lang.String)"><!-- --></A><H3>
-setProperties</H3>
+<A NAME="withProperties(java.lang.String)"><!-- --></A><H3>
+withProperties</H3>
 <PRE>
-public <A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html" title="class in eu.ehri.project.importers">SaxImportManager</A> <B>setProperties</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;properties)</PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="setVirtualCollection(eu.ehri.project.models.VirtualUnit)"><!-- --></A><H3>
-setVirtualCollection</H3>
-<PRE>
-public void <B>setVirtualCollection</B>(<A HREF="../../../../eu/ehri/project/models/VirtualUnit.html" title="interface in eu.ehri.project.models">VirtualUnit</A>&nbsp;virtualcollection)</PRE>
+public <A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html" title="class in eu.ehri.project.importers">SaxImportManager</A> <B>withProperties</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;properties)</PRE>
 <DL>
 <DD><DL>
 </DL>

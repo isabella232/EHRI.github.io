@@ -73,12 +73,12 @@
 <a class="jxr_linenumber" name="63" href="#63">63</a>          <em class="jxr_comment">// Test negative count (all items)</em>
 <a class="jxr_linenumber" name="64" href="#64">64</a>          list = toList(query.setLimit(-1).page(validUser));
 <a class="jxr_linenumber" name="65" href="#65">65</a>          assertFalse(list.isEmpty());
-<a class="jxr_linenumber" name="66" href="#66">66</a>          assertEquals(4, list.size());
+<a class="jxr_linenumber" name="66" href="#66">66</a>          assertEquals(5, list.size());
 <a class="jxr_linenumber" name="67" href="#67">67</a>  
 <a class="jxr_linenumber" name="68" href="#68">68</a>          <em class="jxr_comment">// Test negative count (all items) and an offset</em>
 <a class="jxr_linenumber" name="69" href="#69">69</a>          list = toList(query.setOffset(1).setLimit(-1).page(validUser));
 <a class="jxr_linenumber" name="70" href="#70">70</a>          assertFalse(list.isEmpty());
-<a class="jxr_linenumber" name="71" href="#71">71</a>          assertEquals(3, list.size());
+<a class="jxr_linenumber" name="71" href="#71">71</a>          assertEquals(4, list.size());
 <a class="jxr_linenumber" name="72" href="#72">72</a>  
 <a class="jxr_linenumber" name="73" href="#73">73</a>          list = toList(query.setLimit(0).page(validUser));
 <a class="jxr_linenumber" name="74" href="#74">74</a>          assertEquals(0, list.size());
@@ -107,7 +107,7 @@
 <a class="jxr_linenumber" name="97" href="#97">97</a>      @Test
 <a class="jxr_linenumber" name="98" href="#98">98</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCount() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="99" href="#99">99</a>          Query&lt;DocumentaryUnit&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;DocumentaryUnit&gt;(graph, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="100" href="#100">100</a>         assertEquals(4, query.count());
+<a class="jxr_linenumber" name="100" href="#100">100</a>         assertEquals(5, query.count());
 <a class="jxr_linenumber" name="101" href="#101">101</a>     }
 <a class="jxr_linenumber" name="102" href="#102">102</a> 
 <a class="jxr_linenumber" name="103" href="#103">103</a>     @Test
@@ -160,13 +160,13 @@
 <a class="jxr_linenumber" name="150" href="#150">150</a>                 Ontology.DOC_IS_CHILD_OF, Direction.OUT, 0).page(
 <a class="jxr_linenumber" name="151" href="#151">151</a>                 EntityClass.DOCUMENTARY_UNIT, validUser));
 <a class="jxr_linenumber" name="152" href="#152">152</a>         assertFalse(list.isEmpty());
-<a class="jxr_linenumber" name="153" href="#153">153</a>         assertEquals(2, list.size());
+<a class="jxr_linenumber" name="153" href="#153">153</a>         assertEquals(3, list.size());
 <a class="jxr_linenumber" name="154" href="#154">154</a> 
 <a class="jxr_linenumber" name="155" href="#155">155</a>         <em class="jxr_comment">// The same query with a depth filter of 1 should get 3 items</em>
 <a class="jxr_linenumber" name="156" href="#156">156</a>         list = toList(query.depthFilter(Ontology.DOC_IS_CHILD_OF,
 <a class="jxr_linenumber" name="157" href="#157">157</a>                 Direction.OUT, 1).page(EntityClass.DOCUMENTARY_UNIT, validUser));
 <a class="jxr_linenumber" name="158" href="#158">158</a>         assertFalse(list.isEmpty());
-<a class="jxr_linenumber" name="159" href="#159">159</a>         assertEquals(3, list.size());
+<a class="jxr_linenumber" name="159" href="#159">159</a>         assertEquals(4, list.size());
 <a class="jxr_linenumber" name="160" href="#160">160</a> 
 <a class="jxr_linenumber" name="161" href="#161">161</a>     }
 <a class="jxr_linenumber" name="162" href="#162">162</a> 
@@ -216,7 +216,7 @@
 <a class="jxr_linenumber" name="206" href="#206">206</a>         list = toList(query.filter(Ontology.IDENTIFIER_KEY,
 <a class="jxr_linenumber" name="207" href="#207">207</a>                 Query.FilterPredicate.GT, <span class="jxr_string">"c3"</span>).page(
 <a class="jxr_linenumber" name="208" href="#208">208</a>                 EntityClass.DOCUMENTARY_UNIT, validUser));
-<a class="jxr_linenumber" name="209" href="#209">209</a>         assertEquals(1, list.size());
+<a class="jxr_linenumber" name="209" href="#209">209</a>         assertEquals(2, list.size());
 <a class="jxr_linenumber" name="210" href="#210">210</a>         assertEquals(<span class="jxr_string">"c4"</span>, list.get(0).getIdentifier());
 <a class="jxr_linenumber" name="211" href="#211">211</a> 
 <a class="jxr_linenumber" name="212" href="#212">212</a>         <em class="jxr_comment">// Less than or equal... should get twos items (c1,c2)</em>
@@ -234,111 +234,113 @@
 <a class="jxr_linenumber" name="224" href="#224">224</a>                 .orderBy(Ontology.IDENTIFIER_KEY, Query.Sort.ASC);
 <a class="jxr_linenumber" name="225" href="#225">225</a>         list = toList(fQuery
 <a class="jxr_linenumber" name="226" href="#226">226</a>                 .page(EntityClass.DOCUMENTARY_UNIT, validUser));
-<a class="jxr_linenumber" name="227" href="#227">227</a>         assertEquals(2, list.size());
+<a class="jxr_linenumber" name="227" href="#227">227</a>         assertEquals(3, list.size());
 <a class="jxr_linenumber" name="228" href="#228">228</a>         assertEquals(<span class="jxr_string">"c3"</span>, list.get(0).getIdentifier());
 <a class="jxr_linenumber" name="229" href="#229">229</a>         assertEquals(<span class="jxr_string">"c4"</span>, list.get(1).getIdentifier());
-<a class="jxr_linenumber" name="230" href="#230">230</a>         assertEquals(4, toList(fQuery.clearFilters()
-<a class="jxr_linenumber" name="231" href="#231">231</a>                 .page(EntityClass.DOCUMENTARY_UNIT, validUser)).size());
-<a class="jxr_linenumber" name="232" href="#232">232</a> 
-<a class="jxr_linenumber" name="233" href="#233">233</a>     }
-<a class="jxr_linenumber" name="234" href="#234">234</a> 
-<a class="jxr_linenumber" name="235" href="#235">235</a>     @Test
-<a class="jxr_linenumber" name="236" href="#236">236</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListWithTraversalFilter() {
-<a class="jxr_linenumber" name="237" href="#237">237</a>         Query&lt;DocumentaryUnit&gt; query1 = <strong class="jxr_keyword">new</strong> Query&lt;DocumentaryUnit&gt;(graph,
-<a class="jxr_linenumber" name="238" href="#238">238</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="239" href="#239">239</a>         List&lt;String&gt; filters1 = ImmutableList.of(
-<a class="jxr_linenumber" name="240" href="#240">240</a>           <span class="jxr_string">"&lt;-describes.identifier:c1-desc"</span>
-<a class="jxr_linenumber" name="241" href="#241">241</a>         );
-<a class="jxr_linenumber" name="242" href="#242">242</a>         Iterable&lt;DocumentaryUnit&gt; list1 = query1
-<a class="jxr_linenumber" name="243" href="#243">243</a>                 .filter(filters1).page(validUser);
-<a class="jxr_linenumber" name="244" href="#244">244</a>         assertEquals(1, Iterables.size(list1));
-<a class="jxr_linenumber" name="245" href="#245">245</a> 
-<a class="jxr_linenumber" name="246" href="#246">246</a>         Query&lt;Repository&gt; query2 = <strong class="jxr_keyword">new</strong> Query&lt;Repository&gt;(graph,
-<a class="jxr_linenumber" name="247" href="#247">247</a>                 Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="248" href="#248">248</a>         List&lt;String&gt; filters2 = ImmutableList.of(
-<a class="jxr_linenumber" name="249" href="#249">249</a>                 <span class="jxr_string">"&lt;-describes-&gt;hasAddress.city:Brussels"</span>
-<a class="jxr_linenumber" name="250" href="#250">250</a>         );
-<a class="jxr_linenumber" name="251" href="#251">251</a>         Iterable&lt;Repository&gt; list2 = query2
-<a class="jxr_linenumber" name="252" href="#252">252</a>                 .filter(filters2).page(validUser);
-<a class="jxr_linenumber" name="253" href="#253">253</a>         assertEquals(1, Iterables.size(list2));
-<a class="jxr_linenumber" name="254" href="#254">254</a> 
-<a class="jxr_linenumber" name="255" href="#255">255</a>     }
-<a class="jxr_linenumber" name="256" href="#256">256</a> 
-<a class="jxr_linenumber" name="257" href="#257">257</a>     @Test
-<a class="jxr_linenumber" name="258" href="#258">258</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListWithTraversalOrder() {
-<a class="jxr_linenumber" name="259" href="#259">259</a>         Query&lt;Repository&gt; query1 = <strong class="jxr_keyword">new</strong> Query&lt;Repository&gt;(graph, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="260" href="#260">260</a>         Iterable&lt;Repository&gt; out1 = query1
-<a class="jxr_linenumber" name="261" href="#261">261</a>                 .orderBy(ImmutableList.of(<span class="jxr_string">"&lt;-describes.identifier"</span>))
-<a class="jxr_linenumber" name="262" href="#262">262</a>                 .page(validUser);
-<a class="jxr_linenumber" name="263" href="#263">263</a>         List&lt;Repository&gt; list1 = Lists.newLinkedList(out1);
-<a class="jxr_linenumber" name="264" href="#264">264</a> 
-<a class="jxr_linenumber" name="265" href="#265">265</a>         Query&lt;Repository&gt; query2 = <strong class="jxr_keyword">new</strong> Query&lt;Repository&gt;(graph, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="266" href="#266">266</a>         Iterable&lt;Repository&gt; out2 = query2
-<a class="jxr_linenumber" name="267" href="#267">267</a>                 .orderBy(ImmutableList.of(<span class="jxr_string">"&lt;-describes.identifier__DESC"</span>))
-<a class="jxr_linenumber" name="268" href="#268">268</a>                 .page(validUser);
-<a class="jxr_linenumber" name="269" href="#269">269</a>         List&lt;Repository&gt; list2 = Lists.newLinkedList(out2);
-<a class="jxr_linenumber" name="270" href="#270">270</a> 
-<a class="jxr_linenumber" name="271" href="#271">271</a>         assertEquals(list1, Lists.reverse(list2));
-<a class="jxr_linenumber" name="272" href="#272">272</a>     }
-<a class="jxr_linenumber" name="273" href="#273">273</a> 
+<a class="jxr_linenumber" name="230" href="#230">230</a>         assertEquals(<span class="jxr_string">"nl-r1-m19"</span>, list.get(2).getIdentifier());
+<a class="jxr_linenumber" name="231" href="#231">231</a>         assertEquals(5, toList(fQuery.clearFilters()
+<a class="jxr_linenumber" name="232" href="#232">232</a>                 .page(EntityClass.DOCUMENTARY_UNIT, validUser)).size());
+<a class="jxr_linenumber" name="233" href="#233">233</a> 
+<a class="jxr_linenumber" name="234" href="#234">234</a>     }
+<a class="jxr_linenumber" name="235" href="#235">235</a> 
+<a class="jxr_linenumber" name="236" href="#236">236</a>     @Test
+<a class="jxr_linenumber" name="237" href="#237">237</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListWithTraversalFilter() {
+<a class="jxr_linenumber" name="238" href="#238">238</a>         Query&lt;DocumentaryUnit&gt; query1 = <strong class="jxr_keyword">new</strong> Query&lt;DocumentaryUnit&gt;(graph,
+<a class="jxr_linenumber" name="239" href="#239">239</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="240" href="#240">240</a>         List&lt;String&gt; filters1 = ImmutableList.of(
+<a class="jxr_linenumber" name="241" href="#241">241</a>           <span class="jxr_string">"&lt;-describes.identifier:c1-desc"</span>
+<a class="jxr_linenumber" name="242" href="#242">242</a>         );
+<a class="jxr_linenumber" name="243" href="#243">243</a>         Iterable&lt;DocumentaryUnit&gt; list1 = query1
+<a class="jxr_linenumber" name="244" href="#244">244</a>                 .filter(filters1).page(validUser);
+<a class="jxr_linenumber" name="245" href="#245">245</a>         assertEquals(1, Iterables.size(list1));
+<a class="jxr_linenumber" name="246" href="#246">246</a> 
+<a class="jxr_linenumber" name="247" href="#247">247</a>         Query&lt;Repository&gt; query2 = <strong class="jxr_keyword">new</strong> Query&lt;Repository&gt;(graph,
+<a class="jxr_linenumber" name="248" href="#248">248</a>                 Repository.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="249" href="#249">249</a>         List&lt;String&gt; filters2 = ImmutableList.of(
+<a class="jxr_linenumber" name="250" href="#250">250</a>                 <span class="jxr_string">"&lt;-describes-&gt;hasAddress.city:Brussels"</span>
+<a class="jxr_linenumber" name="251" href="#251">251</a>         );
+<a class="jxr_linenumber" name="252" href="#252">252</a>         Iterable&lt;Repository&gt; list2 = query2
+<a class="jxr_linenumber" name="253" href="#253">253</a>                 .filter(filters2).page(validUser);
+<a class="jxr_linenumber" name="254" href="#254">254</a>         assertEquals(1, Iterables.size(list2));
+<a class="jxr_linenumber" name="255" href="#255">255</a> 
+<a class="jxr_linenumber" name="256" href="#256">256</a>     }
+<a class="jxr_linenumber" name="257" href="#257">257</a> 
+<a class="jxr_linenumber" name="258" href="#258">258</a>     @Test
+<a class="jxr_linenumber" name="259" href="#259">259</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListWithTraversalOrder() {
+<a class="jxr_linenumber" name="260" href="#260">260</a>         Query&lt;Repository&gt; query1 = <strong class="jxr_keyword">new</strong> Query&lt;Repository&gt;(graph, Repository.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="261" href="#261">261</a>         Iterable&lt;Repository&gt; out1 = query1
+<a class="jxr_linenumber" name="262" href="#262">262</a>                 .orderBy(ImmutableList.of(<span class="jxr_string">"&lt;-describes.identifier"</span>))
+<a class="jxr_linenumber" name="263" href="#263">263</a>                 .page(validUser);
+<a class="jxr_linenumber" name="264" href="#264">264</a>         List&lt;Repository&gt; list1 = Lists.newLinkedList(out1);
+<a class="jxr_linenumber" name="265" href="#265">265</a> 
+<a class="jxr_linenumber" name="266" href="#266">266</a>         Query&lt;Repository&gt; query2 = <strong class="jxr_keyword">new</strong> Query&lt;Repository&gt;(graph, Repository.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="267" href="#267">267</a>         Iterable&lt;Repository&gt; out2 = query2
+<a class="jxr_linenumber" name="268" href="#268">268</a>                 .orderBy(ImmutableList.of(<span class="jxr_string">"&lt;-describes.identifier__DESC"</span>))
+<a class="jxr_linenumber" name="269" href="#269">269</a>                 .page(validUser);
+<a class="jxr_linenumber" name="270" href="#270">270</a>         List&lt;Repository&gt; list2 = Lists.newLinkedList(out2);
+<a class="jxr_linenumber" name="271" href="#271">271</a> 
+<a class="jxr_linenumber" name="272" href="#272">272</a>         assertEquals(list1, Lists.reverse(list2));
+<a class="jxr_linenumber" name="273" href="#273">273</a>     }
 <a class="jxr_linenumber" name="274" href="#274">274</a> 
-<a class="jxr_linenumber" name="275" href="#275">275</a>     @Test
-<a class="jxr_linenumber" name="276" href="#276">276</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListWithSort() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="277" href="#277">277</a>         Query&lt;DocumentaryUnit&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;DocumentaryUnit&gt;(graph,
-<a class="jxr_linenumber" name="278" href="#278">278</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="279" href="#279">279</a> 
-<a class="jxr_linenumber" name="280" href="#280">280</a>         <em class="jxr_comment">// Query for document identifier c1.</em>
-<a class="jxr_linenumber" name="281" href="#281">281</a>         Page&lt;DocumentaryUnit&gt; page = query.orderBy(
-<a class="jxr_linenumber" name="282" href="#282">282</a>                 Ontology.IDENTIFIER_KEY, Query.Sort.ASC).page(
-<a class="jxr_linenumber" name="283" href="#283">283</a>                 EntityClass.DOCUMENTARY_UNIT, validUser);
-<a class="jxr_linenumber" name="284" href="#284">284</a>         assertFalse(page.getTotal() == 0);
-<a class="jxr_linenumber" name="285" href="#285">285</a>         assertEquals(<span class="jxr_string">"c1"</span>, toList(page.getIterable()).get(0).getIdentifier());
-<a class="jxr_linenumber" name="286" href="#286">286</a> 
-<a class="jxr_linenumber" name="287" href="#287">287</a>         Query&lt;DocumentaryUnit&gt; orderQuery = query
-<a class="jxr_linenumber" name="288" href="#288">288</a>                 .orderBy(Ontology.IDENTIFIER_KEY, Query.Sort.DESC);
-<a class="jxr_linenumber" name="289" href="#289">289</a>         page = orderQuery
-<a class="jxr_linenumber" name="290" href="#290">290</a>                 .page(EntityClass.DOCUMENTARY_UNIT, validUser);
-<a class="jxr_linenumber" name="291" href="#291">291</a>         assertFalse(page.getTotal() == 0);
-<a class="jxr_linenumber" name="292" href="#292">292</a> 
-<a class="jxr_linenumber" name="293" href="#293">293</a>         <em class="jxr_comment">// NB: This will break if other collections are added to the</em>
-<a class="jxr_linenumber" name="294" href="#294">294</a>         <em class="jxr_comment">// fixtures. Adjust as necessary.</em>
-<a class="jxr_linenumber" name="295" href="#295">295</a>         assertEquals(<span class="jxr_string">"c4"</span>, toList(page.getIterable()).get(0).getIdentifier());
-<a class="jxr_linenumber" name="296" href="#296">296</a>         assertEquals(<span class="jxr_string">"c1"</span>, toList(orderQuery
-<a class="jxr_linenumber" name="297" href="#297">297</a>                 .clearOrdering()
-<a class="jxr_linenumber" name="298" href="#298">298</a>                 .defaultOrderBy(Ontology.IDENTIFIER_KEY, Query.Sort.ASC)
-<a class="jxr_linenumber" name="299" href="#299">299</a>                 .page(EntityClass.DOCUMENTARY_UNIT, validUser)
-<a class="jxr_linenumber" name="300" href="#300">300</a>                 .getIterable()).get(0).getIdentifier());
-<a class="jxr_linenumber" name="301" href="#301">301</a>     }
-<a class="jxr_linenumber" name="302" href="#302">302</a> 
-<a class="jxr_linenumber" name="303" href="#303">303</a>     @Test
-<a class="jxr_linenumber" name="304" href="#304">304</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListWithGlobFilter() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="305" href="#305">305</a>         Query&lt;DocumentaryUnit&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;DocumentaryUnit&gt;(graph,
-<a class="jxr_linenumber" name="306" href="#306">306</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="307" href="#307">307</a> 
-<a class="jxr_linenumber" name="308" href="#308">308</a>         <em class="jxr_comment">// Get the total number of DocumentaryUnits the old-fashioned way</em>
-<a class="jxr_linenumber" name="309" href="#309">309</a>         Iterable&lt;Vertex&gt; allDocs = manager
-<a class="jxr_linenumber" name="310" href="#310">310</a>                 .getVertices(EntityClass.DOCUMENTARY_UNIT);
-<a class="jxr_linenumber" name="311" href="#311">311</a> 
-<a class="jxr_linenumber" name="312" href="#312">312</a>         <em class="jxr_comment">// Query for document identifier starting with 'c'.</em>
-<a class="jxr_linenumber" name="313" href="#313">313</a>         <em class="jxr_comment">// In the fixtures this is ALL docs</em>
-<a class="jxr_linenumber" name="314" href="#314">314</a>         List&lt;DocumentaryUnit&gt; list = toList(query.page(
-<a class="jxr_linenumber" name="315" href="#315">315</a>                 EntityClass.DOCUMENTARY_UNIT, validUser));
-<a class="jxr_linenumber" name="316" href="#316">316</a>         assertFalse(list.isEmpty());
-<a class="jxr_linenumber" name="317" href="#317">317</a>         assertEquals(toList(allDocs).size(), list.size());
-<a class="jxr_linenumber" name="318" href="#318">318</a>     }
-<a class="jxr_linenumber" name="319" href="#319">319</a> 
-<a class="jxr_linenumber" name="320" href="#320">320</a>     @Test
-<a class="jxr_linenumber" name="321" href="#321">321</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListWithFailFilter() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="322" href="#322">322</a>         Query&lt;DocumentaryUnit&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;DocumentaryUnit&gt;(graph,
-<a class="jxr_linenumber" name="323" href="#323">323</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="324" href="#324">324</a> 
-<a class="jxr_linenumber" name="325" href="#325">325</a>         <em class="jxr_comment">// Do a query that won't match anything.</em>
-<a class="jxr_linenumber" name="326" href="#326">326</a>         List&lt;DocumentaryUnit&gt; list = toList(query.page(
-<a class="jxr_linenumber" name="327" href="#327">327</a>                 Ontology.IDENTIFIER_KEY, <span class="jxr_string">"__GONNAFAIL__"</span>, validUser));
-<a class="jxr_linenumber" name="328" href="#328">328</a>         assertTrue(list.isEmpty());
-<a class="jxr_linenumber" name="329" href="#329">329</a>         assertEquals(0, list.size());
-<a class="jxr_linenumber" name="330" href="#330">330</a>     }
-<a class="jxr_linenumber" name="331" href="#331">331</a> }
+<a class="jxr_linenumber" name="275" href="#275">275</a> 
+<a class="jxr_linenumber" name="276" href="#276">276</a>     @Test
+<a class="jxr_linenumber" name="277" href="#277">277</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListWithSort() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="278" href="#278">278</a>         Query&lt;DocumentaryUnit&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;DocumentaryUnit&gt;(graph,
+<a class="jxr_linenumber" name="279" href="#279">279</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="280" href="#280">280</a> 
+<a class="jxr_linenumber" name="281" href="#281">281</a>         <em class="jxr_comment">// Query for document identifier c1.</em>
+<a class="jxr_linenumber" name="282" href="#282">282</a>         Page&lt;DocumentaryUnit&gt; page = query.orderBy(
+<a class="jxr_linenumber" name="283" href="#283">283</a>                 Ontology.IDENTIFIER_KEY, Query.Sort.ASC).page(
+<a class="jxr_linenumber" name="284" href="#284">284</a>                 EntityClass.DOCUMENTARY_UNIT, validUser);
+<a class="jxr_linenumber" name="285" href="#285">285</a>         assertFalse(page.getTotal() == 0);
+<a class="jxr_linenumber" name="286" href="#286">286</a>         assertEquals(<span class="jxr_string">"c1"</span>, toList(page.getIterable()).get(0).getIdentifier());
+<a class="jxr_linenumber" name="287" href="#287">287</a> 
+<a class="jxr_linenumber" name="288" href="#288">288</a>         Query&lt;DocumentaryUnit&gt; orderQuery = query
+<a class="jxr_linenumber" name="289" href="#289">289</a>                 .orderBy(Ontology.IDENTIFIER_KEY, Query.Sort.DESC);
+<a class="jxr_linenumber" name="290" href="#290">290</a>         page = orderQuery
+<a class="jxr_linenumber" name="291" href="#291">291</a>                 .page(EntityClass.DOCUMENTARY_UNIT, validUser);
+<a class="jxr_linenumber" name="292" href="#292">292</a>         assertFalse(page.getTotal() == 0);
+<a class="jxr_linenumber" name="293" href="#293">293</a> 
+<a class="jxr_linenumber" name="294" href="#294">294</a>         <em class="jxr_comment">// NB: This will break if other collections are added to the</em>
+<a class="jxr_linenumber" name="295" href="#295">295</a>         <em class="jxr_comment">// fixtures. Adjust as necessary.</em>
+<a class="jxr_linenumber" name="296" href="#296">296</a>         assertEquals(<span class="jxr_string">"nl-r1-m19"</span>, toList(page.getIterable()).get(0).getIdentifier());
+<a class="jxr_linenumber" name="297" href="#297">297</a> <em class="jxr_comment">//        assertEquals("c4", toList(page.getIterable()).get(1).getIdentifier());</em>
+<a class="jxr_linenumber" name="298" href="#298">298</a>         assertEquals(<span class="jxr_string">"c1"</span>, toList(orderQuery
+<a class="jxr_linenumber" name="299" href="#299">299</a>                 .clearOrdering()
+<a class="jxr_linenumber" name="300" href="#300">300</a>                 .defaultOrderBy(Ontology.IDENTIFIER_KEY, Query.Sort.ASC)
+<a class="jxr_linenumber" name="301" href="#301">301</a>                 .page(EntityClass.DOCUMENTARY_UNIT, validUser)
+<a class="jxr_linenumber" name="302" href="#302">302</a>                 .getIterable()).get(0).getIdentifier());
+<a class="jxr_linenumber" name="303" href="#303">303</a>     }
+<a class="jxr_linenumber" name="304" href="#304">304</a> 
+<a class="jxr_linenumber" name="305" href="#305">305</a>     @Test
+<a class="jxr_linenumber" name="306" href="#306">306</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListWithGlobFilter() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="307" href="#307">307</a>         Query&lt;DocumentaryUnit&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;DocumentaryUnit&gt;(graph,
+<a class="jxr_linenumber" name="308" href="#308">308</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="309" href="#309">309</a> 
+<a class="jxr_linenumber" name="310" href="#310">310</a>         <em class="jxr_comment">// Get the total number of DocumentaryUnits the old-fashioned way</em>
+<a class="jxr_linenumber" name="311" href="#311">311</a>         Iterable&lt;Vertex&gt; allDocs = manager
+<a class="jxr_linenumber" name="312" href="#312">312</a>                 .getVertices(EntityClass.DOCUMENTARY_UNIT);
+<a class="jxr_linenumber" name="313" href="#313">313</a> 
+<a class="jxr_linenumber" name="314" href="#314">314</a>         <em class="jxr_comment">// Query for document identifier starting with 'c'.</em>
+<a class="jxr_linenumber" name="315" href="#315">315</a>         <em class="jxr_comment">// In the fixtures this is ALL docs</em>
+<a class="jxr_linenumber" name="316" href="#316">316</a>         List&lt;DocumentaryUnit&gt; list = toList(query.page(
+<a class="jxr_linenumber" name="317" href="#317">317</a>                 EntityClass.DOCUMENTARY_UNIT, validUser));
+<a class="jxr_linenumber" name="318" href="#318">318</a>         assertFalse(list.isEmpty());
+<a class="jxr_linenumber" name="319" href="#319">319</a>         assertEquals(toList(allDocs).size(), list.size());
+<a class="jxr_linenumber" name="320" href="#320">320</a>     }
+<a class="jxr_linenumber" name="321" href="#321">321</a> 
+<a class="jxr_linenumber" name="322" href="#322">322</a>     @Test
+<a class="jxr_linenumber" name="323" href="#323">323</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListWithFailFilter() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="324" href="#324">324</a>         Query&lt;DocumentaryUnit&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;DocumentaryUnit&gt;(graph,
+<a class="jxr_linenumber" name="325" href="#325">325</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="326" href="#326">326</a> 
+<a class="jxr_linenumber" name="327" href="#327">327</a>         <em class="jxr_comment">// Do a query that won't match anything.</em>
+<a class="jxr_linenumber" name="328" href="#328">328</a>         List&lt;DocumentaryUnit&gt; list = toList(query.page(
+<a class="jxr_linenumber" name="329" href="#329">329</a>                 Ontology.IDENTIFIER_KEY, <span class="jxr_string">"__GONNAFAIL__"</span>, validUser));
+<a class="jxr_linenumber" name="330" href="#330">330</a>         assertTrue(list.isEmpty());
+<a class="jxr_linenumber" name="331" href="#331">331</a>         assertEquals(0, list.size());
+<a class="jxr_linenumber" name="332" href="#332">332</a>     }
+<a class="jxr_linenumber" name="333" href="#333">333</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

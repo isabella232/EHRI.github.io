@@ -55,7 +55,7 @@ function windowTitle()
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../../eu/ehri/project/importers/CsvImportManager.html" title="class in eu.ehri.project.importers"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../eu/ehri/project/importers/CsvConceptImporter.html" title="class in eu.ehri.project.importers"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?eu/ehri/project/importers/AbstractImporter.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="AbstractImporter.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
@@ -128,7 +128,7 @@ Base class for importers that import documentary units, with their
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#createCallbacks">createCallbacks</A></B></CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#callbacks">callbacks</A></B></CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -173,22 +173,6 @@ Base class for importers that import documentary units, with their
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#unchangedCallbacks">unchangedCallbacks</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#updateCallbacks">updateCallbacks</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
 </TABLE>
 &nbsp;
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
@@ -200,18 +184,18 @@ Base class for importers that import documentary units, with their
 <B>Constructor Summary</B></FONT></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#AbstractImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.importers.ImportLog)">AbstractImporter</A></B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
-                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;permissionScope,
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#AbstractImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.importers.ImportLog)">AbstractImporter</A></B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
                  <A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A>&nbsp;log)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor without a document context.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#AbstractImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.importers.ImportLog, T)">AbstractImporter</A></B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
-                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;permissionScope,
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#AbstractImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.importers.ImportLog, T)">AbstractImporter</A></B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
                  <A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A>&nbsp;log,
-                 <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="type parameter in AbstractImporter">T</A>&nbsp;documentContext)</CODE>
+                 <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="type parameter in AbstractImporter">T</A>&nbsp;context)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
@@ -229,26 +213,10 @@ Base class for importers that import documentary units, with their
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#addCreationCallback(eu.ehri.project.importers.ImportCallback)">addCreationCallback</A></B>(<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;cb)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#addCallback(eu.ehri.project.importers.ImportCallback)">addCallback</A></B>(<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;callback)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a callback to run when an item is created.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#addUnchangedCallback(eu.ehri.project.importers.ImportCallback)">addUnchangedCallback</A></B>(<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;cb)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a callback to run when an item is left unchanged.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#addUpdateCallback(eu.ehri.project.importers.ImportCallback)">addUpdateCallback</A></B>(<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;cb)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a callback to run when an item is updated.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -272,6 +240,14 @@ Base class for importers that import documentary units, with their
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>abstract &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#extractMaintenanceEvent(java.util.Map)">extractMaintenanceEvent</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>abstract &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#getMaintenanceEvent(java.util.Map)">getMaintenanceEvent</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;event)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -327,12 +303,11 @@ Base class for importers that import documentary units, with their
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>abstract &nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#importTopLevelExtraNodes(eu.ehri.project.models.base.AbstractUnit, java.util.Map)">importTopLevelExtraNodes</A></B>(<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/AbstractUnit.html?is-external=true" title="class or interface in eu.ehri.project.models.base">AbstractUnit</A>&nbsp;topLevelUnit,
-                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</CODE>
+<CODE>abstract &nbsp;<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/MaintenanceEvent.html?is-external=true" title="class or interface in eu.ehri.project.models">MaintenanceEvent</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#importMaintenanceEvent(java.util.Map)">importMaintenanceEvent</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;event)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;all data that is stored above the first imported DocumentaryUnit will be processed here, and added to the DocumentDescriptions.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -407,30 +382,10 @@ protected final <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.
 </DL>
 <HR>
 
-<A NAME="createCallbacks"><!-- --></A><H3>
-createCallbacks</H3>
+<A NAME="callbacks"><!-- --></A><H3>
+callbacks</H3>
 <PRE>
-protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt; <B>createCallbacks</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="updateCallbacks"><!-- --></A><H3>
-updateCallbacks</H3>
-<PRE>
-protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt; <B>updateCallbacks</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="unchangedCallbacks"><!-- --></A><H3>
-unchangedCallbacks</H3>
-<PRE>
-protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt; <B>unchangedCallbacks</B></PRE>
+protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&gt; <B>callbacks</B></PRE>
 <DL>
 <DL>
 </DL>
@@ -449,29 +404,29 @@ protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?
 <A NAME="AbstractImporter(com.tinkerpop.frames.FramedGraph,eu.ehri.project.models.base.PermissionScope,eu.ehri.project.importers.ImportLog,java.lang.Object)"><!-- --></A><A NAME="AbstractImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.importers.ImportLog, T)"><!-- --></A><H3>
 AbstractImporter</H3>
 <PRE>
-public <B>AbstractImporter</B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
-                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;permissionScope,
+public <B>AbstractImporter</B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
                         <A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A>&nbsp;log,
-                        <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="type parameter in AbstractImporter">T</A>&nbsp;documentContext)</PRE>
+                        <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="type parameter in AbstractImporter">T</A>&nbsp;context)</PRE>
 <DL>
 <DD>Constructor.
 <P>
 <DL>
-<DT><B>Parameters:</B><DD><CODE>framedGraph</CODE> - <DD><CODE>permissionScope</CODE> - <DD><CODE>log</CODE> - <DD><CODE>documentContext</CODE> - </DL>
+<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the framed graph<DD><CODE>scope</CODE> - the permission scope<DD><CODE>log</CODE> - the log object<DD><CODE>context</CODE> - the document context</DL>
 </DL>
 <HR>
 
 <A NAME="AbstractImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.importers.ImportLog)"><!-- --></A><H3>
 AbstractImporter</H3>
 <PRE>
-public <B>AbstractImporter</B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
-                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;permissionScope,
+public <B>AbstractImporter</B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+                        <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
                         <A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A>&nbsp;log)</PRE>
 <DL>
 <DD>Constructor without a document context.
 <P>
 <DL>
-<DT><B>Parameters:</B><DD><CODE>framedGraph</CODE> - <DD><CODE>permissionScope</CODE> - <DD><CODE>log</CODE> - </DL>
+<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the graph<DD><CODE>scope</CODE> - the permission scope<DD><CODE>log</CODE> - the logger object</DL>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -528,41 +483,15 @@ public <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/pers
 </DL>
 <HR>
 
-<A NAME="addCreationCallback(eu.ehri.project.importers.ImportCallback)"><!-- --></A><H3>
-addCreationCallback</H3>
+<A NAME="addCallback(eu.ehri.project.importers.ImportCallback)"><!-- --></A><H3>
+addCallback</H3>
 <PRE>
-public void <B>addCreationCallback</B>(<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;cb)</PRE>
+public void <B>addCallback</B>(<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;callback)</PRE>
 <DL>
 <DD>Add a callback to run when an item is created.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>cb</CODE> - </DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="addUpdateCallback(eu.ehri.project.importers.ImportCallback)"><!-- --></A><H3>
-addUpdateCallback</H3>
-<PRE>
-public void <B>addUpdateCallback</B>(<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;cb)</PRE>
-<DL>
-<DD>Add a callback to run when an item is updated.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>cb</CODE> - </DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="addUnchangedCallback(eu.ehri.project.importers.ImportCallback)"><!-- --></A><H3>
-addUnchangedCallback</H3>
-<PRE>
-public void <B>addUnchangedCallback</B>(<A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A>&nbsp;cb)</PRE>
-<DL>
-<DD>Add a callback to run when an item is left unchanged.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>cb</CODE> - </DL>
+<DT><B>Parameters:</B><DD><CODE>callback</CODE> - a callback function object</DL>
 </DD>
 </DL>
 <HR>
@@ -611,7 +540,7 @@ public abstract <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iter
 <DD>Extract a list of DatePeriod bundles from an item's data.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>data</CODE> - 
+<DT><B>Parameters:</B><DD><CODE>data</CODE> - the raw map of date data
 <DT><B>Returns:</B><DD>returns a List of Maps with DatePeriod.START_DATE and DatePeriod.END_DATE values</DL>
 </DD>
 </DL>
@@ -628,7 +557,7 @@ protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.htm
  flattened by this method.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>key</CODE> - <DD><CODE>value</CODE> - <DD><CODE>entity</CODE> - - the EntityClass with which this frameMap must comply</DL>
+<DT><B>Parameters:</B><DD><CODE>key</CODE> - a property key<DD><CODE>value</CODE> - a property value<DD><CODE>entity</CODE> - the EntityClass with which this frameMap must comply</DL>
 </DD>
 </DL>
 <HR>
@@ -644,17 +573,24 @@ public abstract <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iter
 </DL>
 <HR>
 
-<A NAME="importTopLevelExtraNodes(eu.ehri.project.models.base.AbstractUnit, java.util.Map)"><!-- --></A><H3>
-importTopLevelExtraNodes</H3>
+<A NAME="getMaintenanceEvent(java.util.Map)"><!-- --></A><H3>
+getMaintenanceEvent</H3>
 <PRE>
-public abstract void <B>importTopLevelExtraNodes</B>(<A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/AbstractUnit.html?is-external=true" title="class or interface in eu.ehri.project.models.base">AbstractUnit</A>&nbsp;topLevelUnit,
-                                              <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;itemData)</PRE>
+public abstract <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt; <B>getMaintenanceEvent</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;event)</PRE>
 <DL>
-<DD>all data that is stored above the first imported DocumentaryUnit will be processed here, and added to the DocumentDescriptions.
- this might include MaintenanceEvents, or in the case of EAD there might be author/creation data.
-<P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>topLevelUnit</CODE> - the top level DocumentaryUnit to append the maintenanceEvents to (if any)<DD><CODE>itemData</CODE> - the item representation to import, in which to search for maintenanceEvents</DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="importMaintenanceEvent(java.util.Map)"><!-- --></A><H3>
+importMaintenanceEvent</H3>
+<PRE>
+public abstract <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/MaintenanceEvent.html?is-external=true" title="class or interface in eu.ehri.project.models">MaintenanceEvent</A> <B>importMaintenanceEvent</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&nbsp;event)</PRE>
+<DL>
+<DD><DL>
+</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -689,7 +625,7 @@ public abstract void <B>importTopLevelExtraNodes</B>(<A HREF="https://github.com
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
 &nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../../eu/ehri/project/importers/CsvImportManager.html" title="class in eu.ehri.project.importers"><B>NEXT CLASS</B></A></FONT></TD>
+&nbsp;<A HREF="../../../../eu/ehri/project/importers/CsvConceptImporter.html" title="class in eu.ehri.project.importers"><B>NEXT CLASS</B></A></FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?eu/ehri/project/importers/AbstractImporter.html" target="_top"><B>FRAMES</B></A>  &nbsp;
 &nbsp;<A HREF="AbstractImporter.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;

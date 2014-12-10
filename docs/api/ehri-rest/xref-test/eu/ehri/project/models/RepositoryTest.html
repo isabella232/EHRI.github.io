@@ -25,17 +25,17 @@
 <a class="jxr_linenumber" name="15" href="#15">15</a>      @Test
 <a class="jxr_linenumber" name="16" href="#16">16</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetCollections() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="17" href="#17">17</a>          Repository r1 = manager.getFrame(<span class="jxr_string">"r1"</span>, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="18" href="#18">18</a>          assertEquals(2L, Iterables.size(r1.getCollections()));
+<a class="jxr_linenumber" name="18" href="#18">18</a>          assertEquals(3L, Iterables.size(r1.getCollections()));
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
 <a class="jxr_linenumber" name="20" href="#20">20</a>          <em class="jxr_comment">// Check the cached size</em>
-<a class="jxr_linenumber" name="21" href="#21">21</a>          assertEquals(2L, r1.getChildCount());
+<a class="jxr_linenumber" name="21" href="#21">21</a>          assertEquals(3L, r1.getChildCount());
 <a class="jxr_linenumber" name="22" href="#22">22</a>      }
 <a class="jxr_linenumber" name="23" href="#23">23</a>  
 <a class="jxr_linenumber" name="24" href="#24">24</a>      @Test
 <a class="jxr_linenumber" name="25" href="#25">25</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testRepositoryCanGetAllCollections() <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="26" href="#26">26</a>          Repository agent = manager.getFrame(<span class="jxr_string">"r1"</span>, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="27" href="#27">27</a>          assertEquals(2, Iterables.size(agent.getCollections()));
-<a class="jxr_linenumber" name="28" href="#28">28</a>          assertEquals(4, Iterables.size(agent.getAllCollections()));
+<a class="jxr_linenumber" name="27" href="#27">27</a>          assertEquals(3, Iterables.size(agent.getCollections()));
+<a class="jxr_linenumber" name="28" href="#28">28</a>          assertEquals(5, Iterables.size(agent.getAllCollections()));
 <a class="jxr_linenumber" name="29" href="#29">29</a>  
 <a class="jxr_linenumber" name="30" href="#30">30</a>      }
 <a class="jxr_linenumber" name="31" href="#31">31</a>  

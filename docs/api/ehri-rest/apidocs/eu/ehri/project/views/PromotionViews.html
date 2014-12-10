@@ -166,20 +166,38 @@ View class for managing item promotion.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/PromotionViews.html#demoteItem(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)">demoteItem</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
-           <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/PromotionViews.html#downVote(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)">downVote</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
+         <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a promotion from an item</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Down vote an item, removing an up vote if there is one.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/PromotionViews.html#promoteItem(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)">promoteItem</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
-            <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/PromotionViews.html#removeDownVote(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)">removeDownVote</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
+               <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a promotion to an item.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a down vote.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/PromotionViews.html#removeUpVote(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)">removeUpVote</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
+             <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove an up vote.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/views/PromotionViews.html#upVote(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)">upVote</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
+       <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Up vote an item, removing a down vote if there is one.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -246,15 +264,15 @@ public <B>PromotionViews</B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;grap
 </TR>
 </TABLE>
 
-<A NAME="promoteItem(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
-promoteItem</H3>
+<A NAME="upVote(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
+upVote</H3>
 <PRE>
-public void <B>promoteItem</B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
-                        <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)
-                 throws <A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                        <A HREF="../../../../eu/ehri/project/views/PromotionViews.NotPromotableError.html" title="class in eu.ehri.project.views">PromotionViews.NotPromotableError</A></PRE>
+public void <B>upVote</B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
+                   <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)
+            throws <A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
+                   <A HREF="../../../../eu/ehri/project/views/PromotionViews.NotPromotableError.html" title="class in eu.ehri.project.views">PromotionViews.NotPromotableError</A></PRE>
 <DL>
-<DD>Add a promotion to an item.
+<DD>Up vote an item, removing a down vote if there is one.
 <P>
 <DD><DL>
 </DL>
@@ -268,14 +286,56 @@ public void <B>promoteItem</B>(<A HREF="../../../../eu/ehri/project/models/base/
 </DL>
 <HR>
 
-<A NAME="demoteItem(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
-demoteItem</H3>
+<A NAME="removeUpVote(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
+removeUpVote</H3>
 <PRE>
-public void <B>demoteItem</B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
-                       <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)
-                throws <A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></PRE>
+public void <B>removeUpVote</B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
+                         <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)
+                  throws <A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></PRE>
 <DL>
-<DD>Remove a promotion from an item
+<DD>Remove an up vote.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - The promotable item<DD><CODE>user</CODE> - The item's promoter
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="downVote(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
+downVote</H3>
+<PRE>
+public void <B>downVote</B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
+                     <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)
+              throws <A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
+                     <A HREF="../../../../eu/ehri/project/views/PromotionViews.NotPromotableError.html" title="class in eu.ehri.project.views">PromotionViews.NotPromotableError</A></PRE>
+<DL>
+<DD>Down vote an item, removing an up vote if there is one.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>item</CODE> - The promotable item<DD><CODE>user</CODE> - The item's promoter
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
+<DD><CODE><A HREF="../../../../eu/ehri/project/views/PromotionViews.NotPromotableError.html" title="class in eu.ehri.project.views">PromotionViews.NotPromotableError</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="removeDownVote(eu.ehri.project.models.base.Promotable, eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
+removeDownVote</H3>
+<PRE>
+public void <B>removeDownVote</B>(<A HREF="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A>&nbsp;item,
+                           <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)
+                    throws <A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></PRE>
+<DL>
+<DD>Remove a down vote.
 <P>
 <DD><DL>
 </DL>

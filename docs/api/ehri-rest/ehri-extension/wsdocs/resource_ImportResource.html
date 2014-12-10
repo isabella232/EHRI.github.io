@@ -87,12 +87,104 @@
       <p>The following resources are applicable:</p>
       <ul>
         <li>
+        <a href="#path__import_csv.html">/import/csv</a>
+        </li>
+        <li>
         <a href="#path__import_ead.html">/import/ead</a>
         </li>
         <li>
         <a href="#path__import_skos.html">/import/skos</a>
         </li>
       </ul>
+        <a name="path__import_csv.html"></a>
+      <h1>/import/csv</h1>
+      <p class="note">Mount Point: <a href="../import/csv">/import/csv</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Import a set of CSV files. The body of the POST
+request should be a newline separated list of file
+paths.
+<p/>
+The way you would run with would typically be:
+<p/>
+<pre>
+<code>curl -X POST \
+-H "Authorization: mike" \
+--data-binary @csv-list.txt \
+"http://localhost:7474/ehri/import/csv?scope=my-repo-id&log=testing"
+
+# NB: Data is sent using --data-binary to preserve line-breaks - otherwise
+# it needs url encoding.
+</code>
+</pre>
+<p/>
+(Assuming <tt>csv-list.txt</tt> is a list of newline separated CSV file paths.)
+<p/>
+(TODO: Might be better to use a different way of encoding the local file paths...)
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>scope</td>
+          <td>
+            The id of the import scope (i.e. repository)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>log</td>
+          <td>
+            Log message for import. If this refers to a local file
+its contents will be used.
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>importer</td>
+          <td>
+            The fully-qualified import class name
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>pathList</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>A string containing a list of local file paths
+to import.
+
+There is no property file for this. Either the csv-heading is already in graph-compatible wording, or the Importer takes care of this.</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>A JSON object showing how many records were created,
+updated, or unchanged.</p>
         <a name="path__import_ead.html"></a>
       <h1>/import/ead</h1>
       <p class="note">Mount Point: <a href="../import/ead">/import/ead</a></p>
@@ -166,7 +258,7 @@ configuration file.
           <td>handler</td>
           <td>
             The fully-qualified handler class name
-(defaults to IcaAtomEadHandler)
+(defaults to EadHandler)
           </td>
           <td>query</td>
           <td></td>
@@ -175,7 +267,7 @@ configuration file.
           <td>importer</td>
           <td>
             The fully-qualified import class name
-(defaults to IcaAtomEadImporter)
+(defaults to EadImporter)
           </td>
           <td>query</td>
           <td></td>
