@@ -101,6 +101,9 @@ Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRes
 <DT><A HREF="./eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base"><B>AbstractUnit</B></A> - Interface in <A HREF="./eu/ehri/project/models/base/package-summary.html">eu.ehri.project.models.base</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/importers/EadImporter.html#ACCESS_POINT"><B>ACCESS_POINT</B></A> - 
 Static variable in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers/EadImporter.html" title="class in eu.ehri.project.importers">EadImporter</A>
 <DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#ACCESS_POINT_TYPE_PARAM"><B>ACCESS_POINT_TYPE_PARAM</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions"><B>AccessDenied</B></A> - Exception in <A HREF="./eu/ehri/project/exceptions/package-summary.html">eu.ehri.project.exceptions</A><DD>Represents an access violation.<DT><A HREF="./eu/ehri/project/exceptions/AccessDenied.html#AccessDenied(java.lang.String, java.lang.String)"><B>AccessDenied(String, String)</B></A> - 
 Constructor for exception eu.ehri.project.exceptions.<A HREF="./eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>
 <DD>&nbsp;
@@ -465,6 +468,10 @@ Constructor for class eu.ehri.project.models.cvoc.<A HREF="./eu/ehri/project/mod
 <DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension"><B>AuthoritativeSetResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a web service interface for the AuthoritativeSet items.<DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html#AuthoritativeSetResource(org.neo4j.graphdb.GraphDatabaseService)"><B>AuthoritativeSetResource(GraphDatabaseService)</B></A> - 
 Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</A>
 <DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#autoLinkRepositoryDocs(java.lang.String, java.lang.String, java.util.List, java.lang.String, boolean)"><B>autoLinkRepositoryDocs(String, String, List&lt;String&gt;, String, boolean)</B></A> - 
+Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
+<DD>Create concepts and links derived from the access points
+ on a repository's documentary units.
 </DL>
 <HR>
 <A NAME="_B_"><!-- --></A><H2>
@@ -856,6 +863,11 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/DescriptionResour
 <DT><A HREF="./eu/ehri/project/views/LinkViews.html#createAccessPointLink(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, eu.ehri.project.persistence.Bundle, eu.ehri.project.models.base.Accessor)"><B>createAccessPointLink(String, String, String, String, String, Bundle, Accessor)</B></A> - 
 Method in class eu.ehri.project.views.<A HREF="./eu/ehri/project/views/LinkViews.html" title="class in eu.ehri.project.views">LinkViews</A>
 <DD>Create a link between two items, along with an access point on the given description.
+<DT><A HREF="./eu/ehri/project/tools/Linker.html#createAndLinkRepositoryVocabulary(eu.ehri.project.models.Repository, eu.ehri.project.models.cvoc.Vocabulary, eu.ehri.project.models.UserProfile, java.lang.String, java.util.List, com.google.common.base.Optional, boolean)"><B>createAndLinkRepositoryVocabulary(Repository, Vocabulary, UserProfile, String, List&lt;String&gt;, Optional&lt;String&gt;, boolean)</B></A> - 
+Method in class eu.ehri.project.tools.<A HREF="./eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A>
+<DD>Populate a pre-created vocabulary with concepts created based on
+ access points for all collections within a repository, then link
+ those concepts to the relevant documentary units.
 <DT><A HREF="./eu/ehri/extension/AnnotationResource.html#createAnnotationFor(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)"><B>createAnnotationFor(String, Bundle, List&lt;String&gt;)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AnnotationResource.html" title="class in eu.ehri.extension">AnnotationResource</A>
 <DD>Create an annotation for a particular item.
@@ -1046,6 +1058,9 @@ Static variable in class eu.ehri.project.persistence.<A HREF="./eu/ehri/project/
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/RdfExport.html#DEFAULT_FORMAT"><B>DEFAULT_FORMAT</B></A> - 
 Static variable in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/RdfExport.html" title="class in eu.ehri.project.commands">RdfExport</A>
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#DEFAULT_LANG"><B>DEFAULT_LANG</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/importers/cvoc/JenaSkosImporter.html#DEFAULT_LANG"><B>DEFAULT_LANG</B></A> - 
 Static variable in class eu.ehri.project.importers.cvoc.<A HREF="./eu/ehri/project/importers/cvoc/JenaSkosImporter.html" title="class in eu.ehri.project.importers.cvoc">JenaSkosImporter</A>
@@ -1357,6 +1372,24 @@ Method in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers/V
 <DT><A HREF="./eu/ehri/project/importers/SaxXmlHandler.html#endEntity(java.lang.String)"><B>endEntity(String)</B></A> - 
 Method in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>
 <DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/AccessResource.html#ENDPOINT"><B>ENDPOINT</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AccessResource.html" title="class in eu.ehri.extension">AccessResource</A>
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/AdminResource.html#ENDPOINT"><B>ENDPOINT</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AdminResource.html" title="class in eu.ehri.extension">AdminResource</A>
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/DescriptionResource.html#ENDPOINT"><B>ENDPOINT</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/DescriptionResource.html" title="class in eu.ehri.extension">DescriptionResource</A>
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/GenericResource.html#ENDPOINT"><B>ENDPOINT</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</A>
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/PromotionResource.html#ENDPOINT"><B>ENDPOINT</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/PromotionResource.html" title="class in eu.ehri.extension">PromotionResource</A>
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#ENDPOINT"><B>ENDPOINT</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/definitions/Entities.html" title="class in eu.ehri.project.definitions"><B>Entities</B></A> - Class in <A HREF="./eu/ehri/project/definitions/package-summary.html">eu.ehri.project.definitions</A><DD>Collection of constants to denote the entity type of graph vertices.<DT><A HREF="./eu/ehri/project/definitions/Entities.html#Entities()"><B>Entities()</B></A> - 
 Constructor for class eu.ehri.project.definitions.<A HREF="./eu/ehri/project/definitions/Entities.html" title="class in eu.ehri.project.definitions">Entities</A>
 <DD>&nbsp;
@@ -1427,7 +1460,7 @@ Static method in exception eu.ehri.extension.errors.<A HREF="./eu/ehri/extension
  management of vertices and edges.<DT><A HREF="./eu/ehri/project/core/impl/package-summary.html"><B>eu.ehri.project.core.impl</B></A> - package eu.ehri.project.core.impl<DD>&nbsp;<DT><A HREF="./eu/ehri/project/definitions/package-summary.html"><B>eu.ehri.project.definitions</B></A> - package eu.ehri.project.definitions<DD>&nbsp;<DT><A HREF="./eu/ehri/project/exceptions/package-summary.html"><B>eu.ehri.project.exceptions</B></A> - package eu.ehri.project.exceptions<DD>&nbsp;<DT><A HREF="./eu/ehri/project/importers/package-summary.html"><B>eu.ehri.project.importers</B></A> - package eu.ehri.project.importers<DD>Handlers and Importers and supporting classes to import files into
  the database.<DT><A HREF="./eu/ehri/project/importers/cvoc/package-summary.html"><B>eu.ehri.project.importers.cvoc</B></A> - package eu.ehri.project.importers.cvoc<DD>&nbsp;<DT><A HREF="./eu/ehri/project/importers/exceptions/package-summary.html"><B>eu.ehri.project.importers.exceptions</B></A> - package eu.ehri.project.importers.exceptions<DD>&nbsp;<DT><A HREF="./eu/ehri/project/importers/properties/package-summary.html"><B>eu.ehri.project.importers.properties</B></A> - package eu.ehri.project.importers.properties<DD>&nbsp;<DT><A HREF="./eu/ehri/project/importers/util/package-summary.html"><B>eu.ehri.project.importers.util</B></A> - package eu.ehri.project.importers.util<DD>&nbsp;<DT><A HREF="./eu/ehri/project/models/package-summary.html"><B>eu.ehri.project.models</B></A> - package eu.ehri.project.models<DD>&nbsp;<DT><A HREF="./eu/ehri/project/models/annotations/package-summary.html"><B>eu.ehri.project.models.annotations</B></A> - package eu.ehri.project.models.annotations<DD>&nbsp;<DT><A HREF="./eu/ehri/project/models/base/package-summary.html"><B>eu.ehri.project.models.base</B></A> - package eu.ehri.project.models.base<DD>&nbsp;<DT><A HREF="./eu/ehri/project/models/cvoc/package-summary.html"><B>eu.ehri.project.models.cvoc</B></A> - package eu.ehri.project.models.cvoc<DD>&nbsp;<DT><A HREF="./eu/ehri/project/models/events/package-summary.html"><B>eu.ehri.project.models.events</B></A> - package eu.ehri.project.models.events<DD>&nbsp;<DT><A HREF="./eu/ehri/project/models/idgen/package-summary.html"><B>eu.ehri.project.models.idgen</B></A> - package eu.ehri.project.models.idgen<DD>Classes that handle the generation of string
  identifiers for different kinds of resource.<DT><A HREF="./eu/ehri/project/models/utils/package-summary.html"><B>eu.ehri.project.models.utils</B></A> - package eu.ehri.project.models.utils<DD>&nbsp;<DT><A HREF="./eu/ehri/project/persistence/package-summary.html"><B>eu.ehri.project.persistence</B></A> - package eu.ehri.project.persistence<DD>Classes dealing with persistence of
- relational item data in sub-tree format.<DT><A HREF="./eu/ehri/project/persistence/utils/package-summary.html"><B>eu.ehri.project.persistence.utils</B></A> - package eu.ehri.project.persistence.utils<DD>&nbsp;<DT><A HREF="./eu/ehri/project/utils/package-summary.html"><B>eu.ehri.project.utils</B></A> - package eu.ehri.project.utils<DD>&nbsp;<DT><A HREF="./eu/ehri/project/utils/fixtures/package-summary.html"><B>eu.ehri.project.utils.fixtures</B></A> - package eu.ehri.project.utils.fixtures<DD>&nbsp;<DT><A HREF="./eu/ehri/project/utils/fixtures/impl/package-summary.html"><B>eu.ehri.project.utils.fixtures.impl</B></A> - package eu.ehri.project.utils.fixtures.impl<DD>&nbsp;<DT><A HREF="./eu/ehri/project/views/package-summary.html"><B>eu.ehri.project.views</B></A> - package eu.ehri.project.views<DD>Classes that provide data access &quot;views&quot; on the
+ relational item data in sub-tree format.<DT><A HREF="./eu/ehri/project/persistence/utils/package-summary.html"><B>eu.ehri.project.persistence.utils</B></A> - package eu.ehri.project.persistence.utils<DD>&nbsp;<DT><A HREF="./eu/ehri/project/tools/package-summary.html"><B>eu.ehri.project.tools</B></A> - package eu.ehri.project.tools<DD>&nbsp;<DT><A HREF="./eu/ehri/project/utils/package-summary.html"><B>eu.ehri.project.utils</B></A> - package eu.ehri.project.utils<DD>&nbsp;<DT><A HREF="./eu/ehri/project/utils/fixtures/package-summary.html"><B>eu.ehri.project.utils.fixtures</B></A> - package eu.ehri.project.utils.fixtures<DD>&nbsp;<DT><A HREF="./eu/ehri/project/utils/fixtures/impl/package-summary.html"><B>eu.ehri.project.utils.fixtures.impl</B></A> - package eu.ehri.project.utils.fixtures.impl<DD>&nbsp;<DT><A HREF="./eu/ehri/project/views/package-summary.html"><B>eu.ehri.project.views</B></A> - package eu.ehri.project.views<DD>Classes that provide data access &quot;views&quot; on the
  graph that incorporate the permission and access-control
  systems.<DT><A HREF="./eu/ehri/project/views/impl/package-summary.html"><B>eu.ehri.project.views.impl</B></A> - package eu.ehri.project.views.impl<DD>&nbsp;<DT><A HREF="./eu/ehri/project/definitions/Ontology.html#EVENT_HAS_ACTIONER"><B>EVENT_HAS_ACTIONER</B></A> - 
 Static variable in class eu.ehri.project.definitions.<A HREF="./eu/ehri/project/definitions/Ontology.html" title="class in eu.ehri.project.definitions">Ontology</A>
@@ -1696,14 +1729,10 @@ Method in class eu.ehri.project.persistence.<A HREF="./eu/ehri/project/persisten
 <DT><A HREF="./eu/ehri/project/views/Query.html#filterTraversal(eu.ehri.project.views.QueryUtils.TraversalPath, eu.ehri.project.views.Query.FilterPredicate, java.lang.String)"><B>filterTraversal(QueryUtils.TraversalPath, Query.FilterPredicate, String)</B></A> - 
 Method in class eu.ehri.project.views.<A HREF="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>
 <DD>Add a filter clause.
-<DT><A HREF="./eu/ehri/project/views/Utilities.html#findReplacePropertyValue(eu.ehri.project.models.EntityClass, java.lang.String, java.lang.String, java.lang.String)"><B>findReplacePropertyValue(EntityClass, String, String, String)</B></A> - 
-Method in class eu.ehri.project.views.<A HREF="./eu/ehri/project/views/Utilities.html" title="class in eu.ehri.project.views">Utilities</A>
-<DD>Replace an existing property value with another value across an
- entire class of items.
-<DT><A HREF="./eu/ehri/project/views/Utilities.html#findReplacePropertyValueRE(eu.ehri.project.models.EntityClass, java.lang.String, java.util.regex.Pattern, java.lang.String)"><B>findReplacePropertyValueRE(EntityClass, String, Pattern, String)</B></A> - 
-Method in class eu.ehri.project.views.<A HREF="./eu/ehri/project/views/Utilities.html" title="class in eu.ehri.project.views">Utilities</A>
-<DD>Replace a substring of a property value across an entire
- item class.
+<DT><A HREF="./eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools"><B>FindReplace</B></A> - Class in <A HREF="./eu/ehri/project/tools/package-summary.html">eu.ehri.project.tools</A><DD>A grab-bag of useful functions for making changes to the
+ graph data.<DT><A HREF="./eu/ehri/project/tools/FindReplace.html#FindReplace(com.tinkerpop.frames.FramedGraph)"><B>FindReplace(FramedGraph&lt;?&gt;)</B></A> - 
+Constructor for class eu.ehri.project.tools.<A HREF="./eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools">FindReplace</A>
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/utils/fixtures/FixtureLoader.html" title="interface in eu.ehri.project.utils.fixtures"><B>FixtureLoader</B></A> - Interface in <A HREF="./eu/ehri/project/utils/fixtures/package-summary.html">eu.ehri.project.utils.fixtures</A><DD>Interface for classes which handle fixture loading.<DT><A HREF="./eu/ehri/project/utils/fixtures/FixtureLoaderFactory.html" title="class in eu.ehri.project.utils.fixtures"><B>FixtureLoaderFactory</B></A> - Class in <A HREF="./eu/ehri/project/utils/fixtures/package-summary.html">eu.ehri.project.utils.fixtures</A><DD>Factory class for concealing details of Fixture loading
  implementation.<DT><A HREF="./eu/ehri/project/utils/fixtures/FixtureLoaderFactory.html#FixtureLoaderFactory()"><B>FixtureLoaderFactory()</B></A> - 
 Constructor for class eu.ehri.project.utils.fixtures.<A HREF="./eu/ehri/project/utils/fixtures/FixtureLoaderFactory.html" title="class in eu.ehri.project.utils.fixtures">FixtureLoaderFactory</A>
@@ -3244,16 +3273,16 @@ Method in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers/A
 <DT><A HREF="./eu/ehri/project/importers/cvoc/XmlSkosImporter.html#handleCallbacks(eu.ehri.project.persistence.Mutation, eu.ehri.project.importers.ImportLog)"><B>handleCallbacks(Mutation&lt;? extends AccessibleEntity&gt;, ImportLog)</B></A> - 
 Method in class eu.ehri.project.importers.cvoc.<A HREF="./eu/ehri/project/importers/cvoc/XmlSkosImporter.html" title="class in eu.ehri.project.importers.cvoc">XmlSkosImporter</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/models/idgen/DescriptionIdGenerator.html#handleIdCollision(java.lang.Iterable, eu.ehri.project.persistence.Bundle)"><B>handleIdCollision(Iterable&lt;String&gt;, Bundle)</B></A> - 
+<DT><A HREF="./eu/ehri/project/models/idgen/DescriptionIdGenerator.html#handleIdCollision(java.util.List, eu.ehri.project.persistence.Bundle)"><B>handleIdCollision(List&lt;String&gt;, Bundle)</B></A> - 
 Method in enum eu.ehri.project.models.idgen.<A HREF="./eu/ehri/project/models/idgen/DescriptionIdGenerator.html" title="enum in eu.ehri.project.models.idgen">DescriptionIdGenerator</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/models/idgen/GenericIdGenerator.html#handleIdCollision(java.lang.Iterable, eu.ehri.project.persistence.Bundle)"><B>handleIdCollision(Iterable&lt;String&gt;, Bundle)</B></A> - 
+<DT><A HREF="./eu/ehri/project/models/idgen/GenericIdGenerator.html#handleIdCollision(java.util.List, eu.ehri.project.persistence.Bundle)"><B>handleIdCollision(List&lt;String&gt;, Bundle)</B></A> - 
 Method in enum eu.ehri.project.models.idgen.<A HREF="./eu/ehri/project/models/idgen/GenericIdGenerator.html" title="enum in eu.ehri.project.models.idgen">GenericIdGenerator</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/models/idgen/IdentifiableEntityIdGenerator.html#handleIdCollision(java.lang.Iterable, eu.ehri.project.persistence.Bundle)"><B>handleIdCollision(Iterable&lt;String&gt;, Bundle)</B></A> - 
+<DT><A HREF="./eu/ehri/project/models/idgen/IdentifiableEntityIdGenerator.html#handleIdCollision(java.util.List, eu.ehri.project.persistence.Bundle)"><B>handleIdCollision(List&lt;String&gt;, Bundle)</B></A> - 
 Method in enum eu.ehri.project.models.idgen.<A HREF="./eu/ehri/project/models/idgen/IdentifiableEntityIdGenerator.html" title="enum in eu.ehri.project.models.idgen">IdentifiableEntityIdGenerator</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/models/idgen/IdGenerator.html#handleIdCollision(java.lang.Iterable, eu.ehri.project.persistence.Bundle)"><B>handleIdCollision(Iterable&lt;String&gt;, Bundle)</B></A> - 
+<DT><A HREF="./eu/ehri/project/models/idgen/IdGenerator.html#handleIdCollision(java.util.List, eu.ehri.project.persistence.Bundle)"><B>handleIdCollision(List&lt;String&gt;, Bundle)</B></A> - 
 Method in interface eu.ehri.project.models.idgen.<A HREF="./eu/ehri/project/models/idgen/IdGenerator.html" title="interface in eu.ehri.project.models.idgen">IdGenerator</A>
 <DD>Handle an id collision by either a validation error depending
  on how the id was generated, or a RuntimeError.
@@ -3433,7 +3462,7 @@ Method in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers/V
 <DT><A HREF="./eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers"><B>ImportCallback</B></A> - Interface in <A HREF="./eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</A><DD>Functor class<DT><A HREF="./eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands"><B>ImportCommand</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/ImportCommand.html#ImportCommand(java.lang.Class, java.lang.Class)"><B>ImportCommand(Class&lt;? extends SaxXmlHandler&gt;, Class&lt;? extends AbstractImporter&gt;)</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands">ImportCommand</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/extension/ImportResource.html#importCsv(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><B>importCsv(String, String, String, String)</B></A> - 
+<DT><A HREF="./eu/ehri/extension/ImportResource.html#importCsv(java.lang.String, java.lang.String, java.lang.String, java.io.InputStream)"><B>importCsv(String, String, String, InputStream)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</A>
 <DD>Import a set of CSV files.
 <DT><A HREF="./eu/ehri/project/commands/ImportCsvCommand.html" title="class in eu.ehri.project.commands"><B>ImportCsvCommand</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/ImportCsvCommand.html#ImportCsvCommand(java.lang.Class)"><B>ImportCsvCommand(Class&lt;? extends XmlImporter&gt;)</B></A> - 
@@ -3619,9 +3648,6 @@ Constructor for exception eu.ehri.project.importers.exceptions.<A HREF="./eu/ehr
  properties that must be unique across the entire
  graph (e.g.<DT><A HREF="./eu/ehri/project/exceptions/IntegrityError.html#IntegrityError(java.lang.String)"><B>IntegrityError(String)</B></A> - 
 Constructor for exception eu.ehri.project.exceptions.<A HREF="./eu/ehri/project/exceptions/IntegrityError.html" title="class in eu.ehri.project.exceptions">IntegrityError</A>
-<DD>&nbsp;
-<DT><A HREF="./eu/ehri/extension/errors/mappers/IntegrityErrorMapper.html" title="class in eu.ehri.extension.errors.mappers"><B>IntegrityErrorMapper</B></A> - Class in <A HREF="./eu/ehri/extension/errors/mappers/package-summary.html">eu.ehri.extension.errors.mappers</A><DD>&nbsp;<DT><A HREF="./eu/ehri/extension/errors/mappers/IntegrityErrorMapper.html#IntegrityErrorMapper()"><B>IntegrityErrorMapper()</B></A> - 
-Constructor for class eu.ehri.extension.errors.mappers.<A HREF="./eu/ehri/extension/errors/mappers/IntegrityErrorMapper.html" title="class in eu.ehri.extension.errors.mappers">IntegrityErrorMapper</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/importers/exceptions/InvalidInputFormatError.html" title="class in eu.ehri.project.importers.exceptions"><B>InvalidInputFormatError</B></A> - Exception in <A HREF="./eu/ehri/project/importers/exceptions/package-summary.html">eu.ehri.project.importers.exceptions</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/importers/exceptions/InvalidInputFormatError.html#InvalidInputFormatError(java.lang.String)"><B>InvalidInputFormatError(String)</B></A> - 
 Constructor for exception eu.ehri.project.importers.exceptions.<A HREF="./eu/ehri/project/importers/exceptions/InvalidInputFormatError.html" title="class in eu.ehri.project.importers.exceptions">InvalidInputFormatError</A>
@@ -3852,6 +3878,9 @@ Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/Abstract
 <A NAME="_L_"><!-- --></A><H2>
 <B>L</B></H2>
 <DL>
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#LANG_PARAM"><B>LANG_PARAM</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/definitions/Ontology.html#LANGUAGE"><B>LANGUAGE</B></A> - 
 Static variable in class eu.ehri.project.definitions.<A HREF="./eu/ehri/project/definitions/Ontology.html" title="class in eu.ehri.project.definitions">Ontology</A>
 <DD>&nbsp;
@@ -3898,7 +3927,12 @@ Static variable in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/im
 <DT><A HREF="./eu/ehri/project/persistence/ActionManager.html#LINK_TYPE"><B>LINK_TYPE</B></A> - 
 Static variable in class eu.ehri.project.persistence.<A HREF="./eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/models/base/LinkableEntity.html" title="interface in eu.ehri.project.models.base"><B>LinkableEntity</B></A> - Interface in <A HREF="./eu/ehri/project/models/base/package-summary.html">eu.ehri.project.models.base</A><DD>An entity that can hold incoming links.<DT><A HREF="./eu/ehri/extension/LinkResource.html" title="class in eu.ehri.extension"><B>LinkResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a web service interface for creating/reading item links.<DT><A HREF="./eu/ehri/extension/LinkResource.html#LinkResource(org.neo4j.graphdb.GraphDatabaseService)"><B>LinkResource(GraphDatabaseService)</B></A> - 
+<DT><A HREF="./eu/ehri/project/models/base/LinkableEntity.html" title="interface in eu.ehri.project.models.base"><B>LinkableEntity</B></A> - Interface in <A HREF="./eu/ehri/project/models/base/package-summary.html">eu.ehri.project.models.base</A><DD>An entity that can hold incoming links.<DT><A HREF="./eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools"><B>Linker</B></A> - Class in <A HREF="./eu/ehri/project/tools/package-summary.html">eu.ehri.project.tools</A><DD>Utility class for performing operations on the database
+ related to the creation and validation of links between
+ items.<DT><A HREF="./eu/ehri/project/tools/Linker.html#Linker(com.tinkerpop.frames.FramedGraph)"><B>Linker(FramedGraph&lt;?&gt;)</B></A> - 
+Constructor for class eu.ehri.project.tools.<A HREF="./eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A>
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/LinkResource.html" title="class in eu.ehri.extension"><B>LinkResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a web service interface for creating/reading item links.<DT><A HREF="./eu/ehri/extension/LinkResource.html#LinkResource(org.neo4j.graphdb.GraphDatabaseService)"><B>LinkResource(GraphDatabaseService)</B></A> - 
 Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/LinkResource.html" title="class in eu.ehri.extension">LinkResource</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/views/LinkViews.html" title="class in eu.ehri.project.views"><B>LinkViews</B></A> - Class in <A HREF="./eu/ehri/project/views/package-summary.html">eu.ehri.project.views</A><DD>View class for handling annotation-related operations.<DT><A HREF="./eu/ehri/project/views/LinkViews.html#LinkViews(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope)"><B>LinkViews(FramedGraph&lt;?&gt;, PermissionScope)</B></A> - 
@@ -4473,6 +4507,17 @@ Constructor for class eu.ehri.project.importers.properties.<A HREF="./eu/ehri/pr
 <DT><A HREF="./eu/ehri/project/importers/properties/NodeProperties.html#PROPERTY"><B>PROPERTY</B></A> - 
 Static variable in class eu.ehri.project.importers.properties.<A HREF="./eu/ehri/project/importers/properties/NodeProperties.html" title="class in eu.ehri.project.importers.properties">NodeProperties</A>
 <DD>&nbsp;
+<DT><A HREF="./eu/ehri/project/tools/FindReplace.html#propertyName(eu.ehri.project.models.EntityClass, java.lang.String, java.lang.String)"><B>propertyName(EntityClass, String, String)</B></A> - 
+Method in class eu.ehri.project.tools.<A HREF="./eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools">FindReplace</A>
+<DD>Rename a property key across an entire class of items.
+<DT><A HREF="./eu/ehri/project/tools/FindReplace.html#propertyValue(eu.ehri.project.models.EntityClass, java.lang.String, java.lang.String, java.lang.String)"><B>propertyValue(EntityClass, String, String, String)</B></A> - 
+Method in class eu.ehri.project.tools.<A HREF="./eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools">FindReplace</A>
+<DD>Replace an existing property value with another value across an
+ entire class of items.
+<DT><A HREF="./eu/ehri/project/tools/FindReplace.html#propertyValueRE(eu.ehri.project.models.EntityClass, java.lang.String, java.util.regex.Pattern, java.lang.String)"><B>propertyValueRE(EntityClass, String, Pattern, String)</B></A> - 
+Method in class eu.ehri.project.tools.<A HREF="./eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools">FindReplace</A>
+<DD>Replace a substring of a property value across an entire
+ item class.
 <DT><A HREF="./eu/ehri/project/importers/SaxXmlHandler.html#putPropertyInCurrentGraph(java.lang.String, java.lang.String)"><B>putPropertyInCurrentGraph(String, String)</B></A> - 
 Method in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A>
 <DD>Stores this property value pair in the current DocumentNode.
@@ -4677,19 +4722,16 @@ Method in class eu.ehri.project.models.<A HREF="./eu/ehri/project/models/UserPro
 <DT><A HREF="./eu/ehri/project/models/UserProfile.html#removeWatching(eu.ehri.project.models.base.Watchable)"><B>removeWatching(Watchable)</B></A> - 
 Method in interface eu.ehri.project.models.<A HREF="./eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>
 <DD>Remove an item from this user's watch list.
-<DT><A HREF="./eu/ehri/extension/AdminResource.html#renamePropertyName(java.lang.String, java.lang.String, java.lang.String)"><B>renamePropertyName(String, String, String)</B></A> - 
-Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AdminResource.html" title="class in eu.ehri.extension">AdminResource</A>
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#renamePropertyName(java.lang.String, java.lang.String, java.lang.String)"><B>renamePropertyName(String, String, String)</B></A> - 
+Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
 <DD>Change a property key name across an entire entity class.
-<DT><A HREF="./eu/ehri/extension/AdminResource.html#renamePropertyValue(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><B>renamePropertyValue(String, String, String, String)</B></A> - 
-Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AdminResource.html" title="class in eu.ehri.extension">AdminResource</A>
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#renamePropertyValue(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><B>renamePropertyValue(String, String, String, String)</B></A> - 
+Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
 <DD>Find an replace a property value across an entire entity class, e.g.
-<DT><A HREF="./eu/ehri/extension/AdminResource.html#renamePropertyValueRE(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><B>renamePropertyValueRE(String, String, String, String)</B></A> - 
-Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AdminResource.html" title="class in eu.ehri.extension">AdminResource</A>
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#renamePropertyValueRE(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><B>renamePropertyValueRE(String, String, String, String)</B></A> - 
+Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
 <DD>Find an replace a regex-specified substring of a property value
  across an entire entity class e.g.
-<DT><A HREF="./eu/ehri/project/views/Utilities.html#replacePropertyName(eu.ehri.project.models.EntityClass, java.lang.String, java.lang.String)"><B>replacePropertyName(EntityClass, String, String)</B></A> - 
-Method in class eu.ehri.project.views.<A HREF="./eu/ehri/project/views/Utilities.html" title="class in eu.ehri.project.views">Utilities</A>
-<DD>Rename a property key across an entire class of items.
 <DT><A HREF="./eu/ehri/project/persistence/Bundle.html#replaceRelations(com.google.common.collect.Multimap)"><B>replaceRelations(Multimap&lt;String, Bundle&gt;)</B></A> - 
 Method in class eu.ehri.project.persistence.<A HREF="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>
 <DD>Set entire set of relations.
@@ -4714,6 +4756,9 @@ Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/RepositoryR
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/importers/properties/NodeProperties.html#REQUIRED"><B>REQUIRED</B></A> - 
 Static variable in class eu.ehri.project.importers.properties.<A HREF="./eu/ehri/project/importers/properties/NodeProperties.html" title="class in eu.ehri.project.importers.properties">NodeProperties</A>
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/project/importers/EaImporter.html#RESOLVED_LINK_DESC"><B>RESOLVED_LINK_DESC</B></A> - 
+Static variable in class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/importers/cvoc/XmlSkosImporter.DummyEntityResolver.html#resolveEntity(java.lang.String, java.lang.String)"><B>resolveEntity(String, String)</B></A> - 
 Method in class eu.ehri.project.importers.cvoc.<A HREF="./eu/ehri/project/importers/cvoc/XmlSkosImporter.DummyEntityResolver.html" title="class in eu.ehri.project.importers.cvoc">XmlSkosImporter.DummyEntityResolver</A>
@@ -5223,14 +5268,18 @@ Method in class eu.ehri.project.persistence.<A HREF="./eu/ehri/project/persisten
 <DT><A HREF="./eu/ehri/extension/ImportResource.html#TOLERANT_PARAM"><B>TOLERANT_PARAM</B></A> - 
 Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</A>
 <DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#TOLERANT_PARAM"><B>TOLERANT_PARAM</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension"><B>ToolsResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Miscellaneous additional functionality that doesn't
+ fit anywhere else.<DT><A HREF="./eu/ehri/extension/ToolsResource.html#ToolsResource(org.neo4j.graphdb.GraphDatabaseService)"><B>ToolsResource(GraphDatabaseService)</B></A> - 
+Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/errors/mappers/AccessDeniedMapper.html#toResponse(eu.ehri.project.exceptions.AccessDenied)"><B>toResponse(AccessDenied)</B></A> - 
 Method in class eu.ehri.extension.errors.mappers.<A HREF="./eu/ehri/extension/errors/mappers/AccessDeniedMapper.html" title="class in eu.ehri.extension.errors.mappers">AccessDeniedMapper</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/errors/mappers/DeserializationErrorMapper.html#toResponse(eu.ehri.project.exceptions.DeserializationError)"><B>toResponse(DeserializationError)</B></A> - 
 Method in class eu.ehri.extension.errors.mappers.<A HREF="./eu/ehri/extension/errors/mappers/DeserializationErrorMapper.html" title="class in eu.ehri.extension.errors.mappers">DeserializationErrorMapper</A>
-<DD>&nbsp;
-<DT><A HREF="./eu/ehri/extension/errors/mappers/IntegrityErrorMapper.html#toResponse(eu.ehri.project.exceptions.IntegrityError)"><B>toResponse(IntegrityError)</B></A> - 
-Method in class eu.ehri.extension.errors.mappers.<A HREF="./eu/ehri/extension/errors/mappers/IntegrityErrorMapper.html" title="class in eu.ehri.extension.errors.mappers">IntegrityErrorMapper</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/errors/mappers/ItemNotFoundMapper.html#toResponse(eu.ehri.project.exceptions.ItemNotFound)"><B>toResponse(ItemNotFound)</B></A> - 
 Method in class eu.ehri.extension.errors.mappers.<A HREF="./eu/ehri/extension/errors/mappers/ItemNotFoundMapper.html" title="class in eu.ehri.extension.errors.mappers">ItemNotFoundMapper</A>
@@ -5579,10 +5628,6 @@ Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/comman
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/importers/UshmmHandler.html" title="class in eu.ehri.project.importers"><B>UshmmHandler</B></A> - Class in <A HREF="./eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</A><DD>Handler for importing EAD files converted from the USHMM Solr index file.<DT><A HREF="./eu/ehri/project/importers/UshmmHandler.html#UshmmHandler(eu.ehri.project.importers.AbstractImporter)"><B>UshmmHandler(AbstractImporter&lt;Map&lt;String, Object&gt;&gt;)</B></A> - 
 Constructor for class eu.ehri.project.importers.<A HREF="./eu/ehri/project/importers/UshmmHandler.html" title="class in eu.ehri.project.importers">UshmmHandler</A>
-<DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/views/Utilities.html" title="class in eu.ehri.project.views"><B>Utilities</B></A> - Class in <A HREF="./eu/ehri/project/views/package-summary.html">eu.ehri.project.views</A><DD>A grab-bag of useful functions for making changes to the
- graph data.<DT><A HREF="./eu/ehri/project/views/Utilities.html#Utilities(com.tinkerpop.frames.FramedGraph)"><B>Utilities(FramedGraph&lt;?&gt;)</B></A> - 
-Constructor for class eu.ehri.project.views.<A HREF="./eu/ehri/project/views/Utilities.html" title="class in eu.ehri.project.views">Utilities</A>
 <DD>&nbsp;
 </DL>
 <HR>

@@ -463,118 +463,6 @@
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/admin/_findReplacePropertyName">
-      <wadl:method name="POST">
-        <wadl:doc>
-          <![CDATA[Change a property key name across an entire entity class.]]>
-<![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
-        </wadl:doc>
-        <wadl:request>
-          <wadl:param name="type" style="query">
-            <wadl:doc>
-              <![CDATA[The type of entity]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="from" style="query">
-            <wadl:doc>
-              <![CDATA[The existing property key name]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="to" style="query">
-            <wadl:doc>
-              <![CDATA[The new property key name]]>
-            </wadl:doc>
-          </wadl:param>
-        </wadl:request>
-        <wadl:response>
-          <wadl:doc>
-            <![CDATA[The number of items changed]]>
-          </wadl:doc>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-    <wadl:resource path="/admin/_findReplacePropertyValue">
-      <wadl:method name="POST">
-        <wadl:doc>
-          <![CDATA[Find an replace a property value across an entire entity class, e.g.]]>
-<![CDATA[if a DocumentaryUnit has a property with name &quot;foo&quot; and value &quot;bar&quot;,]]>
-<![CDATA[change the value to &quot;baz&quot; on all items.]]>
-<![CDATA[<p/>]]>
-<![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
-        </wadl:doc>
-        <wadl:request>
-          <wadl:param name="type" style="query">
-            <wadl:doc>
-              <![CDATA[The type of entity]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="name" style="query">
-            <wadl:doc>
-              <![CDATA[The name of the property to find and replace]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="from" style="query">
-            <wadl:doc>
-              <![CDATA[The property value to change]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="to" style="query">
-            <wadl:doc>
-              <![CDATA[The new value]]>
-            </wadl:doc>
-          </wadl:param>
-        </wadl:request>
-        <wadl:response>
-          <wadl:doc>
-            <![CDATA[How many items have been changed]]>
-          </wadl:doc>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-    <wadl:resource path="/admin/_findReplacePropertyValueRE">
-      <wadl:method name="POST">
-        <wadl:doc>
-          <![CDATA[Find an replace a regex-specified substring of a property value]]>
-<![CDATA[across an entire entity class e.g.]]>
-<![CDATA[if an Address has a property with name &quot;url&quot; and value &quot;www.foo.com/bar&quot;,]]>
-<![CDATA[providing a regex value <tt>^www</tt> and replace]]>
-<![CDATA[ment <tt>http://www</tt> will]]>
-<![CDATA[give the property a value of &quot;http://www.foo.com/bar&quot;.]]>
-<![CDATA[<p/>]]>
-<![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
-        </wadl:doc>
-        <wadl:request>
-          <wadl:param name="type" style="query">
-            <wadl:doc>
-              <![CDATA[The type of entity]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="name" style="query">
-            <wadl:doc>
-              <![CDATA[The name of the property to find and replace]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="pattern" style="query">
-            <wadl:doc>
-              <![CDATA[A regex specifying a substring of the property value]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="replace" style="query">
-            <wadl:doc>
-              <![CDATA[A replacement substring]]>
-            </wadl:doc>
-          </wadl:param>
-        </wadl:request>
-        <wadl:response>
-          <wadl:doc>
-            <![CDATA[How many items have been changed]]>
-          </wadl:doc>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
     <wadl:resource path="/admin/_rebuildChildCache">
       <wadl:method name="POST">
         <wadl:doc>
@@ -652,7 +540,8 @@
         </wadl:doc>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A list of serialized item representations]]>
+            <![CDATA[A list of serialized item representati]]>
+<![CDATA[ons]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -727,8 +616,7 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A response with 200 repr]]>
-<![CDATA[esenting a successful deletion.]]>
+            <![CDATA[A response with 200 representing a successful deletion.]]>
           </wadl:doc>
           <wadl:representation mediaType="*/*"/>
           <wadl:representation mediaType="application/xml"/>
@@ -1028,7 +916,8 @@
 <![CDATA[<p/>]]>
 <![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
 <![CDATA[header in the form:]]>
-<![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
+<![CDATA[<pre><code>page=1; count=20; total=50]]>
+<![CDATA[</code></pre>]]>
 <![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
 <![CDATA[numbers of items or when limiting is disabled completely.]]>
@@ -1042,8 +931,7 @@
         </wadl:doc>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A list of]]>
-<![CDATA[serialized item representations]]>
+            <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -1094,7 +982,8 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A response with 200 representing a successful deletion.]]>
+            <![CDATA[A response with 200 representing a successful d]]>
+<![CDATA[eletion.]]>
           </wadl:doc>
           <wadl:representation mediaType="*/*"/>
           <wadl:representation mediaType="application/xml"/>
@@ -1157,7 +1046,8 @@
       </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Fetch a resource by id.]]>
+          <![CDATA[Fetch]]>
+<![CDATA[a resource by id.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -1277,7 +1167,8 @@
       </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Fetch a resource by id.]]>
+          <![CDATA[Fetch a resource by]]>
+<![CDATA[id.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -1290,8 +1181,7 @@
       </wadl:method>
       <wadl:method name="PUT">
         <wadl:doc>
-          <![CDATA[Update]]>
-<![CDATA[a resource.]]>
+          <![CDATA[Update a resource.]]>
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
@@ -1403,7 +1293,8 @@
           <![CDATA[List available resources. The default behaviour is to]]>
 <![CDATA[return a page of 20 items.]]>
 <![CDATA[<p/>]]>
-<![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
+<![CDATA[The default lis]]>
+<![CDATA[t limit can be overridden using the <tt>limit</tt>]]>
 <![CDATA[parameter, and disabled completely using a value of -1.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
@@ -1411,8 +1302,7 @@
 <![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
 <![CDATA[header in the form:]]>
 <![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
-<![CDATA[If the header <tt>X-Stream</tt> is set to <tt>tru]]>
-<![CDATA[e</tt>]]>
+<![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
 <![CDATA[numbers of items or when limiting is disabled completely.]]>
 <![CDATA[<p/>]]>
@@ -1541,8 +1431,7 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A se]]>
-<![CDATA[rialized item representation]]>
+            <![CDATA[A serialized item representation]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -1593,7 +1482,8 @@
 <![CDATA[<code>curl -X POST \]]>
 <![CDATA[-H "Authorization: mike" \]]>
 <![CDATA[--data-binary @csv-list.txt \]]>
-<![CDATA["http://localhost:7474/ehri/import/csv?scope=my-repo-id&log=testing"]]>
+<![CDATA["http://localhost:7474/ehri/import/csv?scope=my-repo-id&log=tes]]>
+<![CDATA[ting"]]>
 <![CDATA[# NB: Data is sent using --data-binary to preserve line-breaks - otherwise]]>
 <![CDATA[# it needs url encoding.]]>
 <![CDATA[</code>]]>
@@ -1604,12 +1494,6 @@
 <![CDATA[(TODO: Might be better to use a different way of encoding the local file paths...)]]>
         </wadl:doc>
         <wadl:request>
-          <wadl:doc>
-            <![CDATA[A string containing a list of loc]]>
-<![CDATA[al file paths]]>
-<![CDATA[to import.]]>
-<![CDATA[There is no property file for this. Either the csv-heading is already in graph-compatible wording, or the Importer takes care of this.]]>
-          </wadl:doc>
           <wadl:representation mediaType="*/*"/>
           <wadl:representation mediaType="application/xml"/>
           <wadl:param name="scope" style="query">
@@ -1723,14 +1607,14 @@
 <![CDATA[<code>curl -X POST \]]>
 <![CDATA[-H "Authorization: mike" \]]>
 <![CDATA[--data-binary @skos-data.rdf \]]>
-<![CDATA["http://localhost:7474/ehri/import/skos?scope=gb-my-vocabulary&log=testing&tolerant=true"]]>
+<![CDATA["http://localhost:7474/ehri/impo]]>
+<![CDATA[rt/skos?scope=gb-my-vocabulary&log=testing&tolerant=true"]]>
 <![CDATA[</code>]]>
 <![CDATA[</pre>]]>
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
-            <![CDATA[A stre]]>
-<![CDATA[am of SKOS data in a valid format.]]>
+            <![CDATA[A stream of SKOS data in a valid format.]]>
           </wadl:doc>
           <wadl:representation mediaType="*/*"/>
           <wadl:representation mediaType="application/xml"/>
@@ -1784,7 +1668,8 @@
     <wadl:resource path="/link/{id}">
       <wadl:param name="id" style="template">
         <wadl:doc>
-          <![CDATA[The requested item id]]>
+          <![CDATA[The requested]]>
+<![CDATA[item id]]>
         </wadl:doc>
       </wadl:param>
       <wadl:method name="GET">
@@ -1854,8 +1739,7 @@
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
-            <![CDATA[The permission mat]]>
-<![CDATA[rix data]]>
+            <![CDATA[The permission matrix data]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:request>
@@ -1914,12 +1798,12 @@
     <wadl:resource path="/repository/list">
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[List available resources. The default behaviour is to]]>
+          <![CDATA[List available resources. The default behaviour]]>
+<![CDATA[is to]]>
 <![CDATA[return a page of 20 items.]]>
 <![CDATA[<p/>]]>
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
-<![CDATA[parameter, and disabled completely using]]>
-<![CDATA[a value of -1.]]>
+<![CDATA[parameter, and disabled completely using a value of -1.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
 <![CDATA[<p/>]]>
@@ -2048,8 +1932,7 @@
       </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Fetch]]>
-<![CDATA[a resource by id.]]>
+          <![CDATA[Fetch a resource by id.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -2057,6 +1940,118 @@
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/tools/_findReplacePropertyName">
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Change a property key name across an entire entity class.]]>
+<![CDATA[<p/>]]>
+<![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="type" style="query">
+            <wadl:doc>
+              <![CDATA[The type of entity]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="from" style="query">
+            <wadl:doc>
+              <![CDATA[The existing property key name]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="to" style="query">
+            <wadl:doc>
+              <![CDATA[The new property key name]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[The number of items changed]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/tools/_findReplacePropertyValue">
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Find an replace a property value across an entire entity class, e.g.]]>
+<![CDATA[if a DocumentaryUnit has a property with name &quot;foo&quot; and value &quot;bar&quot;,]]>
+<![CDATA[change the value to &quot;baz&quot; on all items.]]>
+<![CDATA[<p/>]]>
+<![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="type" style="query">
+            <wadl:doc>
+              <![CDATA[The type of entity]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="name" style="query">
+            <wadl:doc>
+              <![CDATA[The name of the property to find and replace]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="from" style="query">
+            <wadl:doc>
+              <![CDATA[The property value to change]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="to" style="query">
+            <wadl:doc>
+              <![CDATA[The new value]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[How many items have been changed]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/tools/_findReplacePropertyValueRE">
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Find an replace a regex-specified substring of a property value]]>
+<![CDATA[across an entire entity class e.g.]]>
+<![CDATA[if an Address has a property with name &quot;url&quot; and value &quot;www.foo.com/bar&quot;,]]>
+<![CDATA[providing a regex value <tt>^www</tt> and replacement <tt>http://www</tt> will]]>
+<![CDATA[give the property a value of &quot;http://www.foo.com/bar&quot;.]]>
+<![CDATA[<p/>]]>
+<![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="type" style="query">
+            <wadl:doc>
+              <![CDATA[The type of entity]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="name" style="query">
+            <wadl:doc>
+              <![CDATA[The name of the property to find and replace]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="pattern" style="query">
+            <wadl:doc>
+              <![CDATA[A regex specifying a substring of the property value]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="replace" style="query">
+            <wadl:doc>
+              <![CDATA[A replacement substring]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[How many items have been changed]]>
+          </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2181,7 +2176,8 @@
 <![CDATA[return a page of 20 items.]]>
 <![CDATA[<p/>]]>
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
-<![CDATA[parameter, and disabled completely using a value of -1.]]>
+<![CDATA[parameter, and disabled compl]]>
+<![CDATA[etely using a value of -1.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
 <![CDATA[<p/>]]>
@@ -2239,8 +2235,7 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A serializ]]>
-<![CDATA[ed representation of the updated resource.]]>
+            <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -2552,8 +2547,7 @@
           <![CDATA[List available resources subordinate to this item. Behaviour is the same]]>
 <![CDATA[as the general list method with respect to parameters.]]>
 <![CDATA[<p/>]]>
-<![CDATA[Exampl]]>
-<![CDATA[e:]]>
+<![CDATA[Example:]]>
 <![CDATA[<pre>]]>
 <![CDATA[<code>]]>
 <![CDATA[curl http://localhost:7474/ehri/[RESOURCE]/[ID]/list]]>
@@ -3177,7 +3171,8 @@
           </wadl:param>
           <wadl:param name="type" style="query">
             <wadl:doc>
-              <![CDATA[Filter events based on the item type of their subjects]]>
+              <![CDATA[Filter events based on the item type of their subject]]>
+<![CDATA[s]]>
             </wadl:doc>
           </wadl:param>
           <wadl:param name="item" style="query">
@@ -3507,8 +3502,7 @@
       </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[List concepts related to]]>
-<![CDATA[another concept.]]>
+          <![CDATA[List concepts related to another concept.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -3640,6 +3634,48 @@
         <wadl:response>
           <wadl:doc>
             <![CDATA[The new permission matrix]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/tools/generateConcepts/{repositoryId}/{vocabularyId}">
+      <wadl:param name="repositoryId" style="template">
+        <wadl:doc>
+          <![CDATA[the repository id]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:param name="vocabularyId" style="template">
+        <wadl:doc>
+          <![CDATA[the target vocabulary]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Create concepts and links derived from the access points]]>
+<![CDATA[on a repository's documentary units.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="apt" style="query">
+            <wadl:doc>
+              <![CDATA[the access point types to process]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="lang" style="query">
+            <wadl:doc>
+              <![CDATA[the language code of created concepts]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="tolerant" style="query">
+            <wadl:doc>
+              <![CDATA[proceed even if there are integrity errors due]]>
+<![CDATA[to slug collisions in the created concepts]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[the number of links created]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>

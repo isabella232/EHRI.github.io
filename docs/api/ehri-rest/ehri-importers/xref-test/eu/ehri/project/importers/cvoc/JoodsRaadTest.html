@@ -64,7 +64,7 @@
 <a class="jxr_linenumber" name="54" href="#54">54</a>         diff.printDebug(System.out);
 <a class="jxr_linenumber" name="55" href="#55">55</a>         
 <a class="jxr_linenumber" name="56" href="#56">56</a>  
-<a class="jxr_linenumber" name="57" href="#57">57</a>          printGraph(graph);
+<a class="jxr_linenumber" name="57" href="#57">57</a>  <em class="jxr_comment">//        printGraph(graph);</em>
 <a class="jxr_linenumber" name="58" href="#58">58</a>          <em class="jxr_comment">/*<em class="jxr_comment">  How many new nodes will have been created? We should have</em></em>
 <a class="jxr_linenumber" name="59" href="#59">59</a>  <em class="jxr_comment">         * 3 more Concepts</em>
 <a class="jxr_linenumber" name="60" href="#60">60</a>  <em class="jxr_comment">       	 * 7 more ConceptDescription</em>
@@ -160,22 +160,30 @@
 <a class="jxr_linenumber" name="150" href="#150">150</a>             <strong class="jxr_keyword">for</strong>(String k : e.getVertex(Direction.OUT).getPropertyKeys()){
 <a class="jxr_linenumber" name="151" href="#151">151</a>                 logger.debug(k + <span class="jxr_string">":"</span> + e.getVertex(Direction.OUT).getProperty(k));
 <a class="jxr_linenumber" name="152" href="#152">152</a>             }
-<a class="jxr_linenumber" name="153" href="#153">153</a>             found=<strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="154" href="#154">154</a>         }
-<a class="jxr_linenumber" name="155" href="#155">155</a>         assertTrue(found);
-<a class="jxr_linenumber" name="156" href="#156">156</a>                 
-<a class="jxr_linenumber" name="157" href="#157">157</a>         found=false;
-<a class="jxr_linenumber" name="158" href="#158">158</a>         <strong class="jxr_keyword">for</strong>(Concept rel : termJR.getRelatedConcepts()){
-<a class="jxr_linenumber" name="159" href="#159">159</a>             <strong class="jxr_keyword">for</strong>(String key : rel.asVertex().getPropertyKeys()){
-<a class="jxr_linenumber" name="160" href="#160">160</a>                 logger.debug(key + <span class="jxr_string">""</span> + rel.asVertex().getProperty(key));
-<a class="jxr_linenumber" name="161" href="#161">161</a>             }
-<a class="jxr_linenumber" name="162" href="#162">162</a>             found=<strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="163" href="#163">163</a>         }
-<a class="jxr_linenumber" name="164" href="#164">164</a>         assertFalse(found);
-<a class="jxr_linenumber" name="165" href="#165">165</a> }
-<a class="jxr_linenumber" name="166" href="#166">166</a> 
-<a class="jxr_linenumber" name="167" href="#167">167</a> 
-<a class="jxr_linenumber" name="168" href="#168">168</a> }
+<a class="jxr_linenumber" name="153" href="#153">153</a>             <strong class="jxr_keyword">int</strong> countHasLinkTarget=0;
+<a class="jxr_linenumber" name="154" href="#154">154</a>             <strong class="jxr_keyword">for</strong>(Edge out : e.getVertex(Direction.OUT).getEdges(Direction.OUT)){
+<a class="jxr_linenumber" name="155" href="#155">155</a>                 logger.debug(out.getLabel());
+<a class="jxr_linenumber" name="156" href="#156">156</a>                 <strong class="jxr_keyword">if</strong>(out.getLabel().equals(<span class="jxr_string">"hasLinkTarget"</span>)){
+<a class="jxr_linenumber" name="157" href="#157">157</a>                     countHasLinkTarget++;
+<a class="jxr_linenumber" name="158" href="#158">158</a>                 }
+<a class="jxr_linenumber" name="159" href="#159">159</a>             }
+<a class="jxr_linenumber" name="160" href="#160">160</a>             assertEquals(2, countHasLinkTarget);
+<a class="jxr_linenumber" name="161" href="#161">161</a>             found=<strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="162" href="#162">162</a>         }
+<a class="jxr_linenumber" name="163" href="#163">163</a>         assertTrue(found);
+<a class="jxr_linenumber" name="164" href="#164">164</a>                 
+<a class="jxr_linenumber" name="165" href="#165">165</a>         found=false;
+<a class="jxr_linenumber" name="166" href="#166">166</a>         <strong class="jxr_keyword">for</strong>(Concept rel : termJR.getRelatedConcepts()){
+<a class="jxr_linenumber" name="167" href="#167">167</a>             <strong class="jxr_keyword">for</strong>(String key : rel.asVertex().getPropertyKeys()){
+<a class="jxr_linenumber" name="168" href="#168">168</a>                 logger.debug(key + <span class="jxr_string">""</span> + rel.asVertex().getProperty(key));
+<a class="jxr_linenumber" name="169" href="#169">169</a>             }
+<a class="jxr_linenumber" name="170" href="#170">170</a>             found=<strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="171" href="#171">171</a>         }
+<a class="jxr_linenumber" name="172" href="#172">172</a>         assertFalse(found);
+<a class="jxr_linenumber" name="173" href="#173">173</a> }
+<a class="jxr_linenumber" name="174" href="#174">174</a> 
+<a class="jxr_linenumber" name="175" href="#175">175</a> 
+<a class="jxr_linenumber" name="176" href="#176">176</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

@@ -140,6 +140,14 @@ Provides additional Admin methods needed by client systems
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/AdminResource.html#ENDPOINT">ENDPOINT</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
 </TABLE>
 &nbsp;<A NAME="fields_inherited_from_class_eu.ehri.extension.AbstractRestResource"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
@@ -202,39 +210,6 @@ Provides additional Admin methods needed by client systems
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update the childCount property on hierarchical items with the number of
  children they contain.</TD>
 </TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;long</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AdminResource.html#renamePropertyName(java.lang.String, java.lang.String, java.lang.String)">renamePropertyName</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
-                   <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;oldKeyName,
-                   <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newKeyName)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Change a property key name across an entire entity class.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;long</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AdminResource.html#renamePropertyValue(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">renamePropertyValue</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
-                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propName,
-                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;oldValue,
-                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newValue)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find an replace a property value across an entire entity class, e.g.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;long</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AdminResource.html#renamePropertyValueRE(java.lang.String, java.lang.String, java.lang.String, java.lang.String)">renamePropertyValueRE</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
-                      <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propName,
-                      <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;regex,
-                      <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;replace)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Find an replace a regex-specified substring of a property value
- across an entire entity class e.g.</TD>
-</TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.extension.AbstractRestResource"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
@@ -266,6 +241,16 @@ Provides additional Admin methods needed by client systems
 <B>Field Detail</B></FONT></TH>
 </TR>
 </TABLE>
+
+<A NAME="ENDPOINT"><!-- --></A><H3>
+ENDPOINT</H3>
+<PRE>
+public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>ENDPOINT</B></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#eu.ehri.extension.AdminResource.ENDPOINT">Constant Field Values</A></DL>
+</DL>
+<HR>
 
 <A NAME="DEFAULT_USER_ID_PREFIX"><!-- --></A><H3>
 DEFAULT_USER_ID_PREFIX</H3>
@@ -344,77 +329,6 @@ public javax.ws.rs.core.Response <B>getGraphSON</B>()
 <P>
 <DD><DL>
 
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="renamePropertyValue(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
-renamePropertyValue</H3>
-<PRE>
-public long <B>renamePropertyValue</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
-                                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propName,
-                                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;oldValue,
-                                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newValue)
-                         throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
-<DL>
-<DD>Find an replace a property value across an entire entity class, e.g.
- if a DocumentaryUnit has a property with name &quot;foo&quot; and value &quot;bar&quot;,
- change the value to &quot;baz&quot; on all items.
- <p/>
- <strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>entityType</CODE> - The type of entity<DD><CODE>propName</CODE> - The name of the property to find and replace<DD><CODE>oldValue</CODE> - The property value to change<DD><CODE>newValue</CODE> - The new value
-<DT><B>Returns:</B><DD>How many items have been changed
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="renamePropertyValueRE(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
-renamePropertyValueRE</H3>
-<PRE>
-public long <B>renamePropertyValueRE</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
-                                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propName,
-                                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;regex,
-                                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;replace)
-                           throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
-<DL>
-<DD>Find an replace a regex-specified substring of a property value
- across an entire entity class e.g.
- if an Address has a property with name &quot;url&quot; and value &quot;www.foo.com/bar&quot;,
- providing a regex value <code>^www</code> and replacement <code>http://www</code> will
- give the property a value of &quot;http://www.foo.com/bar&quot;.
- <p/>
- <strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>entityType</CODE> - The type of entity<DD><CODE>propName</CODE> - The name of the property to find and replace<DD><CODE>regex</CODE> - A regex specifying a substring of the property value<DD><CODE>replace</CODE> - A replacement substring
-<DT><B>Returns:</B><DD>How many items have been changed
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="renamePropertyName(java.lang.String, java.lang.String, java.lang.String)"><!-- --></A><H3>
-renamePropertyName</H3>
-<PRE>
-public long <B>renamePropertyName</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;entityType,
-                               <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;oldKeyName,
-                               <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newKeyName)
-                        throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
-<DL>
-<DD>Change a property key name across an entire entity class.
-
- <strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>entityType</CODE> - The type of entity<DD><CODE>oldKeyName</CODE> - The existing property key name<DD><CODE>newKeyName</CODE> - The new property key name
-<DT><B>Returns:</B><DD>The number of items changed
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
 </DD>
