@@ -61,7 +61,7 @@
 <a class="jxr_linenumber" name="51" href="#51">51</a>          ErrorSet es1 = ErrorSet.fromError(<span class="jxr_string">"foo"</span>, <span class="jxr_string">"bad"</span>);
 <a class="jxr_linenumber" name="52" href="#52">52</a>          ErrorSet es2 = ErrorSet.fromError(<span class="jxr_string">"bar"</span>, <span class="jxr_string">"baz"</span>);
 <a class="jxr_linenumber" name="53" href="#53">53</a>          ImmutableMultimap&lt;String,ErrorSet&gt; rel
-<a class="jxr_linenumber" name="54" href="#54">54</a>                  = ImmutableMap.&lt;String, ErrorSet&gt;of(<span class="jxr_string">"rel"</span>, es2).asMultimap();
+<a class="jxr_linenumber" name="54" href="#54">54</a>                  = ImmutableMap.of(<span class="jxr_string">"rel"</span>, es2).asMultimap();
 <a class="jxr_linenumber" name="55" href="#55">55</a>          ErrorSet es3 = es1.withRelations(rel);
 <a class="jxr_linenumber" name="56" href="#56">56</a>          assertEquals(Lists.newArrayList(es2), es3.getRelations(<span class="jxr_string">"rel"</span>));
 <a class="jxr_linenumber" name="57" href="#57">57</a>      }

@@ -114,7 +114,7 @@
 <a class="jxr_linenumber" name="104" href="#104">104</a>         <em class="jxr_comment">// Ensure `withCache` preserves includedProperties (#31)</em>
 <a class="jxr_linenumber" name="105" href="#105">105</a>         Serializer withPropsAndCache = withProps.withCache();
 <a class="jxr_linenumber" name="106" href="#106">106</a>         assertEquals(Lists.newArrayList(<span class="jxr_string">"scopeAndContent"</span>),
-<a class="jxr_linenumber" name="107" href="#107">107</a>                 withPropsAndCache.getIncludeProperties());
+<a class="jxr_linenumber" name="107" href="#107">107</a>                 withPropsAndCache.getIncludedProperties());
 <a class="jxr_linenumber" name="108" href="#108">108</a>         Bundle serialized3 = withPropsAndCache
 <a class="jxr_linenumber" name="109" href="#109">109</a>                 .vertexFrameToBundle(doc);
 <a class="jxr_linenumber" name="110" href="#110">110</a>         assertNotNull(BundleUtils.get(serialized3, <span class="jxr_string">"describes[0]/scopeAndContent"</span>));

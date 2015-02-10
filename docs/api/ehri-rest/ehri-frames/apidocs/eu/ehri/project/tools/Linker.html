@@ -54,7 +54,7 @@ function windowTitle()
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools"><B>PREV CLASS</B></A>&nbsp;
 &nbsp;NEXT CLASS</FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?eu/ehri/project/tools/Linker.html" target="_top"><B>FRAMES</B></A>  &nbsp;
@@ -141,18 +141,75 @@ Utility class for performing operations on the database
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;long</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/tools/Linker.html#createAndLinkRepositoryVocabulary(eu.ehri.project.models.Repository, eu.ehri.project.models.cvoc.Vocabulary, eu.ehri.project.models.UserProfile, java.lang.String, java.util.List, com.google.common.base.Optional, boolean)">createAndLinkRepositoryVocabulary</A></B>(<A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A>&nbsp;repository,
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/tools/Linker.html#createAndLinkRepositoryVocabulary(eu.ehri.project.models.Repository, eu.ehri.project.models.cvoc.Vocabulary, eu.ehri.project.models.UserProfile)">createAndLinkRepositoryVocabulary</A></B>(<A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A>&nbsp;repository,
                                   <A HREF="../../../../eu/ehri/project/models/cvoc/Vocabulary.html" title="interface in eu.ehri.project.models.cvoc">Vocabulary</A>&nbsp;vocabulary,
-                                  <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user,
-                                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;languageCode,
-                                  <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessPointTypes,
-                                  com.google.common.base.Optional&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;logMessage,
-                                  boolean&nbsp;tolerant)</CODE>
+                                  <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Populate a pre-created vocabulary with concepts created based on
  access points for all collections within a repository, then link
  those concepts to the relevant documentary units.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/tools/Linker.html#withAccessPointType(java.lang.String)">withAccessPointType</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;accessPointType)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the linker to include the given access point type, in addition
+ to those already configured.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/tools/Linker.html#withAccessPointTypes(java.util.List)">withAccessPointTypes</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessPointTypes)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the linker to include <b>only</b> the given access point types, discarding
+ those already configured.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/tools/Linker.html#withDefaultLanguage(java.lang.String)">withDefaultLanguage</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;defaultLanguageCode)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the default language code to use for concept descriptions.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/tools/Linker.html#withExcludeSingles(boolean)">withExcludeSingles</A></B>(boolean&nbsp;excludeSingles)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the linker to ignore concepts which would only connect to a single
+ item.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/tools/Linker.html#withLogMessage(com.google.common.base.Optional)">withLogMessage</A></B>(com.google.common.base.Optional&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;logMessage)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the log message for the created items.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/tools/Linker.html#withLogMessage(java.lang.String)">withLogMessage</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the log message for the created items.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/tools/Linker.html#withTolerant(boolean)">withTolerant</A></B>(boolean&nbsp;tolerant)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the linker to proceed even if there are integrity errors caused
+ by two distinct concept names slugifying to the
+ same string.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -194,16 +251,12 @@ public <B>Linker</B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph)</PRE>
 </TR>
 </TABLE>
 
-<A NAME="createAndLinkRepositoryVocabulary(eu.ehri.project.models.Repository, eu.ehri.project.models.cvoc.Vocabulary, eu.ehri.project.models.UserProfile, java.lang.String, java.util.List, com.google.common.base.Optional, boolean)"><!-- --></A><H3>
+<A NAME="createAndLinkRepositoryVocabulary(eu.ehri.project.models.Repository, eu.ehri.project.models.cvoc.Vocabulary, eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
 createAndLinkRepositoryVocabulary</H3>
 <PRE>
 public long <B>createAndLinkRepositoryVocabulary</B>(<A HREF="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</A>&nbsp;repository,
                                               <A HREF="../../../../eu/ehri/project/models/cvoc/Vocabulary.html" title="interface in eu.ehri.project.models.cvoc">Vocabulary</A>&nbsp;vocabulary,
-                                              <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user,
-                                              <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;languageCode,
-                                              <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessPointTypes,
-                                              com.google.common.base.Optional&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;logMessage,
-                                              boolean&nbsp;tolerant)
+                                              <A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A>&nbsp;user)
                                        throws <A HREF="../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
                                               <A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
                                               <A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></PRE>
@@ -223,16 +276,116 @@ public long <B>createAndLinkRepositoryVocabulary</B>(<A HREF="../../../../eu/ehr
  NB. One could argue this function does too much...
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>repository</CODE> - the repository<DD><CODE>vocabulary</CODE> - an existing (presumably empty) vocabulary<DD><CODE>user</CODE> - the user to whom to attribute the operation<DD><CODE>languageCode</CODE> - the language to use for the concept descriptions<DD><CODE>accessPointTypes</CODE> - the access point types to include. If an empty
-                         list is provided <b>all</b> access points will
-                         be created as concepts<DD><CODE>logMessage</CODE> - a log message to use for the creation actions<DD><CODE>tolerant</CODE> - proceed even if there are integrity errors caused
-                         by two distinct concept names slugifying to the
-                         same string
+<DT><B>Parameters:</B><DD><CODE>repository</CODE> - the repository<DD><CODE>vocabulary</CODE> - an existing (presumably empty) vocabulary<DD><CODE>user</CODE> - the user to whom to attribute the operation
 <DT><B>Returns:</B><DD>the number of new links created
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
 <DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
 <DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="withExcludeSingles(boolean)"><!-- --></A><H3>
+withExcludeSingles</H3>
+<PRE>
+public <A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A> <B>withExcludeSingles</B>(boolean&nbsp;excludeSingles)</PRE>
+<DL>
+<DD>Set the linker to ignore concepts which would only connect to a single
+ item.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>excludeSingles</CODE> - a boolean value
+<DT><B>Returns:</B><DD>a new linker object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="withTolerant(boolean)"><!-- --></A><H3>
+withTolerant</H3>
+<PRE>
+public <A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A> <B>withTolerant</B>(boolean&nbsp;tolerant)</PRE>
+<DL>
+<DD>Set the linker to proceed even if there are integrity errors caused
+ by two distinct concept names slugifying to the
+ same string.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>tolerant</CODE> - a boolean value
+<DT><B>Returns:</B><DD>a new linker object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="withDefaultLanguage(java.lang.String)"><!-- --></A><H3>
+withDefaultLanguage</H3>
+<PRE>
+public <A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A> <B>withDefaultLanguage</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;defaultLanguageCode)</PRE>
+<DL>
+<DD>Set the default language code to use for concept descriptions.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>defaultLanguageCode</CODE> - a three-letter ISO-639-2 code
+<DT><B>Returns:</B><DD>a new linker object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="withLogMessage(java.lang.String)"><!-- --></A><H3>
+withLogMessage</H3>
+<PRE>
+public <A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A> <B>withLogMessage</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage)</PRE>
+<DL>
+<DD>Set the log message for the created items.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>logMessage</CODE> - a descriptive string
+<DT><B>Returns:</B><DD>a new linker object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="withLogMessage(com.google.common.base.Optional)"><!-- --></A><H3>
+withLogMessage</H3>
+<PRE>
+public <A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A> <B>withLogMessage</B>(com.google.common.base.Optional&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;logMessage)</PRE>
+<DL>
+<DD>Set the log message for the created items.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>logMessage</CODE> - a descriptive string
+<DT><B>Returns:</B><DD>a new linker object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="withAccessPointTypes(java.util.List)"><!-- --></A><H3>
+withAccessPointTypes</H3>
+<PRE>
+public <A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A> <B>withAccessPointTypes</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessPointTypes)</PRE>
+<DL>
+<DD>Set the linker to include <b>only</b> the given access point types, discarding
+ those already configured. If an empty list is given, all access point types
+ will be included.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>accessPointTypes</CODE> - a list of access point types
+<DT><B>Returns:</B><DD>a new linker object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="withAccessPointType(java.lang.String)"><!-- --></A><H3>
+withAccessPointType</H3>
+<PRE>
+public <A HREF="../../../../eu/ehri/project/tools/Linker.html" title="class in eu.ehri.project.tools">Linker</A> <B>withAccessPointType</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;accessPointType)</PRE>
+<DL>
+<DD>Set the linker to include the given access point type, in addition
+ to those already configured.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>accessPointType</CODE> - an access point type string
+<DT><B>Returns:</B><DD>a new linker object</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -266,7 +419,7 @@ public long <B>createAndLinkRepositoryVocabulary</B>(<A HREF="../../../../eu/ehr
 
 <TR>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools"><B>PREV CLASS</B></A>&nbsp;
 &nbsp;NEXT CLASS</FONT></TD>
 <TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
   <A HREF="../../../../index.html?eu/ehri/project/tools/Linker.html" target="_top"><B>FRAMES</B></A>  &nbsp;
@@ -296,6 +449,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

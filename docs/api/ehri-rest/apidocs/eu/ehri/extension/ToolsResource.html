@@ -159,6 +159,14 @@ Miscellaneous additional functionality that doesn't
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ToolsResource.html#SINGLE_PARAM">SINGLE_PARAM</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/ToolsResource.html#TOLERANT_PARAM">TOLERANT_PARAM</A></B></CODE>
 
 <BR>
@@ -202,15 +210,55 @@ Miscellaneous additional functionality that doesn't
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;long</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/ToolsResource.html#autoLinkRepositoryDocs(java.lang.String, java.lang.String, java.util.List, java.lang.String, boolean)">autoLinkRepositoryDocs</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;repositoryId,
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ToolsResource.html#autoLinkRepositoryDocs(java.lang.String, java.lang.String, java.util.List, java.lang.String, boolean, boolean)">autoLinkRepositoryDocs</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;repositoryId,
                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;vocabularyId,
                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessPointTypes,
                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;languageCode,
+                       boolean&nbsp;excludeSingle,
                        boolean&nbsp;tolerant)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create concepts and links derived from the access points
  on a repository's documentary units.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ToolsResource.html#regenerateId(java.lang.String, boolean, boolean, boolean)">regenerateId</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+             boolean&nbsp;collisions,
+             boolean&nbsp;tolerant,
+             boolean&nbsp;commit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regenerate the hierarchical graph ID for a given item, optionally
+ renaming it.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ToolsResource.html#regenerateIdsForScope(java.lang.String, boolean, boolean, boolean)">regenerateIdsForScope</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scopeId,
+                      boolean&nbsp;collisions,
+                      boolean&nbsp;tolerant,
+                      boolean&nbsp;commit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regenerate the hierarchical graph ID all items within the
+ immediate permission scope (not all items recursively.)
+
+ The default mode is to output items whose IDs would change, without
+ actually changing them.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ToolsResource.html#regenerateIdsForType(java.lang.String, boolean, boolean, boolean)">regenerateIdsForType</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;type,
+                     boolean&nbsp;collisions,
+                     boolean&nbsp;tolerant,
+                     boolean&nbsp;commit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regenerate the hierarchical graph ID all items of a given
+ type.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -297,6 +345,16 @@ public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/
 </DL>
 <HR>
 
+<A NAME="SINGLE_PARAM"><!-- --></A><H3>
+SINGLE_PARAM</H3>
+<PRE>
+public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>SINGLE_PARAM</B></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../constant-values.html#eu.ehri.extension.ToolsResource.SINGLE_PARAM">Constant Field Values</A></DL>
+</DL>
+<HR>
+
 <A NAME="LANG_PARAM"><!-- --></A><H3>
 LANG_PARAM</H3>
 <PRE>
@@ -354,13 +412,14 @@ public <B>ToolsResource</B>(<FONT SIZE="-1">@Context</FONT>
 </TR>
 </TABLE>
 
-<A NAME="autoLinkRepositoryDocs(java.lang.String, java.lang.String, java.util.List, java.lang.String, boolean)"><!-- --></A><H3>
+<A NAME="autoLinkRepositoryDocs(java.lang.String, java.lang.String, java.util.List, java.lang.String, boolean, boolean)"><!-- --></A><H3>
 autoLinkRepositoryDocs</H3>
 <PRE>
 public long <B>autoLinkRepositoryDocs</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;repositoryId,
                                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;vocabularyId,
                                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessPointTypes,
                                    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;languageCode,
+                                   boolean&nbsp;excludeSingle,
                                    boolean&nbsp;tolerant)
                             throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
                                    <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A>,
@@ -373,7 +432,8 @@ public long <B>autoLinkRepositoryDocs</B>(<A HREF="http://docs.oracle.com/javase
 <P>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>repositoryId</CODE> - the repository id<DD><CODE>vocabularyId</CODE> - the target vocabulary<DD><CODE>languageCode</CODE> - the language code of created concepts<DD><CODE>accessPointTypes</CODE> - the access point types to process<DD><CODE>tolerant</CODE> - proceed even if there are integrity errors due
-                         to slug collisions in the created concepts
+                         to slug collisions in the created concepts<DD><CODE>excludeSingle</CODE> - don't create concepts/links for access points that
+                         are unique to a single item
 <DT><B>Returns:</B><DD>the number of links created
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
@@ -454,6 +514,109 @@ public long <B>renamePropertyValue</B>(<A HREF="http://docs.oracle.com/javase/6/
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
 </DD>
 </DL>
+<HR>
+
+<A NAME="regenerateId(java.lang.String, boolean, boolean, boolean)"><!-- --></A><H3>
+regenerateId</H3>
+<PRE>
+public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>regenerateId</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+                           boolean&nbsp;collisions,
+                           boolean&nbsp;tolerant,
+                           boolean&nbsp;commit)
+                    throws <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                           <A HREF="../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></PRE>
+<DL>
+<DD>Regenerate the hierarchical graph ID for a given item, optionally
+ renaming it.
+
+ The default mode is to output items whose IDs would change, without
+ actually changing them. The <code>collisions</code> parameter will <b>only</b>
+ output items that would cause collisions if renamed, whereas <code>tolerant</code>
+ mode will skip them altogether.
+
+ The <code>commit</code> flag will cause renaming to take place.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>id</CODE> - the item's existing ID<DD><CODE>collisions</CODE> - only output items that if renamed to the
+                   regenerated ID would cause collisions<DD><CODE>tolerant</CODE> - skip items that could cause collisions rather
+                   then throwing an error<DD><CODE>commit</CODE> - whether or not to rename the item
+<DT><B>Returns:</B><DD>a tab old->new mapping, or an empty
+ body if nothing was changed
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="regenerateIdsForType(java.lang.String, boolean, boolean, boolean)"><!-- --></A><H3>
+regenerateIdsForType</H3>
+<PRE>
+public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>regenerateIdsForType</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;type,
+                                   boolean&nbsp;collisions,
+                                   boolean&nbsp;tolerant,
+                                   boolean&nbsp;commit)
+                            throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                                   <A HREF="../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></PRE>
+<DL>
+<DD>Regenerate the hierarchical graph ID all items of a given
+ type.
+
+ The default mode is to output items whose IDs would change, without
+ actually changing them. The <code>collisions</code> parameter will <b>only</b>
+ output items that would cause collisions if renamed, whereas <code>tolerant</code>
+ mode will skip them altogether.
+
+ The <code>commit</code> flag will cause renaming to take place.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>type</CODE> - the item type<DD><CODE>collisions</CODE> - only output items that if renamed to the
+                   regenerated ID would cause collisions<DD><CODE>tolerant</CODE> - skip items that could cause collisions rather
+                   then throwing an error<DD><CODE>commit</CODE> - whether or not to rename the items
+<DT><B>Returns:</B><DD>a tab list old->new mappings, or an empty
+ body if nothing was changed
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="regenerateIdsForScope(java.lang.String, boolean, boolean, boolean)"><!-- --></A><H3>
+regenerateIdsForScope</H3>
+<PRE>
+public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>regenerateIdsForScope</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scopeId,
+                                    boolean&nbsp;collisions,
+                                    boolean&nbsp;tolerant,
+                                    boolean&nbsp;commit)
+                             throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                                    <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                    <A HREF="../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></PRE>
+<DL>
+<DD>Regenerate the hierarchical graph ID all items within the
+ immediate permission scope (not all items recursively.)
+
+ The default mode is to output items whose IDs would change, without
+ actually changing them. The <code>collisions</code> parameter will <b>only</b>
+ output items that would cause collisions if renamed, whereas <code>tolerant</code>
+ mode will skip them altogether.
+
+ The <code>commit</code> flag will cause renaming to take place.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>scopeId</CODE> - the scope item's ID<DD><CODE>collisions</CODE> - only output items that if renamed to the
+                   regenerated ID would cause collisions<DD><CODE>tolerant</CODE> - skip items that could cause collisions rather
+                   then throwing an error<DD><CODE>commit</CODE> - whether or not to rename the items
+<DT><B>Returns:</B><DD>a tab list old->new mappings, or an empty
+ body if nothing was changed
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></CODE></DL>
+</DD>
+</DL>
 <!-- ========= END OF CLASS DATA ========= -->
 <HR>
 
@@ -515,6 +678,6 @@ DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

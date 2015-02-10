@@ -164,7 +164,7 @@ Delegation functions for ID generation.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGeneratorUtils.html#generateId(java.lang.Iterable, eu.ehri.project.persistence.Bundle, java.lang.String)">generateId</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGeneratorUtils.html#generateId(java.util.Collection, eu.ehri.project.persistence.Bundle, java.lang.String)">generateId</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
            <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;ident)</CODE>
 
@@ -186,7 +186,7 @@ Delegation functions for ID generation.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGeneratorUtils.html#handleIdCollision(java.lang.Iterable, java.lang.String, java.lang.String)">handleIdCollision</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGeneratorUtils.html#handleIdCollision(java.util.Collection, java.lang.String, java.lang.String)">handleIdCollision</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
                   <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;dataKey,
                   <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;ident)</CODE>
 
@@ -196,7 +196,7 @@ Delegation functions for ID generation.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGeneratorUtils.html#joinPath(java.lang.Iterable)">joinPath</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;path)</CODE>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGeneratorUtils.html#joinPath(java.util.Collection)">joinPath</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;path)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Join an identifier path to form a full ID.</TD>
@@ -272,10 +272,10 @@ public <B>IdGeneratorUtils</B>()</PRE>
 </TR>
 </TABLE>
 
-<A NAME="handleIdCollision(java.lang.Iterable, java.lang.String, java.lang.String)"><!-- --></A><H3>
+<A NAME="handleIdCollision(java.util.Collection, java.lang.String, java.lang.String)"><!-- --></A><H3>
 handleIdCollision</H3>
 <PRE>
-public static com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>handleIdCollision</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
+public static com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>handleIdCollision</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
                                                                                       <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;dataKey,
                                                                                       <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;ident)</PRE>
 <DL>
@@ -296,15 +296,15 @@ public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String
  unique ID.
 <P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>scope</CODE> - the permission scope<DD><CODE>bundle</CODE> - the item's data bundle<DD><CODE>ident</CODE> - the item's identifier</DL>
 </DD>
 </DL>
 <HR>
 
-<A NAME="generateId(java.lang.Iterable, eu.ehri.project.persistence.Bundle, java.lang.String)"><!-- --></A><H3>
+<A NAME="generateId(java.util.Collection, eu.ehri.project.persistence.Bundle, java.lang.String)"><!-- --></A><H3>
 generateId</H3>
 <PRE>
-public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>generateId</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
+public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>generateId</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
                                 <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;ident)</PRE>
 <DL>
@@ -318,10 +318,10 @@ public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String
 </DL>
 <HR>
 
-<A NAME="joinPath(java.lang.Iterable)"><!-- --></A><H3>
+<A NAME="joinPath(java.util.Collection)"><!-- --></A><H3>
 joinPath</H3>
 <PRE>
-public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>joinPath</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;path)</PRE>
+public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>joinPath</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;path)</PRE>
 <DL>
 <DD>Join an identifier path to form a full ID.
 <P>
@@ -391,6 +391,6 @@ DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

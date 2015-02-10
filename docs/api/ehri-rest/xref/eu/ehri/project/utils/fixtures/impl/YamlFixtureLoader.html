@@ -10,10 +10,10 @@
 
 <a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> eu.ehri.project.utils.fixtures.impl;
 <a class="jxr_linenumber" name="2" href="#2">2</a>   
-<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.LinkedListMultimap;
-<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.ListMultimap;
-<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
-<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.Maps;
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.ArrayListMultimap;
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.Maps;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.Multimap;
 <a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Direction;
 <a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.TransactionalGraph;
 <a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Vertex;
@@ -186,7 +186,7 @@
 <a class="jxr_linenumber" name="176" href="#176">176</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> loadFixtureFileStream(InputStream yamlStream) {
 <a class="jxr_linenumber" name="177" href="#177">177</a>         Yaml yaml = <strong class="jxr_keyword">new</strong> Yaml();
 <a class="jxr_linenumber" name="178" href="#178">178</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="179" href="#179">179</a>             Map&lt;Vertex, ListMultimap&lt;String, String&gt;&gt; links = Maps.newHashMap();
+<a class="jxr_linenumber" name="179" href="#179">179</a>             Map&lt;Vertex, Multimap&lt;String, String&gt;&gt; links = Maps.newHashMap();
 <a class="jxr_linenumber" name="180" href="#180">180</a>             <strong class="jxr_keyword">for</strong> (Object data : yaml.loadAll(yamlStream)) {
 <a class="jxr_linenumber" name="181" href="#181">181</a>                 <strong class="jxr_keyword">for</strong> (Object node : (List&lt;?&gt;) data) {
 <a class="jxr_linenumber" name="182" href="#182">182</a>                     <strong class="jxr_keyword">if</strong> (node instanceof Map) {
@@ -199,10 +199,10 @@
 <a class="jxr_linenumber" name="189" href="#189">189</a>             <em class="jxr_comment">// Finally, go through and wire up all the non-dependent</em>
 <a class="jxr_linenumber" name="190" href="#190">190</a>             <em class="jxr_comment">// relationships</em>
 <a class="jxr_linenumber" name="191" href="#191">191</a>             logger.trace(<span class="jxr_string">"Linking data..."</span>);
-<a class="jxr_linenumber" name="192" href="#192">192</a>             <strong class="jxr_keyword">for</strong> (Entry&lt;Vertex, ListMultimap&lt;String, String&gt;&gt; entry : links.entrySet()) {
+<a class="jxr_linenumber" name="192" href="#192">192</a>             <strong class="jxr_keyword">for</strong> (Entry&lt;Vertex, Multimap&lt;String, String&gt;&gt; entry : links.entrySet()) {
 <a class="jxr_linenumber" name="193" href="#193">193</a>                 logger.trace(<span class="jxr_string">"Setting links for: {}"</span>, entry.getKey());
 <a class="jxr_linenumber" name="194" href="#194">194</a>                 Vertex src = entry.getKey();
-<a class="jxr_linenumber" name="195" href="#195">195</a>                 ListMultimap&lt;String, String&gt; rels = entry.getValue();
+<a class="jxr_linenumber" name="195" href="#195">195</a>                 Multimap&lt;String, String&gt; rels = entry.getValue();
 <a class="jxr_linenumber" name="196" href="#196">196</a>                 <strong class="jxr_keyword">for</strong> (String relname : rels.keySet()) {
 <a class="jxr_linenumber" name="197" href="#197">197</a>                     <strong class="jxr_keyword">for</strong> (String target : rels.get(relname)) {
 <a class="jxr_linenumber" name="198" href="#198">198</a>                         Vertex dst = manager.getVertex(target);
@@ -229,7 +229,7 @@
 <a class="jxr_linenumber" name="219" href="#219">219</a>         }
 <a class="jxr_linenumber" name="220" href="#220">220</a>     }
 <a class="jxr_linenumber" name="221" href="#221">221</a> 
-<a class="jxr_linenumber" name="222" href="#222">222</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> importNode(Map&lt;Vertex, ListMultimap&lt;String, String&gt;&gt; links,
+<a class="jxr_linenumber" name="222" href="#222">222</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> importNode(Map&lt;Vertex, Multimap&lt;String, String&gt;&gt; links,
 <a class="jxr_linenumber" name="223" href="#223">223</a>             Map&lt;String, Object&gt; node) <strong class="jxr_keyword">throws</strong> DeserializationError,
 <a class="jxr_linenumber" name="224" href="#224">224</a>             ValidationError, IntegrityError, <a href="../../../../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a> {
 <a class="jxr_linenumber" name="225" href="#225">225</a>         <a href="../../../../../../eu/ehri/project/models/EntityClass.html">EntityClass</a> isa = EntityClass.withName((String) node
@@ -254,7 +254,7 @@
 <a class="jxr_linenumber" name="244" href="#244">244</a>         Mutation&lt;Frame&gt; frame = dao.createOrUpdate(entityBundle,
 <a class="jxr_linenumber" name="245" href="#245">245</a>                 Frame.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="246" href="#246">246</a> 
-<a class="jxr_linenumber" name="247" href="#247">247</a>         ListMultimap&lt;String, String&gt; linkRels = getLinkedRelations(nodeRels);
+<a class="jxr_linenumber" name="247" href="#247">247</a>         Multimap&lt;String, String&gt; linkRels = getLinkedRelations(nodeRels);
 <a class="jxr_linenumber" name="248" href="#248">248</a>         <strong class="jxr_keyword">if</strong> (!linkRels.isEmpty()) {
 <a class="jxr_linenumber" name="249" href="#249">249</a>             links.put(frame.getNode().asVertex(), linkRels);
 <a class="jxr_linenumber" name="250" href="#250">250</a>         }
@@ -262,7 +262,7 @@
 <a class="jxr_linenumber" name="252" href="#252">252</a> 
 <a class="jxr_linenumber" name="253" href="#253">253</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> createBundle(<strong class="jxr_keyword">final</strong> String id, <strong class="jxr_keyword">final</strong> <a href="../../../../../../eu/ehri/project/models/EntityClass.html">EntityClass</a> type,
 <a class="jxr_linenumber" name="254" href="#254">254</a>             <strong class="jxr_keyword">final</strong> Map&lt;String, Object&gt; nodeData,
-<a class="jxr_linenumber" name="255" href="#255">255</a>             <strong class="jxr_keyword">final</strong> ListMultimap&lt;String, Map&lt;?, ?&gt;&gt; dependentRelations) <strong class="jxr_keyword">throws</strong> DeserializationError {
+<a class="jxr_linenumber" name="255" href="#255">255</a>             <strong class="jxr_keyword">final</strong> Multimap&lt;String, Map&lt;?, ?&gt;&gt; dependentRelations) <strong class="jxr_keyword">throws</strong> DeserializationError {
 <a class="jxr_linenumber" name="256" href="#256">256</a>         @SuppressWarnings(<span class="jxr_string">"serial"</span>)
 <a class="jxr_linenumber" name="257" href="#257">257</a>         Map&lt;String, Object&gt; data = <strong class="jxr_keyword">new</strong> HashMap&lt;String, Object&gt;() {
 <a class="jxr_linenumber" name="258" href="#258">258</a>             {
@@ -282,8 +282,8 @@
 <a class="jxr_linenumber" name="272" href="#272">272</a>         <strong class="jxr_keyword">return</strong> b;
 <a class="jxr_linenumber" name="273" href="#273">273</a>     }
 <a class="jxr_linenumber" name="274" href="#274">274</a> 
-<a class="jxr_linenumber" name="275" href="#275">275</a>     <strong class="jxr_keyword">private</strong> ListMultimap&lt;String, String&gt; getLinkedRelations(Map&lt;String, Object&gt; data) {
-<a class="jxr_linenumber" name="276" href="#276">276</a>         ListMultimap&lt;String, String&gt; rels = LinkedListMultimap.create();
+<a class="jxr_linenumber" name="275" href="#275">275</a>     <strong class="jxr_keyword">private</strong> Multimap&lt;String, String&gt; getLinkedRelations(Map&lt;String, Object&gt; data) {
+<a class="jxr_linenumber" name="276" href="#276">276</a>         Multimap&lt;String, String&gt; rels = ArrayListMultimap.create();
 <a class="jxr_linenumber" name="277" href="#277">277</a>         <strong class="jxr_keyword">if</strong> (data != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="278" href="#278">278</a>             <strong class="jxr_keyword">for</strong> (Entry&lt;String, Object&gt; entry : data.entrySet()) {
 <a class="jxr_linenumber" name="279" href="#279">279</a>                 String relName = entry.getKey();
@@ -302,8 +302,8 @@
 <a class="jxr_linenumber" name="292" href="#292">292</a>         <strong class="jxr_keyword">return</strong> rels;
 <a class="jxr_linenumber" name="293" href="#293">293</a>     }
 <a class="jxr_linenumber" name="294" href="#294">294</a> 
-<a class="jxr_linenumber" name="295" href="#295">295</a>     <strong class="jxr_keyword">private</strong> ListMultimap&lt;String, Map&lt;?, ?&gt;&gt; getDependentRelations(Map&lt;String, Object&gt; data) {
-<a class="jxr_linenumber" name="296" href="#296">296</a>         ListMultimap&lt;String, Map&lt;?, ?&gt;&gt; rels = LinkedListMultimap.create();
+<a class="jxr_linenumber" name="295" href="#295">295</a>     <strong class="jxr_keyword">private</strong> Multimap&lt;String, Map&lt;?, ?&gt;&gt; getDependentRelations(Map&lt;String, Object&gt; data) {
+<a class="jxr_linenumber" name="296" href="#296">296</a>         Multimap&lt;String, Map&lt;?, ?&gt;&gt; rels = ArrayListMultimap.create();
 <a class="jxr_linenumber" name="297" href="#297">297</a>         <strong class="jxr_keyword">if</strong> (data != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="298" href="#298">298</a>             <strong class="jxr_keyword">for</strong> (Entry&lt;String, Object&gt; entry : data.entrySet()) {
 <a class="jxr_linenumber" name="299" href="#299">299</a>                 String relName = entry.getKey();

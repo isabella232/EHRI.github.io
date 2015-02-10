@@ -100,7 +100,7 @@ Class ClassUtils</H2>
 </PRE>
 
 <P>
-Helper functions for managing EntityType classes.
+Helper functions for managing EntityType classes via reflection.
 <P>
 
 <P>
@@ -159,7 +159,8 @@ Helper functions for managing EntityType classes.
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/utils/ClassUtils.html#getDependentRelations(java.lang.Class)">getDependentRelations</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a map of relationships keyed against their direction for
+ a given class.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -175,31 +176,32 @@ Helper functions for managing EntityType classes.
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/utils/ClassUtils.html#getFetchMethods(java.lang.Class)">getFetchMethods</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a map of relationship-names keyed against the method to
+ instantiate them.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
+<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/utils/ClassUtils.html#getMandatoryPropertyKeys(java.lang.Class)">getMandatoryPropertyKeys</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a collection of names for methods marked as mandatory properties.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
+<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/utils/ClassUtils.html#getPropertyKeys(java.lang.Class)">getPropertyKeys</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a collection of names for methods marked as properties.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
+<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/utils/ClassUtils.html#getUniquePropertyKeys(java.lang.Class)">getUniquePropertyKeys</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a collection of names for methods marked as unique properties.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -268,8 +270,8 @@ public static <A HREF="../../../../../eu/ehri/project/models/EntityClass.html" t
 <DD>Get the entity type string for a given class.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>cls</CODE> - 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Parameters:</B><DD><CODE>cls</CODE> - the entity type's Java class
+<DT><B>Returns:</B><DD>the entity enum</DL>
 </DD>
 </DL>
 <HR>
@@ -279,8 +281,12 @@ getDependentRelations</H3>
 <PRE>
 public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,com.tinkerpop.blueprints.Direction&gt; <B>getDependentRelations</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</PRE>
 <DL>
+<DD>Get a map of relationships keyed against their direction for
+ a given class.
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>cls</CODE> - the entity's Java class
+<DT><B>Returns:</B><DD>a relationship-direction map</DL>
 </DD>
 </DL>
 <HR>
@@ -290,8 +296,12 @@ getFetchMethods</H3>
 <PRE>
 public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/reflect/Method.html?is-external=true" title="class or interface in java.lang.reflect">Method</A>&gt; <B>getFetchMethods</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</PRE>
 <DL>
+<DD>Get a map of relationship-names keyed against the method to
+ instantiate them.
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>cls</CODE> - the entity's Java class
+<DT><B>Returns:</B><DD>a relationship-name-method map</DL>
 </DD>
 </DL>
 <HR>
@@ -299,10 +309,13 @@ public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.ht
 <A NAME="getPropertyKeys(java.lang.Class)"><!-- --></A><H3>
 getPropertyKeys</H3>
 <PRE>
-public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getPropertyKeys</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</PRE>
+public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getPropertyKeys</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</PRE>
 <DL>
+<DD>Get a collection of names for methods marked as properties.
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>cls</CODE> - the entity's Java class
+<DT><B>Returns:</B><DD>a collection of property names</DL>
 </DD>
 </DL>
 <HR>
@@ -310,10 +323,13 @@ public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterab
 <A NAME="getMandatoryPropertyKeys(java.lang.Class)"><!-- --></A><H3>
 getMandatoryPropertyKeys</H3>
 <PRE>
-public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getMandatoryPropertyKeys</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</PRE>
+public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getMandatoryPropertyKeys</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</PRE>
 <DL>
+<DD>Get a collection of names for methods marked as mandatory properties.
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>cls</CODE> - the entity's Java class
+<DT><B>Returns:</B><DD>a collection of property names</DL>
 </DD>
 </DL>
 <HR>
@@ -321,10 +337,13 @@ public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterab
 <A NAME="getUniquePropertyKeys(java.lang.Class)"><!-- --></A><H3>
 getUniquePropertyKeys</H3>
 <PRE>
-public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getUniquePropertyKeys</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</PRE>
+public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getUniquePropertyKeys</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;?&gt;&nbsp;cls)</PRE>
 <DL>
+<DD>Get a collection of names for methods marked as unique properties.
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>cls</CODE> - the entity's Java class
+<DT><B>Returns:</B><DD>a collection of property names</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -388,6 +407,6 @@ DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

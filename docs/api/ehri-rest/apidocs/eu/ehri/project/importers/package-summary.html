@@ -116,16 +116,28 @@ Handlers and Importers and supporting classes to import files into
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter&lt;T&gt;</A></B></TD>
-<TD>Base class for importers that import documentary units, with their
- constituent logical data, description(s), and date periods.</TD>
+<TD>Base class for importers that import documentary units, historical agents and virtual collections,
+ with their constituent logical data, description(s), and date periods.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html" title="class in eu.ehri.project.importers">AbstractImportManager</A></B></TD>
+<TD>Base ImportManager.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/CsvAuthoritativeItemImporter.html" title="class in eu.ehri.project.importers">CsvAuthoritativeItemImporter</A></B></TD>
+<TD>&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/CsvConceptImporter.html" title="class in eu.ehri.project.importers">CsvConceptImporter</A></B></TD>
 <TD>&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/CsvImportManager.html" title="class in eu.ehri.project.importers">CsvImportManager</A></B></TD>
+<TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/CsvHistoricalAgentImporter.html" title="class in eu.ehri.project.importers">CsvHistoricalAgentImporter</A></B></TD>
 <TD>&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/CsvImportManager.html" title="class in eu.ehri.project.importers">CsvImportManager</A></B></TD>
+<TD>when used to import documentaryUnits, make sure to have a 'sourceFileId' column as well</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/DcEuropeanaHandler.html" title="class in eu.ehri.project.importers">DcEuropeanaHandler</A></B></TD>
@@ -162,7 +174,7 @@ Handlers and Importers and supporting classes to import files into
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</A></B></TD>
-<TD>Import EAC for a given repository into the database.</TD>
+<TD>Import Map based representations of EAD or EAC for a given repository into the database.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/IcaAtomEadHandler.html" title="class in eu.ehri.project.importers">IcaAtomEadHandler</A></B></TD>
@@ -177,6 +189,11 @@ Handlers and Importers and supporting classes to import files into
 <TD>Class that serves as a manifest for an import batch,
  detailing how many items were created and updated,
  and how many failed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</A></B></TD>
+<TD>Importer of Map based representations of documentary units, historical agents,
+ virtual collections and other entities.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/PersonalitiesImporter.html" title="class in eu.ehri.project.importers">PersonalitiesImporter</A></B></TD>
@@ -220,14 +237,6 @@ Handlers and Importers and supporting classes to import files into
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/Wp2PersonalitiesImporter.html" title="class in eu.ehri.project.importers">Wp2PersonalitiesImporter</A></B></TD>
 <TD>before importing the file: delete the columns with the reordering of the first and last name
  add a column 'id' with a unique identifier, prefixed with EHRI-Personalities or some such.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/XmlImporter.html" title="class in eu.ehri.project.importers">XmlImporter&lt;T&gt;</A></B></TD>
-<TD>&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/XmlImportManager.html" title="class in eu.ehri.project.importers">XmlImportManager</A></B></TD>
-<TD>&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -299,6 +308,6 @@ Handlers and Importers and supporting classes to import files into
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

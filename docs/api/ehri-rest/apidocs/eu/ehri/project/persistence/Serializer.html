@@ -163,10 +163,10 @@ Class containing static methods to convert between FramedVertex instances,
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/persistence/Serializer.html#getIncludeProperties()">getIncludeProperties</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/persistence/Serializer.html#getIncludedProperties()">getIncludedProperties</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch the included properties.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the list of included properties for this serializer.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -320,7 +320,7 @@ void</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/persistence/Serializer.html#withCache()">withCache</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a serializer that caches recently-serialized items.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -380,31 +380,6 @@ public <B>Serializer</B>(<A HREF="../../../../eu/ehri/project/persistence/Serial
 </TR>
 </TABLE>
 
-<A NAME="withCache()"><!-- --></A><H3>
-withCache</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</A> <B>withCache</B>()</PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getIncludeProperties()"><!-- --></A><H3>
-getIncludeProperties</H3>
-<PRE>
-public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getIncludeProperties</B>()</PRE>
-<DL>
-<DD>Fetch the included properties.
-<P>
-<DD><DL>
-
-<DT><B>Returns:</B><DD>A list of property names that will always be serialized.</DL>
-</DD>
-</DL>
-<HR>
-
 <A NAME="withIncludedProperties(java.util.List)"><!-- --></A><H3>
 withIncludedProperties</H3>
 <PRE>
@@ -415,6 +390,34 @@ public <A HREF="../../../../eu/ehri/project/persistence/Serializer.html" title="
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>includeProps</CODE> - A set of properties to include.
 <DT><B>Returns:</B><DD>A new serializer.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getIncludedProperties()"><!-- --></A><H3>
+getIncludedProperties</H3>
+<PRE>
+public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getIncludedProperties</B>()</PRE>
+<DL>
+<DD>Get the list of included properties for this serializer.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a list of property-name strings</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="withCache()"><!-- --></A><H3>
+withCache</H3>
+<PRE>
+public <A HREF="../../../../eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</A> <B>withCache</B>()</PRE>
+<DL>
+<DD>Return a serializer that caches recently-serialized items.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a new serializer</DL>
 </DD>
 </DL>
 <HR>
@@ -665,6 +668,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

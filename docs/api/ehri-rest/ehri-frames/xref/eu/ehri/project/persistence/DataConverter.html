@@ -10,7 +10,7 @@
 
 <a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> eu.ehri.project.persistence;
 <a class="jxr_linenumber" name="2" href="#2">2</a>   
-<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.LinkedListMultimap;
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.ArrayListMultimap;
 <a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
 <a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.Maps;
 <a class="jxr_linenumber" name="6" href="#6">6</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.Multimap;
@@ -211,7 +211,7 @@
 <a class="jxr_linenumber" name="201" href="#201">201</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="202" href="#202">202</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Multimap&lt;String, Bundle&gt; getRelationships(Map&lt;?, ?&gt; data)
 <a class="jxr_linenumber" name="203" href="#203">203</a>             <strong class="jxr_keyword">throws</strong> <a href="../../../../eu/ehri/project/exceptions/DeserializationError.html">DeserializationError</a> {
-<a class="jxr_linenumber" name="204" href="#204">204</a>         Multimap&lt;String, Bundle&gt; relationBundles = LinkedListMultimap
+<a class="jxr_linenumber" name="204" href="#204">204</a>         Multimap&lt;String, Bundle&gt; relationBundles = ArrayListMultimap
 <a class="jxr_linenumber" name="205" href="#205">205</a>                 .create();
 <a class="jxr_linenumber" name="206" href="#206">206</a> 
 <a class="jxr_linenumber" name="207" href="#207">207</a>         <em class="jxr_comment">// It's okay to pass in a null value for relationships.</em>

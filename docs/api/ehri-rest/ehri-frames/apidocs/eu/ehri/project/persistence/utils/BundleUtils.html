@@ -170,7 +170,7 @@ Helpers for working with the bundle format.
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XPath-like method for deleting the value of a nested relation's
  attribute, i.e:
- 
+ <p/>
  Bundle newBundle = BundleUtils.delete(bundle,
  "describes[0]/languageCode"));</TD>
 </TR>
@@ -182,20 +182,27 @@ Helpers for working with the bundle format.
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XPath-like method for deleting a node from a nested tree, i.e:
- 
+ <p/>
  Bundle newBundle = BundleUtils.delete(bundle,
  "describes[0]/languageCode"));</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></CODE></FONT></TD>
+<CODE>static
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; T</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/persistence/utils/BundleUtils.html#get(eu.ehri.project.persistence.Bundle, java.lang.String)">get</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
     <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XPath-like method for getting the value of a nested relation's attribute,
  i.e:
- 
+ <p/>
  String lang = BundleUtils.get(bundle, "describes[0]/languageCode"));</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
@@ -205,7 +212,7 @@ Helpers for working with the bundle format.
           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XPath-like method for getting a node at a given path.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XPath-like method for getting a bundle at a given path.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -218,15 +225,22 @@ Helpers for working with the bundle format.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/persistence/utils/BundleUtils.html#set(eu.ehri.project.persistence.Bundle, java.lang.String, java.lang.Object)">set</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
+<CODE>static
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A></CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/persistence/utils/BundleUtils.html#set(eu.ehri.project.persistence.Bundle, java.lang.String, T)">set</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
     <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path,
-    <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</CODE>
+    T&nbsp;value)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xpath-like method for creating a new bundle by updating a nested relation
  of an existing bundle, i.e:
- 
+ <p/>
  Bundle newBundle = BundleUtils.set(oldBundle, "name", "Foobar"); Bundle
  newBundle = BundleUtils.set(oldBundle, "hasDate[0]/startDate",
  "1923-10-10");</TD>
@@ -241,7 +255,7 @@ Helpers for working with the bundle format.
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xpath-like method for creating a new bundle by updating a nested relation
  of an existing bundle, i.e:
- 
+ <p/>
  Bundle newBundle = BundleUtils.set(oldBundle, "name", "Foobar"); Bundle
  newBundle = BundleUtils.set(oldBundle, "hasDate[0]/startDate",
  "1923-10-10");</TD>
@@ -289,17 +303,17 @@ public <B>BundleUtils</B>()</PRE>
 <A NAME="get(eu.ehri.project.persistence.Bundle, java.lang.String)"><!-- --></A><H3>
 get</H3>
 <PRE>
-public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A> <B>get</B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
-                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path)</PRE>
+public static &lt;T&gt; T <B>get</B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
+                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path)</PRE>
 <DL>
 <DD>XPath-like method for getting the value of a nested relation's attribute,
  i.e:
- 
+ <p/>
  String lang = BundleUtils.get(bundle, "describes[0]/languageCode"));
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - <DD><CODE>path</CODE> - 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the type to fetch<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - the bundle<DD><CODE>path</CODE> - a path string
+<DT><B>Returns:</B><DD>a property of type T</DL>
 </DD>
 </DL>
 <HR>
@@ -310,14 +324,14 @@ getBundle</H3>
 public static <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A> <B>getBundle</B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
                                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path)</PRE>
 <DL>
-<DD>XPath-like method for getting a node at a given path.
+<DD>XPath-like method for getting a bundle at a given path.
  i.e:
- 
+ <p/>
  String lang = BundleUtils.get(bundle, "describes[0]/languageCode"));
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - <DD><CODE>path</CODE> - 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - the bundle<DD><CODE>path</CODE> - a path string
+<DT><B>Returns:</B><DD>a bundle found at the given path</DL>
 </DD>
 </DL>
 <HR>
@@ -330,13 +344,13 @@ public static <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" t
 <DL>
 <DD>XPath-like method for deleting the value of a nested relation's
  attribute, i.e:
- 
+ <p/>
  Bundle newBundle = BundleUtils.delete(bundle,
  "describes[0]/languageCode"));
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - <DD><CODE>path</CODE> - 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - the bundle<DD><CODE>path</CODE> - a path string
+<DT><B>Returns:</B><DD>the bundle with the item at the given path deleted</DL>
 </DD>
 </DL>
 <HR>
@@ -348,34 +362,34 @@ public static <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" t
                                   <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path)</PRE>
 <DL>
 <DD>XPath-like method for deleting a node from a nested tree, i.e:
- 
+ <p/>
  Bundle newBundle = BundleUtils.delete(bundle,
  "describes[0]/languageCode"));
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - <DD><CODE>path</CODE> - 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - the bundle<DD><CODE>path</CODE> - a path string
+<DT><B>Returns:</B><DD>the bundle with the bundle at the given path deleted</DL>
 </DD>
 </DL>
 <HR>
 
-<A NAME="set(eu.ehri.project.persistence.Bundle, java.lang.String, java.lang.Object)"><!-- --></A><H3>
+<A NAME="set(eu.ehri.project.persistence.Bundle,java.lang.String,java.lang.Object)"><!-- --></A><A NAME="set(eu.ehri.project.persistence.Bundle, java.lang.String, T)"><!-- --></A><H3>
 set</H3>
 <PRE>
-public static <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A> <B>set</B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
-                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path,
-                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</PRE>
+public static &lt;T&gt; <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A> <B>set</B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
+                             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;path,
+                             T&nbsp;value)</PRE>
 <DL>
 <DD>Xpath-like method for creating a new bundle by updating a nested relation
  of an existing bundle, i.e:
- 
+ <p/>
  Bundle newBundle = BundleUtils.set(oldBundle, "name", "Foobar"); Bundle
  newBundle = BundleUtils.set(oldBundle, "hasDate[0]/startDate",
  "1923-10-10");
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the type of property being set<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - the bundle<DD><CODE>path</CODE> - a path string<DD><CODE>value</CODE> - the value being set
+<DT><B>Returns:</B><DD>the bundle with the property at the given path set</DL>
 </DD>
 </DL>
 <HR>
@@ -389,14 +403,14 @@ public static <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" t
 <DL>
 <DD>Xpath-like method for creating a new bundle by updating a nested relation
  of an existing bundle, i.e:
- 
+ <p/>
  Bundle newBundle = BundleUtils.set(oldBundle, "name", "Foobar"); Bundle
  newBundle = BundleUtils.set(oldBundle, "hasDate[0]/startDate",
  "1923-10-10");
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - the bundle<DD><CODE>path</CODE> - a path string<DD><CODE>newBundle</CODE> - the new bundle to set at the path
+<DT><B>Returns:</B><DD>a bundle with the given bundle set at the given path</DL>
 </DD>
 </DL>
 <HR>
@@ -410,8 +424,8 @@ public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.h
 <DD>Xpath-like method to fetch a set of nested relations.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - <DD><CODE>path</CODE> - 
-<DT><B>Returns:</B><DD></DL>
+<DT><B>Parameters:</B><DD><CODE>bundle</CODE> - the bundle<DD><CODE>path</CODE> - a path string
+<DT><B>Returns:</B><DD>a list of bundles at the given relationship path</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -475,6 +489,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

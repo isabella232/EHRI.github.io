@@ -145,7 +145,7 @@
 <a class="jxr_linenumber" name="135" href="#135">135</a>             <strong class="jxr_keyword">return</strong> Optional.absent();
 <a class="jxr_linenumber" name="136" href="#136">136</a>         }
 <a class="jxr_linenumber" name="137" href="#137">137</a> 
-<a class="jxr_linenumber" name="138" href="#138">138</a>         List&lt;Pair&lt;String,Direction&gt;&gt; traversals = Lists.newLinkedList();
+<a class="jxr_linenumber" name="138" href="#138">138</a>         List&lt;Pair&lt;String,Direction&gt;&gt; traversals = Lists.newArrayListWithCapacity(parse.length / 2);
 <a class="jxr_linenumber" name="139" href="#139">139</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; parse.length; i += 2) {
 <a class="jxr_linenumber" name="140" href="#140">140</a>             String dir = parse[i];
 <a class="jxr_linenumber" name="141" href="#141">141</a>             String rel = parse[i+1];

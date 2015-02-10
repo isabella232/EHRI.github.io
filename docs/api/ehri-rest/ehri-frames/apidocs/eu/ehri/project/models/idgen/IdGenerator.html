@@ -122,7 +122,7 @@ Generate an ID given an entity type, a set of scopes, and some data.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGenerator.html#generateId(java.lang.Iterable, eu.ehri.project.persistence.Bundle)">generateId</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGenerator.html#generateId(java.util.Collection, eu.ehri.project.persistence.Bundle)">generateId</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
            <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
@@ -139,12 +139,11 @@ Generate an ID given an entity type, a set of scopes, and some data.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGenerator.html#handleIdCollision(java.util.List, eu.ehri.project.persistence.Bundle)">handleIdCollision</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGenerator.html#handleIdCollision(java.util.Collection, eu.ehri.project.persistence.Bundle)">handleIdCollision</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
                   <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Handle an id collision by either a validation error depending
- on how the id was generated, or a RuntimeError.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -160,15 +159,12 @@ Generate an ID given an entity type, a set of scopes, and some data.
 </TR>
 </TABLE>
 
-<A NAME="handleIdCollision(java.util.List, eu.ehri.project.persistence.Bundle)"><!-- --></A><H3>
+<A NAME="handleIdCollision(java.util.Collection, eu.ehri.project.persistence.Bundle)"><!-- --></A><H3>
 handleIdCollision</H3>
 <PRE>
-com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>handleIdCollision</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
+com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>handleIdCollision</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
                                                                         <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</PRE>
 <DL>
-<DD>Handle an id collision by either a validation error depending
- on how the id was generated, or a RuntimeError.
-<P>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>scopeIds</CODE> - The entity's parent scope identifiers<DD><CODE>bundle</CODE> - The entity's bundle data
 <DT><B>Returns:</B><DD>A set of errors</DL>
@@ -176,10 +172,10 @@ com.google.common.collect.ListMultimap&lt;<A HREF="http://docs.oracle.com/javase
 </DL>
 <HR>
 
-<A NAME="generateId(java.lang.Iterable, eu.ehri.project.persistence.Bundle)"><!-- --></A><H3>
+<A NAME="generateId(java.util.Collection, eu.ehri.project.persistence.Bundle)"><!-- --></A><H3>
 generateId</H3>
 <PRE>
-<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>generateId</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
+<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>generateId</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;scopeIds,
                   <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</PRE>
 <DL>
 <DD>Generate an ID given an array of scope IDs. This can be used
@@ -265,6 +261,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#method_detail">METHO
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

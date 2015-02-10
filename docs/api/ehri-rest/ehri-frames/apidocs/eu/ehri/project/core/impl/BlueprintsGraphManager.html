@@ -321,26 +321,10 @@ T</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getId(eu.ehri.project.models.base.Frame)">getId</A></B>(<A HREF="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getId(com.tinkerpop.blueprints.Vertex)">getId</A></B>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the id of a given vertex.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getType(eu.ehri.project.models.base.Frame)">getType</A></B>(<A HREF="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -401,6 +385,16 @@ T</CODE></FONT></TD>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rebuild the internal graph index.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#renameVertex(com.tinkerpop.blueprints.Vertex, java.lang.String, java.lang.String)">renameVertex</A></B>(com.tinkerpop.blueprints.Vertex&nbsp;vertex,
+             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;oldId,
+             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newId)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rename an existing vertex, changing its ID.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -567,20 +561,6 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?i
 </DL>
 <HR>
 
-<A NAME="getId(eu.ehri.project.models.base.Frame)"><!-- --></A><H3>
-getId</H3>
-<PRE>
-public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getId</B>(<A HREF="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame)</PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
-
 <A NAME="getType(com.tinkerpop.blueprints.Vertex)"><!-- --></A><H3>
 getType</H3>
 <PRE>
@@ -595,20 +575,6 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?i
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>vertex</CODE> - A vertex
 <DT><B>Returns:</B><DD>The vertex's string type</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getType(eu.ehri.project.models.base.Frame)"><!-- --></A><H3>
-getType</H3>
-<PRE>
-public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getType</B>(<A HREF="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&nbsp;frame)</PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-</DL>
 </DD>
 </DL>
 <HR>
@@ -952,6 +918,25 @@ public void <B>setProperty</B>(com.tinkerpop.blueprints.Vertex&nbsp;vertex,
 </DL>
 <HR>
 
+<A NAME="renameVertex(com.tinkerpop.blueprints.Vertex, java.lang.String, java.lang.String)"><!-- --></A><H3>
+renameVertex</H3>
+<PRE>
+public void <B>renameVertex</B>(com.tinkerpop.blueprints.Vertex&nbsp;vertex,
+                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;oldId,
+                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;newId)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../eu/ehri/project/core/GraphManager.html#renameVertex(com.tinkerpop.blueprints.Vertex, java.lang.String, java.lang.String)">GraphManager</A></CODE></B></DD>
+<DD>Rename an existing vertex, changing its ID.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../eu/ehri/project/core/GraphManager.html#renameVertex(com.tinkerpop.blueprints.Vertex, java.lang.String, java.lang.String)">renameVertex</A></CODE> in interface <CODE><A HREF="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>vertex</CODE> - the vertex<DD><CODE>newId</CODE> - the new ID</DL>
+</DD>
+</DL>
+<HR>
+
 <A NAME="deleteVertex(java.lang.String)"><!-- --></A><H3>
 deleteVertex</H3>
 <PRE>
@@ -1065,6 +1050,6 @@ DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

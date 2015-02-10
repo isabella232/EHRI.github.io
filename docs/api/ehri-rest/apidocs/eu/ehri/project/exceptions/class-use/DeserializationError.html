@@ -147,10 +147,11 @@ Uses of <A HREF="../../../../../eu/ehri/project/exceptions/DeserializationError.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;long</CODE></FONT></TD>
-<TD><CODE><B>ToolsResource.</B><B><A HREF="../../../../../eu/ehri/extension/ToolsResource.html#autoLinkRepositoryDocs(java.lang.String, java.lang.String, java.util.List, java.lang.String, boolean)">autoLinkRepositoryDocs</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;repositoryId,
+<TD><CODE><B>ToolsResource.</B><B><A HREF="../../../../../eu/ehri/extension/ToolsResource.html#autoLinkRepositoryDocs(java.lang.String, java.lang.String, java.util.List, java.lang.String, boolean, boolean)">autoLinkRepositoryDocs</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;repositoryId,
                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;vocabularyId,
                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessPointTypes,
                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;languageCode,
+                       boolean&nbsp;excludeSingle,
                        boolean&nbsp;tolerant)</CODE>
 
 <BR>
@@ -160,7 +161,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/exceptions/DeserializationError.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>VocabularyResource.</B><B><A HREF="../../../../../eu/ehri/extension/VocabularyResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List)">create</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
+<TD><CODE><B>AuthoritativeSetResource.</B><B><A HREF="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List)">create</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessors)</CODE>
 
 <BR>
@@ -178,7 +179,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/exceptions/DeserializationError.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>CountryResource.</B><B><A HREF="../../../../../eu/ehri/extension/CountryResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List)">create</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
+<TD><CODE><B>VocabularyResource.</B><B><A HREF="../../../../../eu/ehri/extension/VocabularyResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List)">create</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessors)</CODE>
 
 <BR>
@@ -187,7 +188,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/exceptions/DeserializationError.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>AuthoritativeSetResource.</B><B><A HREF="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List)">create</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
+<TD><CODE><B>CountryResource.</B><B><A HREF="../../../../../eu/ehri/extension/CountryResource.html#create(eu.ehri.project.persistence.Bundle, java.util.List)">create</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessors)</CODE>
 
 <BR>
@@ -227,6 +228,16 @@ Uses of <A HREF="../../../../../eu/ehri/project/exceptions/DeserializationError.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>AuthoritativeSetResource.</B><B><A HREF="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)">createChild</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+            <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
+            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessors)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B>VocabularyResource.</B><B><A HREF="../../../../../eu/ehri/extension/VocabularyResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)">createChild</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
             <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessors)</CODE>
@@ -257,16 +268,6 @@ Uses of <A HREF="../../../../../eu/ehri/project/exceptions/DeserializationError.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>CvocConceptResource.</B><B><A HREF="../../../../../eu/ehri/extension/CvocConceptResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)">createChild</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-            <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
-            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessors)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B>CountryResource.</B><B><A HREF="../../../../../eu/ehri/extension/CountryResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)">createChild</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
             <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessors)</CODE>
@@ -277,7 +278,7 @@ Uses of <A HREF="../../../../../eu/ehri/project/exceptions/DeserializationError.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>AuthoritativeSetResource.</B><B><A HREF="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)">createChild</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+<TD><CODE><B>CvocConceptResource.</B><B><A HREF="../../../../../eu/ehri/extension/CvocConceptResource.html#createChild(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List)">createChild</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
             <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle,
             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessors)</CODE>
 
@@ -453,31 +454,7 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>VocabularyResource.</B><B><A HREF="../../../../../eu/ehri/extension/VocabularyResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B>VirtualUnitResource.</B><B><A HREF="../../../../../eu/ehri/extension/VirtualUnitResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>UserProfileResource.</B><B><A HREF="../../../../../eu/ehri/extension/UserProfileResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>RepositoryResource.</B><B><A HREF="../../../../../eu/ehri/extension/RepositoryResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -493,7 +470,39 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>AuthoritativeSetResource.</B><B><A HREF="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B>HistoricalAgentResource.</B><B><A HREF="../../../../../eu/ehri/extension/HistoricalAgentResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>UserProfileResource.</B><B><A HREF="../../../../../eu/ehri/extension/UserProfileResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>VocabularyResource.</B><B><A HREF="../../../../../eu/ehri/extension/VocabularyResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>RepositoryResource.</B><B><A HREF="../../../../../eu/ehri/extension/RepositoryResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -517,23 +526,7 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>CvocConceptResource.</B><B><A HREF="../../../../../eu/ehri/extension/CvocConceptResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B>CountryResource.</B><B><A HREF="../../../../../eu/ehri/extension/CountryResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>AuthoritativeSetResource.</B><B><A HREF="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -549,8 +542,7 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>VocabularyResource.</B><B><A HREF="../../../../../eu/ehri/extension/VocabularyResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-       <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+<TD><CODE><B>CvocConceptResource.</B><B><A HREF="../../../../../eu/ehri/extension/CvocConceptResource.html#update(eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -559,24 +551,6 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B>VirtualUnitResource.</B><B><A HREF="../../../../../eu/ehri/extension/VirtualUnitResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-       <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>UserProfileResource.</B><B><A HREF="../../../../../eu/ehri/extension/UserProfileResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-       <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>RepositoryResource.</B><B><A HREF="../../../../../eu/ehri/extension/RepositoryResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
        <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
@@ -594,7 +568,43 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>AuthoritativeSetResource.</B><B><A HREF="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+       <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B>HistoricalAgentResource.</B><B><A HREF="../../../../../eu/ehri/extension/HistoricalAgentResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+       <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>UserProfileResource.</B><B><A HREF="../../../../../eu/ehri/extension/UserProfileResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+       <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>VocabularyResource.</B><B><A HREF="../../../../../eu/ehri/extension/VocabularyResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+       <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B>RepositoryResource.</B><B><A HREF="../../../../../eu/ehri/extension/RepositoryResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
        <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
@@ -621,15 +631,6 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>CvocConceptResource.</B><B><A HREF="../../../../../eu/ehri/extension/CvocConceptResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-       <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
 <TD><CODE><B>CountryResource.</B><B><A HREF="../../../../../eu/ehri/extension/CountryResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
        <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
@@ -639,7 +640,7 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>AuthoritativeSetResource.</B><B><A HREF="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+<TD><CODE><B>AnnotationResource.</B><B><A HREF="../../../../../eu/ehri/extension/AnnotationResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
        <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
@@ -648,7 +649,7 @@ javax.ws.rs.core.Response</CODE></FONT></TD>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B>AnnotationResource.</B><B><A HREF="../../../../../eu/ehri/extension/AnnotationResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
+<TD><CODE><B>CvocConceptResource.</B><B><A HREF="../../../../../eu/ehri/extension/CvocConceptResource.html#update(java.lang.String, eu.ehri.project.persistence.Bundle)">update</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
        <A HREF="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;bundle)</CODE>
 
 <BR>
@@ -844,6 +845,15 @@ Uses of <A HREF="../../../../../eu/ehri/project/exceptions/DeserializationError.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B>EntityAdd.</B><B><A HREF="../../../../../eu/ehri/project/commands/EntityAdd.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">execWithOptions</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
+                org.apache.commons.cli.CommandLine&nbsp;cmdLine)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
 <TD><CODE><B>UserMod.</B><B><A HREF="../../../../../eu/ehri/project/commands/UserMod.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">execWithOptions</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
                 org.apache.commons.cli.CommandLine&nbsp;cmdLine)</CODE>
 
@@ -858,15 +868,6 @@ Uses of <A HREF="../../../../../eu/ehri/project/exceptions/DeserializationError.
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Command-line entry-point (for testing.)</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;int</CODE></FONT></TD>
-<TD><CODE><B>EntityAdd.</B><B><A HREF="../../../../../eu/ehri/project/commands/EntityAdd.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">execWithOptions</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
-                org.apache.commons.cli.CommandLine&nbsp;cmdLine)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -1099,6 +1100,6 @@ Uses of <A HREF="../../../../../eu/ehri/project/exceptions/DeserializationError.
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

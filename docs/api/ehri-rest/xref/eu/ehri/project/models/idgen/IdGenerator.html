@@ -24,34 +24,29 @@
 <a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">interface</strong> <a href="../../../../../eu/ehri/project/models/idgen/IdGenerator.html">IdGenerator</a> {
 <a class="jxr_linenumber" name="15" href="#15">15</a>  
 <a class="jxr_linenumber" name="16" href="#16">16</a>      <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_javadoccomment">     * Handle an id collision by either a validation error depending</em>
-<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_javadoccomment">     * on how the id was generated, or a RuntimeError.</em>
-<a class="jxr_linenumber" name="19" href="#19">19</a>  <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="21" href="#21">21</a>  <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="22" href="#22">22</a>  <em class="jxr_javadoccomment">     * @param scopeIds  The entity's parent scope identifiers</em>
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <em class="jxr_javadoccomment">     * @param bundle The entity's bundle data</em>
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <em class="jxr_javadoccomment">     * @return A set of errors</em>
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="26" href="#26">26</a>      <strong class="jxr_keyword">public</strong> ListMultimap&lt;String, String&gt; handleIdCollision(List&lt;String&gt; scopeIds, <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle);
-<a class="jxr_linenumber" name="27" href="#27">27</a>  
-<a class="jxr_linenumber" name="28" href="#28">28</a>      <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <em class="jxr_javadoccomment">     * Generate an ID given an array of scope IDs. This can be used</em>
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <em class="jxr_javadoccomment">     * where the scope might not yet exist.</em>
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <em class="jxr_javadoccomment">     * @param scopeIds An array of scope ids, ordered parent-to-child.</em>
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <em class="jxr_javadoccomment">     * @param bundle   The entity's bundle data</em>
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <em class="jxr_javadoccomment">     * @return A generated ID string</em>
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="36" href="#36">36</a>      <strong class="jxr_keyword">public</strong> String generateId(Iterable&lt;String&gt; scopeIds, <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle);
-<a class="jxr_linenumber" name="37" href="#37">37</a>  
-<a class="jxr_linenumber" name="38" href="#38">38</a>      <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <em class="jxr_javadoccomment">     * Return the base data for the id, sans scoping.</em>
-<a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment">     * @param bundle The entity's bundle.</em>
-<a class="jxr_linenumber" name="41" href="#41">41</a>  <em class="jxr_javadoccomment">     * @return The base id string.</em>
-<a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="43" href="#43">43</a>      <strong class="jxr_keyword">public</strong> String getIdBase(<a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle);
-<a class="jxr_linenumber" name="44" href="#44">44</a>  }
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_javadoccomment">     * @param scopeIds  The entity's parent scope identifiers</em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_javadoccomment">     * @param bundle The entity's bundle data</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <em class="jxr_javadoccomment">     * @return A set of errors</em>
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="21" href="#21">21</a>      <strong class="jxr_keyword">public</strong> ListMultimap&lt;String, String&gt; handleIdCollision(Collection&lt;String&gt; scopeIds, <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle);
+<a class="jxr_linenumber" name="22" href="#22">22</a>  
+<a class="jxr_linenumber" name="23" href="#23">23</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <em class="jxr_javadoccomment">     * Generate an ID given an array of scope IDs. This can be used</em>
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <em class="jxr_javadoccomment">     * where the scope might not yet exist.</em>
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <em class="jxr_javadoccomment">     * @param scopeIds An array of scope ids, ordered parent-to-child.</em>
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <em class="jxr_javadoccomment">     * @param bundle   The entity's bundle data</em>
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <em class="jxr_javadoccomment">     * @return A generated ID string</em>
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="31" href="#31">31</a>      <strong class="jxr_keyword">public</strong> String generateId(Collection&lt;String&gt; scopeIds, <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle);
+<a class="jxr_linenumber" name="32" href="#32">32</a>  
+<a class="jxr_linenumber" name="33" href="#33">33</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <em class="jxr_javadoccomment">     * Return the base data for the id, sans scoping.</em>
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <em class="jxr_javadoccomment">     * @param bundle The entity's bundle.</em>
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <em class="jxr_javadoccomment">     * @return The base id string.</em>
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="38" href="#38">38</a>      <strong class="jxr_keyword">public</strong> String getIdBase(<a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle);
+<a class="jxr_linenumber" name="39" href="#39">39</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

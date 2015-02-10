@@ -3243,6 +3243,140 @@
         </wadl:response>
       </wadl:method>
     </wadl:resource>
+    <wadl:resource path="/tools/_regenerateId/{id}">
+      <wadl:param name="id" style="template">
+        <wadl:doc>
+          <![CDATA[the item's existing ID]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Regenerate the hierarchical graph ID for a given item, optionally]]>
+<![CDATA[renaming it.]]>
+<![CDATA[The default mode is to output items whose IDs would change, without]]>
+<![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
+<![CDATA[output items that would cause collisions if renamed, whereas tolerant]]>
+<![CDATA[mode will skip them altogether.]]>
+<![CDATA[The commit flag will cause renaming to take place.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="collisions" style="query">
+            <wadl:doc>
+              <![CDATA[only output items that if renamed to the]]>
+<![CDATA[regenerated ID would cause collisions]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="tolerant" style="query">
+            <wadl:doc>
+              <![CDATA[skip items that could cause collisions rather]]>
+<![CDATA[then throwing an error]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="commit" style="query">
+            <wadl:doc>
+              <![CDATA[whether or not to rename the item]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[a tab old->new mapping, or an empty]]>
+<![CDATA[body if nothing was changed]]>
+          </wadl:doc>
+          <wadl:representation mediaType="text/csv"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/tools/_regenerateIdsForScope/{scope}">
+      <wadl:param name="scope" style="template">
+        <wadl:doc>
+          <![CDATA[the scope item's ID]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Regenerate the hierarchical graph ID all items within the]]>
+<![CDATA[immediate permission scope (not all items recursively.)]]>
+<![CDATA[The default mode is to output items whose IDs would ch]]>
+<![CDATA[ange, without]]>
+<![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
+<![CDATA[output items that would cause collisions if renamed, whereas tolerant]]>
+<![CDATA[mode will skip them altogether.]]>
+<![CDATA[The commit flag will cause renaming to take place.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="collisions" style="query">
+            <wadl:doc>
+              <![CDATA[only output items that if renamed to the]]>
+<![CDATA[regenerated ID would cause collisions]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="tolerant" style="query">
+            <wadl:doc>
+              <![CDATA[skip items that could cause collisions rather]]>
+<![CDATA[then throwing an error]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="commit" style="query">
+            <wadl:doc>
+              <![CDATA[whether or not to rename the items]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[a tab list old->new mappings, or an empty]]>
+<![CDATA[body if nothing was changed]]>
+          </wadl:doc>
+          <wadl:representation mediaType="text/csv"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/tools/_regenerateIdsForType/{type}">
+      <wadl:param name="type" style="template">
+        <wadl:doc>
+          <![CDATA[the item type]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Regenerate the hierarchical graph ID all items of a given]]>
+<![CDATA[type.]]>
+<![CDATA[The default mode is to output items whose IDs would change, without]]>
+<![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
+<![CDATA[output items that would cause collisions if renamed, whereas tolerant]]>
+<![CDATA[mode will skip them altogether.]]>
+<![CDATA[The commit flag will cause renaming to take place.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="collisions" style="query">
+            <wadl:doc>
+              <![CDATA[only output items that if renamed to the]]>
+<![CDATA[regenerated ID would cause collisions]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="tolerant" style="query">
+            <wadl:doc>
+              <![CDATA[skip items that could c]]>
+<![CDATA[ause collisions rather]]>
+<![CDATA[then throwing an error]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="commit" style="query">
+            <wadl:doc>
+              <![CDATA[whether or not to rename the items]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[a tab list old->new mappings, or an empty]]>
+<![CDATA[body if nothing was changed]]>
+          </wadl:doc>
+          <wadl:representation mediaType="text/csv"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
     <wadl:resource path="/userProfile/{userId}/annotation">
       <wadl:param name="userId" style="template"/>
       <wadl:method name="GET">
@@ -3666,6 +3800,12 @@
               <![CDATA[the language code of created concepts]]>
             </wadl:doc>
           </wadl:param>
+          <wadl:param name="single" style="query">
+            <wadl:doc>
+              <![CDATA[don't create concepts/links for access points that]]>
+<![CDATA[are unique to a single item]]>
+            </wadl:doc>
+          </wadl:param>
           <wadl:param name="tolerant" style="query">
             <wadl:doc>
               <![CDATA[proceed even if there are integrity errors due]]>
@@ -3675,7 +3815,8 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[the number of links created]]>
+            <![CDATA[the number of li]]>
+<![CDATA[nks created]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>

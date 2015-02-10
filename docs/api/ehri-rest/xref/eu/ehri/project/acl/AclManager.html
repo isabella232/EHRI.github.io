@@ -521,7 +521,7 @@
 <a class="jxr_linenumber" name="511" href="#511">511</a>         <strong class="jxr_keyword">if</strong> (belongsToAdmin(accessor)) {
 <a class="jxr_linenumber" name="512" href="#512">512</a>             <strong class="jxr_keyword">return</strong> Lists.newArrayList(PermissionType.values());
 <a class="jxr_linenumber" name="513" href="#513">513</a>         } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="514" href="#514">514</a>             List&lt;PermissionType&gt; list = Lists.newLinkedList();
+<a class="jxr_linenumber" name="514" href="#514">514</a>             List&lt;PermissionType&gt; list = Lists.newArrayList();
 <a class="jxr_linenumber" name="515" href="#515">515</a>             <em class="jxr_comment">// Cache a set of permission scopes. This is the hierarchy on which</em>
 <a class="jxr_linenumber" name="516" href="#516">516</a>             <em class="jxr_comment">// permissions are granted. For most items it will contain zero</em>
 <a class="jxr_linenumber" name="517" href="#517">517</a>             <em class="jxr_comment">// entries and thus be pretty fast, but for deeply nested</em>

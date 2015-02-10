@@ -147,7 +147,7 @@ Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/Abstract
 <DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension"><B>AuthoritativeSetResource</B></A> - Class in <A HREF="./eu/ehri/extension/package-summary.html">eu.ehri.extension</A><DD>Provides a web service interface for the AuthoritativeSet items.<DT><A HREF="./eu/ehri/extension/AuthoritativeSetResource.html#AuthoritativeSetResource(org.neo4j.graphdb.GraphDatabaseService)"><B>AuthoritativeSetResource(GraphDatabaseService)</B></A> - 
 Constructor for class eu.ehri.extension.<A HREF="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/extension/ToolsResource.html#autoLinkRepositoryDocs(java.lang.String, java.lang.String, java.util.List, java.lang.String, boolean)"><B>autoLinkRepositoryDocs(String, String, List&lt;String&gt;, String, boolean)</B></A> - 
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#autoLinkRepositoryDocs(java.lang.String, java.lang.String, java.util.List, java.lang.String, boolean, boolean)"><B>autoLinkRepositoryDocs(String, String, List&lt;String&gt;, String, boolean, boolean)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
 <DD>Create concepts and links derived from the access points
  on a repository's documentary units.
@@ -1061,6 +1061,21 @@ Method in class eu.ehri.extension.providers.<A HREF="./eu/ehri/extension/provide
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AdminResource.html" title="class in eu.ehri.extension">AdminResource</A>
 <DD>Update the childCount property on hierarchical items with the number of
  children they contain.
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#regenerateId(java.lang.String, boolean, boolean, boolean)"><B>regenerateId(String, boolean, boolean, boolean)</B></A> - 
+Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
+<DD>Regenerate the hierarchical graph ID for a given item, optionally
+ renaming it.
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#regenerateIdsForScope(java.lang.String, boolean, boolean, boolean)"><B>regenerateIdsForScope(String, boolean, boolean, boolean)</B></A> - 
+Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
+<DD>Regenerate the hierarchical graph ID all items within the
+ immediate permission scope (not all items recursively.)
+
+ The default mode is to output items whose IDs would change, without
+ actually changing them.
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#regenerateIdsForType(java.lang.String, boolean, boolean, boolean)"><B>regenerateIdsForType(String, boolean, boolean, boolean)</B></A> - 
+Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
+<DD>Regenerate the hierarchical graph ID all items of a given
+ type.
 <DT><A HREF="./eu/ehri/extension/PromotionResource.html#removeDemotion(java.lang.String)"><B>removeDemotion(String)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/PromotionResource.html" title="class in eu.ehri.extension">PromotionResource</A>
 <DD>Remove a down vote.
@@ -1125,6 +1140,9 @@ Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResou
 <DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#single(com.tinkerpop.blueprints.Vertex)"><B>single(Vertex)</B></A> - 
 Method in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
 <DD>Create a default response from a single vertex.
+<DT><A HREF="./eu/ehri/extension/ToolsResource.html#SINGLE_PARAM"><B>SINGLE_PARAM</B></A> - 
+Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</A>
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/extension/AbstractRestResource.html#SORT_PARAM"><B>SORT_PARAM</B></A> - 
 Static variable in class eu.ehri.extension.<A HREF="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A>
 <DD>Query arguments.
@@ -1405,6 +1423,6 @@ Method in class eu.ehri.extension.providers.<A HREF="./eu/ehri/extension/provide
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

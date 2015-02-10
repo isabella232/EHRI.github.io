@@ -104,10 +104,22 @@ Class TxCheckedNeo4jGraph</H2>
 </PRE>
 
 <P>
-Created by mike on 18/06/13.
-
- Wraps Neo4jGraph and adds an extra method to allow asseting
+Wraps Neo4jGraph and adds an extra method to allow asserting
  that it should not be in a transaction.
+ <p/>
+ When starting a transaction we also lock the top node of
+ the graph-global action event chain in a assumption that graph modifications
+ will be audited and thus modify this node's relationships. The default
+ <a href="http://neo4j.com/docs/1.9/transactions-locking.html">Neo4j behaviour</a>
+ is just to lock nodes which are changed, which can occasionally lead concurrent
+ transactions to fail when the TXs attempt to modify the global action root relation
+ simultaneously. This solution should trade concurrent write speed for less chance
+ audited write actions will have TXs fail. Deadlocks should be detected and resolved
+ by Neo4j by failing a TX, but this has not yet been observed in practice.
+ <p/>
+ NB: On a cleanly initialised graph the action chain root node should be
+ node 0 but we cannot take this for granted. Instead we look the node
+ up by name in the index and cache it for subsequent invocations.
 <P>
 
 <P>
@@ -199,7 +211,7 @@ Created by mike on 18/06/13.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/utils/TxCheckedNeo4jGraph.html#checkNotInTransaction()">checkNotInTransaction</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/utils/TxCheckedNeo4jGraph.html#autoStartTransaction()">autoStartTransaction</A></B>()</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -207,10 +219,18 @@ Created by mike on 18/06/13.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/utils/TxCheckedNeo4jGraph.html#checkNotInTransaction()">checkNotInTransaction</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throw an exception if we're currently in a transaction</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/utils/TxCheckedNeo4jGraph.html#checkNotInTransaction(java.lang.String)">checkNotInTransaction</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;msg)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Throw an exception if we're currently in a transaction.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -218,7 +238,7 @@ Created by mike on 18/06/13.
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/utils/TxCheckedNeo4jGraph.html#isInTransaction()">isInTransaction</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Checks if the graph is currently in a transaction.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_com.tinkerpop.blueprints.impls.neo4j.Neo4jGraph"><!-- --></A>
@@ -227,7 +247,7 @@ Created by mike on 18/06/13.
 <TH ALIGN="left"><B>Methods inherited from class com.tinkerpop.blueprints.impls.neo4j.Neo4jGraph</B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE>addEdge, addVertex, autoStartTransaction, checkElementsInTransaction, commit, createIndex, createKeyIndex, dropIndex, dropKeyIndex, getEdge, getEdges, getEdges, getFeatures, getIndex, getIndexedKeys, getIndices, getInternalIndexKeys, getRawGraph, getVertex, getVertices, getVertices, query, removeEdge, removeVertex, rollback, setCheckElementsInTransaction, shutdown, stopTransaction, toString</CODE></TD>
+<TD><CODE>addEdge, addVertex, checkElementsInTransaction, commit, createIndex, createKeyIndex, dropIndex, dropKeyIndex, getEdge, getEdges, getEdges, getFeatures, getIndex, getIndexedKeys, getIndices, getInternalIndexKeys, getRawGraph, getVertex, getVertices, getVertices, query, removeEdge, removeVertex, rollback, setCheckElementsInTransaction, shutdown, stopTransaction, toString</CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -295,11 +315,27 @@ public <B>TxCheckedNeo4jGraph</B>(<A HREF="http://docs.oracle.com/javase/6/docs/
 </TR>
 </TABLE>
 
+<A NAME="autoStartTransaction()"><!-- --></A><H3>
+autoStartTransaction</H3>
+<PRE>
+public void <B>autoStartTransaction</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>autoStartTransaction</CODE> in class <CODE>com.tinkerpop.blueprints.impls.neo4j.Neo4jGraph</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
 <A NAME="checkNotInTransaction()"><!-- --></A><H3>
 checkNotInTransaction</H3>
 <PRE>
 public void <B>checkNotInTransaction</B>()</PRE>
 <DL>
+<DD>Throw an exception if we're currently in a transaction
+<P>
 <DD><DL>
 </DL>
 </DD>
@@ -311,8 +347,10 @@ checkNotInTransaction</H3>
 <PRE>
 public void <B>checkNotInTransaction</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;msg)</PRE>
 <DL>
+<DD>Throw an exception if we're currently in a transaction.
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>msg</CODE> - a msg to use in the exception</DL>
 </DD>
 </DL>
 <HR>
@@ -322,8 +360,11 @@ isInTransaction</H3>
 <PRE>
 public boolean <B>isInTransaction</B>()</PRE>
 <DL>
+<DD>Checks if the graph is currently in a transaction.
+<P>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>whether a transaction is held in this thread.</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
@@ -387,6 +428,6 @@ DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&n
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
 
 <HR>
-Copyright &#169; 2014 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
+Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
 </BODY>
 </HTML>

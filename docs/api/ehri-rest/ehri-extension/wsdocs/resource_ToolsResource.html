@@ -98,6 +98,15 @@ fit anywhere else.</p>
         <a href="#path__tools__findReplacePropertyValueRE.html">/tools/_findReplacePropertyValueRE</a>
         </li>
         <li>
+        <a href="#path__tools__regenerateId_-id-.html">/tools/_regenerateId/{id}</a>
+        </li>
+        <li>
+        <a href="#path__tools__regenerateIdsForScope_-scope-.html">/tools/_regenerateIdsForScope/{scope}</a>
+        </li>
+        <li>
+        <a href="#path__tools__regenerateIdsForType_-type-.html">/tools/_regenerateIdsForType/{type}</a>
+        </li>
+        <li>
         <a href="#path__tools_generateConcepts_-repositoryId-_-vocabularyId-.html">/tools/generateConcepts/{repositoryId}/{vocabularyId}</a>
         </li>
       </ul>
@@ -288,6 +297,222 @@ give the property a value of &quot;http://www.foo.com/bar&quot;.
         </tr>
       </table>
       <p>How many items have been changed</p>
+        <a name="path__tools__regenerateId_-id-.html"></a>
+      <h1>/tools/_regenerateId/{id}</h1>
+      <p class="note">Mount Point: <a href="../tools/_regenerateId/{id}">/tools/_regenerateId/{id}</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Regenerate the hierarchical graph ID for a given item, optionally
+renaming it.
+
+The default mode is to output items whose IDs would change, without
+actually changing them. The collisions parameter will <b>only</b>
+output items that would cause collisions if renamed, whereas tolerant
+mode will skip them altogether.
+
+The commit flag will cause renaming to take place.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the item's existing ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>collisions</td>
+          <td>
+            only output items that if renamed to the
+regenerated ID would cause collisions
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>tolerant</td>
+          <td>
+            skip items that could cause collisions rather
+then throwing an error
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>commit</td>
+          <td>
+            whether or not to rename the item
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/csv</td>
+        </tr>
+      </table>
+      <p>a tab old->new mapping, or an empty
+body if nothing was changed</p>
+        <a name="path__tools__regenerateIdsForScope_-scope-.html"></a>
+      <h1>/tools/_regenerateIdsForScope/{scope}</h1>
+      <p class="note">Mount Point: <a href="../tools/_regenerateIdsForScope/{scope}">/tools/_regenerateIdsForScope/{scope}</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Regenerate the hierarchical graph ID all items within the
+immediate permission scope (not all items recursively.)
+
+The default mode is to output items whose IDs would change, without
+actually changing them. The collisions parameter will <b>only</b>
+output items that would cause collisions if renamed, whereas tolerant
+mode will skip them altogether.
+
+The commit flag will cause renaming to take place.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>scope</td>
+          <td>
+            the scope item's ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>collisions</td>
+          <td>
+            only output items that if renamed to the
+regenerated ID would cause collisions
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>tolerant</td>
+          <td>
+            skip items that could cause collisions rather
+then throwing an error
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>commit</td>
+          <td>
+            whether or not to rename the items
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/csv</td>
+        </tr>
+      </table>
+      <p>a tab list old->new mappings, or an empty
+body if nothing was changed</p>
+        <a name="path__tools__regenerateIdsForType_-type-.html"></a>
+      <h1>/tools/_regenerateIdsForType/{type}</h1>
+      <p class="note">Mount Point: <a href="../tools/_regenerateIdsForType/{type}">/tools/_regenerateIdsForType/{type}</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Regenerate the hierarchical graph ID all items of a given
+type.
+
+The default mode is to output items whose IDs would change, without
+actually changing them. The collisions parameter will <b>only</b>
+output items that would cause collisions if renamed, whereas tolerant
+mode will skip them altogether.
+
+The commit flag will cause renaming to take place.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>
+            the item type
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>collisions</td>
+          <td>
+            only output items that if renamed to the
+regenerated ID would cause collisions
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>tolerant</td>
+          <td>
+            skip items that could cause collisions rather
+then throwing an error
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>commit</td>
+          <td>
+            whether or not to rename the items
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/csv</td>
+        </tr>
+      </table>
+      <p>a tab list old->new mappings, or an empty
+body if nothing was changed</p>
         <a name="path__tools_generateConcepts_-repositoryId-_-vocabularyId-.html"></a>
       <h1>/tools/generateConcepts/{repositoryId}/{vocabularyId}</h1>
       <p class="note">Mount Point: <a href="../tools/generateConcepts/{repositoryId}/{vocabularyId}">/tools/generateConcepts/{repositoryId}/{vocabularyId}</a></p>
@@ -336,6 +561,15 @@ on a repository's documentary units.
           </td>
           <td>query</td>
           <td>eng</td>
+        </tr>
+        <tr>
+          <td>single</td>
+          <td>
+            don't create concepts/links for access points that
+are unique to a single item
+          </td>
+          <td>query</td>
+          <td>true</td>
         </tr>
         <tr>
           <td>tolerant</td>

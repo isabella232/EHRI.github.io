@@ -26,17 +26,17 @@
 <a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">import</strong> java.util.Map.Entry;
 <a class="jxr_linenumber" name="17" href="#17">17</a>  
 <a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="19" href="#19">19</a>  <em class="jxr_javadoccomment"> * Import EAC for a given repository into the database.</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <em class="jxr_javadoccomment"> * Import Map based representations of EAD or EAC for a given repository into the database.</em>
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="21" href="#21">21</a>  <em class="jxr_javadoccomment"> * @author Linda Reijnhoudt (https://github.com/lindareijnhoudt)</em>
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/importers/EaImporter.html">EaImporter</a> <strong class="jxr_keyword">extends</strong> XmlImporter&lt;Map&lt;String, Object&gt;&gt; {
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/importers/EaImporter.html">EaImporter</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/importers/MapImporter.html">MapImporter</a> {
 <a class="jxr_linenumber" name="25" href="#25">25</a>  
 <a class="jxr_linenumber" name="26" href="#26">26</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(EaImporter.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="27" href="#27">27</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String LINK_TARGET = <span class="jxr_string">"target"</span>;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  
-<a class="jxr_linenumber" name="29" href="#29">29</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String RESOLVED_LINK_DESC = <span class="jxr_string">"Link created on behalf of the institute during import."</span>;
+<a class="jxr_linenumber" name="29" href="#29">29</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String RESOLVED_LINK_DESC = <span class="jxr_string">"Link provided by data provider."</span>;
 <a class="jxr_linenumber" name="30" href="#30">30</a>  
 <a class="jxr_linenumber" name="31" href="#31">31</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <em class="jxr_javadoccomment">     * Construct an EadImporter object.</em>
