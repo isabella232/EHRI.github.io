@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-Index (Command Line Tools 0.1 API)
+Index (Command Line Tools 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ Index (Command Line Tools 0.1 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Index (Command Line Tools 0.1 API)";
+        parent.document.title="Index (Command Line Tools 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -80,7 +80,7 @@ function windowTitle()
 <A NAME="_B_"><!-- --></A><H2>
 <B>B</B></H2>
 <DL>
-<DT><A HREF="./eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands"><B>BaseCommand</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/BaseCommand.html#BaseCommand()"><B>BaseCommand()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands"><B>BaseCommand</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Abstract base class for commands.<DT><A HREF="./eu/ehri/project/commands/BaseCommand.html#BaseCommand()"><B>BaseCommand()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A>
 <DD>&nbsp;
 </DL>
@@ -90,85 +90,89 @@ Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/comman
 <DL>
 <DT><A HREF="./eu/ehri/project/commands/Check.html" title="class in eu.ehri.project.commands"><B>Check</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Sanity check various parts of the graph.<DT><A HREF="./eu/ehri/project/commands/Check.html#Check()"><B>Check()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Check.html" title="class in eu.ehri.project.commands">Check</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/Check.html#checkPermissionScopes(com.tinkerpop.frames.FramedGraph, eu.ehri.project.core.GraphManager)"><B>checkPermissionScopes(FramedGraph&lt;? extends TransactionalGraph&gt;, GraphManager)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Check.html" title="class in eu.ehri.project.commands">Check</A>
 <DD>The following types of item should ALL have a permission scope.
 <DT><A HREF="./eu/ehri/project/commands/CmdEntryPoint.html" title="class in eu.ehri.project.commands"><B>CmdEntryPoint</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Entry point for launching admin commands.<DT><A HREF="./eu/ehri/project/commands/CmdEntryPoint.html#CmdEntryPoint()"><B>CmdEntryPoint()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/CmdEntryPoint.html" title="class in eu.ehri.project.commands">CmdEntryPoint</A>
 <DD>Constructor.
-<DT><A HREF="./eu/ehri/project/commands/CmdEntryPoint.RetCode.html" title="enum in eu.ehri.project.commands"><B>CmdEntryPoint.RetCode</B></A> - Enum in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands"><B>Command</B></A> - Interface in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/CountryAdd.html" title="class in eu.ehri.project.commands"><B>CountryAdd</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Add a country.<DT><A HREF="./eu/ehri/project/commands/CountryAdd.html#CountryAdd()"><B>CountryAdd()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/CmdEntryPoint.RetCode.html" title="enum in eu.ehri.project.commands"><B>CmdEntryPoint.RetCode</B></A> - Enum in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Default return codes for shell tools.<DT><A HREF="./eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands"><B>Command</B></A> - Interface in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Command-line tools to perform actions on the graph database need
+ to specify a help text about the functionality of the tool and
+ a string to explain their usage.<DT><A HREF="./eu/ehri/project/commands/CountryAdd.html" title="class in eu.ehri.project.commands"><B>CountryAdd</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Add a country.<DT><A HREF="./eu/ehri/project/commands/CountryAdd.html#CountryAdd()"><B>CountryAdd()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/CountryAdd.html" title="class in eu.ehri.project.commands">CountryAdd</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/EntityAdd.html#createItem(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine, java.lang.String, eu.ehri.project.persistence.Bundle, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.UserProfile, java.lang.String)"><B>createItem(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine, String, Bundle, PermissionScope, UserProfile, String)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EntityAdd.html" title="class in eu.ehri.project.commands">EntityAdd</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/CsvConceptImport.html" title="class in eu.ehri.project.commands"><B>CsvConceptImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/CsvConceptImport.html#CsvConceptImport()"><B>CsvConceptImport()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/CsvConceptImport.html" title="class in eu.ehri.project.commands"><B>CsvConceptImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Extension of ImportCsvCommand that uses the CsvConceptImporter.<DT><A HREF="./eu/ehri/project/commands/CsvConceptImport.html#CsvConceptImport()"><B>CsvConceptImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/CsvConceptImport.html" title="class in eu.ehri.project.commands">CsvConceptImport</A>
-<DD>Constructor.
-<DT><A HREF="./eu/ehri/project/commands/CsvDocDescImport.html" title="class in eu.ehri.project.commands"><B>CsvDocDescImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/CsvDocDescImport.html#CsvDocDescImport()"><B>CsvDocDescImport()</B></A> - 
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/project/commands/CsvDocDescImport.html" title="class in eu.ehri.project.commands"><B>CsvDocDescImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Specialisation of ImportCsvCommand that is used for importing EAD-like CSV files.<DT><A HREF="./eu/ehri/project/commands/CsvDocDescImport.html#CsvDocDescImport()"><B>CsvDocDescImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/CsvDocDescImport.html" title="class in eu.ehri.project.commands">CsvDocDescImport</A>
-<DD>Constructor.
+<DD>&nbsp;
 </DL>
 <HR>
 <A NAME="_D_"><!-- --></A><H2>
 <B>D</B></H2>
 <DL>
-<DT><A HREF="./eu/ehri/project/commands/DcImport.html" title="class in eu.ehri.project.commands"><B>DcImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line...<DT><A HREF="./eu/ehri/project/commands/DcImport.html#DcImport()"><B>DcImport()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/DcImport.html" title="class in eu.ehri.project.commands"><B>DcImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import command for importing Dublin Core files.<DT><A HREF="./eu/ehri/project/commands/DcImport.html#DcImport()"><B>DcImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/DcImport.html" title="class in eu.ehri.project.commands">DcImport</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/DcImport.html#DcImport(java.lang.Class, java.lang.Class)"><B>DcImport(Class&lt;? extends SaxXmlHandler&gt;, Class&lt;? extends AbstractImporter&gt;)</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/DcImport.html" title="class in eu.ehri.project.commands">DcImport</A>
 <DD>Generic EAD import command, designed for extending classes that use specific Handlers.
 <DT><A HREF="./eu/ehri/project/commands/RdfExport.html#DEFAULT_FORMAT"><B>DEFAULT_FORMAT</B></A> - 
 Static variable in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/RdfExport.html" title="class in eu.ehri.project.commands">RdfExport</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/DeleteEntities.html" title="class in eu.ehri.project.commands"><B>DeleteEntities</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Delete an entire class of stuff via the command line.<DT><A HREF="./eu/ehri/project/commands/DeleteEntities.html#DeleteEntities()"><B>DeleteEntities()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/DeleteEntities.html" title="class in eu.ehri.project.commands"><B>DeleteEntities</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Delete an entire class of entities via the command line.<DT><A HREF="./eu/ehri/project/commands/DeleteEntities.html#DeleteEntities()"><B>DeleteEntities()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/DeleteEntities.html" title="class in eu.ehri.project.commands">DeleteEntities</A>
-<DD>Constructor.
+<DD>&nbsp;
 </DL>
 <HR>
 <A NAME="_E_"><!-- --></A><H2>
 <B>E</B></H2>
 <DL>
-<DT><A HREF="./eu/ehri/project/commands/EacImport.html" title="class in eu.ehri.project.commands"><B>EacImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/EacImport.html#EacImport()"><B>EacImport()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/EacImport.html" title="class in eu.ehri.project.commands"><B>EacImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAC-CPF files.<DT><A HREF="./eu/ehri/project/commands/EacImport.html#EacImport()"><B>EacImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EacImport.html" title="class in eu.ehri.project.commands">EacImport</A>
-<DD>Constructor.
-<DT><A HREF="./eu/ehri/project/commands/EadAsVirtualCollectionImport.html" title="class in eu.ehri.project.commands"><B>EadAsVirtualCollectionImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line...<DT><A HREF="./eu/ehri/project/commands/EadAsVirtualCollectionImport.html#EadAsVirtualCollectionImport()"><B>EadAsVirtualCollectionImport()</B></A> - 
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/project/commands/EadAsVirtualCollectionImport.html" title="class in eu.ehri.project.commands"><B>EadAsVirtualCollectionImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line as a virtual collection.<DT><A HREF="./eu/ehri/project/commands/EadAsVirtualCollectionImport.html#EadAsVirtualCollectionImport()"><B>EadAsVirtualCollectionImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EadAsVirtualCollectionImport.html" title="class in eu.ehri.project.commands">EadAsVirtualCollectionImport</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/EadAsVirtualCollectionImport.html#EadAsVirtualCollectionImport(java.lang.Class, java.lang.Class)"><B>EadAsVirtualCollectionImport(Class&lt;? extends SaxXmlHandler&gt;, Class&lt;? extends AbstractImporter&gt;)</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EadAsVirtualCollectionImport.html" title="class in eu.ehri.project.commands">EadAsVirtualCollectionImport</A>
 <DD>Generic EAD import command, designed for extending classes that use specific Handlers.
-<DT><A HREF="./eu/ehri/project/commands/EadImport.html" title="class in eu.ehri.project.commands"><B>EadImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line...<DT><A HREF="./eu/ehri/project/commands/EadImport.html#EadImport()"><B>EadImport()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/EadImport.html" title="class in eu.ehri.project.commands"><B>EadImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line.<DT><A HREF="./eu/ehri/project/commands/EadImport.html#EadImport()"><B>EadImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EadImport.html" title="class in eu.ehri.project.commands">EadImport</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/EadImport.html#EadImport(java.lang.Class, java.lang.Class)"><B>EadImport(Class&lt;? extends SaxXmlHandler&gt;, Class&lt;? extends AbstractImporter&gt;)</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EadImport.html" title="class in eu.ehri.project.commands">EadImport</A>
 <DD>Generic EAD import command, designed for extending classes that use specific Handlers.
-<DT><A HREF="./eu/ehri/project/commands/EagImport.html" title="class in eu.ehri.project.commands"><B>EagImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/EagImport.html#EagImport()"><B>EagImport()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/EagImport.html" title="class in eu.ehri.project.commands"><B>EagImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAG files.<DT><A HREF="./eu/ehri/project/commands/EagImport.html#EagImport()"><B>EagImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EagImport.html" title="class in eu.ehri.project.commands">EagImport</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/EntityAdd.html" title="class in eu.ehri.project.commands"><B>EntityAdd</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Add a user.<DT><A HREF="./eu/ehri/project/commands/EntityAdd.html#EntityAdd()"><B>EntityAdd()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EntityAdd.html" title="class in eu.ehri.project.commands">EntityAdd</A>
-<DD>Constructor.
-<DT><A HREF="./eu/ehri/project/commands/EntityDelete.html" title="class in eu.ehri.project.commands"><B>EntityDelete</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Delete an entire class of stuff via the command line.<DT><A HREF="./eu/ehri/project/commands/EntityDelete.html#EntityDelete()"><B>EntityDelete()</B></A> - 
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/project/commands/EntityDelete.html" title="class in eu.ehri.project.commands"><B>EntityDelete</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Delete a single item via the command line.<DT><A HREF="./eu/ehri/project/commands/EntityDelete.html#EntityDelete()"><B>EntityDelete()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EntityDelete.html" title="class in eu.ehri.project.commands">EntityDelete</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/package-summary.html"><B>eu.ehri.project.commands</B></A> - package eu.ehri.project.commands<DD>Classes that represent actions that can
  be run via the <A HREF="./eu/ehri/project/commands/CmdEntryPoint.html" title="class in eu.ehri.project.commands"><CODE>CmdEntryPoint</CODE></A>
  to manage the graph, e.g.<DT><A HREF="./eu/ehri/project/commands/BaseCommand.html#exec(com.tinkerpop.frames.FramedGraph, java.lang.String[])"><B>exec(FramedGraph&lt;? extends TransactionalGraph&gt;, String[])</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A>
-<DD>&nbsp;
+<DD>Execute this command with the given database and un-parsed
+ command line arguments
 <DT><A HREF="./eu/ehri/project/commands/Command.html#exec(com.tinkerpop.frames.FramedGraph, java.lang.String[])"><B>exec(FramedGraph&lt;? extends TransactionalGraph&gt;, String[])</B></A> - 
 Method in interface eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands">Command</A>
-<DD>&nbsp;
+<DD>Execute this command with the given arguments.
 <DT><A HREF="./eu/ehri/project/commands/BaseCommand.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A>
-<DD>&nbsp;
+<DD>Execute this command with the given database and parsed command
+ line arguments.
 <DT><A HREF="./eu/ehri/project/commands/Check.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Check.html" title="class in eu.ehri.project.commands">Check</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/CmdEntryPoint.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/CmdEntryPoint.html" title="class in eu.ehri.project.commands">CmdEntryPoint</A>
 <DD>&nbsp;
@@ -177,28 +181,28 @@ Method in interface eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands
 <DD>Execute this command with the given command line options.
 <DT><A HREF="./eu/ehri/project/commands/CountryAdd.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/CountryAdd.html" title="class in eu.ehri.project.commands">CountryAdd</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/DeleteEntities.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/DeleteEntities.html" title="class in eu.ehri.project.commands">DeleteEntities</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/EntityAdd.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EntityAdd.html" title="class in eu.ehri.project.commands">EntityAdd</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/EntityDelete.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EntityDelete.html" title="class in eu.ehri.project.commands">EntityDelete</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/GetEntity.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GetEntity.html" title="class in eu.ehri.project.commands">GetEntity</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/GraphML.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphML.html" title="class in eu.ehri.project.commands">GraphML</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/GraphSON.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphSON.html" title="class in eu.ehri.project.commands">GraphSON</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/GraphViz.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphViz.html" title="class in eu.ehri.project.commands">GraphViz</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/ImportCommand.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands">ImportCommand</A>
 <DD>&nbsp;
@@ -210,10 +214,10 @@ Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Ini
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/ListEntities.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ListEntities.html" title="class in eu.ehri.project.commands">ListEntities</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/LoadFixtures.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/LoadFixtures.html" title="class in eu.ehri.project.commands">LoadFixtures</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/RdfExport.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/RdfExport.html" title="class in eu.ehri.project.commands">RdfExport</A>
 <DD>&nbsp;
@@ -222,13 +226,13 @@ Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Rei
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/RelationAdd.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/RelationAdd.html" title="class in eu.ehri.project.commands">RelationAdd</A>
-<DD>Add a relationship between two nodes.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/SkosVocabularyImport.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/SkosVocabularyImport.html" title="class in eu.ehri.project.commands">SkosVocabularyImport</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/UserAdd.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/UserAdd.html" title="class in eu.ehri.project.commands">UserAdd</A>
-<DD>Command-line entry-point (for testing.)
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/UserListEntities.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>execWithOptions(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/UserListEntities.html" title="class in eu.ehri.project.commands">UserListEntities</A>
 <DD>&nbsp;
@@ -246,12 +250,12 @@ Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Bas
 <DT><A HREF="./eu/ehri/project/commands/CmdEntryPoint.RetCode.html#getCode()"><B>getCode()</B></A> - 
 Method in enum eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/CmdEntryPoint.RetCode.html" title="enum in eu.ehri.project.commands">CmdEntryPoint.RetCode</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/GetEntity.html" title="class in eu.ehri.project.commands"><B>GetEntity</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line...<DT><A HREF="./eu/ehri/project/commands/GetEntity.html#GetEntity()"><B>GetEntity()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/GetEntity.html" title="class in eu.ehri.project.commands"><B>GetEntity</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Fetch an item's serialized representation via the command line.<DT><A HREF="./eu/ehri/project/commands/GetEntity.html#GetEntity()"><B>GetEntity()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GetEntity.html" title="class in eu.ehri.project.commands">GetEntity</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/BaseCommand.html#getHelp()"><B>getHelp()</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A>
-<DD>&nbsp;
+<DD>Get help for this command.
 <DT><A HREF="./eu/ehri/project/commands/Check.html#getHelp()"><B>getHelp()</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Check.html" title="class in eu.ehri.project.commands">Check</A>
 <DD>&nbsp;
@@ -344,14 +348,15 @@ Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Use
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/BaseCommand.html#getLogMessage(java.lang.String)"><B>getLogMessage(String)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A>
-<DD>&nbsp;
+<DD>Get an optional log message given a string that may or may not
+ be empty.
 <DT><A HREF="./eu/ehri/project/commands/ImportCommand.html#getPathsFromFile(java.lang.String, java.util.List)"><B>getPathsFromFile(String, List&lt;String&gt;)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands">ImportCommand</A>
 <DD>Read a set of file paths from an input, either a file or standard in
  if given the path '-'.
 <DT><A HREF="./eu/ehri/project/commands/BaseCommand.html#getUsage()"><B>getUsage()</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A>
-<DD>&nbsp;
+<DD>Get usage info.
 <DT><A HREF="./eu/ehri/project/commands/Check.html#getUsage()"><B>getUsage()</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Check.html" title="class in eu.ehri.project.commands">Check</A>
 <DD>&nbsp;
@@ -447,7 +452,7 @@ Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Use
  dumps are broken with the EHRI DB since we use array properties
  which do not save/load correctly.<DT><A HREF="./eu/ehri/project/commands/GraphML.html#GraphML()"><B>GraphML()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphML.html" title="class in eu.ehri.project.commands">GraphML</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/GraphSON.html" title="class in eu.ehri.project.commands"><B>GraphSON</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Dump the complete graph as graphSON file, or import such a dump
  <p/>
  Example usage:
@@ -465,10 +470,11 @@ Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/comman
  - start server
  $NEO4J_HOME/bin/neo4j start<DT><A HREF="./eu/ehri/project/commands/GraphSON.html#GraphSON()"><B>GraphSON()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphSON.html" title="class in eu.ehri.project.commands">GraphSON</A>
-<DD>Constructor.
-<DT><A HREF="./eu/ehri/project/commands/GraphViz.html" title="class in eu.ehri.project.commands"><B>GraphViz</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Dump a particular subgraph as a DOT file.<DT><A HREF="./eu/ehri/project/commands/GraphViz.html#GraphViz()"><B>GraphViz()</B></A> - 
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/project/commands/GraphViz.html" title="class in eu.ehri.project.commands"><B>GraphViz</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Dump a particular subgraph as a DOT file that can be visualised
+ using "dot", a part of GraphViz.<DT><A HREF="./eu/ehri/project/commands/GraphViz.html#GraphViz()"><B>GraphViz()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphViz.html" title="class in eu.ehri.project.commands">GraphViz</A>
-<DD>Constructor.
+<DD>&nbsp;
 </DL>
 <HR>
 <A NAME="_H_"><!-- --></A><H2>
@@ -482,22 +488,23 @@ Variable in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/I
 <A NAME="_I_"><!-- --></A><H2>
 <B>I</B></H2>
 <DL>
-<DT><A HREF="./eu/ehri/project/commands/IcaAtomEadImport.html" title="class in eu.ehri.project.commands"><B>IcaAtomEadImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line...<DT><A HREF="./eu/ehri/project/commands/IcaAtomEadImport.html#IcaAtomEadImport()"><B>IcaAtomEadImport()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/IcaAtomEadImport.html" title="class in eu.ehri.project.commands"><B>IcaAtomEadImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line using the <A HREF="https://github.com/EHRI/ehri-importers/apidocs/eu/ehri/project/importers/IcaAtomEadImporter.html?is-external=true" title="class or interface in eu.ehri.project.importers"><CODE>IcaAtomEadImporter</CODE></A>.<DT><A HREF="./eu/ehri/project/commands/IcaAtomEadImport.html#IcaAtomEadImport()"><B>IcaAtomEadImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/IcaAtomEadImport.html" title="class in eu.ehri.project.commands">IcaAtomEadImport</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/IcaAtomEadImport.html#IcaAtomEadImport(java.lang.Class, java.lang.Class)"><B>IcaAtomEadImport(Class&lt;? extends SaxXmlHandler&gt;, Class&lt;? extends AbstractImporter&gt;)</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/IcaAtomEadImport.html" title="class in eu.ehri.project.commands">IcaAtomEadImport</A>
 <DD>Generic EAD import command, designed for extending classes that use specific Handlers.
-<DT><A HREF="./eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands"><B>ImportCommand</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/ImportCommand.html#ImportCommand(java.lang.Class, java.lang.Class)"><B>ImportCommand(Class&lt;? extends SaxXmlHandler&gt;, Class&lt;? extends AbstractImporter&gt;)</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands"><B>ImportCommand</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Superclass of all import command-line tools.<DT><A HREF="./eu/ehri/project/commands/ImportCommand.html#ImportCommand(java.lang.Class, java.lang.Class)"><B>ImportCommand(Class&lt;? extends SaxXmlHandler&gt;, Class&lt;? extends AbstractImporter&gt;)</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands">ImportCommand</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/ImportCsvCommand.html" title="class in eu.ehri.project.commands"><B>ImportCsvCommand</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/ImportCsvCommand.html#ImportCsvCommand(java.lang.Class)"><B>ImportCsvCommand(Class&lt;? extends MapImporter&gt;)</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/ImportCsvCommand.html" title="class in eu.ehri.project.commands"><B>ImportCsvCommand</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Generic command for importing CSV files that uses an implementation of MapImporter
+ to manipulate the graph.<DT><A HREF="./eu/ehri/project/commands/ImportCsvCommand.html#ImportCsvCommand(java.lang.Class)"><B>ImportCsvCommand(Class&lt;? extends MapImporter&gt;)</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ImportCsvCommand.html" title="class in eu.ehri.project.commands">ImportCsvCommand</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/ImportCommand.html#importer"><B>importer</B></A> - 
 Variable in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands">ImportCommand</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/Initialize.html" title="class in eu.ehri.project.commands"><B>Initialize</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line...<DT><A HREF="./eu/ehri/project/commands/Initialize.html#Initialize()"><B>Initialize()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/Initialize.html" title="class in eu.ehri.project.commands"><B>Initialize</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Initialise the graph database with minimal nodes.<DT><A HREF="./eu/ehri/project/commands/Initialize.html#Initialize()"><B>Initialize()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Initialize.html" title="class in eu.ehri.project.commands">Initialize</A>
 <DD>&nbsp;
 </DL>
@@ -505,18 +512,18 @@ Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/comman
 <A NAME="_L_"><!-- --></A><H2>
 <B>L</B></H2>
 <DL>
-<DT><A HREF="./eu/ehri/project/commands/ListEntities.html" title="class in eu.ehri.project.commands"><B>ListEntities</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line...<DT><A HREF="./eu/ehri/project/commands/ListEntities.html#ListEntities()"><B>ListEntities()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/ListEntities.html" title="class in eu.ehri.project.commands"><B>ListEntities</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Command for listing entities of a given type.<DT><A HREF="./eu/ehri/project/commands/ListEntities.html#ListEntities()"><B>ListEntities()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ListEntities.html" title="class in eu.ehri.project.commands">ListEntities</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/GraphML.html#loadDump(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>loadDump(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphML.html" title="class in eu.ehri.project.commands">GraphML</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/GraphSON.html#loadDump(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>loadDump(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphSON.html" title="class in eu.ehri.project.commands">GraphSON</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/LoadFixtures.html" title="class in eu.ehri.project.commands"><B>LoadFixtures</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line...<DT><A HREF="./eu/ehri/project/commands/LoadFixtures.html#LoadFixtures()"><B>LoadFixtures()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/LoadFixtures.html" title="class in eu.ehri.project.commands"><B>LoadFixtures</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Command for loading a fixtures file into the graph.<DT><A HREF="./eu/ehri/project/commands/LoadFixtures.html#LoadFixtures()"><B>LoadFixtures()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/LoadFixtures.html" title="class in eu.ehri.project.commands">LoadFixtures</A>
-<DD>Constructor.
+<DD>&nbsp;
 </DL>
 <HR>
 <A NAME="_M_"><!-- --></A><H2>
@@ -538,9 +545,10 @@ Static variable in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/com
 <A NAME="_P_"><!-- --></A><H2>
 <B>P</B></H2>
 <DL>
-<DT><A HREF="./eu/ehri/project/commands/PersonalitiesImport.html" title="class in eu.ehri.project.commands"><B>PersonalitiesImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>&nbsp;<DT><A HREF="./eu/ehri/project/commands/PersonalitiesImport.html#PersonalitiesImport()"><B>PersonalitiesImport()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/PersonalitiesImport.html" title="class in eu.ehri.project.commands"><B>PersonalitiesImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Specialisation of <A HREF="./eu/ehri/project/commands/ImportCsvCommand.html" title="class in eu.ehri.project.commands"><CODE>ImportCsvCommand</CODE></A> for importing personalities
+ from CSV files.<DT><A HREF="./eu/ehri/project/commands/PersonalitiesImport.html#PersonalitiesImport()"><B>PersonalitiesImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/PersonalitiesImport.html" title="class in eu.ehri.project.commands">PersonalitiesImport</A>
-<DD>Constructor.
+<DD>&nbsp;
 </DL>
 <HR>
 <A NAME="_R_"><!-- --></A><H2>
@@ -549,12 +557,12 @@ Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/comman
 <DT><A HREF="./eu/ehri/project/commands/RdfExport.html" title="class in eu.ehri.project.commands"><B>RdfExport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Export to RDF.<DT><A HREF="./eu/ehri/project/commands/RdfExport.html#RdfExport()"><B>RdfExport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/RdfExport.html" title="class in eu.ehri.project.commands">RdfExport</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/Reindex.html" title="class in eu.ehri.project.commands"><B>Reindex</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line...<DT><A HREF="./eu/ehri/project/commands/Reindex.html#Reindex()"><B>Reindex()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/Reindex.html" title="class in eu.ehri.project.commands"><B>Reindex</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Command for recreating the internal graph index.<DT><A HREF="./eu/ehri/project/commands/Reindex.html#Reindex()"><B>Reindex()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Reindex.html" title="class in eu.ehri.project.commands">Reindex</A>
 <DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/RelationAdd.html" title="class in eu.ehri.project.commands"><B>RelationAdd</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Add an arbitrary edge between two nodes.<DT><A HREF="./eu/ehri/project/commands/RelationAdd.html#RelationAdd()"><B>RelationAdd()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/RelationAdd.html" title="class in eu.ehri.project.commands">RelationAdd</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/CmdEntryPoint.html#run(java.lang.String[])"><B>run(String[])</B></A> - 
 Static method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/CmdEntryPoint.html" title="class in eu.ehri.project.commands">CmdEntryPoint</A>
 <DD>&nbsp;
@@ -569,86 +577,86 @@ Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Gra
 <DT><A HREF="./eu/ehri/project/commands/GraphSON.html#saveDump(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)"><B>saveDump(FramedGraph&lt;? extends TransactionalGraph&gt;, CommandLine)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphSON.html" title="class in eu.ehri.project.commands">GraphSON</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/BaseCommand.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/BaseCommand.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/Check.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/Check.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Check.html" title="class in eu.ehri.project.commands">Check</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/CountryAdd.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/CountryAdd.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/CountryAdd.html" title="class in eu.ehri.project.commands">CountryAdd</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/DeleteEntities.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/DeleteEntities.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/DeleteEntities.html" title="class in eu.ehri.project.commands">DeleteEntities</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/EntityAdd.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/EntityAdd.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EntityAdd.html" title="class in eu.ehri.project.commands">EntityAdd</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/EntityDelete.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/EntityDelete.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/EntityDelete.html" title="class in eu.ehri.project.commands">EntityDelete</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/GraphML.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/GraphML.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphML.html" title="class in eu.ehri.project.commands">GraphML</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/GraphSON.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/GraphSON.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphSON.html" title="class in eu.ehri.project.commands">GraphSON</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/GraphViz.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/GraphViz.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/GraphViz.html" title="class in eu.ehri.project.commands">GraphViz</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/ImportCommand.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/ImportCommand.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands">ImportCommand</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/ImportCsvCommand.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/ImportCsvCommand.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ImportCsvCommand.html" title="class in eu.ehri.project.commands">ImportCsvCommand</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/Initialize.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/Initialize.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Initialize.html" title="class in eu.ehri.project.commands">Initialize</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/ListEntities.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/ListEntities.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/ListEntities.html" title="class in eu.ehri.project.commands">ListEntities</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/LoadFixtures.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/LoadFixtures.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/LoadFixtures.html" title="class in eu.ehri.project.commands">LoadFixtures</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/RdfExport.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/RdfExport.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/RdfExport.html" title="class in eu.ehri.project.commands">RdfExport</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/Reindex.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/Reindex.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/Reindex.html" title="class in eu.ehri.project.commands">Reindex</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/RelationAdd.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/RelationAdd.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/RelationAdd.html" title="class in eu.ehri.project.commands">RelationAdd</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/SkosVocabularyImport.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/SkosVocabularyImport.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/SkosVocabularyImport.html" title="class in eu.ehri.project.commands">SkosVocabularyImport</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/UserAdd.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/UserAdd.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/UserAdd.html" title="class in eu.ehri.project.commands">UserAdd</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/UserListEntities.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/UserListEntities.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/UserListEntities.html" title="class in eu.ehri.project.commands">UserListEntities</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/UserMod.html#setCustomOptions()"><B>setCustomOptions()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/UserMod.html#setCustomOptions(org.apache.commons.cli.Options)"><B>setCustomOptions(Options)</B></A> - 
 Method in class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/UserMod.html" title="class in eu.ehri.project.commands">UserMod</A>
 <DD>&nbsp;
-<DT><A HREF="./eu/ehri/project/commands/SkosVocabularyImport.html" title="class in eu.ehri.project.commands"><B>SkosVocabularyImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import Skos from the command line...<DT><A HREF="./eu/ehri/project/commands/SkosVocabularyImport.html#SkosVocabularyImport()"><B>SkosVocabularyImport()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/SkosVocabularyImport.html" title="class in eu.ehri.project.commands"><B>SkosVocabularyImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import a single SKOS file from the command line.<DT><A HREF="./eu/ehri/project/commands/SkosVocabularyImport.html#SkosVocabularyImport()"><B>SkosVocabularyImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/SkosVocabularyImport.html" title="class in eu.ehri.project.commands">SkosVocabularyImport</A>
-<DD>Constructor.
+<DD>&nbsp;
 </DL>
 <HR>
 <A NAME="_U_"><!-- --></A><H2>
 <B>U</B></H2>
 <DL>
-<DT><A HREF="./eu/ehri/project/commands/UserAdd.html" title="class in eu.ehri.project.commands"><B>UserAdd</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Add a user.<DT><A HREF="./eu/ehri/project/commands/UserAdd.html#UserAdd()"><B>UserAdd()</B></A> - 
+<DT><A HREF="./eu/ehri/project/commands/UserAdd.html" title="class in eu.ehri.project.commands"><B>UserAdd</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Add a user with optional group membership.<DT><A HREF="./eu/ehri/project/commands/UserAdd.html#UserAdd()"><B>UserAdd()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/UserAdd.html" title="class in eu.ehri.project.commands">UserAdd</A>
-<DD>Constructor.
-<DT><A HREF="./eu/ehri/project/commands/UserListEntities.html" title="class in eu.ehri.project.commands"><B>UserListEntities</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import EAD from the command line...<DT><A HREF="./eu/ehri/project/commands/UserListEntities.html#UserListEntities()"><B>UserListEntities()</B></A> - 
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/project/commands/UserListEntities.html" title="class in eu.ehri.project.commands"><B>UserListEntities</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>List items of a specific type as a given user, respecting access controls.<DT><A HREF="./eu/ehri/project/commands/UserListEntities.html#UserListEntities()"><B>UserListEntities()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/UserListEntities.html" title="class in eu.ehri.project.commands">UserListEntities</A>
-<DD>Constructor.
-<DT><A HREF="./eu/ehri/project/commands/UserMod.html" title="class in eu.ehri.project.commands"><B>UserMod</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Add a user.<DT><A HREF="./eu/ehri/project/commands/UserMod.html#UserMod()"><B>UserMod()</B></A> - 
+<DD>&nbsp;
+<DT><A HREF="./eu/ehri/project/commands/UserMod.html" title="class in eu.ehri.project.commands"><B>UserMod</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Modify an existing user.<DT><A HREF="./eu/ehri/project/commands/UserMod.html#UserMod()"><B>UserMod()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/UserMod.html" title="class in eu.ehri.project.commands">UserMod</A>
-<DD>Constructor.
+<DD>&nbsp;
 <DT><A HREF="./eu/ehri/project/commands/UshmmEadImport.html" title="class in eu.ehri.project.commands"><B>UshmmEadImport</B></A> - Class in <A HREF="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</A><DD>Import command for USHMM EAD files.<DT><A HREF="./eu/ehri/project/commands/UshmmEadImport.html#UshmmEadImport()"><B>UshmmEadImport()</B></A> - 
 Constructor for class eu.ehri.project.commands.<A HREF="./eu/ehri/project/commands/UshmmEadImport.html" title="class in eu.ehri.project.commands">UshmmEadImport</A>
 <DD>&nbsp;

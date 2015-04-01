@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-UserProfile.Impl (EHRI Backend 1.0 API)
+UserProfile.Impl (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ UserProfile.Impl (EHRI Backend 1.0 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="UserProfile.Impl (EHRI Backend 1.0 API)";
+        parent.document.title="UserProfile.Impl (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -143,7 +143,7 @@ Class UserProfile.Impl</H2>
 <TH ALIGN="left"><B>Fields inherited from interface eu.ehri.project.models.<A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#FOLLOWER_COUNT">FOLLOWER_COUNT</A>, <A HREF="../../../../eu/ehri/project/models/UserProfile.html#FOLLOWING_COUNT">FOLLOWING_COUNT</A>, <A HREF="../../../../eu/ehri/project/models/UserProfile.html#WATCHED_COUNT">WATCHED_COUNT</A>, <A HREF="../../../../eu/ehri/project/models/UserProfile.html#WATCHING_COUNT">WATCHING_COUNT</A></CODE></TD>
+<TD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#FOLLOWER_COUNT">FOLLOWER_COUNT</A>, <A HREF="../../../../eu/ehri/project/models/UserProfile.html#FOLLOWING_COUNT">FOLLOWING_COUNT</A>, <A HREF="../../../../eu/ehri/project/models/UserProfile.html#WATCHING_COUNT">WATCHING_COUNT</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -202,6 +202,30 @@ Class UserProfile.Impl</H2>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fetch users who share groups with this user.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#getFollowerCount()">getFollowerCount</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#getFollowingCount()">getFollowingCount</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/UserProfile.Impl.html#getWatchingCount()">getWatchingCount</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -388,6 +412,48 @@ public <B>UserProfile.Impl</B>()</PRE>
 <B>Method Detail</B></FONT></TH>
 </TR>
 </TABLE>
+
+<A NAME="getFollowerCount()"><!-- --></A><H3>
+getFollowerCount</H3>
+<PRE>
+public long <B>getFollowerCount</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getFollowerCount()">getFollowerCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getFollowingCount()"><!-- --></A><H3>
+getFollowingCount</H3>
+<PRE>
+public long <B>getFollowingCount</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getFollowingCount()">getFollowingCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getWatchingCount()"><!-- --></A><H3>
+getWatchingCount</H3>
+<PRE>
+public long <B>getWatchingCount</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html#getWatchingCount()">getWatchingCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
 
 <A NAME="addFollowing(eu.ehri.project.models.UserProfile)"><!-- --></A><H3>
 addFollowing</H3>

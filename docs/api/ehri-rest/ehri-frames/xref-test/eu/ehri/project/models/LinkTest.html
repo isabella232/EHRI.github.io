@@ -8,41 +8,60 @@
 <body>
 <div id="overview"><a href="../../../../../testapidocs/eu/ehri/project/models/LinkTest.html">View Javadoc</a></div><pre>
 
-<a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> eu.ehri.project.models;
-<a class="jxr_linenumber" name="2" href="#2">2</a>   
-<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> com.google.common.collect.Iterables;
-<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.test.AbstractFixtureTest;
-<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="6" href="#6">6</a>   
-<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
-<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
-<a class="jxr_linenumber" name="9" href="#9">9</a>   
-<a class="jxr_linenumber" name="10" href="#10">10</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="11" href="#11">11</a>  <em class="jxr_javadoccomment"> * @author Mike Bryant (<a href="http://github.com/mikesname)" target="alexandria_uri">http://github.com/mikesname)</a></em>
-<a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/models/LinkTest.html">LinkTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/test/AbstractFixtureTest.html">AbstractFixtureTest</a> {
-<a class="jxr_linenumber" name="14" href="#14">14</a>      @Test
-<a class="jxr_linenumber" name="15" href="#15">15</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetLinker() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="16" href="#16">16</a>          Link link = manager.getFrame(<span class="jxr_string">"link1"</span>, Link.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="17" href="#17">17</a>          assertEquals(validUser, link.getLinker());
-<a class="jxr_linenumber" name="18" href="#18">18</a>      }
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_comment"> * Copyright 2015 Data Archiving and Networked Services (an institute of</em>
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <em class="jxr_comment"> * Koninklijke Nederlandse Akademie van Wetenschappen), King's College London,</em>
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <em class="jxr_comment"> * Georg-August-Universitaet Goettingen Stiftung Oeffentlichen Rechts</em>
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <em class="jxr_comment"> * Licensed under the EUPL, Version 1.1 or – as soon they will be approved by</em>
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <em class="jxr_comment"> * the European Commission - subsequent versions of the EUPL (the "Licence");</em>
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <em class="jxr_comment"> * You may not use this work except in compliance with the Licence.</em>
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <em class="jxr_comment"> * You may obtain a copy of the Licence at:</em>
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <em class="jxr_comment"> * https://joinup.ec.europa.eu/software/page/eupl</em>
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_comment"> * Unless required by applicable law or agreed to in writing, software</em>
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <em class="jxr_comment"> * distributed under the Licence is distributed on an "AS IS" basis,</em>
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <em class="jxr_comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</em>
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <em class="jxr_comment"> * See the Licence for the specific language governing</em>
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_comment"> * permissions and limitations under the Licence.</em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_comment"> */</em>
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
-<a class="jxr_linenumber" name="20" href="#20">20</a>      @Test
-<a class="jxr_linenumber" name="21" href="#21">21</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetLinkTargets() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="22" href="#22">22</a>          Link link = manager.getFrame(<span class="jxr_string">"link1"</span>, Link.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="23" href="#23">23</a>          DocumentaryUnit c1 = manager.getFrame(<span class="jxr_string">"c1"</span>, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="24" href="#24">24</a>          DocumentaryUnit c4 = manager.getFrame(<span class="jxr_string">"c4"</span>, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="25" href="#25">25</a>          assertTrue(Iterables.contains(link.getLinkTargets(), c1));
-<a class="jxr_linenumber" name="26" href="#26">26</a>          assertTrue(Iterables.contains(link.getLinkTargets(), c4));
-<a class="jxr_linenumber" name="27" href="#27">27</a>      }
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.models;
+<a class="jxr_linenumber" name="21" href="#21">21</a>  
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Iterables;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.AbstractFixtureTest;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  
-<a class="jxr_linenumber" name="29" href="#29">29</a>      @Test
-<a class="jxr_linenumber" name="30" href="#30">30</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetLinkBodies() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="31" href="#31">31</a>          Link link = manager.getFrame(<span class="jxr_string">"link2"</span>, Link.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="32" href="#32">32</a>          UndeterminedRelationship ur1 = manager.getFrame(<span class="jxr_string">"ur1"</span>, UndeterminedRelationship.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="33" href="#33">33</a>          assertTrue(Iterables.contains(link.getLinkBodies(), ur1));
-<a class="jxr_linenumber" name="34" href="#34">34</a>      }
-<a class="jxr_linenumber" name="35" href="#35">35</a>  }
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <em class="jxr_javadoccomment"> * @author Mike Bryant (<a href="http://github.com/mikesname)" target="alexandria_uri">http://github.com/mikesname)</a></em>
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/models/LinkTest.html">LinkTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/test/AbstractFixtureTest.html">AbstractFixtureTest</a> {
+<a class="jxr_linenumber" name="33" href="#33">33</a>      @Test
+<a class="jxr_linenumber" name="34" href="#34">34</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetLinker() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="35" href="#35">35</a>          Link link = manager.getFrame(<span class="jxr_string">"link1"</span>, Link.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="36" href="#36">36</a>          assertEquals(validUser, link.getLinker());
+<a class="jxr_linenumber" name="37" href="#37">37</a>      }
+<a class="jxr_linenumber" name="38" href="#38">38</a>  
+<a class="jxr_linenumber" name="39" href="#39">39</a>      @Test
+<a class="jxr_linenumber" name="40" href="#40">40</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetLinkTargets() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="41" href="#41">41</a>          Link link = manager.getFrame(<span class="jxr_string">"link1"</span>, Link.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="42" href="#42">42</a>          DocumentaryUnit c1 = manager.getFrame(<span class="jxr_string">"c1"</span>, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="43" href="#43">43</a>          DocumentaryUnit c4 = manager.getFrame(<span class="jxr_string">"c4"</span>, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="44" href="#44">44</a>          assertTrue(Iterables.contains(link.getLinkTargets(), c1));
+<a class="jxr_linenumber" name="45" href="#45">45</a>          assertTrue(Iterables.contains(link.getLinkTargets(), c4));
+<a class="jxr_linenumber" name="46" href="#46">46</a>      }
+<a class="jxr_linenumber" name="47" href="#47">47</a>  
+<a class="jxr_linenumber" name="48" href="#48">48</a>      @Test
+<a class="jxr_linenumber" name="49" href="#49">49</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetLinkBodies() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="50" href="#50">50</a>          Link link = manager.getFrame(<span class="jxr_string">"link2"</span>, Link.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="51" href="#51">51</a>          UndeterminedRelationship ur1 = manager.getFrame(<span class="jxr_string">"ur1"</span>, UndeterminedRelationship.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="52" href="#52">52</a>          assertTrue(Iterables.contains(link.getLinkBodies(), ur1));
+<a class="jxr_linenumber" name="53" href="#53">53</a>      }
+<a class="jxr_linenumber" name="54" href="#54">54</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

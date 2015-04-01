@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-AuthoritativeItem (EHRI Backend 1.0 API)
+AuthoritativeItem (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ AuthoritativeItem (EHRI Backend 1.0 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AuthoritativeItem (EHRI Backend 1.0 API)";
+        parent.document.title="AuthoritativeItem (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -91,7 +91,7 @@ eu.ehri.project.models.cvoc</FONT>
 <BR>
 Interface AuthoritativeItem</H2>
 <DL>
-<DT><B>All Superinterfaces:</B> <DD><A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>, <A HREF="../../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base">AnnotatableEntity</A>, <A HREF="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>, <A HREF="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</A>, <A HREF="../../../../../eu/ehri/project/models/base/VersionedEntity.html" title="interface in eu.ehri.project.models.base">VersionedEntity</A>, com.tinkerpop.frames.VertexFrame</DD>
+<DT><B>All Superinterfaces:</B> <DD><A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>, <A HREF="../../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base">AnnotatableEntity</A>, <A HREF="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>, <A HREF="../../../../../eu/ehri/project/models/base/IdentifiableEntity.html" title="interface in eu.ehri.project.models.base">IdentifiableEntity</A>, <A HREF="../../../../../eu/ehri/project/models/base/LinkableEntity.html" title="interface in eu.ehri.project.models.base">LinkableEntity</A>, <A HREF="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</A>, <A HREF="../../../../../eu/ehri/project/models/base/VersionedEntity.html" title="interface in eu.ehri.project.models.base">VersionedEntity</A>, com.tinkerpop.frames.VertexFrame</DD>
 </DL>
 <DL>
 <DT><B>All Known Subinterfaces:</B> <DD><A HREF="../../../../../eu/ehri/project/models/cvoc/Concept.html" title="interface in eu.ehri.project.models.cvoc">Concept</A>, <A HREF="../../../../../eu/ehri/project/models/HistoricalAgent.html" title="interface in eu.ehri.project.models">HistoricalAgent</A></DD>
@@ -101,7 +101,7 @@ Interface AuthoritativeItem</H2>
 </DL>
 <HR>
 <DL>
-<DT><PRE>public interface <B>AuthoritativeItem</B><DT>extends <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></DL>
+<DT><PRE>public interface <B>AuthoritativeItem</B><DT>extends <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>, <A HREF="../../../../../eu/ehri/project/models/base/LinkableEntity.html" title="interface in eu.ehri.project.models.base">LinkableEntity</A>, <A HREF="../../../../../eu/ehri/project/models/base/IdentifiableEntity.html" title="interface in eu.ehri.project.models.base">IdentifiableEntity</A></DL>
 </PRE>
 
 <P>
@@ -151,6 +151,15 @@ An item that belongs in some authoritative set.
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.LinkableEntity"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from interface eu.ehri.project.models.base.<A HREF="../../../../../eu/ehri/project/models/base/LinkableEntity.html" title="interface in eu.ehri.project.models.base">LinkableEntity</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../eu/ehri/project/models/base/LinkableEntity.html#addLink(eu.ehri.project.models.Link)">addLink</A>, <A HREF="../../../../../eu/ehri/project/models/base/LinkableEntity.html#getLinks()">getLinks</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.AccessibleEntity"><!-- --></A>
@@ -205,6 +214,15 @@ An item that belongs in some authoritative set.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE>asVertex</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.IdentifiableEntity"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from interface eu.ehri.project.models.base.<A HREF="../../../../../eu/ehri/project/models/base/IdentifiableEntity.html" title="interface in eu.ehri.project.models.base">IdentifiableEntity</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../eu/ehri/project/models/base/IdentifiableEntity.html#getIdentifier()">getIdentifier</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;

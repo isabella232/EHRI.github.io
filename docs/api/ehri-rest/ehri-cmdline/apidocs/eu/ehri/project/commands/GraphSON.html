@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-GraphSON (Command Line Tools 0.1 API)
+GraphSON (Command Line Tools 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ GraphSON (Command Line Tools 0.1 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="GraphSON (Command Line Tools 0.1 API)";
+        parent.document.title="GraphSON (Command Line Tools 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -122,6 +122,10 @@ Dump the complete graph as graphSON file, or import such a dump
 <P>
 
 <P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (https://github.com/mikesname), Linda Reijnhoudt (https://github.com/lindareijnhoudt)</DD>
+</DL>
 <HR>
 
 <P>
@@ -138,7 +142,7 @@ Dump the complete graph as graphSON file, or import such a dump
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/GraphSON.html#GraphSON()">GraphSON</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -157,7 +161,8 @@ Dump the complete graph as graphSON file, or import such a dump
                 org.apache.commons.cli.CommandLine&nbsp;cmdLine)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Command-line entry-point (for testing.)</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Execute this command with the given database and parsed command
+ line arguments.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -165,7 +170,7 @@ Dump the complete graph as graphSON file, or import such a dump
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/GraphSON.html#getHelp()">getHelp</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get information about the functionality of the command.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get help for this command.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -173,8 +178,7 @@ Dump the complete graph as graphSON file, or import such a dump
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/GraphSON.html#getUsage()">getUsage</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get information about the usage of the command, including
- required and/or optional parameters.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get usage info.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -197,7 +201,7 @@ Dump the complete graph as graphSON file, or import such a dump
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/GraphSON.html#setCustomOptions()">setCustomOptions</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/GraphSON.html#setCustomOptions(org.apache.commons.cli.Options)">setCustomOptions</A></B>(org.apache.commons.cli.Options&nbsp;options)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -248,8 +252,6 @@ GraphSON</H3>
 <PRE>
 public <B>GraphSON</B>()</PRE>
 <DL>
-<DD>Constructor.
-<P>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -267,15 +269,15 @@ getHelp</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getHelp</B>()</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getHelp()">Command</A></CODE></B></DD>
-<DD>Get information about the functionality of the command.
+<DD><B>Description copied from class: <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#getHelp()">BaseCommand</A></CODE></B></DD>
+<DD>Get help for this command.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getHelp()">getHelp</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands">Command</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#getHelp()">getHelp</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
 </DD>
 <DD><DL>
 
-<DT><B>Returns:</B><DD>a help text</DL>
+<DT><B>Returns:</B><DD>a contextual help string</DL>
 </DD>
 </DL>
 <HR>
@@ -285,27 +287,26 @@ getUsage</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getUsage</B>()</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getUsage()">Command</A></CODE></B></DD>
-<DD>Get information about the usage of the command, including
- required and/or optional parameters.
+<DD><B>Description copied from class: <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#getUsage()">BaseCommand</A></CODE></B></DD>
+<DD>Get usage info.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getUsage()">getUsage</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands">Command</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#getUsage()">getUsage</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
 </DD>
 <DD><DL>
 
-<DT><B>Returns:</B><DD>a usage text</DL>
+<DT><B>Returns:</B><DD>a brief usage output</DL>
 </DD>
 </DL>
 <HR>
 
-<A NAME="setCustomOptions()"><!-- --></A><H3>
+<A NAME="setCustomOptions(org.apache.commons.cli.Options)"><!-- --></A><H3>
 setCustomOptions</H3>
 <PRE>
-protected void <B>setCustomOptions</B>()</PRE>
+protected void <B>setCustomOptions</B>(org.apache.commons.cli.Options&nbsp;options)</PRE>
 <DL>
 <DD><DL>
-<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#setCustomOptions()">setCustomOptions</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#setCustomOptions(org.apache.commons.cli.Options)">setCustomOptions</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
 </DD>
 <DD><DL>
 </DL>
@@ -320,14 +321,16 @@ public int <B>execWithOptions</B>(com.tinkerpop.frames.FramedGraph&lt;? extends 
                            org.apache.commons.cli.CommandLine&nbsp;cmdLine)
                     throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
 <DL>
-<DD>Command-line entry-point (for testing.)
+<DD><B>Description copied from class: <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">BaseCommand</A></CODE></B></DD>
+<DD>Execute this command with the given database and parsed command
+ line arguments.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">execWithOptions</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands">Command</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">execWithOptions</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
 </DD>
 <DD><DL>
-
-<DT><B>Returns:</B><DD>a status code (0 = success)
+<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the graph database<DD><CODE>cmdLine</CODE> - the parsed command line object
+<DT><B>Returns:</B><DD>a command return code
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
 </DD>
@@ -339,7 +342,7 @@ saveDump</H3>
 <PRE>
 public void <B>saveDump</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
                      org.apache.commons.cli.CommandLine&nbsp;cmdLine)
-              throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
+              throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
 <DL>
 <DD><DL>
 </DL>
@@ -347,7 +350,7 @@ public void <B>saveDump</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.ti
 <DD><DL>
 
 <DT><B>Throws:</B>
-<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
+<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
 </DD>
 </DL>
 <HR>
@@ -357,7 +360,7 @@ loadDump</H3>
 <PRE>
 public void <B>loadDump</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
                      org.apache.commons.cli.CommandLine&nbsp;cmdLine)
-              throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
+              throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></PRE>
 <DL>
 <DD><DL>
 </DL>
@@ -365,7 +368,7 @@ public void <B>loadDump</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.ti
 <DD><DL>
 
 <DT><B>Throws:</B>
-<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
+<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE></DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

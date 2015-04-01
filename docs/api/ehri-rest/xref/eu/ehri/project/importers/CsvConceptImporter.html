@@ -9,63 +9,83 @@
 <div id="overview"><a href="../../../../../apidocs/eu/ehri/project/importers/CsvConceptImporter.html">View Javadoc</a></div><pre>
 
 <a class="jxr_linenumber" name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
-<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_comment"> * To change this template, choose Tools | Templates</em>
-<a class="jxr_linenumber" name="3" href="#3">3</a>   <em class="jxr_comment"> * and open the template in the editor.</em>
-<a class="jxr_linenumber" name="4" href="#4">4</a>   <em class="jxr_comment"> */</em>
-<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">package</strong> eu.ehri.project.importers;
-<a class="jxr_linenumber" name="6" href="#6">6</a>   
-<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
-<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.acl.SystemScope;
-<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
-<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.AccessibleEntity;
-<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.PermissionScope;
-<a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
-<a class="jxr_linenumber" name="15" href="#15">15</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
-<a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
-<a class="jxr_linenumber" name="17" href="#17">17</a>  
-<a class="jxr_linenumber" name="18" href="#18">18</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
+<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_comment"> * Copyright 2015 Data Archiving and Networked Services (an institute of</em>
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <em class="jxr_comment"> * Koninklijke Nederlandse Akademie van Wetenschappen), King's College London,</em>
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <em class="jxr_comment"> * Georg-August-Universitaet Goettingen Stiftung Oeffentlichen Rechts</em>
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <em class="jxr_comment"> * Licensed under the EUPL, Version 1.1 or – as soon they will be approved by</em>
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <em class="jxr_comment"> * the European Commission - subsequent versions of the EUPL (the "Licence");</em>
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <em class="jxr_comment"> * You may not use this work except in compliance with the Licence.</em>
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <em class="jxr_comment"> * You may obtain a copy of the Licence at:</em>
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <em class="jxr_comment"> * https://joinup.ec.europa.eu/software/page/eupl</em>
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_comment"> * Unless required by applicable law or agreed to in writing, software</em>
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <em class="jxr_comment"> * distributed under the Licence is distributed on an "AS IS" basis,</em>
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <em class="jxr_comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</em>
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <em class="jxr_comment"> * See the Licence for the specific language governing</em>
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_comment"> * permissions and limitations under the Licence.</em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_comment"> */</em>
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
-<a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.BundleDAO;
-<a class="jxr_linenumber" name="21" href="#21">21</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Mutation;
-<a class="jxr_linenumber" name="22" href="#22">22</a>  
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <em class="jxr_javadoccomment"> *</em>
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <em class="jxr_javadoccomment"> * @author Linda Reijnhoudt (https://github.com/lindareijnhoudt)</em>
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/importers/CsvConceptImporter.html">CsvConceptImporter</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/importers/CsvAuthoritativeItemImporter.html">CsvAuthoritativeItemImporter</a> {
-<a class="jxr_linenumber" name="28" href="#28">28</a>  
-<a class="jxr_linenumber" name="29" href="#29">29</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/importers/CsvConceptImporter.html">CsvConceptImporter</a>(FramedGraph&lt;?&gt; framedGraph, <a href="../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> permissionScope, <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log) {
-<a class="jxr_linenumber" name="30" href="#30">30</a>          <strong class="jxr_keyword">super</strong>(framedGraph, permissionScope, log);
-<a class="jxr_linenumber" name="31" href="#31">31</a>      }
-<a class="jxr_linenumber" name="32" href="#32">32</a>  
-<a class="jxr_linenumber" name="33" href="#33">33</a>      @Override
-<a class="jxr_linenumber" name="34" href="#34">34</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html">AccessibleEntity</a> importItem(Map&lt;String, Object&gt; itemData) <strong class="jxr_keyword">throws</strong> ValidationError {
-<a class="jxr_linenumber" name="35" href="#35">35</a>  
-<a class="jxr_linenumber" name="36" href="#36">36</a>          <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a> persister = getPersister();
-<a class="jxr_linenumber" name="37" href="#37">37</a>  
-<a class="jxr_linenumber" name="38" href="#38">38</a>          <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> unit = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.CVOC_CONCEPT, extractUnit(itemData));
-<a class="jxr_linenumber" name="39" href="#39">39</a>  
-<a class="jxr_linenumber" name="40" href="#40">40</a>          <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> descBundle = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.CVOC_CONCEPT_DESCRIPTION, extractUnitDescription(itemData, EntityClass.CVOC_CONCEPT_DESCRIPTION));
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="21" href="#21">21</a>  <em class="jxr_comment"> * To change this template, choose Tools | Templates</em>
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <em class="jxr_comment"> * and open the template in the editor.</em>
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.acl.SystemScope;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.AccessibleEntity;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.PermissionScope;
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
+<a class="jxr_linenumber" name="36" href="#36">36</a>  
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
+<a class="jxr_linenumber" name="38" href="#38">38</a>  
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.BundleDAO;
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Mutation;
 <a class="jxr_linenumber" name="41" href="#41">41</a>  
-<a class="jxr_linenumber" name="42" href="#42">42</a>          unit = unit.withRelation(Ontology.DESCRIPTION_FOR_ENTITY, descBundle);
-<a class="jxr_linenumber" name="43" href="#43">43</a>  
-<a class="jxr_linenumber" name="44" href="#44">44</a>          Mutation&lt;Concept&gt; mutation = persister.createOrUpdate(unit, Concept.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="45" href="#45">45</a>          <a href="../../../../eu/ehri/project/models/cvoc/Concept.html">Concept</a> frame = mutation.getNode();
-<a class="jxr_linenumber" name="46" href="#46">46</a>  
-<a class="jxr_linenumber" name="47" href="#47">47</a>          <strong class="jxr_keyword">if</strong> (!permissionScope.equals(SystemScope.getInstance())
-<a class="jxr_linenumber" name="48" href="#48">48</a>                  &amp;&amp; mutation.created()) {
-<a class="jxr_linenumber" name="49" href="#49">49</a>              manager.<strong class="jxr_keyword">cast</strong>(permissionScope, Vocabulary.<strong class="jxr_keyword">class</strong>).addItem(frame);
-<a class="jxr_linenumber" name="50" href="#50">50</a>              frame.setPermissionScope(permissionScope);
-<a class="jxr_linenumber" name="51" href="#51">51</a>          }
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <em class="jxr_javadoccomment"> * Importer of concepts loaded from a CSV file.</em>
+<a class="jxr_linenumber" name="44" href="#44">44</a>  <em class="jxr_javadoccomment"> *</em>
+<a class="jxr_linenumber" name="45" href="#45">45</a>  <em class="jxr_javadoccomment"> * @author Linda Reijnhoudt (https://github.com/lindareijnhoudt)</em>
+<a class="jxr_linenumber" name="46" href="#46">46</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/importers/CsvConceptImporter.html">CsvConceptImporter</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/importers/CsvAuthoritativeItemImporter.html">CsvAuthoritativeItemImporter</a> {
+<a class="jxr_linenumber" name="48" href="#48">48</a>  
+<a class="jxr_linenumber" name="49" href="#49">49</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/importers/CsvConceptImporter.html">CsvConceptImporter</a>(FramedGraph&lt;?&gt; framedGraph, <a href="../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> permissionScope, <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log) {
+<a class="jxr_linenumber" name="50" href="#50">50</a>          <strong class="jxr_keyword">super</strong>(framedGraph, permissionScope, log);
+<a class="jxr_linenumber" name="51" href="#51">51</a>      }
 <a class="jxr_linenumber" name="52" href="#52">52</a>  
-<a class="jxr_linenumber" name="53" href="#53">53</a>          handleCallbacks(mutation);
-<a class="jxr_linenumber" name="54" href="#54">54</a>          <strong class="jxr_keyword">return</strong> frame;
+<a class="jxr_linenumber" name="53" href="#53">53</a>      @Override
+<a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html">AccessibleEntity</a> importItem(Map&lt;String, Object&gt; itemData) <strong class="jxr_keyword">throws</strong> ValidationError {
 <a class="jxr_linenumber" name="55" href="#55">55</a>  
-<a class="jxr_linenumber" name="56" href="#56">56</a>      }
+<a class="jxr_linenumber" name="56" href="#56">56</a>          <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a> persister = getPersister();
 <a class="jxr_linenumber" name="57" href="#57">57</a>  
-<a class="jxr_linenumber" name="58" href="#58">58</a>  }
+<a class="jxr_linenumber" name="58" href="#58">58</a>          <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> unit = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.CVOC_CONCEPT, extractUnit(itemData));
+<a class="jxr_linenumber" name="59" href="#59">59</a>  
+<a class="jxr_linenumber" name="60" href="#60">60</a>          <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> descBundle = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.CVOC_CONCEPT_DESCRIPTION, extractUnitDescription(itemData, EntityClass.CVOC_CONCEPT_DESCRIPTION));
+<a class="jxr_linenumber" name="61" href="#61">61</a>  
+<a class="jxr_linenumber" name="62" href="#62">62</a>          unit = unit.withRelation(Ontology.DESCRIPTION_FOR_ENTITY, descBundle);
+<a class="jxr_linenumber" name="63" href="#63">63</a>  
+<a class="jxr_linenumber" name="64" href="#64">64</a>          Mutation&lt;Concept&gt; mutation = persister.createOrUpdate(unit, Concept.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="65" href="#65">65</a>          <a href="../../../../eu/ehri/project/models/cvoc/Concept.html">Concept</a> frame = mutation.getNode();
+<a class="jxr_linenumber" name="66" href="#66">66</a>  
+<a class="jxr_linenumber" name="67" href="#67">67</a>          <strong class="jxr_keyword">if</strong> (!permissionScope.equals(SystemScope.getInstance())
+<a class="jxr_linenumber" name="68" href="#68">68</a>                  &amp;&amp; mutation.created()) {
+<a class="jxr_linenumber" name="69" href="#69">69</a>              manager.<strong class="jxr_keyword">cast</strong>(permissionScope, Vocabulary.<strong class="jxr_keyword">class</strong>).addItem(frame);
+<a class="jxr_linenumber" name="70" href="#70">70</a>              frame.setPermissionScope(permissionScope);
+<a class="jxr_linenumber" name="71" href="#71">71</a>          }
+<a class="jxr_linenumber" name="72" href="#72">72</a>  
+<a class="jxr_linenumber" name="73" href="#73">73</a>          handleCallbacks(mutation);
+<a class="jxr_linenumber" name="74" href="#74">74</a>          <strong class="jxr_keyword">return</strong> frame;
+<a class="jxr_linenumber" name="75" href="#75">75</a>  
+<a class="jxr_linenumber" name="76" href="#76">76</a>      }
+<a class="jxr_linenumber" name="77" href="#77">77</a>  
+<a class="jxr_linenumber" name="78" href="#78">78</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

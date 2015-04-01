@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-ValidationErrorMapper (EHRI Backend 1.0 API)
+ValidationErrorMapper (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ ValidationErrorMapper (EHRI Backend 1.0 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ValidationErrorMapper (EHRI Backend 1.0 API)";
+        parent.document.title="ValidationErrorMapper (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -108,7 +108,7 @@ Serialize a tree of validation errors to JSON. Like bundles,
  ValidationErrors are a recursive structure with a 'relations'
  map that contains lists of the errors found in each top-level
  item's children. The end result should look like:
- 
+
  {
    "errors":{},
    "relations":{
@@ -126,6 +126,8 @@ Serialize a tree of validation errors to JSON. Like bundles,
       ]
    }
  }
+
+ The response is sent with HTTP status Bad Request.
 <P>
 
 <P>

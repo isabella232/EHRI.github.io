@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-Command (EHRI Backend 1.0 API)
+Command (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ Command (EHRI Backend 1.0 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Command (EHRI Backend 1.0 API)";
+        parent.document.title="Command (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -99,6 +99,16 @@ Interface Command</H2>
 </PRE>
 
 <P>
+Command-line tools to perform actions on the graph database need
+ to specify a help text about the functionality of the tool and
+ a string to explain their usage.
+<P>
+
+<P>
+<DL>
+<DT><B>Author:</B></DT>
+  <DD>Mike Bryant (https://github.com/mikesname), Linda Reijnhoudt (https://github.com/lindareijnhoudt)</DD>
+</DL>
 <HR>
 
 <P>
@@ -118,7 +128,7 @@ Interface Command</H2>
      <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;args)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Execute this command with the given arguments.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -199,7 +209,7 @@ int <B>execWithOptions</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tin
 <DD>Execute this command with the given command line options.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>graph</CODE> - <DD><CODE>cmdLine</CODE> - 
+<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the graph database<DD><CODE>cmdLine</CODE> - the command line options
 <DT><B>Returns:</B><DD>a status code (0 = success)
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
@@ -214,8 +224,11 @@ int <B>exec</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blue
          <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>[]&nbsp;args)
          throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
 <DL>
+<DD>Execute this command with the given arguments.
+<P>
 <DD><DL>
-
+<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the graph database<DD><CODE>args</CODE> - the raw argument strings
+<DT><B>Returns:</B><DD>a status code (0 = success)
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
 </DD>

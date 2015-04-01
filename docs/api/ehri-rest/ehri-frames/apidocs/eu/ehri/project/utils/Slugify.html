@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-Slugify (EHRI Core API 0.1-SNAPSHOT API)
+Slugify (EHRI Core API 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ Slugify (EHRI Core API 0.1-SNAPSHOT API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Slugify (EHRI Core API 0.1-SNAPSHOT API)";
+        parent.document.title="Slugify (EHRI Core API 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -143,7 +143,7 @@ Class for handling slugification of strings, for use
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/utils/Slugify.html#slugify(java.lang.String)">slugify</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;input)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slugify the input string using the default replacement string.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -152,7 +152,7 @@ Class for handling slugification of strings, for use
         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;replacement)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slugify the input string using the given replacement string.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -199,8 +199,11 @@ slugify</H3>
 <PRE>
 public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>slugify</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;input)</PRE>
 <DL>
+<DD>Slugify the input string using the default replacement string.
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>input</CODE> - the String to slugify
+<DT><B>Returns:</B><DD>the slugified copy of the input string</DL>
 </DD>
 </DL>
 <HR>
@@ -211,8 +214,11 @@ slugify</H3>
 public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>slugify</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;input,
                              <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;replacement)</PRE>
 <DL>
+<DD>Slugify the input string using the given replacement string.
+<P>
 <DD><DL>
-</DL>
+<DT><B>Parameters:</B><DD><CODE>input</CODE> - the String to slugify<DD><CODE>replacement</CODE> - the replacement string
+<DT><B>Returns:</B><DD>the slugified copy of the input string</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-SaxXmlHandler (Import Tools 1.1 API)
+SaxXmlHandler (Import Tools 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ SaxXmlHandler (Import Tools 1.1 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="SaxXmlHandler (Import Tools 1.1 API)";
+        parent.document.title="SaxXmlHandler (Import Tools 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -107,7 +107,8 @@ Class SaxXmlHandler</H2>
 </PRE>
 
 <P>
-makes use of properties file with format: 
+Reader of XML files, creator of <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><CODE>Map</CODE></A>-based representations of EA* files.
+ Makes use of properties file with format: 
  
  path/within/xml/=node/property
 
@@ -116,6 +117,11 @@ makes use of properties file with format:
  if there is a <node> given, it will translate to another graph node, like Address.
 
  lines starting with '@' give the attributes:
+ <code>@attribute=tmpname
+ path/within/xml/@tmpname=node/property</code>
+
+ all tags not included in the properties file that have a  nodevalue will be put in a unknownproperties node, 
+ with an edge to the unit-description.
 <P>
 
 <P>

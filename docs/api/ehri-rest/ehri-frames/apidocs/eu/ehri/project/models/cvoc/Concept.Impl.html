@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-Concept.Impl (EHRI Core API 0.1-SNAPSHOT API)
+Concept.Impl (EHRI Core API 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ Concept.Impl (EHRI Core API 0.1-SNAPSHOT API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Concept.Impl (EHRI Core API 0.1-SNAPSHOT API)";
+        parent.document.title="Concept.Impl (EHRI Core API 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -207,14 +207,6 @@ Implementation of complex methods.
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/cvoc/Concept.Impl.html#updateChildCountCache()">updateChildCountCache</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
@@ -270,6 +262,15 @@ Implementation of complex methods.
 <TD><CODE><A HREF="../../../../../eu/ehri/project/models/base/IdentifiableEntity.html#getIdentifier()">getIdentifier</A></CODE></TD>
 </TR>
 </TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.cvoc.AuthoritativeItem"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from interface eu.ehri.project.models.cvoc.<A HREF="../../../../../eu/ehri/project/models/cvoc/AuthoritativeItem.html" title="interface in eu.ehri.project.models.cvoc">AuthoritativeItem</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../eu/ehri/project/models/cvoc/AuthoritativeItem.html#getAuthoritativeSet()">getAuthoritativeSet</A></CODE></TD>
+</TR>
+</TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.LinkableEntity"><!-- --></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
@@ -277,42 +278,6 @@ Implementation of complex methods.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE><A HREF="../../../../../eu/ehri/project/models/base/LinkableEntity.html#addLink(eu.ehri.project.models.Link)">addLink</A>, <A HREF="../../../../../eu/ehri/project/models/base/LinkableEntity.html#getLinks()">getLinks</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.AccessibleEntity"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from interface eu.ehri.project.models.base.<A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html#addAccessor(eu.ehri.project.models.base.Accessor)">addAccessor</A>, <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html#getAccessors()">getAccessors</A>, <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html#getHistory()">getHistory</A>, <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html#getLatestEvent()">getLatestEvent</A>, <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html#getPermissionScope()">getPermissionScope</A>, <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html#getPermissionScopes()">getPermissionScopes</A>, <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html#hasAccessRestriction()">hasAccessRestriction</A>, <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html#removeAccessor(eu.ehri.project.models.base.Accessor)">removeAccessor</A>, <A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">setPermissionScope</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.PermissionGrantTarget"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from interface eu.ehri.project.models.base.<A HREF="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html#getPermissionGrants()">getPermissionGrants</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.VersionedEntity"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from interface eu.ehri.project.models.base.<A HREF="../../../../../eu/ehri/project/models/base/VersionedEntity.html" title="interface in eu.ehri.project.models.base">VersionedEntity</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../../eu/ehri/project/models/base/VersionedEntity.html#getAllPriorVersions()">getAllPriorVersions</A>, <A HREF="../../../../../eu/ehri/project/models/base/VersionedEntity.html#getPriorVersion()">getPriorVersion</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.AnnotatableEntity"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from interface eu.ehri.project.models.base.<A HREF="../../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base">AnnotatableEntity</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../../eu/ehri/project/models/base/AnnotatableEntity.html#addAnnotation(eu.ehri.project.models.Annotation)">addAnnotation</A>, <A HREF="../../../../../eu/ehri/project/models/base/AnnotatableEntity.html#addAnnotationPart(eu.ehri.project.models.Annotation)">addAnnotationPart</A>, <A HREF="../../../../../eu/ehri/project/models/base/AnnotatableEntity.html#getAnnotations()">getAnnotations</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.base.Frame"><!-- --></A>
@@ -331,15 +296,6 @@ Implementation of complex methods.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><CODE>asVertex</CODE></TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.models.cvoc.AuthoritativeItem"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from interface eu.ehri.project.models.cvoc.<A HREF="../../../../../eu/ehri/project/models/cvoc/AuthoritativeItem.html" title="interface in eu.ehri.project.models.cvoc">AuthoritativeItem</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../../eu/ehri/project/models/cvoc/AuthoritativeItem.html#getAuthoritativeSet()">getAuthoritativeSet</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -371,20 +327,6 @@ public <B>Concept.Impl</B>()</PRE>
 <B>Method Detail</B></FONT></TH>
 </TR>
 </TABLE>
-
-<A NAME="updateChildCountCache()"><!-- --></A><H3>
-updateChildCountCache</H3>
-<PRE>
-public void <B>updateChildCountCache</B>()</PRE>
-<DL>
-<DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../eu/ehri/project/models/cvoc/Concept.html#updateChildCountCache()">updateChildCountCache</A></CODE> in interface <CODE><A HREF="../../../../../eu/ehri/project/models/cvoc/Concept.html" title="interface in eu.ehri.project.models.cvoc">Concept</A></CODE></DL>
-</DD>
-<DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
 
 <A NAME="getChildCount()"><!-- --></A><H3>
 getChildCount</H3>

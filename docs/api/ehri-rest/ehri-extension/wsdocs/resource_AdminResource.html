@@ -70,6 +70,7 @@
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
                 <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
+                <li><a href="resource_SparQLResource.html">SparQLResource</a></li>
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
                 <li><a href="resource_UserProfileResource.html">UserProfileResource</a></li>
@@ -92,7 +93,7 @@ and general graph-maintenance functionality.</p>
         <a href="#path__admin__exportGraphSON.html">/admin/_exportGraphSON</a>
         </li>
         <li>
-        <a href="#path__admin__rebuildChildCache.html">/admin/_rebuildChildCache</a>
+        <a href="#path__admin__reindexInternal.html">/admin/_reindexInternal</a>
         </li>
         <li>
         <a href="#path__admin_createDefaultUserProfile.html">/admin/createDefaultUserProfile</a>
@@ -121,14 +122,17 @@ The mode used is EXTENDED.
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__admin__rebuildChildCache.html"></a>
-      <h1>/admin/_rebuildChildCache</h1>
-      <p class="note">Mount Point: <a href="../admin/_rebuildChildCache">/admin/_rebuildChildCache</a></p>
+        <a name="path__admin__reindexInternal.html"></a>
+      <h1>/admin/_reindexInternal</h1>
+      <p class="note">Mount Point: <a href="../admin/_reindexInternal">/admin/_reindexInternal</a></p>
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Update the childCount property on hierarchical items with the number of
-children they contain.
+            Re-build the graph's internal lucene index.
+<p/>
+NB: This takes a lot of memory for large graphs. Do
+not use willy-nilly and increase the heap size as
+necessary. TODO: Add incremental buffered commit.
           </p>
       <h3>Response Body</h3>
       <table>

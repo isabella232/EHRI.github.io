@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-EadImporter (EHRI Backend 1.0 API)
+EadImporter (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ EadImporter (EHRI Backend 1.0 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="EadImporter (EHRI Backend 1.0 API)";
+        parent.document.title="EadImporter (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -97,6 +97,9 @@ Class EadImporter</H2>
           <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">eu.ehri.project.importers.EaImporter</A>
               <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>eu.ehri.project.importers.EadImporter</B>
 </PRE>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../eu/ehri/project/importers/AraEadImporter.html" title="class in eu.ehri.project.importers">AraEadImporter</A></DD>
+</DL>
 <HR>
 <DL>
 <DT><PRE>public class <B>EadImporter</B><DT>extends <A HREF="../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</A></DL>
@@ -257,7 +260,7 @@ Import EAD for a given repository into the database. Due to the laxness of the E
                          <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;idPath)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finds any bundle in the graph with the same ObjectIdentifier.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finds any bundle in the graph with the same ObjectIdentifier.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -268,9 +271,9 @@ Import EAD for a given repository into the database. Due to the laxness of the E
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subclasses can override this method to cater to their special needs for UndeterminedRelationships
  by default, it expects something like this in the original EAD:
- 
+
  <persname source="terezin-victims" authfilenumber="PERSON.ITI.1514982">Kien,
-                        Leonhard (* 11.5.1886)</persname>
+                   Leonhard (* 11.5.1886)</persname>
 
  it works in unison with the extractRelations() method.</TD>
 </TR>
@@ -290,7 +293,7 @@ Import EAD for a given repository into the database. Due to the laxness of the E
 <TH ALIGN="left"><B>Methods inherited from class eu.ehri.project.importers.<A HREF="../../../../eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../eu/ehri/project/importers/MapImporter.html#extractDates(java.util.Map)">extractDates</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#extractMaintenanceEvent(java.util.Map)">extractMaintenanceEvent</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#extractOtherProperties(java.util.Map)">extractOtherProperties</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#getMaintenanceEvent(java.util.Map)">getMaintenanceEvent</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#importMaintenanceEvent(java.util.Map)">importMaintenanceEvent</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#normaliseDate(java.lang.String, java.lang.String)">normaliseDate</A></CODE></TD>
+<TD><CODE><A HREF="../../../../eu/ehri/project/importers/MapImporter.html#extractDates(java.util.Map)">extractDates</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#extractMaintenanceEvent(java.util.Map)">extractMaintenanceEvent</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#extractOtherProperties(java.util.Map)">extractOtherProperties</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#getMaintenanceEvent(java.util.Map)">getMaintenanceEvent</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#importMaintenanceEvent(java.util.Map)">importMaintenanceEvent</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#normaliseDate(java.lang.String, java.lang.String)">normaliseDate</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#replaceDates(java.util.Map, java.util.List)">replaceDates</A>, <A HREF="../../../../eu/ehri/project/importers/MapImporter.html#returnDatesAsString(java.util.Map, eu.ehri.project.importers.properties.XmlImportProperties)">returnDatesAsString</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.importers.AbstractImporter"><!-- --></A>
@@ -379,7 +382,7 @@ public <A HREF="../../../../eu/ehri/project/models/base/AbstractUnit.html" title
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T, java.util.List)">importItem</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&gt;&gt;</CODE></DL>
 </DD>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>itemData</CODE> - The data map<DD><CODE>idPath</CODE> - The identifiers of parent documents,
+<DT><B>Parameters:</B><DD><CODE>itemData</CODE> - The raw data map<DD><CODE>idPath</CODE> - The identifiers of parent documents,
                not including those of the overall permission scope
 <DT><B>Returns:</B><DD>the imported node
 <DT><B>Throws:</B>
@@ -396,11 +399,14 @@ protected <A HREF="../../../../eu/ehri/project/persistence/Bundle.html" title="c
                                           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;idPath)
                                    throws <A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></PRE>
 <DL>
-<DD>finds any bundle in the graph with the same ObjectIdentifier.
- if it exists it replaces the Description in the given language, else it just saves it
+<DD>Finds any bundle in the graph with the same ObjectIdentifier.
+ If there is no bundle with this identifier, it is created.
+ If it exists and a Description in the given language exists from the same source file,
+ the description is replaced. If the description is from another source, it is added to the
+ bundle's descriptions.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>unit</CODE> - - the DocumentaryUnit to be saved<DD><CODE>descBundle</CODE> - - the documentsDescription to replace any previous ones with this language
+<DT><B>Parameters:</B><DD><CODE>unit</CODE> - the DocumentaryUnit to be saved<DD><CODE>descBundle</CODE> - the documentsDescription to replace any previous ones with this language<DD><CODE>idPath</CODE> - the ID path of this bundle (will be relative to the ID path of the permission scope)
 <DT><B>Returns:</B><DD>A bundle with description relationships merged.
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE></DL>
@@ -417,9 +423,9 @@ protected void <B>solveUndeterminedRelationships</B>(<A HREF="../../../../eu/ehr
 <DL>
 <DD>subclasses can override this method to cater to their special needs for UndeterminedRelationships
  by default, it expects something like this in the original EAD:
- 
+
  <persname source="terezin-victims" authfilenumber="PERSON.ITI.1514982">Kien,
-                        Leonhard (* 11.5.1886)</persname>
+                   Leonhard (* 11.5.1886)</persname>
 
  it works in unison with the extractRelations() method.
 <P>

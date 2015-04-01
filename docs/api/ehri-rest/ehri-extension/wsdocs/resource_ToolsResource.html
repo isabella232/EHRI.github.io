@@ -70,6 +70,7 @@
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
                 <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
+                <li><a href="resource_SparQLResource.html">SparQLResource</a></li>
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
                 <li><a href="resource_UserProfileResource.html">UserProfileResource</a></li>
@@ -96,6 +97,9 @@ fit anywhere else.</p>
         </li>
         <li>
         <a href="#path__tools__findReplacePropertyValueRE.html">/tools/_findReplacePropertyValueRE</a>
+        </li>
+        <li>
+        <a href="#path__tools__regenerateDescriptionIds.html">/tools/_regenerateDescriptionIds</a>
         </li>
         <li>
         <a href="#path__tools__regenerateId_-id-.html">/tools/_regenerateId/{id}</a>
@@ -297,6 +301,51 @@ give the property a value of &quot;http://www.foo.com/bar&quot;.
         </tr>
       </table>
       <p>How many items have been changed</p>
+        <a name="path__tools__regenerateDescriptionIds.html"></a>
+      <h1>/tools/_regenerateDescriptionIds</h1>
+      <p class="note">Mount Point: <a href="../tools/_regenerateDescriptionIds">/tools/_regenerateDescriptionIds</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Regenerate description IDs.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>buffer</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <td>commit</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/plain</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
         <a name="path__tools__regenerateId_-id-.html"></a>
       <h1>/tools/_regenerateId/{id}</h1>
       <p class="note">Mount Point: <a href="../tools/_regenerateId/{id}">/tools/_regenerateId/{id}</a></p>
@@ -375,8 +424,8 @@ body if nothing was changed</p>
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Regenerate the hierarchical graph ID all items within the
-immediate permission scope (not all items recursively.)
+            Regenerate the hierarchical graph ID for all items within the
+permission scope and lower levels.
 
 The default mode is to output items whose IDs would change, without
 actually changing them. The collisions parameter will <b>only</b>

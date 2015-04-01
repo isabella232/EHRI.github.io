@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-CsvDocDescImport (EHRI Backend 1.0 API)
+CsvDocDescImport (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ CsvDocDescImport (EHRI Backend 1.0 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="CsvDocDescImport (EHRI Backend 1.0 API)";
+        parent.document.title="CsvDocDescImport (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -105,6 +105,10 @@ Class CsvDocDescImport</H2>
 </PRE>
 
 <P>
+Specialisation of ImportCsvCommand that is used for importing EAD-like CSV files.
+<P>
+
+<P>
 <DL>
 <DT><B>Author:</B></DT>
   <DD>Linda Reijnhoudt (https://github.com/lindareijnhoudt)</DD>
@@ -125,7 +129,7 @@ Class CsvDocDescImport</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/CsvDocDescImport.html#CsvDocDescImport()">CsvDocDescImport</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -143,7 +147,7 @@ Class CsvDocDescImport</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/CsvDocDescImport.html#getHelp()">getHelp</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get information about the functionality of the command.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get help for this command.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -151,8 +155,7 @@ Class CsvDocDescImport</H2>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/CsvDocDescImport.html#getUsage()">getUsage</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get information about the usage of the command, including
- required and/or optional parameters.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get usage info.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.commands.ImportCsvCommand"><!-- --></A>
@@ -161,7 +164,7 @@ Class CsvDocDescImport</H2>
 <TH ALIGN="left"><B>Methods inherited from class eu.ehri.project.commands.<A HREF="../../../../eu/ehri/project/commands/ImportCsvCommand.html" title="class in eu.ehri.project.commands">ImportCsvCommand</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../eu/ehri/project/commands/ImportCsvCommand.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">execWithOptions</A>, <A HREF="../../../../eu/ehri/project/commands/ImportCsvCommand.html#setCustomOptions()">setCustomOptions</A></CODE></TD>
+<TD><CODE><A HREF="../../../../eu/ehri/project/commands/ImportCsvCommand.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">execWithOptions</A>, <A HREF="../../../../eu/ehri/project/commands/ImportCsvCommand.html#setCustomOptions(org.apache.commons.cli.Options)">setCustomOptions</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_eu.ehri.project.commands.BaseCommand"><!-- --></A>
@@ -209,8 +212,6 @@ CsvDocDescImport</H3>
 <PRE>
 public <B>CsvDocDescImport</B>()</PRE>
 <DL>
-<DD>Constructor.
-<P>
 </DL>
 
 <!-- ============ METHOD DETAIL ========== -->
@@ -228,15 +229,15 @@ getHelp</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getHelp</B>()</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getHelp()">Command</A></CODE></B></DD>
-<DD>Get information about the functionality of the command.
+<DD><B>Description copied from class: <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#getHelp()">BaseCommand</A></CODE></B></DD>
+<DD>Get help for this command.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getHelp()">getHelp</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands">Command</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#getHelp()">getHelp</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
 </DD>
 <DD><DL>
 
-<DT><B>Returns:</B><DD>a help text</DL>
+<DT><B>Returns:</B><DD>a contextual help string</DL>
 </DD>
 </DL>
 <HR>
@@ -246,16 +247,15 @@ getUsage</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getUsage</B>()</PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getUsage()">Command</A></CODE></B></DD>
-<DD>Get information about the usage of the command, including
- required and/or optional parameters.
+<DD><B>Description copied from class: <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#getUsage()">BaseCommand</A></CODE></B></DD>
+<DD>Get usage info.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#getUsage()">getUsage</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands">Command</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#getUsage()">getUsage</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
 </DD>
 <DD><DL>
 
-<DT><B>Returns:</B><DD>a usage text</DL>
+<DT><B>Returns:</B><DD>a brief usage output</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-eu.ehri.project.models.base (EHRI Backend 1.0 API)
+eu.ehri.project.models.base (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ eu.ehri.project.models.base (EHRI Backend 1.0 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="eu.ehri.project.models.base (EHRI Backend 1.0 API)";
+        parent.document.title="eu.ehri.project.models.base (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -81,6 +81,13 @@ function windowTitle()
 <H2>
 Package eu.ehri.project.models.base
 </H2>
+The interfaces in this package specify the required and allowable properties of 
+ classes of entities, so that entities can be validated.
+<P>
+<B>See:</B>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="#package_description"><B>Description</B></A>
+<P>
 
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
@@ -89,39 +96,39 @@ Package eu.ehri.project.models.base
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base">AbstractUnit</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An abstract entity that has the features that documentary units need.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can be accessed by specific <A HREF="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base"><CODE>Accessor</CODE></A>s.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can access items and be granted permissions.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity whose actions are recorded.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/AddressableEntity.html" title="interface in eu.ehri.project.models.base">AddressableEntity</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can have <A HREF="../../../../../eu/ehri/project/models/Address.html" title="interface in eu.ehri.project.models"><CODE>Address</CODE></A>es.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base">AnnotatableEntity</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can be annotated.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can annotate <A HREF="../../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base"><CODE>AnnotatableEntity</CODE></A>s.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/DescribedEntity.html" title="interface in eu.ehri.project.models.base">DescribedEntity</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can have descriptions.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that describes another entity.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A></B></TD>
@@ -134,7 +141,7 @@ Package eu.ehri.project.models.base
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/ItemHolder.html" title="interface in eu.ehri.project.models.base">ItemHolder</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can have child entities.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/LinkableEntity.html" title="interface in eu.ehri.project.models.base">LinkableEntity</A></B></TD>
@@ -142,11 +149,11 @@ Package eu.ehri.project.models.base
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/NamedEntity.html" title="interface in eu.ehri.project.models.base">NamedEntity</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that has a name.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can be the target of a permission grant.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A></B></TD>
@@ -154,19 +161,19 @@ Package eu.ehri.project.models.base
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can be promoted and demoted.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/TemporalEntity.html" title="interface in eu.ehri.project.models.base">TemporalEntity</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can have one or more date periods attached.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/VersionedEntity.html" title="interface in eu.ehri.project.models.base">VersionedEntity</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that may have prior versions.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>An entity that can be watched by users.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -202,6 +209,10 @@ Package eu.ehri.project.models.base
 <TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/VersionedEntity.Impl.html" title="class in eu.ehri.project.models.base">VersionedEntity.Impl</A></B></TD>
 <TD>&nbsp;</TD>
 </TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../../eu/ehri/project/models/base/Watchable.Impl.html" title="class in eu.ehri.project.models.base">Watchable.Impl</A></B></TD>
+<TD>&nbsp;</TD>
+</TR>
 </TABLE>
 &nbsp;
 
@@ -218,6 +229,16 @@ Package eu.ehri.project.models.base
 </TR>
 </TABLE>
 &nbsp;
+
+<P>
+<A NAME="package_description"><!-- --></A><H2>
+Package eu.ehri.project.models.base Description
+</H2>
+
+<P>
+The interfaces in this package specify the required and allowable properties of 
+ classes of entities, so that entities can be validated.
+<P>
 
 <P>
 <DL>

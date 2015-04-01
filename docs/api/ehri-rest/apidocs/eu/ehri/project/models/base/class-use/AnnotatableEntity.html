@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-Uses of Interface eu.ehri.project.models.base.AnnotatableEntity (EHRI Backend 1.0 API)
+Uses of Interface eu.ehri.project.models.base.AnnotatableEntity (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ Uses of Interface eu.ehri.project.models.base.AnnotatableEntity (EHRI Backend 1.
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Interface eu.ehri.project.models.base.AnnotatableEntity (EHRI Backend 1.0 API)";
+        parent.document.title="Uses of Interface eu.ehri.project.models.base.AnnotatableEntity (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -90,11 +90,13 @@ Packages that use <A HREF="../../../../../../eu/ehri/project/models/base/Annotat
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.models"><B>eu.ehri.project.models</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>The interfaces in this package specify the classes of entities that map to graph
+ frame classes.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.models.base"><B>eu.ehri.project.models.base</B></A></TD>
-<TD>&nbsp;&nbsp;</TD>
+<TD>The interfaces in this package specify the required and allowable properties of 
+ classes of entities, so that entities can be validated.&nbsp;</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD><A HREF="#eu.ehri.project.models.cvoc"><B>eu.ehri.project.models.cvoc</B></A></TD>
@@ -386,7 +388,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AnnotatableEntity
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base">AbstractUnit</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An abstract entity that has the features that documentary units need.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -394,7 +396,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AnnotatableEntity
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An entity that can be accessed by specific <A HREF="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base"><CODE>Accessor</CODE></A>s.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -402,7 +404,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AnnotatableEntity
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/base/DescribedEntity.html" title="interface in eu.ehri.project.models.base">DescribedEntity</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An entity that can have descriptions.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -410,7 +412,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AnnotatableEntity
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An entity that describes another entity.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -426,7 +428,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AnnotatableEntity
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An entity that can be promoted and demoted.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -434,7 +436,7 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AnnotatableEntity
 <TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An entity that can be watched by users.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -459,6 +461,14 @@ Uses of <A HREF="../../../../../../eu/ehri/project/models/base/AnnotatableEntity
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Implementation of complex methods.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../eu/ehri/project/models/base/Watchable.Impl.html" title="class in eu.ehri.project.models.base">Watchable.Impl</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;

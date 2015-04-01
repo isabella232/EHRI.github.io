@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-ImportCommand (Command Line Tools 0.1 API)
+ImportCommand (Command Line Tools 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ ImportCommand (Command Line Tools 0.1 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ImportCommand (Command Line Tools 0.1 API)";
+        parent.document.title="ImportCommand (Command Line Tools 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -106,6 +106,10 @@ Class ImportCommand</H2>
 </PRE>
 
 <P>
+Superclass of all import command-line tools.
+<P>
+
+<P>
 <DL>
 <DT><B>Author:</B></DT>
   <DD>Linda Reijnhoudt (https://github.com/lindareijnhoudt)</DD>
@@ -171,7 +175,8 @@ Class ImportCommand</H2>
                 org.apache.commons.cli.CommandLine&nbsp;cmdLine)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Execute this command with the given command line options.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Execute this command with the given database and parsed command
+ line arguments.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -186,7 +191,7 @@ Class ImportCommand</H2>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected &nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/ImportCommand.html#setCustomOptions()">setCustomOptions</A></B>()</CODE>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/commands/ImportCommand.html#setCustomOptions(org.apache.commons.cli.Options)">setCustomOptions</A></B>(org.apache.commons.cli.Options&nbsp;options)</CODE>
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
@@ -279,13 +284,13 @@ public <B>ImportCommand</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/ja
 </TR>
 </TABLE>
 
-<A NAME="setCustomOptions()"><!-- --></A><H3>
+<A NAME="setCustomOptions(org.apache.commons.cli.Options)"><!-- --></A><H3>
 setCustomOptions</H3>
 <PRE>
-protected void <B>setCustomOptions</B>()</PRE>
+protected void <B>setCustomOptions</B>(org.apache.commons.cli.Options&nbsp;options)</PRE>
 <DL>
 <DD><DL>
-<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#setCustomOptions()">setCustomOptions</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
+<DT><B>Overrides:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#setCustomOptions(org.apache.commons.cli.Options)">setCustomOptions</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
 </DD>
 <DD><DL>
 </DL>
@@ -300,15 +305,16 @@ public int <B>execWithOptions</B>(com.tinkerpop.frames.FramedGraph&lt;? extends 
                            org.apache.commons.cli.CommandLine&nbsp;cmdLine)
                     throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></PRE>
 <DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">Command</A></CODE></B></DD>
-<DD>Execute this command with the given command line options.
+<DD><B>Description copied from class: <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">BaseCommand</A></CODE></B></DD>
+<DD>Execute this command with the given database and parsed command
+ line arguments.
 <P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/Command.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">execWithOptions</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands">Command</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html#execWithOptions(com.tinkerpop.frames.FramedGraph, org.apache.commons.cli.CommandLine)">execWithOptions</A></CODE> in class <CODE><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></CODE></DL>
 </DD>
 <DD><DL>
-
-<DT><B>Returns:</B><DD>a status code (0 = success)
+<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the graph database<DD><CODE>cmdLine</CODE> - the parsed command line object
+<DT><B>Returns:</B><DD>a command return code
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</A></CODE></DL>
 </DD>

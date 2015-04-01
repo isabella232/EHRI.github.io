@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-Bundle (EHRI Core API 0.1-SNAPSHOT API)
+Bundle (EHRI Core API 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ Bundle (EHRI Core API 0.1-SNAPSHOT API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Bundle (EHRI Core API 0.1-SNAPSHOT API)";
+        parent.document.title="Bundle (EHRI Core API 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -255,6 +255,14 @@ Class that represents a graph entity and subtree relations
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../eu/ehri/project/persistence/Bundle.html#depth()">depth</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The depth of this bundle tree, i.e.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;boolean</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/persistence/Bundle.html#equals(java.lang.Object)">equals</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;o)</CODE>
 
@@ -331,7 +339,7 @@ Class that represents a graph entity and subtree relations
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/persistence/Bundle.html#getDataValue(java.lang.String)">getDataValue</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a data value.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a data value by its key.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -349,7 +357,7 @@ Class that represents a graph entity and subtree relations
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the id of the bundle's graph vertex (or null if it does not yet
- exist.</TD>
+ exist).</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -361,7 +369,7 @@ Class that represents a graph entity and subtree relations
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/persistence/Bundle.html#getPropertyKeys()">getPropertyKeys</A></B>()</CODE>
 
 <BR>
@@ -395,7 +403,7 @@ Class that represents a graph entity and subtree relations
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/persistence/Bundle.html#getUniquePropertyKeys()">getUniquePropertyKeys</A></B>()</CODE>
 
 <BR>
@@ -757,7 +765,7 @@ getId</H3>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>getId</B>()</PRE>
 <DL>
 <DD>Get the id of the bundle's graph vertex (or null if it does not yet
- exist.
+ exist).
 <P>
 <DD><DL>
 
@@ -799,11 +807,11 @@ getDataValue</H3>
 <PRE>
 public &lt;T&gt; T <B>getDataValue</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key)</PRE>
 <DL>
-<DD>Get a data value.
+<DD>Get a data value by its key.
 <P>
 <DD><DL>
 
-<DT><B>Returns:</B><DD>The data value</DL>
+<DT><B>Returns:</B><DD>The data value, or null if there is no data for this key</DL>
 </DD>
 </DL>
 <HR>
@@ -814,11 +822,12 @@ withDataValue</H3>
 public <A HREF="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A> <B>withDataValue</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;key,
                             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A>&nbsp;value)</PRE>
 <DL>
-<DD>Set a value in the bundle's data.
+<DD>Set a value in the bundle's data. If value is null,
+ this Bundle is returned.
 <P>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>key</CODE> - The data key<DD><CODE>value</CODE> - The data value
-<DT><B>Returns:</B><DD>A new bundle</DL>
+<DT><B>Returns:</B><DD>A new bundle with value as key</DL>
 </DD>
 </DL>
 <HR>
@@ -1100,7 +1109,7 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is
 <A NAME="getPropertyKeys()"><!-- --></A><H3>
 getPropertyKeys</H3>
 <PRE>
-public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getPropertyKeys</B>()</PRE>
+public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getPropertyKeys</B>()</PRE>
 <DL>
 <DD>Return a list of names for mandatory properties, as represented in the
  graph.
@@ -1115,7 +1124,7 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html
 <A NAME="getUniquePropertyKeys()"><!-- --></A><H3>
 getUniquePropertyKeys</H3>
 <PRE>
-public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getUniquePropertyKeys</B>()</PRE>
+public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>getUniquePropertyKeys</B>()</PRE>
 <DL>
 <DD>Return a list of property keys which must be unique.
 <P>
@@ -1257,6 +1266,21 @@ public boolean <B>hasGeneratedId</B>()</PRE>
 <DD><DL>
 
 <DT><B>Returns:</B><DD>True if the ID has been synthesised.</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="depth()"><!-- --></A><H3>
+depth</H3>
+<PRE>
+public int <B>depth</B>()</PRE>
+<DL>
+<DD>The depth of this bundle tree, i.e. the number
+ of levels of relationships beneath this one.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the number of levels</DL>
 </DD>
 </DL>
 <HR>

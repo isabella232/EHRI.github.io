@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-IdGeneratorUtils (EHRI Backend 1.0 API)
+IdGeneratorUtils (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ IdGeneratorUtils (EHRI Backend 1.0 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="IdGeneratorUtils (EHRI Backend 1.0 API)";
+        parent.document.title="IdGeneratorUtils (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -121,6 +121,14 @@ Delegation functions for ID generation.
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGeneratorUtils.html#HIERARCHY_SEPARATOR">HIERARCHY_SEPARATOR</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Separator for ID components.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>protected static&nbsp;org.slf4j.Logger</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGeneratorUtils.html#logger">logger</A></B></CODE>
 
@@ -130,10 +138,10 @@ Delegation functions for ID generation.
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>static&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGeneratorUtils.html#SEPARATOR">SEPARATOR</A></B></CODE>
+<TD><CODE><B><A HREF="../../../../../eu/ehri/project/models/idgen/IdGeneratorUtils.html#SLUG_REPLACE">SLUG_REPLACE</A></B></CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Separate or ID components.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -224,15 +232,25 @@ Delegation functions for ID generation.
 </TR>
 </TABLE>
 
-<A NAME="SEPARATOR"><!-- --></A><H3>
-SEPARATOR</H3>
+<A NAME="HIERARCHY_SEPARATOR"><!-- --></A><H3>
+HIERARCHY_SEPARATOR</H3>
 <PRE>
-public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>SEPARATOR</B></PRE>
+public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>HIERARCHY_SEPARATOR</B></PRE>
 <DL>
-<DD>Separate or ID components.
+<DD>Separator for ID components.
 <P>
 <DL>
-<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#eu.ehri.project.models.idgen.IdGeneratorUtils.SEPARATOR">Constant Field Values</A></DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#eu.ehri.project.models.idgen.IdGeneratorUtils.HIERARCHY_SEPARATOR">Constant Field Values</A></DL>
+</DL>
+<HR>
+
+<A NAME="SLUG_REPLACE"><!-- --></A><H3>
+SLUG_REPLACE</H3>
+<PRE>
+public static final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>SLUG_REPLACE</B></PRE>
+<DL>
+<DL>
+<DT><B>See Also:</B><DD><A HREF="../../../../../constant-values.html#eu.ehri.project.models.idgen.IdGeneratorUtils.SLUG_REPLACE">Constant Field Values</A></DL>
 </DL>
 <HR>
 
@@ -312,7 +330,7 @@ public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String
  id within a given scope.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>scopeIds</CODE> - An array of scope ids<DD><CODE>bundle</CODE> - The input bundle
+<DT><B>Parameters:</B><DD><CODE>scopeIds</CODE> - An array of scope ids<DD><CODE>bundle</CODE> - The input bundle<DD><CODE>ident</CODE> - the item's identifier
 <DT><B>Returns:</B><DD>The complete id string</DL>
 </DD>
 </DL>
@@ -324,9 +342,11 @@ joinPath</H3>
 public static <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>joinPath</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;path)</PRE>
 <DL>
 <DD>Join an identifier path to form a full ID.
+ Duplicate parts of the part are removed.
+ This check is case sensitive.
 <P>
 <DD><DL>
-<DT><B>Parameters:</B><DD><CODE>path</CODE> - A list of identifier strings.
+<DT><B>Parameters:</B><DD><CODE>path</CODE> - A non-empty list of identifier strings.
 <DT><B>Returns:</B><DD>The resultant path ID.</DL>
 </DD>
 </DL>

@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20150210" />
+    <meta name="Date-Revision-yyyymmdd" content="20150401" />
     <meta http-equiv="Content-Language" content="en" />
     <title>EHRI Backend &#x2013; Identifiers</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2015-02-10
+                  <li id="publishDate">Last Published: 2015-04-01
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 1.0
+                  <li id="projectVersion">Version: 0.9.2-SNAPSHOT
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -225,10 +225,10 @@
             <h1>Identifiers</h1>
 <p>There are two kinds of identifier concepts in the EHRI DB: local, and global. Unfortunately we haven&#x2019;t been too thorough about disambiguating the two things, so it&#x2019;s quite confusing in places. If we use the word &#x2018;identifier&#x2019; it typically means the local identifier, whereas the word ID means the global one. Here&#x2019;s what they mean in practice:</p>
 <p>Local identifiers exist within a namespace defined by their parent scope. Item types at the top level of a hierarchy - for example, countries - have an identifier that consists of their ISO 3166 two-letter country code. Since they have no higher scope, their local identifier is the same as their global one: for example, the Netherlands has local identifier <tt>nl</tt> and also global identifier <tt>nl</tt>.</p>
-<p>Repositories, however, belong to a scope (the country in which they reside) so <i>their</i> global identifier consists of the local identifier of their scope <i>added to</i> their own local identifier. For example, the local identifier of USHMM is <tt>005578</tt> and that of it&#x2019;s county (the U.S.) <tt>us</tt>, therefore USHMM&#x2019;s global identifier is <tt>us-005578</tt>.</p>
+<p>Repositories, however, belong to a scope (the country in which they reside) so <i>their</i> global identifier consists of the local identifier of their scope <i>added to</i> their own local identifier. For example, the local identifier of USHMM is <tt>005578</tt> and that of its country (the U.S.) <tt>us</tt>, therefore USHMM&#x2019;s global identifier is <tt>us-005578</tt>.</p>
 <div class="section">
 <h2><a name="Why_we_do_this"></a>Why we do this</h2>
-<p>Identifiers are only useful when they uniquely identify something. However, identity within hierarchies is contextual . For example, within an archival collection <tt>c1</tt> there can only be a single archival unit with the identifier <tt>1</tt>. Deriving the <i>global identifier</i> of an item from it&#x2019;s own local identifier plus that of it&#x2019;s parent items therefore provides a means to ensure uniqueness within a given hierarchical scope - if the resulting global ID is already taken, the local identifier is not unique within it&#x2019;s scope.</p>
+<p>Identifiers are only useful when they uniquely identify something. However, identity within hierarchies is contextual. For example, within an archival collection <tt>c1</tt> there can only be a single archival unit with the identifier <tt>1</tt>. Deriving the <i>global identifier</i> of an item from its own local identifier plus that of its parent items therefore provides a means to ensure uniqueness within a given hierarchical scope - if the resulting global ID is already taken, the local identifier is not unique within its scope.</p>
 <p>For example, if we import an EAD file from repository <tt>001500</tt> in country <tt>us</tt> with the following structure:</p>
 
 <div class="source">
@@ -244,7 +244,11 @@
     &lt;/c01&gt;
 &lt;/archdesc&gt;
 </pre></div></div>
-<p>&#x2026; the resultant global ID of the first unitid would be <tt>us-001500-100</tt> and that of it&#x2019;s child item <tt>us-001500-100-1</tt>.</p>
+<p>&#x2026; the resultant global ID of the first unitid would be <tt>us-001500-100</tt> and that of its child item <tt>us-001500-100-1</tt>.</p>
+<div class="section">
+<h3><a name="Transliteration"></a>Transliteration</h3>
+<p>Prior to creating the hierarchical ID the local identifier is also transformed by removing all punctuation and certain other URI reserved characters and replacing them with at most one underscore per sequence. Leading and trailing underscores are then removed. Finally, the result is lower cased.</p>
+<p>The final hierarchical ID is then formed by joining each transliterated local identifier with a <b>hyphen</b> character.</p>
 <p>Relative identifiers are therefore preferred in EHRI since they provide the neatest global identifiers. However in many cases EAD files are structured with absolute identifiers, e.g:</p>
 
 <div class="source">
@@ -260,10 +264,49 @@
     &lt;/c01&gt;
 &lt;/archdesc&gt;
 </pre></div></div>
-<p>In this case, the resultant global ID of the first unitid would be <tt>us-001500-100</tt> and that of it&#x2019;s child item <tt>us-001500-100-100-1</tt>. There is nothing we can realistically do in EHRI to prevent this redundancy in the global identifiers if that is how the source institution has chosen to represent their material.</p></div>
+<p>In this case, where the child identifier is <i>prefixed</i> by it&#x2019;s parent identifier the prefix is removed prior to transliteration, so if, for example, there was a hierarchy like so:</p>
+
+<ul>
+  
+<li><tt>us</tt></li>
+  
+<li><tt>005578</tt></li>
+  
+<li><tt>DOC-1</tt></li>
+  
+<li><tt>DOC-1 / 1</tt></li>
+  
+<li><tt>DOC-1 / 1 / 2</tt></li>
+  
+<li><tt>DOC-1 / 1 / 2 / 3</tt></li>
+</ul>
+<p>&#x2026; the process of generation the final hierarchical ID would be as follows:</p>
+
+<ul>
+  
+<li><tt>us</tt> =&gt; <tt>005578</tt> =&gt; <tt>DOC-1</tt> =&gt; <tt>DOC-1 / 1</tt> =&gt; <tt>DOC-1 / 1 / 2</tt> =&gt; <tt>&quot;DOC-1 / 1 / 2 / 3&quot;</tt> (raw strings)</li>
+  
+<li><tt>us</tt> =&gt; <tt>005578</tt> =&gt; <tt>DOC-1</tt> =&gt; <tt>/ 1</tt> =&gt; <tt>/ 2</tt> =&gt; <tt>/ 3</tt> (parent prefixes removed, note leading space-slash-space)</li>
+  
+<li><tt>us</tt> =&gt; <tt>005578</tt> =&gt; <tt>DOC_1</tt> =&gt; <tt>___1</tt> =&gt; <tt>___2</tt> =&gt; <tt>___3</tt> (replace non-characters with underscores)</li>
+  
+<li><tt>us</tt> =&gt; <tt>005578</tt> =&gt; <tt>doc_1</tt> =&gt; <tt>1</tt> =&gt; <tt>2</tt> =&gt; <tt>3</tt> (remove leading/training replacements)</li>
+  
+<li><tt>us-005578-doc_1-1-2-3</tt> (joining sections with hyphens)</li>
+</ul></div></div>
+<div class="section">
+<h2><a name="Restrictions"></a>Restrictions</h2>
+<p>This scheme places some restrictions on what can be used as an identifier in an EHRI item:</p>
+
+<ul>
+  
+<li>it must contain some non-punctuation characters</li>
+  
+<li>the sequence of characters with punctuation removed <i>must be unique within the parent scope</i></li>
+</ul></div>
 <div class="section">
 <h2><a name="Trade-offs"></a>Trade-offs</h2>
-<p>The main trade-off in this scheme is normalisation vs. ease of determining uniqueness. It is quite difficult (and quite costly) to determine if a given identifier is unique within the scope of its parent item. (In the worst case it involves iterating through every single node in the graph, which makes importing items exceedingly slow.) Creating graph IDs from a concatenation of local identifiers with the parent scopes allows uniqueness checks via a single index lookup, which is very cheap. The downside is that an item&#x2019;s graph ID is de-normalised with the hierarchical structure to which it belongs. If it is moved to another parent scope, it&#x2019;s graph ID will no longer be valid. For this reason we recommend that moving an item within a hierarchy be though of as a copy followed by a delete.</p></div>
+<p>The main trade-off in this scheme is normalisation vs. ease of determining uniqueness. It is quite difficult (and quite costly) to determine if a given identifier is unique within the scope of its parent item. (In the worst case it involves iterating through every single node in the graph, which makes importing items exceedingly slow.) Creating graph IDs from a concatenation of local identifiers with the parent scopes allows uniqueness checks via a single index lookup, which is very cheap. The downside is that an item&#x2019;s graph ID is de-normalised with the hierarchical structure to which it belongs. If it is moved to another parent scope, its graph ID will no longer be valid. For this reason we recommend that moving an item within a hierarchy be though of as a copy followed by a delete.</p></div>
 <div class="section">
 <h2><a name="Validation"></a>Validation</h2>
 <p>Maintaining hierarchical structures is difficult is any database system: whilst integrity guarantees might best be maintained using a traditional self-referential foreign-key structure in a relational database (which can better handle integrity issues using compound keys), any system that aspires to good performance will run into problems when moving trees within trees (especially when optimisations like the adjacency list or nested set model are employed.) Graph databases make the <i>relationship</i> side of things much easier where hierarchies are concerned, but since EHRI is an integration project we also have to worry about the <b>identity</b> of things at various levels so that we can point back to whatever it was we were integrating. There are therefore numerous complexities involved that make sanity checking hierarchical structures pretty important; especially - as with graph DBs - when there&#x2019;s a separate <i>indexing</i> stage involved. Confusing matter is the fact that there are two types of hierarchy:</p>
@@ -275,7 +318,7 @@
 <li>parental</li>
 </ul>
 <p>Most items, for instance, archival units, can only have one parent. However, some, such as concepts (in SKOS vocabularies) can belong to multiple different trees and therefore have several different parents. <b>All</b> items, however, can only have a single permission scope. For archival units this will be the parent item or the repository. For repositories it will be the country they are in. For concepts it will be the vocabulary they belong (rather than the higher level broader concepts which they may have as immediate parents.)</p>
-<p>TODO: Write about the &#x2018;check&#x2019; tool that ensures IDs match permission scopes.</p></div>
+<p>The <tt>IdRegenerator</tt> class is a &#x2018;check&#x2019; tool that ensures IDs match permission scopes when a node is moved between permission scopes. It can be called via HTTP on the host that runs the graph server via the <tt>tools</tt> endpoint.</p></div>
                   </div>
             </div>
           </div>

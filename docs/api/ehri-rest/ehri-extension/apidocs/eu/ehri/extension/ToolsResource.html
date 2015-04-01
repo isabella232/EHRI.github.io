@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-ToolsResource (Web Service 0.0.1-SNAPSHOT API)
+ToolsResource (Web Service 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ ToolsResource (Web Service 0.0.1-SNAPSHOT API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ToolsResource (Web Service 0.0.1-SNAPSHOT API)";
+        parent.document.title="ToolsResource (Web Service 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -224,6 +224,15 @@ Miscellaneous additional functionality that doesn't
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
 <CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ToolsResource.html#regenerateDescriptionIds(int, boolean)">regenerateDescriptionIds</A></B>(int&nbsp;bufferSize,
+                         boolean&nbsp;commit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regenerate description IDs.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A></CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../eu/ehri/extension/ToolsResource.html#regenerateId(java.lang.String, boolean, boolean, boolean)">regenerateId</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
              boolean&nbsp;collisions,
              boolean&nbsp;tolerant,
@@ -242,11 +251,8 @@ Miscellaneous additional functionality that doesn't
                       boolean&nbsp;commit)</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regenerate the hierarchical graph ID all items within the
- immediate permission scope (not all items recursively.)
-
- The default mode is to output items whose IDs would change, without
- actually changing them.</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regenerate the hierarchical graph ID for all items within the
+ permission scope and lower levels.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -525,7 +531,7 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?i
                            boolean&nbsp;commit)
                     throws <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
                            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
-                           IdRegenerator.IdCollisionError</PRE>
+                           <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/tools/IdRegenerator.IdCollisionError.html?is-external=true" title="class or interface in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></PRE>
 <DL>
 <DD>Regenerate the hierarchical graph ID for a given item, optionally
  renaming it.
@@ -546,7 +552,7 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?i
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
-<DD><CODE>IdRegenerator.IdCollisionError</CODE></DL>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/tools/IdRegenerator.IdCollisionError.html?is-external=true" title="class or interface in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></CODE></DL>
 </DD>
 </DL>
 <HR>
@@ -559,7 +565,7 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?i
                                    boolean&nbsp;tolerant,
                                    boolean&nbsp;commit)
                             throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
-                                   IdRegenerator.IdCollisionError</PRE>
+                                   <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/tools/IdRegenerator.IdCollisionError.html?is-external=true" title="class or interface in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></PRE>
 <DL>
 <DD>Regenerate the hierarchical graph ID all items of a given
  type.
@@ -579,7 +585,7 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?i
  body if nothing was changed
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
-<DD><CODE>IdRegenerator.IdCollisionError</CODE></DL>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/tools/IdRegenerator.IdCollisionError.html?is-external=true" title="class or interface in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></CODE></DL>
 </DD>
 </DL>
 <HR>
@@ -593,10 +599,10 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?i
                                     boolean&nbsp;commit)
                              throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
                                     <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                    IdRegenerator.IdCollisionError</PRE>
+                                    <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/tools/IdRegenerator.IdCollisionError.html?is-external=true" title="class or interface in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></PRE>
 <DL>
-<DD>Regenerate the hierarchical graph ID all items within the
- immediate permission scope (not all items recursively.)
+<DD>Regenerate the hierarchical graph ID for all items within the
+ permission scope and lower levels.
 
  The default mode is to output items whose IDs would change, without
  actually changing them. The <code>collisions</code> parameter will <b>only</b>
@@ -614,7 +620,28 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?i
 <DT><B>Throws:</B>
 <DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
 <DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
-<DD><CODE>IdRegenerator.IdCollisionError</CODE></DL>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/tools/IdRegenerator.IdCollisionError.html?is-external=true" title="class or interface in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="regenerateDescriptionIds(int, boolean)"><!-- --></A><H3>
+regenerateDescriptionIds</H3>
+<PRE>
+public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A> <B>regenerateDescriptionIds</B>(int&nbsp;bufferSize,
+                                       boolean&nbsp;commit)
+                                throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                                       <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                       <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/tools/IdRegenerator.IdCollisionError.html?is-external=true" title="class or interface in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></PRE>
+<DL>
+<DD>Regenerate description IDs.
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/tools/IdRegenerator.IdCollisionError.html?is-external=true" title="class or interface in eu.ehri.project.tools">IdRegenerator.IdCollisionError</A></CODE></DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

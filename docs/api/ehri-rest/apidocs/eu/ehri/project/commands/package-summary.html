@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-eu.ehri.project.commands (EHRI Backend 1.0 API)
+eu.ehri.project.commands (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ eu.ehri.project.commands (EHRI Backend 1.0 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="eu.ehri.project.commands (EHRI Backend 1.0 API)";
+        parent.document.title="eu.ehri.project.commands (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -97,7 +97,9 @@ Classes that represent actions that can
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands">Command</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Command-line tools to perform actions on the graph database need
+ to specify a help text about the functionality of the tool and
+ a string to explain their usage.</TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -111,7 +113,7 @@ Classes that represent actions that can
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/BaseCommand.html" title="class in eu.ehri.project.commands">BaseCommand</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Abstract base class for commands.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/Check.html" title="class in eu.ehri.project.commands">Check</A></B></TD>
@@ -127,35 +129,35 @@ Classes that represent actions that can
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/CsvConceptImport.html" title="class in eu.ehri.project.commands">CsvConceptImport</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Extension of ImportCsvCommand that uses the CsvConceptImporter.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/CsvDocDescImport.html" title="class in eu.ehri.project.commands">CsvDocDescImport</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Specialisation of ImportCsvCommand that is used for importing EAD-like CSV files.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/DcImport.html" title="class in eu.ehri.project.commands">DcImport</A></B></TD>
-<TD>Import EAD from the command line...</TD>
+<TD>Import command for importing Dublin Core files.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/DeleteEntities.html" title="class in eu.ehri.project.commands">DeleteEntities</A></B></TD>
-<TD>Delete an entire class of stuff via the command line.</TD>
+<TD>Delete an entire class of entities via the command line.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/EacImport.html" title="class in eu.ehri.project.commands">EacImport</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Import EAC-CPF files.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/EadAsVirtualCollectionImport.html" title="class in eu.ehri.project.commands">EadAsVirtualCollectionImport</A></B></TD>
-<TD>Import EAD from the command line...</TD>
+<TD>Import EAD from the command line as a virtual collection.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/EadImport.html" title="class in eu.ehri.project.commands">EadImport</A></B></TD>
-<TD>Import EAD from the command line...</TD>
+<TD>Import EAD from the command line.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/EagImport.html" title="class in eu.ehri.project.commands">EagImport</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Import EAG files.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/EntityAdd.html" title="class in eu.ehri.project.commands">EntityAdd</A></B></TD>
@@ -163,11 +165,11 @@ Classes that represent actions that can
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/EntityDelete.html" title="class in eu.ehri.project.commands">EntityDelete</A></B></TD>
-<TD>Delete an entire class of stuff via the command line.</TD>
+<TD>Delete a single item via the command line.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/GetEntity.html" title="class in eu.ehri.project.commands">GetEntity</A></B></TD>
-<TD>Import EAD from the command line...</TD>
+<TD>Fetch an item's serialized representation via the command line.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/GraphML.html" title="class in eu.ehri.project.commands">GraphML</A></B></TD>
@@ -196,35 +198,38 @@ Classes that represent actions that can
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/GraphViz.html" title="class in eu.ehri.project.commands">GraphViz</A></B></TD>
-<TD>Dump a particular subgraph as a DOT file.</TD>
+<TD>Dump a particular subgraph as a DOT file that can be visualised
+ using "dot", a part of GraphViz.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/IcaAtomEadImport.html" title="class in eu.ehri.project.commands">IcaAtomEadImport</A></B></TD>
-<TD>Import EAD from the command line...</TD>
+<TD>Import EAD from the command line using the <A HREF="../../../../eu/ehri/project/importers/IcaAtomEadImporter.html" title="class in eu.ehri.project.importers"><CODE>IcaAtomEadImporter</CODE></A>.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands">ImportCommand</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Superclass of all import command-line tools.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/ImportCsvCommand.html" title="class in eu.ehri.project.commands">ImportCsvCommand</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Generic command for importing CSV files that uses an implementation of MapImporter
+ to manipulate the graph.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/Initialize.html" title="class in eu.ehri.project.commands">Initialize</A></B></TD>
-<TD>Import EAD from the command line...</TD>
+<TD>Initialise the graph database with minimal nodes.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/ListEntities.html" title="class in eu.ehri.project.commands">ListEntities</A></B></TD>
-<TD>Import EAD from the command line...</TD>
+<TD>Command for listing entities of a given type.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/LoadFixtures.html" title="class in eu.ehri.project.commands">LoadFixtures</A></B></TD>
-<TD>Import EAD from the command line...</TD>
+<TD>Command for loading a fixtures file into the graph.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/PersonalitiesImport.html" title="class in eu.ehri.project.commands">PersonalitiesImport</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Specialisation of <A HREF="../../../../eu/ehri/project/commands/ImportCsvCommand.html" title="class in eu.ehri.project.commands"><CODE>ImportCsvCommand</CODE></A> for importing personalities
+ from CSV files.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/RdfExport.html" title="class in eu.ehri.project.commands">RdfExport</A></B></TD>
@@ -232,7 +237,7 @@ Classes that represent actions that can
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/Reindex.html" title="class in eu.ehri.project.commands">Reindex</A></B></TD>
-<TD>Import EAD from the command line...</TD>
+<TD>Command for recreating the internal graph index.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/RelationAdd.html" title="class in eu.ehri.project.commands">RelationAdd</A></B></TD>
@@ -240,19 +245,19 @@ Classes that represent actions that can
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/SkosVocabularyImport.html" title="class in eu.ehri.project.commands">SkosVocabularyImport</A></B></TD>
-<TD>Import Skos from the command line...</TD>
+<TD>Import a single SKOS file from the command line.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/UserAdd.html" title="class in eu.ehri.project.commands">UserAdd</A></B></TD>
-<TD>Add a user.</TD>
+<TD>Add a user with optional group membership.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/UserListEntities.html" title="class in eu.ehri.project.commands">UserListEntities</A></B></TD>
-<TD>Import EAD from the command line...</TD>
+<TD>List items of a specific type as a given user, respecting access controls.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/UserMod.html" title="class in eu.ehri.project.commands">UserMod</A></B></TD>
-<TD>Add a user.</TD>
+<TD>Modify an existing user.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/UshmmEadImport.html" title="class in eu.ehri.project.commands">UshmmEadImport</A></B></TD>
@@ -270,7 +275,7 @@ Classes that represent actions that can
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/commands/CmdEntryPoint.RetCode.html" title="enum in eu.ehri.project.commands">CmdEntryPoint.RetCode</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Default return codes for shell tools.</TD>
 </TR>
 </TABLE>
 &nbsp;

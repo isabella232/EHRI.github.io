@@ -361,6 +361,27 @@
         </wadl:response>
       </wadl:method>
     </wadl:resource>
+    <wadl:resource path="/sparql">
+      <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[Run a]]>
+<![CDATA[sparql query.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="q" style="query">
+            <wadl:doc>
+              <![CDATA[A valid SparQL query string]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[A JSON-formatted response]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
     <wadl:resource path="/userProfile">
       <wadl:method name="POST">
         <wadl:request>
@@ -463,11 +484,14 @@
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/admin/_rebuildChildCache">
+    <wadl:resource path="/admin/_reindexInternal">
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Update the childCount property on hierarchical items with the number of]]>
-<![CDATA[children they contain.]]>
+          <![CDATA[Re-build the graph's internal lucene index.]]>
+<![CDATA[<p/>]]>
+<![CDATA[NB: This takes a lot of memory for large graphs. Do]]>
+<![CDATA[not use willy-nilly and increase the heap size as]]>
+<![CDATA[necessary. TODO: Add incremental buffered commit.]]>
         </wadl:doc>
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
@@ -540,8 +564,7 @@
         </wadl:doc>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A list of serialized item representati]]>
-<![CDATA[ons]]>
+            <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -646,7 +669,8 @@
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
 <![CDATA[parameter, and disabled completely using a value of -1.]]>
 <![CDATA[<p/>]]>
-<![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
+<![CDATA[Item lists are paginated usin]]>
+<![CDATA[g the <tt>page</tt> parameter.]]>
 <![CDATA[<p/>]]>
 <![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
 <![CDATA[header in the form:]]>
@@ -916,8 +940,7 @@
 <![CDATA[<p/>]]>
 <![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
 <![CDATA[header in the form:]]>
-<![CDATA[<pre><code>page=1; count=20; total=50]]>
-<![CDATA[</code></pre>]]>
+<![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
 <![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
 <![CDATA[numbers of items or when limiting is disabled completely.]]>
@@ -982,8 +1005,7 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A response with 200 representing a successful d]]>
-<![CDATA[eletion.]]>
+            <![CDATA[A response with 200 representing a successful deletion.]]>
           </wadl:doc>
           <wadl:representation mediaType="*/*"/>
           <wadl:representation mediaType="application/xml"/>
@@ -1022,7 +1044,8 @@
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
 <![CDATA[numbers of items or when limiting is disabled completely.]]>
 <![CDATA[<p/>]]>
-<![CDATA[Example:]]>
+<![CDATA[Exampl]]>
+<![CDATA[e:]]>
 <![CDATA[<pre>]]>
 <![CDATA[<code>]]>
 <![CDATA[curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10]]>
@@ -1046,8 +1069,7 @@
       </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Fetch]]>
-<![CDATA[a resource by id.]]>
+          <![CDATA[Fetch a resource by id.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -1145,7 +1167,8 @@
 <![CDATA[<p/>]]>
 <![CDATA[Example:]]>
 <![CDATA[<pre>]]>
-<![CDATA[<code>]]>
+<![CDATA[<c]]>
+<![CDATA[ode>]]>
 <![CDATA[curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10]]>
 <![CDATA[</code>]]>
 <![CDATA[</pre>]]>
@@ -1167,8 +1190,7 @@
       </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Fetch a resource by]]>
-<![CDATA[id.]]>
+          <![CDATA[Fetch a resource by id.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -1293,8 +1315,7 @@
           <![CDATA[List available resources. The default behaviour is to]]>
 <![CDATA[return a page of 20 items.]]>
 <![CDATA[<p/>]]>
-<![CDATA[The default lis]]>
-<![CDATA[t limit can be overridden using the <tt>limit</tt>]]>
+<![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
 <![CDATA[parameter, and disabled completely using a value of -1.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
@@ -1397,7 +1418,8 @@
 <![CDATA[<p/>]]>
 <![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
 <![CDATA[header in the form:]]>
-<![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
+<![CDATA[<pr]]>
+<![CDATA[e><code>page=1; count=20; total=50</code></pre>]]>
 <![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
 <![CDATA[numbers of items or when limiting is disabled completely.]]>
@@ -1462,7 +1484,8 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A response with 200 representing a successful deletion.]]>
+            <![CDATA[A respons]]>
+<![CDATA[e with 200 representing a successful deletion.]]>
           </wadl:doc>
           <wadl:representation mediaType="*/*"/>
           <wadl:representation mediaType="application/xml"/>
@@ -1482,8 +1505,7 @@
 <![CDATA[<code>curl -X POST \]]>
 <![CDATA[-H "Authorization: mike" \]]>
 <![CDATA[--data-binary @csv-list.txt \]]>
-<![CDATA["http://localhost:7474/ehri/import/csv?scope=my-repo-id&log=tes]]>
-<![CDATA[ting"]]>
+<![CDATA["http://localhost:7474/ehri/import/csv?scope=my-repo-id&log=testing"]]>
 <![CDATA[# NB: Data is sent using --data-binary to preserve line-breaks - otherwise]]>
 <![CDATA[# it needs url encoding.]]>
 <![CDATA[</code>]]>
@@ -1595,6 +1617,75 @@
         </wadl:response>
       </wadl:method>
     </wadl:resource>
+    <wadl:resource path="/import/single_ead">
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Import a single EAD file. The body of the POST]]>
+<![CDATA[request should be an EAD file.]]>
+<![CDATA[<p/>]]>
+<![CDATA[The way you would run with would typically be:]]>
+<![CDATA[<p/>]]>
+<![CDATA[<pre>]]>
+<![CDATA[<code>curl -X POST \]]>
+<![CDATA[-H "Authorization: mike" \]]>
+<![CDATA[--data-binary @ead-file.xml \]]>
+<![CDATA["http://localhost:7474/ehri/import/single_ead?scope=my-repo-id&log=testing&tolerant=true"]]>
+<![CDATA[# NB: Data is sent using --data-binary to preserve line-breaks - otherwise]]>
+<![CDATA[# it needs url encoding.]]>
+<![CDATA[</code>]]>
+<![CDATA[</pre>]]>
+<![CDATA[<p/>]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:doc>
+            <![CDATA[An XML document that is a valid EAD document.]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/xml"/>
+          <wadl:param name="scope" style="query">
+            <wadl:doc>
+              <![CDATA[The id of the import scope (i.e. repository)]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="tolerant" style="query">
+            <wadl:doc>
+              <![CDATA[Whether or not to die on the first validation error]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="log" style="query">
+            <wadl:doc>
+              <![CDATA[Log message for import. If this refers to an accessible local file]]>
+<![CDATA[its contents will be used.]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="properties" style="query">
+            <wadl:doc>
+              <![CDATA[A local file path pointing to an import properties]]>
+<![CDATA[configuration file.]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="handler" style="query">
+            <wadl:doc>
+              <![CDATA[The fully-qualified handler class name]]>
+<![CDATA[(defaults to EadHandler)]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="importer" style="query">
+            <wadl:doc>
+              <![CDATA[The fully-qualified import class name]]>
+<![CDATA[(defa]]>
+<![CDATA[ults to EadImporter)]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[A JSON object showing how many records were created,]]>
+<![CDATA[updated, or unchanged.]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
     <wadl:resource path="/import/skos">
       <wadl:method name="POST">
         <wadl:doc>
@@ -1607,8 +1698,7 @@
 <![CDATA[<code>curl -X POST \]]>
 <![CDATA[-H "Authorization: mike" \]]>
 <![CDATA[--data-binary @skos-data.rdf \]]>
-<![CDATA["http://localhost:7474/ehri/impo]]>
-<![CDATA[rt/skos?scope=gb-my-vocabulary&log=testing&tolerant=true"]]>
+<![CDATA["http://localhost:7474/ehri/import/skos?scope=gb-my-vocabulary&log=testing&tolerant=true"]]>
 <![CDATA[</code>]]>
 <![CDATA[</pre>]]>
         </wadl:doc>
@@ -1668,8 +1758,7 @@
     <wadl:resource path="/link/{id}">
       <wadl:param name="id" style="template">
         <wadl:doc>
-          <![CDATA[The requested]]>
-<![CDATA[item id]]>
+          <![CDATA[The requested item id]]>
         </wadl:doc>
       </wadl:param>
       <wadl:method name="GET">
@@ -1798,8 +1887,7 @@
     <wadl:resource path="/repository/list">
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[List available resources. The default behaviour]]>
-<![CDATA[is to]]>
+          <![CDATA[List available resources. The default behaviour is to]]>
 <![CDATA[return a page of 20 items.]]>
 <![CDATA[<p/>]]>
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
@@ -2056,6 +2144,20 @@
         </wadl:response>
       </wadl:method>
     </wadl:resource>
+    <wadl:resource path="/tools/_regenerateDescriptionIds">
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Regenerate description IDs.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="buffer" style="query"/>
+          <wadl:param name="commit" style="query"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="text/plain"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
     <wadl:resource path="/userProfile/count">
       <wadl:method name="GET">
         <wadl:doc>
@@ -2075,7 +2177,8 @@
         <wadl:doc>
           <![CDATA[List available resources. The default behaviour is to]]>
 <![CDATA[return a page of 20 items.]]>
-<![CDATA[<p/>]]>
+<![CDATA[<p]]>
+<![CDATA[/>]]>
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
 <![CDATA[parameter, and disabled completely using a value of -1.]]>
 <![CDATA[<p/>]]>
@@ -2176,8 +2279,7 @@
 <![CDATA[return a page of 20 items.]]>
 <![CDATA[<p/>]]>
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
-<![CDATA[parameter, and disabled compl]]>
-<![CDATA[etely using a value of -1.]]>
+<![CDATA[parameter, and disabled completely using a value of -1.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
 <![CDATA[<p/>]]>
@@ -2264,7 +2366,8 @@
       <wadl:method name="GET">
         <wadl:doc>
           <![CDATA[Return a map of annotations for the subtree of the given item and its]]>
-<![CDATA[child items. Standard list parameters apply.]]>
+<![CDATA[child items. Standard list paramet]]>
+<![CDATA[ers apply.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -2388,7 +2491,8 @@
 <![CDATA[Example:]]>
 <![CDATA[<pre>]]>
 <![CDATA[<code>]]>
-<![CDATA[curl http://localhost:7474/ehri/[RESOURCE]/[ID]/list]]>
+<![CDATA[curl htt]]>
+<![CDATA[p://localhost:7474/ehri/[RESOURCE]/[ID]/list]]>
 <![CDATA[</code>]]>
 <![CDATA[</pre>]]>
         </wadl:doc>
@@ -3171,8 +3275,7 @@
           </wadl:param>
           <wadl:param name="type" style="query">
             <wadl:doc>
-              <![CDATA[Filter events based on the item type of their subject]]>
-<![CDATA[s]]>
+              <![CDATA[Filter events based on the item type of their subjects]]>
             </wadl:doc>
           </wadl:param>
           <wadl:param name="item" style="query">
@@ -3295,10 +3398,9 @@
       </wadl:param>
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Regenerate the hierarchical graph ID all items within the]]>
-<![CDATA[immediate permission scope (not all items recursively.)]]>
-<![CDATA[The default mode is to output items whose IDs would ch]]>
-<![CDATA[ange, without]]>
+          <![CDATA[Regenerate the hierarchical graph ID for all items within the]]>
+<![CDATA[permission scope and lower levels.]]>
+<![CDATA[The default mode is to output items whose IDs would change, without]]>
 <![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
 <![CDATA[output items that would cause collisions if renamed, whereas tolerant]]>
 <![CDATA[mode will skip them altogether.]]>
@@ -3357,8 +3459,7 @@
           </wadl:param>
           <wadl:param name="tolerant" style="query">
             <wadl:doc>
-              <![CDATA[skip items that could c]]>
-<![CDATA[ause collisions rather]]>
+              <![CDATA[skip items that could cause collisions rather]]>
 <![CDATA[then throwing an error]]>
             </wadl:doc>
           </wadl:param>
@@ -3815,8 +3916,7 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[the number of li]]>
-<![CDATA[nks created]]>
+            <![CDATA[the number of links created]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>

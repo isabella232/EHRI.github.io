@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-ImportResource (Web Service 0.0.1-SNAPSHOT API)
+ImportResource (Web Service 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ ImportResource (Web Service 0.0.1-SNAPSHOT API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ImportResource (Web Service 0.0.1-SNAPSHOT API)";
+        parent.document.title="ImportResource (Web Service 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -238,6 +238,20 @@ Resource class for import endpoints.
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import a set of EAD files.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../eu/ehri/extension/ImportResource.html#importSingleEad(java.lang.String, java.lang.Boolean, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.io.InputStream)">importSingleEad</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scopeId,
+                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&nbsp;tolerant,
+                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage,
+                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyFile,
+                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;handlerClass,
+                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;importerClass,
+                <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;input)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import a single EAD file.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -467,6 +481,57 @@ public javax.ws.rs.core.Response <B>importEad</B>(<A HREF="http://docs.oracle.co
                       (defaults to EadImporter)<DD><CODE>propertyFile</CODE> - A local file path pointing to an import properties
                       configuration file.<DD><CODE>pathList</CODE> - A string containing a list of local file paths
                       to import.
+<DT><B>Returns:</B><DD>A JSON object showing how many records were created,
+         updated, or unchanged.
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A></CODE>
+<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
+<DD><CODE><A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="importSingleEad(java.lang.String, java.lang.Boolean, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.io.InputStream)"><!-- --></A><H3>
+importSingleEad</H3>
+<PRE>
+public javax.ws.rs.core.Response <B>importSingleEad</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;scopeId,
+                                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&nbsp;tolerant,
+                                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage,
+                                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;propertyFile,
+                                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;handlerClass,
+                                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;importerClass,
+                                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;input)
+                                          throws <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A>,
+                                                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</A>,
+                                                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</A>,
+                                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
+                                                 <A HREF="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</A></PRE>
+<DL>
+<DD>Import a single EAD file. The body of the POST
+ request should be an EAD file.
+ <p/>
+ The way you would run with would typically be:
+ <p/>
+ <pre>
+ <code>curl -X POST \
+      -H "Authorization: mike" \
+      --data-binary @ead-file.xml \
+      "http://localhost:7474/ehri/import/single_ead?scope=my-repo-id&log=testing&tolerant=true"
+
+ # NB: Data is sent using --data-binary to preserve line-breaks - otherwise
+ # it needs url encoding.
+ </code>
+ </pre>
+ <p/>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>scopeId</CODE> - The id of the import scope (i.e. repository)<DD><CODE>tolerant</CODE> - Whether or not to die on the first validation error<DD><CODE>logMessage</CODE> - Log message for import. If this refers to an accessible local file
+                      its contents will be used.<DD><CODE>handlerClass</CODE> - The fully-qualified handler class name
+                      (defaults to EadHandler)<DD><CODE>importerClass</CODE> - The fully-qualified import class name
+                      (defaults to EadImporter)<DD><CODE>propertyFile</CODE> - A local file path pointing to an import properties
+                      configuration file.<DD><CODE>input</CODE> - An XML document that is a valid EAD document.
 <DT><B>Returns:</B><DD>A JSON object showing how many records were created,
          updated, or unchanged.
 <DT><B>Throws:</B>

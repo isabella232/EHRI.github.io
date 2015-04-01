@@ -70,6 +70,7 @@
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
                 <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
+                <li><a href="resource_SparQLResource.html">SparQLResource</a></li>
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
                 <li><a href="resource_UserProfileResource.html">UserProfileResource</a></li>
@@ -92,6 +93,9 @@
         </li>
         <li>
         <a href="#path__import_ead.html">/import/ead</a>
+        </li>
+        <li>
+        <a href="#path__import_single_ead.html">/import/single_ead</a>
         </li>
         <li>
         <a href="#path__import_skos.html">/import/skos</a>
@@ -284,6 +288,115 @@ configuration file.
       </table>
       <p>A string containing a list of local file paths
 to import.</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>A JSON object showing how many records were created,
+updated, or unchanged.</p>
+        <a name="path__import_single_ead.html"></a>
+      <h1>/import/single_ead</h1>
+      <p class="note">Mount Point: <a href="../import/single_ead">/import/single_ead</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Import a single EAD file. The body of the POST
+request should be an EAD file.
+<p/>
+The way you would run with would typically be:
+<p/>
+<pre>
+<code>curl -X POST \
+-H "Authorization: mike" \
+--data-binary @ead-file.xml \
+"http://localhost:7474/ehri/import/single_ead?scope=my-repo-id&log=testing&tolerant=true"
+
+# NB: Data is sent using --data-binary to preserve line-breaks - otherwise
+# it needs url encoding.
+</code>
+</pre>
+<p/>
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>scope</td>
+          <td>
+            The id of the import scope (i.e. repository)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>tolerant</td>
+          <td>
+            Whether or not to die on the first validation error
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>log</td>
+          <td>
+            Log message for import. If this refers to an accessible local file
+its contents will be used.
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>properties</td>
+          <td>
+            A local file path pointing to an import properties
+configuration file.
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>handler</td>
+          <td>
+            The fully-qualified handler class name
+(defaults to EadHandler)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>importer</td>
+          <td>
+            The fully-qualified import class name
+(defaults to EadImporter)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>input</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>An XML document that is a valid EAD document.</p>
       <h3>Response Body</h3>
       <table>
         <tr>

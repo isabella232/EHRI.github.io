@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-SystemScope (EHRI Backend 1.0 API)
+SystemScope (EHRI Backend 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ SystemScope (EHRI Backend 1.0 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="SystemScope (EHRI Backend 1.0 API)";
+        parent.document.title="SystemScope (EHRI Backend 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -169,19 +169,20 @@ Singleton class representing the system scope for
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt;</CODE></FONT></TD>
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/SystemScope.html#getAllContainedItems()">getAllContainedItems</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get an iterable of all items within this scope, recursively down
+ to all lower levels.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt;</CODE></FONT></TD>
+<CODE>&nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt;</CODE></FONT></TD>
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/SystemScope.html#getContainedItems()">getContainedItems</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get an iterable of all items immediately within this scope.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -213,7 +214,7 @@ Singleton class representing the system scope for
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/SystemScope.html#getPermissionGrants()">getPermissionGrants</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get all permission grants that apply directly to this scope.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -221,7 +222,8 @@ Singleton class representing the system scope for
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/SystemScope.html#getPermissionScopes()">getPermissionScopes</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get an iterable of the parent and all the parents higher permission
+ scopes, recursively.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -237,7 +239,7 @@ Singleton class representing the system scope for
 <TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/SystemScope.html#idPath()">idPath</A></B>()</CODE>
 
 <BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the path of the permission scope as an ordered collection of strings.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
@@ -441,11 +443,15 @@ getPermissionGrants</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/PermissionGrant.html" title="interface in eu.ehri.project.models">PermissionGrant</A>&gt; <B>getPermissionGrants</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html#getPermissionGrants()">PermissionScope</A></CODE></B></DD>
+<DD>Get all permission grants that apply directly to this scope.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html#getPermissionGrants()">getPermissionGrants</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of permission grant frames</DL>
 </DD>
 </DL>
 <HR>
@@ -455,11 +461,16 @@ getPermissionScopes</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&gt; <B>getPermissionScopes</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html#getPermissionScopes()">PermissionScope</A></CODE></B></DD>
+<DD>Get an iterable of the parent and all the parents higher permission
+ scopes, recursively.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html#getPermissionScopes()">getPermissionScopes</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of parent scope items</DL>
 </DD>
 </DL>
 <HR>
@@ -467,13 +478,17 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html
 <A NAME="getContainedItems()"><!-- --></A><H3>
 getContainedItems</H3>
 <PRE>
-public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; <B>getContainedItems</B>()</PRE>
+public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; <B>getContainedItems</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html#getContainedItems()">PermissionScope</A></CODE></B></DD>
+<DD>Get an iterable of all items immediately within this scope.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html#getContainedItems()">getContainedItems</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of lower scoped items</DL>
 </DD>
 </DL>
 <HR>
@@ -481,13 +496,18 @@ public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html
 <A NAME="getAllContainedItems()"><!-- --></A><H3>
 getAllContainedItems</H3>
 <PRE>
-public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</A>&gt; <B>getAllContainedItems</B>()</PRE>
+public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; <B>getAllContainedItems</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html#getAllContainedItems()">PermissionScope</A></CODE></B></DD>
+<DD>Get an iterable of all items within this scope, recursively down
+ to all lower levels.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html#getAllContainedItems()">getAllContainedItems</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an iterable of lower scoped items to all depths</DL>
 </DD>
 </DL>
 <HR>
@@ -497,11 +517,15 @@ idPath</H3>
 <PRE>
 public <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt; <B>idPath</B>()</PRE>
 <DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html#idPath()">PermissionScope</A></CODE></B></DD>
+<DD>Get the path of the permission scope as an ordered collection of strings.
+<P>
 <DD><DL>
 <DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html#idPath()">idPath</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A></CODE></DL>
 </DD>
 <DD><DL>
-</DL>
+
+<DT><B>Returns:</B><DD>an ordered Collection of Strings that forms the 'path'.</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->

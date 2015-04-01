@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-eu.ehri.project.importers (Import Tools 1.1 API)
+eu.ehri.project.importers (Import Tools 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ eu.ehri.project.importers (Import Tools 1.1 API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="eu.ehri.project.importers (Import Tools 1.1 API)";
+        parent.document.title="eu.ehri.project.importers (Import Tools 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -96,7 +96,8 @@ Handlers and Importers and supporting classes to import files into
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</A></B></TD>
-<TD>Functor class</TD>
+<TD>Implementing classes do things after an item was imported and created
+ a mutation ('created', 'updated', 'unchanged').</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</A></B></TD>
@@ -124,29 +125,33 @@ Handlers and Importers and supporting classes to import files into
 <TD>Base ImportManager.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/AraEadImporter.html" title="class in eu.ehri.project.importers">AraEadImporter</A></B></TD>
+<TD>Import EAD for a given repository into the database.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/CsvAuthoritativeItemImporter.html" title="class in eu.ehri.project.importers">CsvAuthoritativeItemImporter</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Importer of authoritative items such as historical agents and concepts, loaded
+ from a CSV file.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/CsvConceptImporter.html" title="class in eu.ehri.project.importers">CsvConceptImporter</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Importer of concepts loaded from a CSV file.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/CsvHistoricalAgentImporter.html" title="class in eu.ehri.project.importers">CsvHistoricalAgentImporter</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Importer of historical agents loaded from a CSV file.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/CsvImportManager.html" title="class in eu.ehri.project.importers">CsvImportManager</A></B></TD>
-<TD>when used to import documentaryUnits, make sure to have a 'sourceFileId' column as well</TD>
+<TD>Import manager to use with CSV files.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/DcEuropeanaHandler.html" title="class in eu.ehri.project.importers">DcEuropeanaHandler</A></B></TD>
-<TD>dc files are imported directly beneath the scope provided
- there is NO structure beneath that</TD>
+<TD>Dublin Core files are imported directly beneath the scope provided.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/EacHandler.html" title="class in eu.ehri.project.importers">EacHandler</A></B></TD>
-<TD>makes use of eac.properties with format: part/of/path/=attribute</TD>
+<TD>Handler of EAC-CPF files.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/EacImporter.html" title="class in eu.ehri.project.importers">EacImporter</A></B></TD>
@@ -162,15 +167,15 @@ Handlers and Importers and supporting classes to import files into
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/EagHandler.html" title="class in eu.ehri.project.importers">EagHandler</A></B></TD>
-<TD>to be used in conjunction with EagImporter</TD>
+<TD>Handler that reads EAG files.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/EagImporter.html" title="class in eu.ehri.project.importers">EagImporter</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Importer of EAG-based descriptions.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/EaHandler.html" title="class in eu.ehri.project.importers">EaHandler</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Base handler for EAD, EAC and EAG files, based on a SAX reader.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</A></B></TD>
@@ -197,8 +202,7 @@ Handlers and Importers and supporting classes to import files into
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/PersonalitiesImporter.html" title="class in eu.ehri.project.importers">PersonalitiesImporter</A></B></TD>
-<TD>before importing the file: delete the columns with the reordering of the first and last name
- add a column 'id' with a unique identifier, prefixed with EHRI-Personalities or some such.</TD>
+<TD>Importer of historical agents encoded in <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><CODE>Map</CODE></A>s.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html" title="class in eu.ehri.project.importers">SaxImportManager</A></B></TD>
@@ -207,19 +211,16 @@ Handlers and Importers and supporting classes to import files into
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</A></B></TD>
-<TD>makes use of properties file with format: 
- 
- path/within/xml/=node/property
-
- if no <node> is given, it is the default logical-unit or unit-description of this property file.</TD>
+<TD>Reader of XML files, creator of <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><CODE>Map</CODE></A>-based representations of EA* files.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/TerezinDataConverter.html" title="class in eu.ehri.project.importers">TerezinDataConverter</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Utility to convert Terezin data.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/UkrainianUnitImporter.html" title="class in eu.ehri.project.importers">UkrainianUnitImporter</A></B></TD>
-<TD>&nbsp;</TD>
+<TD>Importer of Ukrainian units, which are encoded in a slightly different way
+ than other documentary units.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/UshmmHandler.html" title="class in eu.ehri.project.importers">UshmmHandler</A></B></TD>
@@ -235,8 +236,7 @@ Handlers and Importers and supporting classes to import files into
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD WIDTH="15%"><B><A HREF="../../../../eu/ehri/project/importers/Wp2PersonalitiesImporter.html" title="class in eu.ehri.project.importers">Wp2PersonalitiesImporter</A></B></TD>
-<TD>before importing the file: delete the columns with the reordering of the first and last name
- add a column 'id' with a unique identifier, prefixed with EHRI-Personalities or some such.</TD>
+<TD>Importer of historical agents described in WP2.</TD>
 </TR>
 </TABLE>
 &nbsp;

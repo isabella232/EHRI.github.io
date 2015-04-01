@@ -4,7 +4,7 @@
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <TITLE>
-VirtualUnit.Impl (EHRI Core API 0.1-SNAPSHOT API)
+VirtualUnit.Impl (EHRI Core API 0.9.2-SNAPSHOT API)
 </TITLE>
 
 
@@ -14,7 +14,7 @@ VirtualUnit.Impl (EHRI Core API 0.1-SNAPSHOT API)
 function windowTitle()
 {
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="VirtualUnit.Impl (EHRI Core API 0.1-SNAPSHOT API)";
+        parent.document.title="VirtualUnit.Impl (EHRI Core API 0.9.2-SNAPSHOT API)";
     }
 }
 </SCRIPT>
@@ -150,6 +150,15 @@ Implementation of complex methods.
 <TD><CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html#CHILD_COUNT">CHILD_COUNT</A></CODE></TD>
 </TR>
 </TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_eu.ehri.project.models.base.Watchable"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from interface eu.ehri.project.models.base.<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../eu/ehri/project/models/base/Watchable.html#WATCHED_COUNT">WATCHED_COUNT</A></CODE></TD>
+</TR>
+</TABLE>
 &nbsp;
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 
@@ -247,15 +256,6 @@ Implementation of complex methods.
 
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the author of this virtual unit.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/models/VirtualUnit.Impl.html#updateChildCountCache()">updateChildCountCache</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update/reset the cache counting the number of
- items both included in the VU, or subordinate to it.</TD>
 </TR>
 </TABLE>
 &nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
@@ -381,7 +381,7 @@ Implementation of complex methods.
 <TH ALIGN="left"><B>Methods inherited from interface eu.ehri.project.models.base.<A HREF="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</A></B></TH>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../../eu/ehri/project/models/base/Watchable.html#getWatchers()">getWatchers</A></CODE></TD>
+<TD><CODE><A HREF="../../../../eu/ehri/project/models/base/Watchable.html#getWatchedCount()">getWatchedCount</A>, <A HREF="../../../../eu/ehri/project/models/base/Watchable.html#getWatchers()">getWatchers</A></CODE></TD>
 </TR>
 </TABLE>
 &nbsp;
@@ -431,24 +431,6 @@ public void <B>setAuthor</B>(<A HREF="../../../../eu/ehri/project/models/base/Ac
 </DL>
 <HR>
 
-<A NAME="updateChildCountCache()"><!-- --></A><H3>
-updateChildCountCache</H3>
-<PRE>
-public void <B>updateChildCountCache</B>()</PRE>
-<DL>
-<DD><B>Description copied from interface: <CODE><A HREF="../../../../eu/ehri/project/models/VirtualUnit.html#updateChildCountCache()">VirtualUnit</A></CODE></B></DD>
-<DD>Update/reset the cache counting the number of
- items both included in the VU, or subordinate to it.
-<P>
-<DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/VirtualUnit.html#updateChildCountCache()">updateChildCountCache</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/VirtualUnit.html" title="interface in eu.ehri.project.models">VirtualUnit</A></CODE></DL>
-</DD>
-<DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
-
 <A NAME="removeIncludedUnit(eu.ehri.project.models.DocumentaryUnit)"><!-- --></A><H3>
 removeIncludedUnit</H3>
 <PRE>
@@ -462,20 +444,6 @@ public void <B>removeIncludedUnit</B>(<A HREF="../../../../eu/ehri/project/model
 </DD>
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>unit</CODE> - a documentary unit frame</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getChildCount()"><!-- --></A><H3>
-getChildCount</H3>
-<PRE>
-public long <B>getChildCount</B>()</PRE>
-<DL>
-<DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html" title="interface in eu.ehri.project.models.base">ItemHolder</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/VirtualUnit.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/VirtualUnit.html" title="interface in eu.ehri.project.models">VirtualUnit</A></CODE></DL>
-</DD>
-<DD><DL>
-</DL>
 </DD>
 </DL>
 <HR>
@@ -581,6 +549,20 @@ public boolean <B>addIncludedUnit</B>(<A HREF="../../../../eu/ehri/project/model
 <DD><DL>
 <DT><B>Parameters:</B><DD><CODE>unit</CODE> - a documentary unit frame
 <DT><B>Returns:</B><DD>whether or not the item was newly added</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getChildCount()"><!-- --></A><H3>
+getChildCount</H3>
+<PRE>
+public long <B>getChildCount</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/base/ItemHolder.html" title="interface in eu.ehri.project.models.base">ItemHolder</A></CODE><DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/models/VirtualUnit.html#getChildCount()">getChildCount</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/models/VirtualUnit.html" title="interface in eu.ehri.project.models">VirtualUnit</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
 </DD>
 </DL>
 <!-- ========= END OF CLASS DATA ========= -->
