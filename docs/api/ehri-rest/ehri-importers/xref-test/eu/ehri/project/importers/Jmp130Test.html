@@ -106,7 +106,7 @@
 <a class="jxr_linenumber" name="96" href="#96">96</a>              assertTrue(d.asVertex().getProperty(<span class="jxr_string">"languageOfMaterial"</span>).toString().startsWith(<span class="jxr_string">"[ces"</span>));
 <a class="jxr_linenumber" name="97" href="#97">97</a>          }
 <a class="jxr_linenumber" name="98" href="#98">98</a>  
-<a class="jxr_linenumber" name="99" href="#99">99</a>          List&lt;AccessibleEntity&gt; subjects = toList(log.getAction().getSubjects());
+<a class="jxr_linenumber" name="99" href="#99">99</a>          List&lt;AccessibleEntity&gt; subjects = toList(actionManager.getLatestGlobalEvent().getSubjects());
 <a class="jxr_linenumber" name="100" href="#100">100</a>         <strong class="jxr_keyword">for</strong> (AccessibleEntity subject : subjects) {
 <a class="jxr_linenumber" name="101" href="#101">101</a>             logger.info(<span class="jxr_string">"identifier: "</span> + subject.getId());
 <a class="jxr_linenumber" name="102" href="#102">102</a>         }

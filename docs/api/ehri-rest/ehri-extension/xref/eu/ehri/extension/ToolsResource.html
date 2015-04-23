@@ -404,51 +404,56 @@
 <a class="jxr_linenumber" name="394" href="#394">394</a>         <strong class="jxr_keyword">int</strong> done = 0;
 <a class="jxr_linenumber" name="395" href="#395">395</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="396" href="#396">396</a>             <strong class="jxr_keyword">for</strong> (EntityClass entityClass : types) {
-<a class="jxr_linenumber" name="397" href="#397">397</a>                 <strong class="jxr_keyword">for</strong> (Description desc : manager.getFrames(entityClass, Description.<strong class="jxr_keyword">class</strong>)) {
-<a class="jxr_linenumber" name="398" href="#398">398</a>                     DescribedEntity entity = desc.getEntity();
-<a class="jxr_linenumber" name="399" href="#399">399</a>                     <strong class="jxr_keyword">if</strong> (entity != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="400" href="#400">400</a>                         PermissionScope scope = entity.getPermissionScope();
-<a class="jxr_linenumber" name="401" href="#401">401</a>                         List&lt;String&gt; idPath = scope != <strong class="jxr_keyword">null</strong>
-<a class="jxr_linenumber" name="402" href="#402">402</a>                                 ? Lists.newArrayList(scope.idPath())
-<a class="jxr_linenumber" name="403" href="#403">403</a>                                 : Lists.&lt;String&gt;newArrayList();
-<a class="jxr_linenumber" name="404" href="#404">404</a>                         idPath.add(entity.getIdentifier());
-<a class="jxr_linenumber" name="405" href="#405">405</a>                         Bundle descBundle = depSerializer.vertexFrameToBundle(desc);
-<a class="jxr_linenumber" name="406" href="#406">406</a>                         String newId = entityClass.getIdgen().generateId(idPath, descBundle);
-<a class="jxr_linenumber" name="407" href="#407">407</a>                         <strong class="jxr_keyword">if</strong> (!newId.equals(desc.getId()) &amp;&amp; commit) {
-<a class="jxr_linenumber" name="408" href="#408">408</a>                             manager.renameVertex(desc.asVertex(), desc.getId(), newId);
-<a class="jxr_linenumber" name="409" href="#409">409</a>                             done++;
-<a class="jxr_linenumber" name="410" href="#410">410</a> 
-<a class="jxr_linenumber" name="411" href="#411">411</a>                             <strong class="jxr_keyword">if</strong> (bufferSize &gt; 0 &amp;&amp; done % bufferSize == 0) {
-<a class="jxr_linenumber" name="412" href="#412">412</a>                                 graph.getBaseGraph().commit();
-<a class="jxr_linenumber" name="413" href="#413">413</a>                             }
-<a class="jxr_linenumber" name="414" href="#414">414</a>                         }
-<a class="jxr_linenumber" name="415" href="#415">415</a>                     }
-<a class="jxr_linenumber" name="416" href="#416">416</a>                 }
-<a class="jxr_linenumber" name="417" href="#417">417</a>             }
-<a class="jxr_linenumber" name="418" href="#418">418</a>             <strong class="jxr_keyword">if</strong> (commit &amp;&amp; done &gt; 0) {
-<a class="jxr_linenumber" name="419" href="#419">419</a>                 graph.getBaseGraph().commit();
-<a class="jxr_linenumber" name="420" href="#420">420</a>             }
-<a class="jxr_linenumber" name="421" href="#421">421</a>             <strong class="jxr_keyword">return</strong> String.valueOf(done);
-<a class="jxr_linenumber" name="422" href="#422">422</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError e) {
-<a class="jxr_linenumber" name="423" href="#423">423</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(e);
-<a class="jxr_linenumber" name="424" href="#424">424</a>         } <strong class="jxr_keyword">finally</strong> {
-<a class="jxr_linenumber" name="425" href="#425">425</a>             cleanupTransaction();
-<a class="jxr_linenumber" name="426" href="#426">426</a>         }
-<a class="jxr_linenumber" name="427" href="#427">427</a>     }
-<a class="jxr_linenumber" name="428" href="#428">428</a> 
-<a class="jxr_linenumber" name="429" href="#429">429</a>     <em class="jxr_comment">// Helpers</em>
-<a class="jxr_linenumber" name="430" href="#430">430</a> 
-<a class="jxr_linenumber" name="431" href="#431">431</a>     <strong class="jxr_keyword">private</strong> String makeCsv(List&lt;List&lt;String&gt;&gt; rows) <strong class="jxr_keyword">throws</strong> IOException {
-<a class="jxr_linenumber" name="432" href="#432">432</a>         StringWriter writer = <strong class="jxr_keyword">new</strong> StringWriter();
-<a class="jxr_linenumber" name="433" href="#433">433</a>         CSVWriter csvWriter = <strong class="jxr_keyword">new</strong> CSVWriter(writer, '\t', CSVWriter.NO_QUOTE_CHARACTER);
-<a class="jxr_linenumber" name="434" href="#434">434</a>         <strong class="jxr_keyword">for</strong> (List&lt;String&gt; remap : rows) {
-<a class="jxr_linenumber" name="435" href="#435">435</a>             String[] strings = remap.toArray(<strong class="jxr_keyword">new</strong> String[2]);
-<a class="jxr_linenumber" name="436" href="#436">436</a>             csvWriter.writeNext(strings);
-<a class="jxr_linenumber" name="437" href="#437">437</a>         }
-<a class="jxr_linenumber" name="438" href="#438">438</a>         csvWriter.close();
-<a class="jxr_linenumber" name="439" href="#439">439</a>         <strong class="jxr_keyword">return</strong> writer.toString();
-<a class="jxr_linenumber" name="440" href="#440">440</a>     }
-<a class="jxr_linenumber" name="441" href="#441">441</a> }
+<a class="jxr_linenumber" name="397" href="#397">397</a>                 CloseableIterable&lt;Description&gt; descriptions = manager.getFrames(entityClass, Description.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="398" href="#398">398</a>                 <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="399" href="#399">399</a>                     <strong class="jxr_keyword">for</strong> (Description desc : descriptions) {
+<a class="jxr_linenumber" name="400" href="#400">400</a>                         DescribedEntity entity = desc.getEntity();
+<a class="jxr_linenumber" name="401" href="#401">401</a>                         <strong class="jxr_keyword">if</strong> (entity != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="402" href="#402">402</a>                             PermissionScope scope = entity.getPermissionScope();
+<a class="jxr_linenumber" name="403" href="#403">403</a>                             List&lt;String&gt; idPath = scope != <strong class="jxr_keyword">null</strong>
+<a class="jxr_linenumber" name="404" href="#404">404</a>                                     ? Lists.newArrayList(scope.idPath())
+<a class="jxr_linenumber" name="405" href="#405">405</a>                                     : Lists.&lt;String&gt;newArrayList();
+<a class="jxr_linenumber" name="406" href="#406">406</a>                             idPath.add(entity.getIdentifier());
+<a class="jxr_linenumber" name="407" href="#407">407</a>                             Bundle descBundle = depSerializer.vertexFrameToBundle(desc);
+<a class="jxr_linenumber" name="408" href="#408">408</a>                             String newId = entityClass.getIdgen().generateId(idPath, descBundle);
+<a class="jxr_linenumber" name="409" href="#409">409</a>                             <strong class="jxr_keyword">if</strong> (!newId.equals(desc.getId()) &amp;&amp; commit) {
+<a class="jxr_linenumber" name="410" href="#410">410</a>                                 manager.renameVertex(desc.asVertex(), desc.getId(), newId);
+<a class="jxr_linenumber" name="411" href="#411">411</a>                                 done++;
+<a class="jxr_linenumber" name="412" href="#412">412</a> 
+<a class="jxr_linenumber" name="413" href="#413">413</a>                                 <strong class="jxr_keyword">if</strong> (bufferSize &gt; 0 &amp;&amp; done % bufferSize == 0) {
+<a class="jxr_linenumber" name="414" href="#414">414</a>                                     graph.getBaseGraph().commit();
+<a class="jxr_linenumber" name="415" href="#415">415</a>                                 }
+<a class="jxr_linenumber" name="416" href="#416">416</a>                             }
+<a class="jxr_linenumber" name="417" href="#417">417</a>                         }
+<a class="jxr_linenumber" name="418" href="#418">418</a>                     }
+<a class="jxr_linenumber" name="419" href="#419">419</a>                 } <strong class="jxr_keyword">finally</strong> {
+<a class="jxr_linenumber" name="420" href="#420">420</a>                     descriptions.close();
+<a class="jxr_linenumber" name="421" href="#421">421</a>                 }
+<a class="jxr_linenumber" name="422" href="#422">422</a>             }
+<a class="jxr_linenumber" name="423" href="#423">423</a>             <strong class="jxr_keyword">if</strong> (commit &amp;&amp; done &gt; 0) {
+<a class="jxr_linenumber" name="424" href="#424">424</a>                 graph.getBaseGraph().commit();
+<a class="jxr_linenumber" name="425" href="#425">425</a>             }
+<a class="jxr_linenumber" name="426" href="#426">426</a>             <strong class="jxr_keyword">return</strong> String.valueOf(done);
+<a class="jxr_linenumber" name="427" href="#427">427</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError e) {
+<a class="jxr_linenumber" name="428" href="#428">428</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(e);
+<a class="jxr_linenumber" name="429" href="#429">429</a>         } <strong class="jxr_keyword">finally</strong> {
+<a class="jxr_linenumber" name="430" href="#430">430</a>             cleanupTransaction();
+<a class="jxr_linenumber" name="431" href="#431">431</a>         }
+<a class="jxr_linenumber" name="432" href="#432">432</a>     }
+<a class="jxr_linenumber" name="433" href="#433">433</a> 
+<a class="jxr_linenumber" name="434" href="#434">434</a>     <em class="jxr_comment">// Helpers</em>
+<a class="jxr_linenumber" name="435" href="#435">435</a> 
+<a class="jxr_linenumber" name="436" href="#436">436</a>     <strong class="jxr_keyword">private</strong> String makeCsv(List&lt;List&lt;String&gt;&gt; rows) <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="437" href="#437">437</a>         StringWriter writer = <strong class="jxr_keyword">new</strong> StringWriter();
+<a class="jxr_linenumber" name="438" href="#438">438</a>         CSVWriter csvWriter = <strong class="jxr_keyword">new</strong> CSVWriter(writer, '\t', CSVWriter.NO_QUOTE_CHARACTER);
+<a class="jxr_linenumber" name="439" href="#439">439</a>         <strong class="jxr_keyword">for</strong> (List&lt;String&gt; remap : rows) {
+<a class="jxr_linenumber" name="440" href="#440">440</a>             String[] strings = remap.toArray(<strong class="jxr_keyword">new</strong> String[2]);
+<a class="jxr_linenumber" name="441" href="#441">441</a>             csvWriter.writeNext(strings);
+<a class="jxr_linenumber" name="442" href="#442">442</a>         }
+<a class="jxr_linenumber" name="443" href="#443">443</a>         csvWriter.close();
+<a class="jxr_linenumber" name="444" href="#444">444</a>         <strong class="jxr_keyword">return</strong> writer.toString();
+<a class="jxr_linenumber" name="445" href="#445">445</a>     }
+<a class="jxr_linenumber" name="446" href="#446">446</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

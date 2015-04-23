@@ -1,721 +1,647 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!--NewPage-->
-<HTML>
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>
-AclManager (EHRI Backend 0.9.2-SNAPSHOT API)
-</TITLE>
-
-
-<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
-
-<SCRIPT type="text/javascript">
-function windowTitle()
-{
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AclManager (EHRI Backend 0.9.3-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AclManager (EHRI Backend 0.9.2-SNAPSHOT API)";
+        parent.document.title="AclManager (EHRI Backend 0.9.3-SNAPSHOT API)";
     }
-}
-</SCRIPT>
-<NOSCRIPT>
-</NOSCRIPT>
-
-</HEAD>
-
-<BODY BGCOLOR="white" onload="windowTitle();">
-<HR>
-
-
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
 <!-- ========= START OF TOP NAVBAR ======= -->
-<A NAME="navbar_top"><!-- --></A>
-<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
-<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
-<TR>
-<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
-<A NAME="navbar_top_firstrow"><!-- --></A>
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
-  <TR ALIGN="center" VALIGN="top">
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/AclManager.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
-  </TR>
-</TABLE>
-</TD>
-<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
-</EM>
-</TD>
-</TR>
-
-<TR>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../../eu/ehri/project/acl/AnonymousAccessor.html" title="enum in eu.ehri.project.acl"><B>NEXT CLASS</B></A></FONT></TD>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?eu/ehri/project/acl/AclManager.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="AclManager.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
-&nbsp;<SCRIPT type="text/javascript">
-  <!--
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/AclManager.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../eu/ehri/project/acl/AnonymousAccessor.html" title="enum in eu.ehri.project.acl"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?eu/ehri/project/acl/AclManager.html" target="_top">Frames</a></li>
+<li><a href="AclManager.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
   if(window==top) {
-    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
   }
   //-->
-</SCRIPT>
-<NOSCRIPT>
-  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
-</NOSCRIPT>
-
-
-</FONT></TD>
-</TR>
-<TR>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
-</TR>
-</TABLE>
-<A NAME="skip-navbar_top"></A>
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
 <!-- ========= END OF TOP NAVBAR ========= -->
-
-<HR>
 <!-- ======== START OF CLASS DATA ======== -->
-<H2>
-<FONT SIZE="-1">
-eu.ehri.project.acl</FONT>
-<BR>
-Class AclManager</H2>
-<PRE>
-<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>eu.ehri.project.acl.AclManager</B>
-</PRE>
-<HR>
-<DL>
-<DT><PRE>public final class <B>AclManager</B><DT>extends <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></DL>
-</PRE>
-
-<P>
-Helper class for checking and asserting access and write permissions.
-<P>
-
-<P>
-<DL>
-<DT><B>Author:</B></DT>
-  <DD>Mike Bryant (http://github.com/mikesname)</DD>
-</DL>
-<HR>
-
-<P>
-
+<div class="header">
+<div class="subTitle">eu.ehri.project.acl</div>
+<h2 title="Class AclManager" class="title">Class AclManager</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>eu.ehri.project.acl.AclManager</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public final class <span class="strong">AclManager</span>
+extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Helper class for checking and asserting access and write permissions.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
-
-<A NAME="constructor_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Constructor Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#AclManager(com.tinkerpop.frames.FramedGraph)">AclManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#AclManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope)">AclManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
-           <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scoped constructor.</TD>
-</TR>
-</TABLE>
-&nbsp;
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#AclManager(com.tinkerpop.frames.FramedGraph)">AclManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph)</code>
+<div class="block">Constructor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#AclManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope)">AclManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+          <a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>
+<div class="block">Scoped constructor.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
-
-<A NAME="method_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Method Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#belongsToAdmin(eu.ehri.project.models.base.Accessor)">belongsToAdmin</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check if an accessor is admin or a member of Admin.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#canAccess(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor)">canAccess</A></B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-          <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Determine if a user can access an entity.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.blueprints.Vertex,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#getAclFilterFunction(eu.ehri.project.models.base.Accessor)">getAclFilterFunction</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build a gremlin filter function that passes through items readable by a
- given accessor.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.blueprints.Vertex,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#getContentTypeFilterFunction()">getContentTypeFilterFunction</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build a gremlin filter function that passes through items that are
- bona fide content types.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#getGlobalPermissions(eu.ehri.project.models.base.Accessor)">getGlobalPermissions</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recursive helper function to ascend an accessor's groups and populate
- their global permissions.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html" title="class in eu.ehri.project.acl">InheritedGlobalPermissionSet</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#getInheritedGlobalPermissions(eu.ehri.project.models.base.Accessor)">getInheritedGlobalPermissions</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return a permission list for the given accessor and her inherited groups.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/acl/InheritedItemPermissionSet.html" title="class in eu.ehri.project.acl">InheritedItemPermissionSet</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#getInheritedItemPermissions(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor)">getInheritedItemPermissions</A></B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-                            <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a list of permissions for a given accessor on a given entity, including
- inherited permissions.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#getScope()">getScope</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get scope.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/models/PermissionGrant.html" title="interface in eu.ehri.project.models">PermissionGrant</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#grantPermission(eu.ehri.project.models.base.PermissionGrantTarget, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)">grantPermission</A></B>(<A HREF="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</A>&nbsp;target,
-                <A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&nbsp;permType,
-                <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Grant a user permissions to a content type.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#hasPermission(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)">hasPermission</A></B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-              <A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&nbsp;permissionType,
-              <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check if a user has permission to perform an action on the given item.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#hasPermission(eu.ehri.project.acl.ContentTypes, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)">hasPermission</A></B>(<A HREF="../../../../eu/ehri/project/acl/ContentTypes.html" title="enum in eu.ehri.project.acl">ContentTypes</A>&nbsp;contentType,
-              <A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&nbsp;permissionType,
-              <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check if a user has permission to perform an action on the given content type.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#isAnonymous(eu.ehri.project.models.base.Accessor)">isAnonymous</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check if an accessor is admin or a member of Admin.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#removeAccessControl(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor)">removeAccessControl</A></B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-                    <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Revoke an accessor's access to an entity.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#revokePermission(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)">revokePermission</A></B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-                 <A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&nbsp;permType,
-                 <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Revoke a particular permission on the given entity.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#revokePermissionGrant(eu.ehri.project.models.PermissionGrant)">revokePermissionGrant</A></B>(<A HREF="../../../../eu/ehri/project/models/PermissionGrant.html" title="interface in eu.ehri.project.models">PermissionGrant</A>&nbsp;grant)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Revoke a particular permission grant.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#setAccessors(eu.ehri.project.models.base.AccessibleEntity, java.lang.Iterable)">setAccessors</A></B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&gt;&nbsp;accessors)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set access control on an entity to several accessors.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#setItemPermissions(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor, java.util.Set)">setItemPermissions</A></B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;item,
-                   <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor,
-                   <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</A>&lt;<A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&gt;&nbsp;permissionSet)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the permissions for a particular user on the given item.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#setPermissionMatrix(eu.ehri.project.models.base.Accessor, eu.ehri.project.acl.GlobalPermissionSet)">setPermissionMatrix</A></B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor,
-                    <A HREF="../../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</A>&nbsp;globals)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set a matrix of global permissions for a given accessor.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/acl/AclManager.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</A></B>(<A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set scope.</TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;
-<P>
-
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#belongsToAdmin(eu.ehri.project.models.base.Accessor)">belongsToAdmin</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Check if an accessor is admin or a member of Admin.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#canAccess(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Accessor)">canAccess</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+         <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Determine if a user can access an entity.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.blueprints.Vertex,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#getAclFilterFunction(eu.ehri.project.models.base.Accessor)">getAclFilterFunction</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Build a gremlin filter function that passes through items readable by a
+ given accessor.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.blueprints.Vertex,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#getContentTypeFilterFunction()">getContentTypeFilterFunction</a></strong>()</code>
+<div class="block">Build a gremlin filter function that passes through items that are
+ bona fide content types.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#getGlobalPermissions(eu.ehri.project.models.base.Accessor)">getGlobalPermissions</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Recursive helper function to ascend an accessor's groups and populate
+ their global permissions.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html" title="class in eu.ehri.project.acl">InheritedGlobalPermissionSet</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#getInheritedGlobalPermissions(eu.ehri.project.models.base.Accessor)">getInheritedGlobalPermissions</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Return a permission list for the given accessor and her inherited groups.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/acl/InheritedItemPermissionSet.html" title="class in eu.ehri.project.acl">InheritedItemPermissionSet</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#getInheritedItemPermissions(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Accessor)">getInheritedItemPermissions</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+                           <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Get a list of permissions for a given accessor on a given entity, including
+ inherited permissions.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#getScope()">getScope</a></strong>()</code>
+<div class="block">Get scope.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/PermissionGrant.html" title="interface in eu.ehri.project.models">PermissionGrant</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#grantPermission(eu.ehri.project.models.base.PermissionGrantTarget,%20eu.ehri.project.acl.PermissionType,%20eu.ehri.project.models.base.Accessor)">grantPermission</a></strong>(<a href="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a>&nbsp;target,
+               <a href="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a>&nbsp;permType,
+               <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Grant a user permissions to a content type.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#hasPermission(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.acl.PermissionType,%20eu.ehri.project.models.base.Accessor)">hasPermission</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+             <a href="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a>&nbsp;permissionType,
+             <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Check if a user has permission to perform an action on the given item.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#hasPermission(eu.ehri.project.acl.ContentTypes,%20eu.ehri.project.acl.PermissionType,%20eu.ehri.project.models.base.Accessor)">hasPermission</a></strong>(<a href="../../../../eu/ehri/project/acl/ContentTypes.html" title="enum in eu.ehri.project.acl">ContentTypes</a>&nbsp;contentType,
+             <a href="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a>&nbsp;permissionType,
+             <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Check if a user has permission to perform an action on the given content type.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#isAnonymous(eu.ehri.project.models.base.Accessor)">isAnonymous</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Check if an accessor is admin or a member of Admin.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#removeAccessControl(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Accessor)">removeAccessControl</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+                   <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Revoke an accessor's access to an entity.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#revokePermission(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.acl.PermissionType,%20eu.ehri.project.models.base.Accessor)">revokePermission</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+                <a href="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a>&nbsp;permType,
+                <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Revoke a particular permission on the given entity.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#revokePermissionGrant(eu.ehri.project.models.PermissionGrant)">revokePermissionGrant</a></strong>(<a href="../../../../eu/ehri/project/models/PermissionGrant.html" title="interface in eu.ehri.project.models">PermissionGrant</a>&nbsp;grant)</code>
+<div class="block">Revoke a particular permission grant.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#setAccessors(eu.ehri.project.models.base.AccessibleEntity,%20java.lang.Iterable)">setAccessors</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+            <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessors)</code>
+<div class="block">Set access control on an entity to several accessors.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#setItemPermissions(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Accessor,%20java.util.Set)">setItemPermissions</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;item,
+                  <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor,
+                  <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a>&gt;&nbsp;permissionSet)</code>
+<div class="block">Set the permissions for a particular user on the given item.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#setPermissionMatrix(eu.ehri.project.models.base.Accessor,%20eu.ehri.project.acl.GlobalPermissionSet)">setPermissionMatrix</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor,
+                   <a href="../../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</a>&nbsp;globals)</code>
+<div class="block">Set a matrix of global permissions for a given accessor.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/acl/AclManager.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>
+<div class="block">Set scope.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-
-<A NAME="constructor_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Constructor Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="AclManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope)"><!-- --></A><H3>
-AclManager</H3>
-<PRE>
-public <B>AclManager</B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
-                  <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope)</PRE>
-<DL>
-<DD>Scoped constructor.
-<P>
-<DL>
-<DT><B>Parameters:</B><DD><CODE>graph</CODE> - The framed graph<DD><CODE>scope</CODE> - The ACL scope</DL>
-</DL>
-<HR>
-
-<A NAME="AclManager(com.tinkerpop.frames.FramedGraph)"><!-- --></A><H3>
-AclManager</H3>
-<PRE>
-public <B>AclManager</B>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph)</PRE>
-<DL>
-<DD>Constructor.
-<P>
-<DL>
-<DT><B>Parameters:</B><DD><CODE>graph</CODE> - The framed graph</DL>
-</DL>
-
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AclManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>AclManager</h4>
+<pre>public&nbsp;AclManager(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+          <a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</pre>
+<div class="block">Scoped constructor.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>graph</code> - The framed graph</dd><dd><code>scope</code> - The ACL scope</dd></dl>
+</li>
+</ul>
+<a name="AclManager(com.tinkerpop.frames.FramedGraph)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AclManager</h4>
+<pre>public&nbsp;AclManager(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph)</pre>
+<div class="block">Constructor.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>graph</code> - The framed graph</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
-
-<A NAME="method_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Method Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="belongsToAdmin(eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-belongsToAdmin</H3>
-<PRE>
-public boolean <B>belongsToAdmin</B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Check if an accessor is admin or a member of Admin.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>accessor</CODE> - The user/group
-<DT><B>Returns:</B><DD>User belongs to the admin group</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="isAnonymous(eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-isAnonymous</H3>
-<PRE>
-public boolean <B>isAnonymous</B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Check if an accessor is admin or a member of Admin.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>accessor</CODE> - The user/group
-<DT><B>Returns:</B><DD>User is an anonymous accessor</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="canAccess(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-canAccess</H3>
-<PRE>
-public boolean <B>canAccess</B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-                         <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Determine if a user can access an entity.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>entity</CODE> - The item<DD><CODE>accessor</CODE> - The user/group
-<DT><B>Returns:</B><DD>Whether or not the given accessor can access the entity</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="removeAccessControl(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-removeAccessControl</H3>
-<PRE>
-public void <B>removeAccessControl</B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-                                <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Revoke an accessor's access to an entity.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>entity</CODE> - The item<DD><CODE>accessor</CODE> - A user/group from whom to revoke access</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="setAccessors(eu.ehri.project.models.base.AccessibleEntity, java.lang.Iterable)"><!-- --></A><H3>
-setAccessors</H3>
-<PRE>
-public void <B>setAccessors</B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</A>&lt;<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&gt;&nbsp;accessors)</PRE>
-<DL>
-<DD>Set access control on an entity to several accessors.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>entity</CODE> - The item<DD><CODE>accessors</CODE> - A set of users/groups who can access the item</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getInheritedItemPermissions(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-getInheritedItemPermissions</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/acl/InheritedItemPermissionSet.html" title="class in eu.ehri.project.acl">InheritedItemPermissionSet</A> <B>getInheritedItemPermissions</B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-                                                              <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Get a list of permissions for a given accessor on a given entity, including
- inherited permissions. Returns a map of accessor IDs against grant permissions.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>accessor</CODE> - The accessor
-<DT><B>Returns:</B><DD>An inherited item permission set.</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="setItemPermissions(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor, java.util.Set)"><!-- --></A><H3>
-setItemPermissions</H3>
-<PRE>
-public void <B>setItemPermissions</B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;item,
-                               <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor,
-                               <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</A>&lt;<A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&gt;&nbsp;permissionSet)
-                        throws <A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></PRE>
-<DL>
-<DD>Set the permissions for a particular user on the given item.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>item</CODE> - The item<DD><CODE>accessor</CODE> - The user/group<DD><CODE>permissionSet</CODE> - A set of permissions
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getInheritedGlobalPermissions(eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-getInheritedGlobalPermissions</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html" title="class in eu.ehri.project.acl">InheritedGlobalPermissionSet</A> <B>getInheritedGlobalPermissions</B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Return a permission list for the given accessor and her inherited groups.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>accessor</CODE> - The user/group
-<DT><B>Returns:</B><DD>List of permission maps for the given accessor and his group
-         parents.</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getGlobalPermissions(eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-getGlobalPermissions</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</A> <B>getGlobalPermissions</B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Recursive helper function to ascend an accessor's groups and populate
- their global permissions.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>accessor</CODE> - The user/group
-<DT><B>Returns:</B><DD>Permission map for the given accessor</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="setPermissionMatrix(eu.ehri.project.models.base.Accessor, eu.ehri.project.acl.GlobalPermissionSet)"><!-- --></A><H3>
-setPermissionMatrix</H3>
-<PRE>
-public void <B>setPermissionMatrix</B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor,
-                                <A HREF="../../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</A>&nbsp;globals)
-                         throws <A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></PRE>
-<DL>
-<DD>Set a matrix of global permissions for a given accessor.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>accessor</CODE> - The user/group<DD><CODE>globals</CODE> - global permission map
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="grantPermission(eu.ehri.project.models.base.PermissionGrantTarget, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-grantPermission</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/models/PermissionGrant.html" title="interface in eu.ehri.project.models">PermissionGrant</A> <B>grantPermission</B>(<A HREF="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</A>&nbsp;target,
-                                       <A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&nbsp;permType,
-                                       <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Grant a user permissions to a content type.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>target</CODE> - The grant target (content type or item)<DD><CODE>permType</CODE> - The permission type<DD><CODE>accessor</CODE> - The user/group
-<DT><B>Returns:</B><DD>The permission grant given for this accessor and target</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="revokePermission(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-revokePermission</H3>
-<PRE>
-public void <B>revokePermission</B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-                             <A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&nbsp;permType,
-                             <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Revoke a particular permission on the given entity.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>entity</CODE> - The item<DD><CODE>permType</CODE> - The permission type<DD><CODE>accessor</CODE> - The user/group</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="revokePermissionGrant(eu.ehri.project.models.PermissionGrant)"><!-- --></A><H3>
-revokePermissionGrant</H3>
-<PRE>
-public void <B>revokePermissionGrant</B>(<A HREF="../../../../eu/ehri/project/models/PermissionGrant.html" title="interface in eu.ehri.project.models">PermissionGrant</A>&nbsp;grant)</PRE>
-<DL>
-<DD>Revoke a particular permission grant.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>grant</CODE> - The grant to revoke</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getContentTypeFilterFunction()"><!-- --></A><H3>
-getContentTypeFilterFunction</H3>
-<PRE>
-public com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.blueprints.Vertex,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&gt; <B>getContentTypeFilterFunction</B>()</PRE>
-<DL>
-<DD>Build a gremlin filter function that passes through items that are
- bona fide content types.
-<P>
-<DD><DL>
-
-<DT><B>Returns:</B><DD>A PipeFunction for filtering vertices that are content types.</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getAclFilterFunction(eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-getAclFilterFunction</H3>
-<PRE>
-public com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.blueprints.Vertex,<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</A>&gt; <B>getAclFilterFunction</B>(<A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Build a gremlin filter function that passes through items readable by a
- given accessor.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>accessor</CODE> - The user/group
-<DT><B>Returns:</B><DD>A PipeFunction for filtering a set of vertices as the given user</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="hasPermission(eu.ehri.project.acl.ContentTypes, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-hasPermission</H3>
-<PRE>
-public boolean <B>hasPermission</B>(<A HREF="../../../../eu/ehri/project/acl/ContentTypes.html" title="enum in eu.ehri.project.acl">ContentTypes</A>&nbsp;contentType,
-                             <A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&nbsp;permissionType,
-                             <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Check if a user has permission to perform an action on the given content type.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>contentType</CODE> - The content type<DD><CODE>permissionType</CODE> - The requested permission<DD><CODE>accessor</CODE> - The user
-<DT><B>Returns:</B><DD>If the user has permission on the given content type within the current scope</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="hasPermission(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-hasPermission</H3>
-<PRE>
-public boolean <B>hasPermission</B>(<A HREF="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&nbsp;entity,
-                             <A HREF="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</A>&nbsp;permissionType,
-                             <A HREF="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;accessor)</PRE>
-<DL>
-<DD>Check if a user has permission to perform an action on the given item.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>entity</CODE> - The item<DD><CODE>permissionType</CODE> - The requested permission<DD><CODE>accessor</CODE> - The user
-<DT><B>Returns:</B><DD>If the user has the permission on the given item</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="withScope(eu.ehri.project.models.base.PermissionScope)"><!-- --></A><H3>
-withScope</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</A> <B>withScope</B>(<A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope)</PRE>
-<DL>
-<DD>Set scope.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>scope</CODE> - The new permission scope
-<DT><B>Returns:</B><DD>A new ACL Manager</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getScope()"><!-- --></A><H3>
-getScope</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A> <B>getScope</B>()</PRE>
-<DL>
-<DD>Get scope.
-<P>
-<DD><DL>
-
-<DT><B>Returns:</B><DD>The permission scope.</DL>
-</DD>
-</DL>
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="belongsToAdmin(eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>belongsToAdmin</h4>
+<pre>public&nbsp;boolean&nbsp;belongsToAdmin(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Check if an accessor is admin or a member of Admin.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>accessor</code> - The user/group</dd>
+<dt><span class="strong">Returns:</span></dt><dd>User belongs to the admin group</dd></dl>
+</li>
+</ul>
+<a name="isAnonymous(eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isAnonymous</h4>
+<pre>public&nbsp;boolean&nbsp;isAnonymous(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Check if an accessor is admin or a member of Admin.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>accessor</code> - The user/group</dd>
+<dt><span class="strong">Returns:</span></dt><dd>User is an anonymous accessor</dd></dl>
+</li>
+</ul>
+<a name="canAccess(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>canAccess</h4>
+<pre>public&nbsp;boolean&nbsp;canAccess(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+                <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Determine if a user can access an entity.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>entity</code> - The item</dd><dd><code>accessor</code> - The user/group</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Whether or not the given accessor can access the entity</dd></dl>
+</li>
+</ul>
+<a name="removeAccessControl(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>removeAccessControl</h4>
+<pre>public&nbsp;void&nbsp;removeAccessControl(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+                       <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Revoke an accessor's access to an entity.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>entity</code> - The item</dd><dd><code>accessor</code> - A user/group from whom to revoke access</dd></dl>
+</li>
+</ul>
+<a name="setAccessors(eu.ehri.project.models.base.AccessibleEntity, java.lang.Iterable)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setAccessors</h4>
+<pre>public&nbsp;void&nbsp;setAccessors(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+                <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessors)</pre>
+<div class="block">Set access control on an entity to several accessors.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>entity</code> - The item</dd><dd><code>accessors</code> - A set of users/groups who can access the item</dd></dl>
+</li>
+</ul>
+<a name="getInheritedItemPermissions(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInheritedItemPermissions</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/acl/InheritedItemPermissionSet.html" title="class in eu.ehri.project.acl">InheritedItemPermissionSet</a>&nbsp;getInheritedItemPermissions(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+                                                     <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Get a list of permissions for a given accessor on a given entity, including
+ inherited permissions. Returns a map of accessor IDs against grant permissions.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>accessor</code> - The accessor</dd>
+<dt><span class="strong">Returns:</span></dt><dd>An inherited item permission set.</dd></dl>
+</li>
+</ul>
+<a name="setItemPermissions(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Accessor, java.util.Set)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setItemPermissions</h4>
+<pre>public&nbsp;void&nbsp;setItemPermissions(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;item,
+                      <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor,
+                      <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a>&gt;&nbsp;permissionSet)
+                        throws <a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></pre>
+<div class="block">Set the permissions for a particular user on the given item.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>item</code> - The item</dd><dd><code>accessor</code> - The user/group</dd><dd><code>permissionSet</code> - A set of permissions</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd></dl>
+</li>
+</ul>
+<a name="getInheritedGlobalPermissions(eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getInheritedGlobalPermissions</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html" title="class in eu.ehri.project.acl">InheritedGlobalPermissionSet</a>&nbsp;getInheritedGlobalPermissions(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Return a permission list for the given accessor and her inherited groups.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>accessor</code> - The user/group</dd>
+<dt><span class="strong">Returns:</span></dt><dd>List of permission maps for the given accessor and his group
+         parents.</dd></dl>
+</li>
+</ul>
+<a name="getGlobalPermissions(eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGlobalPermissions</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</a>&nbsp;getGlobalPermissions(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Recursive helper function to ascend an accessor's groups and populate
+ their global permissions.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>accessor</code> - The user/group</dd>
+<dt><span class="strong">Returns:</span></dt><dd>Permission map for the given accessor</dd></dl>
+</li>
+</ul>
+<a name="setPermissionMatrix(eu.ehri.project.models.base.Accessor, eu.ehri.project.acl.GlobalPermissionSet)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPermissionMatrix</h4>
+<pre>public&nbsp;void&nbsp;setPermissionMatrix(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor,
+                       <a href="../../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</a>&nbsp;globals)
+                         throws <a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></pre>
+<div class="block">Set a matrix of global permissions for a given accessor.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>accessor</code> - The user/group</dd><dd><code>globals</code> - global permission map</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd></dl>
+</li>
+</ul>
+<a name="grantPermission(eu.ehri.project.models.base.PermissionGrantTarget, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>grantPermission</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/PermissionGrant.html" title="interface in eu.ehri.project.models">PermissionGrant</a>&nbsp;grantPermission(<a href="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a>&nbsp;target,
+                              <a href="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a>&nbsp;permType,
+                              <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Grant a user permissions to a content type.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>target</code> - The grant target (content type or item)</dd><dd><code>permType</code> - The permission type</dd><dd><code>accessor</code> - The user/group</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The permission grant given for this accessor and target</dd></dl>
+</li>
+</ul>
+<a name="revokePermission(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>revokePermission</h4>
+<pre>public&nbsp;void&nbsp;revokePermission(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+                    <a href="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a>&nbsp;permType,
+                    <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Revoke a particular permission on the given entity.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>entity</code> - The item</dd><dd><code>permType</code> - The permission type</dd><dd><code>accessor</code> - The user/group</dd></dl>
+</li>
+</ul>
+<a name="revokePermissionGrant(eu.ehri.project.models.PermissionGrant)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>revokePermissionGrant</h4>
+<pre>public&nbsp;void&nbsp;revokePermissionGrant(<a href="../../../../eu/ehri/project/models/PermissionGrant.html" title="interface in eu.ehri.project.models">PermissionGrant</a>&nbsp;grant)</pre>
+<div class="block">Revoke a particular permission grant.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>grant</code> - The grant to revoke</dd></dl>
+</li>
+</ul>
+<a name="getContentTypeFilterFunction()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getContentTypeFilterFunction</h4>
+<pre>public&nbsp;com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.blueprints.Vertex,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&gt;&nbsp;getContentTypeFilterFunction()</pre>
+<div class="block">Build a gremlin filter function that passes through items that are
+ bona fide content types.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>A PipeFunction for filtering vertices that are content types.</dd></dl>
+</li>
+</ul>
+<a name="getAclFilterFunction(eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAclFilterFunction</h4>
+<pre>public&nbsp;com.tinkerpop.pipes.PipeFunction&lt;com.tinkerpop.blueprints.Vertex,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&gt;&nbsp;getAclFilterFunction(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Build a gremlin filter function that passes through items readable by a
+ given accessor.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>accessor</code> - The user/group</dd>
+<dt><span class="strong">Returns:</span></dt><dd>A PipeFunction for filtering a set of vertices as the given user</dd></dl>
+</li>
+</ul>
+<a name="hasPermission(eu.ehri.project.acl.ContentTypes, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasPermission</h4>
+<pre>public&nbsp;boolean&nbsp;hasPermission(<a href="../../../../eu/ehri/project/acl/ContentTypes.html" title="enum in eu.ehri.project.acl">ContentTypes</a>&nbsp;contentType,
+                    <a href="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a>&nbsp;permissionType,
+                    <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Check if a user has permission to perform an action on the given content type.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>contentType</code> - The content type</dd><dd><code>permissionType</code> - The requested permission</dd><dd><code>accessor</code> - The user</dd>
+<dt><span class="strong">Returns:</span></dt><dd>If the user has permission on the given content type within the current scope</dd></dl>
+</li>
+</ul>
+<a name="hasPermission(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.acl.PermissionType, eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasPermission</h4>
+<pre>public&nbsp;boolean&nbsp;hasPermission(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity,
+                    <a href="../../../../eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a>&nbsp;permissionType,
+                    <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<div class="block">Check if a user has permission to perform an action on the given item.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>entity</code> - The item</dd><dd><code>permissionType</code> - The requested permission</dd><dd><code>accessor</code> - The user</dd>
+<dt><span class="strong">Returns:</span></dt><dd>If the user has the permission on the given item</dd></dl>
+</li>
+</ul>
+<a name="withScope(eu.ehri.project.models.base.PermissionScope)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withScope</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</a>&nbsp;withScope(<a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</pre>
+<div class="block">Set scope.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>scope</code> - The new permission scope</dd>
+<dt><span class="strong">Returns:</span></dt><dd>A new ACL Manager</dd></dl>
+</li>
+</ul>
+<a name="getScope()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getScope</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;getScope()</pre>
+<div class="block">Get scope.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>The permission scope.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <!-- ========= END OF CLASS DATA ========= -->
-<HR>
-
-
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
-<A NAME="navbar_bottom"><!-- --></A>
-<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
-<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
-<TR>
-<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
-<A NAME="navbar_bottom_firstrow"><!-- --></A>
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
-  <TR ALIGN="center" VALIGN="top">
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/AclManager.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
-  </TR>
-</TABLE>
-</TD>
-<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
-</EM>
-</TD>
-</TR>
-
-<TR>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../../eu/ehri/project/acl/AnonymousAccessor.html" title="enum in eu.ehri.project.acl"><B>NEXT CLASS</B></A></FONT></TD>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?eu/ehri/project/acl/AclManager.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="AclManager.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
-&nbsp;<SCRIPT type="text/javascript">
-  <!--
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/AclManager.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../../eu/ehri/project/acl/AnonymousAccessor.html" title="enum in eu.ehri.project.acl"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?eu/ehri/project/acl/AclManager.html" target="_top">Frames</a></li>
+<li><a href="AclManager.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
   if(window==top) {
-    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
   }
   //-->
-</SCRIPT>
-<NOSCRIPT>
-  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
-</NOSCRIPT>
-
-
-</FONT></TD>
-</TR>
-<TR>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
-</TR>
-</TABLE>
-<A NAME="skip-navbar_bottom"></A>
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-
-<HR>
-Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
-</BODY>
-</HTML>
+<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+</body>
+</html>

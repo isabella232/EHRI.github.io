@@ -134,8 +134,8 @@
 <a class="jxr_linenumber" name="124" href="#124">124</a>         <em class="jxr_comment">//        Iterable&lt;Action&gt; actions = unit.getHistory();</em>
 <a class="jxr_linenumber" name="125" href="#125">125</a>         <em class="jxr_comment">// Check we've created 6 items</em>
 <a class="jxr_linenumber" name="126" href="#126">126</a>         assertEquals(4, log.getCreated());
-<a class="jxr_linenumber" name="127" href="#127">127</a>         assertTrue(log.getAction() instanceof SystemEvent);
-<a class="jxr_linenumber" name="128" href="#128">128</a>         assertEquals(logMessage, log.getAction().getLogMessage());
+<a class="jxr_linenumber" name="127" href="#127">127</a>         SystemEvent ev = actionManager.getLatestGlobalEvent();
+<a class="jxr_linenumber" name="128" href="#128">128</a>         assertEquals(logMessage, ev.getLogMessage());
 <a class="jxr_linenumber" name="129" href="#129">129</a> 
 <a class="jxr_linenumber" name="130" href="#130">130</a>         <em class="jxr_comment">//assert keywords are matched to cvocs</em>
 <a class="jxr_linenumber" name="131" href="#131">131</a>         assertTrue(toList(c3.getLinks()).size() &gt; 0);
@@ -150,7 +150,7 @@
 <a class="jxr_linenumber" name="140" href="#140">140</a>             assertEquals(1, hasBody);
 <a class="jxr_linenumber" name="141" href="#141">141</a>         }
 <a class="jxr_linenumber" name="142" href="#142">142</a> 
-<a class="jxr_linenumber" name="143" href="#143">143</a>         List&lt;AccessibleEntity&gt; subjects = toList(log.getAction().getSubjects());
+<a class="jxr_linenumber" name="143" href="#143">143</a>         List&lt;AccessibleEntity&gt; subjects = toList(ev.getSubjects());
 <a class="jxr_linenumber" name="144" href="#144">144</a>         <strong class="jxr_keyword">int</strong> countSubject=0;
 <a class="jxr_linenumber" name="145" href="#145">145</a>         <strong class="jxr_keyword">for</strong> (AccessibleEntity subject : subjects) {
 <a class="jxr_linenumber" name="146" href="#146">146</a>             logger.info(<span class="jxr_string">"identifier: "</span> + subject.getId());

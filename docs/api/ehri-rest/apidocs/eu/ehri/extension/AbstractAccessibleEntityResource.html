@@ -1,817 +1,739 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!--NewPage-->
-<HTML>
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>
-AbstractAccessibleEntityResource (EHRI Backend 0.9.2-SNAPSHOT API)
-</TITLE>
-
-
-<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../stylesheet.css" TITLE="Style">
-
-<SCRIPT type="text/javascript">
-function windowTitle()
-{
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AbstractAccessibleEntityResource (EHRI Backend 0.9.3-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AbstractAccessibleEntityResource (EHRI Backend 0.9.2-SNAPSHOT API)";
+        parent.document.title="AbstractAccessibleEntityResource (EHRI Backend 0.9.3-SNAPSHOT API)";
     }
-}
-</SCRIPT>
-<NOSCRIPT>
-</NOSCRIPT>
-
-</HEAD>
-
-<BODY BGCOLOR="white" onload="windowTitle();">
-<HR>
-
-
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
 <!-- ========= START OF TOP NAVBAR ======= -->
-<A NAME="navbar_top"><!-- --></A>
-<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
-<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
-<TR>
-<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
-<A NAME="navbar_top_firstrow"><!-- --></A>
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
-  <TR ALIGN="center" VALIGN="top">
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/AbstractAccessibleEntityResource.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
-  </TR>
-</TABLE>
-</TD>
-<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
-</EM>
-</TD>
-</TR>
-
-<TR>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension"><B>NEXT CLASS</B></A></FONT></TD>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../index.html?eu/ehri/extension/AbstractAccessibleEntityResource.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="AbstractAccessibleEntityResource.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
-&nbsp;<SCRIPT type="text/javascript">
-  <!--
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/AbstractAccessibleEntityResource.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?eu/ehri/extension/AbstractAccessibleEntityResource.html" target="_top">Frames</a></li>
+<li><a href="AbstractAccessibleEntityResource.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
   if(window==top) {
-    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
   }
   //-->
-</SCRIPT>
-<NOSCRIPT>
-  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
-</NOSCRIPT>
-
-
-</FONT></TD>
-</TR>
-<TR>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
-</TR>
-</TABLE>
-<A NAME="skip-navbar_top"></A>
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
 <!-- ========= END OF TOP NAVBAR ========= -->
-
-<HR>
 <!-- ======== START OF CLASS DATA ======== -->
-<H2>
-<FONT SIZE="-1">
-eu.ehri.extension</FONT>
-<BR>
-Class AbstractAccessibleEntityResource&lt;E extends <A HREF="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt;</H2>
-<PRE>
-<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">eu.ehri.extension.AbstractRestResource</A>
-      <IMG SRC="../../../resources/inherit.gif" ALT="extended by "><B>eu.ehri.extension.AbstractAccessibleEntityResource&lt;E&gt;</B>
-</PRE>
-<DL>
-<DT><DT><B>Type Parameters:</B><DD><CODE>E</CODE> - The specific AccessibleEntity derived class</DL>
-<DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../eu/ehri/extension/base/TxCheckedResource.html" title="interface in eu.ehri.extension.base">TxCheckedResource</A></DD>
-</DL>
-<DL>
-<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../eu/ehri/extension/AccessResource.html" title="class in eu.ehri.extension">AccessResource</A>, <A HREF="../../../eu/ehri/extension/AnnotationResource.html" title="class in eu.ehri.extension">AnnotationResource</A>, <A HREF="../../../eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</A>, <A HREF="../../../eu/ehri/extension/ContentTypeResource.html" title="class in eu.ehri.extension">ContentTypeResource</A>, <A HREF="../../../eu/ehri/extension/CountryResource.html" title="class in eu.ehri.extension">CountryResource</A>, <A HREF="../../../eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</A>, <A HREF="../../../eu/ehri/extension/DescriptionResource.html" title="class in eu.ehri.extension">DescriptionResource</A>, <A HREF="../../../eu/ehri/extension/DocumentaryUnitResource.html" title="class in eu.ehri.extension">DocumentaryUnitResource</A>, <A HREF="../../../eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</A>, <A HREF="../../../eu/ehri/extension/GroupResource.html" title="class in eu.ehri.extension">GroupResource</A>, <A HREF="../../../eu/ehri/extension/HistoricalAgentResource.html" title="class in eu.ehri.extension">HistoricalAgentResource</A>, <A HREF="../../../eu/ehri/extension/LinkResource.html" title="class in eu.ehri.extension">LinkResource</A>, <A HREF="../../../eu/ehri/extension/RepositoryResource.html" title="class in eu.ehri.extension">RepositoryResource</A>, <A HREF="../../../eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</A>, <A HREF="../../../eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</A>, <A HREF="../../../eu/ehri/extension/VirtualUnitResource.html" title="class in eu.ehri.extension">VirtualUnitResource</A>, <A HREF="../../../eu/ehri/extension/VocabularyResource.html" title="class in eu.ehri.extension">VocabularyResource</A></DD>
-</DL>
-<HR>
-<DL>
-<DT><PRE>public class <B>AbstractAccessibleEntityResource&lt;E extends <A HREF="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt;</B><DT>extends <A HREF="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A></DL>
-</PRE>
-
-<P>
-Handle CRUD operations on AccessibleEntity's by using the
+<div class="header">
+<div class="subTitle">eu.ehri.extension</div>
+<h2 title="Class AbstractAccessibleEntityResource" class="title">Class AbstractAccessibleEntityResource&lt;E extends <a href="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">eu.ehri.extension.AbstractRestResource</a></li>
+<li>
+<ul class="inheritance">
+<li>eu.ehri.extension.AbstractAccessibleEntityResource&lt;E&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>E</code> - The specific AccessibleEntity derived class</dd></dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../eu/ehri/extension/base/TxCheckedResource.html" title="interface in eu.ehri.extension.base">TxCheckedResource</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../eu/ehri/extension/AccessResource.html" title="class in eu.ehri.extension">AccessResource</a>, <a href="../../../eu/ehri/extension/AnnotationResource.html" title="class in eu.ehri.extension">AnnotationResource</a>, <a href="../../../eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</a>, <a href="../../../eu/ehri/extension/ContentTypeResource.html" title="class in eu.ehri.extension">ContentTypeResource</a>, <a href="../../../eu/ehri/extension/CountryResource.html" title="class in eu.ehri.extension">CountryResource</a>, <a href="../../../eu/ehri/extension/CvocConceptResource.html" title="class in eu.ehri.extension">CvocConceptResource</a>, <a href="../../../eu/ehri/extension/DescriptionResource.html" title="class in eu.ehri.extension">DescriptionResource</a>, <a href="../../../eu/ehri/extension/DocumentaryUnitResource.html" title="class in eu.ehri.extension">DocumentaryUnitResource</a>, <a href="../../../eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a>, <a href="../../../eu/ehri/extension/GroupResource.html" title="class in eu.ehri.extension">GroupResource</a>, <a href="../../../eu/ehri/extension/HistoricalAgentResource.html" title="class in eu.ehri.extension">HistoricalAgentResource</a>, <a href="../../../eu/ehri/extension/LinkResource.html" title="class in eu.ehri.extension">LinkResource</a>, <a href="../../../eu/ehri/extension/RepositoryResource.html" title="class in eu.ehri.extension">RepositoryResource</a>, <a href="../../../eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a>, <a href="../../../eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a>, <a href="../../../eu/ehri/extension/VirtualUnitResource.html" title="class in eu.ehri.extension">VirtualUnitResource</a>, <a href="../../../eu/ehri/extension/VocabularyResource.html" title="class in eu.ehri.extension">VocabularyResource</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">AbstractAccessibleEntityResource&lt;E extends <a href="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</span>
+extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></pre>
+<div class="block">Handle CRUD operations on AccessibleEntity's by using the
  eu.ehri.project.views.Views class generic code. Resources for specific
- entities can extend this class.
-<P>
-
-<P>
-<DL>
-<DT><B>Author:</B></DT>
-  <DD>Paul Boon (http://github.com/PaulBoon), Mike Bryant (https://github.com/mikesname)</DD>
-</DL>
-<HR>
-
-<P>
+ entities can extend this class.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Paul Boon (http://github.com/PaulBoon), Mike Bryant (https://github.com/mikesname)</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
 <!-- ======== NESTED CLASS SUMMARY ======== -->
-
-<A NAME="nested_class_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Nested Class Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;interface</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="type parameter in AbstractAccessibleEntityResource.Handler">E</A> extends <A HREF="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt;</B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functor used to post-process items.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>static&nbsp;class</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.NoOpHandler.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource.NoOpHandler</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.NoOpHandler.html" title="type parameter in AbstractAccessibleEntityResource.NoOpHandler">E</A> extends <A HREF="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt;</B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Implementation of a Handler that does nothing.</TD>
-</TR>
-</TABLE>
-&nbsp;<!-- =========== FIELD SUMMARY =========== -->
-
-<A NAME="field_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Field Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclManager">aclManager</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclViews">aclViews</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#actionManager">actionManager</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#cls">cls</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../eu/ehri/project/views/ViewHelper.html" title="class in eu.ehri.project.views">ViewHelper</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#helper">helper</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#querier">querier</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#views">views</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="fields_inherited_from_class_eu.ehri.extension.AbstractRestResource"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Fields inherited from class eu.ehri.extension.<A HREF="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="type parameter in AbstractAccessibleEntityResource.Handler">E</a> extends <a href="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</strong></code>
+<div class="block">Functor used to post-process items.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.NoOpHandler.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource.NoOpHandler</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.NoOpHandler.html" title="type parameter in AbstractAccessibleEntityResource.NoOpHandler">E</a> extends <a href="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</strong></code>
+<div class="block">Implementation of a Handler that does nothing.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclManager">aclManager</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</a></code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclViews">aclViews</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#actionManager">actionManager</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#cls">cls</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../eu/ehri/project/views/ViewHelper.html" title="class in eu.ehri.project.views">ViewHelper</a></code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#helper">helper</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#querier">querier</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#views">views</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_eu.ehri.extension.AbstractRestResource">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></h3>
+<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
+</ul>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
-
-<A NAME="constructor_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Constructor Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#AbstractAccessibleEntityResource(org.neo4j.graphdb.GraphDatabaseService, java.lang.Class)">AbstractAccessibleEntityResource</A></B>(org.neo4j.graphdb.GraphDatabaseService&nbsp;database,
-                                 <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A>&gt;&nbsp;cls)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor</TD>
-</TR>
-</TABLE>
-&nbsp;
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#AbstractAccessibleEntityResource(org.neo4j.graphdb.GraphDatabaseService,%20java.lang.Class)">AbstractAccessibleEntityResource</a></strong>(org.neo4j.graphdb.GraphDatabaseService&nbsp;database,
+                                <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a>&gt;&nbsp;cls)</code>
+<div class="block">Constructor</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
-
-<A NAME="method_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Method Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;long</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#countItems()">countItems</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count items accessible to a given user.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle, java.util.List)">createItem</A></B>(<A HREF="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;entityBundle,
-           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessorIds)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">createItem</A></B>(<A HREF="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;entityBundle,
-           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessorIds,
-           <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A>&gt;&nbsp;handler)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an instance of the 'entity' in the database</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
-<TR ALIGN="right" VALIGN="">
-<TD NOWRAP><FONT SIZE="-1">
-<CODE>&lt;T extends <A HREF="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; 
-<BR>
-javax.ws.rs.core.Response</CODE></FONT></TD>
-</TR>
-</TABLE>
-</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler, eu.ehri.project.views.impl.LoggingCrudViews)">createItem</A></B>(<A HREF="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;entityBundle,
-           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessorIds,
-           <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</A>&lt;T&gt;&nbsp;handler,
-           <A HREF="../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</A>&lt;T&gt;&nbsp;views)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an instance of the 'entity' in the database</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String)">deleteItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete (remove) an instance of the 'entity' in the database</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">deleteItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-           <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A>&gt;&nbsp;preProcess)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete (remove) an instance of the 'entity' in the database,
- running a handler callback beforehand.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</A>&lt;<A HREF="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List, eu.ehri.project.models.base.Accessor)">getAccessors</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessorIds,
-             <A HREF="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;current)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get a set of accessor frames given a list of names.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getItem(java.lang.String)">getItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retieve (get) an instance of the 'entity' in the database</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#listItems()">listItems</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List all instances of the 'entity' accessible to the given user.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(eu.ehri.project.persistence.Bundle)">updateItem</A></B>(<A HREF="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;entityBundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update (change) an instance of the 'entity' in the database.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;javax.ws.rs.core.Response</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(java.lang.String, eu.ehri.project.persistence.Bundle)">updateItem</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-           <A HREF="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;rawBundle)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update (change) an instance of the 'entity' in the database
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#countItems()">countItems</a></strong>()</code>
+<div class="block">Count items accessible to a given user.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List)">createItem</a></strong>(<a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;entityBundle,
+          <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessorIds)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">createItem</a></strong>(<a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;entityBundle,
+          <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessorIds,
+          <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a>&gt;&nbsp;handler)</code>
+<div class="block">Create an instance of the 'entity' in the database</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;T extends <a href="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;&nbsp;<br>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler,%20eu.ehri.project.views.impl.LoggingCrudViews)">createItem</a></strong>(<a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;entityBundle,
+          <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessorIds,
+          <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</a>&lt;T&gt;&nbsp;handler,
+          <a href="../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</a>&lt;T&gt;&nbsp;views)</code>
+<div class="block">Create an instance of the 'entity' in the database</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String)">deleteItem</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<div class="block">Delete (remove) an instance of the 'entity' in the database</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">deleteItem</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+          <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a>&gt;&nbsp;preProcess)</code>
+<div class="block">Delete (remove) an instance of the 'entity' in the database,
+ running a handler callback beforehand.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List,%20eu.ehri.project.models.base.Accessor)">getAccessors</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessorIds,
+            <a href="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;current)</code>
+<div class="block">Get a set of accessor frames given a list of names.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getItem(java.lang.String)">getItem</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<div class="block">Retieve (get) an instance of the 'entity' in the database</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#listItems()">listItems</a></strong>()</code>
+<div class="block">List all instances of the 'entity' accessible to the given user.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(eu.ehri.project.persistence.Bundle)">updateItem</a></strong>(<a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;entityBundle)</code>
+<div class="block">Update (change) an instance of the 'entity' in the database.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateItem</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+          <a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;rawBundle)</code>
+<div class="block">Update (change) an instance of the 'entity' in the database
  <p/>
  If the Patch header is true top-level bundle data will be merged
- instead of overwritten.</TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_eu.ehri.extension.AbstractRestResource"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class eu.ehri.extension.<A HREF="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="../../../eu/ehri/extension/AbstractRestResource.html#checkMediaType()">checkMediaType</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#cleanupTransaction()">cleanupTransaction</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#creationResponse(eu.ehri.project.models.base.Frame)">creationResponse</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getCacheControl(T)">getCacheControl</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getCurrentUser()">getCurrentUser</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getGraph()">getGraph</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getIntQueryParam(java.lang.String, int)">getIntQueryParam</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getItemUri(eu.ehri.project.models.base.Frame)">getItemUri</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getLogMessage()">getLogMessage</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getQuery(java.lang.Class)">getQuery</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getRepresentation(eu.ehri.project.models.base.Frame)">getRepresentation</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getRepresentation(com.tinkerpop.blueprints.Vertex)">getRepresentation</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getRequesterUserProfile()">getRequesterUserProfile</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getSerializer()">getSerializer</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#getStringListQueryParam(java.lang.String)">getStringListQueryParam</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#isPatch()">isPatch</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#isStreaming()">isStreaming</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#single(T)">single</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#single(com.tinkerpop.blueprints.Vertex)">single</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable)">streamingList</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable, eu.ehri.project.persistence.Serializer)">streamingList</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page)">streamingPage</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page, eu.ehri.project.persistence.Serializer)">streamingPage</A>, <A HREF="../../../eu/ehri/extension/AbstractRestResource.html#streamingVertexList(java.lang.Iterable, eu.ehri.project.persistence.Serializer)">streamingVertexList</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;
-<P>
-
+ instead of overwritten.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.extension.AbstractRestResource">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></h3>
+<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#checkMediaType()">checkMediaType</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#cleanupTransaction()">cleanupTransaction</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#creationResponse(eu.ehri.project.models.base.Frame)">creationResponse</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getCacheControl(T)">getCacheControl</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getCurrentUser()">getCurrentUser</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getGraph()">getGraph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getIntQueryParam(java.lang.String,%20int)">getIntQueryParam</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getItemUri(eu.ehri.project.models.base.Frame)">getItemUri</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getLogMessage()">getLogMessage</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getQuery(java.lang.Class)">getQuery</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getRepresentation(eu.ehri.project.models.base.Frame)">getRepresentation</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getRepresentation(com.tinkerpop.blueprints.Vertex)">getRepresentation</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getRequesterUserProfile()">getRequesterUserProfile</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getSerializer()">getSerializer</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getStringListQueryParam(java.lang.String)">getStringListQueryParam</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#isPatch()">isPatch</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#isStreaming()">isStreaming</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#single(T)">single</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#single(com.tinkerpop.blueprints.Vertex)">single</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable)">streamingList</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable,%20eu.ehri.project.persistence.Serializer)">streamingList</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page)">streamingPage</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page,%20eu.ehri.project.persistence.Serializer)">streamingPage</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingVertexList(java.lang.Iterable,%20eu.ehri.project.persistence.Serializer)">streamingVertexList</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
 <!-- ============ FIELD DETAIL =========== -->
-
-<A NAME="field_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Field Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="views"><!-- --></A><H3>
-views</H3>
-<PRE>
-protected final <A HREF="../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A> extends <A HREF="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; <B>views</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="aclManager"><!-- --></A><H3>
-aclManager</H3>
-<PRE>
-protected final <A HREF="../../../eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</A> <B>aclManager</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="actionManager"><!-- --></A><H3>
-actionManager</H3>
-<PRE>
-protected final <A HREF="../../../eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</A> <B>actionManager</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="aclViews"><!-- --></A><H3>
-aclViews</H3>
-<PRE>
-protected final <A HREF="../../../eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</A> <B>aclViews</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="querier"><!-- --></A><H3>
-querier</H3>
-<PRE>
-protected final <A HREF="../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A> extends <A HREF="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; <B>querier</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="cls"><!-- --></A><H3>
-cls</H3>
-<PRE>
-protected final <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A> extends <A HREF="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; <B>cls</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="helper"><!-- --></A><H3>
-helper</H3>
-<PRE>
-protected final <A HREF="../../../eu/ehri/project/views/ViewHelper.html" title="class in eu.ehri.project.views">ViewHelper</A> <B>helper</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="views">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>views</h4>
+<pre>protected final&nbsp;<a href="../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a> extends <a href="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt; views</pre>
+</li>
+</ul>
+<a name="aclManager">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aclManager</h4>
+<pre>protected final&nbsp;<a href="../../../eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</a> aclManager</pre>
+</li>
+</ul>
+<a name="actionManager">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>actionManager</h4>
+<pre>protected final&nbsp;<a href="../../../eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</a> actionManager</pre>
+</li>
+</ul>
+<a name="aclViews">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aclViews</h4>
+<pre>protected final&nbsp;<a href="../../../eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</a> aclViews</pre>
+</li>
+</ul>
+<a name="querier">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>querier</h4>
+<pre>protected final&nbsp;<a href="../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a> extends <a href="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt; querier</pre>
+</li>
+</ul>
+<a name="cls">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>cls</h4>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a> extends <a href="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt; cls</pre>
+</li>
+</ul>
+<a name="helper">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>helper</h4>
+<pre>protected final&nbsp;<a href="../../../eu/ehri/project/views/ViewHelper.html" title="class in eu.ehri.project.views">ViewHelper</a> helper</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-
-<A NAME="constructor_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Constructor Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="AbstractAccessibleEntityResource(org.neo4j.graphdb.GraphDatabaseService, java.lang.Class)"><!-- --></A><H3>
-AbstractAccessibleEntityResource</H3>
-<PRE>
-public <B>AbstractAccessibleEntityResource</B>(<FONT SIZE="-1">@Context</FONT>
-                                        org.neo4j.graphdb.GraphDatabaseService&nbsp;database,
-                                        <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A>&gt;&nbsp;cls)</PRE>
-<DL>
-<DD>Constructor
-<P>
-<DL>
-<DT><B>Parameters:</B><DD><CODE>database</CODE> - Injected neo4j database<DD><CODE>cls</CODE> - The 'entity' class</DL>
-</DL>
-
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AbstractAccessibleEntityResource(org.neo4j.graphdb.GraphDatabaseService, java.lang.Class)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AbstractAccessibleEntityResource</h4>
+<pre>public&nbsp;AbstractAccessibleEntityResource(@Context
+                                org.neo4j.graphdb.GraphDatabaseService&nbsp;database,
+                                <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a>&gt;&nbsp;cls)</pre>
+<div class="block">Constructor</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>database</code> - Injected neo4j database</dd><dd><code>cls</code> - The 'entity' class</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
-
-<A NAME="method_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Method Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="listItems()"><!-- --></A><H3>
-listItems</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>listItems</B>()
-                                    throws <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>List all instances of the 'entity' accessible to the given user.
-<P>
-<DD><DL>
-
-<DT><B>Returns:</B><DD>List of entities
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="countItems()"><!-- --></A><H3>
-countItems</H3>
-<PRE>
-public long <B>countItems</B>()
-                throws <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Count items accessible to a given user.
-<P>
-<DD><DL>
-
-<DT><B>Returns:</B><DD>Number of items.
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="createItem(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler, eu.ehri.project.views.impl.LoggingCrudViews)"><!-- --></A><H3>
-createItem</H3>
-<PRE>
-public &lt;T extends <A HREF="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</A>&gt; javax.ws.rs.core.Response <B>createItem</B>(<A HREF="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;entityBundle,
-                                                                         <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessorIds,
-                                                                         <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</A>&lt;T&gt;&nbsp;handler,
-                                                                         <A HREF="../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</A>&lt;T&gt;&nbsp;views)
-                                     throws <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A>,
-                                            <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Create an instance of the 'entity' in the database
-<P>
-<DD><DL>
-<DT><B>Type Parameters:</B><DD><CODE>T</CODE> - The generic type of class T<DT><B>Parameters:</B><DD><CODE>entityBundle</CODE> - A bundle of item data
-                     'id' fields)<DD><CODE>accessorIds</CODE> - List of accessors who can initially view this item<DD><CODE>handler</CODE> - A callback function that allows additional operations
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="listItems()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>listItems</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listItems()
+                                    throws <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">List all instances of the 'entity' accessible to the given user.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>List of entities</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="countItems()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>countItems</h4>
+<pre>public&nbsp;long&nbsp;countItems()
+                throws <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Count items accessible to a given user.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>Number of items.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="createItem(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler, eu.ehri.project.views.impl.LoggingCrudViews)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createItem</h4>
+<pre>public&nbsp;&lt;T extends <a href="../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;&nbsp;javax.ws.rs.core.Response&nbsp;createItem(<a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;entityBundle,
+                                                                <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessorIds,
+                                                                <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</a>&lt;T&gt;&nbsp;handler,
+                                                                <a href="../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</a>&lt;T&gt;&nbsp;views)
+                                     throws <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a>,
+                                            <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Create an instance of the 'entity' in the database</div>
+<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - The generic type of class T</dd><dt><span class="strong">Parameters:</span></dt><dd><code>entityBundle</code> - A bundle of item data
+                     'id' fields)</dd><dd><code>accessorIds</code> - List of accessors who can initially view this item</dd><dd><code>handler</code> - A callback function that allows additional operations
                      to be run on the created object after it is initialised
                      but before the response is generated. This is useful for adding
-                     relationships to the new item.<DD><CODE>views</CODE> - The view instance to use to create the item. This allows callers
-                     to override the scope and the class used.
-<DT><B>Returns:</B><DD>The response of the create request, the 'location' will contain
-         the url of the newly created instance.
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="createItem(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)"><!-- --></A><H3>
-createItem</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>createItem</B>(<A HREF="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;entityBundle,
-                                            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessorIds,
-                                            <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A>&gt;&nbsp;handler)
-                                     throws <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A>,
-                                            <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Create an instance of the 'entity' in the database
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>entityBundle</CODE> - A bundle of item data
-                     'id' fields)<DD><CODE>accessorIds</CODE> - List of accessors who can initially view this item<DD><CODE>handler</CODE> - A callback function that allows additional operations
+                     relationships to the new item.</dd><dd><code>views</code> - The view instance to use to create the item. This allows callers
+                     to override the scope and the class used.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The response of the create request, the 'location' will contain
+         the url of the newly created instance.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="createItem(eu.ehri.project.persistence.Bundle, java.util.List, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createItem</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;createItem(<a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;entityBundle,
+                                   <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessorIds,
+                                   <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a>&gt;&nbsp;handler)
+                                     throws <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a>,
+                                            <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Create an instance of the 'entity' in the database</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>entityBundle</code> - A bundle of item data
+                     'id' fields)</dd><dd><code>accessorIds</code> - List of accessors who can initially view this item</dd><dd><code>handler</code> - A callback function that allows additional operations
                      to be run on the created object after it is initialised
                      but before the response is generated. This is useful for adding
-                     relationships to the new item.
-<DT><B>Returns:</B><DD>The response of the create request, the 'location' will contain
-         the url of the newly created instance.
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="createItem(eu.ehri.project.persistence.Bundle, java.util.List)"><!-- --></A><H3>
-createItem</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>createItem</B>(<A HREF="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;entityBundle,
-                                            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessorIds)
-                                     throws <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A>,
-                                            <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD><DL>
-
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getItem(java.lang.String)"><!-- --></A><H3>
-getItem</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>getItem</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
-                                  throws <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                         <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                         <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Retieve (get) an instance of the 'entity' in the database
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>id</CODE> - The Entities identifier string
-<DT><B>Returns:</B><DD>The response of the request, which contains the json
-         representation
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="updateItem(eu.ehri.project.persistence.Bundle)"><!-- --></A><H3>
-updateItem</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>updateItem</B>(<A HREF="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;entityBundle)
-                                     throws <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A>,
-                                            <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></PRE>
-<DL>
-<DD>Update (change) an instance of the 'entity' in the database.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>entityBundle</CODE> - The bundle
-<DT><B>Returns:</B><DD>The response of the update request
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="updateItem(java.lang.String, eu.ehri.project.persistence.Bundle)"><!-- --></A><H3>
-updateItem</H3>
-<PRE>
-public javax.ws.rs.core.Response <B>updateItem</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-                                            <A HREF="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</A>&nbsp;rawBundle)
-                                     throws <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A>,
-                                            <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                            <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Update (change) an instance of the 'entity' in the database
+                     relationships to the new item.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The response of the create request, the 'location' will contain
+         the url of the newly created instance.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="createItem(eu.ehri.project.persistence.Bundle, java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createItem</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;createItem(<a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;entityBundle,
+                                   <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessorIds)
+                                     throws <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a>,
+                                            <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="getItem(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getItem</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;getItem(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+                                  throws <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a>,
+                                         <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                         <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Retieve (get) an instance of the 'entity' in the database</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The Entities identifier string</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The response of the request, which contains the json
+         representation</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="updateItem(eu.ehri.project.persistence.Bundle)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateItem</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;updateItem(<a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;entityBundle)
+                                     throws <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a>,
+                                            <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+<div class="block">Update (change) an instance of the 'entity' in the database.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>entityBundle</code> - The bundle</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The response of the update request</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="updateItem(java.lang.String, eu.ehri.project.persistence.Bundle)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>updateItem</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;updateItem(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+                                   <a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;rawBundle)
+                                     throws <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a>,
+                                            <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                            <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Update (change) an instance of the 'entity' in the database
  <p/>
  If the Patch header is true top-level bundle data will be merged
- instead of overwritten.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>id</CODE> - The items identifier property<DD><CODE>rawBundle</CODE> - The bundle
-<DT><B>Returns:</B><DD>The response of the update request
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="deleteItem(java.lang.String, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)"><!-- --></A><H3>
-deleteItem</H3>
-<PRE>
-protected javax.ws.rs.core.Response <B>deleteItem</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id,
-                                               <A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</A>&lt;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</A>&gt;&nbsp;preProcess)
-                                        throws <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                               <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                               <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                               <A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
-                                               <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Delete (remove) an instance of the 'entity' in the database,
- running a handler callback beforehand.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>id</CODE> - The vertex id<DD><CODE>preProcess</CODE> - A handler to run before deleting the item
-<DT><B>Returns:</B><DD>The response of the delete request
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="deleteItem(java.lang.String)"><!-- --></A><H3>
-deleteItem</H3>
-<PRE>
-protected javax.ws.rs.core.Response <B>deleteItem</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;id)
-                                        throws <A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A>,
-                                               <A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A>,
-                                               <A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A>,
-                                               <A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
-                                               <A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></PRE>
-<DL>
-<DD>Delete (remove) an instance of the 'entity' in the database
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>id</CODE> - The vertex id
-<DT><B>Returns:</B><DD>The response of the delete request
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
-<DD><CODE><A HREF="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="getAccessors(java.util.List, eu.ehri.project.models.base.Accessor)"><!-- --></A><H3>
-getAccessors</H3>
-<PRE>
-protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</A>&lt;<A HREF="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&gt; <B>getAccessors</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;accessorIds,
-                                     <A HREF="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</A>&nbsp;current)</PRE>
-<DL>
-<DD>Get a set of accessor frames given a list of names.
-<P>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>accessorIds</CODE> - a list of accessor IDs<DD><CODE>current</CODE> - the current accessor
-<DT><B>Returns:</B><DD>a set a accessors</DL>
-</DD>
-</DL>
+ instead of overwritten.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The items identifier property</dd><dd><code>rawBundle</code> - The bundle</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The response of the update request</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="deleteItem(java.lang.String, eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deleteItem</h4>
+<pre>protected&nbsp;javax.ws.rs.core.Response&nbsp;deleteItem(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+                                   <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</a>&lt;<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a>&gt;&nbsp;preProcess)
+                                        throws <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a>,
+                                               <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                               <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                               <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                               <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Delete (remove) an instance of the 'entity' in the database,
+ running a handler callback beforehand.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The vertex id</dd><dd><code>preProcess</code> - A handler to run before deleting the item</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The response of the delete request</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="deleteItem(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>deleteItem</h4>
+<pre>protected&nbsp;javax.ws.rs.core.Response&nbsp;deleteItem(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+                                        throws <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a>,
+                                               <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                               <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                               <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                               <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Delete (remove) an instance of the 'entity' in the database</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The vertex id</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The response of the delete request</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="getAccessors(java.util.List, eu.ehri.project.models.base.Accessor)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getAccessors</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;getAccessors(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessorIds,
+                         <a href="../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;current)</pre>
+<div class="block">Get a set of accessor frames given a list of names.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>accessorIds</code> - a list of accessor IDs</dd><dd><code>current</code> - the current accessor</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a set a accessors</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <!-- ========= END OF CLASS DATA ========= -->
-<HR>
-
-
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
-<A NAME="navbar_bottom"><!-- --></A>
-<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
-<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
-<TR>
-<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
-<A NAME="navbar_bottom_firstrow"><!-- --></A>
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
-  <TR ALIGN="center" VALIGN="top">
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/AbstractAccessibleEntityResource.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
-  </TR>
-</TABLE>
-</TD>
-<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
-</EM>
-</TD>
-</TR>
-
-<TR>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;PREV CLASS&nbsp;
-&nbsp;<A HREF="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension"><B>NEXT CLASS</B></A></FONT></TD>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../index.html?eu/ehri/extension/AbstractAccessibleEntityResource.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="AbstractAccessibleEntityResource.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
-&nbsp;<SCRIPT type="text/javascript">
-  <!--
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/AbstractAccessibleEntityResource.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../index-all.html">Index</a></li>
+<li><a href="../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li>Prev Class</li>
+<li><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../index.html?eu/ehri/extension/AbstractAccessibleEntityResource.html" target="_top">Frames</a></li>
+<li><a href="AbstractAccessibleEntityResource.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
   if(window==top) {
-    document.writeln('<A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>');
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
   }
   //-->
-</SCRIPT>
-<NOSCRIPT>
-  <A HREF="../../../allclasses-noframe.html"><B>All Classes</B></A>
-</NOSCRIPT>
-
-
-</FONT></TD>
-</TR>
-<TR>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
-</TR>
-</TABLE>
-<A NAME="skip-navbar_bottom"></A>
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-
-<HR>
-Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
-</BODY>
-</HTML>
+<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+</body>
+</html>

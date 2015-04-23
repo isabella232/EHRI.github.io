@@ -80,7 +80,7 @@
 <a class="jxr_linenumber" name="70" href="#70">70</a>  <em class="jxr_comment">//        int nodeCount = getNodeCount(graph);</em>
 <a class="jxr_linenumber" name="71" href="#71">71</a>  <em class="jxr_comment">//        ActionManager am = new ActionManager(graph);</em>
 <a class="jxr_linenumber" name="72" href="#72">72</a>  <em class="jxr_comment">//        logger.info("size : " + toList(validUser.getActions()).size());</em>
-<a class="jxr_linenumber" name="73" href="#73">73</a>  <em class="jxr_comment">//        ActionManager.EventContext ctx = am.logEvent(validUser,</em>
+<a class="jxr_linenumber" name="73" href="#73">73</a>  <em class="jxr_comment">//        ActionManager.EventContext ctx = am.newEventContext(validUser,</em>
 <a class="jxr_linenumber" name="74" href="#74">74</a>  <em class="jxr_comment">//                EventTypes.creation,</em>
 <a class="jxr_linenumber" name="75" href="#75">75</a>  <em class="jxr_comment">//                Optional.of("Doing something to lots of nodes"));</em>
 <a class="jxr_linenumber" name="76" href="#76">76</a>  <em class="jxr_comment">//        assertEquals(nodeCount + 2, getNodeCount(graph));</em>
@@ -148,11 +148,11 @@
 <a class="jxr_linenumber" name="138" href="#138">138</a> <em class="jxr_comment">//        Iterable&lt;Action&gt; actions = unit.getHistory();</em>
 <a class="jxr_linenumber" name="139" href="#139">139</a>         <em class="jxr_comment">// Check we've created 4 items</em>
 <a class="jxr_linenumber" name="140" href="#140">140</a>         assertEquals(5, log.getCreated());
-<a class="jxr_linenumber" name="141" href="#141">141</a>         assertTrue(log.getAction() instanceof SystemEvent);
-<a class="jxr_linenumber" name="142" href="#142">142</a>         assertEquals(logMessage, log.getAction().getLogMessage());
+<a class="jxr_linenumber" name="141" href="#141">141</a>         SystemEvent ev = actionManager.getLatestGlobalEvent();
+<a class="jxr_linenumber" name="142" href="#142">142</a>         assertEquals(logMessage, ev.getLogMessage());
 <a class="jxr_linenumber" name="143" href="#143">143</a> 
 <a class="jxr_linenumber" name="144" href="#144">144</a> 
-<a class="jxr_linenumber" name="145" href="#145">145</a>         List&lt;AccessibleEntity&gt; subjects = toList(log.getAction().getSubjects());
+<a class="jxr_linenumber" name="145" href="#145">145</a>         List&lt;AccessibleEntity&gt; subjects = toList(ev.getSubjects());
 <a class="jxr_linenumber" name="146" href="#146">146</a>         <strong class="jxr_keyword">for</strong>(AccessibleEntity subject  : subjects)
 <a class="jxr_linenumber" name="147" href="#147">147</a>             logger.info(<span class="jxr_string">"identifier: "</span> + subject.getId());
 <a class="jxr_linenumber" name="148" href="#148">148</a>         

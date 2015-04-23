@@ -1,532 +1,491 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!--NewPage-->
-<HTML>
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>
-AbstractImportManager (EHRI Backend 0.9.2-SNAPSHOT API)
-</TITLE>
-
-
-<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../stylesheet.css" TITLE="Style">
-
-<SCRIPT type="text/javascript">
-function windowTitle()
-{
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AbstractImportManager (EHRI Backend 0.9.3-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AbstractImportManager (EHRI Backend 0.9.2-SNAPSHOT API)";
+        parent.document.title="AbstractImportManager (EHRI Backend 0.9.3-SNAPSHOT API)";
     }
-}
-</SCRIPT>
-<NOSCRIPT>
-</NOSCRIPT>
-
-</HEAD>
-
-<BODY BGCOLOR="white" onload="windowTitle();">
-<HR>
-
-
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
 <!-- ========= START OF TOP NAVBAR ======= -->
-<A NAME="navbar_top"><!-- --></A>
-<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
-<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
-<TR>
-<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
-<A NAME="navbar_top_firstrow"><!-- --></A>
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
-  <TR ALIGN="center" VALIGN="top">
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/AbstractImportManager.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
-  </TR>
-</TABLE>
-</TD>
-<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
-</EM>
-</TD>
-</TR>
-
-<TR>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../eu/ehri/project/importers/AraEadImporter.html" title="class in eu.ehri.project.importers"><B>NEXT CLASS</B></A></FONT></TD>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?eu/ehri/project/importers/AbstractImportManager.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="AbstractImportManager.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
-&nbsp;<SCRIPT type="text/javascript">
-  <!--
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/AbstractImportManager.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../eu/ehri/project/importers/AraEadImporter.html" title="class in eu.ehri.project.importers"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?eu/ehri/project/importers/AbstractImportManager.html" target="_top">Frames</a></li>
+<li><a href="AbstractImportManager.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
   if(window==top) {
-    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
   }
   //-->
-</SCRIPT>
-<NOSCRIPT>
-  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
-</NOSCRIPT>
-
-
-</FONT></TD>
-</TR>
-<TR>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
-</TR>
-</TABLE>
-<A NAME="skip-navbar_top"></A>
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
 <!-- ========= END OF TOP NAVBAR ========= -->
-
-<HR>
 <!-- ======== START OF CLASS DATA ======== -->
-<H2>
-<FONT SIZE="-1">
-eu.ehri.project.importers</FONT>
-<BR>
-Class AbstractImportManager</H2>
-<PRE>
-<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</A>
-  <IMG SRC="../../../../resources/inherit.gif" ALT="extended by "><B>eu.ehri.project.importers.AbstractImportManager</B>
-</PRE>
-<DL>
-<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</A></DD>
-</DL>
-<DL>
-<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../eu/ehri/project/importers/CsvImportManager.html" title="class in eu.ehri.project.importers">CsvImportManager</A>, <A HREF="../../../../eu/ehri/project/importers/SaxImportManager.html" title="class in eu.ehri.project.importers">SaxImportManager</A></DD>
-</DL>
-<HR>
-<DL>
-<DT><PRE>public abstract class <B>AbstractImportManager</B><DT>extends <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A><DT>implements <A HREF="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</A></DL>
-</PRE>
-
-<P>
-Base ImportManager.
-<P>
-
-<P>
-<DL>
-<DT><B>Author:</B></DT>
-  <DD>Mike Bryant (https://github.com/mikesname)</DD>
-</DL>
-<HR>
-
-<P>
+<div class="header">
+<div class="subTitle">eu.ehri.project.importers</div>
+<h2 title="Class AbstractImportManager" class="title">Class AbstractImportManager</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li>eu.ehri.project.importers.AbstractImportManager</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</a></dd>
+</dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../eu/ehri/project/importers/CsvImportManager.html" title="class in eu.ehri.project.importers">CsvImportManager</a>, <a href="../../../../eu/ehri/project/importers/SaxImportManager.html" title="class in eu.ehri.project.importers">SaxImportManager</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public abstract class <span class="strong">AbstractImportManager</span>
+extends <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
+implements <a href="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</a></pre>
+<div class="block">Base ImportManager.</div>
+<dl><dt><span class="strong">Author:</span></dt>
+  <dd>Mike Bryant (https://github.com/mikesname)</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
 <!-- =========== FIELD SUMMARY =========== -->
-
-<A NAME="field_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Field Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#actioner">actioner</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#framedGraph">framedGraph</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#importerClass">importerClass</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected &nbsp;<A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#permissionScope">permissionScope</A></B></CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-</TABLE>
-&nbsp;
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#actioner">actioner</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected com.tinkerpop.frames.FramedGraph&lt;?&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#framedGraph">framedGraph</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#importerClass">importerClass</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#permissionScope">permissionScope</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
-
-<A NAME="constructor_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Constructor Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#AbstractImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class)">AbstractImportManager</A></B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
-                      <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
-                      <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
-                      <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
-</TR>
-</TABLE>
-&nbsp;
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#AbstractImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class)">AbstractImportManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+                     <a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope,
+                     <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
+                     <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&gt;&nbsp;importerClass)</code>
+<div class="block">Constructor.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
-
-<A NAME="method_summary"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
-<B>Method Summary</B></FONT></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>protected abstract &nbsp;void</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFile(java.io.InputStream, eu.ehri.project.persistence.ActionManager.EventContext, eu.ehri.project.importers.ImportLog)">importFile</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;ios,
-           <A HREF="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</A>&nbsp;eventContext,
-           <A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A>&nbsp;log)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import an InputStream with an event context.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFile(java.io.InputStream, java.lang.String)">importFile</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;ios,
-           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import a file, creating a new action with the given log message.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFile(java.lang.String, java.lang.String)">importFile</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;filePath,
-           <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import a Description file by specifying its path.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFiles(java.util.List, java.lang.String)">importFiles</A></B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;paths,
-            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Import multiple files in the same batch/transaction.</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;boolean</CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#isTolerant()">isTolerant</A></B>()</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
-<CODE>&nbsp;<A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html" title="class in eu.ehri.project.importers">AbstractImportManager</A></CODE></FONT></TD>
-<TD><CODE><B><A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html#setTolerant(boolean)">setTolerant</A></B>(boolean&nbsp;tolerant)</CODE>
-
-<BR>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tell the importer to simply skip invalid items rather than throwing an
- exception.</TD>
-</TR>
-</TABLE>
-&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
-<TH ALIGN="left"><B>Methods inherited from class java.lang.<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</A></B></TH>
-</TR>
-<TR BGCOLOR="white" CLASS="TableRowColor">
-<TD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</A>, <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</A></CODE></TD>
-</TR>
-</TABLE>
-&nbsp;
-<P>
-
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFile(java.io.InputStream,%20eu.ehri.project.persistence.ActionManager.EventContext,%20eu.ehri.project.importers.ImportLog)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
+          <a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;eventContext,
+          <a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
+<div class="block">Import an InputStream with an event context.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFile(java.io.InputStream,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
+          <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
+<div class="block">Import a file, creating a new action with the given log message.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFile(java.lang.String,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePath,
+          <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
+<div class="block">Import a Description file by specifying its path.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFiles(java.util.List,%20java.lang.String)">importFiles</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;paths,
+           <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
+<div class="block">Import multiple files in the same batch/transaction.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#isTolerant()">isTolerant</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html" title="class in eu.ehri.project.importers">AbstractImportManager</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#setTolerant(boolean)">setTolerant</a></strong>(boolean&nbsp;tolerant)</code>
+<div class="block">Tell the importer to simply skip invalid items rather than throwing an
+ exception.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
 <!-- ============ FIELD DETAIL =========== -->
-
-<A NAME="field_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Field Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="framedGraph"><!-- --></A><H3>
-framedGraph</H3>
-<PRE>
-protected final com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt; <B>framedGraph</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="permissionScope"><!-- --></A><H3>
-permissionScope</H3>
-<PRE>
-protected final <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A> <B>permissionScope</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="actioner"><!-- --></A><H3>
-actioner</H3>
-<PRE>
-protected final <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A> <B>actioner</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-<HR>
-
-<A NAME="importerClass"><!-- --></A><H3>
-importerClass</H3>
-<PRE>
-protected <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt; <B>importerClass</B></PRE>
-<DL>
-<DL>
-</DL>
-</DL>
-
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="framedGraph">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>framedGraph</h4>
+<pre>protected final&nbsp;com.tinkerpop.frames.FramedGraph&lt;?&gt; framedGraph</pre>
+</li>
+</ul>
+<a name="permissionScope">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>permissionScope</h4>
+<pre>protected final&nbsp;<a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a> permissionScope</pre>
+</li>
+</ul>
+<a name="actioner">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>actioner</h4>
+<pre>protected final&nbsp;<a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a> actioner</pre>
+</li>
+</ul>
+<a name="importerClass">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>importerClass</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&gt; importerClass</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
-
-<A NAME="constructor_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Constructor Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="AbstractImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class)"><!-- --></A><H3>
-AbstractImportManager</H3>
-<PRE>
-public <B>AbstractImportManager</B>(com.tinkerpop.frames.FramedGraph&lt;? extends com.tinkerpop.blueprints.TransactionalGraph&gt;&nbsp;graph,
-                             <A HREF="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</A>&nbsp;scope,
-                             <A HREF="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</A>&nbsp;actioner,
-                             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</A>&lt;? extends <A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</A>&gt;&nbsp;importerClass)</PRE>
-<DL>
-<DD>Constructor.
-<P>
-<DL>
-<DT><B>Parameters:</B><DD><CODE>graph</CODE> - the framed graph<DD><CODE>scope</CODE> - the permission scope<DD><CODE>actioner</CODE> - the actioner</DL>
-</DL>
-
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="AbstractImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>AbstractImportManager</h4>
+<pre>public&nbsp;AbstractImportManager(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+                     <a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope,
+                     <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
+                     <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&gt;&nbsp;importerClass)</pre>
+<div class="block">Constructor.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>graph</code> - the framed graph</dd><dd><code>scope</code> - the permission scope</dd><dd><code>actioner</code> - the actioner</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
-
-<A NAME="method_detail"><!-- --></A>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
-<B>Method Detail</B></FONT></TH>
-</TR>
-</TABLE>
-
-<A NAME="setTolerant(boolean)"><!-- --></A><H3>
-setTolerant</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/importers/AbstractImportManager.html" title="class in eu.ehri.project.importers">AbstractImportManager</A> <B>setTolerant</B>(boolean&nbsp;tolerant)</PRE>
-<DL>
-<DD>Tell the importer to simply skip invalid items rather than throwing an
- exception.
-<P>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>tolerant</CODE> - true means it won't validateData the xml file</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="isTolerant()"><!-- --></A><H3>
-isTolerant</H3>
-<PRE>
-public boolean <B>isTolerant</B>()</PRE>
-<DL>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="importFile(java.lang.String, java.lang.String)"><!-- --></A><H3>
-importFile</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A> <B>importFile</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;filePath,
-                            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage)
-                     throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
-                            <A HREF="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</A>,
-                            <A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></PRE>
-<DL>
-<DD>Import a Description file by specifying its path.
-<P>
-<DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/importers/ImportManager.html#importFile(java.lang.String, java.lang.String)">importFile</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</A></CODE></DL>
-</DD>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>filePath</CODE> - a path to a description XML file<DD><CODE>logMessage</CODE> - the log message
-<DT><B>Returns:</B><DD>an ImportLog for the given file
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
-<DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
-<DD><CODE><A HREF="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</A></CODE> - when parsing the file fails</DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="importFile(java.io.InputStream, java.lang.String)"><!-- --></A><H3>
-importFile</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A> <B>importFile</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;ios,
-                            <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage)
-                     throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
-                            <A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
-                            <A HREF="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</A></PRE>
-<DL>
-<DD>Import a file, creating a new action with the given log message.
-<P>
-<DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/importers/ImportManager.html#importFile(java.io.InputStream, java.lang.String)">importFile</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</A></CODE></DL>
-</DD>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>ios</CODE> - an input stream object<DD><CODE>logMessage</CODE> - the log message
-<DT><B>Returns:</B><DD>an ImportLog for the given InputStream
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
-<DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
-<DD><CODE><A HREF="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="importFiles(java.util.List, java.lang.String)"><!-- --></A><H3>
-importFiles</H3>
-<PRE>
-public <A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A> <B>importFiles</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</A>&lt;<A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&gt;&nbsp;paths,
-                             <A HREF="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</A>&nbsp;logMessage)
-                      throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
-                             <A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></PRE>
-<DL>
-<DD>Import multiple files in the same batch/transaction.
-<P>
-<DD><DL>
-<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../eu/ehri/project/importers/ImportManager.html#importFiles(java.util.List, java.lang.String)">importFiles</A></CODE> in interface <CODE><A HREF="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</A></CODE></DL>
-</DD>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>paths</CODE> - a list of file paths to description objects<DD><CODE>logMessage</CODE> - a log message
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
-<DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE></DL>
-</DD>
-</DL>
-<HR>
-
-<A NAME="importFile(java.io.InputStream, eu.ehri.project.persistence.ActionManager.EventContext, eu.ehri.project.importers.ImportLog)"><!-- --></A><H3>
-importFile</H3>
-<PRE>
-protected abstract void <B>importFile</B>(<A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</A>&nbsp;ios,
-                                   <A HREF="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</A>&nbsp;eventContext,
-                                   <A HREF="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</A>&nbsp;log)
-                            throws <A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A>,
-                                   <A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A>,
-                                   <A HREF="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</A>,
-                                   <A HREF="../../../../eu/ehri/project/importers/exceptions/InvalidXmlDocument.html" title="class in eu.ehri.project.importers.exceptions">InvalidXmlDocument</A>,
-                                   <A HREF="../../../../eu/ehri/project/importers/exceptions/InvalidInputFormatError.html" title="class in eu.ehri.project.importers.exceptions">InvalidInputFormatError</A></PRE>
-<DL>
-<DD>Import an InputStream with an event context.
-<P>
-<DD><DL>
-</DL>
-</DD>
-<DD><DL>
-<DT><B>Parameters:</B><DD><CODE>ios</CODE> - the InputStream to import<DD><CODE>eventContext</CODE> - the event that this import is part of<DD><CODE>log</CODE> - an import log to write to
-<DT><B>Throws:</B>
-<DD><CODE><A HREF="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</A></CODE>
-<DD><CODE><A HREF="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</A></CODE>
-<DD><CODE><A HREF="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</A></CODE>
-<DD><CODE><A HREF="../../../../eu/ehri/project/importers/exceptions/InvalidXmlDocument.html" title="class in eu.ehri.project.importers.exceptions">InvalidXmlDocument</A></CODE> - if an implementing subclass encounters invalid XML
-<DD><CODE><A HREF="../../../../eu/ehri/project/importers/exceptions/InvalidInputFormatError.html" title="class in eu.ehri.project.importers.exceptions">InvalidInputFormatError</A></CODE></DL>
-</DD>
-</DL>
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="setTolerant(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTolerant</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/importers/AbstractImportManager.html" title="class in eu.ehri.project.importers">AbstractImportManager</a>&nbsp;setTolerant(boolean&nbsp;tolerant)</pre>
+<div class="block">Tell the importer to simply skip invalid items rather than throwing an
+ exception.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>tolerant</code> - true means it won't validateData the xml file</dd></dl>
+</li>
+</ul>
+<a name="isTolerant()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isTolerant</h4>
+<pre>public&nbsp;boolean&nbsp;isTolerant()</pre>
+</li>
+</ul>
+<a name="importFile(java.lang.String, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>importFile</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;importFile(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePath,
+                   <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)
+                     throws <a href="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                            <a href="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</a>,
+                            <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
+<div class="block">Import a Description file by specifying its path.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../eu/ehri/project/importers/ImportManager.html#importFile(java.lang.String,%20java.lang.String)">importFile</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>filePath</code> - a path to a description XML file</dd><dd><code>logMessage</code> - the log message</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an ImportLog for the given file</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</a></code> - when parsing the file fails</dd></dl>
+</li>
+</ul>
+<a name="importFile(java.io.InputStream, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>importFile</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;importFile(<a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
+                   <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)
+                     throws <a href="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                            <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                            <a href="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</a></pre>
+<div class="block">Import a file, creating a new action with the given log message.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../eu/ehri/project/importers/ImportManager.html#importFile(java.io.InputStream,%20java.lang.String)">importFile</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>ios</code> - an input stream object</dd><dd><code>logMessage</code> - the log message</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an ImportLog for the given InputStream</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</a></code></dd></dl>
+</li>
+</ul>
+<a name="importFiles(java.util.List, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>importFiles</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;importFiles(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;paths,
+                    <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)
+                      throws <a href="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                             <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
+<div class="block">Import multiple files in the same batch/transaction.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../eu/ehri/project/importers/ImportManager.html#importFiles(java.util.List,%20java.lang.String)">importFiles</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>paths</code> - a list of file paths to description objects</dd><dd><code>logMessage</code> - a log message</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd></dl>
+</li>
+</ul>
+<a name="importFile(java.io.InputStream, eu.ehri.project.persistence.ActionManager.EventContext, eu.ehri.project.importers.ImportLog)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>importFile</h4>
+<pre>protected abstract&nbsp;void&nbsp;importFile(<a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
+              <a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;eventContext,
+              <a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)
+                            throws <a href="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                                   <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                   <a href="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</a>,
+                                   <a href="../../../../eu/ehri/project/importers/exceptions/InvalidXmlDocument.html" title="class in eu.ehri.project.importers.exceptions">InvalidXmlDocument</a>,
+                                   <a href="../../../../eu/ehri/project/importers/exceptions/InvalidInputFormatError.html" title="class in eu.ehri.project.importers.exceptions">InvalidInputFormatError</a></pre>
+<div class="block">Import an InputStream with an event context.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>ios</code> - the InputStream to import</dd><dd><code>eventContext</code> - the event that this import is part of</dd><dd><code>log</code> - an import log to write to</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</a></code></dd>
+<dd><code><a href="../../../../eu/ehri/project/importers/exceptions/InvalidXmlDocument.html" title="class in eu.ehri.project.importers.exceptions">InvalidXmlDocument</a></code> - if an implementing subclass encounters invalid XML</dd>
+<dd><code><a href="../../../../eu/ehri/project/importers/exceptions/InvalidInputFormatError.html" title="class in eu.ehri.project.importers.exceptions">InvalidInputFormatError</a></code></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <!-- ========= END OF CLASS DATA ========= -->
-<HR>
-
-
 <!-- ======= START OF BOTTOM NAVBAR ====== -->
-<A NAME="navbar_bottom"><!-- --></A>
-<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
-<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
-<TR>
-<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
-<A NAME="navbar_bottom_firstrow"><!-- --></A>
-<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
-  <TR ALIGN="center" VALIGN="top">
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/AbstractImportManager.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
-  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
-  </TR>
-</TABLE>
-</TD>
-<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
-</EM>
-</TD>
-</TR>
-
-<TR>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-&nbsp;<A HREF="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers"><B>PREV CLASS</B></A>&nbsp;
-&nbsp;<A HREF="../../../../eu/ehri/project/importers/AraEadImporter.html" title="class in eu.ehri.project.importers"><B>NEXT CLASS</B></A></FONT></TD>
-<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
-  <A HREF="../../../../index.html?eu/ehri/project/importers/AbstractImportManager.html" target="_top"><B>FRAMES</B></A>  &nbsp;
-&nbsp;<A HREF="AbstractImportManager.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
-&nbsp;<SCRIPT type="text/javascript">
-  <!--
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/AbstractImportManager.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../index-all.html">Index</a></li>
+<li><a href="../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../eu/ehri/project/importers/AraEadImporter.html" title="class in eu.ehri.project.importers"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../index.html?eu/ehri/project/importers/AbstractImportManager.html" target="_top">Frames</a></li>
+<li><a href="AbstractImportManager.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
   if(window==top) {
-    document.writeln('<A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
   }
   //-->
-</SCRIPT>
-<NOSCRIPT>
-  <A HREF="../../../../allclasses-noframe.html"><B>All Classes</B></A>
-</NOSCRIPT>
-
-
-</FONT></TD>
-</TR>
-<TR>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
-<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
-DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
-</TR>
-</TABLE>
-<A NAME="skip-navbar_bottom"></A>
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-
-<HR>
-Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.
-</BODY>
-</HTML>
+<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+</body>
+</html>

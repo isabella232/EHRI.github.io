@@ -63,7 +63,7 @@
 <a class="jxr_linenumber" name="53" href="#53">53</a>              fail(<span class="jxr_string">"Graph is not indexable: "</span> + graph.getBaseGraph());
 <a class="jxr_linenumber" name="54" href="#54">54</a>          }
 <a class="jxr_linenumber" name="55" href="#55">55</a>  
-<a class="jxr_linenumber" name="56" href="#56">56</a>      	<strong class="jxr_keyword">new</strong> GraphReindexer(graph).reindex();
+<a class="jxr_linenumber" name="56" href="#56">56</a>          GraphManagerFactory.getInstance(graph).rebuildIndex();
 <a class="jxr_linenumber" name="57" href="#57">57</a>      	
 <a class="jxr_linenumber" name="58" href="#58">58</a>      	<em class="jxr_comment">// If the counts are the same, it is likely that we have all nodes indexed</em>
 <a class="jxr_linenumber" name="59" href="#59">59</a>      	assertTrue(countTypes().equals(countBefore));

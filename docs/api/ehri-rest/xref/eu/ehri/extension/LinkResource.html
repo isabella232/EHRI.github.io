@@ -234,7 +234,7 @@
 <a class="jxr_linenumber" name="224" href="#224">224</a>                     getRequesterUserProfile(), PermissionType.ANNOTATE);
 <a class="jxr_linenumber" name="225" href="#225">225</a>             <a href="../../../eu/ehri/project/models/base/Actioner.html">Actioner</a> actioner = manager.<strong class="jxr_keyword">cast</strong>(getRequesterUserProfile(), Actioner.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="226" href="#226">226</a>             <a href="../../../eu/ehri/project/models/Link.html">Link</a> link = manager.getFrame(linkId, EntityClass.LINK, Link.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="227" href="#227">227</a>             actionManager.logEvent(link, actioner, EventTypes.deletion);
+<a class="jxr_linenumber" name="227" href="#227">227</a>             actionManager.newEventContext(link, actioner, EventTypes.deletion).commit();
 <a class="jxr_linenumber" name="228" href="#228">228</a>             manager.deleteVertex(link.asVertex());
 <a class="jxr_linenumber" name="229" href="#229">229</a>             graph.getBaseGraph().commit();
 <a class="jxr_linenumber" name="230" href="#230">230</a>             <strong class="jxr_keyword">return</strong> Response.ok().build();

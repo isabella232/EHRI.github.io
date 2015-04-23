@@ -114,61 +114,64 @@
 <a class="jxr_linenumber" name="104" href="#104">104</a>         link.addLinkTarget(t1);
 <a class="jxr_linenumber" name="105" href="#105">105</a>         link.addLinkTarget(t2);
 <a class="jxr_linenumber" name="106" href="#106">106</a>         link.setLinker(user);
-<a class="jxr_linenumber" name="107" href="#107">107</a>         ActionManager.EventContext eventContext = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(graph, t1).logEvent(
+<a class="jxr_linenumber" name="107" href="#107">107</a>         ActionManager.EventContext eventContext = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(graph, t1).newEventContext(
 <a class="jxr_linenumber" name="108" href="#108">108</a>                 graph.frame(user.asVertex(), Actioner.<strong class="jxr_keyword">class</strong>),
-<a class="jxr_linenumber" name="109" href="#109">109</a>                 EventTypes.link, Optional.&lt;String&gt;absent());
-<a class="jxr_linenumber" name="110" href="#110">110</a>         eventContext.addSubjects(link).addSubjects(t2);
-<a class="jxr_linenumber" name="111" href="#111">111</a>         <strong class="jxr_keyword">for</strong> (String body : bodies) {
-<a class="jxr_linenumber" name="112" href="#112">112</a>             <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html">AccessibleEntity</a> item = manager.getFrame(body, AccessibleEntity.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="113" href="#113">113</a>             link.addLinkBody(item);
-<a class="jxr_linenumber" name="114" href="#114">114</a>             eventContext.addSubjects(item);
-<a class="jxr_linenumber" name="115" href="#115">115</a>         }
-<a class="jxr_linenumber" name="116" href="#116">116</a>         <strong class="jxr_keyword">return</strong> link;
-<a class="jxr_linenumber" name="117" href="#117">117</a>     }
-<a class="jxr_linenumber" name="118" href="#118">118</a> 
-<a class="jxr_linenumber" name="119" href="#119">119</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="120" href="#120">120</a> <em class="jxr_javadoccomment">     * Create a link between two items, along with an access point on the given description.</em>
-<a class="jxr_linenumber" name="121" href="#121">121</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="122" href="#122">122</a> <em class="jxr_javadoccomment">     * @param targetId1       the identifier of a AccessibleEntity target of this Annotation</em>
-<a class="jxr_linenumber" name="123" href="#123">123</a> <em class="jxr_javadoccomment">     * @param targetId2 the identifier of a Annotator source of this Annotation</em>
-<a class="jxr_linenumber" name="124" href="#124">124</a> <em class="jxr_javadoccomment">     * @param bundle   the annotation itself</em>
-<a class="jxr_linenumber" name="125" href="#125">125</a> <em class="jxr_javadoccomment">     * @param user The current user</em>
-<a class="jxr_linenumber" name="126" href="#126">126</a> <em class="jxr_javadoccomment">     * @return A new link</em>
-<a class="jxr_linenumber" name="127" href="#127">127</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="128" href="#128">128</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
-<a class="jxr_linenumber" name="129" href="#129">129</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="130" href="#130">130</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="131" href="#131">131</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/models/Link.html">Link</a> createAccessPointLink(String targetId1, String targetId2, String descriptionId, String bodyName,
-<a class="jxr_linenumber" name="132" href="#132">132</a>             String bodyType, <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle, <a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user) <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError, PermissionDenied {
-<a class="jxr_linenumber" name="133" href="#133">133</a>         <a href="../../../../eu/ehri/project/models/base/LinkableEntity.html">LinkableEntity</a> t1 = manager.getFrame(targetId1, LinkableEntity.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="134" href="#134">134</a>         <a href="../../../../eu/ehri/project/models/base/LinkableEntity.html">LinkableEntity</a> t2 = manager.getFrame(targetId2, LinkableEntity.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="135" href="#135">135</a>         <a href="../../../../eu/ehri/project/models/base/Description.html">Description</a> description = manager.getFrame(descriptionId, Description.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="136" href="#136">136</a>         helper.checkEntityPermission(t1, user, PermissionType.ANNOTATE);
-<a class="jxr_linenumber" name="137" href="#137">137</a>         <em class="jxr_comment">// TODO: Should this require perms to link another item???</em>
-<a class="jxr_linenumber" name="138" href="#138">138</a>         <em class="jxr_comment">//helper.checkEntityPermission(t2, user, PermissionType.ANNOTATE);</em>
-<a class="jxr_linenumber" name="139" href="#139">139</a>         helper.checkEntityPermission(description.getEntity(), user, PermissionType.UPDATE);
-<a class="jxr_linenumber" name="140" href="#140">140</a>         <a href="../../../../eu/ehri/project/models/Link.html">Link</a> link = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a>(graph).create(bundle, Link.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="141" href="#141">141</a>         <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> relBundle = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.UNDETERMINED_RELATIONSHIP)
-<a class="jxr_linenumber" name="142" href="#142">142</a>                 .withDataValue(Ontology.NAME_KEY, bodyName)
-<a class="jxr_linenumber" name="143" href="#143">143</a>                 .withDataValue(Ontology.UNDETERMINED_RELATIONSHIP_TYPE, bodyType)
-<a class="jxr_linenumber" name="144" href="#144">144</a>                 .withDataValue(Ontology.LINK_HAS_DESCRIPTION, link.getDescription());
-<a class="jxr_linenumber" name="145" href="#145">145</a>         <a href="../../../../eu/ehri/project/models/UndeterminedRelationship.html">UndeterminedRelationship</a> rel = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a>(graph).create(relBundle, UndeterminedRelationship.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="146" href="#146">146</a>         description.addUndeterminedRelationship(rel);
-<a class="jxr_linenumber" name="147" href="#147">147</a>         link.addLinkTarget(t1);
-<a class="jxr_linenumber" name="148" href="#148">148</a>         link.addLinkTarget(t2);
-<a class="jxr_linenumber" name="149" href="#149">149</a>         link.setLinker(user);
-<a class="jxr_linenumber" name="150" href="#150">150</a>         link.addLinkBody(rel);
-<a class="jxr_linenumber" name="151" href="#151">151</a>         ActionManager.EventContext eventContext = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(graph).logEvent(
-<a class="jxr_linenumber" name="152" href="#152">152</a>                 t1, graph.frame(user.asVertex(), Actioner.<strong class="jxr_keyword">class</strong>), EventTypes.link);
-<a class="jxr_linenumber" name="153" href="#153">153</a>         eventContext.addSubjects(link).addSubjects(t2).addSubjects(rel);
-<a class="jxr_linenumber" name="154" href="#154">154</a>         <strong class="jxr_keyword">return</strong> link;
-<a class="jxr_linenumber" name="155" href="#155">155</a>     }
-<a class="jxr_linenumber" name="156" href="#156">156</a> 
-<a class="jxr_linenumber" name="157" href="#157">157</a>     @Override
-<a class="jxr_linenumber" name="158" href="#158">158</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/views/LinkViews.html">LinkViews</a> withScope(<a href="../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope) {
-<a class="jxr_linenumber" name="159" href="#159">159</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/views/LinkViews.html">LinkViews</a>(graph, scope);
-<a class="jxr_linenumber" name="160" href="#160">160</a>     }
-<a class="jxr_linenumber" name="161" href="#161">161</a> }
+<a class="jxr_linenumber" name="109" href="#109">109</a>                 EventTypes.link, Optional.&lt;String&gt;absent())
+<a class="jxr_linenumber" name="110" href="#110">110</a>                 .addSubjects(link)
+<a class="jxr_linenumber" name="111" href="#111">111</a>                 .addSubjects(t2);
+<a class="jxr_linenumber" name="112" href="#112">112</a>         <strong class="jxr_keyword">for</strong> (String body : bodies) {
+<a class="jxr_linenumber" name="113" href="#113">113</a>             <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html">AccessibleEntity</a> item = manager.getFrame(body, AccessibleEntity.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="114" href="#114">114</a>             link.addLinkBody(item);
+<a class="jxr_linenumber" name="115" href="#115">115</a>             eventContext.addSubjects(item);
+<a class="jxr_linenumber" name="116" href="#116">116</a>         }
+<a class="jxr_linenumber" name="117" href="#117">117</a>         eventContext.commit();
+<a class="jxr_linenumber" name="118" href="#118">118</a>         <strong class="jxr_keyword">return</strong> link;
+<a class="jxr_linenumber" name="119" href="#119">119</a>     }
+<a class="jxr_linenumber" name="120" href="#120">120</a> 
+<a class="jxr_linenumber" name="121" href="#121">121</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="122" href="#122">122</a> <em class="jxr_javadoccomment">     * Create a link between two items, along with an access point on the given description.</em>
+<a class="jxr_linenumber" name="123" href="#123">123</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="124" href="#124">124</a> <em class="jxr_javadoccomment">     * @param targetId1       the identifier of a AccessibleEntity target of this Annotation</em>
+<a class="jxr_linenumber" name="125" href="#125">125</a> <em class="jxr_javadoccomment">     * @param targetId2 the identifier of a Annotator source of this Annotation</em>
+<a class="jxr_linenumber" name="126" href="#126">126</a> <em class="jxr_javadoccomment">     * @param bundle   the annotation itself</em>
+<a class="jxr_linenumber" name="127" href="#127">127</a> <em class="jxr_javadoccomment">     * @param user The current user</em>
+<a class="jxr_linenumber" name="128" href="#128">128</a> <em class="jxr_javadoccomment">     * @return A new link</em>
+<a class="jxr_linenumber" name="129" href="#129">129</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="130" href="#130">130</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
+<a class="jxr_linenumber" name="131" href="#131">131</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="132" href="#132">132</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="133" href="#133">133</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/models/Link.html">Link</a> createAccessPointLink(String targetId1, String targetId2, String descriptionId, String bodyName,
+<a class="jxr_linenumber" name="134" href="#134">134</a>             String bodyType, <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle, <a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user) <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError, PermissionDenied {
+<a class="jxr_linenumber" name="135" href="#135">135</a>         <a href="../../../../eu/ehri/project/models/base/LinkableEntity.html">LinkableEntity</a> t1 = manager.getFrame(targetId1, LinkableEntity.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="136" href="#136">136</a>         <a href="../../../../eu/ehri/project/models/base/LinkableEntity.html">LinkableEntity</a> t2 = manager.getFrame(targetId2, LinkableEntity.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="137" href="#137">137</a>         <a href="../../../../eu/ehri/project/models/base/Description.html">Description</a> description = manager.getFrame(descriptionId, Description.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="138" href="#138">138</a>         helper.checkEntityPermission(t1, user, PermissionType.ANNOTATE);
+<a class="jxr_linenumber" name="139" href="#139">139</a>         <em class="jxr_comment">// TODO: Should this require perms to link another item???</em>
+<a class="jxr_linenumber" name="140" href="#140">140</a>         <em class="jxr_comment">//helper.checkEntityPermission(t2, user, PermissionType.ANNOTATE);</em>
+<a class="jxr_linenumber" name="141" href="#141">141</a>         helper.checkEntityPermission(description.getEntity(), user, PermissionType.UPDATE);
+<a class="jxr_linenumber" name="142" href="#142">142</a>         <a href="../../../../eu/ehri/project/models/Link.html">Link</a> link = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a>(graph).create(bundle, Link.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="143" href="#143">143</a>         <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> relBundle = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.UNDETERMINED_RELATIONSHIP)
+<a class="jxr_linenumber" name="144" href="#144">144</a>                 .withDataValue(Ontology.NAME_KEY, bodyName)
+<a class="jxr_linenumber" name="145" href="#145">145</a>                 .withDataValue(Ontology.UNDETERMINED_RELATIONSHIP_TYPE, bodyType)
+<a class="jxr_linenumber" name="146" href="#146">146</a>                 .withDataValue(Ontology.LINK_HAS_DESCRIPTION, link.getDescription());
+<a class="jxr_linenumber" name="147" href="#147">147</a>         <a href="../../../../eu/ehri/project/models/UndeterminedRelationship.html">UndeterminedRelationship</a> rel = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a>(graph).create(relBundle, UndeterminedRelationship.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="148" href="#148">148</a>         description.addUndeterminedRelationship(rel);
+<a class="jxr_linenumber" name="149" href="#149">149</a>         link.addLinkTarget(t1);
+<a class="jxr_linenumber" name="150" href="#150">150</a>         link.addLinkTarget(t2);
+<a class="jxr_linenumber" name="151" href="#151">151</a>         link.setLinker(user);
+<a class="jxr_linenumber" name="152" href="#152">152</a>         link.addLinkBody(rel);
+<a class="jxr_linenumber" name="153" href="#153">153</a>         ActionManager.EventContext eventContext = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(graph).newEventContext(
+<a class="jxr_linenumber" name="154" href="#154">154</a>                 t1, graph.frame(user.asVertex(), Actioner.<strong class="jxr_keyword">class</strong>), EventTypes.link);
+<a class="jxr_linenumber" name="155" href="#155">155</a>         eventContext.addSubjects(link).addSubjects(t2).addSubjects(rel);
+<a class="jxr_linenumber" name="156" href="#156">156</a>         eventContext.commit();
+<a class="jxr_linenumber" name="157" href="#157">157</a>         <strong class="jxr_keyword">return</strong> link;
+<a class="jxr_linenumber" name="158" href="#158">158</a>     }
+<a class="jxr_linenumber" name="159" href="#159">159</a> 
+<a class="jxr_linenumber" name="160" href="#160">160</a>     @Override
+<a class="jxr_linenumber" name="161" href="#161">161</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/views/LinkViews.html">LinkViews</a> withScope(<a href="../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope) {
+<a class="jxr_linenumber" name="162" href="#162">162</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/views/LinkViews.html">LinkViews</a>(graph, scope);
+<a class="jxr_linenumber" name="163" href="#163">163</a>     }
+<a class="jxr_linenumber" name="164" href="#164">164</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>
