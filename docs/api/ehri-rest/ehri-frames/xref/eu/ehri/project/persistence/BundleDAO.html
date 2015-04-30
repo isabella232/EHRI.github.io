@@ -100,7 +100,7 @@
 <a class="jxr_linenumber" name="90" href="#90">90</a>              <strong class="jxr_keyword">throws</strong> ValidationError, <a href="../../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a> {
 <a class="jxr_linenumber" name="91" href="#91">91</a>          <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundleWithIds = validator.validateForUpdate(bundle);
 <a class="jxr_linenumber" name="92" href="#92">92</a>          Mutation&lt;Vertex&gt; mutation = updateInner(bundleWithIds);
-<a class="jxr_linenumber" name="93" href="#93">93</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;T&gt;(graph.frame(mutation.getNode(), cls),
+<a class="jxr_linenumber" name="93" href="#93">93</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(graph.frame(mutation.getNode(), cls),
 <a class="jxr_linenumber" name="94" href="#94">94</a>                  mutation.getState(), mutation.getPrior());
 <a class="jxr_linenumber" name="95" href="#95">95</a>      }
 <a class="jxr_linenumber" name="96" href="#96">96</a>  
@@ -130,7 +130,7 @@
 <a class="jxr_linenumber" name="120" href="#120">120</a>             <strong class="jxr_keyword">throws</strong> <a href="../../../../eu/ehri/project/exceptions/ValidationError.html">ValidationError</a> {
 <a class="jxr_linenumber" name="121" href="#121">121</a>         <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundleWithIds = validator.validateForUpdate(bundle);
 <a class="jxr_linenumber" name="122" href="#122">122</a>         Mutation&lt;Vertex&gt; vertexMutation = createOrUpdateInner(bundleWithIds);
-<a class="jxr_linenumber" name="123" href="#123">123</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;T&gt;(graph.frame(vertexMutation.getNode(), cls), vertexMutation.getState(),
+<a class="jxr_linenumber" name="123" href="#123">123</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(graph.frame(vertexMutation.getNode(), cls), vertexMutation.getState(),
 <a class="jxr_linenumber" name="124" href="#124">124</a>                 vertexMutation.getPrior());
 <a class="jxr_linenumber" name="125" href="#125">125</a>     }
 <a class="jxr_linenumber" name="126" href="#126">126</a> 
@@ -172,7 +172,7 @@
 <a class="jxr_linenumber" name="162" href="#162">162</a>             <strong class="jxr_keyword">if</strong> (manager.exists(bundle.getId())) {
 <a class="jxr_linenumber" name="163" href="#163">163</a>                 <strong class="jxr_keyword">return</strong> updateInner(bundle);
 <a class="jxr_linenumber" name="164" href="#164">164</a>             } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="165" href="#165">165</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;Vertex&gt;(createInner(bundle), MutationState.CREATED);
+<a class="jxr_linenumber" name="165" href="#165">165</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(createInner(bundle), MutationState.CREATED);
 <a class="jxr_linenumber" name="166" href="#166">166</a>             }
 <a class="jxr_linenumber" name="167" href="#167">167</a>         } <strong class="jxr_keyword">catch</strong> (ItemNotFound e) {
 <a class="jxr_linenumber" name="168" href="#168">168</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(
@@ -218,10 +218,10 @@
 <a class="jxr_linenumber" name="208" href="#208">208</a>                 node = manager.updateVertex(bundle.getId(), bundle.getType(),
 <a class="jxr_linenumber" name="209" href="#209">209</a>                         bundle.getData(), bundle.getPropertyKeys());
 <a class="jxr_linenumber" name="210" href="#210">210</a>                 updateDependents(node, bundle.getBundleClass(), bundle.getRelations());
-<a class="jxr_linenumber" name="211" href="#211">211</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;Vertex&gt;(node, MutationState.UPDATED, nodeBundle);
+<a class="jxr_linenumber" name="211" href="#211">211</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(node, MutationState.UPDATED, nodeBundle);
 <a class="jxr_linenumber" name="212" href="#212">212</a>             } <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="213" href="#213">213</a>                 logger.debug(<span class="jxr_string">"Not updating equivalent bundle {}"</span>, bundle.getId());
-<a class="jxr_linenumber" name="214" href="#214">214</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;Vertex&gt;(node, MutationState.UNCHANGED);
+<a class="jxr_linenumber" name="214" href="#214">214</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(node, MutationState.UNCHANGED);
 <a class="jxr_linenumber" name="215" href="#215">215</a>             }
 <a class="jxr_linenumber" name="216" href="#216">216</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
 <a class="jxr_linenumber" name="217" href="#217">217</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Unexpected serialization error "</span> +
@@ -305,7 +305,7 @@
 <a class="jxr_linenumber" name="295" href="#295">295</a>     }
 <a class="jxr_linenumber" name="296" href="#296">296</a> 
 <a class="jxr_linenumber" name="297" href="#297">297</a>     <strong class="jxr_keyword">private</strong> Set&lt;String&gt; getUpdateSet(Multimap&lt;String, Bundle&gt; relations) {
-<a class="jxr_linenumber" name="298" href="#298">298</a>         Set&lt;String&gt; updating = <strong class="jxr_keyword">new</strong> HashSet&lt;String&gt;();
+<a class="jxr_linenumber" name="298" href="#298">298</a>         Set&lt;String&gt; updating = <strong class="jxr_keyword">new</strong> HashSet&lt;&gt;();
 <a class="jxr_linenumber" name="299" href="#299">299</a>         <strong class="jxr_keyword">for</strong> (String relation : relations.keySet()) {
 <a class="jxr_linenumber" name="300" href="#300">300</a>             <strong class="jxr_keyword">for</strong> (Bundle child : relations.get(relation)) {
 <a class="jxr_linenumber" name="301" href="#301">301</a>                 updating.add(child.getId());

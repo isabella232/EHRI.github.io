@@ -43,22 +43,22 @@
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.UserProfile;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessor;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
-<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.views.Crud;
-<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.views.ViewFactory;
-<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> org.codehaus.jackson.type.TypeReference;
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.GraphDatabaseService;
-<a class="jxr_linenumber" name="40" href="#40">40</a>  
-<a class="jxr_linenumber" name="41" href="#41">41</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.Consumes;
-<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.GET;
-<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.POST;
-<a class="jxr_linenumber" name="44" href="#44">44</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.Path;
-<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.Produces;
-<a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.QueryParam;
-<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.WebApplicationException;
-<a class="jxr_linenumber" name="48" href="#48">48</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.core.Context;
-<a class="jxr_linenumber" name="49" href="#49">49</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.core.MediaType;
-<a class="jxr_linenumber" name="50" href="#50">50</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.core.Response;
-<a class="jxr_linenumber" name="51" href="#51">51</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.core.Response.Status;
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.Tx;
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.views.Crud;
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.views.ViewFactory;
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> org.codehaus.jackson.type.TypeReference;
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.GraphDatabaseService;
+<a class="jxr_linenumber" name="41" href="#41">41</a>  
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.Consumes;
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.GET;
+<a class="jxr_linenumber" name="44" href="#44">44</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.POST;
+<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.Path;
+<a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.Produces;
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.QueryParam;
+<a class="jxr_linenumber" name="48" href="#48">48</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.WebApplicationException;
+<a class="jxr_linenumber" name="49" href="#49">49</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.core.Context;
+<a class="jxr_linenumber" name="50" href="#50">50</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.core.MediaType;
+<a class="jxr_linenumber" name="51" href="#51">51</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.core.Response;
 <a class="jxr_linenumber" name="52" href="#52">52</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.core.StreamingOutput;
 <a class="jxr_linenumber" name="53" href="#53">53</a>  <strong class="jxr_keyword">import</strong> java.io.IOException;
 <a class="jxr_linenumber" name="54" href="#54">54</a>  <strong class="jxr_keyword">import</strong> java.io.OutputStream;
@@ -96,49 +96,49 @@
 <a class="jxr_linenumber" name="86" href="#86">86</a>          <strong class="jxr_keyword">return</strong> Response.ok(<strong class="jxr_keyword">new</strong> StreamingOutput() {
 <a class="jxr_linenumber" name="87" href="#87">87</a>              @Override
 <a class="jxr_linenumber" name="88" href="#88">88</a>              <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> write(OutputStream stream) <strong class="jxr_keyword">throws</strong> IOException, WebApplicationException {
-<a class="jxr_linenumber" name="89" href="#89">89</a>                  GraphSONWriter.outputGraph(graph, stream, GraphSONMode.EXTENDED);
-<a class="jxr_linenumber" name="90" href="#90">90</a>              }
-<a class="jxr_linenumber" name="91" href="#91">91</a>          }).build();
-<a class="jxr_linenumber" name="92" href="#92">92</a>      }
-<a class="jxr_linenumber" name="93" href="#93">93</a>  
-<a class="jxr_linenumber" name="94" href="#94">94</a>      <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="95" href="#95">95</a>  <em class="jxr_javadoccomment">     * Re-build the graph's internal lucene index.</em>
-<a class="jxr_linenumber" name="96" href="#96">96</a>  <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
-<a class="jxr_linenumber" name="97" href="#97">97</a>  <em class="jxr_javadoccomment">     * NB: This takes a lot of memory for large graphs. Do</em>
-<a class="jxr_linenumber" name="98" href="#98">98</a>  <em class="jxr_javadoccomment">     * not use willy-nilly and increase the heap size as</em>
-<a class="jxr_linenumber" name="99" href="#99">99</a>  <em class="jxr_javadoccomment">     * necessary. TODO: Add incremental buffered commit.</em>
-<a class="jxr_linenumber" name="100" href="#100">100</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="101" href="#101">101</a> <em class="jxr_javadoccomment">     * @throws java.lang.Exception</em>
-<a class="jxr_linenumber" name="102" href="#102">102</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="103" href="#103">103</a>     @POST
-<a class="jxr_linenumber" name="104" href="#104">104</a>     @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="105" href="#105">105</a>     @Path(<span class="jxr_string">"/_reindexInternal"</span>)
-<a class="jxr_linenumber" name="106" href="#106">106</a>     <strong class="jxr_keyword">public</strong> Response reindexInternal() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="107" href="#107">107</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="108" href="#108">108</a>             manager.rebuildIndex();
-<a class="jxr_linenumber" name="109" href="#109">109</a>             graph.getBaseGraph().commit();
-<a class="jxr_linenumber" name="110" href="#110">110</a>             <strong class="jxr_keyword">return</strong> Response.ok().build();
-<a class="jxr_linenumber" name="111" href="#111">111</a>         } <strong class="jxr_keyword">finally</strong> {
-<a class="jxr_linenumber" name="112" href="#112">112</a>             cleanupTransaction();
-<a class="jxr_linenumber" name="113" href="#113">113</a>         }
-<a class="jxr_linenumber" name="114" href="#114">114</a>     }
-<a class="jxr_linenumber" name="115" href="#115">115</a> 
-<a class="jxr_linenumber" name="116" href="#116">116</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="117" href="#117">117</a> <em class="jxr_javadoccomment">     * Create a new user with a default name and identifier.</em>
-<a class="jxr_linenumber" name="118" href="#118">118</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="119" href="#119">119</a> <em class="jxr_javadoccomment">     * @param jsonData Additional key/value data for the created object</em>
-<a class="jxr_linenumber" name="120" href="#120">120</a> <em class="jxr_javadoccomment">     * @param groups   IDs for groups to which the user should belong</em>
-<a class="jxr_linenumber" name="121" href="#121">121</a> <em class="jxr_javadoccomment">     * @return A new user</em>
-<a class="jxr_linenumber" name="122" href="#122">122</a> <em class="jxr_javadoccomment">     * @throws Exception</em>
-<a class="jxr_linenumber" name="123" href="#123">123</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="124" href="#124">124</a>     @POST
-<a class="jxr_linenumber" name="125" href="#125">125</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="126" href="#126">126</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="127" href="#127">127</a>     @Path(<span class="jxr_string">"/createDefaultUserProfile"</span>)
-<a class="jxr_linenumber" name="128" href="#128">128</a>     <strong class="jxr_keyword">public</strong> Response createDefaultUserProfile(String jsonData,
-<a class="jxr_linenumber" name="129" href="#129">129</a>                                              @QueryParam(GROUP_PARAM) List&lt;String&gt; groups) <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="130" href="#130">130</a>         graph.getBaseGraph().checkNotInTransaction();
-<a class="jxr_linenumber" name="131" href="#131">131</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="89" href="#89">89</a>                  <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="90" href="#90">90</a>                      GraphSONWriter.outputGraph(graph, stream, GraphSONMode.EXTENDED);
+<a class="jxr_linenumber" name="91" href="#91">91</a>                      tx.success();
+<a class="jxr_linenumber" name="92" href="#92">92</a>                  }
+<a class="jxr_linenumber" name="93" href="#93">93</a>              }
+<a class="jxr_linenumber" name="94" href="#94">94</a>          }).build();
+<a class="jxr_linenumber" name="95" href="#95">95</a>      }
+<a class="jxr_linenumber" name="96" href="#96">96</a>  
+<a class="jxr_linenumber" name="97" href="#97">97</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="98" href="#98">98</a>  <em class="jxr_javadoccomment">     * Re-build the graph's internal lucene index.</em>
+<a class="jxr_linenumber" name="99" href="#99">99</a>  <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="100" href="#100">100</a> <em class="jxr_javadoccomment">     * NB: This takes a lot of memory for large graphs. Do</em>
+<a class="jxr_linenumber" name="101" href="#101">101</a> <em class="jxr_javadoccomment">     * not use willy-nilly and increase the heap size as</em>
+<a class="jxr_linenumber" name="102" href="#102">102</a> <em class="jxr_javadoccomment">     * necessary. TODO: Add incremental buffered commit.</em>
+<a class="jxr_linenumber" name="103" href="#103">103</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="104" href="#104">104</a> <em class="jxr_javadoccomment">     * @throws java.lang.Exception</em>
+<a class="jxr_linenumber" name="105" href="#105">105</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="106" href="#106">106</a>     @POST
+<a class="jxr_linenumber" name="107" href="#107">107</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="108" href="#108">108</a>     @Path(<span class="jxr_string">"/_reindexInternal"</span>)
+<a class="jxr_linenumber" name="109" href="#109">109</a>     <strong class="jxr_keyword">public</strong> Response reindexInternal() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="110" href="#110">110</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="111" href="#111">111</a>             manager.rebuildIndex();
+<a class="jxr_linenumber" name="112" href="#112">112</a>             tx.success();
+<a class="jxr_linenumber" name="113" href="#113">113</a>             <strong class="jxr_keyword">return</strong> Response.ok().build();
+<a class="jxr_linenumber" name="114" href="#114">114</a>         }
+<a class="jxr_linenumber" name="115" href="#115">115</a>     }
+<a class="jxr_linenumber" name="116" href="#116">116</a> 
+<a class="jxr_linenumber" name="117" href="#117">117</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="118" href="#118">118</a> <em class="jxr_javadoccomment">     * Create a new user with a default name and identifier.</em>
+<a class="jxr_linenumber" name="119" href="#119">119</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="120" href="#120">120</a> <em class="jxr_javadoccomment">     * @param jsonData Additional key/value data for the created object</em>
+<a class="jxr_linenumber" name="121" href="#121">121</a> <em class="jxr_javadoccomment">     * @param groups   IDs for groups to which the user should belong</em>
+<a class="jxr_linenumber" name="122" href="#122">122</a> <em class="jxr_javadoccomment">     * @return A new user</em>
+<a class="jxr_linenumber" name="123" href="#123">123</a> <em class="jxr_javadoccomment">     * @throws Exception</em>
+<a class="jxr_linenumber" name="124" href="#124">124</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="125" href="#125">125</a>     @POST
+<a class="jxr_linenumber" name="126" href="#126">126</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="127" href="#127">127</a>     @Consumes(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="128" href="#128">128</a>     @Path(<span class="jxr_string">"/createDefaultUserProfile"</span>)
+<a class="jxr_linenumber" name="129" href="#129">129</a>     <strong class="jxr_keyword">public</strong> Response createDefaultUserProfile(String jsonData,
+<a class="jxr_linenumber" name="130" href="#130">130</a>             @QueryParam(GROUP_PARAM) List&lt;String&gt; groups) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="131" href="#131">131</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
 <a class="jxr_linenumber" name="132" href="#132">132</a>             String ident = getNextDefaultUserId();
 <a class="jxr_linenumber" name="133" href="#133">133</a>             Bundle bundle = Bundle.Builder.withClass(EntityClass.USER_PROFILE)
 <a class="jxr_linenumber" name="134" href="#134">134</a>                     .addDataValue(Ontology.IDENTIFIER_KEY, ident)
@@ -161,39 +161,35 @@
 <a class="jxr_linenumber" name="151" href="#151">151</a>             <em class="jxr_comment">// Grant them owner permissions on their own account.</em>
 <a class="jxr_linenumber" name="152" href="#152">152</a>             <strong class="jxr_keyword">new</strong> AclManager(graph).grantPermission(user, PermissionType.OWNER, user
 <a class="jxr_linenumber" name="153" href="#153">153</a>             );
-<a class="jxr_linenumber" name="154" href="#154">154</a>             graph.getBaseGraph().commit();
-<a class="jxr_linenumber" name="155" href="#155">155</a>             <strong class="jxr_keyword">return</strong> creationResponse(user);
-<a class="jxr_linenumber" name="156" href="#156">156</a>         } <strong class="jxr_keyword">finally</strong> {
-<a class="jxr_linenumber" name="157" href="#157">157</a>             cleanupTransaction();
-<a class="jxr_linenumber" name="158" href="#158">158</a>         }
-<a class="jxr_linenumber" name="159" href="#159">159</a>     }
-<a class="jxr_linenumber" name="160" href="#160">160</a> 
-<a class="jxr_linenumber" name="161" href="#161">161</a>     <em class="jxr_comment">// Helpers...</em>
-<a class="jxr_linenumber" name="162" href="#162">162</a> 
-<a class="jxr_linenumber" name="163" href="#163">163</a>     <strong class="jxr_keyword">private</strong> String getNextDefaultUserId() {
-<a class="jxr_linenumber" name="164" href="#164">164</a>         CloseableIterable&lt;Vertex&gt; query = manager.getVertices(EntityClass.USER_PROFILE);
-<a class="jxr_linenumber" name="165" href="#165">165</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="166" href="#166">166</a>             <strong class="jxr_keyword">long</strong> start = Iterables.size(query) + 1;
-<a class="jxr_linenumber" name="167" href="#167">167</a>             <strong class="jxr_keyword">while</strong> (manager.exists(String.format(DEFAULT_USER_ID_FORMAT,
-<a class="jxr_linenumber" name="168" href="#168">168</a>                     DEFAULT_USER_ID_PREFIX, start))) start++;
-<a class="jxr_linenumber" name="169" href="#169">169</a>             <strong class="jxr_keyword">return</strong> String.format(DEFAULT_USER_ID_FORMAT, DEFAULT_USER_ID_PREFIX, start);
-<a class="jxr_linenumber" name="170" href="#170">170</a>         } <strong class="jxr_keyword">finally</strong> {
-<a class="jxr_linenumber" name="171" href="#171">171</a>             query.close();
-<a class="jxr_linenumber" name="172" href="#172">172</a>         }
-<a class="jxr_linenumber" name="173" href="#173">173</a>     }
-<a class="jxr_linenumber" name="174" href="#174">174</a> 
-<a class="jxr_linenumber" name="175" href="#175">175</a>     <strong class="jxr_keyword">private</strong> Map&lt;String, Object&gt; parseUserData(String json) <strong class="jxr_keyword">throws</strong> IOException {
-<a class="jxr_linenumber" name="176" href="#176">176</a>         <strong class="jxr_keyword">if</strong> (json == <strong class="jxr_keyword">null</strong> || json.trim().equals(<span class="jxr_string">""</span>)) {
-<a class="jxr_linenumber" name="177" href="#177">177</a>             <strong class="jxr_keyword">return</strong> Maps.newHashMap();
-<a class="jxr_linenumber" name="178" href="#178">178</a>         } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="179" href="#179">179</a>             TypeReference&lt;HashMap&lt;String, Object&gt;&gt; typeRef = <strong class="jxr_keyword">new</strong> TypeReference&lt;
-<a class="jxr_linenumber" name="180" href="#180">180</a>                     HashMap&lt;String, Object&gt;
-<a class="jxr_linenumber" name="181" href="#181">181</a>                     &gt;() {
-<a class="jxr_linenumber" name="182" href="#182">182</a>             };
-<a class="jxr_linenumber" name="183" href="#183">183</a>             <strong class="jxr_keyword">return</strong> jsonMapper.readValue(json, typeRef);
-<a class="jxr_linenumber" name="184" href="#184">184</a>         }
-<a class="jxr_linenumber" name="185" href="#185">185</a>     }
-<a class="jxr_linenumber" name="186" href="#186">186</a> }
+<a class="jxr_linenumber" name="154" href="#154">154</a>             Response response = creationResponse(user);
+<a class="jxr_linenumber" name="155" href="#155">155</a>             tx.success();
+<a class="jxr_linenumber" name="156" href="#156">156</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="157" href="#157">157</a>         }
+<a class="jxr_linenumber" name="158" href="#158">158</a>     }
+<a class="jxr_linenumber" name="159" href="#159">159</a> 
+<a class="jxr_linenumber" name="160" href="#160">160</a>     <em class="jxr_comment">// Helpers...</em>
+<a class="jxr_linenumber" name="161" href="#161">161</a> 
+<a class="jxr_linenumber" name="162" href="#162">162</a>     <strong class="jxr_keyword">private</strong> String getNextDefaultUserId() {
+<a class="jxr_linenumber" name="163" href="#163">163</a>         <strong class="jxr_keyword">try</strong> (CloseableIterable&lt;Vertex&gt; query = manager.getVertices(EntityClass.USER_PROFILE)) {
+<a class="jxr_linenumber" name="164" href="#164">164</a>             <strong class="jxr_keyword">long</strong> start = Iterables.size(query) + 1;
+<a class="jxr_linenumber" name="165" href="#165">165</a>             <strong class="jxr_keyword">while</strong> (manager.exists(String.format(DEFAULT_USER_ID_FORMAT,
+<a class="jxr_linenumber" name="166" href="#166">166</a>                     DEFAULT_USER_ID_PREFIX, start))) start++;
+<a class="jxr_linenumber" name="167" href="#167">167</a>             <strong class="jxr_keyword">return</strong> String.format(DEFAULT_USER_ID_FORMAT, DEFAULT_USER_ID_PREFIX, start);
+<a class="jxr_linenumber" name="168" href="#168">168</a>         }
+<a class="jxr_linenumber" name="169" href="#169">169</a>     }
+<a class="jxr_linenumber" name="170" href="#170">170</a> 
+<a class="jxr_linenumber" name="171" href="#171">171</a>     <strong class="jxr_keyword">private</strong> Map&lt;String, Object&gt; parseUserData(String json) <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="172" href="#172">172</a>         <strong class="jxr_keyword">if</strong> (json == <strong class="jxr_keyword">null</strong> || json.trim().equals(<span class="jxr_string">""</span>)) {
+<a class="jxr_linenumber" name="173" href="#173">173</a>             <strong class="jxr_keyword">return</strong> Maps.newHashMap();
+<a class="jxr_linenumber" name="174" href="#174">174</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="175" href="#175">175</a>             TypeReference&lt;HashMap&lt;String, Object&gt;&gt; typeRef = <strong class="jxr_keyword">new</strong> TypeReference&lt;
+<a class="jxr_linenumber" name="176" href="#176">176</a>                     HashMap&lt;String, Object&gt;
+<a class="jxr_linenumber" name="177" href="#177">177</a>                     &gt;() {
+<a class="jxr_linenumber" name="178" href="#178">178</a>             };
+<a class="jxr_linenumber" name="179" href="#179">179</a>             <strong class="jxr_keyword">return</strong> jsonMapper.readValue(json, typeRef);
+<a class="jxr_linenumber" name="180" href="#180">180</a>         }
+<a class="jxr_linenumber" name="181" href="#181">181</a>     }
+<a class="jxr_linenumber" name="182" href="#182">182</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

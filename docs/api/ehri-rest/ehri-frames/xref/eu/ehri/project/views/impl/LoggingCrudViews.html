@@ -75,7 +75,7 @@
 <a class="jxr_linenumber" name="65" href="#65">65</a>          <strong class="jxr_keyword">this</strong>.cls = cls;
 <a class="jxr_linenumber" name="66" href="#66">66</a>          <strong class="jxr_keyword">this</strong>.scope = scope;
 <a class="jxr_linenumber" name="67" href="#67">67</a>          actionManager = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(graph, scope);
-<a class="jxr_linenumber" name="68" href="#68">68</a>          views = <strong class="jxr_keyword">new</strong> CrudViews&lt;E&gt;(graph, cls, scope);
+<a class="jxr_linenumber" name="68" href="#68">68</a>          views = <strong class="jxr_keyword">new</strong> CrudViews&lt;&gt;(graph, cls, scope);
 <a class="jxr_linenumber" name="69" href="#69">69</a>      }
 <a class="jxr_linenumber" name="70" href="#70">70</a>  
 <a class="jxr_linenumber" name="71" href="#71">71</a>      <em class="jxr_javadoccomment">/**</em>
@@ -272,7 +272,7 @@
 <a class="jxr_linenumber" name="262" href="#262">262</a> <em class="jxr_javadoccomment">     * @return A new view</em>
 <a class="jxr_linenumber" name="263" href="#263">263</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="264" href="#264">264</a>     <strong class="jxr_keyword">public</strong> LoggingCrudViews&lt;E&gt; setScope(<a href="../../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope) {
-<a class="jxr_linenumber" name="265" href="#265">265</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> LoggingCrudViews&lt;E&gt;(graph, cls,
+<a class="jxr_linenumber" name="265" href="#265">265</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> LoggingCrudViews&lt;&gt;(graph, cls,
 <a class="jxr_linenumber" name="266" href="#266">266</a>                 Optional.fromNullable(scope).or(SystemScope.INSTANCE));
 <a class="jxr_linenumber" name="267" href="#267">267</a>     }
 <a class="jxr_linenumber" name="268" href="#268">268</a> 
@@ -284,7 +284,7 @@
 <a class="jxr_linenumber" name="274" href="#274">274</a> <em class="jxr_javadoccomment">     * @return A new view object</em>
 <a class="jxr_linenumber" name="275" href="#275">275</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="276" href="#276">276</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> AccessibleEntity&gt; LoggingCrudViews&lt;T&gt; setClass(Class&lt;T&gt; cls) {
-<a class="jxr_linenumber" name="277" href="#277">277</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> LoggingCrudViews&lt;T&gt;(graph, cls, scope);
+<a class="jxr_linenumber" name="277" href="#277">277</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> LoggingCrudViews&lt;&gt;(graph, cls, scope);
 <a class="jxr_linenumber" name="278" href="#278">278</a>     }
 <a class="jxr_linenumber" name="279" href="#279">279</a> }
 </pre>

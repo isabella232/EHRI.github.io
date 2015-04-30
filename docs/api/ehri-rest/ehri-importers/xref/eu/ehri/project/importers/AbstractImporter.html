@@ -31,26 +31,26 @@
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.base.Joiner;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Iterables;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManager;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManagerFactory;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.NodeProperties;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.MaintenanceEvent;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.AccessibleEntity;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.PermissionScope;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.BundleDAO;
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Mutation;
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
-<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
-<a class="jxr_linenumber" name="37" href="#37">37</a>  
-<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> java.io.BufferedReader;
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> java.io.IOException;
-<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
-<a class="jxr_linenumber" name="41" href="#41">41</a>  <strong class="jxr_keyword">import</strong> java.io.InputStreamReader;
-<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> java.nio.charset.Charset;
-<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> java.util.LinkedList;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManager;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManagerFactory;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.NodeProperties;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.MaintenanceEvent;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.AccessibleEntity;
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.PermissionScope;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.BundleDAO;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Mutation;
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
+<a class="jxr_linenumber" name="38" href="#38">38</a>  
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> java.io.BufferedReader;
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> java.io.IOException;
+<a class="jxr_linenumber" name="41" href="#41">41</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> java.io.InputStreamReader;
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> java.nio.charset.Charset;
 <a class="jxr_linenumber" name="44" href="#44">44</a>  <strong class="jxr_keyword">import</strong> java.util.List;
 <a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
 <a class="jxr_linenumber" name="46" href="#46">46</a>  
@@ -73,7 +73,7 @@
 <a class="jxr_linenumber" name="63" href="#63">63</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> FramedGraph&lt;?&gt; framedGraph;
 <a class="jxr_linenumber" name="64" href="#64">64</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> GraphManager manager;
 <a class="jxr_linenumber" name="65" href="#65">65</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log;
-<a class="jxr_linenumber" name="66" href="#66">66</a>      <strong class="jxr_keyword">protected</strong> List&lt;ImportCallback&gt; callbacks = <strong class="jxr_keyword">new</strong> LinkedList&lt;ImportCallback&gt;();
+<a class="jxr_linenumber" name="66" href="#66">66</a>      <strong class="jxr_keyword">protected</strong> List&lt;ImportCallback&gt; callbacks = Lists.newLinkedList();
 <a class="jxr_linenumber" name="67" href="#67">67</a>  
 <a class="jxr_linenumber" name="68" href="#68">68</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../eu/ehri/project/importers/properties/NodeProperties.html">NodeProperties</a> pc;
 <a class="jxr_linenumber" name="69" href="#69">69</a>  

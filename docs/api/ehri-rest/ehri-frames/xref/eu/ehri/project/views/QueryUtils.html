@@ -63,7 +63,7 @@
 <a class="jxr_linenumber" name="53" href="#53">53</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">static</strong> SortedMap&lt;String, Pair&lt;Query.FilterPredicate, String&gt;&gt; parseFilters(
 <a class="jxr_linenumber" name="55" href="#55">55</a>              Iterable&lt;String&gt; filterList) {
-<a class="jxr_linenumber" name="56" href="#56">56</a>          ImmutableSortedMap.Builder&lt;String, Pair&lt;Query.FilterPredicate, String&gt;&gt; builder = <strong class="jxr_keyword">new</strong> ImmutableSortedMap.Builder&lt;String, Pair&lt;Query.FilterPredicate, String&gt;&gt;(
+<a class="jxr_linenumber" name="56" href="#56">56</a>          ImmutableSortedMap.Builder&lt;String, Pair&lt;Query.FilterPredicate, String&gt;&gt; builder = <strong class="jxr_keyword">new</strong> ImmutableSortedMap.Builder&lt;&gt;(
 <a class="jxr_linenumber" name="57" href="#57">57</a>                  Ordering.natural());
 <a class="jxr_linenumber" name="58" href="#58">58</a>          Splitter psplit = Splitter.on(<span class="jxr_string">"__"</span>);
 <a class="jxr_linenumber" name="59" href="#59">59</a>          Splitter vsplit = Splitter.on(<span class="jxr_string">":"</span>);
@@ -74,10 +74,10 @@
 <a class="jxr_linenumber" name="64" href="#64">64</a>                  String value = kv.get(1);
 <a class="jxr_linenumber" name="65" href="#65">65</a>                  List&lt;String&gt; pp = Iterables.toList(psplit.split(ppred));
 <a class="jxr_linenumber" name="66" href="#66">66</a>                  <strong class="jxr_keyword">if</strong> (pp.size() == 1) {
-<a class="jxr_linenumber" name="67" href="#67">67</a>                      builder.put(pp.get(0), <strong class="jxr_keyword">new</strong> Pair&lt;Query.FilterPredicate, String&gt;(
+<a class="jxr_linenumber" name="67" href="#67">67</a>                      builder.put(pp.get(0), <strong class="jxr_keyword">new</strong> Pair&lt;&gt;(
 <a class="jxr_linenumber" name="68" href="#68">68</a>                              Query.FilterPredicate.EQUALS, value));
 <a class="jxr_linenumber" name="69" href="#69">69</a>                  } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (pp.size() &gt; 1) {
-<a class="jxr_linenumber" name="70" href="#70">70</a>                      builder.put(pp.get(0), <strong class="jxr_keyword">new</strong> Pair&lt;Query.FilterPredicate, String&gt;(
+<a class="jxr_linenumber" name="70" href="#70">70</a>                      builder.put(pp.get(0), <strong class="jxr_keyword">new</strong> Pair&lt;&gt;(
 <a class="jxr_linenumber" name="71" href="#71">71</a>                              Query.FilterPredicate.valueOf(pp.get(1)), value));
 <a class="jxr_linenumber" name="72" href="#72">72</a>                  }
 <a class="jxr_linenumber" name="73" href="#73">73</a>              }
@@ -92,7 +92,7 @@
 <a class="jxr_linenumber" name="82" href="#82">82</a>  <em class="jxr_javadoccomment">     * @return A map of order specs</em>
 <a class="jxr_linenumber" name="83" href="#83">83</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="84" href="#84">84</a>      <strong class="jxr_keyword">static</strong> SortedMap&lt;String, Query.Sort&gt; parseOrderSpecs(Iterable&lt;String&gt; orderSpecs) {
-<a class="jxr_linenumber" name="85" href="#85">85</a>          ImmutableSortedMap.Builder&lt;String, Query.Sort&gt; builder = <strong class="jxr_keyword">new</strong> ImmutableSortedMap.Builder&lt;String, Query.Sort&gt;(
+<a class="jxr_linenumber" name="85" href="#85">85</a>          ImmutableSortedMap.Builder&lt;String, Query.Sort&gt; builder = <strong class="jxr_keyword">new</strong> ImmutableSortedMap.Builder&lt;&gt;(
 <a class="jxr_linenumber" name="86" href="#86">86</a>                  Ordering.natural());
 <a class="jxr_linenumber" name="87" href="#87">87</a>          Splitter psplit = Splitter.on(<span class="jxr_string">"__"</span>);
 <a class="jxr_linenumber" name="88" href="#88">88</a>          <strong class="jxr_keyword">for</strong> (String spec : orderSpecs) {
@@ -173,9 +173,9 @@
 <a class="jxr_linenumber" name="163" href="#163">163</a>                 <strong class="jxr_keyword">return</strong> Optional.absent();
 <a class="jxr_linenumber" name="164" href="#164">164</a>             }
 <a class="jxr_linenumber" name="165" href="#165">165</a>             <strong class="jxr_keyword">if</strong> (dir.equals(<span class="jxr_string">"-&gt;"</span>)) {
-<a class="jxr_linenumber" name="166" href="#166">166</a>                 traversals.add(<strong class="jxr_keyword">new</strong> Pair&lt;String,Direction&gt;(rel, Direction.OUT));
+<a class="jxr_linenumber" name="166" href="#166">166</a>                 traversals.add(<strong class="jxr_keyword">new</strong> Pair&lt;&gt;(rel, Direction.OUT));
 <a class="jxr_linenumber" name="167" href="#167">167</a>             } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="168" href="#168">168</a>                 traversals.add(<strong class="jxr_keyword">new</strong> Pair&lt;String,Direction&gt;(rel, Direction.IN));
+<a class="jxr_linenumber" name="168" href="#168">168</a>                 traversals.add(<strong class="jxr_keyword">new</strong> Pair&lt;&gt;(rel, Direction.IN));
 <a class="jxr_linenumber" name="169" href="#169">169</a>             }
 <a class="jxr_linenumber" name="170" href="#170">170</a>         }
 <a class="jxr_linenumber" name="171" href="#171">171</a>         <strong class="jxr_keyword">return</strong> Optional.of(<strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/views/QueryUtils.html">TraversalPath</a>(property, traversals));

@@ -1496,6 +1496,10 @@
 <![CDATA[(TODO: Might be better to use a different way of encoding the local file paths...)]]>
         </wadl:doc>
         <wadl:request>
+          <wadl:doc>
+            <![CDATA[A stream of CSV data]]>
+<![CDATA[There is no property file for this. Either the csv-heading is already in graph-compatible wording, or the Importer takes care of this.]]>
+          </wadl:doc>
           <wadl:representation mediaType="*/*"/>
           <wadl:representation mediaType="application/xml"/>
           <wadl:param name="scope" style="query">
@@ -1537,14 +1541,14 @@
 <![CDATA[<code>curl -X POST \]]>
 <![CDATA[-H "Authorization: mike" \]]>
 <![CDATA[--data-binary @ead-list.txt \]]>
-<![CDATA["http://localhost:7474/ehri/import/ead?scope=my-repo-id&log=testing&tolerant=true"]]>
+<![CDATA["http://localhost:7474/ehri/import/ead?s]]>
+<![CDATA[cope=my-repo-id&log=testing&tolerant=true"]]>
 <![CDATA[# NB: Data is sent using --data-binary to preserve line-breaks - otherwise]]>
 <![CDATA[# it needs url encoding.]]>
 <![CDATA[</code>]]>
 <![CDATA[</pre>]]>
 <![CDATA[<p/>]]>
-<![CDATA[(Assuming <tt>ead-list.txt</tt> is a]]>
-<![CDATA[list of newline separated EAD file paths.)]]>
+<![CDATA[(Assuming <tt>ead-list.txt</tt> is a list of newline separated EAD file paths.)]]>
 <![CDATA[<p/>]]>
 <![CDATA[(TODO: Might be better to use a different way of encoding the local file paths...)]]>
         </wadl:doc>
@@ -1608,8 +1612,7 @@
 <![CDATA[<p/>]]>
 <![CDATA[<pre>]]>
 <![CDATA[<code>curl -X POST \]]>
-<![CDATA[-H "Authori]]>
-<![CDATA[zation: mike" \]]>
+<![CDATA[-H "Authorization: mike" \]]>
 <![CDATA[--data-binary @ead-file.xml \]]>
 <![CDATA["http://localhost:7474/ehri/import/single_ead?scope=my-repo-id&log=testing&tolerant=true"]]>
 <![CDATA[# NB: Data is sent using --data-binary to preserve line-breaks - otherwise]]>
@@ -1670,8 +1673,7 @@
     <wadl:resource path="/import/skos">
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Import a SKOS file, of varying formats, as specified by the &]]>
-<![CDATA[quot;language&quot;]]>
+          <![CDATA[Import a SKOS file, of varying formats, as specified by the &quot;language&quot;]]>
 <![CDATA[column of the file extensions table <a href="https://jena.apache.org/documentation/io/">here</a>.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Example:]]>
@@ -1789,7 +1791,8 @@
     <wadl:resource path="/permission/{userId}">
       <wadl:param name="userId" style="template">
         <wadl:doc>
-          <![CDATA[The user ID]]>
+          <![CDATA[The]]>
+<![CDATA[user ID]]>
         </wadl:doc>
       </wadl:param>
       <wadl:method name="GET">
@@ -1855,7 +1858,8 @@
     <wadl:resource path="/repository/count">
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Count the number of available resources.]]>
+          <![CDATA[Count the number of available re]]>
+<![CDATA[sources.]]>
         </wadl:doc>
         <wadl:response>
           <wadl:doc>
@@ -2051,8 +2055,7 @@
         <wadl:doc>
           <![CDATA[Find an replace a property value across an entire entity class, e.g.]]>
 <![CDATA[if a DocumentaryUnit has a property with name &quot;foo&quot; and value &quot;bar&quot;,]]>
-<![CDATA[change the value to]]>
-<![CDATA[&quot;baz&quot; on all items.]]>
+<![CDATA[change the value to &quot;baz&quot; on all items.]]>
 <![CDATA[<p/>]]>
 <![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
         </wadl:doc>
@@ -2168,11 +2171,11 @@
 <![CDATA[<p/>]]>
 <![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
 <![CDATA[header in the form:]]>
-<![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
+<![CDATA[<pre><code>page=1; c]]>
+<![CDATA[ount=20; total=50</code></pre>]]>
 <![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
-<![CDATA[numbers of items or w]]>
-<![CDATA[hen limiting is disabled completely.]]>
+<![CDATA[numbers of items or when limiting is disabled completely.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Example:]]>
 <![CDATA[<pre>]]>
@@ -2234,7 +2237,8 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A response with 200 representing a successful deletion.]]>
+            <![CDATA[A response with 200 representi]]>
+<![CDATA[ng a successful deletion.]]>
           </wadl:doc>
           <wadl:representation mediaType="*/*"/>
           <wadl:representation mediaType="application/xml"/>
@@ -2364,8 +2368,7 @@
     <wadl:resource path="/annotation/{id}/{did}">
       <wadl:param name="id" style="template">
         <wadl:doc>
-          <![CDATA[The ID of the i]]>
-<![CDATA[tem being annotation]]>
+          <![CDATA[The ID of the item being annotation]]>
         </wadl:doc>
       </wadl:param>
       <wadl:param name="did" style="template">
@@ -2420,15 +2423,15 @@
         <wadl:request>
           <wadl:param name="all" style="query">
             <wadl:doc>
-              <![CDATA[Whether to count all child items, or just those at the]]>
+              <![CDATA[Whether to count all child]]>
+<![CDATA[items, or just those at the]]>
 <![CDATA[immediate sub-level.]]>
             </wadl:doc>
           </wadl:param>
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[The total number of applicable item]]>
-<![CDATA[s]]>
+            <![CDATA[The total number of applicable items]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -2620,8 +2623,7 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A serialized representation of the created reso]]>
-<![CDATA[urce.]]>
+            <![CDATA[A serialized representation of the created resource.]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -2684,8 +2686,7 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[The to]]>
-<![CDATA[tal number of applicable items]]>
+            <![CDATA[The total number of applicable items]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -2982,7 +2983,8 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A list of permission grants for the user]]>
+            <![CDATA[A list of permis]]>
+<![CDATA[sion grants for the user]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -3356,7 +3358,8 @@
           </wadl:param>
           <wadl:param name="tolerant" style="query">
             <wadl:doc>
-              <![CDATA[skip items that could cause collisions rather]]>
+              <![CDATA[skip items that could cause collisions ra]]>
+<![CDATA[ther]]>
 <![CDATA[then throwing an error]]>
             </wadl:doc>
           </wadl:param>
@@ -3809,7 +3812,8 @@
       <wadl:method name="DELETE">
         <wadl:doc>
           <![CDATA[Delete a link. If the optional ?accessPoint=[ID] parameter is also given]]>
-<![CDATA[the access point associated with the link will also be deleted.]]>
+<![CDATA[the access p]]>
+<![CDATA[oint associated with the link will also be deleted.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -3873,7 +3877,8 @@
       <wadl:method name="POST">
         <wadl:doc>
           <![CDATA[Create concepts and links derived from the access points]]>
-<![CDATA[on a repository's documentary units.]]>
+<![CDATA[on a]]>
+<![CDATA[repository's documentary units.]]>
         </wadl:doc>
         <wadl:request>
           <wadl:param name="apt" style="query">

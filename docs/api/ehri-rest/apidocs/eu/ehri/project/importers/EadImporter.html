@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>EadImporter (EHRI Backend 0.9.3-SNAPSHOT API)</title>
+<title>EadImporter (EHRI Backend 0.10.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="EadImporter (EHRI Backend 0.9.3-SNAPSHOT API)";
+        parent.document.title="EadImporter (EHRI Backend 0.10.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -83,10 +83,10 @@
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
 <li>
 <ul class="inheritance">
-<li><a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">eu.ehri.project.importers.AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</li>
+<li><a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">eu.ehri.project.importers.AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</li>
 <li>
 <ul class="inheritance">
 <li><a href="../../../../eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">eu.ehri.project.importers.MapImporter</a></li>
@@ -120,7 +120,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
  procedure. An EAD a single entity at the highest level of description or multiple top-level entities, with or without
  a hierarchical structure describing their child items. This means that we need to recursively descend through the
  archdesc and c,c01-12 levels.
-
+ <p/>
  TODO: Extensive cleanups, optimisation, and rationalisation.</div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>Linda Reijnhoudt (https://github.com/lindareijnhoudt)</dd></dl>
@@ -143,7 +143,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#ACCESS_POINT">ACCESS_POINT</a></strong></code>&nbsp;</td>
 </tr>
 </table>
@@ -182,7 +182,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#EadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
+<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#EadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
            <a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
            <a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
 <div class="block">Construct an EadImporter object.</div>
@@ -204,66 +204,62 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#extractDocumentaryUnit(java.util.Map)">extractDocumentaryUnit</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)</code>
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#extractDocumentaryUnit(java.util.Map)">extractDocumentaryUnit</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)</code>
 <div class="block">Creates a Map containing properties of a Documentary Unit.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#extractDocumentaryUnit(java.util.Map,%20int)">extractDocumentaryUnit</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#extractDocumentaryUnit(java.util.Map,%20int)">extractDocumentaryUnit</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
                       int&nbsp;depth)</code>
 <div class="block">Creates a Map containing properties of a Documentary Unit.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#extractDocumentDescription(java.util.Map,%20int)">extractDocumentDescription</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#extractDocumentDescription(java.util.Map,%20int)">extractDocumentDescription</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
                           int&nbsp;depth)</code>
 <div class="block">Creates a Map containing properties of a Documentary Unit description.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#extractRelations(java.util.Map)">extractRelations</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;data)</code>
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#extractRelations(java.util.Map)">extractRelations</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;data)</code>
 <div class="block">Extract node representations for related nodes based on the 'relation' property in the supplied data Map.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#importAsVirtualCollection()">importAsVirtualCollection</a></strong>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#importItem(java.util.Map)">importItem</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)</code>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#importItem(java.util.Map)">importItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)</code>
 <div class="block">Import an item representation into the graph, and return the Node.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base">AbstractUnit</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#importItem(java.util.Map,%20java.util.List)">importItem</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
-          <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#importItem(java.util.Map,%20java.util.List)">importItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
 <div class="block">Import a single archdesc or c01-12 item, keeping a reference to the hierarchical depth.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
                         <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle,
-                        <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
+                        <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
 <div class="block">Finds any bundle in the graph with the same ObjectIdentifier.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit,%20eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</a></strong>(<a href="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a>&nbsp;unit,
                               <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle)</code>
 <div class="block">subclasses can override this method to cater to their special needs for UndeterminedRelationships
  by default, it expects something like this in the original EAD:
-
+ <p/>
  <persname source="terezin-victims" authfilenumber="PERSON.ITI.1514982">Kien,
-                   Leonhard (* 11.5.1886)</persname>
-
+ Leonhard (* 11.5.1886)</persname>
+ <p/>
  it works in unison with the extractRelations() method.</div>
 </td>
 </tr>
@@ -293,8 +289,8 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -316,7 +312,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ACCESS_POINT</h4>
-<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ACCESS_POINT</pre>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ACCESS_POINT</pre>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#eu.ehri.project.importers.EadImporter.ACCESS_POINT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
@@ -334,11 +330,11 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <ul class="blockListLast">
 <li class="blockList">
 <h4>EadImporter</h4>
-<pre>public&nbsp;EadImporter(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
+<pre>public&nbsp;EadImporter(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
            <a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
            <a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</pre>
 <div class="block">Construct an EadImporter object.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>framedGraph</code> - </dd><dd><code>permissionScope</code> - </dd><dd><code>log</code> - </dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>graph</code> - the framed graph</dd><dd><code>permissionScope</code> - the permission scope</dd><dd><code>log</code> - the log</dd></dl>
 </li>
 </ul>
 </li>
@@ -355,15 +351,15 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <ul class="blockList">
 <li class="blockList">
 <h4>importItem</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base">AbstractUnit</a>&nbsp;importItem(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
-                      <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base">AbstractUnit</a>&nbsp;importItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+                      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)
                         throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
 <div class="block">Import a single archdesc or c01-12 item, keeping a reference to the hierarchical depth.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T,%20java.util.List)">importItem</a></code>&nbsp;in class&nbsp;<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></dd>
+<dd><code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T,%20java.util.List)">importItem</a></code>&nbsp;in class&nbsp;<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>itemData</code> - The raw data map</dd><dd><code>idPath</code> - The identifiers of parent documents,
-               not including those of the overall permission scope</dd>
+                 not including those of the overall permission scope</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the imported node</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code> - when the itemData does not contain an identifier for the unit or...</dd></dl>
@@ -377,7 +373,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <h4>mergeWithPreviousAndSave</h4>
 <pre>protected&nbsp;<a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;mergeWithPreviousAndSave(<a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
                               <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle,
-                              <a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)
+                              <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)
                                    throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
 <div class="block">Finds any bundle in the graph with the same ObjectIdentifier.
  If there is no bundle with this identifier, it is created.
@@ -401,12 +397,12 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
                                        throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
 <div class="block">subclasses can override this method to cater to their special needs for UndeterminedRelationships
  by default, it expects something like this in the original EAD:
-
+ <p/>
  <persname source="terezin-victims" authfilenumber="PERSON.ITI.1514982">Kien,
-                   Leonhard (* 11.5.1886)</persname>
-
+ Leonhard (* 11.5.1886)</persname>
+ <p/>
  it works in unison with the extractRelations() method.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>unit</code> - </dd><dd><code>descBundle</code> - - not used</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>unit</code> - the current unit</dd><dd><code>descBundle</code> - - not used</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd></dl>
 </li>
@@ -417,7 +413,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <ul class="blockList">
 <li class="blockList">
 <h4>extractRelations</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;extractRelations(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;data)</pre>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;extractRelations(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;data)</pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../eu/ehri/project/importers/EaImporter.html#extractRelations(java.util.Map)">EaImporter</a></code></strong></div>
 <div class="block">Extract node representations for related nodes based on the 'relation' property in the supplied data Map.</div>
 <dl>
@@ -433,7 +429,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <ul class="blockList">
 <li class="blockList">
 <h4>extractDocumentaryUnit</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;extractDocumentaryUnit(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;extractDocumentaryUnit(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
                                         int&nbsp;depth)
                                              throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
 <div class="block">Creates a Map containing properties of a Documentary Unit.
@@ -450,7 +446,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <ul class="blockList">
 <li class="blockList">
 <h4>extractDocumentaryUnit</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;extractDocumentaryUnit(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;extractDocumentaryUnit(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)
                                              throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
 <div class="block">Creates a Map containing properties of a Documentary Unit.
  These properties are the unit's identifiers.</div>
@@ -469,7 +465,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <ul class="blockList">
 <li class="blockList">
 <h4>extractDocumentDescription</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;extractDocumentDescription(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;extractDocumentDescription(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
                                             int&nbsp;depth)
                                                  throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
 <div class="block">Creates a Map containing properties of a Documentary Unit description.
@@ -480,28 +476,19 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <dd><code><a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd></dl>
 </li>
 </ul>
-<a name="importAsVirtualCollection()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>importAsVirtualCollection</h4>
-<pre>public&nbsp;void&nbsp;importAsVirtualCollection()</pre>
-</li>
-</ul>
 <a name="importItem(java.util.Map)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>importItem</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;importItem(<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;importItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)
                             throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T)">AbstractImporter</a></code></strong></div>
 <div class="block">Import an item representation into the graph, and return the Node.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T)">importItem</a></code>&nbsp;in class&nbsp;<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></dd>
+<dd><code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T)">importItem</a></code>&nbsp;in class&nbsp;<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>itemData</code> - the item representation to import</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the imported node</dd>
 <dt><span class="strong">Throws:</span></dt>

@@ -1,0 +1,493 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>TxNeo4jGraph (EHRI Backend 0.10.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="TxNeo4jGraph (EHRI Backend 0.10.0-SNAPSHOT API)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/TxNeo4jGraph.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../eu/ehri/project/core/impl/Neo4jGraphManager.html" title="class in eu.ehri.project.core.impl"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.Neo4jTx.html" title="class in eu.ehri.project.core.impl"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?eu/ehri/project/core/impl/TxNeo4jGraph.html" target="_top">Frames</a></li>
+<li><a href="TxNeo4jGraph.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">eu.ehri.project.core.impl</div>
+<h2 title="Class TxNeo4jGraph" class="title">Class TxNeo4jGraph</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">eu.ehri.project.core.impl.neo4j.Neo4j2Graph</a></li>
+<li>
+<ul class="inheritance">
+<li>eu.ehri.project.core.impl.TxNeo4jGraph</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd>com.tinkerpop.blueprints.Graph, com.tinkerpop.blueprints.IndexableGraph, com.tinkerpop.blueprints.MetaGraph&lt;org.neo4j.graphdb.GraphDatabaseService&gt;, com.tinkerpop.blueprints.TransactionalGraph, <a href="../../../../../eu/ehri/project/core/TxGraph.html" title="interface in eu.ehri.project.core">TxGraph</a></dd>
+</dl>
+<hr>
+<br>
+<pre>public class <span class="strong">TxNeo4jGraph</span>
+extends <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Graph</a>
+implements <a href="../../../../../eu/ehri/project/core/TxGraph.html" title="interface in eu.ehri.project.core">TxGraph</a></pre>
+<div class="block">Wraps Neo4jGraph and adds an extra method to allow asserting
+ that it should not be in a transaction.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.Neo4jTx.html" title="class in eu.ehri.project.core.impl">TxNeo4jGraph.Neo4jTx</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.UnderlyingTxRemovedError.html" title="class in eu.ehri.project.core.impl">TxNeo4jGraph.UnderlyingTxRemovedError</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="nested_classes_inherited_from_class_com.tinkerpop.blueprints.TransactionalGraph">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from interface&nbsp;com.tinkerpop.blueprints.TransactionalGraph</h3>
+<code>com.tinkerpop.blueprints.TransactionalGraph.Conclusion</code></li>
+</ul>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static org.slf4j.Logger</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.html#logger">logger</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_eu.ehri.project.core.impl.neo4j.Neo4j2Graph">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;eu.ehri.project.core.impl.neo4j.<a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Graph</a></h3>
+<code><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#checkElementsInTransaction">checkElementsInTransaction</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#tx">tx</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.html#TxNeo4jGraph(org.neo4j.graphdb.GraphDatabaseService)">TxNeo4jGraph</a></strong>(org.neo4j.graphdb.GraphDatabaseService&nbsp;rawGraph)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.html#TxNeo4jGraph(java.lang.String)">TxNeo4jGraph</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;directory)</code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.html#autoStartTransaction(boolean)">autoStartTransaction</a></strong>(boolean&nbsp;forWrite)</code>
+<div class="block">This overridden function is now a no-op.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/core/Tx.html" title="interface in eu.ehri.project.core">Tx</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.html#beginTx()">beginTx</a></strong>()</code>
+<div class="block">Obtain a wrapped transaction object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.html#commit()">commit</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.html#init()">init</a></strong>()</code>
+<div class="block">Since we override autoStartTx to do nothing, we must also
+ override this function (which loads key indices and sneakily
+ commits them) when the graph is constructed.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.html#isInTransaction()">isInTransaction</a></strong>()</code>
+<div class="block">Checks if the graph is currently in a transaction.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.html#shutdown()">shutdown</a></strong>()</code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.core.impl.neo4j.Neo4j2Graph">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;eu.ehri.project.core.impl.neo4j.<a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Graph</a></h3>
+<code><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#addEdge(java.lang.Object,%20com.tinkerpop.blueprints.Vertex,%20com.tinkerpop.blueprints.Vertex,%20java.lang.String)">addEdge</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#addVertex(java.lang.Object)">addVertex</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#checkElementsInTransaction()">checkElementsInTransaction</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#createIndex(java.lang.String,%20java.lang.Class,%20com.tinkerpop.blueprints.Parameter...)">createIndex</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#createKeyIndex(java.lang.String,%20java.lang.Class,%20com.tinkerpop.blueprints.Parameter...)">createKeyIndex</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#dropIndex(java.lang.String)">dropIndex</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#dropKeyIndex(java.lang.String,%20java.lang.Class)">dropKeyIndex</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getEdge(java.lang.Object)">getEdge</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getEdges()">getEdges</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getEdges(java.lang.String,%20java.lang.Object)">getEdges</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getFeatures()">getFeatures</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getIndex(java.lang.String,%20java.lang.Class)">getIndex</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getIndexedKeys(java.lang.Class)">getIndexedKeys</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getIndices()">getIndices</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getInternalIndexKeys(java.lang.Class)">getInternalIndexKeys</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getRawGraph()">getRawGraph</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getVertex(java.lang.Object)">getVertex</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getVertices()">getVertices</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getVertices(java.lang.String,%20java.lang.Object)">getVertices</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#query()">query</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#query(java.lang.String,%20java.util.Map)">query</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#removeEdge(com.tinkerpop.blueprints.Edge)">removeEdge</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#removeVertex(com.tinkerpop.blueprints.Vertex)">removeVertex</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#rollback()">rollback</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#setCheckElementsInTransaction(boolean)">setCheckElementsInTransaction</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#stopTransaction(com.tinkerpop.blueprints.TransactionalGraph.Conclusion)">stopTransaction</a>, <a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#toString()">toString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_com.tinkerpop.blueprints.TransactionalGraph">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;com.tinkerpop.blueprints.TransactionalGraph</h3>
+<code>rollback, stopTransaction</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_com.tinkerpop.blueprints.IndexableGraph">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;com.tinkerpop.blueprints.IndexableGraph</h3>
+<code>createIndex, dropIndex, getIndex, getIndices</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_com.tinkerpop.blueprints.Graph">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;com.tinkerpop.blueprints.Graph</h3>
+<code>addEdge, addVertex, getEdge, getEdges, getEdges, getFeatures, getVertex, getVertices, getVertices, query, removeEdge, removeVertex</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="logger">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>logger</h4>
+<pre>public static final&nbsp;org.slf4j.Logger logger</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="TxNeo4jGraph(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TxNeo4jGraph</h4>
+<pre>public&nbsp;TxNeo4jGraph(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;directory)</pre>
+</li>
+</ul>
+<a name="TxNeo4jGraph(org.neo4j.graphdb.GraphDatabaseService)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>TxNeo4jGraph</h4>
+<pre>public&nbsp;TxNeo4jGraph(org.neo4j.graphdb.GraphDatabaseService&nbsp;rawGraph)</pre>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="beginTx()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>beginTx</h4>
+<pre>public&nbsp;<a href="../../../../../eu/ehri/project/core/Tx.html" title="interface in eu.ehri.project.core">Tx</a>&nbsp;beginTx()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/core/TxGraph.html#beginTx()">TxGraph</a></code></strong></div>
+<div class="block">Obtain a wrapped transaction object.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/core/TxGraph.html#beginTx()">beginTx</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/TxGraph.html" title="interface in eu.ehri.project.core">TxGraph</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>a transaction wrapper</dd></dl>
+</li>
+</ul>
+<a name="commit()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>commit</h4>
+<pre>public&nbsp;void&nbsp;commit()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code>commit</code>&nbsp;in interface&nbsp;<code>com.tinkerpop.blueprints.TransactionalGraph</code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#commit()">commit</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Graph</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="shutdown()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>shutdown</h4>
+<pre>public&nbsp;void&nbsp;shutdown()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code>shutdown</code>&nbsp;in interface&nbsp;<code>com.tinkerpop.blueprints.Graph</code></dd>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#shutdown()">shutdown</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Graph</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="autoStartTransaction(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>autoStartTransaction</h4>
+<pre>public&nbsp;void&nbsp;autoStartTransaction(boolean&nbsp;forWrite)</pre>
+<div class="block">This overridden function is now a no-op.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#autoStartTransaction(boolean)">autoStartTransaction</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Graph</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>forWrite</code> - unused parameter</dd></dl>
+</li>
+</ul>
+<a name="init()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>public&nbsp;void&nbsp;init()</pre>
+<div class="block">Since we override autoStartTx to do nothing, we must also
+ override this function (which loads key indices and sneakily
+ commits them) when the graph is constructed. We do not use
+ key indexable functionality so nothing is lost (unless the
+ base class is changed, but, can't do much about that.)</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#init()">init</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Graph</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="isInTransaction()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>isInTransaction</h4>
+<pre>public&nbsp;boolean&nbsp;isInTransaction()</pre>
+<div class="block">Checks if the graph is currently in a transaction.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/core/TxGraph.html#isInTransaction()">isInTransaction</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/TxGraph.html" title="interface in eu.ehri.project.core">TxGraph</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>whether a transaction is held in this thread.</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/TxNeo4jGraph.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../eu/ehri/project/core/impl/Neo4jGraphManager.html" title="class in eu.ehri.project.core.impl"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../../eu/ehri/project/core/impl/TxNeo4jGraph.Neo4jTx.html" title="class in eu.ehri.project.core.impl"><span class="strong">Next Class</span></a></li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?eu/ehri/project/core/impl/TxNeo4jGraph.html" target="_top">Frames</a></li>
+<li><a href="TxNeo4jGraph.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+</body>
+</html>

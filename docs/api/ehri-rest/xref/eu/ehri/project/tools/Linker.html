@@ -169,7 +169,7 @@
 <a class="jxr_linenumber" name="159" href="#159">159</a>         ActionManager.EventContext conceptEvent = actionManager
 <a class="jxr_linenumber" name="160" href="#160">160</a>                 .setScope(vocabulary)
 <a class="jxr_linenumber" name="161" href="#161">161</a>                 .newEventContext(user, EventTypes.creation, logMessage);
-<a class="jxr_linenumber" name="162" href="#162">162</a>         CrudViews&lt;Concept&gt; conceptMaker = <strong class="jxr_keyword">new</strong> CrudViews&lt;Concept&gt;(graph, Concept.<strong class="jxr_keyword">class</strong>, vocabulary);
+<a class="jxr_linenumber" name="162" href="#162">162</a>         CrudViews&lt;Concept&gt; conceptMaker = <strong class="jxr_keyword">new</strong> CrudViews&lt;&gt;(graph, Concept.<strong class="jxr_keyword">class</strong>, vocabulary);
 <a class="jxr_linenumber" name="163" href="#163">163</a> 
 <a class="jxr_linenumber" name="164" href="#164">164</a>         <strong class="jxr_keyword">for</strong> (Map.Entry&lt;String, String&gt; idName : conceptIdentifierNames.entrySet()) {
 <a class="jxr_linenumber" name="165" href="#165">165</a>             String identifier = idName.getKey();
@@ -216,7 +216,7 @@
 <a class="jxr_linenumber" name="206" href="#206">206</a>         <em class="jxr_comment">// which the concept originally derived.</em>
 <a class="jxr_linenumber" name="207" href="#207">207</a>         ActionManager.EventContext linkEvent = actionManager
 <a class="jxr_linenumber" name="208" href="#208">208</a>                 .newEventContext(user, EventTypes.creation, logMessage);
-<a class="jxr_linenumber" name="209" href="#209">209</a>         CrudViews&lt;Link&gt; linkMaker = <strong class="jxr_keyword">new</strong> CrudViews&lt;Link&gt;(graph, Link.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="209" href="#209">209</a>         CrudViews&lt;Link&gt; linkMaker = <strong class="jxr_keyword">new</strong> CrudViews&lt;&gt;(graph, Link.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="210" href="#210">210</a> 
 <a class="jxr_linenumber" name="211" href="#211">211</a>         <strong class="jxr_keyword">long</strong> linkCount = 0L;
 <a class="jxr_linenumber" name="212" href="#212">212</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnit doc : repository.getAllCollections()) {

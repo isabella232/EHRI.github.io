@@ -61,7 +61,7 @@
 <a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testWithInitializationError() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="52" href="#52">52</a>          <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="53" href="#53">53</a>              <em class="jxr_comment">// NB: An initialized Neo4j 1.9 graph has a root node</em>
-<a class="jxr_linenumber" name="54" href="#54">54</a>              assertEquals(1, getNodeCount(testGraph));
+<a class="jxr_linenumber" name="54" href="#54">54</a>              assertEquals(0, getNodeCount(testGraph));
 <a class="jxr_linenumber" name="55" href="#55">55</a>              <strong class="jxr_keyword">new</strong> GraphInitializer(testGraph).initialize();
 <a class="jxr_linenumber" name="56" href="#56">56</a>              FixtureLoader loader = <strong class="jxr_keyword">new</strong> YamlFixtureLoader(testGraph);
 <a class="jxr_linenumber" name="57" href="#57">57</a>              loader.loadTestData();
@@ -75,7 +75,7 @@
 <a class="jxr_linenumber" name="65" href="#65">65</a>      @Test
 <a class="jxr_linenumber" name="66" href="#66">66</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testWithInitialization() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="67" href="#67">67</a>          <em class="jxr_comment">// NB: An initialized Neo4j 1.9 graph has a root node</em>
-<a class="jxr_linenumber" name="68" href="#68">68</a>          assertEquals(1, getNodeCount(testGraph));
+<a class="jxr_linenumber" name="68" href="#68">68</a>          assertEquals(0, getNodeCount(testGraph));
 <a class="jxr_linenumber" name="69" href="#69">69</a>          <strong class="jxr_keyword">new</strong> GraphInitializer(testGraph).initialize();
 <a class="jxr_linenumber" name="70" href="#70">70</a>          FixtureLoader loader = <strong class="jxr_keyword">new</strong> YamlFixtureLoader(testGraph)
 <a class="jxr_linenumber" name="71" href="#71">71</a>              .setInitializing(false);
@@ -85,7 +85,7 @@
 <a class="jxr_linenumber" name="75" href="#75">75</a>  
 <a class="jxr_linenumber" name="76" href="#76">76</a>      @Test
 <a class="jxr_linenumber" name="77" href="#77">77</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testLoadTestDataFile() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="78" href="#78">78</a>          assertEquals(1, getNodeCount(testGraph));
+<a class="jxr_linenumber" name="78" href="#78">78</a>          assertEquals(0, getNodeCount(testGraph));
 <a class="jxr_linenumber" name="79" href="#79">79</a>          FixtureLoader loader = <strong class="jxr_keyword">new</strong> YamlFixtureLoader(testGraph);
 <a class="jxr_linenumber" name="80" href="#80">80</a>          loader.loadTestData(getFixtureFilePath(<span class="jxr_string">"testdata.yaml"</span>));
 <a class="jxr_linenumber" name="81" href="#81">81</a>          assertTrue(getNodeCount(testGraph) &gt; 1);
@@ -93,7 +93,7 @@
 <a class="jxr_linenumber" name="83" href="#83">83</a>  
 <a class="jxr_linenumber" name="84" href="#84">84</a>      @Test
 <a class="jxr_linenumber" name="85" href="#85">85</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testLoadTestDataResource() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="86" href="#86">86</a>          assertEquals(1, getNodeCount(testGraph));
+<a class="jxr_linenumber" name="86" href="#86">86</a>          assertEquals(0, getNodeCount(testGraph));
 <a class="jxr_linenumber" name="87" href="#87">87</a>          FixtureLoader loader = <strong class="jxr_keyword">new</strong> YamlFixtureLoader(testGraph);
 <a class="jxr_linenumber" name="88" href="#88">88</a>          loader.loadTestData(<span class="jxr_string">"testdata.yaml"</span>);
 <a class="jxr_linenumber" name="89" href="#89">89</a>          assertTrue(getNodeCount(testGraph) &gt; 1);
@@ -105,7 +105,7 @@
 <a class="jxr_linenumber" name="95" href="#95">95</a>                  .getResourceAsStream(<span class="jxr_string">"testdata.yaml"</span>);
 <a class="jxr_linenumber" name="96" href="#96">96</a>          assertNotNull(inputStream);
 <a class="jxr_linenumber" name="97" href="#97">97</a>  
-<a class="jxr_linenumber" name="98" href="#98">98</a>          assertEquals(1, getNodeCount(testGraph));
+<a class="jxr_linenumber" name="98" href="#98">98</a>          assertEquals(0, getNodeCount(testGraph));
 <a class="jxr_linenumber" name="99" href="#99">99</a>          FixtureLoader loader = <strong class="jxr_keyword">new</strong> YamlFixtureLoader(testGraph);
 <a class="jxr_linenumber" name="100" href="#100">100</a>         loader.loadTestData(inputStream);
 <a class="jxr_linenumber" name="101" href="#101">101</a>         assertTrue(getNodeCount(testGraph) &gt; 1);

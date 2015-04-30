@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Class Hierarchy (EHRI Core API 0.9.3-SNAPSHOT API)</title>
+<title>Class Hierarchy (EHRI Core API 0.10.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Class Hierarchy (EHRI Core API 0.9.3-SNAPSHOT API)";
+        parent.document.title="Class Hierarchy (EHRI Core API 0.10.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -68,6 +68,7 @@
 <li><a href="eu/ehri/project/acl/package-tree.html">eu.ehri.project.acl</a>, </li>
 <li><a href="eu/ehri/project/core/package-tree.html">eu.ehri.project.core</a>, </li>
 <li><a href="eu/ehri/project/core/impl/package-tree.html">eu.ehri.project.core.impl</a>, </li>
+<li><a href="eu/ehri/project/core/impl/neo4j/package-tree.html">eu.ehri.project.core.impl.neo4j</a>, </li>
 <li><a href="eu/ehri/project/exceptions/package-tree.html">eu.ehri.project.exceptions</a>, </li>
 <li><a href="eu/ehri/project/models/package-tree.html">eu.ehri.project.models</a>, </li>
 <li><a href="eu/ehri/project/models/annotations/package-tree.html">eu.ehri.project.models.annotations</a>, </li>
@@ -89,7 +90,7 @@
 <div class="contentContainer">
 <h2 title="Class Hierarchy">Class Hierarchy</h2>
 <ul>
-<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang"><span class="strong">Object</span></a>
+<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang"><span class="strong">Object</span></a>
 <ul>
 <li type="circle">eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/AccessibleEntity.Impl.html" title="class in eu.ehri.project.models.base"><span class="strong">AccessibleEntity.Impl</span></a> (implements eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>, com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;)</li>
 <li type="circle">eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/Accessor.Impl.html" title="class in eu.ehri.project.models.base"><span class="strong">Accessor.Impl</span></a> (implements eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>, com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;)</li>
@@ -117,7 +118,7 @@
 <li type="circle">eu.ehri.project.persistence.utils.<a href="eu/ehri/project/persistence/utils/DataUtils.html" title="class in eu.ehri.project.persistence.utils"><span class="strong">DataUtils</span></a></li>
 <li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/DescriptionViews.html" title="class in eu.ehri.project.views"><span class="strong">DescriptionViews</span></a>&lt;E&gt;</li>
 <li type="circle">eu.ehri.project.models.<a href="eu/ehri/project/models/DocumentaryUnit.Impl.html" title="class in eu.ehri.project.models"><span class="strong">DocumentaryUnit.Impl</span></a> (implements eu.ehri.project.models.<a href="eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a>, com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;)</li>
-<li type="circle">eu.ehri.project.models.utils.<a href="eu/ehri/project/models/utils/EmptyIterable.html" title="class in eu.ehri.project.models.utils"><span class="strong">EmptyIterable</span></a>&lt;T&gt; (implements java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;, java.util.<a href="http://docs.oracle.com/javase/6/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;)</li>
+<li type="circle">eu.ehri.project.models.utils.<a href="eu/ehri/project/models/utils/EmptyIterable.html" title="class in eu.ehri.project.models.utils"><span class="strong">EmptyIterable</span></a>&lt;T&gt; (implements java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;, java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;E&gt;)</li>
 <li type="circle">eu.ehri.project.persistence.<a href="eu/ehri/project/persistence/ErrorSet.html" title="class in eu.ehri.project.persistence"><span class="strong">ErrorSet</span></a></li>
 <li type="circle">eu.ehri.project.persistence.<a href="eu/ehri/project/persistence/ErrorSet.Builder.html" title="class in eu.ehri.project.persistence"><span class="strong">ErrorSet.Builder</span></a></li>
 <li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/EventViews.html" title="class in eu.ehri.project.views"><span class="strong">EventViews</span></a></li>
@@ -141,17 +142,22 @@
 <li type="circle">eu.ehri.project.views.impl.<a href="eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl"><span class="strong">LoggingCrudViews</span></a>&lt;E&gt; (implements eu.ehri.project.views.<a href="eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;E&gt;)</li>
 <li type="circle">eu.ehri.project.persistence.<a href="eu/ehri/project/persistence/Messages.html" title="class in eu.ehri.project.persistence"><span class="strong">Messages</span></a></li>
 <li type="circle">eu.ehri.project.persistence.<a href="eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence"><span class="strong">Mutation</span></a>&lt;T&gt;</li>
-<li type="circle">com.tinkerpop.blueprints.impls.neo4j.Neo4jGraph (implements com.tinkerpop.blueprints.IndexableGraph, com.tinkerpop.blueprints.KeyIndexableGraph, com.tinkerpop.blueprints.MetaGraph&lt;T&gt;, com.tinkerpop.blueprints.TransactionalGraph)
+<li type="circle">eu.ehri.project.core.impl.neo4j.<a href="eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Neo4j2Edge</span></a> (implements com.tinkerpop.blueprints.Edge)</li>
+<li type="circle">eu.ehri.project.core.impl.neo4j.<a href="eu/ehri/project/core/impl/neo4j/Neo4j2EdgeIterable.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Neo4j2EdgeIterable</span></a>&lt;T&gt; (implements com.tinkerpop.blueprints.CloseableIterable&lt;T&gt;)</li>
+<li type="circle">eu.ehri.project.core.impl.neo4j.<a href="eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Neo4j2Graph</span></a> (implements com.tinkerpop.blueprints.IndexableGraph, com.tinkerpop.blueprints.MetaGraph&lt;T&gt;, com.tinkerpop.blueprints.TransactionalGraph)
 <ul>
-<li type="circle">eu.ehri.project.utils.<a href="eu/ehri/project/utils/TxCheckedNeo4jGraph.html" title="class in eu.ehri.project.utils"><span class="strong">TxCheckedNeo4jGraph</span></a></li>
+<li type="circle">eu.ehri.project.core.impl.<a href="eu/ehri/project/core/impl/TxNeo4jGraph.html" title="class in eu.ehri.project.core.impl"><span class="strong">TxNeo4jGraph</span></a> (implements eu.ehri.project.core.<a href="eu/ehri/project/core/TxGraph.html" title="interface in eu.ehri.project.core">TxGraph</a>)</li>
 </ul>
 </li>
+<li type="circle">eu.ehri.project.core.impl.neo4j.<a href="eu/ehri/project/core/impl/neo4j/Neo4j2Index.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Neo4j2Index</span></a>&lt;T,S&gt; (implements com.tinkerpop.blueprints.Index&lt;T&gt;)</li>
+<li type="circle">eu.ehri.project.core.impl.neo4j.<a href="eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Neo4j2Vertex</span></a> (implements com.tinkerpop.blueprints.Vertex)</li>
+<li type="circle">eu.ehri.project.core.impl.neo4j.<a href="eu/ehri/project/core/impl/neo4j/Neo4j2VertexIterable.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Neo4j2VertexIterable</span></a>&lt;T&gt; (implements com.tinkerpop.blueprints.CloseableIterable&lt;T&gt;)</li>
 <li type="circle">eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/PermissionScope.Impl.html" title="class in eu.ehri.project.models.base"><span class="strong">PermissionScope.Impl</span></a> (implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;, eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>)</li>
 <li type="circle">eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/Promotable.Impl.html" title="class in eu.ehri.project.models.base"><span class="strong">Promotable.Impl</span></a> (implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;, eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>)</li>
 <li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/PromotionViews.html" title="class in eu.ehri.project.views"><span class="strong">PromotionViews</span></a> (implements eu.ehri.project.views.<a href="eu/ehri/project/views/Scoped.html" title="interface in eu.ehri.project.views">Scoped</a>&lt;T&gt;)</li>
 <li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views"><span class="strong">Query</span></a>&lt;E&gt; (implements eu.ehri.project.views.<a href="eu/ehri/project/views/Scoped.html" title="interface in eu.ehri.project.views">Scoped</a>&lt;T&gt;)</li>
-<li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/Query.FramedVertexIterableAdaptor.html" title="class in eu.ehri.project.views"><span class="strong">Query.FramedVertexIterableAdaptor</span></a>&lt;T&gt; (implements java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;)</li>
-<li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views"><span class="strong">Query.Page</span></a>&lt;T&gt; (implements java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;)</li>
+<li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/Query.FramedVertexIterableAdaptor.html" title="class in eu.ehri.project.views"><span class="strong">Query.FramedVertexIterableAdaptor</span></a>&lt;T&gt; (implements java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;)</li>
+<li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views"><span class="strong">Query.Page</span></a>&lt;T&gt; (implements java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;)</li>
 <li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/QueryUtils.html" title="class in eu.ehri.project.views"><span class="strong">QueryUtils</span></a></li>
 <li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/QueryUtils.TraversalPath.html" title="class in eu.ehri.project.views"><span class="strong">QueryUtils.TraversalPath</span></a></li>
 <li type="circle">eu.ehri.project.models.<a href="eu/ehri/project/models/Repository.Impl.html" title="class in eu.ehri.project.models"><span class="strong">Repository.Impl</span></a> (implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;, eu.ehri.project.models.<a href="eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</a>)</li>
@@ -160,9 +166,9 @@
 <li type="circle">eu.ehri.project.utils.<a href="eu/ehri/project/utils/Slugify.html" title="class in eu.ehri.project.utils"><span class="strong">Slugify</span></a></li>
 <li type="circle">eu.ehri.project.models.events.<a href="eu/ehri/project/models/events/SystemEvent.Impl.html" title="class in eu.ehri.project.models.events"><span class="strong">SystemEvent.Impl</span></a> (implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;, eu.ehri.project.models.events.<a href="eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>)</li>
 <li type="circle">eu.ehri.project.models.events.<a href="eu/ehri/project/models/events/SystemEventQueue.Impl.html" title="class in eu.ehri.project.models.events"><span class="strong">SystemEventQueue.Impl</span></a> (implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;, eu.ehri.project.models.events.<a href="eu/ehri/project/models/events/SystemEventQueue.html" title="interface in eu.ehri.project.models.events">SystemEventQueue</a>)</li>
-<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang"><span class="strong">Throwable</span></a> (implements java.io.<a href="http://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>)
+<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html?is-external=true" title="class or interface in java.lang"><span class="strong">Throwable</span></a> (implements java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>)
 <ul>
-<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang"><span class="strong">Exception</span></a>
+<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang"><span class="strong">Exception</span></a>
 <ul>
 <li type="circle">eu.ehri.project.exceptions.<a href="eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions"><span class="strong">AccessDenied</span></a></li>
 <li type="circle">eu.ehri.project.exceptions.<a href="eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions"><span class="strong">DeserializationError</span></a></li>
@@ -171,18 +177,19 @@
 <li type="circle">eu.ehri.project.exceptions.<a href="eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions"><span class="strong">ItemNotFound</span></a></li>
 <li type="circle">eu.ehri.project.exceptions.<a href="eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions"><span class="strong">PermissionDenied</span></a></li>
 <li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/PromotionViews.NotPromotableError.html" title="class in eu.ehri.project.views"><span class="strong">PromotionViews.NotPromotableError</span></a></li>
-<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><span class="strong">RuntimeException</span></a>
+<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/RuntimeException.html?is-external=true" title="class or interface in java.lang"><span class="strong">RuntimeException</span></a>
 <ul>
-<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang"><span class="strong">IndexOutOfBoundsException</span></a>
+<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/IndexOutOfBoundsException.html?is-external=true" title="class or interface in java.lang"><span class="strong">IndexOutOfBoundsException</span></a>
 <ul>
 <li type="circle">eu.ehri.project.persistence.utils.<a href="eu/ehri/project/persistence/utils/BundleUtils.BundleIndexError.html" title="class in eu.ehri.project.persistence.utils"><span class="strong">BundleUtils.BundleIndexError</span></a></li>
 </ul>
 </li>
-<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang"><span class="strong">NullPointerException</span></a>
+<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/NullPointerException.html?is-external=true" title="class or interface in java.lang"><span class="strong">NullPointerException</span></a>
 <ul>
 <li type="circle">eu.ehri.project.persistence.utils.<a href="eu/ehri/project/persistence/utils/BundleUtils.BundlePathError.html" title="class in eu.ehri.project.persistence.utils"><span class="strong">BundleUtils.BundlePathError</span></a></li>
 </ul>
 </li>
+<li type="circle">eu.ehri.project.core.impl.<a href="eu/ehri/project/core/impl/TxNeo4jGraph.UnderlyingTxRemovedError.html" title="class in eu.ehri.project.core.impl"><span class="strong">TxNeo4jGraph.UnderlyingTxRemovedError</span></a></li>
 </ul>
 </li>
 <li type="circle">eu.ehri.project.exceptions.<a href="eu/ehri/project/exceptions/SerializationError.html" title="class in eu.ehri.project.exceptions"><span class="strong">SerializationError</span></a></li>
@@ -191,6 +198,7 @@
 </li>
 </ul>
 </li>
+<li type="circle">eu.ehri.project.core.impl.<a href="eu/ehri/project/core/impl/TxNeo4jGraph.Neo4jTx.html" title="class in eu.ehri.project.core.impl"><span class="strong">TxNeo4jGraph.Neo4jTx</span></a> (implements eu.ehri.project.core.<a href="eu/ehri/project/core/Tx.html" title="interface in eu.ehri.project.core">Tx</a>)</li>
 <li type="circle">eu.ehri.project.models.<a href="eu/ehri/project/models/UserProfile.Impl.html" title="class in eu.ehri.project.models"><span class="strong">UserProfile.Impl</span></a> (implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;, eu.ehri.project.models.<a href="eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>)</li>
 <li type="circle">eu.ehri.project.models.events.<a href="eu/ehri/project/models/events/Version.Impl.html" title="class in eu.ehri.project.models.events"><span class="strong">Version.Impl</span></a> (implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;, eu.ehri.project.models.events.<a href="eu/ehri/project/models/events/Version.html" title="interface in eu.ehri.project.models.events">Version</a>)</li>
 <li type="circle">eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/VersionedEntity.Impl.html" title="class in eu.ehri.project.models.base"><span class="strong">VersionedEntity.Impl</span></a> (implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;C&gt;, eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/VersionedEntity.html" title="interface in eu.ehri.project.models.base">VersionedEntity</a>)</li>
@@ -210,9 +218,29 @@
 <li type="circle">eu.ehri.project.models.<a href="eu/ehri/project/models/RepositoryDescription.html" title="interface in eu.ehri.project.models"><span class="strong">RepositoryDescription</span></a> (also extends eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a>, eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/TemporalEntity.html" title="interface in eu.ehri.project.models.base">TemporalEntity</a>)</li>
 </ul>
 </li>
+<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/AutoCloseable.html?is-external=true" title="class or interface in java.lang"><span class="strong">AutoCloseable</span></a>
+<ul>
+<li type="circle">eu.ehri.project.core.<a href="eu/ehri/project/core/Tx.html" title="interface in eu.ehri.project.core"><span class="strong">Tx</span></a></li>
+</ul>
+</li>
 <li type="circle">eu.ehri.project.persistence.<a href="eu/ehri/project/persistence/Bundle.Filter.html" title="interface in eu.ehri.project.persistence"><span class="strong">Bundle.Filter</span></a></li>
 <li type="circle">eu.ehri.project.views.<a href="eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views"><span class="strong">Crud</span></a>&lt;E&gt;</li>
 <li type="circle">eu.ehri.project.utils.fixtures.<a href="eu/ehri/project/utils/fixtures/FixtureLoader.html" title="interface in eu.ehri.project.utils.fixtures"><span class="strong">FixtureLoader</span></a></li>
+<li type="circle">com.tinkerpop.blueprints.Graph
+<ul>
+<li type="circle">com.tinkerpop.blueprints.IndexableGraph
+<ul>
+<li type="circle">eu.ehri.project.core.<a href="eu/ehri/project/core/TxGraph.html" title="interface in eu.ehri.project.core"><span class="strong">TxGraph</span></a> (also extends com.tinkerpop.blueprints.Graph, com.tinkerpop.blueprints.TransactionalGraph)</li>
+</ul>
+</li>
+<li type="circle">com.tinkerpop.blueprints.TransactionalGraph
+<ul>
+<li type="circle">eu.ehri.project.core.<a href="eu/ehri/project/core/TxGraph.html" title="interface in eu.ehri.project.core"><span class="strong">TxGraph</span></a> (also extends com.tinkerpop.blueprints.Graph, com.tinkerpop.blueprints.IndexableGraph)</li>
+</ul>
+</li>
+<li type="circle">eu.ehri.project.core.<a href="eu/ehri/project/core/TxGraph.html" title="interface in eu.ehri.project.core"><span class="strong">TxGraph</span></a> (also extends com.tinkerpop.blueprints.IndexableGraph, com.tinkerpop.blueprints.TransactionalGraph)</li>
+</ul>
+</li>
 <li type="circle">eu.ehri.project.core.<a href="eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core"><span class="strong">GraphManager</span></a></li>
 <li type="circle">eu.ehri.project.models.idgen.<a href="eu/ehri/project/models/idgen/IdGenerator.html" title="interface in eu.ehri.project.models.idgen"><span class="strong">IdGenerator</span></a></li>
 <li type="circle">eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/ItemHolder.html" title="interface in eu.ehri.project.models.base"><span class="strong">ItemHolder</span></a>
@@ -2572,18 +2600,18 @@
 </ul>
 <h2 title="Annotation Type Hierarchy">Annotation Type Hierarchy</h2>
 <ul>
-<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/Unique.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">Unique</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
-<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/EntityType.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">EntityType</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
-<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/Fetch.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">Fetch</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
-<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/Mandatory.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">Mandatory</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
-<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/Meta.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">Meta</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
-<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/Dependent.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">Dependent</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
+<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/Unique.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">Unique</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
+<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/EntityType.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">EntityType</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
+<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/Fetch.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">Fetch</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
+<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/Mandatory.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">Mandatory</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
+<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/Meta.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">Meta</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
+<li type="circle">eu.ehri.project.models.annotations.<a href="eu/ehri/project/models/annotations/Dependent.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">Dependent</span></a> (implements java.lang.annotation.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>)</li>
 </ul>
 <h2 title="Enum Hierarchy">Enum Hierarchy</h2>
 <ul>
-<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang"><span class="strong">Object</span></a>
+<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang"><span class="strong">Object</span></a>
 <ul>
-<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang"><span class="strong">Enum</span></a>&lt;E&gt; (implements java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;, java.io.<a href="http://docs.oracle.com/javase/6/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>)
+<li type="circle">java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang"><span class="strong">Enum</span></a>&lt;E&gt; (implements java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html?is-external=true" title="class or interface in java.lang">Comparable</a>&lt;T&gt;, java.io.<a href="http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>)
 <ul>
 <li type="circle">eu.ehri.project.acl.<a href="eu/ehri/project/acl/SystemScope.html" title="enum in eu.ehri.project.acl"><span class="strong">SystemScope</span></a> (implements eu.ehri.project.models.base.<a href="eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>)</li>
 <li type="circle">eu.ehri.project.acl.<a href="eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl"><span class="strong">PermissionType</span></a></li>

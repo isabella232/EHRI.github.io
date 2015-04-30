@@ -129,7 +129,7 @@
 <a class="jxr_linenumber" name="119" href="#119">119</a>         <em class="jxr_comment">// item, in which case our loop traversal will miss it, so we have to combine</em>
 <a class="jxr_linenumber" name="120" href="#120">120</a>         <em class="jxr_comment">// the result</em>
 <a class="jxr_linenumber" name="121" href="#121">121</a> 
-<a class="jxr_linenumber" name="122" href="#122">122</a>         GremlinPipeline&lt;Vertex, Vertex&gt; pipe = <strong class="jxr_keyword">new</strong> GremlinPipeline&lt;Vertex, Vertex&gt;();
+<a class="jxr_linenumber" name="122" href="#122">122</a>         GremlinPipeline&lt;Vertex, Vertex&gt; pipe = <strong class="jxr_keyword">new</strong> GremlinPipeline&lt;&gt;();
 <a class="jxr_linenumber" name="123" href="#123">123</a>         Pipeline&lt;Vertex, Vertex&gt; otherPipe = pipe.start(item.asVertex())
 <a class="jxr_linenumber" name="124" href="#124">124</a>                 .in(Ontology.DESCRIPTION_FOR_ENTITY)
 <a class="jxr_linenumber" name="125" href="#125">125</a>                 .in(Ontology.VC_DESCRIBED_BY)
@@ -168,7 +168,7 @@
 <a class="jxr_linenumber" name="158" href="#158">158</a> <em class="jxr_javadoccomment">     * @return A set of top-level virtual units</em>
 <a class="jxr_linenumber" name="159" href="#159">159</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="160" href="#160">160</a>     <strong class="jxr_keyword">public</strong> Iterable&lt;VirtualUnit&gt; getVirtualCollectionsForUser(<a href="../../../../eu/ehri/project/models/base/Frame.html">Frame</a> user, <a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor) {
-<a class="jxr_linenumber" name="161" href="#161">161</a>         GremlinPipeline&lt;Vertex, Vertex&gt; pipe = <strong class="jxr_keyword">new</strong> GremlinPipeline&lt;Vertex, Vertex&gt;();
+<a class="jxr_linenumber" name="161" href="#161">161</a>         GremlinPipeline&lt;Vertex, Vertex&gt; pipe = <strong class="jxr_keyword">new</strong> GremlinPipeline&lt;&gt;();
 <a class="jxr_linenumber" name="162" href="#162">162</a>         Pipeline&lt;Vertex, Vertex&gt; filtered = pipe.start(user.asVertex())
 <a class="jxr_linenumber" name="163" href="#163">163</a>                 .in(Ontology.VC_HAS_AUTHOR)
 <a class="jxr_linenumber" name="164" href="#164">164</a>                 .filter(aclManager.getAclFilterFunction(accessor));

@@ -74,7 +74,7 @@
 <a class="jxr_linenumber" name="64" href="#64">64</a>              OutputStream outputStream) <strong class="jxr_keyword">throws</strong> IOException, WebApplicationException {
 <a class="jxr_linenumber" name="65" href="#65">65</a>          headers.putSingle(HttpHeaders.CACHE_CONTROL,
 <a class="jxr_linenumber" name="66" href="#66">66</a>                  PermissionsResource.getCacheControl().toString());
-<a class="jxr_linenumber" name="67" href="#67">67</a>          mapper.writeValue(outputStream, itemPermissionSet);
+<a class="jxr_linenumber" name="67" href="#67">67</a>          mapper.writeValue(outputStream, itemPermissionSet.serialize());
 <a class="jxr_linenumber" name="68" href="#68">68</a>      }
 <a class="jxr_linenumber" name="69" href="#69">69</a>  }
 </pre>
