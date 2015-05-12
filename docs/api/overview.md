@@ -12,4 +12,4 @@ Use this online version of the API documentation:
 [EHRI Web Service API](ehri-rest/ehri-extension/wsdocs/index.html)
 
 Or view the code on Github:
-[ehri-rest](https://github.com/mikesname/ehri-rest)
+[ehri-rest](https://github.com/EHRI/ehri-rest)
