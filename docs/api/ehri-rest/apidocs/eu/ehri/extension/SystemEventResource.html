@@ -114,7 +114,43 @@ extends <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.htm
 implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="interface in eu.ehri.extension.base">GetResource</a></pre>
 <div class="block">Provides a web service interface for the Event model. Note: Event instances
  are created by the system, so we do not have create/update/delete methods
- here.</div>
+ here.
+
+ </p>
+ The following query parameters apply to all actions in this
+ resource to apply filtering to the event streams.
+ </p>
+ <dl>
+ <dt>eventTypes</dt><dd>Filter events by type</dd>
+ <dt>itemTypes</dt><dd>Filter events based on the item type of their subjects</dd>
+ <dt>itemIds</dt><dd>Filter events pertaining to specific item IDs</dd>
+ <dt>users</dt><dd>Filter events based on the user IDs they involve</dd>
+ <dt>from</dt><dd>Exclude events prior to this date (ISO 8601 format)</dd>
+ <dt>to</dt><dd>Exclude events after this date (ISO 8601 format)</dd>
+ </dl>
+ <p/>
+ Additionally the aggregate* end-points accept an <code>aggregation</code>
+ parameter that groups sequential events according to one of two different
+ strategies:
+ <dl>
+     <dt>user</dt>
+     <dd>Groups sequential events of all types that are initiated by the same actioner</dd>
+     <dt>strict</dt>
+     <dd>
+         Groups sequential events that:
+         <ul>
+             <li>have the same type</li>
+             <li>have the same actioner</li>
+             <li>have the same subjects</li>
+             <li>have the same scope</li>
+             <li>have the same log message</li>
+         </ul>
+     </dd>
+ </dl>
+ <p/>
+ Additionally, aggregation can be disabled by using <code>aggregation=off</code>.
+
+ Standard paging parameters apply to all end-points.</div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
 </li>
@@ -466,20 +502,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <h4>listEvents</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listEvents()
                                      throws <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
-<div class="block">List global events. Standard list parameters for paging apply.
- </p>
- The following query parameters apply to all actions in this
- resource:
- </p>
- <dl>
- <dt>eventTypes</dt><dd>Filter events by type</dd>
- <dt>itemTypes</dt><dd>Filter events based on the item type of their subjects</dd>
- <dt>itemIds</dt><dd>Filter events pertaining to specific item IDs</dd>
- <dt>users</dt><dd>Filter events based on the user IDs they involve</dd>
- <dt>from</dt><dd>Exclude events prior to this date</dd>
- <dt>to</dt><dd>Exclude events after this date</dd>
- </dl>
- <p/></div>
+<div class="block">List global events. Standard list parameters for paging and filtering apply.</div>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
 </li>
@@ -492,22 +515,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <h4>aggregateEvents</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;aggregateEvents(<a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
                                           throws <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
-<div class="block">Aggregate of global events. Standard list parameters for paging and
- filtering apply.
-
- In this case the stream is grouped according to one of two criteria. The
- default groups all <i>sequential</i> events that have the same actioner.
- </p>
- An alternate <code>strict</code> aggregation stategy groups items that are:
- <ol>
-     <li>triggered by the same actioner</li>
-     <li>affecting on the same subjects</li>
-     <li>have the same scope</li>
-     <li>have the same log message</li>
- </ol>
- <p/>
- Alternately, aggregation can be disabled by using the <code>off</code>
- parameter value.</div>
+<div class="block">Aggregate of global events.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>aggregation</code> - Aggregate events by strict, or user</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>

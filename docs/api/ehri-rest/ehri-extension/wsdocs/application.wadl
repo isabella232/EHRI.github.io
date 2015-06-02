@@ -1958,21 +1958,7 @@
     <wadl:resource path="/systemEvent/aggregate">
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Aggregate of global events. Standard list parameters for paging and]]>
-<![CDATA[filtering apply.]]>
-<![CDATA[In this case the stream is grouped according to one of two criteria. The]]>
-<![CDATA[default groups all <i>sequential</i> events that have the same actioner.]]>
-<![CDATA[</p>]]>
-<![CDATA[An alternate <tt>strict</tt> aggregation stategy groups items that are:]]>
-<![CDATA[<ol>]]>
-<![CDATA[<li>triggered by the same actioner</li>]]>
-<![CDATA[<li>affecting on the same subjects</li>]]>
-<![CDATA[<li>have the same scope</li>]]>
-<![CDATA[<li>have the same log message</li>]]>
-<![CDATA[</ol>]]>
-<![CDATA[<p/>]]>
-<![CDATA[Alternately, aggregation can be disabled by using the <tt>off</tt>]]>
-<![CDATA[parameter value.]]>
+          <![CDATA[Aggregate of global events.]]>
         </wadl:doc>
         <wadl:request>
           <wadl:param name="aggregation" style="query">
@@ -1989,20 +1975,7 @@
     <wadl:resource path="/systemEvent/list">
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[List global events. Standard list parameters for paging apply.]]>
-<![CDATA[</p>]]>
-<![CDATA[The following query parameters apply to all actions in this]]>
-<![CDATA[resource:]]>
-<![CDATA[</p>]]>
-<![CDATA[<dl>]]>
-<![CDATA[<dt>eventTypes</dt><dd>Filter events by type</dd>]]>
-<![CDATA[<dt>itemTypes</dt><dd>Filter events based on the item type of their subjects</dd>]]>
-<![CDATA[<dt>itemIds</dt><dd>Filter events pertaining to specific item IDs</dd>]]>
-<![CDATA[<dt>users</dt><dd>Filter events based on the user IDs they involve</dd>]]>
-<![CDATA[<dt>from</dt><dd>Exclude events prior to this date</dd>]]>
-<![CDATA[<dt>to</dt><dd>Exclude events after this date</dd>]]>
-<![CDATA[</dl>]]>
-<![CDATA[<p/>]]>
+          <![CDATA[List global events. Standard list parameters for paging and filtering apply.]]>
         </wadl:doc>
         <wadl:response>
           <wadl:representation mediaType="text/xml"/>
@@ -2107,8 +2080,7 @@
           <![CDATA[Find an replace a regex-specified substring of a property value]]>
 <![CDATA[across an entire entity class e.g.]]>
 <![CDATA[if an Address has a property with name &quot;url&quot; and value &quot;www.foo.com/bar&quot;,]]>
-<![CDATA[providing a regex value <tt]]>
-<![CDATA[>^www</tt> and replacement <tt>http://www</tt> will]]>
+<![CDATA[providing a regex value <tt>^www</tt> and replacement <tt>http://www</tt> will]]>
 <![CDATA[give the property a value of &quot;http://www.foo.com/bar&quot;.]]>
 <![CDATA[<p/>]]>
 <![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
@@ -2297,8 +2269,7 @@
 <![CDATA[return a page of 20 items.]]>
 <![CDATA[<p/>]]>
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
-<![CDATA[parameter, and disabled completely using]]>
-<![CDATA[a value of -1.]]>
+<![CDATA[parameter, and disabled completely using a value of -1.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
 <![CDATA[<p/>]]>
@@ -2328,7 +2299,8 @@
     <wadl:resource path="/virtualUnit/{id}">
       <wadl:param name="id" style="template">
         <wadl:doc>
-          <![CDATA[The requested item id]]>
+          <![CDATA[The requested]]>
+<![CDATA[item id]]>
         </wadl:doc>
       </wadl:param>
       <wadl:method name="GET">
@@ -2705,7 +2677,8 @@
       </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Count the number of available resources subordinate to this item.]]>
+          <![CDATA[Count the number of available resources subordinate to this i]]>
+<![CDATA[tem.]]>
         </wadl:doc>
         <wadl:request>
           <wadl:param name="all" style="query">
@@ -2861,8 +2834,7 @@
       <wadl:param name="id" style="template"/>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[List a]]>
-<![CDATA[vailable resources subordinate to this item. Behaviour is the same]]>
+          <![CDATA[List available resources subordinate to this item. Behaviour is the same]]>
 <![CDATA[as the general list method with respect to parameters.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Example:]]>
@@ -3010,7 +2982,8 @@
       </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Get a list of permission grants for the given user]]>
+          <![CDATA[Get a list of permission grants for the gi]]>
+<![CDATA[ven user]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -3492,8 +3465,7 @@
 <![CDATA[type.]]>
 <![CDATA[The default mode is to output items whose IDs would change, without]]>
 <![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
-<![CDATA[output items that would cause collisions if renamed, whe]]>
-<![CDATA[reas tolerant]]>
+<![CDATA[output items that would cause collisions if renamed, whereas tolerant]]>
 <![CDATA[mode will skip them altogether.]]>
 <![CDATA[The commit flag will cause renaming to take place.]]>
         </wadl:doc>
@@ -3859,7 +3831,8 @@
       <wadl:method name="GET">
         <wadl:doc>
           <![CDATA[List concepts related to another concept. This is the]]>
-<![CDATA[&quot;reverse&quot; form of the &quot;/related&quot;]]>
+<![CDATA[&quot;reverse&quot; form of the &quot]]>
+<![CDATA[;/related&quot;]]>
 <![CDATA[method.]]>
         </wadl:doc>
         <wadl:request/>
