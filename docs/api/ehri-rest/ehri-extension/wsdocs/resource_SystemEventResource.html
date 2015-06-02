@@ -73,6 +73,7 @@
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
                 <li><a href="resource_UserProfileResource.html">UserProfileResource</a></li>
+                <li><a href="resource_VersionResource.html">VersionResource</a></li>
                 <li><a href="resource_VirtualUnitResource.html">VirtualUnitResource</a></li>
                 <li><a href="resource_VocabularyResource.html">VocabularyResource</a></li>
               </ul>
@@ -96,6 +97,18 @@ here.</p>
         <a href="#path__systemEvent_-id-_subjects.html">/systemEvent/{id}/subjects</a>
         </li>
         <li>
+        <a href="#path__systemEvent_aggregate.html">/systemEvent/aggregate</a>
+        </li>
+        <li>
+        <a href="#path__systemEvent_aggregateByUser_-userId-.html">/systemEvent/aggregateByUser/{userId}</a>
+        </li>
+        <li>
+        <a href="#path__systemEvent_aggregateFor_-id-.html">/systemEvent/aggregateFor/{id}</a>
+        </li>
+        <li>
+        <a href="#path__systemEvent_aggregateForUser_-userId-.html">/systemEvent/aggregateForUser/{userId}</a>
+        </li>
+        <li>
         <a href="#path__systemEvent_byUser_-userId-.html">/systemEvent/byUser/{userId}</a>
         </li>
         <li>
@@ -106,9 +119,6 @@ here.</p>
         </li>
         <li>
         <a href="#path__systemEvent_list.html">/systemEvent/list</a>
-        </li>
-        <li>
-        <a href="#path__systemEvent_versions_-id-.html">/systemEvent/versions/{id}</a>
         </li>
       </ul>
         <a name="path__systemEvent_-id-.html"></a>
@@ -154,6 +164,142 @@ here.</p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
+            Fetch a page of subjects for a given event.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the event id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of subject items</p>
+        <a name="path__systemEvent_aggregate.html"></a>
+      <h1>/systemEvent/aggregate</h1>
+      <p class="note">Mount Point: <a href="../systemEvent/aggregate">/systemEvent/aggregate</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Aggregate of global events. Standard list parameters for paging and
+filtering apply.
+
+In this case the stream is grouped according to one of two criteria. The
+default groups all <i>sequential</i> events that have the same actioner.
+</p>
+An alternate <tt>strict</tt> aggregation stategy groups items that are:
+<ol>
+<li>triggered by the same actioner</li>
+<li>affecting on the same subjects</li>
+<li>have the same scope</li>
+<li>have the same log message</li>
+</ol>
+<p/>
+Alternately, aggregation can be disabled by using the <tt>off</tt>
+parameter value.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>aggregation</td>
+          <td>
+            Aggregate events by strict, or user
+          </td>
+          <td>query</td>
+          <td>user</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__systemEvent_aggregateByUser_-userId-.html"></a>
+      <h1>/systemEvent/aggregateByUser/{userId}</h1>
+      <p class="note">Mount Point: <a href="../systemEvent/aggregateByUser/{userId}">/systemEvent/aggregateByUser/{userId}</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Fetch an aggregate list of a user's actions.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>userId</td>
+          <td>
+            the user's ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>aggregation</td>
+          <td>
+            The manner in which to aggregate the results, accepting
+"user", "strict" or "off" (no aggregation). Default is
+<b>strict</b>.
+          </td>
+          <td>query</td>
+          <td>strict</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>a list of event ranges</p>
+        <a name="path__systemEvent_aggregateFor_-id-.html"></a>
+      <h1>/systemEvent/aggregateFor/{id}</h1>
+      <p class="note">Mount Point: <a href="../systemEvent/aggregateFor/{id}">/systemEvent/aggregateFor/{id}</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
             Lookup and page the history for a given item.
           </p>
       <h3>Parameters</h3>
@@ -172,6 +318,14 @@ here.</p>
           <td>path</td>
           <td></td>
         </tr>
+        <tr>
+          <td>aggregation</td>
+          <td>
+            the aggregation stategy
+          </td>
+          <td>query</td>
+          <td>user</td>
+        </tr>
       </table>
       <h3>Response Body</h3>
       <table>
@@ -181,15 +335,19 @@ here.</p>
         </tr>
         <tr>
           <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
+          <td>application/json</td>
         </tr>
       </table>
       <p>A list of events</p>
-        <a name="path__systemEvent_byUser_-userId-.html"></a>
-      <h1>/systemEvent/byUser/{userId}</h1>
-      <p class="note">Mount Point: <a href="../systemEvent/byUser/{userId}">/systemEvent/byUser/{userId}</a></p>
+        <a name="path__systemEvent_aggregateForUser_-userId-.html"></a>
+      <h1>/systemEvent/aggregateForUser/{userId}</h1>
+      <p class="note">Mount Point: <a href="../systemEvent/aggregateForUser/{userId}">/systemEvent/aggregateForUser/{userId}</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Aggregate actions that are relevant to a given user based on
+the other users that they follow and the items they watch.
+          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -201,57 +359,56 @@ here.</p>
         <tr>
           <td>userId</td>
           <td>
-            (no documentation provided)
+            the user's ID
           </td>
           <td>path</td>
           <td></td>
         </tr>
         <tr>
-          <td>et</td>
+          <td>aggregation</td>
           <td>
-            (no documentation provided)
+            The manner in which to aggregate the results, accepting
+"user", "strict" or "off" (no aggregation). Default is
+"user".
           </td>
           <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>type</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>item</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
           <td>user</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
-          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
         </tr>
         <tr>
-          <td>from</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
-          <td></td>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__systemEvent_byUser_-userId-.html"></a>
+      <h1>/systemEvent/byUser/{userId}</h1>
+      <p class="note">Mount Point: <a href="../systemEvent/byUser/{userId}">/systemEvent/byUser/{userId}</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Fetch a list of a user's actions.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
         </tr>
         <tr>
-          <td>to</td>
+          <td>userId</td>
           <td>
-            (no documentation provided)
+            the user's ID
           </td>
-          <td>query</td>
+          <td>path</td>
           <td></td>
         </tr>
       </table>
@@ -266,7 +423,7 @@ here.</p>
           <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>(no documentation provided)</p>
+      <p>a list of event ranges</p>
         <a name="path__systemEvent_for_-id-.html"></a>
       <h1>/systemEvent/for/{id}</h1>
       <p class="note">Mount Point: <a href="../systemEvent/for/{id}">/systemEvent/for/{id}</a></p>
@@ -324,65 +481,9 @@ the other users that they follow and the items they watch.
         <tr>
           <td>userId</td>
           <td>
-            The user's ID
+            the user's ID
           </td>
           <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>et</td>
-          <td>
-            Filter events by type
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>type</td>
-          <td>
-            Filter events based on the item type of their subjects
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>item</td>
-          <td>
-            Filter events pertaining to specific item IDs
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>user</td>
-          <td>
-            Filter events based on the user IDs they involve
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>from</td>
-          <td>
-            Exclude events prior to this data
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>to</td>
-          <td>
-            Exclude events after this data
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>show</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
           <td></td>
         </tr>
       </table>
@@ -405,64 +506,20 @@ the other users that they follow and the items they watch.
       <h2>GET</h2>
       <p>
             List global events. Standard list parameters for paging apply.
+</p>
+The following query parameters apply to all actions in this
+resource:
+</p>
+<dl>
+<dt>eventTypes</dt><dd>Filter events by type</dd>
+<dt>itemTypes</dt><dd>Filter events based on the item type of their subjects</dd>
+<dt>itemIds</dt><dd>Filter events pertaining to specific item IDs</dd>
+<dt>users</dt><dd>Filter events based on the user IDs they involve</dd>
+<dt>from</dt><dd>Exclude events prior to this date</dd>
+<dt>to</dt><dd>Exclude events after this date</dd>
+</dl>
+<p/>
           </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>et</td>
-          <td>
-            Filter events by type
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>type</td>
-          <td>
-            Filter events based on the item type of their subjects
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>item</td>
-          <td>
-            Filter events pertaining to specific item IDs
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>user</td>
-          <td>
-            Filter events based on the user IDs they involve
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>from</td>
-          <td>
-            Exclude events prior to this data
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>to</td>
-          <td>
-            Exclude events after this data
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-      </table>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -475,43 +532,6 @@ the other users that they follow and the items they watch.
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__systemEvent_versions_-id-.html"></a>
-      <h1>/systemEvent/versions/{id}</h1>
-      <p class="note">Mount Point: <a href="../systemEvent/versions/{id}">/systemEvent/versions/{id}</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Lookup and page the versions for a given item.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            The event id
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of versions</p>
 
       <div class="clear" />
     </div>

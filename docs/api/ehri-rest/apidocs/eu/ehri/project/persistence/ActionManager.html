@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ActionManager (EHRI Backend 0.10.0-SNAPSHOT API)</title>
+<title>ActionManager (EHRI Backend 0.10.1-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ActionManager (EHRI Backend 0.10.0-SNAPSHOT API)";
+        parent.document.title="ActionManager (EHRI Backend 0.10.1-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -115,7 +115,6 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
  \/                        \/                      \/
  [lifecycleAction]     [lifecycleActionStream]     [lifecycleEvent]
  |                         |                       |
- e3--[actionHasEvent]->-- Event 3 ---[hasEvent]--<--e3
  e3--[actionHasEvent]->-- Event 3 ---[hasEvent]--<--e3
  \/                        \/                      \/
  [lifecycleAction]         [lifecycleAction]       [lifecycleEvent]
@@ -226,53 +225,10 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#getLatestGlobalEvent()">getLatestGlobalEvent</a></strong>()</code>
-<div class="block">Get the latest global event.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#getLatestGlobalEvents()">getLatestGlobalEvents</a></strong>()</code>
-<div class="block">Get an iterable of global events in most-recent-first order.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#getTimestamp()">getTimestamp</a></strong>()</code>
-<div class="block">Get the current time as a timestamp.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;subject,
-               <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
-               <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type)</code>
-<div class="block">Create an action for the given subject, user, and type.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes,%20com.google.common.base.Optional)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;subject,
-               <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
-               <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type,
-               com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>
-<div class="block">Create an action node that describes what user U has done with subject S
- via logMessage log.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes,%20com.google.common.base.Optional)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
-               <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type,
-               com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>
-<div class="block">Create an action node describing something that user U has done.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#sameAs(eu.ehri.project.models.events.SystemEvent,%20eu.ehri.project.models.events.SystemEvent)">sameAs</a></strong>(<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event1,
-      <a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event2)</code>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#canAggregate(eu.ehri.project.models.events.SystemEvent,%20eu.ehri.project.models.events.SystemEvent,%20int)">canAggregate</a></strong>(<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event1,
+            <a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event2,
+            int&nbsp;timeDiffInSeconds)</code>
 <div class="block">Determine if two events are the same according to the following
  definition:
  <p/>
@@ -288,6 +244,69 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#getLatestGlobalEvent()">getLatestGlobalEvent</a></strong>()</code>
+<div class="block">Get the latest global event.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#getLatestGlobalEvents()">getLatestGlobalEvents</a></strong>()</code>
+<div class="block">Get an iterable of global events in most-recent-first order.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#getTimestamp()">getTimestamp</a></strong>()</code>
+<div class="block">Get the current time as a timestamp.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;subject,
+               <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
+               <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type)</code>
+<div class="block">Create an action for the given subject, user, and type.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes,%20com.google.common.base.Optional)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;subject,
+               <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
+               <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type,
+               com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>
+<div class="block">Create an action node that describes what user U has done with subject S
+ via logMessage log.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
+               <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type)</code>
+<div class="block">Create an action node describing something that user U has done.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes,%20com.google.common.base.Optional)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
+               <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type,
+               com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>
+<div class="block">Create an action node describing something that user U has done.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#sameAs(eu.ehri.project.models.events.SystemEvent,%20eu.ehri.project.models.events.SystemEvent)">sameAs</a></strong>(<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event1,
+      <a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event2)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#sequentialWithSameAccessor(eu.ehri.project.models.events.SystemEvent,%20eu.ehri.project.models.events.SystemEvent)">sequentialWithSameAccessor</a></strong>(<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;first,
+                          <a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;second)</code>
+<div class="block">Test if two events are sequential with the same actioner.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#setScope(eu.ehri.project.models.base.Frame)">setScope</a></strong>(<a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&nbsp;frame)</code>
 <div class="block">Set the scope of this action.</div>
@@ -430,6 +449,19 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>An EventContext object</dd></dl>
 </li>
 </ul>
+<a name="newEventContext(eu.ehri.project.models.base.Actioner, eu.ehri.project.definitions.EventTypes)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>newEventContext</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;newEventContext(<a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
+                                         <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type)</pre>
+<div class="block">Create an action node describing something that user U has done.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>user</code> - The actioner</dd><dd><code>type</code> - The event type</dd>
+<dt><span class="strong">Returns:</span></dt><dd>An EventContext object</dd></dl>
+</li>
+</ul>
 <a name="newEventContext(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Actioner, eu.ehri.project.definitions.EventTypes)">
 <!--   -->
 </a>
@@ -472,14 +504,15 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>A new ActionManager instance.</dd></dl>
 </li>
 </ul>
-<a name="sameAs(eu.ehri.project.models.events.SystemEvent, eu.ehri.project.models.events.SystemEvent)">
+<a name="canAggregate(eu.ehri.project.models.events.SystemEvent, eu.ehri.project.models.events.SystemEvent, int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>sameAs</h4>
-<pre>public static&nbsp;boolean&nbsp;sameAs(<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event1,
-             <a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event2)</pre>
+<h4>canAggregate</h4>
+<pre>public static&nbsp;boolean&nbsp;canAggregate(<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event1,
+                   <a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event2,
+                   int&nbsp;timeDiffInSeconds)</pre>
 <div class="block">Determine if two events are the same according to the following
  definition:
  <p/>
@@ -492,8 +525,32 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
  <p/>
  This function allows filtering an event stream for duplicates,
  like someone repeatedly updating the same item.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>event1</code> - the first event</dd><dd><code>event2</code> - the second event</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>event1</code> - the first event</dd><dd><code>event2</code> - the second event</dd><dd><code>timeDiffInSeconds</code> - the elapsed time between the events</dd>
 <dt><span class="strong">Returns:</span></dt><dd>whether or not the events are effectively the same.</dd></dl>
+</li>
+</ul>
+<a name="sequentialWithSameAccessor(eu.ehri.project.models.events.SystemEvent, eu.ehri.project.models.events.SystemEvent)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sequentialWithSameAccessor</h4>
+<pre>public static&nbsp;boolean&nbsp;sequentialWithSameAccessor(<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;first,
+                                 <a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;second)</pre>
+<div class="block">Test if two events are sequential with the same actioner. This is used
+ for aggregating repeated events.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>first</code> - the first temporal event</dd><dd><code>second</code> - the second temporal event</dd>
+<dt><span class="strong">Returns:</span></dt><dd>whether events can be aggregated by user</dd></dl>
+</li>
+</ul>
+<a name="sameAs(eu.ehri.project.models.events.SystemEvent, eu.ehri.project.models.events.SystemEvent)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>sameAs</h4>
+<pre>public static&nbsp;boolean&nbsp;sameAs(<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event1,
+             <a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event2)</pre>
 </li>
 </ul>
 <a name="getTimestamp()">

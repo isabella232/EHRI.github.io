@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SystemEventResource (EHRI Backend 0.10.0-SNAPSHOT API)</title>
+<title>SystemEventResource (EHRI Backend 0.10.1-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="SystemEventResource (EHRI Backend 0.10.0-SNAPSHOT API)";
+        parent.document.title="SystemEventResource (EHRI Backend 0.10.1-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -152,29 +152,33 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#EVENT_TYPE_PARAM">EVENT_TYPE_PARAM</a></strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#AGGREGATION_PARAM">AGGREGATION_PARAM</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#EVENT_TYPE_PARAM">EVENT_TYPE_PARAM</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#FROM_PARAM">FROM_PARAM</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#ITEM_ID_PARAM">ITEM_ID_PARAM</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#ITEM_TYPE_PARAM">ITEM_TYPE_PARAM</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#SHOW">SHOW</a></strong></code>&nbsp;</td>
-</tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#SHOW_PARAM">SHOW_PARAM</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#TO_PARAM">TO_PARAM</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#USER_PARAM">USER_PARAM</a></strong></code>&nbsp;</td>
 </tr>
@@ -226,43 +230,55 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#aggregateEvents(eu.ehri.project.views.EventViews.Aggregation)">aggregateEvents</a></strong>(<a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)</code>
+<div class="block">Aggregate of global events.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#aggregateEventsForItem(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateEventsForItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+                      <a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)</code>
+<div class="block">Lookup and page the history for a given item.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#aggregateEventsForUser(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateEventsForUser</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
+                      <a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)</code>
+<div class="block">Aggregate actions that are relevant to a given user based on
+ the other users that they follow and the items they watch.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#aggregateUserActions(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateUserActions</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
+                    <a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)</code>
+<div class="block">Fetch an aggregate list of a user's actions.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#get(java.lang.String)">get</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Fetch a resource by id.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#listEvents(java.util.List,%20java.util.List,%20java.util.List,%20java.util.List,%20java.lang.String,%20java.lang.String)">listEvents</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&gt;&nbsp;eventTypes,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemTypes,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemIds,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;users,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;from,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;to)</code>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#listEvents()">listEvents</a></strong>()</code>
 <div class="block">List global events.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#listEventsByUser(java.lang.String,%20java.util.List,%20java.util.List,%20java.util.List,%20java.util.List,%20java.lang.String,%20java.lang.String)">listEventsByUser</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
-                <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&gt;&nbsp;eventTypes,
-                <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemTypes,
-                <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemIds,
-                <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;users,
-                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;from,
-                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;to)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#listEventsForUser(java.lang.String)">listEventsForUser</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>
+<div class="block">List actions that are relevant to a given user based on
+ the other users that they follow and the items they watch.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#listEventsForUser(java.lang.String,%20java.util.List,%20java.util.List,%20java.util.List,%20java.util.List,%20java.lang.String,%20java.lang.String,%20java.util.List)">listEventsForUser</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
-                 <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&gt;&nbsp;eventTypes,
-                 <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemTypes,
-                 <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemIds,
-                 <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;users,
-                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;from,
-                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;to,
-                 <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../eu/ehri/project/views/EventViews.ShowType.html" title="enum in eu.ehri.project.views">EventViews.ShowType</a>&gt;&nbsp;show)</code>
-<div class="block">List actions that are relevant to a given user based on
- the other users that they follow and the items they watch.</div>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#listUserActions(java.lang.String)">listUserActions</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>
+<div class="block">Fetch a list of a user's actions.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -274,13 +290,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#pageSubjectsForEvent(java.lang.String)">pageSubjectsForEvent</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
-<div class="block">Lookup and page the history for a given item.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/SystemEventResource.html#pageVersionsForItem(java.lang.String)">pageVersionsForItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
-<div class="block">Lookup and page the versions for a given item.</div>
+<div class="block">Fetch a page of subjects for a given event.</div>
 </td>
 </tr>
 </table>
@@ -296,7 +306,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></h3>
-<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#checkMediaType()">checkMediaType</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#creationResponse(eu.ehri.project.models.base.Frame)">creationResponse</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getCacheControl(T)">getCacheControl</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getCurrentUser()">getCurrentUser</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getGraph()">getGraph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getIntQueryParam(java.lang.String,%20int)">getIntQueryParam</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getItemUri(eu.ehri.project.models.base.Frame)">getItemUri</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getLogMessage()">getLogMessage</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getQuery(java.lang.Class)">getQuery</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getRepresentation(eu.ehri.project.models.base.Frame)">getRepresentation</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getRepresentation(com.tinkerpop.blueprints.Vertex)">getRepresentation</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getRequesterUserProfile()">getRequesterUserProfile</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getSerializer()">getSerializer</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getStringListQueryParam(java.lang.String)">getStringListQueryParam</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#isPatch()">isPatch</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#isStreaming()">isStreaming</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#single(T)">single</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#single(com.tinkerpop.blueprints.Vertex)">single</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable,%20eu.ehri.project.persistence.Serializer,%20eu.ehri.project.core.Tx)">streamingList</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable,%20eu.ehri.project.core.Tx)">streamingList</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page,%20eu.ehri.project.persistence.Serializer,%20eu.ehri.project.core.Tx)">streamingPage</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page,%20eu.ehri.project.core.Tx)">streamingPage</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingVertexList(java.lang.Iterable,%20eu.ehri.project.persistence.Serializer,%20eu.ehri.project.core.Tx)">streamingVertexList</a></code></li>
+<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#checkMediaType()">checkMediaType</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#creationResponse(eu.ehri.project.models.base.Frame)">creationResponse</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getCacheControl(T)">getCacheControl</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getCurrentUser()">getCurrentUser</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getEnumListQueryParam(java.lang.String,%20java.lang.Class)">getEnumListQueryParam</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getGraph()">getGraph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getIntQueryParam(java.lang.String,%20int)">getIntQueryParam</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getItemUri(eu.ehri.project.models.base.Frame)">getItemUri</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getLogMessage()">getLogMessage</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getQuery(java.lang.Class)">getQuery</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getRepresentation(eu.ehri.project.models.base.Frame)">getRepresentation</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getRepresentation(com.tinkerpop.blueprints.Vertex)">getRepresentation</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getRequesterUserProfile()">getRequesterUserProfile</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getSerializer()">getSerializer</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getStringListQueryParam(java.lang.String)">getStringListQueryParam</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#getStringQueryParam(java.lang.String)">getStringQueryParam</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#isPatch()">isPatch</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#isStreaming()">isStreaming</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#single(T)">single</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#single(com.tinkerpop.blueprints.Vertex)">single</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable,%20eu.ehri.project.persistence.Serializer,%20eu.ehri.project.core.Tx)">streamingList</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingList(java.lang.Iterable,%20eu.ehri.project.core.Tx)">streamingList</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingListOfLists(java.lang.Iterable,%20eu.ehri.project.core.Tx)">streamingListOfLists</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page,%20eu.ehri.project.persistence.Serializer,%20eu.ehri.project.core.Tx)">streamingPage</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page,%20eu.ehri.project.core.Tx)">streamingPage</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingVertexList(java.lang.Iterable,%20eu.ehri.project.persistence.Serializer,%20eu.ehri.project.core.Tx)">streamingVertexList</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -379,14 +389,24 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#eu.ehri.extension.SystemEventResource.TO_PARAM">Constant Field Values</a></dd></dl>
 </li>
 </ul>
-<a name="SHOW">
+<a name="SHOW_PARAM">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SHOW_PARAM</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> SHOW_PARAM</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#eu.ehri.extension.SystemEventResource.SHOW_PARAM">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="AGGREGATION_PARAM">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>SHOW</h4>
-<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> SHOW</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#eu.ehri.extension.SystemEventResource.SHOW">Constant Field Values</a></dd></dl>
+<h4>AGGREGATION_PARAM</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> AGGREGATION_PARAM</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#eu.ehri.extension.SystemEventResource.AGGREGATION_PARAM">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 </li>
@@ -438,86 +458,133 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
 </li>
 </ul>
-<a name="listEvents(java.util.List, java.util.List, java.util.List, java.util.List, java.lang.String, java.lang.String)">
+<a name="listEvents()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>listEvents</h4>
-<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listEvents(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&gt;&nbsp;eventTypes,
-                                   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemTypes,
-                                   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemIds,
-                                   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;users,
-                                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;from,
-                                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;to)
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listEvents()
                                      throws <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
-<div class="block">List global events. Standard list parameters for paging apply.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>eventTypes</code> - Filter events by type</dd><dd><code>itemTypes</code> - Filter events based on the item type of their subjects</dd><dd><code>itemIds</code> - Filter events pertaining to specific item IDs</dd><dd><code>users</code> - Filter events based on the user IDs they involve</dd><dd><code>from</code> - Exclude events prior to this data</dd><dd><code>to</code> - Exclude events after this data</dd>
-<dt><span class="strong">Throws:</span></dt>
+<div class="block">List global events. Standard list parameters for paging apply.
+ </p>
+ The following query parameters apply to all actions in this
+ resource:
+ </p>
+ <dl>
+ <dt>eventTypes</dt><dd>Filter events by type</dd>
+ <dt>itemTypes</dt><dd>Filter events based on the item type of their subjects</dd>
+ <dt>itemIds</dt><dd>Filter events pertaining to specific item IDs</dd>
+ <dt>users</dt><dd>Filter events based on the user IDs they involve</dd>
+ <dt>from</dt><dd>Exclude events prior to this date</dd>
+ <dt>to</dt><dd>Exclude events after this date</dd>
+ </dl>
+ <p/></div>
+<dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
 </li>
 </ul>
-<a name="listEventsByUser(java.lang.String, java.util.List, java.util.List, java.util.List, java.util.List, java.lang.String, java.lang.String)">
+<a name="aggregateEvents(eu.ehri.project.views.EventViews.Aggregation)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>listEventsByUser</h4>
-<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listEventsByUser(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
-                                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&gt;&nbsp;eventTypes,
-                                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemTypes,
-                                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemIds,
-                                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;users,
-                                         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;from,
-                                         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;to)
-                                           throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                  <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
-<dl><dt><span class="strong">Throws:</span></dt>
+<h4>aggregateEvents</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;aggregateEvents(<a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
+                                          throws <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Aggregate of global events. Standard list parameters for paging and
+ filtering apply.
+
+ In this case the stream is grouped according to one of two criteria. The
+ default groups all <i>sequential</i> events that have the same actioner.
+ </p>
+ An alternate <code>strict</code> aggregation stategy groups items that are:
+ <ol>
+     <li>triggered by the same actioner</li>
+     <li>affecting on the same subjects</li>
+     <li>have the same scope</li>
+     <li>have the same log message</li>
+ </ol>
+ <p/>
+ Alternately, aggregation can be disabled by using the <code>off</code>
+ parameter value.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>aggregation</code> - Aggregate events by strict, or user</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="listUserActions(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>listUserActions</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listUserActions(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)
+                                          throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                                 <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Fetch a list of a user's actions.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user's ID</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a list of event ranges</dd>
+<dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
 <dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
 </li>
 </ul>
-<a name="listEventsForUser(java.lang.String, java.util.List, java.util.List, java.util.List, java.util.List, java.lang.String, java.lang.String, java.util.List)">
+<a name="aggregateUserActions(java.lang.String, eu.ehri.project.views.EventViews.Aggregation)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aggregateUserActions</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;aggregateUserActions(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
+                                             <a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
+                                               throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                                      <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Fetch an aggregate list of a user's actions.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user's ID</dd><dd><code>aggregation</code> - The manner in which to aggregate the results, accepting
+                    "user", "strict" or "off" (no aggregation). Default is
+                    <b>strict</b>.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a list of event ranges</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+</li>
+</ul>
+<a name="listEventsForUser(java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>listEventsForUser</h4>
-<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listEventsForUser(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
-                                          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&gt;&nbsp;eventTypes,
-                                          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemTypes,
-                                          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;itemIds,
-                                          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;users,
-                                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;from,
-                                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;to,
-                                          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../eu/ehri/project/views/EventViews.ShowType.html" title="enum in eu.ehri.project.views">EventViews.ShowType</a>&gt;&nbsp;show)
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listEventsForUser(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)
                                             throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
                                                    <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
 <div class="block">List actions that are relevant to a given user based on
  the other users that they follow and the items they watch.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - The user's ID</dd><dd><code>eventTypes</code> - Filter events by type</dd><dd><code>itemTypes</code> - Filter events based on the item type of their subjects</dd><dd><code>itemIds</code> - Filter events pertaining to specific item IDs</dd><dd><code>users</code> - Filter events based on the user IDs they involve</dd><dd><code>from</code> - Exclude events prior to this data</dd><dd><code>to</code> - Exclude events after this data</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user's ID</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
 <dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
 </li>
 </ul>
-<a name="pageSubjectsForEvent(java.lang.String)">
+<a name="aggregateEventsForUser(java.lang.String, eu.ehri.project.views.EventViews.Aggregation)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>pageSubjectsForEvent</h4>
-<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;pageSubjectsForEvent(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
-                                               throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                      <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
-                                                      <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></pre>
-<div class="block">Lookup and page the history for a given item.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The event id</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A list of events</dd>
+<h4>aggregateEventsForUser</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;aggregateEventsForUser(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
+                                               <a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
+                                                 throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                                        <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<div class="block">Aggregate actions that are relevant to a given user based on
+ the other users that they follow and the items they watch.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user's ID</dd><dd><code>aggregation</code> - The manner in which to aggregate the results, accepting
+                    "user", "strict" or "off" (no aggregation). Default is
+                    "user".</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>
-<dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
 </li>
 </ul>
 <a name="pageEventsForItem(java.lang.String)">
@@ -539,19 +606,39 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd></dl>
 </li>
 </ul>
-<a name="pageVersionsForItem(java.lang.String)">
+<a name="aggregateEventsForItem(java.lang.String, eu.ehri.project.views.EventViews.Aggregation)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aggregateEventsForItem</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;aggregateEventsForItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+                                               <a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
+                                                 throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                                        <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
+                                                        <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></pre>
+<div class="block">Lookup and page the history for a given item.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The event id</dd><dd><code>aggregation</code> - the aggregation stategy</dd>
+<dt><span class="strong">Returns:</span></dt><dd>A list of events</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
+<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd></dl>
+</li>
+</ul>
+<a name="pageSubjectsForEvent(java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>pageVersionsForItem</h4>
-<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;pageVersionsForItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
-                                              throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                     <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
-                                                     <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></pre>
-<div class="block">Lookup and page the versions for a given item.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The event id</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A list of versions</dd>
+<h4>pageSubjectsForEvent</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;pageSubjectsForEvent(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+                                               throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                                      <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
+                                                      <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></pre>
+<div class="block">Fetch a page of subjects for a given event.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - the event id</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a list of subject items</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
 <dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>

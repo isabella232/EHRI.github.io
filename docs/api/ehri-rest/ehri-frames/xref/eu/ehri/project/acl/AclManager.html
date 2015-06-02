@@ -136,7 +136,7 @@
 <a class="jxr_linenumber" name="126" href="#126">126</a> <em class="jxr_javadoccomment">     * @param accessor The user/group</em>
 <a class="jxr_linenumber" name="127" href="#127">127</a> <em class="jxr_javadoccomment">     * @return User belongs to the admin group</em>
 <a class="jxr_linenumber" name="128" href="#128">128</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="129" href="#129">129</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> belongsToAdmin(<a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor) {
+<a class="jxr_linenumber" name="129" href="#129">129</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> belongsToAdmin(<a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor) {
 <a class="jxr_linenumber" name="130" href="#130">130</a>         <strong class="jxr_keyword">if</strong> (accessor.isAdmin()) {
 <a class="jxr_linenumber" name="131" href="#131">131</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
 <a class="jxr_linenumber" name="132" href="#132">132</a>         }
@@ -154,7 +154,7 @@
 <a class="jxr_linenumber" name="144" href="#144">144</a> <em class="jxr_javadoccomment">     * @param accessor The user/group</em>
 <a class="jxr_linenumber" name="145" href="#145">145</a> <em class="jxr_javadoccomment">     * @return User is an anonymous accessor</em>
 <a class="jxr_linenumber" name="146" href="#146">146</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="147" href="#147">147</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isAnonymous(<a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor) {
+<a class="jxr_linenumber" name="147" href="#147">147</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> isAnonymous(<a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor) {
 <a class="jxr_linenumber" name="148" href="#148">148</a>         Preconditions.checkNotNull(accessor, <span class="jxr_string">"NULL accessor given."</span>);
 <a class="jxr_linenumber" name="149" href="#149">149</a>         <strong class="jxr_keyword">return</strong> accessor instanceof <a href="../../../../eu/ehri/project/acl/AnonymousAccessor.html">AnonymousAccessor</a>
 <a class="jxr_linenumber" name="150" href="#150">150</a>                 || accessor.getId().equals(
@@ -380,7 +380,7 @@
 <a class="jxr_linenumber" name="370" href="#370">370</a> <em class="jxr_javadoccomment">     * @param accessor The user/group</em>
 <a class="jxr_linenumber" name="371" href="#371">371</a> <em class="jxr_javadoccomment">     * @return A PipeFunction for filtering a set of vertices as the given user</em>
 <a class="jxr_linenumber" name="372" href="#372">372</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="373" href="#373">373</a>     <strong class="jxr_keyword">public</strong> PipeFunction&lt;Vertex, Boolean&gt; getAclFilterFunction(<a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor) {
+<a class="jxr_linenumber" name="373" href="#373">373</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> PipeFunction&lt;Vertex, Boolean&gt; getAclFilterFunction(<a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor) {
 <a class="jxr_linenumber" name="374" href="#374">374</a>         Preconditions.checkNotNull(accessor, <span class="jxr_string">"Accessor is null"</span>);
 <a class="jxr_linenumber" name="375" href="#375">375</a>         <strong class="jxr_keyword">if</strong> (belongsToAdmin(accessor)) {
 <a class="jxr_linenumber" name="376" href="#376">376</a>             <strong class="jxr_keyword">return</strong> noopFilterFunction();
@@ -651,7 +651,7 @@
 <a class="jxr_linenumber" name="641" href="#641">641</a> <em class="jxr_javadoccomment">     * @param accessor The user/group</em>
 <a class="jxr_linenumber" name="642" href="#642">642</a> <em class="jxr_javadoccomment">     * @return A lookup of accessor vertices</em>
 <a class="jxr_linenumber" name="643" href="#643">643</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="644" href="#644">644</a>     <strong class="jxr_keyword">private</strong> HashSet&lt;Vertex&gt; getAllAccessors(<a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor) {
+<a class="jxr_linenumber" name="644" href="#644">644</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> HashSet&lt;Vertex&gt; getAllAccessors(<a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor) {
 <a class="jxr_linenumber" name="645" href="#645">645</a> 
 <a class="jxr_linenumber" name="646" href="#646">646</a>         <strong class="jxr_keyword">final</strong> HashSet&lt;Vertex&gt; all = Sets.newHashSet();
 <a class="jxr_linenumber" name="647" href="#647">647</a>         <strong class="jxr_keyword">if</strong> (!isAnonymous(accessor)) {
@@ -711,7 +711,7 @@
 <a class="jxr_linenumber" name="701" href="#701">701</a> <em class="jxr_javadoccomment">     * @return A no-op PipeFunction for filtering a list of vertices as an admin</em>
 <a class="jxr_linenumber" name="702" href="#702">702</a> <em class="jxr_javadoccomment">     *         user</em>
 <a class="jxr_linenumber" name="703" href="#703">703</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="704" href="#704">704</a>     <strong class="jxr_keyword">private</strong> PipeFunction&lt;Vertex, Boolean&gt; noopFilterFunction() {
+<a class="jxr_linenumber" name="704" href="#704">704</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> PipeFunction&lt;Vertex, Boolean&gt; noopFilterFunction() {
 <a class="jxr_linenumber" name="705" href="#705">705</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> PipeFunction&lt;Vertex, Boolean&gt;() {
 <a class="jxr_linenumber" name="706" href="#706">706</a>             <strong class="jxr_keyword">public</strong> Boolean compute(Vertex v) {
 <a class="jxr_linenumber" name="707" href="#707">707</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;

@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AbstractRestResource (Web Service 0.10.0-SNAPSHOT API)</title>
+<title>AbstractRestResource (Web Service 0.10.1-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AbstractRestResource (Web Service 0.10.0-SNAPSHOT API)";
+        parent.document.title="AbstractRestResource (Web Service 0.10.1-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -284,12 +284,17 @@ implements <a href="../../../eu/ehri/extension/base/TxCheckedResource.html" titl
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected &lt;T extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang">Enum</a>&lt;T&gt;&gt;&nbsp;<br><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getEnumListQueryParam(java.lang.String,%20java.lang.Class)">getEnumListQueryParam</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.frames.FramedGraph&lt;? extends <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/core/TxGraph.html?is-external=true" title="class or interface in eu.ehri.project.core">TxGraph</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getGraph()">getGraph</a></strong>()</code>
 <div class="block">Fetch the graph associated with the resource.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected int</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getIntQueryParam(java.lang.String,%20int)">getIntQueryParam</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
                 int&nbsp;defaultValue)</code>
@@ -297,52 +302,58 @@ implements <a href="../../../eu/ehri/extension/base/TxCheckedResource.html" titl
  on a default.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getItemUri(eu.ehri.project.models.base.Frame)">getItemUri</a></strong>(<a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</a>&nbsp;item)</code>
 <div class="block">Get the URI for a given item.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getLogMessage()">getLogMessage</a></strong>()</code>
 <div class="block">Retreive an action log message from the request header.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected &lt;T extends <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/AccessibleEntity.html?is-external=true" title="class or interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;&nbsp;<br><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/views/Query.html?is-external=true" title="class or interface in eu.ehri.project.views">Query</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getQuery(java.lang.Class)">getQuery</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Get a query object configured according to incoming parameters.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getRepresentation(eu.ehri.project.models.base.Frame)">getRepresentation</a></strong>(<a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</a>&nbsp;frame)</code>
 <div class="block">Get a string representation (JSON or XML) of a given frame.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getRepresentation(com.tinkerpop.blueprints.Vertex)">getRepresentation</a></strong>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</code>
 <div class="block">Get a string representation (JSON or XML) of a given frame.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Accessor.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Accessor</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getRequesterUserProfile()">getRequesterUserProfile</a></strong>()</code>
 <div class="block">Retrieve the account of the current user, who may be
  anonymous.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getSerializer()">getSerializer</a></strong>()</code>
 <div class="block">Get a serializer according to passed-in serialization config.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getStringListQueryParam(java.lang.String)">getStringListQueryParam</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</code>
+<div class="block">Get a list of values for a given query parameter key.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#getStringQueryParam(java.lang.String)">getStringQueryParam</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</code>
 <div class="block">Get a list of values for a given query parameter key.</div>
 </td>
 </tr>
@@ -388,6 +399,13 @@ implements <a href="../../../eu/ehri/extension/base/TxCheckedResource.html" titl
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected &lt;T extends <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</a>&gt;&nbsp;<br>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingListOfLists(java.lang.Iterable,%20eu.ehri.project.core.Tx)">streamingListOfLists</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;? extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;T&gt;&gt;&nbsp;lists,
+                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/core/Tx.html?is-external=true" title="class or interface in eu.ehri.project.core">Tx</a>&nbsp;tx)</code>
+<div class="block">Return a streaming response from an iterable of item lists.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected &lt;T extends <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</a>&gt;&nbsp;<br>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page,%20eu.ehri.project.persistence.Serializer,%20eu.ehri.project.core.Tx)">streamingPage</a></strong>(<a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/views/Query.Page.html?is-external=true" title="class or interface in eu.ehri.project.views">Query.Page</a>&lt;T&gt;&nbsp;page,
              <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</a>&nbsp;serializer,
              <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/core/Tx.html?is-external=true" title="class or interface in eu.ehri.project.core">Tx</a>&nbsp;tx)</code>
@@ -395,14 +413,14 @@ implements <a href="../../../eu/ehri/extension/base/TxCheckedResource.html" titl
  the given entity converter.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected &lt;T extends <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</a>&gt;&nbsp;<br>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page,%20eu.ehri.project.core.Tx)">streamingPage</a></strong>(<a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/views/Query.Page.html?is-external=true" title="class or interface in eu.ehri.project.views">Query.Page</a>&lt;T&gt;&nbsp;page,
              <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/core/Tx.html?is-external=true" title="class or interface in eu.ehri.project.core">Tx</a>&nbsp;tx)</code>
 <div class="block">Stream a single page with total, limit, and offset info.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/AbstractRestResource.html#streamingVertexList(java.lang.Iterable,%20eu.ehri.project.persistence.Serializer,%20eu.ehri.project.core.Tx)">streamingVertexList</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Vertex&gt;&nbsp;list,
                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Serializer.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Serializer</a>&nbsp;serializer,
@@ -720,6 +738,18 @@ protected&nbsp;javax.ws.rs.core.UriInfo uriInfo</pre>
 <dl><dt><span class="strong">Returns:</span></dt><dd>a vertex serializer</dd></dl>
 </li>
 </ul>
+<a name="getStringQueryParam(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getStringQueryParam</h4>
+<pre>protected&nbsp;com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getStringQueryParam(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<div class="block">Get a list of values for a given query parameter key.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the parameter name</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a list of string values</dd></dl>
+</li>
+</ul>
 <a name="getStringListQueryParam(java.lang.String)">
 <!--   -->
 </a>
@@ -730,6 +760,16 @@ protected&nbsp;javax.ws.rs.core.UriInfo uriInfo</pre>
 <div class="block">Get a list of values for a given query parameter key.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - the parameter name</dd>
 <dt><span class="strong">Returns:</span></dt><dd>a list of string values</dd></dl>
+</li>
+</ul>
+<a name="getEnumListQueryParam(java.lang.String, java.lang.Class)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEnumListQueryParam</h4>
+<pre>protected&nbsp;&lt;T extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang">Enum</a>&lt;T&gt;&gt;&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;T&gt;&nbsp;getEnumListQueryParam(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
+                                                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</pre>
 </li>
 </ul>
 <a name="getIntQueryParam(java.lang.String, int)">
@@ -891,6 +931,19 @@ protected&nbsp;javax.ws.rs.core.UriInfo uriInfo</pre>
 <div class="block">Return a streaming response from an iterable.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>list</code> - A list of framed items</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A streaming response</dd></dl>
+</li>
+</ul>
+<a name="streamingListOfLists(java.lang.Iterable, eu.ehri.project.core.Tx)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>streamingListOfLists</h4>
+<pre>protected&nbsp;&lt;T extends <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/Frame.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Frame</a>&gt;&nbsp;javax.ws.rs.core.Response&nbsp;streamingListOfLists(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;? extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;T&gt;&gt;&nbsp;lists,
+                                                               <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/core/Tx.html?is-external=true" title="class or interface in eu.ehri.project.core">Tx</a>&nbsp;tx)</pre>
+<div class="block">Return a streaming response from an iterable of item lists.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>lists</code> - an iterable of item groups</dd><dd><code>tx</code> - the transaction</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a streaming response</dd></dl>
 </li>
 </ul>
 <a name="streamingList(java.lang.Iterable, eu.ehri.project.persistence.Serializer, eu.ehri.project.core.Tx)">

@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Interface eu.ehri.project.models.events.SystemEvent (EHRI Backend 0.10.0-SNAPSHOT API)</title>
+<title>Uses of Interface eu.ehri.project.models.events.SystemEvent (EHRI Backend 0.10.1-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Interface eu.ehri.project.models.events.SystemEvent (EHRI Backend 0.10.0-SNAPSHOT API)";
+        parent.document.title="Uses of Interface eu.ehri.project.models.events.SystemEvent (EHRI Backend 0.10.1-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -265,8 +265,9 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
-<td class="colLast"><span class="strong">ActionManager.</span><code><strong><a href="../../../../../../eu/ehri/project/persistence/ActionManager.html#sameAs(eu.ehri.project.models.events.SystemEvent,%20eu.ehri.project.models.events.SystemEvent)">sameAs</a></strong>(<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event1,
-      <a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event2)</code>
+<td class="colLast"><span class="strong">ActionManager.</span><code><strong><a href="../../../../../../eu/ehri/project/persistence/ActionManager.html#canAggregate(eu.ehri.project.models.events.SystemEvent,%20eu.ehri.project.models.events.SystemEvent,%20int)">canAggregate</a></strong>(<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event1,
+            <a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event2,
+            int&nbsp;timeDiffInSeconds)</code>
 <div class="block">Determine if two events are the same according to the following
  definition:
  <p/>
@@ -279,6 +280,18 @@
  <p/>
  This function allows filtering an event stream for duplicates,
  like someone repeatedly updating the same item.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">ActionManager.</span><code><strong><a href="../../../../../../eu/ehri/project/persistence/ActionManager.html#sameAs(eu.ehri.project.models.events.SystemEvent,%20eu.ehri.project.models.events.SystemEvent)">sameAs</a></strong>(<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event1,
+      <a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;event2)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static boolean</code></td>
+<td class="colLast"><span class="strong">ActionManager.</span><code><strong><a href="../../../../../../eu/ehri/project/persistence/ActionManager.html#sequentialWithSameAccessor(eu.ehri.project.models.events.SystemEvent,%20eu.ehri.project.models.events.SystemEvent)">sequentialWithSameAccessor</a></strong>(<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;first,
+                          <a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;second)</code>
+<div class="block">Test if two events are sequential with the same actioner.</div>
 </td>
 </tr>
 </tbody>
@@ -296,14 +309,37 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&gt;</code></td>
+<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#aggregate(eu.ehri.project.models.base.Accessor)">aggregate</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&gt;</code></td>
+<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#aggregateAsUser(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">aggregateAsUser</a></strong>(<a href="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;asUser,
+               <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">List events "interesting" for a user, with aggregation.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&gt;</code></td>
+<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#aggregateByUser(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">aggregateByUser</a></strong>(<a href="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
+               <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Aggregate a user's actions.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&gt;</code></td>
+<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#aggregateForItem(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Accessor)">aggregateForItem</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;item,
+                <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Aggregate an item's events.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;</code></td>
-<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#list(eu.ehri.project.views.Query,%20eu.ehri.project.models.base.Accessor)">list</a></strong>(<a href="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&nbsp;query,
-    <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#list(eu.ehri.project.models.base.Accessor)">list</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;</code></td>
-<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#listAsUser(eu.ehri.project.views.Query,%20eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">listAsUser</a></strong>(<a href="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&nbsp;query,
-          <a href="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;asUser,
+<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#listAsUser(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">listAsUser</a></strong>(<a href="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;asUser,
           <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
 <div class="block">List items "interesting" for a user, optionally filtered by the `ShowType`
  to items they watch or users they follow.</div>
@@ -311,38 +347,17 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;</code></td>
-<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#listByUser(eu.ehri.project.views.Query,%20eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">listByUser</a></strong>(<a href="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&nbsp;query,
-          <a href="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
-          <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)</code>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
-<caption><span>Method parameters in <a href="../../../../../../eu/ehri/project/views/package-summary.html">eu.ehri.project.views</a> with type arguments of type <a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a></span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Method and Description</th>
-</tr>
-<tbody>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;</code></td>
-<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#list(eu.ehri.project.views.Query,%20eu.ehri.project.models.base.Accessor)">list</a></strong>(<a href="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&nbsp;query,
-    <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#listByUser(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">listByUser</a></strong>(<a href="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
+          <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">List a user's actions.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;</code></td>
-<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#listAsUser(eu.ehri.project.views.Query,%20eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">listAsUser</a></strong>(<a href="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&nbsp;query,
-          <a href="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;asUser,
-          <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
-<div class="block">List items "interesting" for a user, optionally filtered by the `ShowType`
- to items they watch or users they follow.</div>
+<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#listForItem(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Accessor)">listForItem</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;item,
+           <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">List an item's events.</div>
 </td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;</code></td>
-<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/EventViews.html#listByUser(eu.ehri.project.views.Query,%20eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">listByUser</a></strong>(<a href="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&nbsp;query,
-          <a href="../../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
-          <a href="../../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>

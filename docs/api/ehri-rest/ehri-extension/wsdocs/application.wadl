@@ -1955,43 +1955,55 @@
         </wadl:response>
       </wadl:method>
     </wadl:resource>
+    <wadl:resource path="/systemEvent/aggregate">
+      <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[Aggregate of global events. Standard list parameters for paging and]]>
+<![CDATA[filtering apply.]]>
+<![CDATA[In this case the stream is grouped according to one of two criteria. The]]>
+<![CDATA[default groups all <i>sequential</i> events that have the same actioner.]]>
+<![CDATA[</p>]]>
+<![CDATA[An alternate <tt>strict</tt> aggregation stategy groups items that are:]]>
+<![CDATA[<ol>]]>
+<![CDATA[<li>triggered by the same actioner</li>]]>
+<![CDATA[<li>affecting on the same subjects</li>]]>
+<![CDATA[<li>have the same scope</li>]]>
+<![CDATA[<li>have the same log message</li>]]>
+<![CDATA[</ol>]]>
+<![CDATA[<p/>]]>
+<![CDATA[Alternately, aggregation can be disabled by using the <tt>off</tt>]]>
+<![CDATA[parameter value.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="aggregation" style="query">
+            <wadl:doc>
+              <![CDATA[Aggregate events by strict, or user]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
     <wadl:resource path="/systemEvent/list">
       <wadl:method name="GET">
         <wadl:doc>
           <![CDATA[List global events. Standard list parameters for paging apply.]]>
+<![CDATA[</p>]]>
+<![CDATA[The following query parameters apply to all actions in this]]>
+<![CDATA[resource:]]>
+<![CDATA[</p>]]>
+<![CDATA[<dl>]]>
+<![CDATA[<dt>eventTypes</dt><dd>Filter events by type</dd>]]>
+<![CDATA[<dt>itemTypes</dt><dd>Filter events based on the item type of their subjects</dd>]]>
+<![CDATA[<dt>itemIds</dt><dd>Filter events pertaining to specific item IDs</dd>]]>
+<![CDATA[<dt>users</dt><dd>Filter events based on the user IDs they involve</dd>]]>
+<![CDATA[<dt>from</dt><dd>Exclude events prior to this date</dd>]]>
+<![CDATA[<dt>to</dt><dd>Exclude events after this date</dd>]]>
+<![CDATA[</dl>]]>
+<![CDATA[<p/>]]>
         </wadl:doc>
-        <wadl:request>
-          <wadl:param name="et" style="query">
-            <wadl:doc>
-              <![CDATA[Filter events by type]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="type" style="query">
-            <wadl:doc>
-              <![CDATA[Filter events based on the item type of their subjects]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="item" style="query">
-            <wadl:doc>
-              <![CDATA[Filter events pertaining to specific item IDs]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="user" style="query">
-            <wadl:doc>
-              <![CDATA[Filter events based on the user IDs they involve]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="from" style="query">
-            <wadl:doc>
-              <![CDATA[Exclude events prior to this data]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="to" style="query">
-            <wadl:doc>
-              <![CDATA[Exclude events after this data]]>
-            </wadl:doc>
-          </wadl:param>
-        </wadl:request>
         <wadl:response>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -2095,7 +2107,8 @@
           <![CDATA[Find an replace a regex-specified substring of a property value]]>
 <![CDATA[across an entire entity class e.g.]]>
 <![CDATA[if an Address has a property with name &quot;url&quot; and value &quot;www.foo.com/bar&quot;,]]>
-<![CDATA[providing a regex value <tt>^www</tt> and replacement <tt>http://www</tt> will]]>
+<![CDATA[providing a regex value <tt]]>
+<![CDATA[>^www</tt> and replacement <tt>http://www</tt> will]]>
 <![CDATA[give the property a value of &quot;http://www.foo.com/bar&quot;.]]>
 <![CDATA[<p/>]]>
 <![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
@@ -2171,8 +2184,7 @@
 <![CDATA[<p/>]]>
 <![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
 <![CDATA[header in the form:]]>
-<![CDATA[<pre><code>page=1; c]]>
-<![CDATA[ount=20; total=50</code></pre>]]>
+<![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
 <![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
 <![CDATA[numbers of items or when limiting is disabled completely.]]>
@@ -2237,8 +2249,27 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A response with 200 representi]]>
-<![CDATA[ng a successful deletion.]]>
+            <![CDATA[A response with 200 representing a successful deletion.]]>
+          </wadl:doc>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/version/{id}">
+      <wadl:param name="id" style="template">
+        <wadl:doc>
+          <![CDATA[the version id]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[Get a version item.]]>
+        </wadl:doc>
+        <wadl:request/>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[a version item]]>
           </wadl:doc>
           <wadl:representation mediaType="*/*"/>
           <wadl:representation mediaType="application/xml"/>
@@ -2266,7 +2297,8 @@
 <![CDATA[return a page of 20 items.]]>
 <![CDATA[<p/>]]>
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
-<![CDATA[parameter, and disabled completely using a value of -1.]]>
+<![CDATA[parameter, and disabled completely using]]>
+<![CDATA[a value of -1.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
 <![CDATA[<p/>]]>
@@ -2423,8 +2455,7 @@
         <wadl:request>
           <wadl:param name="all" style="query">
             <wadl:doc>
-              <![CDATA[Whether to count all child]]>
-<![CDATA[items, or just those at the]]>
+              <![CDATA[Whether to count all child items, or just those at the]]>
 <![CDATA[immediate sub-level.]]>
             </wadl:doc>
           </wadl:param>
@@ -2830,7 +2861,8 @@
       <wadl:param name="id" style="template"/>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[List available resources subordinate to this item. Behaviour is the same]]>
+          <![CDATA[List a]]>
+<![CDATA[vailable resources subordinate to this item. Behaviour is the same]]>
 <![CDATA[as the general list method with respect to parameters.]]>
 <![CDATA[<p/>]]>
 <![CDATA[Example:]]>
@@ -2983,8 +3015,7 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A list of permis]]>
-<![CDATA[sion grants for the user]]>
+            <![CDATA[A list of permission grants for the user]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -3206,18 +3237,98 @@
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/systemEvent/byUser/{userId}">
-      <wadl:param name="userId" style="template"/>
+    <wadl:resource path="/systemEvent/aggregateByUser/{userId}">
+      <wadl:param name="userId" style="template">
+        <wadl:doc>
+          <![CDATA[the user's ID]]>
+        </wadl:doc>
+      </wadl:param>
       <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[Fetch an aggregate list of a user's actions.]]>
+        </wadl:doc>
         <wadl:request>
-          <wadl:param name="et" style="query"/>
-          <wadl:param name="type" style="query"/>
-          <wadl:param name="item" style="query"/>
-          <wadl:param name="user" style="query"/>
-          <wadl:param name="from" style="query"/>
-          <wadl:param name="to" style="query"/>
+          <wadl:param name="aggregation" style="query">
+            <wadl:doc>
+              <![CDATA[The manner in which to aggregate the results, accepting]]>
+<![CDATA["user", "strict" or "off" (no aggregation). Default is]]>
+<![CDATA[<b>strict</b>.]]>
+            </wadl:doc>
+          </wadl:param>
         </wadl:request>
         <wadl:response>
+          <wadl:doc>
+            <![CDATA[a list of event ranges]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/systemEvent/aggregateFor/{id}">
+      <wadl:param name="id" style="template">
+        <wadl:doc>
+          <![CDATA[The event id]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[Lookup and page the history for a given item.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="aggregation" style="query">
+            <wadl:doc>
+              <![CDATA[the aggregation stategy]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[A list of events]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/systemEvent/aggregateForUser/{userId}">
+      <wadl:param name="userId" style="template">
+        <wadl:doc>
+          <![CDATA[the user's ID]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[Aggregate actions that are relevant to a given user based on]]>
+<![CDATA[the other users that they follow and the items they watch.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="aggregation" style="query">
+            <wadl:doc>
+              <![CDATA[The manner in which to aggregate the results, accepting]]>
+<![CDATA["user", "strict" or "off" (no aggregation). Default is]]>
+<![CDATA["user".]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/systemEvent/byUser/{userId}">
+      <wadl:param name="userId" style="template">
+        <wadl:doc>
+          <![CDATA[the user's ID]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[Fetch a list of a user's actions.]]>
+        </wadl:doc>
+        <wadl:request/>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[a list of event ranges]]>
+          </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -3246,7 +3357,7 @@
     <wadl:resource path="/systemEvent/forUser/{userId}">
       <wadl:param name="userId" style="template">
         <wadl:doc>
-          <![CDATA[The user's ID]]>
+          <![CDATA[the user's ID]]>
         </wadl:doc>
       </wadl:param>
       <wadl:method name="GET">
@@ -3254,60 +3365,8 @@
           <![CDATA[List actions that are relevant to a given user based on]]>
 <![CDATA[the other users that they follow and the items they watch.]]>
         </wadl:doc>
-        <wadl:request>
-          <wadl:param name="et" style="query">
-            <wadl:doc>
-              <![CDATA[Filter events by type]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="type" style="query">
-            <wadl:doc>
-              <![CDATA[Filter events based on the item type of their subjects]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="item" style="query">
-            <wadl:doc>
-              <![CDATA[Filter events pertaining to specific item IDs]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="user" style="query">
-            <wadl:doc>
-              <![CDATA[Filter events based on the user IDs they involve]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="from" style="query">
-            <wadl:doc>
-              <![CDATA[Exclude events prior to this data]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="to" style="query">
-            <wadl:doc>
-              <![CDATA[Exclude events after this data]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="show" style="query"/>
-        </wadl:request>
-        <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-    <wadl:resource path="/systemEvent/versions/{id}">
-      <wadl:param name="id" style="template">
-        <wadl:doc>
-          <![CDATA[The event id]]>
-        </wadl:doc>
-      </wadl:param>
-      <wadl:method name="GET">
-        <wadl:doc>
-          <![CDATA[Lookup and page the versions for a given item.]]>
-        </wadl:doc>
         <wadl:request/>
         <wadl:response>
-          <wadl:doc>
-            <![CDATA[A list of versions]]>
-          </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -3316,17 +3375,17 @@
     <wadl:resource path="/systemEvent/{id}/subjects">
       <wadl:param name="id" style="template">
         <wadl:doc>
-          <![CDATA[The event id]]>
+          <![CDATA[the event id]]>
         </wadl:doc>
       </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Lookup and page the history for a given item.]]>
+          <![CDATA[Fetch a page of subjects for a given event.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A list of events]]>
+            <![CDATA[a list of subject items]]>
           </wadl:doc>
           <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
@@ -3358,8 +3417,7 @@
           </wadl:param>
           <wadl:param name="tolerant" style="query">
             <wadl:doc>
-              <![CDATA[skip items that could cause collisions ra]]>
-<![CDATA[ther]]>
+              <![CDATA[skip items that could cause collisions rather]]>
 <![CDATA[then throwing an error]]>
             </wadl:doc>
           </wadl:param>
@@ -3434,7 +3492,8 @@
 <![CDATA[type.]]>
 <![CDATA[The default mode is to output items whose IDs would change, without]]>
 <![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
-<![CDATA[output items that would cause collisions if renamed, whereas tolerant]]>
+<![CDATA[output items that would cause collisions if renamed, whe]]>
+<![CDATA[reas tolerant]]>
 <![CDATA[mode will skip them altogether.]]>
 <![CDATA[The commit flag will cause renaming to take place.]]>
         </wadl:doc>
@@ -3585,6 +3644,26 @@
           <wadl:param name="id" style="query"/>
         </wadl:request>
         <wadl:response>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/version/for/{id}">
+      <wadl:param name="id" style="template">
+        <wadl:doc>
+          <![CDATA[the event id]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[Lookup and page the versions for a given item.]]>
+        </wadl:doc>
+        <wadl:request/>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[a list of versions]]>
+          </wadl:doc>
           <wadl:representation mediaType="*/*"/>
           <wadl:representation mediaType="application/xml"/>
         </wadl:response>
@@ -3812,8 +3891,7 @@
       <wadl:method name="DELETE">
         <wadl:doc>
           <![CDATA[Delete a link. If the optional ?accessPoint=[ID] parameter is also given]]>
-<![CDATA[the access p]]>
-<![CDATA[oint associated with the link will also be deleted.]]>
+<![CDATA[the access point associated with the link will also be deleted.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -3877,8 +3955,7 @@
       <wadl:method name="POST">
         <wadl:doc>
           <![CDATA[Create concepts and links derived from the access points]]>
-<![CDATA[on a]]>
-<![CDATA[repository's documentary units.]]>
+<![CDATA[on a repository's documentary units.]]>
         </wadl:doc>
         <wadl:request>
           <wadl:param name="apt" style="query">

@@ -136,7 +136,49 @@
 <a class="jxr_linenumber" name="126" href="#126">126</a> 
 <a class="jxr_linenumber" name="127" href="#127">127</a>         assertFalse(sameAs(second, repoEvent));
 <a class="jxr_linenumber" name="128" href="#128">128</a>     }
-<a class="jxr_linenumber" name="129" href="#129">129</a> }
+<a class="jxr_linenumber" name="129" href="#129">129</a> 
+<a class="jxr_linenumber" name="130" href="#130">130</a>     @Test
+<a class="jxr_linenumber" name="131" href="#131">131</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testSameAsWithTimeDiff() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="132" href="#132">132</a>         Bundle userBundle = Bundle.fromData(TestData.getTestUserBundle());
+<a class="jxr_linenumber" name="133" href="#133">133</a>         UserProfile user = bundleDAO.create(userBundle, UserProfile.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="134" href="#134">134</a> 
+<a class="jxr_linenumber" name="135" href="#135">135</a>         ActionManager.EventContext ctx = actionManager.newEventContext(user,
+<a class="jxr_linenumber" name="136" href="#136">136</a>                 validUser,
+<a class="jxr_linenumber" name="137" href="#137">137</a>                 EventTypes.creation);
+<a class="jxr_linenumber" name="138" href="#138">138</a>         SystemEvent first = ctx.commit();
+<a class="jxr_linenumber" name="139" href="#139">139</a>         assertEquals(1, Iterables.count(first.getSubjects()));
+<a class="jxr_linenumber" name="140" href="#140">140</a> 
+<a class="jxr_linenumber" name="141" href="#141">141</a>         <em class="jxr_comment">// Do the same thing again after 1/2 second</em>
+<a class="jxr_linenumber" name="142" href="#142">142</a>         Thread.sleep(500);
+<a class="jxr_linenumber" name="143" href="#143">143</a>         ActionManager.EventContext ctx2 = actionManager.newEventContext(user,
+<a class="jxr_linenumber" name="144" href="#144">144</a>                 validUser,
+<a class="jxr_linenumber" name="145" href="#145">145</a>                 EventTypes.creation);
+<a class="jxr_linenumber" name="146" href="#146">146</a>         SystemEvent second = ctx2.commit();
+<a class="jxr_linenumber" name="147" href="#147">147</a> 
+<a class="jxr_linenumber" name="148" href="#148">148</a>         <em class="jxr_comment">// And again after 1 full second</em>
+<a class="jxr_linenumber" name="149" href="#149">149</a>         Thread.sleep(500);
+<a class="jxr_linenumber" name="150" href="#150">150</a>         ActionManager.EventContext ctx3 = actionManager.newEventContext(user,
+<a class="jxr_linenumber" name="151" href="#151">151</a>                 validUser,
+<a class="jxr_linenumber" name="152" href="#152">152</a>                 EventTypes.creation);
+<a class="jxr_linenumber" name="153" href="#153">153</a>         SystemEvent third = ctx3.commit();
+<a class="jxr_linenumber" name="154" href="#154">154</a> 
+<a class="jxr_linenumber" name="155" href="#155">155</a>         <em class="jxr_comment">// Without considering time difference, first and second events</em>
+<a class="jxr_linenumber" name="156" href="#156">156</a>         <em class="jxr_comment">// are "the same"</em>
+<a class="jxr_linenumber" name="157" href="#157">157</a>         assertTrue(sameAs(first, second));
+<a class="jxr_linenumber" name="158" href="#158">158</a>         <em class="jxr_comment">// ... as are first and third</em>
+<a class="jxr_linenumber" name="159" href="#159">159</a>         assertTrue(sameAs(first, third));
+<a class="jxr_linenumber" name="160" href="#160">160</a>         <em class="jxr_comment">// And they're also the same, with a cutoff time</em>
+<a class="jxr_linenumber" name="161" href="#161">161</a>         <em class="jxr_comment">// below a second, since they happen in quick</em>
+<a class="jxr_linenumber" name="162" href="#162">162</a>         <em class="jxr_comment">// succession.</em>
+<a class="jxr_linenumber" name="163" href="#163">163</a>         assertTrue(ActionManager.canAggregate(first, second, 1));
+<a class="jxr_linenumber" name="164" href="#164">164</a>         <em class="jxr_comment">// ... but with a time diff of less than a second,</em>
+<a class="jxr_linenumber" name="165" href="#165">165</a>         <em class="jxr_comment">// they are not the same</em>
+<a class="jxr_linenumber" name="166" href="#166">166</a>         assertFalse(ActionManager.canAggregate(first, second, 0));
+<a class="jxr_linenumber" name="167" href="#167">167</a>         <em class="jxr_comment">// And nor are the first and third events, which</em>
+<a class="jxr_linenumber" name="168" href="#168">168</a>         <em class="jxr_comment">// are separated by more than 1 second.</em>
+<a class="jxr_linenumber" name="169" href="#169">169</a>         assertFalse(ActionManager.canAggregate(first, third, 1));
+<a class="jxr_linenumber" name="170" href="#170">170</a>     }
+<a class="jxr_linenumber" name="171" href="#171">171</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>
