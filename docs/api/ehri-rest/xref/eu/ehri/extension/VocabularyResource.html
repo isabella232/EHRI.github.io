@@ -135,7 +135,7 @@
 <a class="jxr_linenumber" name="125" href="#125">125</a>             @PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="126" href="#126">126</a>             @QueryParam(ALL_PARAM) @DefaultValue(<span class="jxr_string">"false"</span>)  <strong class="jxr_keyword">boolean</strong> all)
 <a class="jxr_linenumber" name="127" href="#127">127</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="128" href="#128">128</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="128" href="#128">128</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="129" href="#129">129</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="130" href="#130">130</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = getRequesterUserProfile();
 <a class="jxr_linenumber" name="131" href="#131">131</a>             <a href="../../../eu/ehri/project/models/cvoc/Vocabulary.html">Vocabulary</a> vocabulary = views.detail(id, user);
@@ -240,7 +240,7 @@
 <a class="jxr_linenumber" name="230" href="#230">230</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
 <a class="jxr_linenumber" name="231" href="#231">231</a>             DeserializationError, ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
 <a class="jxr_linenumber" name="232" href="#232">232</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="233" href="#233">233</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = getRequesterUserProfile();
+<a class="jxr_linenumber" name="233" href="#233">233</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = getRequesterUserProfile();
 <a class="jxr_linenumber" name="234" href="#234">234</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/models/cvoc/Vocabulary.html">Vocabulary</a> vocabulary = views.detail(id, user);
 <a class="jxr_linenumber" name="235" href="#235">235</a>             Response item = createItem(bundle, accessors, <strong class="jxr_keyword">new</strong> Handler&lt;Concept&gt;() {
 <a class="jxr_linenumber" name="236" href="#236">236</a>                 @Override

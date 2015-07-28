@@ -57,11 +57,11 @@
 <a class="jxr_linenumber" name="47" href="#47">47</a>  
 <a class="jxr_linenumber" name="48" href="#48">48</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="49" href="#49">49</a>  <em class="jxr_javadoccomment">     * Default return codes for shell tools.</em>
-<a class="jxr_linenumber" name="50" href="#50">50</a>  <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="50" href="#50">50</a>  <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="51" href="#51">51</a>  <em class="jxr_javadoccomment">     * 0 means 'OK', 1 'bad arguments', 2 'bad data',</em>
 <a class="jxr_linenumber" name="52" href="#52">52</a>  <em class="jxr_javadoccomment">     * 3 'bad permissions'</em>
 <a class="jxr_linenumber" name="53" href="#53">53</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> enum <a href="../../../../eu/ehri/project/commands/CmdEntryPoint.html">RetCode</a> {
+<a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">public</strong> enum <a href="../../../../eu/ehri/project/commands/CmdEntryPoint.html">RetCode</a> {
 <a class="jxr_linenumber" name="55" href="#55">55</a>  
 <a class="jxr_linenumber" name="56" href="#56">56</a>          OK(0),
 <a class="jxr_linenumber" name="57" href="#57">57</a>          BAD_ARGS(1),
@@ -70,7 +70,7 @@
 <a class="jxr_linenumber" name="60" href="#60">60</a>  
 <a class="jxr_linenumber" name="61" href="#61">61</a>          <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> code;
 <a class="jxr_linenumber" name="62" href="#62">62</a>  
-<a class="jxr_linenumber" name="63" href="#63">63</a>          <strong class="jxr_keyword">private</strong> <a href="../../../../eu/ehri/project/commands/CmdEntryPoint.html">RetCode</a>(<strong class="jxr_keyword">int</strong> code) {
+<a class="jxr_linenumber" name="63" href="#63">63</a>          <a href="../../../../eu/ehri/project/commands/CmdEntryPoint.html">RetCode</a>(<strong class="jxr_keyword">int</strong> code) {
 <a class="jxr_linenumber" name="64" href="#64">64</a>              <strong class="jxr_keyword">this</strong>.code = code;
 <a class="jxr_linenumber" name="65" href="#65">65</a>          }
 <a class="jxr_linenumber" name="66" href="#66">66</a>  
@@ -128,7 +128,7 @@
 <a class="jxr_linenumber" name="118" href="#118">118</a>         StringBuilder buffer = <strong class="jxr_keyword">new</strong> StringBuilder(String.format(
 <a class="jxr_linenumber" name="119" href="#119">119</a>                 <span class="jxr_string">"Command line interface for the EHRI graph database.%n%n "</span> +
 <a class="jxr_linenumber" name="120" href="#120">120</a>                         <span class="jxr_string">"The following commands are available:%n%n"</span>));
-<a class="jxr_linenumber" name="121" href="#121">121</a>         <strong class="jxr_keyword">for</strong> (String key : Ordering.natural().sortedCopy(CmdEntryPoint.COMMANDS.keySet())) {
+<a class="jxr_linenumber" name="121" href="#121">121</a>         <strong class="jxr_keyword">for</strong> (String key : Ordering.natural().sortedCopy(COMMANDS.keySet())) {
 <a class="jxr_linenumber" name="122" href="#122">122</a>             buffer.append(<span class="jxr_string">"  "</span>);
 <a class="jxr_linenumber" name="123" href="#123">123</a>             buffer.append(key);
 <a class="jxr_linenumber" name="124" href="#124">124</a>             buffer.append(sep);
@@ -154,16 +154,16 @@
 <a class="jxr_linenumber" name="144" href="#144">144</a>         <strong class="jxr_keyword">if</strong> (args.length &lt; 2) {
 <a class="jxr_linenumber" name="145" href="#145">145</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/commands/CmdEntryPoint.html">CmdEntryPoint</a>().exec(<strong class="jxr_keyword">null</strong>, args);
 <a class="jxr_linenumber" name="146" href="#146">146</a>         } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (args[1].equals(<span class="jxr_string">"help"</span>)) {
-<a class="jxr_linenumber" name="147" href="#147">147</a>             <strong class="jxr_keyword">if</strong> (args.length &gt; 2 &amp;&amp; CmdEntryPoint.COMMANDS.containsKey(args[2])) {
-<a class="jxr_linenumber" name="148" href="#148">148</a>                 <a href="../../../../eu/ehri/project/commands/Command.html">Command</a> cmd = CmdEntryPoint.COMMANDS.get(args[2]).getConstructor().newInstance();
+<a class="jxr_linenumber" name="147" href="#147">147</a>             <strong class="jxr_keyword">if</strong> (args.length &gt; 2 &amp;&amp; COMMANDS.containsKey(args[2])) {
+<a class="jxr_linenumber" name="148" href="#148">148</a>                 <a href="../../../../eu/ehri/project/commands/Command.html">Command</a> cmd = COMMANDS.get(args[2]).getConstructor().newInstance();
 <a class="jxr_linenumber" name="149" href="#149">149</a>                 System.err.println(cmd.getHelp());
 <a class="jxr_linenumber" name="150" href="#150">150</a>                 <strong class="jxr_keyword">return</strong> RetCode.BAD_ARGS.getCode();
 <a class="jxr_linenumber" name="151" href="#151">151</a>             } <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="152" href="#152">152</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/commands/CmdEntryPoint.html">CmdEntryPoint</a>().exec(<strong class="jxr_keyword">null</strong>, args);
 <a class="jxr_linenumber" name="153" href="#153">153</a>             }
 <a class="jxr_linenumber" name="154" href="#154">154</a>         } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="155" href="#155">155</a>             <strong class="jxr_keyword">if</strong> (CmdEntryPoint.COMMANDS.containsKey(args[1])) {
-<a class="jxr_linenumber" name="156" href="#156">156</a>                 <a href="../../../../eu/ehri/project/commands/Command.html">Command</a> cmd = CmdEntryPoint.COMMANDS.get(args[1]).getConstructor().newInstance();
+<a class="jxr_linenumber" name="155" href="#155">155</a>             <strong class="jxr_keyword">if</strong> (COMMANDS.containsKey(args[1])) {
+<a class="jxr_linenumber" name="156" href="#156">156</a>                 <a href="../../../../eu/ehri/project/commands/Command.html">Command</a> cmd = COMMANDS.get(args[1]).getConstructor().newInstance();
 <a class="jxr_linenumber" name="157" href="#157">157</a>                 FramedGraph&lt;? <strong class="jxr_keyword">extends</strong> TxGraph&gt; graph
 <a class="jxr_linenumber" name="158" href="#158">158</a>                         = <strong class="jxr_keyword">new</strong> FramedGraphFactory(<strong class="jxr_keyword">new</strong> JavaHandlerModule()).create(
 <a class="jxr_linenumber" name="159" href="#159">159</a>                         <strong class="jxr_keyword">new</strong> TxNeo4jGraph(args[0]));

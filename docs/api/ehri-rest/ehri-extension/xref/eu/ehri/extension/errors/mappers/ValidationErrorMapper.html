@@ -69,7 +69,7 @@
 <a class="jxr_linenumber" name="59" href="#59">59</a>  @Provider
 <a class="jxr_linenumber" name="60" href="#60">60</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/extension/errors/mappers/ValidationErrorMapper.html">ValidationErrorMapper</a> <strong class="jxr_keyword">implements</strong> ExceptionMapper&lt;ValidationError&gt; {
 <a class="jxr_linenumber" name="61" href="#61">61</a>      @Override
-<a class="jxr_linenumber" name="62" href="#62">62</a>      <strong class="jxr_keyword">public</strong> Response toResponse(<strong class="jxr_keyword">final</strong> ValidationError e) {
+<a class="jxr_linenumber" name="62" href="#62">62</a>      <strong class="jxr_keyword">public</strong> Response toResponse(ValidationError e) {
 <a class="jxr_linenumber" name="63" href="#63">63</a>          <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="64" href="#64">64</a>              <strong class="jxr_keyword">return</strong> Response.status(Status.BAD_REQUEST)
 <a class="jxr_linenumber" name="65" href="#65">65</a>                      .entity(e.getErrorSet().toJson()

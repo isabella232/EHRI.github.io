@@ -215,7 +215,7 @@
 <a class="jxr_linenumber" name="205" href="#205">205</a>             @PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="206" href="#206">206</a>             @QueryParam(ALL_PARAM) @DefaultValue(<span class="jxr_string">"false"</span>) <strong class="jxr_keyword">boolean</strong> all)
 <a class="jxr_linenumber" name="207" href="#207">207</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="208" href="#208">208</a>         <strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="208" href="#208">208</a>         Tx tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="209" href="#209">209</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="210" href="#210">210</a>             Group group = manager.getFrame(id, EntityClass.GROUP, Group.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="211" href="#211">211</a>             Iterable&lt;AccessibleEntity&gt; members = all

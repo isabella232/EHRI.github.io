@@ -134,10 +134,10 @@
 <a class="jxr_linenumber" name="124" href="#124">124</a>             <strong class="jxr_keyword">throws</strong> IOException, ValidationError, <a href="../../../../../eu/ehri/project/importers/exceptions/InputParseError.html">InputParseError</a> {
 <a class="jxr_linenumber" name="125" href="#125">125</a> 
 <a class="jxr_linenumber" name="126" href="#126">126</a>         <em class="jxr_comment">// Create a new action for this import</em>
-<a class="jxr_linenumber" name="127" href="#127">127</a>         <strong class="jxr_keyword">final</strong> ActionManager.EventContext eventContext = <strong class="jxr_keyword">new</strong> ActionManager(framedGraph, vocabulary).newEventContext(
+<a class="jxr_linenumber" name="127" href="#127">127</a>         ActionManager.EventContext eventContext = <strong class="jxr_keyword">new</strong> ActionManager(framedGraph, vocabulary).newEventContext(
 <a class="jxr_linenumber" name="128" href="#128">128</a>                 actioner, EventTypes.ingest, getLogMessage(logMessage));
 <a class="jxr_linenumber" name="129" href="#129">129</a>         <em class="jxr_comment">// Create a manifest to store the results of the import.</em>
-<a class="jxr_linenumber" name="130" href="#130">130</a>         <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(eventContext);
+<a class="jxr_linenumber" name="130" href="#130">130</a>         <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(eventContext);
 <a class="jxr_linenumber" name="131" href="#131">131</a> 
 <a class="jxr_linenumber" name="132" href="#132">132</a>         OWLOntology ontology;
 <a class="jxr_linenumber" name="133" href="#133">133</a>         <strong class="jxr_keyword">try</strong> {
@@ -234,8 +234,8 @@
 <a class="jxr_linenumber" name="224" href="#224">224</a>         <strong class="jxr_keyword">return</strong> undetermined;
 <a class="jxr_linenumber" name="225" href="#225">225</a>     }
 <a class="jxr_linenumber" name="226" href="#226">226</a> 
-<a class="jxr_linenumber" name="227" href="#227">227</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">interface</strong> <a href="../../../../../eu/ehri/project/importers/cvoc/OwlApiSkosImporter.html">ConnectFunc</a> {
-<a class="jxr_linenumber" name="228" href="#228">228</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> connect(Concept current, Concept related);
+<a class="jxr_linenumber" name="227" href="#227">227</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">interface</strong> <a href="../../../../../eu/ehri/project/importers/cvoc/OwlApiSkosImporter.html">ConnectFunc</a> {
+<a class="jxr_linenumber" name="228" href="#228">228</a>         <strong class="jxr_keyword">void</strong> connect(Concept current, Concept related);
 <a class="jxr_linenumber" name="229" href="#229">229</a>     }
 <a class="jxr_linenumber" name="230" href="#230">230</a> 
 <a class="jxr_linenumber" name="231" href="#231">231</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> connectRelation(Concept current, OWLNamedIndividual item,

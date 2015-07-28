@@ -64,7 +64,7 @@
 <a class="jxr_linenumber" name="54" href="#54">54</a>  
 <a class="jxr_linenumber" name="55" href="#55">55</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="56" href="#56">56</a>  <em class="jxr_javadoccomment"> * Load data from YAML fixtures.</em>
-<a class="jxr_linenumber" name="57" href="#57">57</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="57" href="#57">57</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="58" href="#58">58</a>  <em class="jxr_javadoccomment"> * The YAML fixture format is almost identical to the plain bundle format, but</em>
 <a class="jxr_linenumber" name="59" href="#59">59</a>  <em class="jxr_javadoccomment"> * has some extensions to a) allow for creating non-dependent relationships, and</em>
 <a class="jxr_linenumber" name="60" href="#60">60</a>  <em class="jxr_javadoccomment"> * b) allow for single relations to be more naturally expressed. For example,</em>
@@ -72,15 +72,15 @@
 <a class="jxr_linenumber" name="62" href="#62">62</a>  <em class="jxr_javadoccomment"> * a list (even if there is typically only one), the YAML format allows using a</em>
 <a class="jxr_linenumber" name="63" href="#63">63</a>  <em class="jxr_javadoccomment"> * single item and it will be loaded as if it were a list containing just one</em>
 <a class="jxr_linenumber" name="64" href="#64">64</a>  <em class="jxr_javadoccomment"> * item, i.e, instead of writing</em>
-<a class="jxr_linenumber" name="65" href="#65">65</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="65" href="#65">65</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="66" href="#66">66</a>  <em class="jxr_javadoccomment"> * &lt;pre&gt;</em>
 <a class="jxr_linenumber" name="67" href="#67">67</a>  <em class="jxr_javadoccomment"> *     &lt;code&gt;</em>
 <a class="jxr_linenumber" name="68" href="#68">68</a>  <em class="jxr_javadoccomment"> * relationships: heldBy: - some-repo</em>
 <a class="jxr_linenumber" name="69" href="#69">69</a>  <em class="jxr_javadoccomment"> *     &lt;/code&gt;</em>
 <a class="jxr_linenumber" name="70" href="#70">70</a>  <em class="jxr_javadoccomment"> * &lt;/pre&gt;</em>
-<a class="jxr_linenumber" name="71" href="#71">71</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="71" href="#71">71</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="72" href="#72">72</a>  <em class="jxr_javadoccomment"> * we can just write:</em>
-<a class="jxr_linenumber" name="73" href="#73">73</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="73" href="#73">73</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="74" href="#74">74</a>  <em class="jxr_javadoccomment"> * &lt;pre&gt;</em>
 <a class="jxr_linenumber" name="75" href="#75">75</a>  <em class="jxr_javadoccomment"> *     &lt;code&gt;</em>
 <a class="jxr_linenumber" name="76" href="#76">76</a>  <em class="jxr_javadoccomment"> * relationships: heldBy: some-repo</em>
@@ -265,9 +265,9 @@
 <a class="jxr_linenumber" name="255" href="#255">255</a>         }
 <a class="jxr_linenumber" name="256" href="#256">256</a>     }
 <a class="jxr_linenumber" name="257" href="#257">257</a> 
-<a class="jxr_linenumber" name="258" href="#258">258</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> createBundle(<strong class="jxr_keyword">final</strong> String id, <strong class="jxr_keyword">final</strong> <a href="../../../../../../eu/ehri/project/models/EntityClass.html">EntityClass</a> type,
-<a class="jxr_linenumber" name="259" href="#259">259</a>             <strong class="jxr_keyword">final</strong> Map&lt;String, Object&gt; nodeData,
-<a class="jxr_linenumber" name="260" href="#260">260</a>             <strong class="jxr_keyword">final</strong> Multimap&lt;String, Map&lt;?, ?&gt;&gt; dependentRelations) <strong class="jxr_keyword">throws</strong> DeserializationError {
+<a class="jxr_linenumber" name="258" href="#258">258</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> createBundle(String id, <a href="../../../../../../eu/ehri/project/models/EntityClass.html">EntityClass</a> type,
+<a class="jxr_linenumber" name="259" href="#259">259</a>             Map&lt;String, Object&gt; nodeData,
+<a class="jxr_linenumber" name="260" href="#260">260</a>             Multimap&lt;String, Map&lt;?, ?&gt;&gt; dependentRelations) <strong class="jxr_keyword">throws</strong> DeserializationError {
 <a class="jxr_linenumber" name="261" href="#261">261</a>         Map&lt;String, Object&gt; data = ImmutableMap.of(
 <a class="jxr_linenumber" name="262" href="#262">262</a>             Bundle.ID_KEY, id,
 <a class="jxr_linenumber" name="263" href="#263">263</a>             Bundle.TYPE_KEY, type.getName(),

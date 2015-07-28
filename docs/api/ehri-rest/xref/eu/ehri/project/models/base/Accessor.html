@@ -49,22 +49,22 @@
 <a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">interface</strong> <a href="../../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/models/base/IdentifiableEntity.html">IdentifiableEntity</a> {
 <a class="jxr_linenumber" name="40" href="#40">40</a>  
 <a class="jxr_linenumber" name="41" href="#41">41</a>      @JavaHandler
-<a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isAdmin();
+<a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">boolean</strong> isAdmin();
 <a class="jxr_linenumber" name="43" href="#43">43</a>  
 <a class="jxr_linenumber" name="44" href="#44">44</a>      @JavaHandler
-<a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isAnonymous();
+<a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">boolean</strong> isAnonymous();
 <a class="jxr_linenumber" name="46" href="#46">46</a>  
 <a class="jxr_linenumber" name="47" href="#47">47</a>      @Adjacency(label = Ontology.ACCESSOR_BELONGS_TO_GROUP)
-<a class="jxr_linenumber" name="48" href="#48">48</a>      <strong class="jxr_keyword">public</strong> Iterable&lt;Accessor&gt; getParents();
+<a class="jxr_linenumber" name="48" href="#48">48</a>      Iterable&lt;Accessor&gt; getParents();
 <a class="jxr_linenumber" name="49" href="#49">49</a>  
 <a class="jxr_linenumber" name="50" href="#50">50</a>      @JavaHandler
-<a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">public</strong> Iterable&lt;Accessor&gt; getAllParents();
+<a class="jxr_linenumber" name="51" href="#51">51</a>      Iterable&lt;Accessor&gt; getAllParents();
 <a class="jxr_linenumber" name="52" href="#52">52</a>  
 <a class="jxr_linenumber" name="53" href="#53">53</a>      @Adjacency(label = Ontology.PERMISSION_GRANT_HAS_SUBJECT, direction=Direction.IN)
-<a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">public</strong> Iterable&lt;PermissionGrant&gt; getPermissionGrants();
+<a class="jxr_linenumber" name="54" href="#54">54</a>      Iterable&lt;PermissionGrant&gt; getPermissionGrants();
 <a class="jxr_linenumber" name="55" href="#55">55</a>  
 <a class="jxr_linenumber" name="56" href="#56">56</a>      @Adjacency(label = Ontology.PERMISSION_GRANT_HAS_SUBJECT, direction=Direction.IN)
-<a class="jxr_linenumber" name="57" href="#57">57</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> addPermissionGrant(<strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/models/PermissionGrant.html">PermissionGrant</a> grant);
+<a class="jxr_linenumber" name="57" href="#57">57</a>      <strong class="jxr_keyword">void</strong> addPermissionGrant(<a href="../../../../../eu/ehri/project/models/PermissionGrant.html">PermissionGrant</a> grant);
 <a class="jxr_linenumber" name="58" href="#58">58</a>  
 <a class="jxr_linenumber" name="59" href="#59">59</a>      <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/models/Country.html">Impl</a> <strong class="jxr_keyword">implements</strong> JavaHandlerContext&lt;Vertex&gt;, <a href="../../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> {
 <a class="jxr_linenumber" name="60" href="#60">60</a>  

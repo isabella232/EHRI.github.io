@@ -56,7 +56,7 @@
 <a class="jxr_linenumber" name="46" href="#46">46</a>  <em class="jxr_javadoccomment"> * procedure. An EAD a single entity at the highest level of description or multiple top-level entities, with or without</em>
 <a class="jxr_linenumber" name="47" href="#47">47</a>  <em class="jxr_javadoccomment"> * a hierarchical structure describing their child items. This means that we need to recursively descend through the</em>
 <a class="jxr_linenumber" name="48" href="#48">48</a>  <em class="jxr_javadoccomment"> * archdesc and c,c01-12 levels.</em>
-<a class="jxr_linenumber" name="49" href="#49">49</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="49" href="#49">49</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="50" href="#50">50</a>  <em class="jxr_javadoccomment"> * TODO: Extensive cleanups, optimisation, and rationalisation.</em>
 <a class="jxr_linenumber" name="51" href="#51">51</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="52" href="#52">52</a>  <em class="jxr_javadoccomment"> * @author Linda Reijnhoudt (https://github.com/lindareijnhoudt)</em>
@@ -210,7 +210,7 @@
 <a class="jxr_linenumber" name="200" href="#200">200</a>     @SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
 <a class="jxr_linenumber" name="201" href="#201">201</a>     @Override
 <a class="jxr_linenumber" name="202" href="#202">202</a>     <strong class="jxr_keyword">protected</strong> Iterable&lt;Map&lt;String, Object&gt;&gt; extractRelations(Map&lt;String, Object&gt; data) {
-<a class="jxr_linenumber" name="203" href="#203">203</a>         <strong class="jxr_keyword">final</strong> String REL = <span class="jxr_string">"AccessPoint"</span>;
+<a class="jxr_linenumber" name="203" href="#203">203</a>         String REL = <span class="jxr_string">"AccessPoint"</span>;
 <a class="jxr_linenumber" name="204" href="#204">204</a>         List&lt;Map&lt;String, Object&gt;&gt; list = Lists.newArrayList();
 <a class="jxr_linenumber" name="205" href="#205">205</a>         <strong class="jxr_keyword">for</strong> (String key : data.keySet()) {
 <a class="jxr_linenumber" name="206" href="#206">206</a>             <strong class="jxr_keyword">if</strong> (key.endsWith(REL)) {

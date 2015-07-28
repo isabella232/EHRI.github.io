@@ -66,7 +66,7 @@
 <a class="jxr_linenumber" name="56" href="#56">56</a>  
 <a class="jxr_linenumber" name="57" href="#57">57</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="58" href="#58">58</a>  <em class="jxr_javadoccomment"> * Handles querying Accessible Entities, with ACL semantics.</em>
-<a class="jxr_linenumber" name="59" href="#59">59</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="59" href="#59">59</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="60" href="#60">60</a>  <em class="jxr_javadoccomment"> * TODO: Possibly refactor more of the ACL logic into AclManager.</em>
 <a class="jxr_linenumber" name="61" href="#61">61</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="62" href="#62">62</a>  <em class="jxr_javadoccomment"> * @param &lt;E&gt;</em>
@@ -99,7 +99,7 @@
 <a class="jxr_linenumber" name="89" href="#89">89</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="90" href="#90">90</a>  <em class="jxr_javadoccomment">     * Directions for sort.</em>
 <a class="jxr_linenumber" name="91" href="#91">91</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="92" href="#92">92</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> enum <a href="../../../../eu/ehri/project/views/Query.html">Sort</a> {
+<a class="jxr_linenumber" name="92" href="#92">92</a>      <strong class="jxr_keyword">public</strong> enum <a href="../../../../eu/ehri/project/views/Query.html">Sort</a> {
 <a class="jxr_linenumber" name="93" href="#93">93</a>          ASC, DESC
 <a class="jxr_linenumber" name="94" href="#94">94</a>      }
 <a class="jxr_linenumber" name="95" href="#95">95</a>  
@@ -108,7 +108,7 @@
 <a class="jxr_linenumber" name="98" href="#98">98</a>  <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="99" href="#99">99</a>  <em class="jxr_javadoccomment">     * @author Mike Bryant (<a href="http://github.com/mikesname)" target="alexandria_uri">http://github.com/mikesname)</a></em>
 <a class="jxr_linenumber" name="100" href="#100">100</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="101" href="#101">101</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> enum <a href="../../../../eu/ehri/project/views/Query.html">FilterPredicate</a> {
+<a class="jxr_linenumber" name="101" href="#101">101</a>     <strong class="jxr_keyword">public</strong> enum <a href="../../../../eu/ehri/project/views/Query.html">FilterPredicate</a> {
 <a class="jxr_linenumber" name="102" href="#102">102</a>         EQUALS, IEQUALS, STARTSWITH, ENDSWITH, CONTAINS, ICONTAINS, MATCHES, GT, GTE, LT, LTE
 <a class="jxr_linenumber" name="103" href="#103">103</a>     }
 <a class="jxr_linenumber" name="104" href="#104">104</a> 
@@ -116,17 +116,17 @@
 <a class="jxr_linenumber" name="106" href="#106">106</a> <em class="jxr_javadoccomment">     * Full Constructor.</em>
 <a class="jxr_linenumber" name="107" href="#107">107</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="108" href="#108">108</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../eu/ehri/project/views/Query.html">Query</a>(
-<a class="jxr_linenumber" name="109" href="#109">109</a>             <strong class="jxr_keyword">final</strong> FramedGraph&lt;?&gt; graph, Class&lt;E&gt; cls,
-<a class="jxr_linenumber" name="110" href="#110">110</a>             <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope,
-<a class="jxr_linenumber" name="111" href="#111">111</a>             <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> offset,
-<a class="jxr_linenumber" name="112" href="#112">112</a>             <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> limit,
-<a class="jxr_linenumber" name="113" href="#113">113</a>             <strong class="jxr_keyword">final</strong> SortedMap&lt;String, Sort&gt; sort,
-<a class="jxr_linenumber" name="114" href="#114">114</a>             <strong class="jxr_keyword">final</strong> SortedMap&lt;QueryUtils.TraversalPath, Sort&gt; traversalSort,
-<a class="jxr_linenumber" name="115" href="#115">115</a>             <strong class="jxr_keyword">final</strong> Optional&lt;Pair&lt;String, Sort&gt;&gt; defSort,
-<a class="jxr_linenumber" name="116" href="#116">116</a>             <strong class="jxr_keyword">final</strong> SortedMap&lt;String, Pair&lt;FilterPredicate, String&gt;&gt; filters,
-<a class="jxr_linenumber" name="117" href="#117">117</a>             <strong class="jxr_keyword">final</strong> Map&lt;Pair&lt;String, Direction&gt;, Integer&gt; depthFilters,
-<a class="jxr_linenumber" name="118" href="#118">118</a>             <strong class="jxr_keyword">final</strong> List&lt;GremlinPipeline&lt;Vertex, Vertex&gt;&gt; traversalFilters,
-<a class="jxr_linenumber" name="119" href="#119">119</a>             <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">boolean</strong> stream) {
+<a class="jxr_linenumber" name="109" href="#109">109</a>             FramedGraph&lt;?&gt; graph, Class&lt;E&gt; cls,
+<a class="jxr_linenumber" name="110" href="#110">110</a>             <a href="../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope,
+<a class="jxr_linenumber" name="111" href="#111">111</a>             <strong class="jxr_keyword">int</strong> offset,
+<a class="jxr_linenumber" name="112" href="#112">112</a>             <strong class="jxr_keyword">int</strong> limit,
+<a class="jxr_linenumber" name="113" href="#113">113</a>             SortedMap&lt;String, Sort&gt; sort,
+<a class="jxr_linenumber" name="114" href="#114">114</a>             SortedMap&lt;QueryUtils.TraversalPath, Sort&gt; traversalSort,
+<a class="jxr_linenumber" name="115" href="#115">115</a>             Optional&lt;Pair&lt;String, Sort&gt;&gt; defSort,
+<a class="jxr_linenumber" name="116" href="#116">116</a>             SortedMap&lt;String, Pair&lt;FilterPredicate, String&gt;&gt; filters,
+<a class="jxr_linenumber" name="117" href="#117">117</a>             Map&lt;Pair&lt;String, Direction&gt;, Integer&gt; depthFilters,
+<a class="jxr_linenumber" name="118" href="#118">118</a>             List&lt;GremlinPipeline&lt;Vertex, Vertex&gt;&gt; traversalFilters,
+<a class="jxr_linenumber" name="119" href="#119">119</a>             <strong class="jxr_keyword">boolean</strong> stream) {
 <a class="jxr_linenumber" name="120" href="#120">120</a>         <strong class="jxr_keyword">this</strong>.graph = graph;
 <a class="jxr_linenumber" name="121" href="#121">121</a>         <strong class="jxr_keyword">this</strong>.cls = cls;
 <a class="jxr_linenumber" name="122" href="#122">122</a>         <strong class="jxr_keyword">this</strong>.scope = scope;
@@ -214,7 +214,7 @@
 <a class="jxr_linenumber" name="204" href="#204">204</a> 
 <a class="jxr_linenumber" name="205" href="#205">205</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="206" href="#206">206</a> <em class="jxr_javadoccomment">     * Wrapper method for FramedVertexIterables that converts a</em>
-<a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">     * FramedVertexIterable&lt;T&gt; back into a plain Iterable&lt;Vertex&gt;.</em>
+<a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">     * {@code FramedVertexIterable&lt;T&gt;} back into a plain {@code Iterable&lt;Vertex&gt;}.</em>
 <a class="jxr_linenumber" name="208" href="#208">208</a> <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="209" href="#209">209</a> <em class="jxr_javadoccomment">     * @param &lt;T&gt;</em>
 <a class="jxr_linenumber" name="210" href="#210">210</a> <em class="jxr_javadoccomment">     */</em>
@@ -222,7 +222,7 @@
 <a class="jxr_linenumber" name="212" href="#212">212</a>             <strong class="jxr_keyword">implements</strong> Iterable&lt;Vertex&gt; {
 <a class="jxr_linenumber" name="213" href="#213">213</a>         <strong class="jxr_keyword">final</strong> Iterable&lt;T&gt; iterable;
 <a class="jxr_linenumber" name="214" href="#214">214</a> 
-<a class="jxr_linenumber" name="215" href="#215">215</a>         <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/views/Query.html">FramedVertexIterableAdaptor</a>(<strong class="jxr_keyword">final</strong> Iterable&lt;T&gt; iterable) {
+<a class="jxr_linenumber" name="215" href="#215">215</a>         <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/views/Query.html">FramedVertexIterableAdaptor</a>(Iterable&lt;T&gt; iterable) {
 <a class="jxr_linenumber" name="216" href="#216">216</a>             <strong class="jxr_keyword">this</strong>.iterable = iterable;
 <a class="jxr_linenumber" name="217" href="#217">217</a>         }
 <a class="jxr_linenumber" name="218" href="#218">218</a> 
@@ -329,7 +329,7 @@
 <a class="jxr_linenumber" name="319" href="#319">319</a> 
 <a class="jxr_linenumber" name="320" href="#320">320</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="321" href="#321">321</a> <em class="jxr_javadoccomment">     * Count items.</em>
-<a class="jxr_linenumber" name="322" href="#322">322</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="322" href="#322">322</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="323" href="#323">323</a> <em class="jxr_javadoccomment">     * NB: Count doesn't 'account' for ACL privileges!</em>
 <a class="jxr_linenumber" name="324" href="#324">324</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="325" href="#325">325</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">long</strong> count() {
@@ -338,7 +338,7 @@
 <a class="jxr_linenumber" name="328" href="#328">328</a> 
 <a class="jxr_linenumber" name="329" href="#329">329</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="330" href="#330">330</a> <em class="jxr_javadoccomment">     * Count items accessible to a given user.</em>
-<a class="jxr_linenumber" name="331" href="#331">331</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="331" href="#331">331</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="332" href="#332">332</a> <em class="jxr_javadoccomment">     * NB: Count doesn't 'account' for ACL privileges!</em>
 <a class="jxr_linenumber" name="333" href="#333">333</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="334" href="#334">334</a>     <strong class="jxr_keyword">public</strong> &lt;T&gt; <strong class="jxr_keyword">long</strong> count(Iterable&lt;T&gt; vertices) {
@@ -349,7 +349,7 @@
 <a class="jxr_linenumber" name="339" href="#339">339</a> 
 <a class="jxr_linenumber" name="340" href="#340">340</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="341" href="#341">341</a> <em class="jxr_javadoccomment">     * Count all items of a given type.</em>
-<a class="jxr_linenumber" name="342" href="#342">342</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="342" href="#342">342</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="343" href="#343">343</a> <em class="jxr_javadoccomment">     * NB: Count doesn't 'account' for ACL privileges!</em>
 <a class="jxr_linenumber" name="344" href="#344">344</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="345" href="#345">345</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">long</strong> count(<a href="../../../../eu/ehri/project/models/EntityClass.html">EntityClass</a> type) {
@@ -421,7 +421,7 @@
 <a class="jxr_linenumber" name="411" href="#411">411</a> 
 <a class="jxr_linenumber" name="412" href="#412">412</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="413" href="#413">413</a> <em class="jxr_javadoccomment">     * Add a set of string order clauses. Clauses must be of the form:</em>
-<a class="jxr_linenumber" name="414" href="#414">414</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="414" href="#414">414</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="415" href="#415">415</a> <em class="jxr_javadoccomment">     * property__DIRECTION</em>
 <a class="jxr_linenumber" name="416" href="#416">416</a> <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="417" href="#417">417</a> <em class="jxr_javadoccomment">     * @param orderSpecs list of orderSpecs</em>
@@ -522,7 +522,7 @@
 <a class="jxr_linenumber" name="512" href="#512">512</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="513" href="#513">513</a> <em class="jxr_javadoccomment">     * Add a set of unparsed filter clauses. Clauses must be of the format:</em>
 <a class="jxr_linenumber" name="514" href="#514">514</a> <em class="jxr_javadoccomment">     * property__PREDICATE:value</em>
-<a class="jxr_linenumber" name="515" href="#515">515</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="515" href="#515">515</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="516" href="#516">516</a> <em class="jxr_javadoccomment">     * If PREDICATE is omitted, EQUALS is the default.</em>
 <a class="jxr_linenumber" name="517" href="#517">517</a> <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="518" href="#518">518</a> <em class="jxr_javadoccomment">     * @param filters list of filters</em>
@@ -637,12 +637,12 @@
 <a class="jxr_linenumber" name="627" href="#627">627</a> <em class="jxr_javadoccomment">     * Create a filter that limits the selected nodes to with a particular depth</em>
 <a class="jxr_linenumber" name="628" href="#628">628</a> <em class="jxr_javadoccomment">     * of a relationship chain. For example, if a set of nodes form a</em>
 <a class="jxr_linenumber" name="629" href="#629">629</a> <em class="jxr_javadoccomment">     * hierarchical relationship such as:</em>
-<a class="jxr_linenumber" name="630" href="#630">630</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
-<a class="jxr_linenumber" name="631" href="#631">631</a> <em class="jxr_javadoccomment">     * child -[childOf]-&gt; parent -[childOf]-&gt; grandparent</em>
-<a class="jxr_linenumber" name="632" href="#632">632</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
-<a class="jxr_linenumber" name="633" href="#633">633</a> <em class="jxr_javadoccomment">     * Then a depthFilter of childOf -&gt; 0 would filter out all except the</em>
+<a class="jxr_linenumber" name="630" href="#630">630</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="631" href="#631">631</a> <em class="jxr_javadoccomment">     * child -[childOf]-&amp;gt; parent -[childOf]-&amp;gt; grandparent</em>
+<a class="jxr_linenumber" name="632" href="#632">632</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="633" href="#633">633</a> <em class="jxr_javadoccomment">     * Then a depthFilter of childOf -&amp;gt; 0 would filter out all except the</em>
 <a class="jxr_linenumber" name="634" href="#634">634</a> <em class="jxr_javadoccomment">     * grandparent node.</em>
-<a class="jxr_linenumber" name="635" href="#635">635</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="635" href="#635">635</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="636" href="#636">636</a> <em class="jxr_javadoccomment">     * TODO: Figure out how to do this will Gremlin's loop() construct.</em>
 <a class="jxr_linenumber" name="637" href="#637">637</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="638" href="#638">638</a>     <strong class="jxr_keyword">private</strong> PipeFunction&lt;Vertex, Boolean&gt; getDepthFilterFunction() {
@@ -703,7 +703,7 @@
 <a class="jxr_linenumber" name="693" href="#693">693</a>     }
 <a class="jxr_linenumber" name="694" href="#694">694</a> 
 <a class="jxr_linenumber" name="695" href="#695">695</a>     <strong class="jxr_keyword">private</strong> PipeFunction&lt;Pair&lt;Vertex, Vertex&gt;, Integer&gt; getTraversalOrderFunction(
-<a class="jxr_linenumber" name="696" href="#696">696</a>             <strong class="jxr_keyword">final</strong> QueryUtils.TraversalPath tp, <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/views/Query.html">Sort</a> sort) {
+<a class="jxr_linenumber" name="696" href="#696">696</a>             QueryUtils.TraversalPath tp, <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/views/Query.html">Sort</a> sort) {
 <a class="jxr_linenumber" name="697" href="#697">697</a>         <em class="jxr_comment">// FIXME: Make this less horribly inefficient!</em>
 <a class="jxr_linenumber" name="698" href="#698">698</a>         <strong class="jxr_keyword">final</strong> GremlinPipeline&lt;Vertex, String&gt; pipe = getOrderTraversalPipeline(tp);
 <a class="jxr_linenumber" name="699" href="#699">699</a>         <strong class="jxr_keyword">final</strong> Map&lt;Vertex, String&gt; cache = Maps.newHashMap();

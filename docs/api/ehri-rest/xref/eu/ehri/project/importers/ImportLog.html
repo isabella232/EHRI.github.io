@@ -45,10 +45,10 @@
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> {
 <a class="jxr_linenumber" name="37" href="#37">37</a>  
-<a class="jxr_linenumber" name="38" href="#38">38</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> created = 0;
-<a class="jxr_linenumber" name="39" href="#39">39</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> updated = 0;
-<a class="jxr_linenumber" name="40" href="#40">40</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> unchanged = 0;
-<a class="jxr_linenumber" name="41" href="#41">41</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> errored = 0;
+<a class="jxr_linenumber" name="38" href="#38">38</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> created;
+<a class="jxr_linenumber" name="39" href="#39">39</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> updated;
+<a class="jxr_linenumber" name="40" href="#40">40</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> unchanged;
+<a class="jxr_linenumber" name="41" href="#41">41</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> errored;
 <a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">private</strong> EventContext eventContext;
 <a class="jxr_linenumber" name="43" href="#43">43</a>      <strong class="jxr_keyword">private</strong> Map&lt;String, String&gt; errors = Maps.newHashMap();
 <a class="jxr_linenumber" name="44" href="#44">44</a>  
@@ -58,7 +58,7 @@
 <a class="jxr_linenumber" name="48" href="#48">48</a>  <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="49" href="#49">49</a>  <em class="jxr_javadoccomment">     * @param action An event context</em>
 <a class="jxr_linenumber" name="50" href="#50">50</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(<strong class="jxr_keyword">final</strong> EventContext action) {
+<a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(EventContext action) {
 <a class="jxr_linenumber" name="52" href="#52">52</a>          <strong class="jxr_keyword">this</strong>.eventContext = action;
 <a class="jxr_linenumber" name="53" href="#53">53</a>      }
 <a class="jxr_linenumber" name="54" href="#54">54</a>  

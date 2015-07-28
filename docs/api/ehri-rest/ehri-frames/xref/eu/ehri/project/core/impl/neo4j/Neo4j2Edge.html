@@ -23,7 +23,7 @@
 <a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html">Neo4j2Edge</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Element.html">Neo4j2Element</a> <strong class="jxr_keyword">implements</strong> Edge {
 <a class="jxr_linenumber" name="15" href="#15">15</a>  
-<a class="jxr_linenumber" name="16" href="#16">16</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html">Neo4j2Edge</a>(<strong class="jxr_keyword">final</strong> Relationship relationship, <strong class="jxr_keyword">final</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a> graph) {
+<a class="jxr_linenumber" name="16" href="#16">16</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html">Neo4j2Edge</a>(Relationship relationship, <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a> graph) {
 <a class="jxr_linenumber" name="17" href="#17">17</a>          <strong class="jxr_keyword">super</strong>(graph);
 <a class="jxr_linenumber" name="18" href="#18">18</a>          <strong class="jxr_keyword">this</strong>.rawElement = relationship;
 <a class="jxr_linenumber" name="19" href="#19">19</a>      }
@@ -33,7 +33,7 @@
 <a class="jxr_linenumber" name="23" href="#23">23</a>          <strong class="jxr_keyword">return</strong> ((Relationship) <strong class="jxr_keyword">this</strong>.rawElement).getType().name();
 <a class="jxr_linenumber" name="24" href="#24">24</a>      }
 <a class="jxr_linenumber" name="25" href="#25">25</a>  
-<a class="jxr_linenumber" name="26" href="#26">26</a>      <strong class="jxr_keyword">public</strong> Vertex getVertex(<strong class="jxr_keyword">final</strong> Direction direction) {
+<a class="jxr_linenumber" name="26" href="#26">26</a>      <strong class="jxr_keyword">public</strong> Vertex getVertex(Direction direction) {
 <a class="jxr_linenumber" name="27" href="#27">27</a>          <strong class="jxr_keyword">this</strong>.graph.autoStartTransaction(false);
 <a class="jxr_linenumber" name="28" href="#28">28</a>          <strong class="jxr_keyword">if</strong> (direction.equals(Direction.OUT))
 <a class="jxr_linenumber" name="29" href="#29">29</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4j2Vertex</a>(((Relationship) <strong class="jxr_keyword">this</strong>.rawElement).getStartNode(), <strong class="jxr_keyword">this</strong>.graph);
@@ -44,7 +44,7 @@
 <a class="jxr_linenumber" name="34" href="#34">34</a>  
 <a class="jxr_linenumber" name="35" href="#35">35</a>      }
 <a class="jxr_linenumber" name="36" href="#36">36</a>  
-<a class="jxr_linenumber" name="37" href="#37">37</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> equals(<strong class="jxr_keyword">final</strong> Object object) {
+<a class="jxr_linenumber" name="37" href="#37">37</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> equals(Object object) {
 <a class="jxr_linenumber" name="38" href="#38">38</a>          <strong class="jxr_keyword">return</strong> object instanceof <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html">Neo4j2Edge</a> &amp;&amp; ((Neo4j2Edge) object).getId().equals(<strong class="jxr_keyword">this</strong>.getId());
 <a class="jxr_linenumber" name="39" href="#39">39</a>      }
 <a class="jxr_linenumber" name="40" href="#40">40</a>  

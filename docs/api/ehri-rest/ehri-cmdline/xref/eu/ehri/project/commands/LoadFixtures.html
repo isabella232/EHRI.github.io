@@ -44,7 +44,7 @@
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <em class="jxr_javadoccomment"> * @author Mike Bryant (<a href="http://github.com/mikesname)" target="alexandria_uri">http://github.com/mikesname)</a></em>
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/commands/LoadFixtures.html">LoadFixtures</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/commands/BaseCommand.html">BaseCommand</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../eu/ehri/project/commands/Command.html">Command</a> {
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/commands/LoadFixtures.html">LoadFixtures</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/commands/BaseCommand.html">BaseCommand</a> {
 <a class="jxr_linenumber" name="38" href="#38">38</a>  
 <a class="jxr_linenumber" name="39" href="#39">39</a>      <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> String NAME = <span class="jxr_string">"load-fixtures"</span>;
 <a class="jxr_linenumber" name="40" href="#40">40</a>  
@@ -68,7 +68,7 @@
 <a class="jxr_linenumber" name="58" href="#58">58</a>      }
 <a class="jxr_linenumber" name="59" href="#59">59</a>  
 <a class="jxr_linenumber" name="60" href="#60">60</a>      @Override
-<a class="jxr_linenumber" name="61" href="#61">61</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> execWithOptions(<strong class="jxr_keyword">final</strong> FramedGraph&lt;?&gt; graph,
+<a class="jxr_linenumber" name="61" href="#61">61</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> execWithOptions(FramedGraph&lt;?&gt; graph,
 <a class="jxr_linenumber" name="62" href="#62">62</a>              CommandLine cmdLine) <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="63" href="#63">63</a>          <strong class="jxr_keyword">boolean</strong> initialize = cmdLine.hasOption(<span class="jxr_string">"init"</span>);
 <a class="jxr_linenumber" name="64" href="#64">64</a>          FixtureLoader loader = FixtureLoaderFactory.getInstance(graph, initialize);

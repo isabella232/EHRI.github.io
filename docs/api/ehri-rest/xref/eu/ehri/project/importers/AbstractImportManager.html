@@ -61,12 +61,12 @@
 <a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> FramedGraph&lt;?&gt; framedGraph;
 <a class="jxr_linenumber" name="52" href="#52">52</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> permissionScope;
 <a class="jxr_linenumber" name="53" href="#53">53</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/models/base/Actioner.html">Actioner</a> actioner;
-<a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> tolerant = false;
+<a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">boolean</strong> tolerant;
 <a class="jxr_linenumber" name="55" href="#55">55</a>  
 <a class="jxr_linenumber" name="56" href="#56">56</a>      <em class="jxr_comment">// Ugly stateful variables for tracking import state</em>
 <a class="jxr_linenumber" name="57" href="#57">57</a>      <em class="jxr_comment">// and reporting errors usefully...</em>
-<a class="jxr_linenumber" name="58" href="#58">58</a>      <strong class="jxr_keyword">private</strong> String currentFile = <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="59" href="#59">59</a>      <strong class="jxr_keyword">private</strong> Integer currentPosition = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="58" href="#58">58</a>      <strong class="jxr_keyword">private</strong> String currentFile;
+<a class="jxr_linenumber" name="59" href="#59">59</a>      <strong class="jxr_keyword">private</strong> Integer currentPosition;
 <a class="jxr_linenumber" name="60" href="#60">60</a>      <strong class="jxr_keyword">protected</strong> Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; importerClass;
 <a class="jxr_linenumber" name="61" href="#61">61</a>  
 <a class="jxr_linenumber" name="62" href="#62">62</a>      <em class="jxr_javadoccomment">/**</em>
@@ -78,7 +78,7 @@
 <a class="jxr_linenumber" name="68" href="#68">68</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="69" href="#69">69</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/importers/AbstractImportManager.html">AbstractImportManager</a>(
 <a class="jxr_linenumber" name="70" href="#70">70</a>              FramedGraph&lt;?&gt; graph,
-<a class="jxr_linenumber" name="71" href="#71">71</a>              <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope, <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/models/base/Actioner.html">Actioner</a> actioner, Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; importerClass) {
+<a class="jxr_linenumber" name="71" href="#71">71</a>              <a href="../../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope, <a href="../../../../eu/ehri/project/models/base/Actioner.html">Actioner</a> actioner, Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; importerClass) {
 <a class="jxr_linenumber" name="72" href="#72">72</a>          <strong class="jxr_keyword">this</strong>.framedGraph = graph;
 <a class="jxr_linenumber" name="73" href="#73">73</a>          <strong class="jxr_keyword">this</strong>.permissionScope = scope;
 <a class="jxr_linenumber" name="74" href="#74">74</a>          <strong class="jxr_keyword">this</strong>.actioner = actioner;
@@ -135,11 +135,11 @@
 <a class="jxr_linenumber" name="125" href="#125">125</a>             <strong class="jxr_keyword">throws</strong> IOException, ValidationError, <a href="../../../../eu/ehri/project/importers/exceptions/InputParseError.html">InputParseError</a> {
 <a class="jxr_linenumber" name="126" href="#126">126</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="127" href="#127">127</a>             <em class="jxr_comment">// Create a new action for this import</em>
-<a class="jxr_linenumber" name="128" href="#128">128</a>             <strong class="jxr_keyword">final</strong> ActionManager.EventContext action = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(
+<a class="jxr_linenumber" name="128" href="#128">128</a>             ActionManager.EventContext action = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(
 <a class="jxr_linenumber" name="129" href="#129">129</a>                     framedGraph, permissionScope).newEventContext(actioner,
 <a class="jxr_linenumber" name="130" href="#130">130</a>                     EventTypes.ingest, getLogMessage(logMessage));
 <a class="jxr_linenumber" name="131" href="#131">131</a>             <em class="jxr_comment">// Create a manifest to store the results of the import.</em>
-<a class="jxr_linenumber" name="132" href="#132">132</a>             <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(action);
+<a class="jxr_linenumber" name="132" href="#132">132</a>             <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(action);
 <a class="jxr_linenumber" name="133" href="#133">133</a> 
 <a class="jxr_linenumber" name="134" href="#134">134</a>             <em class="jxr_comment">// Do the import...</em>
 <a class="jxr_linenumber" name="135" href="#135">135</a>             importFile(ios, action, log);
@@ -169,10 +169,10 @@
 <a class="jxr_linenumber" name="159" href="#159">159</a> 
 <a class="jxr_linenumber" name="160" href="#160">160</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="161" href="#161">161</a> 
-<a class="jxr_linenumber" name="162" href="#162">162</a>             <strong class="jxr_keyword">final</strong> ActionManager.EventContext action = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(
+<a class="jxr_linenumber" name="162" href="#162">162</a>             ActionManager.EventContext action = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(
 <a class="jxr_linenumber" name="163" href="#163">163</a>                     framedGraph, permissionScope).newEventContext(actioner,
 <a class="jxr_linenumber" name="164" href="#164">164</a>                     EventTypes.ingest, getLogMessage(logMessage));
-<a class="jxr_linenumber" name="165" href="#165">165</a>             <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(action);
+<a class="jxr_linenumber" name="165" href="#165">165</a>             <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(action);
 <a class="jxr_linenumber" name="166" href="#166">166</a>             <strong class="jxr_keyword">for</strong> (String path : paths) {
 <a class="jxr_linenumber" name="167" href="#167">167</a>                 <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="168" href="#168">168</a>                     currentFile = path;
@@ -213,7 +213,7 @@
 <a class="jxr_linenumber" name="203" href="#203">203</a> <em class="jxr_javadoccomment">     * @throws InvalidInputFormatError</em>
 <a class="jxr_linenumber" name="204" href="#204">204</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="205" href="#205">205</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">void</strong> importFile(InputStream ios,
-<a class="jxr_linenumber" name="206" href="#206">206</a>             <strong class="jxr_keyword">final</strong> ActionManager.EventContext eventContext, <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log)
+<a class="jxr_linenumber" name="206" href="#206">206</a>             ActionManager.EventContext eventContext, <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log)
 <a class="jxr_linenumber" name="207" href="#207">207</a>             <strong class="jxr_keyword">throws</strong> IOException, ValidationError, InputParseError,
 <a class="jxr_linenumber" name="208" href="#208">208</a>             InvalidXmlDocument, InvalidInputFormatError;
 <a class="jxr_linenumber" name="209" href="#209">209</a> 

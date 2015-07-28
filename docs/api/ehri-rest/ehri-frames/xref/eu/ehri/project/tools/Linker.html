@@ -82,8 +82,8 @@
 <a class="jxr_linenumber" name="72" href="#72">72</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> String defaultLanguageCode;
 <a class="jxr_linenumber" name="73" href="#73">73</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Optional&lt;String&gt; logMessage;
 <a class="jxr_linenumber" name="74" href="#74">74</a>  
-<a class="jxr_linenumber" name="75" href="#75">75</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../eu/ehri/project/tools/Linker.html">Linker</a>(FramedGraph&lt;?&gt; graph, <strong class="jxr_keyword">final</strong> Set&lt;String&gt; accessPointTypes,
-<a class="jxr_linenumber" name="76" href="#76">76</a>              <strong class="jxr_keyword">final</strong> String defaultLanguageCode, <strong class="jxr_keyword">final</strong> Optional&lt;String&gt; logMessage,
+<a class="jxr_linenumber" name="75" href="#75">75</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../eu/ehri/project/tools/Linker.html">Linker</a>(FramedGraph&lt;?&gt; graph, Set&lt;String&gt; accessPointTypes,
+<a class="jxr_linenumber" name="76" href="#76">76</a>              String defaultLanguageCode, Optional&lt;String&gt; logMessage,
 <a class="jxr_linenumber" name="77" href="#77">77</a>              <strong class="jxr_keyword">boolean</strong> tolerant, <strong class="jxr_keyword">boolean</strong> excludeSingles) {
 <a class="jxr_linenumber" name="78" href="#78">78</a>          <strong class="jxr_keyword">this</strong>.graph = graph;
 <a class="jxr_linenumber" name="79" href="#79">79</a>          <strong class="jxr_keyword">this</strong>.accessPointTypes = accessPointTypes;
@@ -102,15 +102,15 @@
 <a class="jxr_linenumber" name="92" href="#92">92</a>  <em class="jxr_javadoccomment">     * Populate a pre-created vocabulary with concepts created based on</em>
 <a class="jxr_linenumber" name="93" href="#93">93</a>  <em class="jxr_javadoccomment">     * access points for all collections within a repository, then link</em>
 <a class="jxr_linenumber" name="94" href="#94">94</a>  <em class="jxr_javadoccomment">     * those concepts to the relevant documentary units.</em>
-<a class="jxr_linenumber" name="95" href="#95">95</a>  <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="95" href="#95">95</a>  <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="96" href="#96">96</a>  <em class="jxr_javadoccomment">     * One creation event will be generated for the newly-created concepts</em>
 <a class="jxr_linenumber" name="97" href="#97">97</a>  <em class="jxr_javadoccomment">     * (with the vocabulary as the scope) and another for the newly-created</em>
 <a class="jxr_linenumber" name="98" href="#98">98</a>  <em class="jxr_javadoccomment">     * links. Currently events will still be created if no concepts/links</em>
 <a class="jxr_linenumber" name="99" href="#99">99</a>  <em class="jxr_javadoccomment">     * are made.</em>
-<a class="jxr_linenumber" name="100" href="#100">100</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="100" href="#100">100</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="101" href="#101">101</a> <em class="jxr_javadoccomment">     * It should be advised that this function is not idempotent and</em>
 <a class="jxr_linenumber" name="102" href="#102">102</a> <em class="jxr_javadoccomment">     * running it twice will generate concepts/links twice.</em>
-<a class="jxr_linenumber" name="103" href="#103">103</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="103" href="#103">103</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="104" href="#104">104</a> <em class="jxr_javadoccomment">     * NB. One could argue this function does too much...</em>
 <a class="jxr_linenumber" name="105" href="#105">105</a> <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="106" href="#106">106</a> <em class="jxr_javadoccomment">     * @param repository       the repository</em>
@@ -342,7 +342,7 @@
 <a class="jxr_linenumber" name="332" href="#332">332</a>     <em class="jxr_comment">// Helpers...</em>
 <a class="jxr_linenumber" name="333" href="#333">333</a> 
 <a class="jxr_linenumber" name="334" href="#334">334</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> willCreateItems(Map&lt;String, Integer&gt; identifierCounts, <strong class="jxr_keyword">boolean</strong> excludeSingles) {
-<a class="jxr_linenumber" name="335" href="#335">335</a>         <strong class="jxr_keyword">if</strong> (identifierCounts.size() == 0) {
+<a class="jxr_linenumber" name="335" href="#335">335</a>         <strong class="jxr_keyword">if</strong> (identifierCounts.isEmpty()) {
 <a class="jxr_linenumber" name="336" href="#336">336</a>             <strong class="jxr_keyword">return</strong> false;
 <a class="jxr_linenumber" name="337" href="#337">337</a>         } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (excludeSingles) {
 <a class="jxr_linenumber" name="338" href="#338">338</a>             Integer maxCount = 0;

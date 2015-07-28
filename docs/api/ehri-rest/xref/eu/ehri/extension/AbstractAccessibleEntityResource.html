@@ -82,8 +82,8 @@
 <a class="jxr_linenumber" name="72" href="#72">72</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="73" href="#73">73</a>  <em class="jxr_javadoccomment">     * Functor used to post-process items.</em>
 <a class="jxr_linenumber" name="74" href="#74">74</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="75" href="#75">75</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">interface</strong> Handler&lt;E <strong class="jxr_keyword">extends</strong> AccessibleEntity&gt; {
-<a class="jxr_linenumber" name="76" href="#76">76</a>          <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> process(E frame) <strong class="jxr_keyword">throws</strong> PermissionDenied;
+<a class="jxr_linenumber" name="75" href="#75">75</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">interface</strong> Handler&lt;E <strong class="jxr_keyword">extends</strong> AccessibleEntity&gt; {
+<a class="jxr_linenumber" name="76" href="#76">76</a>          <strong class="jxr_keyword">void</strong> process(E frame) <strong class="jxr_keyword">throws</strong> PermissionDenied;
 <a class="jxr_linenumber" name="77" href="#77">77</a>      }
 <a class="jxr_linenumber" name="78" href="#78">78</a>  
 <a class="jxr_linenumber" name="79" href="#79">79</a>      <em class="jxr_javadoccomment">/**</em>
@@ -124,7 +124,7 @@
 <a class="jxr_linenumber" name="114" href="#114">114</a> <em class="jxr_javadoccomment">     * @throws BadRequester</em>
 <a class="jxr_linenumber" name="115" href="#115">115</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="116" href="#116">116</a>     <strong class="jxr_keyword">public</strong> Response listItems() <strong class="jxr_keyword">throws</strong> BadRequester {
-<a class="jxr_linenumber" name="117" href="#117">117</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="117" href="#117">117</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="118" href="#118">118</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="119" href="#119">119</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(cls).page(getRequesterUserProfile()), tx);
 <a class="jxr_linenumber" name="120" href="#120">120</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
@@ -260,7 +260,7 @@
 <a class="jxr_linenumber" name="250" href="#250">250</a> 
 <a class="jxr_linenumber" name="251" href="#251">251</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="252" href="#252">252</a> <em class="jxr_javadoccomment">     * Update (change) an instance of the 'entity' in the database</em>
-<a class="jxr_linenumber" name="253" href="#253">253</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="253" href="#253">253</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="254" href="#254">254</a> <em class="jxr_javadoccomment">     * If the Patch header is true top-level bundle data will be merged</em>
 <a class="jxr_linenumber" name="255" href="#255">255</a> <em class="jxr_javadoccomment">     * instead of overwritten.</em>
 <a class="jxr_linenumber" name="256" href="#256">256</a> <em class="jxr_javadoccomment">     *</em>

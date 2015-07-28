@@ -155,7 +155,7 @@
 <a class="jxr_linenumber" name="145" href="#145">145</a>                         <strong class="jxr_keyword">return</strong> !vertex.getEdges(Direction.OUT, Ontology.VC_IS_PART_OF)
 <a class="jxr_linenumber" name="146" href="#146">146</a>                                 .iterator().hasNext();
 <a class="jxr_linenumber" name="147" href="#147">147</a>                     }
-<a class="jxr_linenumber" name="148" href="#148">148</a>                 }).filter(aclManager.getAclFilterFunction(accessor));
+<a class="jxr_linenumber" name="148" href="#148">148</a>                 }).filter(AclManager.getAclFilterFunction(accessor));
 <a class="jxr_linenumber" name="149" href="#149">149</a> 
 <a class="jxr_linenumber" name="150" href="#150">150</a>         <strong class="jxr_keyword">return</strong> graph.frameVertices(out, VirtualUnit.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="151" href="#151">151</a>     }
@@ -171,7 +171,7 @@
 <a class="jxr_linenumber" name="161" href="#161">161</a>         GremlinPipeline&lt;Vertex, Vertex&gt; pipe = <strong class="jxr_keyword">new</strong> GremlinPipeline&lt;&gt;();
 <a class="jxr_linenumber" name="162" href="#162">162</a>         Pipeline&lt;Vertex, Vertex&gt; filtered = pipe.start(user.asVertex())
 <a class="jxr_linenumber" name="163" href="#163">163</a>                 .in(Ontology.VC_HAS_AUTHOR)
-<a class="jxr_linenumber" name="164" href="#164">164</a>                 .filter(aclManager.getAclFilterFunction(accessor));
+<a class="jxr_linenumber" name="164" href="#164">164</a>                 .filter(AclManager.getAclFilterFunction(accessor));
 <a class="jxr_linenumber" name="165" href="#165">165</a> 
 <a class="jxr_linenumber" name="166" href="#166">166</a>         <strong class="jxr_keyword">return</strong> graph.frameVertices(filtered, VirtualUnit.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="167" href="#167">167</a>     }

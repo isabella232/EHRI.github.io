@@ -54,17 +54,17 @@
 <a class="jxr_linenumber" name="44" href="#44">44</a>  
 <a class="jxr_linenumber" name="45" href="#45">45</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="46" href="#46">46</a>  <em class="jxr_javadoccomment"> * Import EAD describing a Virtual Collection. some rules governing virtual collections:</em>
-<a class="jxr_linenumber" name="47" href="#47">47</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="48" href="#48">48</a>  <em class="jxr_javadoccomment"> * the archdesc should describe the purpose of this vc. it can not in itself refer to a DU.</em>
-<a class="jxr_linenumber" name="49" href="#49">49</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="49" href="#49">49</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="50" href="#50">50</a>  <em class="jxr_javadoccomment"> * every c level is either 1) a virtual level (=VirtualLevel), or 2) it points to an existing DocumentaryUnit</em>
 <a class="jxr_linenumber" name="51" href="#51">51</a>  <em class="jxr_javadoccomment"> * (=VirtualReferrer) (and consequently to the entire subtree beneath it) 1) there is no repository-tag with a</em>
 <a class="jxr_linenumber" name="52" href="#52">52</a>  <em class="jxr_javadoccomment"> * ehri-label</em>
-<a class="jxr_linenumber" name="53" href="#53">53</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
-<a class="jxr_linenumber" name="54" href="#54">54</a>  <em class="jxr_javadoccomment"> * 2) there is exactly one repository-tag with an ehri-label &lt;repository</em>
-<a class="jxr_linenumber" name="55" href="#55">55</a>  <em class="jxr_javadoccomment"> * label="ehri_repository_vc"&gt;il-002777&lt;/repository&gt; (this will not be shown in the portal) and exactly one unitid with</em>
+<a class="jxr_linenumber" name="53" href="#53">53</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="54" href="#54">54</a>  <em class="jxr_javadoccomment"> * 2) there is exactly one repository-tag with an ehri-label &amp;lt;repository</em>
+<a class="jxr_linenumber" name="55" href="#55">55</a>  <em class="jxr_javadoccomment"> * label="ehri_repository_vc"&amp;gt;il-002777&amp;lt;/repository&amp;gt; (this will not be shown in the portal) and exactly one unitid with</em>
 <a class="jxr_linenumber" name="56" href="#56">56</a>  <em class="jxr_javadoccomment"> * a ehri-main-identifier label, that is identical to the existing unitid within the graph for this repository</em>
-<a class="jxr_linenumber" name="57" href="#57">57</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="57" href="#57">57</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="58" href="#58">58</a>  <em class="jxr_javadoccomment"> * all other tags will be ignored, since the DocumentsDescription of the referred DocumentaryUnit will be shown. there</em>
 <a class="jxr_linenumber" name="59" href="#59">59</a>  <em class="jxr_javadoccomment"> * should not be any c-levels beneath such a c-level</em>
 <a class="jxr_linenumber" name="60" href="#60">60</a>  <em class="jxr_javadoccomment"> *</em>
@@ -165,7 +165,7 @@
 <a class="jxr_linenumber" name="155" href="#155">155</a>     @SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
 <a class="jxr_linenumber" name="156" href="#156">156</a>     @Override
 <a class="jxr_linenumber" name="157" href="#157">157</a>     <strong class="jxr_keyword">protected</strong> Iterable&lt;Map&lt;String, Object&gt;&gt; extractRelations(Map&lt;String, Object&gt; data) {
-<a class="jxr_linenumber" name="158" href="#158">158</a>         <strong class="jxr_keyword">final</strong> String REL = <span class="jxr_string">"AccessPoint"</span>;
+<a class="jxr_linenumber" name="158" href="#158">158</a>         String REL = <span class="jxr_string">"AccessPoint"</span>;
 <a class="jxr_linenumber" name="159" href="#159">159</a>         List&lt;Map&lt;String, Object&gt;&gt; list = Lists.newArrayList();
 <a class="jxr_linenumber" name="160" href="#160">160</a>         <strong class="jxr_keyword">for</strong> (String key : data.keySet()) {
 <a class="jxr_linenumber" name="161" href="#161">161</a>             <strong class="jxr_keyword">if</strong> (key.endsWith(REL)) {
@@ -194,7 +194,7 @@
 <a class="jxr_linenumber" name="184" href="#184">184</a> 
 <a class="jxr_linenumber" name="185" href="#185">185</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="186" href="#186">186</a> <em class="jxr_javadoccomment">     * Creates a Map containing properties of a Virtual Unit.</em>
-<a class="jxr_linenumber" name="187" href="#187">187</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="187" href="#187">187</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="188" href="#188">188</a> <em class="jxr_javadoccomment">     * These properties are the unit's identifiers.</em>
 <a class="jxr_linenumber" name="189" href="#189">189</a> <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="190" href="#190">190</a> <em class="jxr_javadoccomment">     * @param itemData Map of all extracted information</em>
@@ -266,7 +266,7 @@
 <a class="jxr_linenumber" name="256" href="#256">256</a>             }
 <a class="jxr_linenumber" name="257" href="#257">257</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a>(String.format(<span class="jxr_string">"No item %s found in repo %s"</span>, unitid, repositoryid));
 <a class="jxr_linenumber" name="258" href="#258">258</a>         }
-<a class="jxr_linenumber" name="259" href="#259">259</a>         <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a>(String.format(<span class="jxr_string">"Apparently no repositoryid/unitid combo given"</span>));
+<a class="jxr_linenumber" name="259" href="#259">259</a>         <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a>(<span class="jxr_string">"Apparently no repositoryid/unitid combo given"</span>);
 <a class="jxr_linenumber" name="260" href="#260">260</a> 
 <a class="jxr_linenumber" name="261" href="#261">261</a>     }
 <a class="jxr_linenumber" name="262" href="#262">262</a> }

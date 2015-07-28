@@ -134,21 +134,21 @@
 <a class="jxr_linenumber" name="124" href="#124">124</a> <em class="jxr_javadoccomment">     * deleted elements.</em>
 <a class="jxr_linenumber" name="125" href="#125">125</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="126" href="#126">126</a>     @Deprecated
-<a class="jxr_linenumber" name="127" href="#127">127</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setCheckElementsInTransaction(<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">boolean</strong> checkElementsInTransaction) {
+<a class="jxr_linenumber" name="127" href="#127">127</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setCheckElementsInTransaction(<strong class="jxr_keyword">boolean</strong> checkElementsInTransaction) {
 <a class="jxr_linenumber" name="128" href="#128">128</a>         <strong class="jxr_keyword">this</strong>.checkElementsInTransaction.set(checkElementsInTransaction);
 <a class="jxr_linenumber" name="129" href="#129">129</a>     }
 <a class="jxr_linenumber" name="130" href="#130">130</a> 
-<a class="jxr_linenumber" name="131" href="#131">131</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a>(<strong class="jxr_keyword">final</strong> String directory) {
+<a class="jxr_linenumber" name="131" href="#131">131</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a>(String directory) {
 <a class="jxr_linenumber" name="132" href="#132">132</a>         <strong class="jxr_keyword">this</strong>(directory, <strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="133" href="#133">133</a>     }
 <a class="jxr_linenumber" name="134" href="#134">134</a> 
-<a class="jxr_linenumber" name="135" href="#135">135</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a>(<strong class="jxr_keyword">final</strong> GraphDatabaseService rawGraph) {
+<a class="jxr_linenumber" name="135" href="#135">135</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a>(GraphDatabaseService rawGraph) {
 <a class="jxr_linenumber" name="136" href="#136">136</a>         <strong class="jxr_keyword">this</strong>.rawGraph = rawGraph;
 <a class="jxr_linenumber" name="137" href="#137">137</a> 
 <a class="jxr_linenumber" name="138" href="#138">138</a>         init();
 <a class="jxr_linenumber" name="139" href="#139">139</a>     }
 <a class="jxr_linenumber" name="140" href="#140">140</a> 
-<a class="jxr_linenumber" name="141" href="#141">141</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a>(<strong class="jxr_keyword">final</strong> String directory, <strong class="jxr_keyword">final</strong> Map&lt;String, String&gt; configuration) {
+<a class="jxr_linenumber" name="141" href="#141">141</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a>(String directory, Map&lt;String, String&gt; configuration) {
 <a class="jxr_linenumber" name="142" href="#142">142</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="143" href="#143">143</a>             GraphDatabaseBuilder builder = <strong class="jxr_keyword">new</strong> GraphDatabaseFactory().newEmbeddedDatabaseBuilder(directory);
 <a class="jxr_linenumber" name="144" href="#144">144</a>             <strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">null</strong> != configuration)
@@ -169,29 +169,29 @@
 <a class="jxr_linenumber" name="159" href="#159">159</a>         <strong class="jxr_keyword">this</strong>.loadKeyIndices();
 <a class="jxr_linenumber" name="160" href="#160">160</a>     }
 <a class="jxr_linenumber" name="161" href="#161">161</a> 
-<a class="jxr_linenumber" name="162" href="#162">162</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a>(<strong class="jxr_keyword">final</strong> Configuration configuration) {
+<a class="jxr_linenumber" name="162" href="#162">162</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a>(Configuration configuration) {
 <a class="jxr_linenumber" name="163" href="#163">163</a>         <strong class="jxr_keyword">this</strong>(configuration.getString(<span class="jxr_string">"blueprints.neo4j.directory"</span>, <strong class="jxr_keyword">null</strong>),
 <a class="jxr_linenumber" name="164" href="#164">164</a>                 ConfigurationConverter.getMap(configuration.subset(<span class="jxr_string">"blueprints.neo4j.conf"</span>)));
 <a class="jxr_linenumber" name="165" href="#165">165</a>     }
 <a class="jxr_linenumber" name="166" href="#166">166</a> 
 <a class="jxr_linenumber" name="167" href="#167">167</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> loadKeyIndices() {
 <a class="jxr_linenumber" name="168" href="#168">168</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="169" href="#169">169</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> String key : <strong class="jxr_keyword">this</strong>.getInternalIndexKeys(Vertex.<strong class="jxr_keyword">class</strong>)) {
+<a class="jxr_linenumber" name="169" href="#169">169</a>         <strong class="jxr_keyword">for</strong> (String key : <strong class="jxr_keyword">this</strong>.getInternalIndexKeys(Vertex.<strong class="jxr_keyword">class</strong>)) {
 <a class="jxr_linenumber" name="170" href="#170">170</a>             <strong class="jxr_keyword">this</strong>.createKeyIndex(key, Vertex.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="171" href="#171">171</a>         }
-<a class="jxr_linenumber" name="172" href="#172">172</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> String key : <strong class="jxr_keyword">this</strong>.getInternalIndexKeys(Edge.<strong class="jxr_keyword">class</strong>)) {
+<a class="jxr_linenumber" name="172" href="#172">172</a>         <strong class="jxr_keyword">for</strong> (String key : <strong class="jxr_keyword">this</strong>.getInternalIndexKeys(Edge.<strong class="jxr_keyword">class</strong>)) {
 <a class="jxr_linenumber" name="173" href="#173">173</a>             <strong class="jxr_keyword">this</strong>.createKeyIndex(key, Edge.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="174" href="#174">174</a>         }
 <a class="jxr_linenumber" name="175" href="#175">175</a>         <strong class="jxr_keyword">this</strong>.commit();
 <a class="jxr_linenumber" name="176" href="#176">176</a>     }
 <a class="jxr_linenumber" name="177" href="#177">177</a> 
-<a class="jxr_linenumber" name="178" href="#178">178</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; <strong class="jxr_keyword">void</strong> createInternalIndexKey(<strong class="jxr_keyword">final</strong> String key, <strong class="jxr_keyword">final</strong> Class&lt;T&gt; elementClass) {
-<a class="jxr_linenumber" name="179" href="#179">179</a>         <strong class="jxr_keyword">final</strong> String propertyName = elementClass.getSimpleName() + INDEXED_KEYS_POSTFIX;
+<a class="jxr_linenumber" name="178" href="#178">178</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; <strong class="jxr_keyword">void</strong> createInternalIndexKey(String key, Class&lt;T&gt; elementClass) {
+<a class="jxr_linenumber" name="179" href="#179">179</a>         String propertyName = elementClass.getSimpleName() + INDEXED_KEYS_POSTFIX;
 <a class="jxr_linenumber" name="180" href="#180">180</a>         <strong class="jxr_keyword">if</strong> (rawGraph instanceof GraphDatabaseAPI) {
-<a class="jxr_linenumber" name="181" href="#181">181</a>             <strong class="jxr_keyword">final</strong> PropertyContainer pc = getGraphProperties();
+<a class="jxr_linenumber" name="181" href="#181">181</a>             PropertyContainer pc = getGraphProperties();
 <a class="jxr_linenumber" name="182" href="#182">182</a>             <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="183" href="#183">183</a>                 <strong class="jxr_keyword">final</strong> String[] keys = (String[]) pc.getProperty(propertyName);
-<a class="jxr_linenumber" name="184" href="#184">184</a>                 <strong class="jxr_keyword">final</strong> Set&lt;String&gt; temp = <strong class="jxr_keyword">new</strong> HashSet&lt;String&gt;(Arrays.asList(keys));
+<a class="jxr_linenumber" name="183" href="#183">183</a>                 String[] keys = (String[]) pc.getProperty(propertyName);
+<a class="jxr_linenumber" name="184" href="#184">184</a>                 Set&lt;String&gt; temp = <strong class="jxr_keyword">new</strong> HashSet&lt;String&gt;(Arrays.asList(keys));
 <a class="jxr_linenumber" name="185" href="#185">185</a>                 temp.add(key);
 <a class="jxr_linenumber" name="186" href="#186">186</a>                 pc.setProperty(propertyName, temp.toArray(<strong class="jxr_keyword">new</strong> String[temp.size()]));
 <a class="jxr_linenumber" name="187" href="#187">187</a>             } <strong class="jxr_keyword">catch</strong> (Exception e) {
@@ -205,13 +205,13 @@
 <a class="jxr_linenumber" name="195" href="#195">195</a>         }
 <a class="jxr_linenumber" name="196" href="#196">196</a>     }
 <a class="jxr_linenumber" name="197" href="#197">197</a> 
-<a class="jxr_linenumber" name="198" href="#198">198</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; <strong class="jxr_keyword">void</strong> dropInternalIndexKey(<strong class="jxr_keyword">final</strong> String key, <strong class="jxr_keyword">final</strong> Class&lt;T&gt; elementClass) {
-<a class="jxr_linenumber" name="199" href="#199">199</a>         <strong class="jxr_keyword">final</strong> String propertyName = elementClass.getSimpleName() + INDEXED_KEYS_POSTFIX;
+<a class="jxr_linenumber" name="198" href="#198">198</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; <strong class="jxr_keyword">void</strong> dropInternalIndexKey(String key, Class&lt;T&gt; elementClass) {
+<a class="jxr_linenumber" name="199" href="#199">199</a>         String propertyName = elementClass.getSimpleName() + INDEXED_KEYS_POSTFIX;
 <a class="jxr_linenumber" name="200" href="#200">200</a>         <strong class="jxr_keyword">if</strong> (rawGraph instanceof GraphDatabaseAPI) {
-<a class="jxr_linenumber" name="201" href="#201">201</a>             <strong class="jxr_keyword">final</strong> PropertyContainer pc = getGraphProperties();
+<a class="jxr_linenumber" name="201" href="#201">201</a>             PropertyContainer pc = getGraphProperties();
 <a class="jxr_linenumber" name="202" href="#202">202</a>             <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="203" href="#203">203</a>                 <strong class="jxr_keyword">final</strong> String[] keys = (String[]) pc.getProperty(propertyName);
-<a class="jxr_linenumber" name="204" href="#204">204</a>                 <strong class="jxr_keyword">final</strong> Set&lt;String&gt; temp = <strong class="jxr_keyword">new</strong> HashSet&lt;String&gt;(Arrays.asList(keys));
+<a class="jxr_linenumber" name="203" href="#203">203</a>                 String[] keys = (String[]) pc.getProperty(propertyName);
+<a class="jxr_linenumber" name="204" href="#204">204</a>                 Set&lt;String&gt; temp = <strong class="jxr_keyword">new</strong> HashSet&lt;String&gt;(Arrays.asList(keys));
 <a class="jxr_linenumber" name="205" href="#205">205</a>                 temp.remove(key);
 <a class="jxr_linenumber" name="206" href="#206">206</a>                 pc.setProperty(propertyName, temp.toArray(<strong class="jxr_keyword">new</strong> String[temp.size()]));
 <a class="jxr_linenumber" name="207" href="#207">207</a>             } <strong class="jxr_keyword">catch</strong> (Exception e) {
@@ -222,12 +222,12 @@
 <a class="jxr_linenumber" name="212" href="#212">212</a>         }
 <a class="jxr_linenumber" name="213" href="#213">213</a>     }
 <a class="jxr_linenumber" name="214" href="#214">214</a> 
-<a class="jxr_linenumber" name="215" href="#215">215</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; Set&lt;String&gt; getInternalIndexKeys(<strong class="jxr_keyword">final</strong> Class&lt;T&gt; elementClass) {
-<a class="jxr_linenumber" name="216" href="#216">216</a>         <strong class="jxr_keyword">final</strong> String propertyName = elementClass.getSimpleName() + INDEXED_KEYS_POSTFIX;
+<a class="jxr_linenumber" name="215" href="#215">215</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; Set&lt;String&gt; getInternalIndexKeys(Class&lt;T&gt; elementClass) {
+<a class="jxr_linenumber" name="216" href="#216">216</a>         String propertyName = elementClass.getSimpleName() + INDEXED_KEYS_POSTFIX;
 <a class="jxr_linenumber" name="217" href="#217">217</a>         <strong class="jxr_keyword">if</strong> (rawGraph instanceof GraphDatabaseAPI) {
-<a class="jxr_linenumber" name="218" href="#218">218</a>             <strong class="jxr_keyword">final</strong> PropertyContainer pc = getGraphProperties();
+<a class="jxr_linenumber" name="218" href="#218">218</a>             PropertyContainer pc = getGraphProperties();
 <a class="jxr_linenumber" name="219" href="#219">219</a>             <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="220" href="#220">220</a>                 <strong class="jxr_keyword">final</strong> String[] keys = (String[]) pc.getProperty(propertyName);
+<a class="jxr_linenumber" name="220" href="#220">220</a>                 String[] keys = (String[]) pc.getProperty(propertyName);
 <a class="jxr_linenumber" name="221" href="#221">221</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> HashSet&lt;String&gt;(Arrays.asList(keys));
 <a class="jxr_linenumber" name="222" href="#222">222</a>             } <strong class="jxr_keyword">catch</strong> (Exception e) {
 <a class="jxr_linenumber" name="223" href="#223">223</a>                 <em class="jxr_comment">// no indexed_keys kernel data property</em>
@@ -249,7 +249,7 @@
 <a class="jxr_linenumber" name="239" href="#239">239</a>         }
 <a class="jxr_linenumber" name="240" href="#240">240</a>     }
 <a class="jxr_linenumber" name="241" href="#241">241</a> 
-<a class="jxr_linenumber" name="242" href="#242">242</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">synchronized</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; Index&lt;T&gt; createIndex(<strong class="jxr_keyword">final</strong> String indexName, <strong class="jxr_keyword">final</strong> Class&lt;T&gt; indexClass, <strong class="jxr_keyword">final</strong> Parameter... indexParameters) {
+<a class="jxr_linenumber" name="242" href="#242">242</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">synchronized</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; Index&lt;T&gt; createIndex(String indexName, Class&lt;T&gt; indexClass, Parameter... indexParameters) {
 <a class="jxr_linenumber" name="243" href="#243">243</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(<strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="244" href="#244">244</a>         <strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">this</strong>.rawGraph.index().existsForNodes(indexName) || <strong class="jxr_keyword">this</strong>.rawGraph.index().existsForRelationships(indexName)) {
 <a class="jxr_linenumber" name="245" href="#245">245</a>             <strong class="jxr_keyword">throw</strong> ExceptionFactory.indexAlreadyExists(indexName);
@@ -257,7 +257,7 @@
 <a class="jxr_linenumber" name="247" href="#247">247</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Index.html">Neo4j2Index</a>(indexName, indexClass, <strong class="jxr_keyword">this</strong>, indexParameters);
 <a class="jxr_linenumber" name="248" href="#248">248</a>     }
 <a class="jxr_linenumber" name="249" href="#249">249</a> 
-<a class="jxr_linenumber" name="250" href="#250">250</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; Index&lt;T&gt; getIndex(<strong class="jxr_keyword">final</strong> String indexName, <strong class="jxr_keyword">final</strong> Class&lt;T&gt; indexClass) {
+<a class="jxr_linenumber" name="250" href="#250">250</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; Index&lt;T&gt; getIndex(String indexName, Class&lt;T&gt; indexClass) {
 <a class="jxr_linenumber" name="251" href="#251">251</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(false);
 <a class="jxr_linenumber" name="252" href="#252">252</a>         <strong class="jxr_keyword">if</strong> (Vertex.<strong class="jxr_keyword">class</strong>.isAssignableFrom(indexClass)) {
 <a class="jxr_linenumber" name="253" href="#253">253</a>             <strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">this</strong>.rawGraph.index().existsForNodes(indexName)) {
@@ -282,14 +282,14 @@
 <a class="jxr_linenumber" name="272" href="#272">272</a> 
 <a class="jxr_linenumber" name="273" href="#273">273</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="274" href="#274">274</a> <em class="jxr_javadoccomment">     * {@inheritDoc}</em>
-<a class="jxr_linenumber" name="275" href="#275">275</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="275" href="#275">275</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="276" href="#276">276</a> <em class="jxr_javadoccomment">     * Note that this method will force a successful closing of the current</em>
 <a class="jxr_linenumber" name="277" href="#277">277</a> <em class="jxr_javadoccomment">     * thread's transaction. As such, once the index is dropped, the operation</em>
 <a class="jxr_linenumber" name="278" href="#278">278</a> <em class="jxr_javadoccomment">     * is committed.</em>
 <a class="jxr_linenumber" name="279" href="#279">279</a> <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="280" href="#280">280</a> <em class="jxr_javadoccomment">     * @param indexName the name of the index to drop</em>
 <a class="jxr_linenumber" name="281" href="#281">281</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="282" href="#282">282</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">synchronized</strong> <strong class="jxr_keyword">void</strong> dropIndex(<strong class="jxr_keyword">final</strong> String indexName) {
+<a class="jxr_linenumber" name="282" href="#282">282</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">synchronized</strong> <strong class="jxr_keyword">void</strong> dropIndex(String indexName) {
 <a class="jxr_linenumber" name="283" href="#283">283</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(<strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="284" href="#284">284</a>         <strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">this</strong>.rawGraph.index().existsForNodes(indexName)) {
 <a class="jxr_linenumber" name="285" href="#285">285</a>             org.neo4j.graphdb.index.Index&lt;Node&gt; nodeIndex = <strong class="jxr_keyword">this</strong>.rawGraph.index().forNodes(indexName);
@@ -307,31 +307,31 @@
 <a class="jxr_linenumber" name="297" href="#297">297</a> 
 <a class="jxr_linenumber" name="298" href="#298">298</a>     <strong class="jxr_keyword">public</strong> Iterable&lt;Index&lt;? <strong class="jxr_keyword">extends</strong> Element&gt;&gt; getIndices() {
 <a class="jxr_linenumber" name="299" href="#299">299</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(false);
-<a class="jxr_linenumber" name="300" href="#300">300</a>         <strong class="jxr_keyword">final</strong> List&lt;Index&lt;? <strong class="jxr_keyword">extends</strong> Element&gt;&gt; indices = <strong class="jxr_keyword">new</strong> ArrayList&lt;Index&lt;? <strong class="jxr_keyword">extends</strong> Element&gt;&gt;();
-<a class="jxr_linenumber" name="301" href="#301">301</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> String name : <strong class="jxr_keyword">this</strong>.rawGraph.index().nodeIndexNames()) {
+<a class="jxr_linenumber" name="300" href="#300">300</a>         List&lt;Index&lt;? <strong class="jxr_keyword">extends</strong> Element&gt;&gt; indices = <strong class="jxr_keyword">new</strong> ArrayList&lt;Index&lt;? <strong class="jxr_keyword">extends</strong> Element&gt;&gt;();
+<a class="jxr_linenumber" name="301" href="#301">301</a>         <strong class="jxr_keyword">for</strong> (String name : <strong class="jxr_keyword">this</strong>.rawGraph.index().nodeIndexNames()) {
 <a class="jxr_linenumber" name="302" href="#302">302</a>             <strong class="jxr_keyword">if</strong> (!name.equals(Neo4j2Tokens.NODE_AUTO_INDEX))
 <a class="jxr_linenumber" name="303" href="#303">303</a>                 indices.add(<strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Index.html">Neo4j2Index</a>(name, Vertex.<strong class="jxr_keyword">class</strong>, <strong class="jxr_keyword">this</strong>));
 <a class="jxr_linenumber" name="304" href="#304">304</a>         }
-<a class="jxr_linenumber" name="305" href="#305">305</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> String name : <strong class="jxr_keyword">this</strong>.rawGraph.index().relationshipIndexNames()) {
+<a class="jxr_linenumber" name="305" href="#305">305</a>         <strong class="jxr_keyword">for</strong> (String name : <strong class="jxr_keyword">this</strong>.rawGraph.index().relationshipIndexNames()) {
 <a class="jxr_linenumber" name="306" href="#306">306</a>             <strong class="jxr_keyword">if</strong> (!name.equals(Neo4j2Tokens.RELATIONSHIP_AUTO_INDEX))
 <a class="jxr_linenumber" name="307" href="#307">307</a>                 indices.add(<strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Index.html">Neo4j2Index</a>(name, Edge.<strong class="jxr_keyword">class</strong>, <strong class="jxr_keyword">this</strong>));
 <a class="jxr_linenumber" name="308" href="#308">308</a>         }
 <a class="jxr_linenumber" name="309" href="#309">309</a>         <strong class="jxr_keyword">return</strong> indices;
 <a class="jxr_linenumber" name="310" href="#310">310</a>     }
 <a class="jxr_linenumber" name="311" href="#311">311</a> 
-<a class="jxr_linenumber" name="312" href="#312">312</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4j2Vertex</a> addVertex(<strong class="jxr_keyword">final</strong> Object id) {
+<a class="jxr_linenumber" name="312" href="#312">312</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4j2Vertex</a> addVertex(Object id) {
 <a class="jxr_linenumber" name="313" href="#313">313</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(<strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="314" href="#314">314</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4j2Vertex</a>(<strong class="jxr_keyword">this</strong>.rawGraph.createNode(), <strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="315" href="#315">315</a>     }
 <a class="jxr_linenumber" name="316" href="#316">316</a> 
-<a class="jxr_linenumber" name="317" href="#317">317</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4j2Vertex</a> getVertex(<strong class="jxr_keyword">final</strong> Object id) {
+<a class="jxr_linenumber" name="317" href="#317">317</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4j2Vertex</a> getVertex(Object id) {
 <a class="jxr_linenumber" name="318" href="#318">318</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(false);
 <a class="jxr_linenumber" name="319" href="#319">319</a> 
 <a class="jxr_linenumber" name="320" href="#320">320</a>         <strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">null</strong> == id)
 <a class="jxr_linenumber" name="321" href="#321">321</a>             <strong class="jxr_keyword">throw</strong> ExceptionFactory.vertexIdCanNotBeNull();
 <a class="jxr_linenumber" name="322" href="#322">322</a> 
 <a class="jxr_linenumber" name="323" href="#323">323</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="324" href="#324">324</a>             <strong class="jxr_keyword">final</strong> Long longId;
+<a class="jxr_linenumber" name="324" href="#324">324</a>             Long longId;
 <a class="jxr_linenumber" name="325" href="#325">325</a>             <strong class="jxr_keyword">if</strong> (id instanceof Long)
 <a class="jxr_linenumber" name="326" href="#326">326</a>                 longId = (Long) id;
 <a class="jxr_linenumber" name="327" href="#327">327</a>             <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (id instanceof Number)
@@ -348,7 +348,7 @@
 <a class="jxr_linenumber" name="338" href="#338">338</a> 
 <a class="jxr_linenumber" name="339" href="#339">339</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="340" href="#340">340</a> <em class="jxr_javadoccomment">     * {@inheritDoc}</em>
-<a class="jxr_linenumber" name="341" href="#341">341</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="341" href="#341">341</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="342" href="#342">342</a> <em class="jxr_javadoccomment">     * The underlying Neo4j graph does not natively support this method within a</em>
 <a class="jxr_linenumber" name="343" href="#343">343</a> <em class="jxr_javadoccomment">     * transaction. If the graph is not currently in a transaction, then the</em>
 <a class="jxr_linenumber" name="344" href="#344">344</a> <em class="jxr_javadoccomment">     * operation runs efficiently and correctly. If the graph is currently in a</em>
@@ -363,9 +363,9 @@
 <a class="jxr_linenumber" name="353" href="#353">353</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2VertexIterable.html">Neo4j2VertexIterable</a>(GlobalGraphOperations.at(rawGraph).getAllNodes(), <strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="354" href="#354">354</a>     }
 <a class="jxr_linenumber" name="355" href="#355">355</a> 
-<a class="jxr_linenumber" name="356" href="#356">356</a>     <strong class="jxr_keyword">public</strong> Iterable&lt;Vertex&gt; getVertices(<strong class="jxr_keyword">final</strong> String key, <strong class="jxr_keyword">final</strong> Object value) {
+<a class="jxr_linenumber" name="356" href="#356">356</a>     <strong class="jxr_keyword">public</strong> Iterable&lt;Vertex&gt; getVertices(String key, Object value) {
 <a class="jxr_linenumber" name="357" href="#357">357</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(false);
-<a class="jxr_linenumber" name="358" href="#358">358</a>         <strong class="jxr_keyword">final</strong> AutoIndexer indexer = <strong class="jxr_keyword">this</strong>.rawGraph.index().getNodeAutoIndexer();
+<a class="jxr_linenumber" name="358" href="#358">358</a>         AutoIndexer indexer = <strong class="jxr_keyword">this</strong>.rawGraph.index().getNodeAutoIndexer();
 <a class="jxr_linenumber" name="359" href="#359">359</a>         <strong class="jxr_keyword">if</strong> (indexer.isEnabled() &amp;&amp; indexer.getAutoIndexedProperties().contains(key))
 <a class="jxr_linenumber" name="360" href="#360">360</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2VertexIterable.html">Neo4j2VertexIterable</a>(<strong class="jxr_keyword">this</strong>.rawGraph.index().getNodeAutoIndexer().getAutoIndex().get(key, value), <strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="361" href="#361">361</a>         <strong class="jxr_keyword">else</strong>
@@ -374,7 +374,7 @@
 <a class="jxr_linenumber" name="364" href="#364">364</a> 
 <a class="jxr_linenumber" name="365" href="#365">365</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="366" href="#366">366</a> <em class="jxr_javadoccomment">     * {@inheritDoc}</em>
-<a class="jxr_linenumber" name="367" href="#367">367</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="367" href="#367">367</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="368" href="#368">368</a> <em class="jxr_javadoccomment">     * The underlying Neo4j graph does not natively support this method within a</em>
 <a class="jxr_linenumber" name="369" href="#369">369</a> <em class="jxr_javadoccomment">     * transaction. If the graph is not currently in a transaction, then the</em>
 <a class="jxr_linenumber" name="370" href="#370">370</a> <em class="jxr_javadoccomment">     * operation runs efficiently and correctly. If the graph is currently in a</em>
@@ -389,16 +389,16 @@
 <a class="jxr_linenumber" name="379" href="#379">379</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2EdgeIterable.html">Neo4j2EdgeIterable</a>(GlobalGraphOperations.at(rawGraph).getAllRelationships(), <strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="380" href="#380">380</a>     }
 <a class="jxr_linenumber" name="381" href="#381">381</a> 
-<a class="jxr_linenumber" name="382" href="#382">382</a>     <strong class="jxr_keyword">public</strong> Iterable&lt;Edge&gt; getEdges(<strong class="jxr_keyword">final</strong> String key, <strong class="jxr_keyword">final</strong> Object value) {
+<a class="jxr_linenumber" name="382" href="#382">382</a>     <strong class="jxr_keyword">public</strong> Iterable&lt;Edge&gt; getEdges(String key, Object value) {
 <a class="jxr_linenumber" name="383" href="#383">383</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(false);
-<a class="jxr_linenumber" name="384" href="#384">384</a>         <strong class="jxr_keyword">final</strong> AutoIndexer indexer = <strong class="jxr_keyword">this</strong>.rawGraph.index().getRelationshipAutoIndexer();
+<a class="jxr_linenumber" name="384" href="#384">384</a>         AutoIndexer indexer = <strong class="jxr_keyword">this</strong>.rawGraph.index().getRelationshipAutoIndexer();
 <a class="jxr_linenumber" name="385" href="#385">385</a>         <strong class="jxr_keyword">if</strong> (indexer.isEnabled() &amp;&amp; indexer.getAutoIndexedProperties().contains(key))
 <a class="jxr_linenumber" name="386" href="#386">386</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2EdgeIterable.html">Neo4j2EdgeIterable</a>(<strong class="jxr_keyword">this</strong>.rawGraph.index().getRelationshipAutoIndexer().getAutoIndex().get(key, value), <strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="387" href="#387">387</a>         <strong class="jxr_keyword">else</strong>
 <a class="jxr_linenumber" name="388" href="#388">388</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> PropertyFilteredIterable&lt;Edge&gt;(key, value, <strong class="jxr_keyword">this</strong>.getEdges());
 <a class="jxr_linenumber" name="389" href="#389">389</a>     }
 <a class="jxr_linenumber" name="390" href="#390">390</a> 
-<a class="jxr_linenumber" name="391" href="#391">391</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; <strong class="jxr_keyword">void</strong> dropKeyIndex(<strong class="jxr_keyword">final</strong> String key, <strong class="jxr_keyword">final</strong> Class&lt;T&gt; elementClass) {
+<a class="jxr_linenumber" name="391" href="#391">391</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; <strong class="jxr_keyword">void</strong> dropKeyIndex(String key, Class&lt;T&gt; elementClass) {
 <a class="jxr_linenumber" name="392" href="#392">392</a>         <strong class="jxr_keyword">if</strong> (elementClass == <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="393" href="#393">393</a>             <strong class="jxr_keyword">throw</strong> ExceptionFactory.classForElementCannotBeNull();
 <a class="jxr_linenumber" name="394" href="#394">394</a> 
@@ -417,7 +417,7 @@
 <a class="jxr_linenumber" name="407" href="#407">407</a>         <strong class="jxr_keyword">this</strong>.dropInternalIndexKey(key, elementClass);
 <a class="jxr_linenumber" name="408" href="#408">408</a>     }
 <a class="jxr_linenumber" name="409" href="#409">409</a> 
-<a class="jxr_linenumber" name="410" href="#410">410</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; <strong class="jxr_keyword">void</strong> createKeyIndex(<strong class="jxr_keyword">final</strong> String key, <strong class="jxr_keyword">final</strong> Class&lt;T&gt; elementClass, <strong class="jxr_keyword">final</strong> Parameter... indexParameters) {
+<a class="jxr_linenumber" name="410" href="#410">410</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; <strong class="jxr_keyword">void</strong> createKeyIndex(String key, Class&lt;T&gt; elementClass, Parameter... indexParameters) {
 <a class="jxr_linenumber" name="411" href="#411">411</a>         <strong class="jxr_keyword">if</strong> (elementClass == <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="412" href="#412">412</a>             <strong class="jxr_keyword">throw</strong> ExceptionFactory.classForElementCannotBeNull();
 <a class="jxr_linenumber" name="413" href="#413">413</a> 
@@ -449,7 +449,7 @@
 <a class="jxr_linenumber" name="439" href="#439">439</a>         }
 <a class="jxr_linenumber" name="440" href="#440">440</a>     }
 <a class="jxr_linenumber" name="441" href="#441">441</a> 
-<a class="jxr_linenumber" name="442" href="#442">442</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; Set&lt;String&gt; getIndexedKeys(<strong class="jxr_keyword">final</strong> Class&lt;T&gt; elementClass) {
+<a class="jxr_linenumber" name="442" href="#442">442</a>     <strong class="jxr_keyword">public</strong> &lt;T <strong class="jxr_keyword">extends</strong> Element&gt; Set&lt;String&gt; getIndexedKeys(Class&lt;T&gt; elementClass) {
 <a class="jxr_linenumber" name="443" href="#443">443</a>         <strong class="jxr_keyword">if</strong> (elementClass == <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="444" href="#444">444</a>             <strong class="jxr_keyword">throw</strong> ExceptionFactory.classForElementCannotBeNull();
 <a class="jxr_linenumber" name="445" href="#445">445</a> 
@@ -466,12 +466,12 @@
 <a class="jxr_linenumber" name="456" href="#456">456</a>         }
 <a class="jxr_linenumber" name="457" href="#457">457</a>     }
 <a class="jxr_linenumber" name="458" href="#458">458</a> 
-<a class="jxr_linenumber" name="459" href="#459">459</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> removeVertex(<strong class="jxr_keyword">final</strong> Vertex vertex) {
+<a class="jxr_linenumber" name="459" href="#459">459</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> removeVertex(Vertex vertex) {
 <a class="jxr_linenumber" name="460" href="#460">460</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(<strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="461" href="#461">461</a> 
 <a class="jxr_linenumber" name="462" href="#462">462</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="463" href="#463">463</a>             <strong class="jxr_keyword">final</strong> Node node = ((Neo4j2Vertex) vertex).getRawVertex();
-<a class="jxr_linenumber" name="464" href="#464">464</a>             <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">final</strong> Relationship relationship : node.getRelationships(org.neo4j.graphdb.Direction.BOTH)) {
+<a class="jxr_linenumber" name="463" href="#463">463</a>             Node node = ((Neo4j2Vertex) vertex).getRawVertex();
+<a class="jxr_linenumber" name="464" href="#464">464</a>             <strong class="jxr_keyword">for</strong> (Relationship relationship : node.getRelationships(org.neo4j.graphdb.Direction.BOTH)) {
 <a class="jxr_linenumber" name="465" href="#465">465</a>                 relationship.delete();
 <a class="jxr_linenumber" name="466" href="#466">466</a>             }
 <a class="jxr_linenumber" name="467" href="#467">467</a>             node.delete();
@@ -483,7 +483,7 @@
 <a class="jxr_linenumber" name="473" href="#473">473</a>         }
 <a class="jxr_linenumber" name="474" href="#474">474</a>     }
 <a class="jxr_linenumber" name="475" href="#475">475</a> 
-<a class="jxr_linenumber" name="476" href="#476">476</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html">Neo4j2Edge</a> addEdge(<strong class="jxr_keyword">final</strong> Object id, <strong class="jxr_keyword">final</strong> Vertex outVertex, <strong class="jxr_keyword">final</strong> Vertex inVertex, <strong class="jxr_keyword">final</strong> String label) {
+<a class="jxr_linenumber" name="476" href="#476">476</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html">Neo4j2Edge</a> addEdge(Object id, Vertex outVertex, Vertex inVertex, String label) {
 <a class="jxr_linenumber" name="477" href="#477">477</a>         <strong class="jxr_keyword">if</strong> (label == <strong class="jxr_keyword">null</strong>)
 <a class="jxr_linenumber" name="478" href="#478">478</a>             <strong class="jxr_keyword">throw</strong> ExceptionFactory.edgeLabelCanNotBeNull();
 <a class="jxr_linenumber" name="479" href="#479">479</a> 
@@ -492,13 +492,13 @@
 <a class="jxr_linenumber" name="482" href="#482">482</a>                 DynamicRelationshipType.withName(label)), <strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="483" href="#483">483</a>     }
 <a class="jxr_linenumber" name="484" href="#484">484</a> 
-<a class="jxr_linenumber" name="485" href="#485">485</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html">Neo4j2Edge</a> getEdge(<strong class="jxr_keyword">final</strong> Object id) {
+<a class="jxr_linenumber" name="485" href="#485">485</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html">Neo4j2Edge</a> getEdge(Object id) {
 <a class="jxr_linenumber" name="486" href="#486">486</a>         <strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">null</strong> == id)
 <a class="jxr_linenumber" name="487" href="#487">487</a>             <strong class="jxr_keyword">throw</strong> ExceptionFactory.edgeIdCanNotBeNull();
 <a class="jxr_linenumber" name="488" href="#488">488</a> 
 <a class="jxr_linenumber" name="489" href="#489">489</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(<strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="490" href="#490">490</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="491" href="#491">491</a>             <strong class="jxr_keyword">final</strong> Long longId;
+<a class="jxr_linenumber" name="491" href="#491">491</a>             Long longId;
 <a class="jxr_linenumber" name="492" href="#492">492</a>             <strong class="jxr_keyword">if</strong> (id instanceof Long)
 <a class="jxr_linenumber" name="493" href="#493">493</a>                 longId = (Long) id;
 <a class="jxr_linenumber" name="494" href="#494">494</a>             <strong class="jxr_keyword">else</strong>
@@ -511,7 +511,7 @@
 <a class="jxr_linenumber" name="501" href="#501">501</a>         }
 <a class="jxr_linenumber" name="502" href="#502">502</a>     }
 <a class="jxr_linenumber" name="503" href="#503">503</a> 
-<a class="jxr_linenumber" name="504" href="#504">504</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> removeEdge(<strong class="jxr_keyword">final</strong> Edge edge) {
+<a class="jxr_linenumber" name="504" href="#504">504</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> removeEdge(Edge edge) {
 <a class="jxr_linenumber" name="505" href="#505">505</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(<strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="506" href="#506">506</a>         ((Relationship) ((Neo4j2Edge) edge).getRawElement()).delete();
 <a class="jxr_linenumber" name="507" href="#507">507</a>     }

@@ -194,10 +194,10 @@
 <a class="jxr_linenumber" name="184" href="#184">184</a> 
 <a class="jxr_linenumber" name="185" href="#185">185</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="186" href="#186">186</a> <em class="jxr_javadoccomment">     * Convert generic data into a bundle.</em>
-<a class="jxr_linenumber" name="187" href="#187">187</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="187" href="#187">187</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="188" href="#188">188</a> <em class="jxr_javadoccomment">     * Prize to whomever can remove all the unchecked warnings. I don't really</em>
 <a class="jxr_linenumber" name="189" href="#189">189</a> <em class="jxr_javadoccomment">     * know how else to do this otherwise.</em>
-<a class="jxr_linenumber" name="190" href="#190">190</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="190" href="#190">190</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="191" href="#191">191</a> <em class="jxr_javadoccomment">     * NB: We also strip out all NULL property values at this stage.</em>
 <a class="jxr_linenumber" name="192" href="#192">192</a> <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="193" href="#193">193</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
@@ -346,7 +346,7 @@
 <a class="jxr_linenumber" name="336" href="#336">336</a>                 <strong class="jxr_keyword">new</strong> StreamResult(<strong class="jxr_keyword">new</strong> OutputStreamWriter(out, <span class="jxr_string">"UTF-8"</span>)));
 <a class="jxr_linenumber" name="337" href="#337">337</a>     }
 <a class="jxr_linenumber" name="338" href="#338">338</a> 
-<a class="jxr_linenumber" name="339" href="#339">339</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Element bundleDataToElement(<strong class="jxr_keyword">final</strong> Document document, <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle) {
+<a class="jxr_linenumber" name="339" href="#339">339</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Element bundleDataToElement(Document document, <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle) {
 <a class="jxr_linenumber" name="340" href="#340">340</a>         Element root = document.createElement(<span class="jxr_string">"item"</span>);
 <a class="jxr_linenumber" name="341" href="#341">341</a>         root.setAttribute(Bundle.ID_KEY, bundle.getId());
 <a class="jxr_linenumber" name="342" href="#342">342</a>         root.setAttribute(Bundle.TYPE_KEY, bundle.getType().getName());
@@ -375,7 +375,7 @@
 <a class="jxr_linenumber" name="365" href="#365">365</a>         <strong class="jxr_keyword">return</strong> root;
 <a class="jxr_linenumber" name="366" href="#366">366</a>     }
 <a class="jxr_linenumber" name="367" href="#367">367</a> 
-<a class="jxr_linenumber" name="368" href="#368">368</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Element bundleDataValueToElement(<strong class="jxr_keyword">final</strong> Document document, String key, Object value) {
+<a class="jxr_linenumber" name="368" href="#368">368</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Element bundleDataValueToElement(Document document, String key, Object value) {
 <a class="jxr_linenumber" name="369" href="#369">369</a>         <strong class="jxr_keyword">if</strong> (value instanceof Object[]) {
 <a class="jxr_linenumber" name="370" href="#370">370</a>             Element dataValue = document.createElement(<span class="jxr_string">"propertySequence"</span>);
 <a class="jxr_linenumber" name="371" href="#371">371</a>             <strong class="jxr_keyword">for</strong> (Object item : (Object[]) value) {

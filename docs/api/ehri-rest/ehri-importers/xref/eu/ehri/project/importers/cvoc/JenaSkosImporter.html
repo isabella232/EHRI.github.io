@@ -225,10 +225,10 @@
 <a class="jxr_linenumber" name="215" href="#215">215</a>             <strong class="jxr_keyword">throws</strong> IOException, ValidationError {
 <a class="jxr_linenumber" name="216" href="#216">216</a> 
 <a class="jxr_linenumber" name="217" href="#217">217</a>         <em class="jxr_comment">// Create a new action for this import</em>
-<a class="jxr_linenumber" name="218" href="#218">218</a>         <strong class="jxr_keyword">final</strong> ActionManager.EventContext eventContext = <strong class="jxr_keyword">new</strong> ActionManager(framedGraph, vocabulary).newEventContext(
+<a class="jxr_linenumber" name="218" href="#218">218</a>         ActionManager.EventContext eventContext = <strong class="jxr_keyword">new</strong> ActionManager(framedGraph, vocabulary).newEventContext(
 <a class="jxr_linenumber" name="219" href="#219">219</a>                 actioner, EventTypes.ingest, getLogMessage(logMessage));
 <a class="jxr_linenumber" name="220" href="#220">220</a>         <em class="jxr_comment">// Create a manifest to store the results of the import.</em>
-<a class="jxr_linenumber" name="221" href="#221">221</a>         <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(eventContext);
+<a class="jxr_linenumber" name="221" href="#221">221</a>         <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(eventContext);
 <a class="jxr_linenumber" name="222" href="#222">222</a> 
 <a class="jxr_linenumber" name="223" href="#223">223</a>         OntModel model = ModelFactory.createOntologyModel();
 <a class="jxr_linenumber" name="224" href="#224">224</a>         model.read(ios, <strong class="jxr_keyword">null</strong>, format);
@@ -374,12 +374,12 @@
 <a class="jxr_linenumber" name="364" href="#364">364</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="365" href="#365">365</a>     }
 <a class="jxr_linenumber" name="366" href="#366">366</a> 
-<a class="jxr_linenumber" name="367" href="#367">367</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">interface</strong> <a href="../../../../../eu/ehri/project/importers/cvoc/OwlApiSkosImporter.html">ConnectFunc</a> {
+<a class="jxr_linenumber" name="367" href="#367">367</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">interface</strong> <a href="../../../../../eu/ehri/project/importers/cvoc/OwlApiSkosImporter.html">ConnectFunc</a> {
 <a class="jxr_linenumber" name="368" href="#368">368</a> 
-<a class="jxr_linenumber" name="369" href="#369">369</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> connect(Concept current, Concept related);
+<a class="jxr_linenumber" name="369" href="#369">369</a>         <strong class="jxr_keyword">void</strong> connect(Concept current, Concept related);
 <a class="jxr_linenumber" name="370" href="#370">370</a>     }
 <a class="jxr_linenumber" name="371" href="#371">371</a> 
-<a class="jxr_linenumber" name="372" href="#372">372</a>     <strong class="jxr_keyword">private</strong> List&lt;RDFNode&gt; getObjectWithPredicate(<strong class="jxr_keyword">final</strong> Resource item, <strong class="jxr_keyword">final</strong> URI propUri) {
+<a class="jxr_linenumber" name="372" href="#372">372</a>     <strong class="jxr_keyword">private</strong> List&lt;RDFNode&gt; getObjectWithPredicate(Resource item, <strong class="jxr_keyword">final</strong> URI propUri) {
 <a class="jxr_linenumber" name="373" href="#373">373</a>         <em class="jxr_comment">// NB: this should be possible with simply item.listProperties(propUri)</em>
 <a class="jxr_linenumber" name="374" href="#374">374</a>         <em class="jxr_comment">// but for some reason that doesn't work... I can't grok why.</em>
 <a class="jxr_linenumber" name="375" href="#375">375</a>         <strong class="jxr_keyword">return</strong> item.listProperties().filterKeep(<strong class="jxr_keyword">new</strong> Filter&lt;Statement&gt;() {

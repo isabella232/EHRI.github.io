@@ -115,7 +115,7 @@
 <a class="jxr_linenumber" name="105" href="#105">105</a> <em class="jxr_javadoccomment">     * @param errors A map of top-level errors</em>
 <a class="jxr_linenumber" name="106" href="#106">106</a> <em class="jxr_javadoccomment">     * @param relations A map of relations</em>
 <a class="jxr_linenumber" name="107" href="#107">107</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="108" href="#108">108</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/ErrorSet.html">ErrorSet</a>(Multimap&lt;String, String&gt; errors, <strong class="jxr_keyword">final</strong> Multimap&lt;String, ErrorSet&gt; relations) {
+<a class="jxr_linenumber" name="108" href="#108">108</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/ErrorSet.html">ErrorSet</a>(Multimap&lt;String, String&gt; errors, Multimap&lt;String, ErrorSet&gt; relations) {
 <a class="jxr_linenumber" name="109" href="#109">109</a>         <strong class="jxr_keyword">this</strong>.errors = ImmutableListMultimap.copyOf(errors);
 <a class="jxr_linenumber" name="110" href="#110">110</a>         <strong class="jxr_keyword">this</strong>.relations = ImmutableListMultimap.copyOf(relations);
 <a class="jxr_linenumber" name="111" href="#111">111</a>     }
@@ -163,7 +163,7 @@
 <a class="jxr_linenumber" name="153" href="#153">153</a> <em class="jxr_javadoccomment">     * @param errors A set of errors</em>
 <a class="jxr_linenumber" name="154" href="#154">154</a> <em class="jxr_javadoccomment">     * @return A new error set</em>
 <a class="jxr_linenumber" name="155" href="#155">155</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="156" href="#156">156</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/ErrorSet.html">ErrorSet</a> withErrors(<strong class="jxr_keyword">final</strong> Multimap&lt;String, String&gt; errors) {
+<a class="jxr_linenumber" name="156" href="#156">156</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/ErrorSet.html">ErrorSet</a> withErrors(Multimap&lt;String, String&gt; errors) {
 <a class="jxr_linenumber" name="157" href="#157">157</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/ErrorSet.html">ErrorSet</a>(errors, relations);
 <a class="jxr_linenumber" name="158" href="#158">158</a>     }
 <a class="jxr_linenumber" name="159" href="#159">159</a> 
@@ -290,7 +290,7 @@
 <a class="jxr_linenumber" name="280" href="#280">280</a> <em class="jxr_javadoccomment">     * Convert the ordered relationship set into an unordered one for comparison.</em>
 <a class="jxr_linenumber" name="281" href="#281">281</a> <em class="jxr_javadoccomment">     * FIXME: Clean up the code and optimise this function.</em>
 <a class="jxr_linenumber" name="282" href="#282">282</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="283" href="#283">283</a>     <strong class="jxr_keyword">private</strong> Map&lt;String, LinkedHashMultiset&lt;ErrorSet&gt;&gt; unorderedRelations(<strong class="jxr_keyword">final</strong> Multimap&lt;String, ErrorSet&gt; rels) {
+<a class="jxr_linenumber" name="283" href="#283">283</a>     <strong class="jxr_keyword">private</strong> Map&lt;String, LinkedHashMultiset&lt;ErrorSet&gt;&gt; unorderedRelations(Multimap&lt;String, ErrorSet&gt; rels) {
 <a class="jxr_linenumber" name="284" href="#284">284</a>         Map&lt;String, LinkedHashMultiset&lt;ErrorSet&gt;&gt; map = Maps.newHashMap();
 <a class="jxr_linenumber" name="285" href="#285">285</a>         <strong class="jxr_keyword">for</strong> (Map.Entry&lt;String, Collection&lt;ErrorSet&gt;&gt; entry : rels.asMap().entrySet()) {
 <a class="jxr_linenumber" name="286" href="#286">286</a>             map.put(entry.getKey(), LinkedHashMultiset.create(entry.getValue()));

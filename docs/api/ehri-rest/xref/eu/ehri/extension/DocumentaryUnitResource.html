@@ -109,7 +109,7 @@
 <a class="jxr_linenumber" name="99" href="#99">99</a>              @PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="100" href="#100">100</a>             @QueryParam(ALL_PARAM) @DefaultValue(<span class="jxr_string">"false"</span>) <strong class="jxr_keyword">boolean</strong> all)
 <a class="jxr_linenumber" name="101" href="#101">101</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="102" href="#102">102</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="102" href="#102">102</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="103" href="#103">103</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="104" href="#104">104</a>             <a href="../../../eu/ehri/project/models/DocumentaryUnit.html">DocumentaryUnit</a> parent = manager.getFrame(id, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="105" href="#105">105</a>             Iterable&lt;DocumentaryUnit&gt; units = all
@@ -193,7 +193,7 @@
 <a class="jxr_linenumber" name="183" href="#183">183</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
 <a class="jxr_linenumber" name="184" href="#184">184</a>             DeserializationError, ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
 <a class="jxr_linenumber" name="185" href="#185">185</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="186" href="#186">186</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = getRequesterUserProfile();
+<a class="jxr_linenumber" name="186" href="#186">186</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = getRequesterUserProfile();
 <a class="jxr_linenumber" name="187" href="#187">187</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/models/DocumentaryUnit.html">DocumentaryUnit</a> parent = views.detail(id, user);
 <a class="jxr_linenumber" name="188" href="#188">188</a>             Response resource = createItem(bundle, accessors, <strong class="jxr_keyword">new</strong> Handler&lt;DocumentaryUnit&gt;() {
 <a class="jxr_linenumber" name="189" href="#189">189</a>                         @Override

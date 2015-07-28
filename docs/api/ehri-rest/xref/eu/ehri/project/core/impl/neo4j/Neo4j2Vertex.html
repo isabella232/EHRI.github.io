@@ -33,13 +33,13 @@
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4j2Vertex</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Element.html">Neo4j2Element</a> <strong class="jxr_keyword">implements</strong> Vertex {
 <a class="jxr_linenumber" name="25" href="#25">25</a>  
-<a class="jxr_linenumber" name="26" href="#26">26</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4j2Vertex</a>(<strong class="jxr_keyword">final</strong> Node node, <strong class="jxr_keyword">final</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a> graph) {
+<a class="jxr_linenumber" name="26" href="#26">26</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4j2Vertex</a>(Node node, <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a> graph) {
 <a class="jxr_linenumber" name="27" href="#27">27</a>          <strong class="jxr_keyword">super</strong>(graph);
 <a class="jxr_linenumber" name="28" href="#28">28</a>          <strong class="jxr_keyword">this</strong>.rawElement = node;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  
 <a class="jxr_linenumber" name="30" href="#30">30</a>      }
 <a class="jxr_linenumber" name="31" href="#31">31</a>  
-<a class="jxr_linenumber" name="32" href="#32">32</a>      <strong class="jxr_keyword">public</strong> Iterable&lt;Edge&gt; getEdges(<strong class="jxr_keyword">final</strong> com.tinkerpop.blueprints.Direction direction, <strong class="jxr_keyword">final</strong> String... labels) {
+<a class="jxr_linenumber" name="32" href="#32">32</a>      <strong class="jxr_keyword">public</strong> Iterable&lt;Edge&gt; getEdges(com.tinkerpop.blueprints.Direction direction, String... labels) {
 <a class="jxr_linenumber" name="33" href="#33">33</a>          <strong class="jxr_keyword">this</strong>.graph.autoStartTransaction(false);
 <a class="jxr_linenumber" name="34" href="#34">34</a>          <strong class="jxr_keyword">if</strong> (direction.equals(com.tinkerpop.blueprints.Direction.OUT))
 <a class="jxr_linenumber" name="35" href="#35">35</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4jVertexEdgeIterable</a>(<strong class="jxr_keyword">this</strong>.graph, (Node) <strong class="jxr_keyword">this</strong>.rawElement, Direction.OUTGOING, labels);
@@ -49,7 +49,7 @@
 <a class="jxr_linenumber" name="39" href="#39">39</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> MultiIterable(Arrays.asList(<strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4jVertexEdgeIterable</a>(<strong class="jxr_keyword">this</strong>.graph, (Node) <strong class="jxr_keyword">this</strong>.rawElement, Direction.OUTGOING, labels), <strong class="jxr_keyword">new</strong> Neo4jVertexEdgeIterable(<strong class="jxr_keyword">this</strong>.graph, (Node) <strong class="jxr_keyword">this</strong>.rawElement, Direction.INCOMING, labels)));
 <a class="jxr_linenumber" name="40" href="#40">40</a>      }
 <a class="jxr_linenumber" name="41" href="#41">41</a>  
-<a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">public</strong> Iterable&lt;Vertex&gt; getVertices(<strong class="jxr_keyword">final</strong> com.tinkerpop.blueprints.Direction direction, <strong class="jxr_keyword">final</strong> String... labels) {
+<a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">public</strong> Iterable&lt;Vertex&gt; getVertices(com.tinkerpop.blueprints.Direction direction, String... labels) {
 <a class="jxr_linenumber" name="43" href="#43">43</a>          <strong class="jxr_keyword">this</strong>.graph.autoStartTransaction(false);
 <a class="jxr_linenumber" name="44" href="#44">44</a>          <strong class="jxr_keyword">if</strong> (direction.equals(com.tinkerpop.blueprints.Direction.OUT))
 <a class="jxr_linenumber" name="45" href="#45">45</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4jVertexVertexIterable</a>(<strong class="jxr_keyword">this</strong>.graph, (Node) <strong class="jxr_keyword">this</strong>.rawElement, Direction.OUTGOING, labels);
@@ -59,13 +59,13 @@
 <a class="jxr_linenumber" name="49" href="#49">49</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> MultiIterable(Arrays.asList(<strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4jVertexVertexIterable</a>(<strong class="jxr_keyword">this</strong>.graph, (Node) <strong class="jxr_keyword">this</strong>.rawElement, Direction.OUTGOING, labels), <strong class="jxr_keyword">new</strong> Neo4jVertexVertexIterable(<strong class="jxr_keyword">this</strong>.graph, (Node) <strong class="jxr_keyword">this</strong>.rawElement, Direction.INCOMING, labels)));
 <a class="jxr_linenumber" name="50" href="#50">50</a>      }
 <a class="jxr_linenumber" name="51" href="#51">51</a>  
-<a class="jxr_linenumber" name="52" href="#52">52</a>      <strong class="jxr_keyword">public</strong> Edge addEdge(<strong class="jxr_keyword">final</strong> String label, <strong class="jxr_keyword">final</strong> Vertex vertex) {
+<a class="jxr_linenumber" name="52" href="#52">52</a>      <strong class="jxr_keyword">public</strong> Edge addEdge(String label, Vertex vertex) {
 <a class="jxr_linenumber" name="53" href="#53">53</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>.graph.addEdge(<strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">this</strong>, vertex, label);
 <a class="jxr_linenumber" name="54" href="#54">54</a>      }
 <a class="jxr_linenumber" name="55" href="#55">55</a>  
 <a class="jxr_linenumber" name="56" href="#56">56</a>      <strong class="jxr_keyword">public</strong> Collection&lt;String&gt; getLabels() {
 <a class="jxr_linenumber" name="57" href="#57">57</a>          <strong class="jxr_keyword">this</strong>.graph.autoStartTransaction(false);
-<a class="jxr_linenumber" name="58" href="#58">58</a>          <strong class="jxr_keyword">final</strong> Collection&lt;String&gt; labels = <strong class="jxr_keyword">new</strong> ArrayList&lt;String&gt;();
+<a class="jxr_linenumber" name="58" href="#58">58</a>          Collection&lt;String&gt; labels = <strong class="jxr_keyword">new</strong> ArrayList&lt;String&gt;();
 <a class="jxr_linenumber" name="59" href="#59">59</a>          <strong class="jxr_keyword">for</strong> (Label label : getRawVertex().getLabels()) {
 <a class="jxr_linenumber" name="60" href="#60">60</a>              labels.add(label.name());
 <a class="jxr_linenumber" name="61" href="#61">61</a>          }
@@ -87,7 +87,7 @@
 <a class="jxr_linenumber" name="77" href="#77">77</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> DefaultVertexQuery(<strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="78" href="#78">78</a>      }
 <a class="jxr_linenumber" name="79" href="#79">79</a>  
-<a class="jxr_linenumber" name="80" href="#80">80</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> equals(<strong class="jxr_keyword">final</strong> Object object) {
+<a class="jxr_linenumber" name="80" href="#80">80</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> equals(Object object) {
 <a class="jxr_linenumber" name="81" href="#81">81</a>          <strong class="jxr_keyword">return</strong> object instanceof <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4j2Vertex</a> &amp;&amp; ((Neo4j2Vertex) object).getId().equals(<strong class="jxr_keyword">this</strong>.getId());
 <a class="jxr_linenumber" name="82" href="#82">82</a>      }
 <a class="jxr_linenumber" name="83" href="#83">83</a>  
@@ -105,7 +105,7 @@
 <a class="jxr_linenumber" name="95" href="#95">95</a>          <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Direction direction;
 <a class="jxr_linenumber" name="96" href="#96">96</a>          <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> DynamicRelationshipType[] labels;
 <a class="jxr_linenumber" name="97" href="#97">97</a>  
-<a class="jxr_linenumber" name="98" href="#98">98</a>          <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4jVertexVertexIterable</a>(<strong class="jxr_keyword">final</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a> graph, <strong class="jxr_keyword">final</strong> Node node, <strong class="jxr_keyword">final</strong> Direction direction, <strong class="jxr_keyword">final</strong> String... labels) {
+<a class="jxr_linenumber" name="98" href="#98">98</a>          <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4jVertexVertexIterable</a>(<a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a> graph, Node node, Direction direction, String... labels) {
 <a class="jxr_linenumber" name="99" href="#99">99</a>              <strong class="jxr_keyword">this</strong>.graph = graph;
 <a class="jxr_linenumber" name="100" href="#100">100</a>             <strong class="jxr_keyword">this</strong>.node = node;
 <a class="jxr_linenumber" name="101" href="#101">101</a>             <strong class="jxr_keyword">this</strong>.direction = direction;
@@ -149,7 +149,7 @@
 <a class="jxr_linenumber" name="139" href="#139">139</a>         <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Direction direction;
 <a class="jxr_linenumber" name="140" href="#140">140</a>         <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> DynamicRelationshipType[] labels;
 <a class="jxr_linenumber" name="141" href="#141">141</a> 
-<a class="jxr_linenumber" name="142" href="#142">142</a>         <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4jVertexEdgeIterable</a>(<strong class="jxr_keyword">final</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a> graph, <strong class="jxr_keyword">final</strong> Node node, <strong class="jxr_keyword">final</strong> Direction direction, <strong class="jxr_keyword">final</strong> String... labels) {
+<a class="jxr_linenumber" name="142" href="#142">142</a>         <strong class="jxr_keyword">public</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html">Neo4jVertexEdgeIterable</a>(<a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html">Neo4j2Graph</a> graph, Node node, Direction direction, String... labels) {
 <a class="jxr_linenumber" name="143" href="#143">143</a>             <strong class="jxr_keyword">this</strong>.graph = graph;
 <a class="jxr_linenumber" name="144" href="#144">144</a>             <strong class="jxr_keyword">this</strong>.node = node;
 <a class="jxr_linenumber" name="145" href="#145">145</a>             <strong class="jxr_keyword">this</strong>.direction = direction;

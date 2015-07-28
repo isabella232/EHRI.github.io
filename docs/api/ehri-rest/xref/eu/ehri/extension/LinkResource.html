@@ -216,7 +216,7 @@
 <a class="jxr_linenumber" name="206" href="#206">206</a>     @Path(<span class="jxr_string">"/for/{id:.+}"</span>)
 <a class="jxr_linenumber" name="207" href="#207">207</a>     <strong class="jxr_keyword">public</strong> Response listRelatedItems(@PathParam(<span class="jxr_string">"id"</span>) String id)
 <a class="jxr_linenumber" name="208" href="#208">208</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="209" href="#209">209</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="209" href="#209">209</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="210" href="#210">210</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="211" href="#211">211</a>             Query&lt;Link&gt; linkQuery = <strong class="jxr_keyword">new</strong> Query&lt;&gt;(graph, Link.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="212" href="#212">212</a>                 .setStream(isStreaming());

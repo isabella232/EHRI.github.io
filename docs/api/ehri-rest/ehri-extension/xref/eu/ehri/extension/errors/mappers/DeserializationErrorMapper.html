@@ -61,7 +61,7 @@
 <a class="jxr_linenumber" name="51" href="#51">51</a>  
 <a class="jxr_linenumber" name="52" href="#52">52</a>      @SuppressWarnings(<span class="jxr_string">"serial"</span>)
 <a class="jxr_linenumber" name="53" href="#53">53</a>      @Override
-<a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">public</strong> Response toResponse(<strong class="jxr_keyword">final</strong> DeserializationError e) {
+<a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">public</strong> Response toResponse(DeserializationError e) {
 <a class="jxr_linenumber" name="55" href="#55">55</a>          <strong class="jxr_keyword">return</strong> Response
 <a class="jxr_linenumber" name="56" href="#56">56</a>                  .status(Status.BAD_REQUEST)
 <a class="jxr_linenumber" name="57" href="#57">57</a>                  .entity(WebDeserializationError.errorToJson(e)

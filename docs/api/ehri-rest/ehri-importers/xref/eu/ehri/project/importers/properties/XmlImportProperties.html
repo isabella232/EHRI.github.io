@@ -50,7 +50,7 @@
 <a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html">XmlImportProperties</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../eu/ehri/project/importers/properties/ImportProperties.html">ImportProperties</a> {
 <a class="jxr_linenumber" name="41" href="#41">41</a>  
 <a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">private</strong> String configFileName;
-<a class="jxr_linenumber" name="43" href="#43">43</a>      <strong class="jxr_keyword">private</strong> Properties cachedProperties = <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="43" href="#43">43</a>      <strong class="jxr_keyword">private</strong> Properties cachedProperties;
 <a class="jxr_linenumber" name="44" href="#44">44</a>  
 <a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html">XmlImportProperties</a>(String configFile) {
 <a class="jxr_linenumber" name="46" href="#46">46</a>          setConfigFileName(configFile);
@@ -159,7 +159,7 @@
 <a class="jxr_linenumber" name="149" href="#149">149</a> <em class="jxr_javadoccomment">     * properties like 'did/unitid/@ehrilabel$ehri_main_identifier=objectIdentifier'</em>
 <a class="jxr_linenumber" name="150" href="#150">150</a> <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="151" href="#151">151</a> <em class="jxr_javadoccomment">     * @param key       did/unitid/</em>
-<a class="jxr_linenumber" name="152" href="#152">152</a> <em class="jxr_javadoccomment">     * @param attribute @ehrilabel</em>
+<a class="jxr_linenumber" name="152" href="#152">152</a> <em class="jxr_javadoccomment">     * @param attribute {@literal @}ehrilabel</em>
 <a class="jxr_linenumber" name="153" href="#153">153</a> <em class="jxr_javadoccomment">     * @return ehri_main_identifier or null if no attribute value could be found in this property file</em>
 <a class="jxr_linenumber" name="154" href="#154">154</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="155" href="#155">155</a>     <strong class="jxr_keyword">public</strong> String getValueForAttributeProperty(String key, String attribute) {
@@ -182,7 +182,7 @@
 <a class="jxr_linenumber" name="172" href="#172">172</a> <em class="jxr_javadoccomment">     * Looks up a resource named 'name' in the classpath. The resource must map to a file with .properties extention.</em>
 <a class="jxr_linenumber" name="173" href="#173">173</a> <em class="jxr_javadoccomment">     * The name is assumed to be absolute and can use either "/" or "." for package segment separation with an optional</em>
 <a class="jxr_linenumber" name="174" href="#174">174</a> <em class="jxr_javadoccomment">     * leading "/" and optional ".properties" suffix. Thus, the following names refer to the same resource:</em>
-<a class="jxr_linenumber" name="175" href="#175">175</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="175" href="#175">175</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="176" href="#176">176</a> <em class="jxr_javadoccomment">     * &lt;pre&gt;</em>
 <a class="jxr_linenumber" name="177" href="#177">177</a> <em class="jxr_javadoccomment">     * some.pkg.Resource</em>
 <a class="jxr_linenumber" name="178" href="#178">178</a> <em class="jxr_javadoccomment">     * some.pkg.Resource.properties</em>
@@ -219,14 +219,14 @@
 <a class="jxr_linenumber" name="209" href="#209">209</a>             <strong class="jxr_keyword">if</strong> (LOAD_AS_RESOURCE_BUNDLE) {
 <a class="jxr_linenumber" name="210" href="#210">210</a>                 name = name.replace('/', '.');
 <a class="jxr_linenumber" name="211" href="#211">211</a>                 <em class="jxr_comment">// Throws MissingResourceException on lookup failures:</em>
-<a class="jxr_linenumber" name="212" href="#212">212</a>                 <strong class="jxr_keyword">final</strong> ResourceBundle rb = ResourceBundle.getBundle(name, Locale
+<a class="jxr_linenumber" name="212" href="#212">212</a>                 ResourceBundle rb = ResourceBundle.getBundle(name, Locale
 <a class="jxr_linenumber" name="213" href="#213">213</a>                         .getDefault(), loader);
 <a class="jxr_linenumber" name="214" href="#214">214</a> 
 <a class="jxr_linenumber" name="215" href="#215">215</a>                 result = <strong class="jxr_keyword">new</strong> Properties();
 <a class="jxr_linenumber" name="216" href="#216">216</a>                 <strong class="jxr_keyword">for</strong> (Enumeration&lt;String&gt; keys = rb.getKeys(); keys
 <a class="jxr_linenumber" name="217" href="#217">217</a>                         .hasMoreElements(); ) {
-<a class="jxr_linenumber" name="218" href="#218">218</a>                     <strong class="jxr_keyword">final</strong> String key = keys.nextElement();
-<a class="jxr_linenumber" name="219" href="#219">219</a>                     <strong class="jxr_keyword">final</strong> String value = rb.getString(key);
+<a class="jxr_linenumber" name="218" href="#218">218</a>                     String key = keys.nextElement();
+<a class="jxr_linenumber" name="219" href="#219">219</a>                     String value = rb.getString(key);
 <a class="jxr_linenumber" name="220" href="#220">220</a> 
 <a class="jxr_linenumber" name="221" href="#221">221</a>                     result.put(key, value);
 <a class="jxr_linenumber" name="222" href="#222">222</a>                 }
@@ -281,7 +281,7 @@
 <a class="jxr_linenumber" name="271" href="#271">271</a> <em class="jxr_javadoccomment">     * A convenience overload of {@link #loadProperties(String, ClassLoader)} that uses the current thread's context</em>
 <a class="jxr_linenumber" name="272" href="#272">272</a> <em class="jxr_javadoccomment">     * classloader.</em>
 <a class="jxr_linenumber" name="273" href="#273">273</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="274" href="#274">274</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Properties loadProperties(<strong class="jxr_keyword">final</strong> String name) {
+<a class="jxr_linenumber" name="274" href="#274">274</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Properties loadProperties(String name) {
 <a class="jxr_linenumber" name="275" href="#275">275</a>         <strong class="jxr_keyword">return</strong> loadProperties(name, Thread.currentThread()
 <a class="jxr_linenumber" name="276" href="#276">276</a>                 .getContextClassLoader());
 <a class="jxr_linenumber" name="277" href="#277">277</a>     }

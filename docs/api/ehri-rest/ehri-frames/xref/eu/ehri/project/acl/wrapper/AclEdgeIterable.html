@@ -24,7 +24,7 @@
 <a class="jxr_linenumber" name="14" href="#14">14</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Iterable&lt;Edge&gt; iterable;
 <a class="jxr_linenumber" name="15" href="#15">15</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> AclGraph&lt;?&gt; graph;
 <a class="jxr_linenumber" name="16" href="#16">16</a>  
-<a class="jxr_linenumber" name="17" href="#17">17</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclEdgeIterable.html">AclEdgeIterable</a>(<strong class="jxr_keyword">final</strong> Iterable&lt;Edge&gt; iterable, <strong class="jxr_keyword">final</strong> AclGraph&lt;?&gt; graph) {
+<a class="jxr_linenumber" name="17" href="#17">17</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclEdgeIterable.html">AclEdgeIterable</a>(Iterable&lt;Edge&gt; iterable, AclGraph&lt;?&gt; graph) {
 <a class="jxr_linenumber" name="18" href="#18">18</a>          <strong class="jxr_keyword">this</strong>.iterable = iterable;
 <a class="jxr_linenumber" name="19" href="#19">19</a>          <strong class="jxr_keyword">this</strong>.graph = graph;
 <a class="jxr_linenumber" name="20" href="#20">20</a>      }
@@ -52,7 +52,7 @@
 <a class="jxr_linenumber" name="42" href="#42">42</a>                      <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
 <a class="jxr_linenumber" name="43" href="#43">43</a>                  }
 <a class="jxr_linenumber" name="44" href="#44">44</a>                  <strong class="jxr_keyword">while</strong> (<strong class="jxr_keyword">this</strong>.itty.hasNext()) {
-<a class="jxr_linenumber" name="45" href="#45">45</a>                      <strong class="jxr_keyword">final</strong> Edge edge = <strong class="jxr_keyword">this</strong>.itty.next();
+<a class="jxr_linenumber" name="45" href="#45">45</a>                      Edge edge = <strong class="jxr_keyword">this</strong>.itty.next();
 <a class="jxr_linenumber" name="46" href="#46">46</a>                      nextEdge = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclEdge.html">AclEdge</a>(edge, graph);
 <a class="jxr_linenumber" name="47" href="#47">47</a>                      <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
 <a class="jxr_linenumber" name="48" href="#48">48</a>                  }
@@ -62,12 +62,12 @@
 <a class="jxr_linenumber" name="52" href="#52">52</a>  
 <a class="jxr_linenumber" name="53" href="#53">53</a>              <strong class="jxr_keyword">public</strong> Edge next() {
 <a class="jxr_linenumber" name="54" href="#54">54</a>                  <strong class="jxr_keyword">if</strong> (<strong class="jxr_keyword">null</strong> != <strong class="jxr_keyword">this</strong>.nextEdge) {
-<a class="jxr_linenumber" name="55" href="#55">55</a>                      <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclEdge.html">AclEdge</a> temp = <strong class="jxr_keyword">this</strong>.nextEdge;
+<a class="jxr_linenumber" name="55" href="#55">55</a>                      <a href="../../../../../eu/ehri/project/acl/wrapper/AclEdge.html">AclEdge</a> temp = <strong class="jxr_keyword">this</strong>.nextEdge;
 <a class="jxr_linenumber" name="56" href="#56">56</a>                      <strong class="jxr_keyword">this</strong>.nextEdge = <strong class="jxr_keyword">null</strong>;
 <a class="jxr_linenumber" name="57" href="#57">57</a>                      <strong class="jxr_keyword">return</strong> temp;
 <a class="jxr_linenumber" name="58" href="#58">58</a>                  } <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="59" href="#59">59</a>                      <strong class="jxr_keyword">while</strong> (<strong class="jxr_keyword">this</strong>.itty.hasNext()) {
-<a class="jxr_linenumber" name="60" href="#60">60</a>                          <strong class="jxr_keyword">final</strong> Edge edge = <strong class="jxr_keyword">this</strong>.itty.next();
+<a class="jxr_linenumber" name="60" href="#60">60</a>                          Edge edge = <strong class="jxr_keyword">this</strong>.itty.next();
 <a class="jxr_linenumber" name="61" href="#61">61</a>                          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclEdge.html">AclEdge</a>(edge, graph);
 <a class="jxr_linenumber" name="62" href="#62">62</a>                      }
 <a class="jxr_linenumber" name="63" href="#63">63</a>                      <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> NoSuchElementException();

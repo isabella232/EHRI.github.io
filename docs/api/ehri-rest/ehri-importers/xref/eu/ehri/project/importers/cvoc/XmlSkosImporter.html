@@ -75,10 +75,10 @@
 <a class="jxr_linenumber" name="65" href="#65">65</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="66" href="#66">66</a>  <em class="jxr_javadoccomment"> * Importer for the controlled vocabulary (TemaTres thesaurus)</em>
 <a class="jxr_linenumber" name="67" href="#67">67</a>  <em class="jxr_javadoccomment"> * specified by a SKOS-Core RDF file.</em>
-<a class="jxr_linenumber" name="68" href="#68">68</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="68" href="#68">68</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="69" href="#69">69</a>  <em class="jxr_javadoccomment"> * This is different from the other importing mainly because I don't fully understand that.</em>
 <a class="jxr_linenumber" name="70" href="#70">70</a>  <em class="jxr_javadoccomment"> * So this importer will also do the 'management' and we will see later how to refactor it.</em>
-<a class="jxr_linenumber" name="71" href="#71">71</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="71" href="#71">71</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="72" href="#72">72</a>  <em class="jxr_javadoccomment"> * Note: most code was copied from the EadImportManager and its base classes</em>
 <a class="jxr_linenumber" name="73" href="#73">73</a>  <em class="jxr_javadoccomment"> * Also note that: We don't have an Repository for the CVOCs, but a Vocabulary instead!</em>
 <a class="jxr_linenumber" name="74" href="#74">74</a>  <em class="jxr_javadoccomment"> *</em>
@@ -113,7 +113,7 @@
 <a class="jxr_linenumber" name="103" href="#103">103</a> <em class="jxr_javadoccomment">     * @param format      The RDF format</em>
 <a class="jxr_linenumber" name="104" href="#104">104</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="105" href="#105">105</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../eu/ehri/project/importers/cvoc/XmlSkosImporter.html">XmlSkosImporter</a>(FramedGraph&lt;?&gt; framedGraph,
-<a class="jxr_linenumber" name="106" href="#106">106</a>             <strong class="jxr_keyword">final</strong> Actioner actioner, Vocabulary vocabulary, <strong class="jxr_keyword">boolean</strong> tolerant, String format) {
+<a class="jxr_linenumber" name="106" href="#106">106</a>             Actioner actioner, Vocabulary vocabulary, <strong class="jxr_keyword">boolean</strong> tolerant, String format) {
 <a class="jxr_linenumber" name="107" href="#107">107</a>         <strong class="jxr_keyword">this</strong>.framedGraph = framedGraph;
 <a class="jxr_linenumber" name="108" href="#108">108</a>         <strong class="jxr_keyword">this</strong>.actioner = actioner;
 <a class="jxr_linenumber" name="109" href="#109">109</a>         <strong class="jxr_keyword">this</strong>.vocabulary = vocabulary;
@@ -129,7 +129,7 @@
 <a class="jxr_linenumber" name="119" href="#119">119</a> <em class="jxr_javadoccomment">     * @param vocabulary  The vocabulary</em>
 <a class="jxr_linenumber" name="120" href="#120">120</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="121" href="#121">121</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../../eu/ehri/project/importers/cvoc/XmlSkosImporter.html">XmlSkosImporter</a>(FramedGraph&lt;?&gt; framedGraph,
-<a class="jxr_linenumber" name="122" href="#122">122</a>             <strong class="jxr_keyword">final</strong> Actioner actioner, Vocabulary vocabulary) {
+<a class="jxr_linenumber" name="122" href="#122">122</a>             Actioner actioner, Vocabulary vocabulary) {
 <a class="jxr_linenumber" name="123" href="#123">123</a>         <strong class="jxr_keyword">this</strong>(framedGraph, actioner, vocabulary, false, <strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="124" href="#124">124</a>     }
 <a class="jxr_linenumber" name="125" href="#125">125</a> 
@@ -162,10 +162,10 @@
 <a class="jxr_linenumber" name="152" href="#152">152</a>             <strong class="jxr_keyword">throws</strong> IOException, ValidationError, <a href="../../../../../eu/ehri/project/importers/exceptions/InputParseError.html">InputParseError</a> {
 <a class="jxr_linenumber" name="153" href="#153">153</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="154" href="#154">154</a>             <em class="jxr_comment">// Create a new action for this import</em>
-<a class="jxr_linenumber" name="155" href="#155">155</a>             <strong class="jxr_keyword">final</strong> EventContext eventContext = <strong class="jxr_keyword">new</strong> ActionManager(framedGraph, vocabulary).newEventContext(
+<a class="jxr_linenumber" name="155" href="#155">155</a>             EventContext eventContext = <strong class="jxr_keyword">new</strong> ActionManager(framedGraph, vocabulary).newEventContext(
 <a class="jxr_linenumber" name="156" href="#156">156</a>                     actioner, EventTypes.ingest, getLogMessage(logMessage));
 <a class="jxr_linenumber" name="157" href="#157">157</a>             <em class="jxr_comment">// Create a manifest to store the results of the import.</em>
-<a class="jxr_linenumber" name="158" href="#158">158</a>             <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(eventContext);
+<a class="jxr_linenumber" name="158" href="#158">158</a>             <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(eventContext);
 <a class="jxr_linenumber" name="159" href="#159">159</a> 
 <a class="jxr_linenumber" name="160" href="#160">160</a>             <em class="jxr_comment">// Do the import...</em>
 <a class="jxr_linenumber" name="161" href="#161">161</a>             importFile(ios, eventContext, log);
@@ -180,8 +180,8 @@
 <a class="jxr_linenumber" name="170" href="#170">170</a>         }
 <a class="jxr_linenumber" name="171" href="#171">171</a>     }
 <a class="jxr_linenumber" name="172" href="#172">172</a> 
-<a class="jxr_linenumber" name="173" href="#173">173</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> importFile(InputStream ios, <strong class="jxr_keyword">final</strong> ActionManager.EventContext eventContext,
-<a class="jxr_linenumber" name="174" href="#174">174</a>             <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log) <strong class="jxr_keyword">throws</strong> IOException, ValidationError,
+<a class="jxr_linenumber" name="173" href="#173">173</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> importFile(InputStream ios, ActionManager.EventContext eventContext,
+<a class="jxr_linenumber" name="174" href="#174">174</a>             <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log) <strong class="jxr_keyword">throws</strong> IOException, ValidationError,
 <a class="jxr_linenumber" name="175" href="#175">175</a>             InputParseError, InvalidXmlDocument, <a href="../../../../../eu/ehri/project/importers/exceptions/InvalidInputFormatError.html">InvalidInputFormatError</a> {
 <a class="jxr_linenumber" name="176" href="#176">176</a> 
 <a class="jxr_linenumber" name="177" href="#177">177</a>         <em class="jxr_comment">// XML parsing boilerplate...</em>
@@ -216,8 +216,8 @@
 <a class="jxr_linenumber" name="206" href="#206">206</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
 <a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">     * @throws InvalidInputFormatError</em>
 <a class="jxr_linenumber" name="208" href="#208">208</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="209" href="#209">209</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> importDocWithinAction(Document doc, <strong class="jxr_keyword">final</strong> ActionManager.EventContext eventContext,
-<a class="jxr_linenumber" name="210" href="#210">210</a>             <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> manifest) <strong class="jxr_keyword">throws</strong> ValidationError,
+<a class="jxr_linenumber" name="209" href="#209">209</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> importDocWithinAction(Document doc, ActionManager.EventContext eventContext,
+<a class="jxr_linenumber" name="210" href="#210">210</a>             <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> manifest) <strong class="jxr_keyword">throws</strong> ValidationError,
 <a class="jxr_linenumber" name="211" href="#211">211</a>             <a href="../../../../../eu/ehri/project/importers/exceptions/InvalidInputFormatError.html">InvalidInputFormatError</a> {
 <a class="jxr_linenumber" name="212" href="#212">212</a> 
 <a class="jxr_linenumber" name="213" href="#213">213</a>         createConcepts(doc, eventContext, manifest);
@@ -233,8 +233,8 @@
 <a class="jxr_linenumber" name="223" href="#223">223</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
 <a class="jxr_linenumber" name="224" href="#224">224</a> <em class="jxr_javadoccomment">     * @throws InvalidInputFormatError</em>
 <a class="jxr_linenumber" name="225" href="#225">225</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="226" href="#226">226</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createConcepts(Document doc, <strong class="jxr_keyword">final</strong> ActionManager.EventContext action,
-<a class="jxr_linenumber" name="227" href="#227">227</a>             <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> manifest) <strong class="jxr_keyword">throws</strong> ValidationError,
+<a class="jxr_linenumber" name="226" href="#226">226</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createConcepts(Document doc, ActionManager.EventContext action,
+<a class="jxr_linenumber" name="227" href="#227">227</a>             <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> manifest) <strong class="jxr_keyword">throws</strong> ValidationError,
 <a class="jxr_linenumber" name="228" href="#228">228</a>             <a href="../../../../../eu/ehri/project/importers/exceptions/InvalidInputFormatError.html">InvalidInputFormatError</a> {
 <a class="jxr_linenumber" name="229" href="#229">229</a> 
 <a class="jxr_linenumber" name="230" href="#230">230</a>         <em class="jxr_comment">// the Concept is extracted from the XML</em>
@@ -367,7 +367,7 @@
 <a class="jxr_linenumber" name="357" href="#357">357</a> 
 <a class="jxr_linenumber" name="358" href="#358">358</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="359" href="#359">359</a> <em class="jxr_javadoccomment">     * Create the Vocabulary structure by creating all relations (BT/NT/RT) between the concepts</em>
-<a class="jxr_linenumber" name="360" href="#360">360</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="360" href="#360">360</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
 <a class="jxr_linenumber" name="361" href="#361">361</a> <em class="jxr_javadoccomment">     * Note that we want this to be done in the same database 'transaction'</em>
 <a class="jxr_linenumber" name="362" href="#362">362</a> <em class="jxr_javadoccomment">     * and this 'current' one is not finished.</em>
 <a class="jxr_linenumber" name="363" href="#363">363</a> <em class="jxr_javadoccomment">     * Therefore the Concepts are not retrievable from the database yet</em>
@@ -379,8 +379,8 @@
 <a class="jxr_linenumber" name="369" href="#369">369</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
 <a class="jxr_linenumber" name="370" href="#370">370</a> <em class="jxr_javadoccomment">     * @throws InvalidInputFormatError</em>
 <a class="jxr_linenumber" name="371" href="#371">371</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="372" href="#372">372</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createVocabularyStructure(Document doc, <strong class="jxr_keyword">final</strong> EventContext eventContext,
-<a class="jxr_linenumber" name="373" href="#373">373</a>             <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> manifest) <strong class="jxr_keyword">throws</strong> ValidationError,
+<a class="jxr_linenumber" name="372" href="#372">372</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createVocabularyStructure(Document doc, EventContext eventContext,
+<a class="jxr_linenumber" name="373" href="#373">373</a>             <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> manifest) <strong class="jxr_keyword">throws</strong> ValidationError,
 <a class="jxr_linenumber" name="374" href="#374">374</a>             <a href="../../../../../eu/ehri/project/importers/exceptions/InvalidInputFormatError.html">InvalidInputFormatError</a> {
 <a class="jxr_linenumber" name="375" href="#375">375</a> 
 <a class="jxr_linenumber" name="376" href="#376">376</a>         logger.debug(<span class="jxr_string">"Number of concepts in lookup: "</span> + conceptLookup.size());
@@ -398,8 +398,8 @@
 <a class="jxr_linenumber" name="388" href="#388">388</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
 <a class="jxr_linenumber" name="389" href="#389">389</a> <em class="jxr_javadoccomment">     * @throws InvalidInputFormatError</em>
 <a class="jxr_linenumber" name="390" href="#390">390</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="391" href="#391">391</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createBroaderNarrowerRelations(Document doc, <strong class="jxr_keyword">final</strong> EventContext eventContext,
-<a class="jxr_linenumber" name="392" href="#392">392</a>             <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> manifest) <strong class="jxr_keyword">throws</strong> ValidationError,
+<a class="jxr_linenumber" name="391" href="#391">391</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createBroaderNarrowerRelations(Document doc, EventContext eventContext,
+<a class="jxr_linenumber" name="392" href="#392">392</a>             <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> manifest) <strong class="jxr_keyword">throws</strong> ValidationError,
 <a class="jxr_linenumber" name="393" href="#393">393</a>             <a href="../../../../../eu/ehri/project/importers/exceptions/InvalidInputFormatError.html">InvalidInputFormatError</a> {
 <a class="jxr_linenumber" name="394" href="#394">394</a> 
 <a class="jxr_linenumber" name="395" href="#395">395</a>         <em class="jxr_comment">// check the lookup and start making the BT relations (and narrower implicit)</em>
@@ -456,8 +456,8 @@
 <a class="jxr_linenumber" name="446" href="#446">446</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
 <a class="jxr_linenumber" name="447" href="#447">447</a> <em class="jxr_javadoccomment">     * @throws InvalidInputFormatError</em>
 <a class="jxr_linenumber" name="448" href="#448">448</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="449" href="#449">449</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createNonspecificRelations(Document doc, <strong class="jxr_keyword">final</strong> EventContext eventContext,
-<a class="jxr_linenumber" name="450" href="#450">450</a>             <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> manifest) <strong class="jxr_keyword">throws</strong> ValidationError,
+<a class="jxr_linenumber" name="449" href="#449">449</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createNonspecificRelations(Document doc, EventContext eventContext,
+<a class="jxr_linenumber" name="450" href="#450">450</a>             <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> manifest) <strong class="jxr_keyword">throws</strong> ValidationError,
 <a class="jxr_linenumber" name="451" href="#451">451</a>             <a href="../../../../../eu/ehri/project/importers/exceptions/InvalidInputFormatError.html">InvalidInputFormatError</a> {
 <a class="jxr_linenumber" name="452" href="#452">452</a> 
 <a class="jxr_linenumber" name="453" href="#453">453</a>         <em class="jxr_comment">// check the lookup and start making the relations</em>

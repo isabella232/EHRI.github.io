@@ -653,7 +653,7 @@
 <a class="jxr_linenumber" name="643" href="#643">643</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="644" href="#644">644</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> HashSet&lt;Vertex&gt; getAllAccessors(<a href="../../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor) {
 <a class="jxr_linenumber" name="645" href="#645">645</a> 
-<a class="jxr_linenumber" name="646" href="#646">646</a>         <strong class="jxr_keyword">final</strong> HashSet&lt;Vertex&gt; all = Sets.newHashSet();
+<a class="jxr_linenumber" name="646" href="#646">646</a>         HashSet&lt;Vertex&gt; all = Sets.newHashSet();
 <a class="jxr_linenumber" name="647" href="#647">647</a>         <strong class="jxr_keyword">if</strong> (!isAnonymous(accessor)) {
 <a class="jxr_linenumber" name="648" href="#648">648</a>             Iterable&lt;Accessor&gt; parents = accessor.getAllParents();
 <a class="jxr_linenumber" name="649" href="#649">649</a>             <strong class="jxr_keyword">for</strong> (Accessor a : parents) {
