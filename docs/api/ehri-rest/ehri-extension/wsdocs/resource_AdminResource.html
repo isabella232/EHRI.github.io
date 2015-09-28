@@ -93,6 +93,9 @@ and general graph-maintenance functionality.</p>
         <a href="#path__admin__exportGraphSON.html">/admin/_exportGraphSON</a>
         </li>
         <li>
+        <a href="#path__admin__exportJSON.html">/admin/_exportJSON</a>
+        </li>
+        <li>
         <a href="#path__admin__reindexInternal.html">/admin/_reindexInternal</a>
         </li>
         <li>
@@ -102,14 +105,31 @@ and general graph-maintenance functionality.</p>
         <a name="path__admin__exportGraphSON.html"></a>
       <h1>/admin/_exportGraphSON</h1>
       <p class="note">Mount Point: <a href="../admin/_exportGraphSON">/admin/_exportGraphSON</a></p>
-      <a name="GET"></a>
+      <a name="GETpath__admin__exportGraphSON.html"></a>
       <h2>GET</h2>
       <p>
             Export the DB as a stream of JSON in
 <a href="https://github.com/tinkerpop/blueprints/wiki/GraphSON-Reader-and-Writer-Library">GraphSON</a> format.
-<p/>
+<p>
 The mode used is EXTENDED.
           </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__admin__exportJSON.html"></a>
+      <h1>/admin/_exportJSON</h1>
+      <p class="note">Mount Point: <a href="../admin/_exportJSON">/admin/_exportJSON</a></p>
+      <a name="GETpath__admin__exportJSON.html"></a>
+      <h2>GET</h2>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -125,11 +145,11 @@ The mode used is EXTENDED.
         <a name="path__admin__reindexInternal.html"></a>
       <h1>/admin/_reindexInternal</h1>
       <p class="note">Mount Point: <a href="../admin/_reindexInternal">/admin/_reindexInternal</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__admin__reindexInternal.html"></a>
       <h2>POST</h2>
       <p>
             Re-build the graph's internal lucene index.
-<p/>
+<p>
 NB: This takes a lot of memory for large graphs. Do
 not use willy-nilly and increase the heap size as
 necessary. TODO: Add incremental buffered commit.
@@ -149,7 +169,7 @@ necessary. TODO: Add incremental buffered commit.
         <a name="path__admin_createDefaultUserProfile.html"></a>
       <h1>/admin/createDefaultUserProfile</h1>
       <p class="note">Mount Point: <a href="../admin/createDefaultUserProfile">/admin/createDefaultUserProfile</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__admin_createDefaultUserProfile.html"></a>
       <h2>POST</h2>
       <p>
             Create a new user with a default name and identifier.

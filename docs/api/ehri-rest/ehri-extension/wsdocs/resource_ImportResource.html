@@ -104,28 +104,29 @@
         <a name="path__import_csv.html"></a>
       <h1>/import/csv</h1>
       <p class="note">Mount Point: <a href="../import/csv">/import/csv</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__import_csv.html"></a>
       <h2>POST</h2>
       <p>
             Import a set of CSV files. The body of the POST
 request should be a newline separated list of file
 paths.
-<p/>
+<p>
 The way you would run with would typically be:
-<p/>
+<p>
 <pre>
-<code>curl -X POST \
--H "Authorization: mike" \
+{@code
+curl -X POST \
+-H "X-User: mike" \
 --data-binary @csv-list.txt \
 "http://localhost:7474/ehri/import/csv?scope=my-repo-id&log=testing"
 
 # NB: Data is sent using --data-binary to preserve line-breaks - otherwise
 # it needs url encoding.
-</code>
+}
 </pre>
-<p/>
+<p>
 (Assuming <tt>csv-list.txt</tt> is a list of newline separated CSV file paths.)
-<p/>
+<p>
 (TODO: Might be better to use a different way of encoding the local file paths...)
           </p>
       <h3>Parameters</h3>
@@ -174,7 +175,7 @@ its contents will be used.
         </tr>
       </table>
       <p>A stream of CSV data
-
+<p>
 There is no property file for this. Either the csv-heading is already in graph-compatible wording, or the Importer takes care of this.</p>
       <h3>Response Body</h3>
       <table>
@@ -192,28 +193,29 @@ updated, or unchanged.</p>
         <a name="path__import_ead.html"></a>
       <h1>/import/ead</h1>
       <p class="note">Mount Point: <a href="../import/ead">/import/ead</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__import_ead.html"></a>
       <h2>POST</h2>
       <p>
             Import a set of EAD files. The body of the POST
 request should be a newline separated list of file
 paths.
-<p/>
+<p>
 The way you would run with would typically be:
-<p/>
+<p>
 <pre>
-<code>curl -X POST \
--H "Authorization: mike" \
+{@code
+curl -X POST \
+-H "X-User: mike" \
 --data-binary @ead-list.txt \
 "http://localhost:7474/ehri/import/ead?scope=my-repo-id&log=testing&tolerant=true"
 
 # NB: Data is sent using --data-binary to preserve line-breaks - otherwise
 # it needs url encoding.
-</code>
+}
 </pre>
-<p/>
+<p>
 (Assuming <tt>ead-list.txt</tt> is a list of newline separated EAD file paths.)
-<p/>
+<p>
 (TODO: Might be better to use a different way of encoding the local file paths...)
           </p>
       <h3>Parameters</h3>
@@ -306,25 +308,26 @@ updated, or unchanged.</p>
         <a name="path__import_single_ead.html"></a>
       <h1>/import/single_ead</h1>
       <p class="note">Mount Point: <a href="../import/single_ead">/import/single_ead</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__import_single_ead.html"></a>
       <h2>POST</h2>
       <p>
             Import a single EAD file. The body of the POST
 request should be an EAD file.
-<p/>
+<p>
 The way you would run with would typically be:
-<p/>
+<p>
 <pre>
-<code>curl -X POST \
--H "Authorization: mike" \
+{@code
+curl -X POST \
+-H "X-User: mike" \
 --data-binary @ead-file.xml \
 "http://localhost:7474/ehri/import/single_ead?scope=my-repo-id&log=testing&tolerant=true"
 
 # NB: Data is sent using --data-binary to preserve line-breaks - otherwise
 # it needs url encoding.
-</code>
+}
 </pre>
-<p/>
+<p>
           </p>
       <h3>Parameters</h3>
       <table>
@@ -415,20 +418,21 @@ updated, or unchanged.</p>
         <a name="path__import_skos.html"></a>
       <h1>/import/skos</h1>
       <p class="note">Mount Point: <a href="../import/skos">/import/skos</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__import_skos.html"></a>
       <h2>POST</h2>
       <p>
             Import a SKOS file, of varying formats, as specified by the &quot;language&quot;
 column of the file extensions table <a href="https://jena.apache.org/documentation/io/">here</a>.
-<p/>
+<p>
 Example:
-<p/>
+<p>
 <pre>
-<code>curl -X POST \
--H "Authorization: mike" \
+{@code
+curl -X POST \
+-H "X-User: mike" \
 --data-binary @skos-data.rdf \
 "http://localhost:7474/ehri/import/skos?scope=gb-my-vocabulary&log=testing&tolerant=true"
-</code>
+}
 </pre>
           </p>
       <h3>Parameters</h3>

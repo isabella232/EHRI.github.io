@@ -111,17 +111,20 @@ fit anywhere else.</p>
         <a href="#path__tools__regenerateIdsForType_-type-.html">/tools/_regenerateIdsForType/{type}</a>
         </li>
         <li>
+        <a href="#path__tools__setIdsOnEventLinks.html">/tools/_setIdsOnEventLinks</a>
+        </li>
+        <li>
         <a href="#path__tools_generateConcepts_-repositoryId-_-vocabularyId-.html">/tools/generateConcepts/{repositoryId}/{vocabularyId}</a>
         </li>
       </ul>
         <a name="path__tools__findReplacePropertyName.html"></a>
       <h1>/tools/_findReplacePropertyName</h1>
       <p class="note">Mount Point: <a href="../tools/_findReplacePropertyName">/tools/_findReplacePropertyName</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__tools__findReplacePropertyName.html"></a>
       <h2>POST</h2>
       <p>
             Change a property key name across an entire entity class.
-<p/>
+<p>
 <strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
           </p>
       <h3>Parameters</h3>
@@ -172,13 +175,13 @@ fit anywhere else.</p>
         <a name="path__tools__findReplacePropertyValue.html"></a>
       <h1>/tools/_findReplacePropertyValue</h1>
       <p class="note">Mount Point: <a href="../tools/_findReplacePropertyValue">/tools/_findReplacePropertyValue</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__tools__findReplacePropertyValue.html"></a>
       <h2>POST</h2>
       <p>
             Find an replace a property value across an entire entity class, e.g.
 if a DocumentaryUnit has a property with name &quot;foo&quot; and value &quot;bar&quot;,
 change the value to &quot;baz&quot; on all items.
-<p/>
+<p>
 <strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
           </p>
       <h3>Parameters</h3>
@@ -237,7 +240,7 @@ change the value to &quot;baz&quot; on all items.
         <a name="path__tools__findReplacePropertyValueRE.html"></a>
       <h1>/tools/_findReplacePropertyValueRE</h1>
       <p class="note">Mount Point: <a href="../tools/_findReplacePropertyValueRE">/tools/_findReplacePropertyValueRE</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__tools__findReplacePropertyValueRE.html"></a>
       <h2>POST</h2>
       <p>
             Find an replace a regex-specified substring of a property value
@@ -245,7 +248,7 @@ across an entire entity class e.g.
 if an Address has a property with name &quot;url&quot; and value &quot;www.foo.com/bar&quot;,
 providing a regex value <tt>^www</tt> and replacement <tt>http://www</tt> will
 give the property a value of &quot;http://www.foo.com/bar&quot;.
-<p/>
+<p>
 <strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
           </p>
       <h3>Parameters</h3>
@@ -304,7 +307,7 @@ give the property a value of &quot;http://www.foo.com/bar&quot;.
         <a name="path__tools__regenerateDescriptionIds.html"></a>
       <h1>/tools/_regenerateDescriptionIds</h1>
       <p class="note">Mount Point: <a href="../tools/_regenerateDescriptionIds">/tools/_regenerateDescriptionIds</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__tools__regenerateDescriptionIds.html"></a>
       <h2>POST</h2>
       <p>
             Regenerate description IDs.
@@ -349,7 +352,7 @@ give the property a value of &quot;http://www.foo.com/bar&quot;.
         <a name="path__tools__regenerateId_-id-.html"></a>
       <h1>/tools/_regenerateId/{id}</h1>
       <p class="note">Mount Point: <a href="../tools/_regenerateId/{id}">/tools/_regenerateId/{id}</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__tools__regenerateId_-id-.html"></a>
       <h2>POST</h2>
       <p>
             Regenerate the hierarchical graph ID for a given item, optionally
@@ -416,12 +419,12 @@ then throwing an error
           <td>text/csv</td>
         </tr>
       </table>
-      <p>a tab old->new mapping, or an empty
+      <p>a tab old-to-new mapping, or an empty
 body if nothing was changed</p>
         <a name="path__tools__regenerateIdsForScope_-scope-.html"></a>
       <h1>/tools/_regenerateIdsForScope/{scope}</h1>
       <p class="note">Mount Point: <a href="../tools/_regenerateIdsForScope/{scope}">/tools/_regenerateIdsForScope/{scope}</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__tools__regenerateIdsForScope_-scope-.html"></a>
       <h2>POST</h2>
       <p>
             Regenerate the hierarchical graph ID for all items within the
@@ -488,12 +491,12 @@ then throwing an error
           <td>text/csv</td>
         </tr>
       </table>
-      <p>a tab list old->new mappings, or an empty
+      <p>a tab list old-to-new mappings, or an empty
 body if nothing was changed</p>
         <a name="path__tools__regenerateIdsForType_-type-.html"></a>
       <h1>/tools/_regenerateIdsForType/{type}</h1>
       <p class="note">Mount Point: <a href="../tools/_regenerateIdsForType/{type}">/tools/_regenerateIdsForType/{type}</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__tools__regenerateIdsForType_-type-.html"></a>
       <h2>POST</h2>
       <p>
             Regenerate the hierarchical graph ID all items of a given
@@ -560,12 +563,29 @@ then throwing an error
           <td>text/csv</td>
         </tr>
       </table>
-      <p>a tab list old->new mappings, or an empty
+      <p>a tab list old-to-new mappings, or an empty
 body if nothing was changed</p>
+        <a name="path__tools__setIdsOnEventLinks.html"></a>
+      <h1>/tools/_setIdsOnEventLinks</h1>
+      <p class="note">Mount Point: <a href="../tools/_setIdsOnEventLinks">/tools/_setIdsOnEventLinks</a></p>
+      <a name="POSTpath__tools__setIdsOnEventLinks.html"></a>
+      <h2>POST</h2>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/csv</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
         <a name="path__tools_generateConcepts_-repositoryId-_-vocabularyId-.html"></a>
       <h1>/tools/generateConcepts/{repositoryId}/{vocabularyId}</h1>
       <p class="note">Mount Point: <a href="../tools/generateConcepts/{repositoryId}/{vocabularyId}">/tools/generateConcepts/{repositoryId}/{vocabularyId}</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__tools_generateConcepts_-repositoryId-_-vocabularyId-.html"></a>
       <h2>POST</h2>
       <p>
             Create concepts and links derived from the access points

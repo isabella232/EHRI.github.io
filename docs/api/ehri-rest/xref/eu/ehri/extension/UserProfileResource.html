@@ -183,7 +183,7 @@
 <a class="jxr_linenumber" name="173" href="#173">173</a>     @Path(<span class="jxr_string">"{userId:.+}/"</span> + FOLLOWERS)
 <a class="jxr_linenumber" name="174" href="#174">174</a>     <strong class="jxr_keyword">public</strong> Response listFollowers(@PathParam(<span class="jxr_string">"userId"</span>) String userId)
 <a class="jxr_linenumber" name="175" href="#175">175</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="176" href="#176">176</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="176" href="#176">176</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="177" href="#177">177</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="178" href="#178">178</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = getRequesterUserProfile();
 <a class="jxr_linenumber" name="179" href="#179">179</a>             <a href="../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = views.detail(userId, accessor);
@@ -200,7 +200,7 @@
 <a class="jxr_linenumber" name="190" href="#190">190</a>     @Path(<span class="jxr_string">"{userId:.+}/"</span> + FOLLOWING)
 <a class="jxr_linenumber" name="191" href="#191">191</a>     <strong class="jxr_keyword">public</strong> Response listFollowing(@PathParam(<span class="jxr_string">"userId"</span>) String userId)
 <a class="jxr_linenumber" name="192" href="#192">192</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="193" href="#193">193</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="193" href="#193">193</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="194" href="#194">194</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="195" href="#195">195</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = getRequesterUserProfile();
 <a class="jxr_linenumber" name="196" href="#196">196</a>             <a href="../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = views.detail(userId, accessor);
@@ -284,7 +284,7 @@
 <a class="jxr_linenumber" name="274" href="#274">274</a>     @Path(<span class="jxr_string">"{userId:.+}/"</span> + BLOCKED)
 <a class="jxr_linenumber" name="275" href="#275">275</a>     <strong class="jxr_keyword">public</strong> Response listBlocked(@PathParam(<span class="jxr_string">"userId"</span>) String userId)
 <a class="jxr_linenumber" name="276" href="#276">276</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="277" href="#277">277</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="277" href="#277">277</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="278" href="#278">278</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="279" href="#279">279</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = getRequesterUserProfile();
 <a class="jxr_linenumber" name="280" href="#280">280</a>             <a href="../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = views.detail(userId, accessor);
@@ -351,7 +351,7 @@
 <a class="jxr_linenumber" name="341" href="#341">341</a>     @Path(<span class="jxr_string">"{userId:.+}/"</span> + WATCHING)
 <a class="jxr_linenumber" name="342" href="#342">342</a>     <strong class="jxr_keyword">public</strong> Response listWatching(@PathParam(<span class="jxr_string">"userId"</span>) String userId)
 <a class="jxr_linenumber" name="343" href="#343">343</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="344" href="#344">344</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="344" href="#344">344</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="345" href="#345">345</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="346" href="#346">346</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = getRequesterUserProfile();
 <a class="jxr_linenumber" name="347" href="#347">347</a>             <a href="../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = views.detail(userId, accessor);
@@ -418,7 +418,7 @@
 <a class="jxr_linenumber" name="408" href="#408">408</a>     @Path(<span class="jxr_string">"{userId:.+}/"</span> + Entities.ANNOTATION)
 <a class="jxr_linenumber" name="409" href="#409">409</a>     <strong class="jxr_keyword">public</strong> Response listAnnotations(@PathParam(<span class="jxr_string">"userId"</span>) String userId)
 <a class="jxr_linenumber" name="410" href="#410">410</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="411" href="#411">411</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="411" href="#411">411</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="412" href="#412">412</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="413" href="#413">413</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = getRequesterUserProfile();
 <a class="jxr_linenumber" name="414" href="#414">414</a>             <a href="../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = views.detail(userId, accessor);
@@ -435,7 +435,7 @@
 <a class="jxr_linenumber" name="425" href="#425">425</a>     @Path(<span class="jxr_string">"{userId:.+}/"</span> + Entities.LINK)
 <a class="jxr_linenumber" name="426" href="#426">426</a>     <strong class="jxr_keyword">public</strong> Response pageLinks(@PathParam(<span class="jxr_string">"userId"</span>) String userId)
 <a class="jxr_linenumber" name="427" href="#427">427</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="428" href="#428">428</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="428" href="#428">428</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="429" href="#429">429</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="430" href="#430">430</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = getRequesterUserProfile();
 <a class="jxr_linenumber" name="431" href="#431">431</a>             <a href="../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = views.detail(userId, accessor);
@@ -452,7 +452,7 @@
 <a class="jxr_linenumber" name="442" href="#442">442</a>     @Path(<span class="jxr_string">"{userId:.+}/"</span> + Entities.VIRTUAL_UNIT)
 <a class="jxr_linenumber" name="443" href="#443">443</a>     <strong class="jxr_keyword">public</strong> Response pageVirtualUnits(@PathParam(<span class="jxr_string">"userId"</span>) String userId)
 <a class="jxr_linenumber" name="444" href="#444">444</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, <a href="../../../eu/ehri/extension/errors/BadRequester.html">BadRequester</a> {
-<a class="jxr_linenumber" name="445" href="#445">445</a>         <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="445" href="#445">445</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
 <a class="jxr_linenumber" name="446" href="#446">446</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="447" href="#447">447</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = getRequesterUserProfile();
 <a class="jxr_linenumber" name="448" href="#448">448</a>             <a href="../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = views.detail(userId, accessor);

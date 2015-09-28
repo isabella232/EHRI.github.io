@@ -398,7 +398,7 @@
 <a class="jxr_linenumber" name="388" href="#388">388</a>         <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> Tx tx;
 <a class="jxr_linenumber" name="389" href="#389">389</a>         <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> Request request;
 <a class="jxr_linenumber" name="390" href="#390">390</a> 
-<a class="jxr_linenumber" name="391" href="#391">391</a>         <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a>(Request request, Tx tx) {
+<a class="jxr_linenumber" name="391" href="#391">391</a>         <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a>(<strong class="jxr_keyword">final</strong> Request request, <strong class="jxr_keyword">final</strong> Tx tx) {
 <a class="jxr_linenumber" name="392" href="#392">392</a>             <strong class="jxr_keyword">this</strong>.tx = tx;
 <a class="jxr_linenumber" name="393" href="#393">393</a>             <strong class="jxr_keyword">this</strong>.request = request;
 <a class="jxr_linenumber" name="394" href="#394">394</a>         }
@@ -433,7 +433,7 @@
 <a class="jxr_linenumber" name="423" href="#423">423</a>     <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> TransactionalPageStreamWrapper&lt;T&gt; <strong class="jxr_keyword">extends</strong> <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a> {
 <a class="jxr_linenumber" name="424" href="#424">424</a>         <strong class="jxr_keyword">protected</strong> Query.Page&lt;T&gt; page;
 <a class="jxr_linenumber" name="425" href="#425">425</a> 
-<a class="jxr_linenumber" name="426" href="#426">426</a>         <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalPageStreamWrapper</a>(Request request, Query.Page&lt;T&gt; page, Tx tx) {
+<a class="jxr_linenumber" name="426" href="#426">426</a>         <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalPageStreamWrapper</a>(<strong class="jxr_keyword">final</strong> Request request, <strong class="jxr_keyword">final</strong> Query.Page&lt;T&gt; page, <strong class="jxr_keyword">final</strong> Tx tx) {
 <a class="jxr_linenumber" name="427" href="#427">427</a>             <strong class="jxr_keyword">super</strong>(request, tx);
 <a class="jxr_linenumber" name="428" href="#428">428</a>             <strong class="jxr_keyword">this</strong>.page = page;
 <a class="jxr_linenumber" name="429" href="#429">429</a>         }
@@ -456,15 +456,15 @@
 <a class="jxr_linenumber" name="446" href="#446">446</a> <em class="jxr_javadoccomment">     * @return A streaming response</em>
 <a class="jxr_linenumber" name="447" href="#447">447</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="448" href="#448">448</a>     <strong class="jxr_keyword">protected</strong> &lt;T <strong class="jxr_keyword">extends</strong> Frame&gt; Response streamingPage(
-<a class="jxr_linenumber" name="449" href="#449">449</a>             Query.Page&lt;T&gt; page, Serializer serializer, Tx tx) {
+<a class="jxr_linenumber" name="449" href="#449">449</a>             <strong class="jxr_keyword">final</strong> Query.Page&lt;T&gt; page, <strong class="jxr_keyword">final</strong> Serializer serializer, <strong class="jxr_keyword">final</strong> Tx tx) {
 <a class="jxr_linenumber" name="450" href="#450">450</a>         <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a> tos = MediaType.TEXT_XML_TYPE.equals(checkMediaType())
 <a class="jxr_linenumber" name="451" href="#451">451</a>                 ? getStreamingXmlOutput(page, serializer, tx)
 <a class="jxr_linenumber" name="452" href="#452">452</a>                 : getStreamingJsonOutput(page, serializer, tx);
 <a class="jxr_linenumber" name="453" href="#453">453</a>         <strong class="jxr_keyword">return</strong> tos.getResponse();
 <a class="jxr_linenumber" name="454" href="#454">454</a>     }
 <a class="jxr_linenumber" name="455" href="#455">455</a> 
-<a class="jxr_linenumber" name="456" href="#456">456</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Frame&gt; <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a> getStreamingXmlOutput(Query.Page&lt;T&gt; page, <strong class="jxr_keyword">final</strong> Serializer serializer,
-<a class="jxr_linenumber" name="457" href="#457">457</a>             Tx tx) {
+<a class="jxr_linenumber" name="456" href="#456">456</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Frame&gt; <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a> getStreamingXmlOutput(<strong class="jxr_keyword">final</strong> Query.Page&lt;T&gt; page, <strong class="jxr_keyword">final</strong> Serializer serializer,
+<a class="jxr_linenumber" name="457" href="#457">457</a>             <strong class="jxr_keyword">final</strong> Tx tx) {
 <a class="jxr_linenumber" name="458" href="#458">458</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> TransactionalPageStreamWrapper&lt;T&gt;(request, page, tx) {
 <a class="jxr_linenumber" name="459" href="#459">459</a>             @Override
 <a class="jxr_linenumber" name="460" href="#460">460</a>             StreamingOutput getStreamingOutput() {
@@ -496,8 +496,8 @@
 <a class="jxr_linenumber" name="486" href="#486">486</a>         };
 <a class="jxr_linenumber" name="487" href="#487">487</a>     }
 <a class="jxr_linenumber" name="488" href="#488">488</a> 
-<a class="jxr_linenumber" name="489" href="#489">489</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Frame&gt; <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a> getStreamingJsonOutput(Query.Page&lt;T&gt; page, <strong class="jxr_keyword">final</strong> Serializer serializer,
-<a class="jxr_linenumber" name="490" href="#490">490</a>             Tx tx) {
+<a class="jxr_linenumber" name="489" href="#489">489</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Frame&gt; <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a> getStreamingJsonOutput(<strong class="jxr_keyword">final</strong> Query.Page&lt;T&gt; page, <strong class="jxr_keyword">final</strong> Serializer serializer,
+<a class="jxr_linenumber" name="490" href="#490">490</a>             <strong class="jxr_keyword">final</strong> Tx tx) {
 <a class="jxr_linenumber" name="491" href="#491">491</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> TransactionalPageStreamWrapper&lt;T&gt;(request, page, tx) {
 <a class="jxr_linenumber" name="492" href="#492">492</a>             @Override
 <a class="jxr_linenumber" name="493" href="#493">493</a>             <strong class="jxr_keyword">public</strong> StreamingOutput getStreamingOutput() {
@@ -565,7 +565,7 @@
 <a class="jxr_linenumber" name="555" href="#555">555</a>     }
 <a class="jxr_linenumber" name="556" href="#556">556</a> 
 <a class="jxr_linenumber" name="557" href="#557">557</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Frame&gt; <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a> getStreamingXmlOutput(<strong class="jxr_keyword">final</strong> Iterable&lt;T&gt; list, <strong class="jxr_keyword">final</strong> Serializer serializer,
-<a class="jxr_linenumber" name="558" href="#558">558</a>             Tx tx) {
+<a class="jxr_linenumber" name="558" href="#558">558</a>             <strong class="jxr_keyword">final</strong> Tx tx) {
 <a class="jxr_linenumber" name="559" href="#559">559</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a>(request, tx) {
 <a class="jxr_linenumber" name="560" href="#560">560</a>             @Override
 <a class="jxr_linenumber" name="561" href="#561">561</a>             StreamingOutput getStreamingOutput() {
@@ -597,7 +597,7 @@
 <a class="jxr_linenumber" name="587" href="#587">587</a>     }
 <a class="jxr_linenumber" name="588" href="#588">588</a> 
 <a class="jxr_linenumber" name="589" href="#589">589</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Frame&gt; <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a> getStreamingJsonOutput(<strong class="jxr_keyword">final</strong> Iterable&lt;T&gt; list, <strong class="jxr_keyword">final</strong> Serializer serializer,
-<a class="jxr_linenumber" name="590" href="#590">590</a>             Tx tx) {
+<a class="jxr_linenumber" name="590" href="#590">590</a>             <strong class="jxr_keyword">final</strong> Tx tx) {
 <a class="jxr_linenumber" name="591" href="#591">591</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a>(request, tx) {
 <a class="jxr_linenumber" name="592" href="#592">592</a>             @Override
 <a class="jxr_linenumber" name="593" href="#593">593</a>             StreamingOutput getStreamingOutput() {
@@ -628,7 +628,7 @@
 <a class="jxr_linenumber" name="618" href="#618">618</a>     }
 <a class="jxr_linenumber" name="619" href="#619">619</a> 
 <a class="jxr_linenumber" name="620" href="#620">620</a>     <strong class="jxr_keyword">private</strong> &lt;T <strong class="jxr_keyword">extends</strong> Frame&gt; Response getStreamingJsonGroupOutput(
-<a class="jxr_linenumber" name="621" href="#621">621</a>             <strong class="jxr_keyword">final</strong> Iterable&lt;? <strong class="jxr_keyword">extends</strong> Collection&lt;T&gt;&gt; list, <strong class="jxr_keyword">final</strong> Serializer serializer, Tx tx) {
+<a class="jxr_linenumber" name="621" href="#621">621</a>             <strong class="jxr_keyword">final</strong> Iterable&lt;? <strong class="jxr_keyword">extends</strong> Collection&lt;T&gt;&gt; list, <strong class="jxr_keyword">final</strong> Serializer serializer, <strong class="jxr_keyword">final</strong> Tx tx) {
 <a class="jxr_linenumber" name="622" href="#622">622</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a>(request, tx) {
 <a class="jxr_linenumber" name="623" href="#623">623</a>             @Override
 <a class="jxr_linenumber" name="624" href="#624">624</a>             StreamingOutput getStreamingOutput() {
@@ -671,7 +671,7 @@
 <a class="jxr_linenumber" name="661" href="#661">661</a> <em class="jxr_javadoccomment">     * @return a streaming response</em>
 <a class="jxr_linenumber" name="662" href="#662">662</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="663" href="#663">663</a>     <strong class="jxr_keyword">protected</strong> Response streamingVertexList(
-<a class="jxr_linenumber" name="664" href="#664">664</a>             <strong class="jxr_keyword">final</strong> Iterable&lt;Vertex&gt; list, <strong class="jxr_keyword">final</strong> Serializer serializer, Tx tx) {
+<a class="jxr_linenumber" name="664" href="#664">664</a>             <strong class="jxr_keyword">final</strong> Iterable&lt;Vertex&gt; list, <strong class="jxr_keyword">final</strong> Serializer serializer, <strong class="jxr_keyword">final</strong> Tx tx) {
 <a class="jxr_linenumber" name="665" href="#665">665</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/extension/AbstractRestResource.html">TransactionalStreamWrapper</a>(request, tx) {
 <a class="jxr_linenumber" name="666" href="#666">666</a>             @Override
 <a class="jxr_linenumber" name="667" href="#667">667</a>             StreamingOutput getStreamingOutput() {

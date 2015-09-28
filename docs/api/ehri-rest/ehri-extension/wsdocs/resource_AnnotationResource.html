@@ -98,19 +98,52 @@
         <a href="#path__annotation_-id-_-did-.html">/annotation/{id}/{did}</a>
         </li>
         <li>
-        <a href="#path__annotation_count.html">/annotation/count</a>
-        </li>
-        <li>
         <a href="#path__annotation_for_-id-.html">/annotation/for/{id}</a>
-        </li>
-        <li>
-        <a href="#path__annotation_list.html">/annotation/list</a>
         </li>
       </ul>
         <a name="path__annotation.html"></a>
       <h1>/annotation</h1>
       <p class="note">Mount Point: <a href="../annotation">/annotation</a></p>
-      <a name="PUT"></a>
+      <a name="GETpath__annotation.html"></a>
+      <h2>GET</h2>
+      <p>
+            List available resources. The default behaviour is to
+return a page of 20 items.
+<p>
+The default list limit can be overridden using the <tt>limit</tt>
+parameter, and disabled completely using a value of -1.
+<p>
+Item lists are paginated using the <tt>page</tt> parameter.
+<p>
+The page, limit, and total number of items is returned in the Content-Range response
+header in the form:
+
+<pre><code>page=1; count=20; total=50</code></pre>
+
+If the header <tt>X-Stream</tt> is set to <tt>true</tt>
+no count of total items will be performed. This is more efficient when returning large
+numbers of items or when limiting is disabled completely.
+<p>
+Example:
+<pre>
+{@code
+curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
+}
+</pre>
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of serialized item representations</p>
+      <a name="PUTpath__annotation.html"></a>
       <h2>PUT</h2>
       <p>
             Update a resource.
@@ -146,12 +179,12 @@
         The following operations are supported on this resource:
       </p>
       <ul>
-        <li><a href="#GET">GET</a></li>
-        <li><a href="#POST">POST</a></li>
-        <li><a href="#PUT">PUT</a></li>
-        <li><a href="#DELETE">DELETE</a></li>
+        <li><a href="#GETpath__annotation_-id-.html">GET</a></li>
+        <li><a href="#POSTpath__annotation_-id-.html">POST</a></li>
+        <li><a href="#PUTpath__annotation_-id-.html">PUT</a></li>
+        <li><a href="#DELETEpath__annotation_-id-.html">DELETE</a></li>
       </ul>
-      <a name="GET"></a>
+      <a name="GETpath__annotation_-id-.html"></a>
       <h2>GET</h2>
       <p>
             Fetch a resource by id.
@@ -185,7 +218,7 @@
         </tr>
       </table>
       <p>A serialized item representation</p>
-      <a name="POST"></a>
+      <a name="POSTpath__annotation_-id-.html"></a>
       <h2>POST</h2>
       <p>
             Create an annotation for a particular item.
@@ -239,7 +272,7 @@
         </tr>
       </table>
       <p>The annotation</p>
-      <a name="PUT"></a>
+      <a name="PUTpath__annotation_-id-.html"></a>
       <h2>PUT</h2>
       <p>
             Update a resource.
@@ -285,7 +318,7 @@
         </tr>
       </table>
       <p>A serialized representation of the updated resource.</p>
-      <a name="DELETE"></a>
+      <a name="DELETEpath__annotation_-id-.html"></a>
       <h2>DELETE</h2>
       <p>
             Delete a resource.
@@ -322,7 +355,7 @@
         <a name="path__annotation_-id-_-did-.html"></a>
       <h1>/annotation/{id}/{did}</h1>
       <p class="note">Mount Point: <a href="../annotation/{id}/{did}">/annotation/{id}/{did}</a></p>
-      <a name="POST"></a>
+      <a name="POSTpath__annotation_-id-_-did-.html"></a>
       <h2>POST</h2>
       <p>
             Create an annotation for a dependent node on a given item.
@@ -384,30 +417,10 @@
         </tr>
       </table>
       <p>The annotation</p>
-        <a name="path__annotation_count.html"></a>
-      <h1>/annotation/count</h1>
-      <p class="note">Mount Point: <a href="../annotation/count">/annotation/count</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Count the number of available resources.
-          </p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>The total number of applicable items</p>
         <a name="path__annotation_for_-id-.html"></a>
       <h1>/annotation/for/{id}</h1>
       <p class="note">Mount Point: <a href="../annotation/for/{id}">/annotation/for/{id}</a></p>
-      <a name="GET"></a>
+      <a name="GETpath__annotation_for_-id-.html"></a>
       <h2>GET</h2>
       <p>
             Return a map of annotations for the subtree of the given item and its
@@ -442,48 +455,6 @@ child items. Standard list parameters apply.
         </tr>
       </table>
       <p>A list of annotations on the item and it's dependent children.</p>
-        <a name="path__annotation_list.html"></a>
-      <h1>/annotation/list</h1>
-      <p class="note">Mount Point: <a href="../annotation/list">/annotation/list</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            List available resources. The default behaviour is to
-return a page of 20 items.
-<p/>
-The default list limit can be overridden using the <tt>limit</tt>
-parameter, and disabled completely using a value of -1.
-<p/>
-Item lists are paginated using the <tt>page</tt> parameter.
-<p/>
-The page, limit, and total number of items is returned in the Content-Range response
-header in the form:
-
-<pre><code>page=1; count=20; total=50</code></pre>
-
-If the header <tt>X-Stream</tt> is set to <tt>true</tt>
-no count of total items will be performed. This is more efficient when returning large
-numbers of items or when limiting is disabled completely.
-<p/>
-Example:
-<pre>
-<code>
-curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
-</code>
-</pre>
-          </p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of serialized item representations</p>
 
       <div class="clear" />
     </div>
