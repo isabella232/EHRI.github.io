@@ -61,7 +61,7 @@
 <a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testListActions() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="52" href="#52">52</a>          <em class="jxr_comment">// Create a new agent. We're going to test that this creates</em>
 <a class="jxr_linenumber" name="53" href="#53">53</a>          <em class="jxr_comment">// a corresponding action.</em>
-<a class="jxr_linenumber" name="54" href="#54">54</a>          String url = <span class="jxr_string">"/"</span> + Entities.SYSTEM_EVENT + <span class="jxr_string">"/aggregate"</span>;
+<a class="jxr_linenumber" name="54" href="#54">54</a>          String url = <span class="jxr_string">"/"</span> + Entities.SYSTEM_EVENT;
 <a class="jxr_linenumber" name="55" href="#55">55</a>          List&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt; actionsBefore = getItemListOfLists(
 <a class="jxr_linenumber" name="56" href="#56">56</a>                  url, getAdminUserProfileId());
 <a class="jxr_linenumber" name="57" href="#57">57</a>  
@@ -98,7 +98,7 @@
 <a class="jxr_linenumber" name="88" href="#88">88</a>          MultivaluedMap&lt;String, String&gt; badFilters = <strong class="jxr_keyword">new</strong> MultivaluedMapImpl();
 <a class="jxr_linenumber" name="89" href="#89">89</a>          badFilters.add(SystemEventResource.USER_PARAM, <span class="jxr_string">"nobody"</span>);
 <a class="jxr_linenumber" name="90" href="#90">90</a>  
-<a class="jxr_linenumber" name="91" href="#91">91</a>          String url = <span class="jxr_string">"/"</span> + Entities.SYSTEM_EVENT + <span class="jxr_string">"/aggregate"</span>;
+<a class="jxr_linenumber" name="91" href="#91">91</a>          String url = <span class="jxr_string">"/"</span> + Entities.SYSTEM_EVENT;
 <a class="jxr_linenumber" name="92" href="#92">92</a>          List&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt; goodFiltered = getItemListOfLists(
 <a class="jxr_linenumber" name="93" href="#93">93</a>                  url, getAdminUserProfileId(), goodFilters);
 <a class="jxr_linenumber" name="94" href="#94">94</a>  
