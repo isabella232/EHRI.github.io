@@ -92,7 +92,13 @@
         <a href="#path__import_csv.html">/import/csv</a>
         </li>
         <li>
+        <a href="#path__import_eac.html">/import/eac</a>
+        </li>
+        <li>
         <a href="#path__import_ead.html">/import/ead</a>
+        </li>
+        <li>
+        <a href="#path__import_eag.html">/import/eag</a>
         </li>
         <li>
         <a href="#path__import_skos.html">/import/skos</a>
@@ -104,27 +110,11 @@
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Import a set of CSV files. The body of the POST
-request should be a newline separated list of file
-paths.
+            Import a set of CSV files. See EAD handler for options and
+defaults but substitute text/csv for the input mimetype when
+a single file is POSTed.
 <p>
-The way you would run with would typically be:
-<p>
-<pre>
-{@code
-curl -X POST \
--H "X-User: mike" \
---data-binary @csv-list.txt \
-"http://localhost:7474/ehri/import/csv?scope=my-repo-id&log=testing"
-
-# NB: Data is sent using --data-binary to preserve line-breaks - otherwise
-# it needs url encoding.
-}
-</pre>
-<p>
-(Assuming <tt>csv-list.txt</tt> is a list of newline separated CSV file paths.)
-<p>
-(TODO: Might be better to use a different way of encoding the local file paths...)
+Additional note: no handler class is required.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -137,7 +127,7 @@ curl -X POST \
         <tr>
           <td>scope</td>
           <td>
-            The id of the import scope (i.e. repository)
+            (no documentation provided)
           </td>
           <td>query</td>
           <td></td>
@@ -145,8 +135,7 @@ curl -X POST \
         <tr>
           <td>log</td>
           <td>
-            Log message for import. If this refers to a local file
-its contents will be used.
+            (no documentation provided)
           </td>
           <td>query</td>
           <td></td>
@@ -154,7 +143,7 @@ its contents will be used.
         <tr>
           <td>importer</td>
           <td>
-            The fully-qualified import class name
+            (no documentation provided)
           </td>
           <td>query</td>
           <td></td>
@@ -164,16 +153,14 @@ its contents will be used.
       <table>
         <tr>
           <td align="right">element:</td>
-            <td>stream</td>
+            <td>data</td>
         </tr>
         <tr>
           <td align="right">media types:</td>
-          <td>*/*<br/>application/xml<br/></td>
+          <td>text/csv<br/>text/plain<br/>application/octet-stream</td>
         </tr>
       </table>
-      <p>A stream of CSV data
-<p>
-There is no property file for this. Either the csv-heading is already in graph-compatible wording, or the Importer takes care of this.</p>
+      <p>(no documentation provided)</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -182,11 +169,99 @@ There is no property file for this. Either the csv-heading is already in graph-c
         </tr>
         <tr>
           <td align="right">media types:</td>
-          <td>application/json</td>
+          <td>application/json<br/></td>
         </tr>
       </table>
-      <p>A JSON object showing how many records were created,
-updated, or unchanged.</p>
+      <p>(no documentation provided)</p>
+        <a name="path__import_eac.html"></a>
+      <h1>/import/eac</h1>
+      <p class="note">Mount Point: <a href="../import/eac">/import/eac</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Import EAC files. See EAD import for details.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>scope</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>tolerant</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>log</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>properties</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>handler</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>importer</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>data</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>text/plain<br/>text/xml<br/>application/octet-stream</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
         <a name="path__import_ead.html"></a>
       <h1>/import/ead</h1>
       <p class="note">Mount Point: <a href="../import/ead">/import/ead</a></p>
@@ -310,6 +385,95 @@ the contents.</p>
       </table>
       <p>A JSON object showing how many records were created,
 updated, or unchanged.</p>
+        <a name="path__import_eag.html"></a>
+      <h1>/import/eag</h1>
+      <p class="note">Mount Point: <a href="../import/eag">/import/eag</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Import EAG files. See EAD import for details.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>scope</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>tolerant</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>log</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>properties</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>handler</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>importer</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>data</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>text/plain<br/>text/xml<br/>application/octet-stream</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
         <a name="path__import_skos.html"></a>
       <h1>/import/skos</h1>
       <p class="note">Mount Point: <a href="../import/skos">/import/skos</a></p>

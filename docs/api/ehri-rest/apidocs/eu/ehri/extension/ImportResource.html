@@ -129,6 +129,14 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/ImportResource.html#CSV_MEDIA_TYPE">CSV_MEDIA_TYPE</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/ImportResource.html#ENDPOINT">ENDPOINT</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/ImportResource.html#FORMAT_PARAM">FORMAT_PARAM</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -199,11 +207,23 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/ImportResource.html#importCsv(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importCsv</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
-         <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream)</code>
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)</code>
 <div class="block">Import a set of CSV files.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/ImportResource.html#importEac(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEac</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propertyFile,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;handlerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)</code>
+<div class="block">Import EAC files.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/ImportResource.html#importEad(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEad</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
@@ -213,6 +233,18 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
          <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)</code>
 <div class="block">Import a set of EAD files.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/ImportResource.html#importEag(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEag</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propertyFile,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;handlerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)</code>
+<div class="block">Import EAG files.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -255,6 +287,16 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a name="ENDPOINT">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ENDPOINT</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ENDPOINT</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#eu.ehri.extension.ImportResource.ENDPOINT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
 <a name="LOG_PARAM">
 <!--   -->
 </a>
@@ -318,11 +360,21 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <a name="FORMAT_PARAM">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>FORMAT_PARAM</h4>
 <pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> FORMAT_PARAM</pre>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#eu.ehri.extension.ImportResource.FORMAT_PARAM">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="CSV_MEDIA_TYPE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>CSV_MEDIA_TYPE</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> CSV_MEDIA_TYPE</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#eu.ehri.extension.ImportResource.CSV_MEDIA_TYPE">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 </li>
@@ -449,6 +501,56 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <dd><code><a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></code></dd></dl>
 </li>
 </ul>
+<a name="importEag(java.lang.String, java.lang.Boolean, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.io.InputStream)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>importEag</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;importEag(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propertyFile,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;handlerClass,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)
+                                    throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                           <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                           <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                                           <a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
+<div class="block">Import EAG files. See EAD import for details.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></code></dd></dl>
+</li>
+</ul>
+<a name="importEac(java.lang.String, java.lang.Boolean, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.io.InputStream)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>importEac</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;importEac(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propertyFile,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;handlerClass,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)
+                                    throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                                           <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                           <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                                           <a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
+<div class="block">Import EAC files. See EAD import for details.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></code></dd></dl>
+</li>
+</ul>
 <a name="importCsv(java.lang.String, java.lang.String, java.lang.String, java.io.InputStream)">
 <!--   -->
 </a>
@@ -458,38 +560,17 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;importCsv(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
                                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
                                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
-                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream)
+                                  <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)
                                     throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
                                            <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
                                            <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
                                            <a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
-<div class="block">Import a set of CSV files. The body of the POST
- request should be a newline separated list of file
- paths.
+<div class="block">Import a set of CSV files. See EAD handler for options and
+ defaults but substitute text/csv for the input mimetype when
+ a single file is POSTed.
  <p>
- The way you would run with would typically be:
- <p>
- <pre>
- <code>curl -X POST \
-      -H "X-User: mike" \
-      --data-binary @csv-list.txt \
-      "http://localhost:7474/ehri/import/csv?scope=my-repo-id&amp;log=testing"
-
- # NB: Data is sent using --data-binary to preserve line-breaks - otherwise
- # it needs url encoding.
- </code>
- </pre>
- <p>
- (Assuming <code>csv-list.txt</code> is a list of newline separated CSV file paths.)
- <p>
- (TODO: Might be better to use a different way of encoding the local file paths...)</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>scopeId</code> - The id of the import scope (i.e. repository)</dd><dd><code>logMessage</code> - Log message for import. If this refers to a local file
-                      its contents will be used.</dd><dd><code>importerClass</code> - The fully-qualified import class name</dd><dd><code>stream</code> - A stream of CSV data
-                      <p>
-                      There is no property file for this. Either the csv-heading is already in graph-compatible wording, or the Importer takes care of this.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A JSON object showing how many records were created,
- updated, or unchanged.</dd>
-<dt><span class="strong">Throws:</span></dt>
+ Additional note: no handler class is required.</div>
+<dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
 <dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>

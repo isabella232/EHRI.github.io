@@ -1299,58 +1299,43 @@
     <wadl:resource path="/import/csv">
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Import a set of CSV files. The body of the POST]]>
-<![CDATA[request should be a newline separated list of file]]>
-<![CDATA[paths.]]>
+          <![CDATA[Import a set of CSV files. See EAD handler for options and]]>
+<![CDATA[defaults but substitute text/csv for the input mimetype when]]>
+<![CDATA[a single file is POSTed.]]>
 <![CDATA[<p>]]>
-<![CDATA[The way you would run with would typically be:]]>
-<![CDATA[<p>]]>
-<![CDATA[<pre>]]>
-<![CDATA[{@code]]>
-<![CDATA[curl -X POST \]]>
-<![CDATA[-H "X-User: mike" \]]>
-<![CDATA[--data-binary @csv-list.txt \]]>
-<![CDATA["http://localhost:7474/ehri/import/csv?scope=my-repo-id&log=testing"]]>
-<![CDATA[# NB: Data is sent using --data-binary to preserve line-breaks - otherwise]]>
-<![CDATA[# it needs url encoding.]]>
-<![CDATA[}]]>
-<![CDATA[</pre>]]>
-<![CDATA[<p>]]>
-<![CDATA[(Assuming <tt>csv-list.txt</tt> is a list of newline separated CSV file paths.)]]>
-<![CDATA[<p>]]>
-<![CDATA[(TODO: Might be better to use a different way of encoding the local file paths...)]]>
+<![CDATA[Additional note: no handler class is required.]]>
         </wadl:doc>
         <wadl:request>
-          <wadl:doc>
-            <![CDATA[A stream of CSV data]]>
-<![CDATA[<p>]]>
-<![CDATA[There is no property file for this. Either the csv-heading is already in graph-compatible wording, or the Importer takes care of thi]]>
-<![CDATA[s.]]>
-          </wadl:doc>
-          <wadl:representation mediaType="*/*"/>
-          <wadl:representation mediaType="application/xml"/>
-          <wadl:param name="scope" style="query">
-            <wadl:doc>
-              <![CDATA[The id of the import scope (i.e. repository)]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="log" style="query">
-            <wadl:doc>
-              <![CDATA[Log message for import. If this refers to a local file]]>
-<![CDATA[its contents will be used.]]>
-            </wadl:doc>
-          </wadl:param>
-          <wadl:param name="importer" style="query">
-            <wadl:doc>
-              <![CDATA[The fully-qualified import class name]]>
-            </wadl:doc>
-          </wadl:param>
+          <wadl:representation mediaType="text/csv"/>
+          <wadl:representation mediaType="text/plain"/>
+          <wadl:representation mediaType="application/octet-stream"/>
+          <wadl:param name="scope" style="query"/>
+          <wadl:param name="log" style="query"/>
+          <wadl:param name="importer" style="query"/>
         </wadl:request>
         <wadl:response>
-          <wadl:doc>
-            <![CDATA[A JSON object showing how many records were created,]]>
-<![CDATA[updated, or unchanged.]]>
-          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/import/eac">
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Import EAC files. See EAD import for details.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/xml"/>
+          <wadl:representation mediaType="text/plain"/>
+          <wadl:representation mediaType="text/xml"/>
+          <wadl:representation mediaType="application/octet-stream"/>
+          <wadl:param name="scope" style="query"/>
+          <wadl:param name="tolerant" style="query"/>
+          <wadl:param name="log" style="query"/>
+          <wadl:param name="properties" style="query"/>
+          <wadl:param name="handler" style="query"/>
+          <wadl:param name="importer" style="query"/>
+        </wadl:request>
+        <wadl:response>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1381,15 +1366,15 @@
 <![CDATA[}]]>
 <![CDATA[</pre>]]>
 <![CDATA[<p>]]>
-<![CDATA[(Assuming <tt>ead-list.txt</tt> is a list of newline separated EAD file paths.)]]>
+<![CDATA[(Assuming <tt>ea]]>
+<![CDATA[d-list.txt</tt> is a list of newline separated EAD file paths.)]]>
 <![CDATA[<p>]]>
 <![CDATA[(TODO: Might be better to use a different way of encoding the local file paths...)]]>
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
             <![CDATA[File data containing one of: a single EAD file,]]>
-<![CDATA[multip]]>
-<![CDATA[le EAD files in an archive, a list of local file]]>
+<![CDATA[multiple EAD files in an archive, a list of local file]]>
 <![CDATA[paths. The Content-Type header is used to distinguish]]>
 <![CDATA[the contents.]]>
           </wadl:doc>
@@ -1441,11 +1426,32 @@
         </wadl:response>
       </wadl:method>
     </wadl:resource>
+    <wadl:resource path="/import/eag">
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Import EAG files. See EAD import for details.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/xml"/>
+          <wadl:representation mediaType="text/plain"/>
+          <wadl:representation mediaType="text/xml"/>
+          <wadl:representation mediaType="application/octet-stream"/>
+          <wadl:param name="scope" style="query"/>
+          <wadl:param name="tolerant" style="query"/>
+          <wadl:param name="log" style="query"/>
+          <wadl:param name="properties" style="query"/>
+          <wadl:param name="handler" style="query"/>
+          <wadl:param name="importer" style="query"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
     <wadl:resource path="/import/skos">
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Import a SKOS file, of varying format]]>
-<![CDATA[s, as specified by the &quot;language&quot;]]>
+          <![CDATA[Import a SKOS file, of varying formats, as specified by the &quot;language&quot;]]>
 <![CDATA[column of the file extensions table <a href="https://jena.apache.org/documentation/io/">here</a>.]]>
 <![CDATA[<p>]]>
 <![CDATA[Example:]]>
@@ -1719,7 +1725,8 @@
         <wadl:doc>
           <![CDATA[Find an replace a property value across an entire entity class, e.g.]]>
 <![CDATA[if a DocumentaryUnit has a property with name &quot;foo&quot; and value &quot;bar&quot;,]]>
-<![CDATA[change the value to &quot;baz&quot; on all items.]]>
+<![CDATA[change the value to &quot;b]]>
+<![CDATA[az&quot; on all items.]]>
 <![CDATA[<p>]]>
 <![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
         </wadl:doc>
@@ -1762,8 +1769,7 @@
 <![CDATA[providing a regex value <tt>^www</tt> and replacement <tt>http://www</tt> will]]>
 <![CDATA[give the property a value of &quot;http://www.foo.com/bar&quot;.]]>
 <![CDATA[<p>]]>
-<![CDATA[<strong>Warning: This is a sharp tool!]]>
-<![CDATA[Back up the whole database first!</strong>]]>
+<![CDATA[<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>]]>
         </wadl:doc>
         <wadl:request>
           <wadl:param name="type" style="query">
@@ -2505,8 +2511,7 @@
       </wadl:method>
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Set a user's permissions on a give]]>
-<![CDATA[n item.]]>
+          <![CDATA[Set a user's permissions on a given item.]]>
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
@@ -2658,7 +2663,8 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[a list of event ranges]]>
+            <![CDATA[a list of ev]]>
+<![CDATA[ent ranges]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -2851,7 +2857,8 @@
 <![CDATA[<p>]]>
 <![CDATA[The default mode is to output items whose IDs would change, without]]>
 <![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
-<![CDATA[output items that would cause collisions if renamed, whereas tolerant]]>
+<![CDATA[output items that would cause collision]]>
+<![CDATA[s if renamed, whereas tolerant]]>
 <![CDATA[mode will skip them altogether.]]>
 <![CDATA[<p>]]>
 <![CDATA[The commit flag will cause renaming to take place.]]>
@@ -2897,8 +2904,7 @@
 <![CDATA[<p>]]>
 <![CDATA[The default mode is to output items whose IDs would change, without]]>
 <![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
-<![CDATA[output items that would cause collisions if renamed, whereas tol]]>
-<![CDATA[erant]]>
+<![CDATA[output items that would cause collisions if renamed, whereas tolerant]]>
 <![CDATA[mode will skip them altogether.]]>
 <![CDATA[<p>]]>
 <![CDATA[The commit flag will cause renaming to take place.]]>
@@ -3359,8 +3365,7 @@
           </wadl:param>
           <wadl:param name="lang" style="query">
             <wadl:doc>
-              <![CDATA[the language code o]]>
-<![CDATA[f created concepts]]>
+              <![CDATA[the language code of created concepts]]>
             </wadl:doc>
           </wadl:param>
           <wadl:param name="single" style="query">
@@ -3378,7 +3383,8 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[the number of links created]]>
+            <![CDATA[the number of li]]>
+<![CDATA[nks created]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
