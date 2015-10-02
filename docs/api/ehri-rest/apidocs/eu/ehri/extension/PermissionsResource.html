@@ -126,7 +126,7 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></h3>
-<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
+<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#request">request</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#requestHeaders">requestHeaders</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
 </ul>
 </li>
 </ul>
@@ -300,14 +300,12 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <li class="blockList">
 <h4>listPermissionGrants</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listPermissionGrants(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
-                                               throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                      <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                               throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">Get a list of permission grants for the given user</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The user's id</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A list of permission grants for the user</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="listPermissionGrantsForItem(java.lang.String)">
@@ -318,14 +316,12 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <h4>listPermissionGrantsForItem</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listPermissionGrantsForItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
                                                       throws <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                             <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                             <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                             <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">List all the permission grants that relate specifically to this item.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>A list of grants for this item</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="listPermissionGrantsForScope(java.lang.String)">
@@ -335,13 +331,11 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <li class="blockList">
 <h4>listPermissionGrantsForScope</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listPermissionGrantsForScope(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
-                                                       throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                              <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                       throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">List all the permission grants that relate specifically to this scope.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>A list of grants for the given scope</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="getGlobalMatrix()">
@@ -352,15 +346,13 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <h4>getGlobalMatrix</h4>
 <pre>public&nbsp;<a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html" title="class in eu.ehri.project.acl">InheritedGlobalPermissionSet</a>&nbsp;getGlobalMatrix()
                                              throws <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                    <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                    <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                    <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">Get the global permission matrix for the user making the request, based
  on the Authorization header.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>The current user's global permissions</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="getGlobalMatrix(java.lang.String)">
@@ -389,15 +381,13 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <pre>public&nbsp;<a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html" title="class in eu.ehri.project.acl">InheritedGlobalPermissionSet</a>&nbsp;setGlobalMatrix(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                                            <a href="../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</a>&nbsp;globals)
                                              throws <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                    <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                    <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                    <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">Set a user's global permission matrix.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - The user ID</dd><dd><code>globals</code> - The permission matrix data</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The new permissions</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="getEntityMatrix(java.lang.String, java.lang.String)">
@@ -446,15 +436,13 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
                                                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                                                 <a href="../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</a>&nbsp;globals)
                                                   throws <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                         <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                         <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                         <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">Set a user's permissions on a content type with a given scope.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user</dd><dd><code>id</code> - the scope id</dd><dd><code>globals</code> - the serialized permission list</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The new permission matrix</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="setItemPermissions(java.lang.String, java.lang.String, eu.ehri.project.acl.ItemPermissionSet)">
@@ -467,14 +455,12 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
                                             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                                             <a href="../../../eu/ehri/project/acl/ItemPermissionSet.html" title="class in eu.ehri.project.acl">ItemPermissionSet</a>&nbsp;itemPerms)
                                               throws <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                     <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                     <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                     <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">Set a user's permissions on a given item.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - the item id</dd><dd><code>userId</code> - the user id</dd><dd><code>itemPerms</code> - the serialized permission list</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 </li>

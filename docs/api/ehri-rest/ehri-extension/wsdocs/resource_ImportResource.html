@@ -95,16 +95,13 @@
         <a href="#path__import_ead.html">/import/ead</a>
         </li>
         <li>
-        <a href="#path__import_single_ead.html">/import/single_ead</a>
-        </li>
-        <li>
         <a href="#path__import_skos.html">/import/skos</a>
         </li>
       </ul>
         <a name="path__import_csv.html"></a>
       <h1>/import/csv</h1>
       <p class="note">Mount Point: <a href="../import/csv">/import/csv</a></p>
-      <a name="POSTpath__import_csv.html"></a>
+      <a name="POST"></a>
       <h2>POST</h2>
       <p>
             Import a set of CSV files. The body of the POST
@@ -193,12 +190,18 @@ updated, or unchanged.</p>
         <a name="path__import_ead.html"></a>
       <h1>/import/ead</h1>
       <p class="note">Mount Point: <a href="../import/ead">/import/ead</a></p>
-      <a name="POSTpath__import_ead.html"></a>
+      <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Import a set of EAD files. The body of the POST
-request should be a newline separated list of file
-paths.
+            Import a set of EAD files. The POST body can be one of:
+<ul>
+<li>a single EAD file</li>
+<li>multiple EAD files in an archive</li>
+<li>a plain test file containing local file paths</li>
+</ul>
+The Content-Type header is used to distinguish the contents.
+<br>
+<b>Note:</b> The archive does not currently support compression.
 <p>
 The way you would run with would typically be:
 <p>
@@ -283,15 +286,17 @@ configuration file.
       <table>
         <tr>
           <td align="right">element:</td>
-            <td>pathList</td>
+            <td>data</td>
         </tr>
         <tr>
           <td align="right">media types:</td>
-          <td>text/plain<br/></td>
+          <td>application/xml<br/>text/plain<br/>text/xml<br/>application/octet-stream</td>
         </tr>
       </table>
-      <p>A string containing a list of local file paths
-to import.</p>
+      <p>File data containing one of: a single EAD file,
+multiple EAD files in an archive, a list of local file
+paths. The Content-Type header is used to distinguish
+the contents.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -300,117 +305,7 @@ to import.</p>
         </tr>
         <tr>
           <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>A JSON object showing how many records were created,
-updated, or unchanged.</p>
-        <a name="path__import_single_ead.html"></a>
-      <h1>/import/single_ead</h1>
-      <p class="note">Mount Point: <a href="../import/single_ead">/import/single_ead</a></p>
-      <a name="POSTpath__import_single_ead.html"></a>
-      <h2>POST</h2>
-      <p>
-            Import a single EAD file. The body of the POST
-request should be an EAD file.
-<p>
-The way you would run with would typically be:
-<p>
-<pre>
-{@code
-curl -X POST \
--H "X-User: mike" \
---data-binary @ead-file.xml \
-"http://localhost:7474/ehri/import/single_ead?scope=my-repo-id&log=testing&tolerant=true"
-
-# NB: Data is sent using --data-binary to preserve line-breaks - otherwise
-# it needs url encoding.
-}
-</pre>
-<p>
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>scope</td>
-          <td>
-            The id of the import scope (i.e. repository)
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>tolerant</td>
-          <td>
-            Whether or not to die on the first validation error
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>log</td>
-          <td>
-            Log message for import. If this refers to an accessible local file
-its contents will be used.
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>properties</td>
-          <td>
-            A local file path pointing to an import properties
-configuration file.
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>handler</td>
-          <td>
-            The fully-qualified handler class name
-(defaults to EadHandler)
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>importer</td>
-          <td>
-            The fully-qualified import class name
-(defaults to EadImporter)
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Request Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-            <td>input</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/xml<br/></td>
-        </tr>
-      </table>
-      <p>An XML document that is a valid EAD document.</p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
+          <td>application/json<br/></td>
         </tr>
       </table>
       <p>A JSON object showing how many records were created,
@@ -418,7 +313,7 @@ updated, or unchanged.</p>
         <a name="path__import_skos.html"></a>
       <h1>/import/skos</h1>
       <p class="note">Mount Point: <a href="../import/skos">/import/skos</a></p>
-      <a name="POSTpath__import_skos.html"></a>
+      <a name="POST"></a>
       <h2>POST</h2>
       <p>
             Import a SKOS file, of varying formats, as specified by the &quot;language&quot;

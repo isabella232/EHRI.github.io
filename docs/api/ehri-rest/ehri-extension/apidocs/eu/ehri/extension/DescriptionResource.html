@@ -111,7 +111,7 @@
 <br>
 <pre>public class <span class="strong">DescriptionResource</span>
 extends <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a>&lt;<a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/models/base/DescribedEntity.html?is-external=true" title="class or interface in eu.ehri.project.models.base">DescribedEntity</a>&gt;</pre>
-<div class="block">Provides a RESTful interface for dealing with described entities.</div>
+<div class="block">Provides a web service interface for dealing with described entities.</div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
 </li>
@@ -164,7 +164,7 @@ extends <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.htm
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></h3>
-<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
+<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#request">request</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#requestHeaders">requestHeaders</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
 </ul>
 </li>
 </ul>
@@ -313,14 +313,12 @@ extends <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.htm
                                             throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a>,
-                                                   <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                   <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                   <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
-<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="updateDescription(java.lang.String, eu.ehri.project.persistence.Bundle)">
@@ -335,14 +333,12 @@ extends <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.htm
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                   <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/SerializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">SerializationError</a></pre>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/SerializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">SerializationError</a></code></dd></dl>
 </li>
 </ul>
@@ -360,7 +356,6 @@ extends <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.htm
                                                          <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a>,
                                                          <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a>,
                                                          <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                         <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
                                                          <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/SerializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">SerializationError</a></pre>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</a></code></dd>
@@ -368,7 +363,6 @@ extends <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.htm
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/SerializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">SerializationError</a></code></dd></dl>
 </li>
 </ul>
@@ -383,13 +377,11 @@ extends <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.htm
                                             throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a>,
-                                                   <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/SerializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">SerializationError</a></pre>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/SerializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">SerializationError</a></code></dd></dl>
 </li>
 </ul>
@@ -405,14 +397,12 @@ extends <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.htm
                                             throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a>,
-                                                   <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                   <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                   <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
-<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="deleteAccessPoint(java.lang.String, java.lang.String, java.lang.String)">
@@ -428,15 +418,13 @@ extends <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.htm
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a>,
                                                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a>,
-                                                   <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                   <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                   <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/AccessDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">AccessDenied</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
-<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 </li>

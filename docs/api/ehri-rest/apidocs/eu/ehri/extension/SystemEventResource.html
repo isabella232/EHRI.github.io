@@ -132,23 +132,23 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
  parameter that groups sequential events according to one of two different
  strategies:
  <dl>
-     <dt>user</dt>
-     <dd>Groups sequential events of all types that are initiated by the same actioner</dd>
-     <dt>strict</dt>
-     <dd>
-         Groups sequential events that:
-         <ul>
-             <li>have the same type</li>
-             <li>have the same actioner</li>
-             <li>have the same subjects</li>
-             <li>have the same scope</li>
-             <li>have the same log message</li>
-         </ul>
-     </dd>
+ <dt>user</dt>
+ <dd>Groups sequential events of all types that are initiated by the same actioner</dd>
+ <dt>strict</dt>
+ <dd>
+ Groups sequential events that:
+ <ul>
+ <li>have the same type</li>
+ <li>have the same actioner</li>
+ <li>have the same subjects</li>
+ <li>have the same scope</li>
+ <li>have the same log message</li>
+ </ul>
+ </dd>
  </dl>
  <p>
  Additionally, aggregation can be disabled by using <code>aggregation=off</code>.
-
+ <p>
  Standard paging parameters apply to all end-points.</div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
@@ -230,7 +230,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></h3>
-<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
+<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#request">request</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#requestHeaders">requestHeaders</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
 </ul>
 </li>
 </ul>
@@ -471,9 +471,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <li class="blockList">
 <h4>get</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;get(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
-                              throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                     <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a>,
-                                     <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                              throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../eu/ehri/extension/base/GetResource.html#get(java.lang.String)">GetResource</a></code></strong></div>
 <div class="block">Fetch a resource by id.</div>
 <dl>
@@ -482,9 +480,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The requested item id</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A serialized item representation</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="list(eu.ehri.project.views.EventViews.Aggregation)">
@@ -493,14 +489,11 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <ul class="blockList">
 <li class="blockList">
 <h4>list</h4>
-<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;list(<a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
-                               throws <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;list(<a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)</pre>
 <div class="block">List aggregated global events. Standard list parameters for paging apply.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>aggregation</code> - The manner in which to aggregate the results, accepting
                     "user", "strict" or "off" (no aggregation). Default is
-                    "user".</dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+                    "user".</dd></dl>
 </li>
 </ul>
 <a name="listUserActions(java.lang.String)">
@@ -510,14 +503,12 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <li class="blockList">
 <h4>listUserActions</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listUserActions(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)
-                                          throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                 <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                          throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">Fetch a list of a user's actions.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user's ID</dd>
 <dt><span class="strong">Returns:</span></dt><dd>a list of event ranges</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="aggregateUserActions(java.lang.String, eu.ehri.project.views.EventViews.Aggregation)">
@@ -528,16 +519,14 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <h4>aggregateUserActions</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;aggregateUserActions(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                                              <a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
-                                               throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                      <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                               throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">Fetch an aggregate list of a user's actions.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user's ID</dd><dd><code>aggregation</code> - The manner in which to aggregate the results, accepting
                     "user", "strict" or "off" (no aggregation). Default is
                     <b>strict</b>.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>a list of event ranges</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="listEventsForUser(java.lang.String)">
@@ -547,14 +536,12 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <li class="blockList">
 <h4>listEventsForUser</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listEventsForUser(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)
-                                            throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                   <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                            throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">List actions that are relevant to a given user based on
  the other users that they follow and the items they watch.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user's ID</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="aggregateEventsForUser(java.lang.String, eu.ehri.project.views.EventViews.Aggregation)">
@@ -565,16 +552,14 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <h4>aggregateEventsForUser</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;aggregateEventsForUser(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                                                <a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
-                                                 throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                        <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                 throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">Aggregate actions that are relevant to a given user based on
  the other users that they follow and the items they watch.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user's ID</dd><dd><code>aggregation</code> - The manner in which to aggregate the results, accepting
                     "user", "strict" or "off" (no aggregation). Default is
                     "user".</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="pageEventsForItem(java.lang.String)">
@@ -585,14 +570,12 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <h4>pageEventsForItem</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;pageEventsForItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
                                             throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                   <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
                                                    <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></pre>
 <div class="block">Lookup and page the history for a given item.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The event id</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A list of events</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>
 <dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd></dl>
 </li>
 </ul>
@@ -605,14 +588,12 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;aggregateEventsForItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                                                <a href="../../../eu/ehri/project/views/EventViews.Aggregation.html" title="enum in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
                                                  throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                        <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
                                                         <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></pre>
 <div class="block">Lookup and page the history for a given item.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The event id</dd><dd><code>aggregation</code> - the aggregation stategy</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A list of events</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>
 <dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd></dl>
 </li>
 </ul>
@@ -624,14 +605,12 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <h4>pageSubjectsForEvent</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;pageSubjectsForEvent(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
                                                throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                      <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
                                                       <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></pre>
 <div class="block">Fetch a page of subjects for a given event.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - the event id</dd>
 <dt><span class="strong">Returns:</span></dt><dd>a list of subject items</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>
 <dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd></dl>
 </li>
 </ul>

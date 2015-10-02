@@ -383,7 +383,7 @@
 <a class="jxr_linenumber" name="373" href="#373">373</a>     <strong class="jxr_keyword">public</strong> Multimap&lt;String,Bundle&gt; getDependentRelations() {
 <a class="jxr_linenumber" name="374" href="#374">374</a>         Multimap&lt;String, Bundle&gt; dependentRelations = ArrayListMultimap.create();
 <a class="jxr_linenumber" name="375" href="#375">375</a>         Map&lt;String, Direction&gt; dependents = <a href="../../../../eu/ehri/project/models/utils/ClassUtils.html">ClassUtils</a>
-<a class="jxr_linenumber" name="376" href="#376">376</a>                 .getDependentRelations(type.getEntityClass());
+<a class="jxr_linenumber" name="376" href="#376">376</a>                 .getDependentRelations(type.getJavaClass());
 <a class="jxr_linenumber" name="377" href="#377">377</a>         <strong class="jxr_keyword">for</strong> (String relation : relations.keySet()) {
 <a class="jxr_linenumber" name="378" href="#378">378</a>             <strong class="jxr_keyword">if</strong> (dependents.containsKey(relation)) {
 <a class="jxr_linenumber" name="379" href="#379">379</a>                 <strong class="jxr_keyword">for</strong> (Bundle child : relations.get(relation)) {
@@ -518,8 +518,8 @@
 <a class="jxr_linenumber" name="508" href="#508">508</a> <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="509" href="#509">509</a> <em class="jxr_javadoccomment">     * @return The bundle's type class</em>
 <a class="jxr_linenumber" name="510" href="#510">510</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="511" href="#511">511</a>     <strong class="jxr_keyword">public</strong> Class&lt;?&gt; getBundleClass() {
-<a class="jxr_linenumber" name="512" href="#512">512</a>         <strong class="jxr_keyword">return</strong> type.getEntityClass();
+<a class="jxr_linenumber" name="511" href="#511">511</a>     <strong class="jxr_keyword">public</strong> Class&lt;?&gt; getBundleJavaClass() {
+<a class="jxr_linenumber" name="512" href="#512">512</a>         <strong class="jxr_keyword">return</strong> type.getJavaClass();
 <a class="jxr_linenumber" name="513" href="#513">513</a>     }
 <a class="jxr_linenumber" name="514" href="#514">514</a> 
 <a class="jxr_linenumber" name="515" href="#515">515</a>     <em class="jxr_javadoccomment">/**</em>
@@ -529,7 +529,7 @@
 <a class="jxr_linenumber" name="519" href="#519">519</a> <em class="jxr_javadoccomment">     * @return A list of property keys for the bundle's type</em>
 <a class="jxr_linenumber" name="520" href="#520">520</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="521" href="#521">521</a>     <strong class="jxr_keyword">public</strong> Collection&lt;String&gt; getPropertyKeys() {
-<a class="jxr_linenumber" name="522" href="#522">522</a>         <strong class="jxr_keyword">return</strong> ClassUtils.getPropertyKeys(type.getEntityClass());
+<a class="jxr_linenumber" name="522" href="#522">522</a>         <strong class="jxr_keyword">return</strong> ClassUtils.getPropertyKeys(type.getJavaClass());
 <a class="jxr_linenumber" name="523" href="#523">523</a>     }
 <a class="jxr_linenumber" name="524" href="#524">524</a> 
 <a class="jxr_linenumber" name="525" href="#525">525</a>     <em class="jxr_javadoccomment">/**</em>
@@ -538,7 +538,7 @@
 <a class="jxr_linenumber" name="528" href="#528">528</a> <em class="jxr_javadoccomment">     * @return A list of unique property keys for the bundle's type</em>
 <a class="jxr_linenumber" name="529" href="#529">529</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="530" href="#530">530</a>     <strong class="jxr_keyword">public</strong> Collection&lt;String&gt; getUniquePropertyKeys() {
-<a class="jxr_linenumber" name="531" href="#531">531</a>         <strong class="jxr_keyword">return</strong> ClassUtils.getUniquePropertyKeys(type.getEntityClass());
+<a class="jxr_linenumber" name="531" href="#531">531</a>         <strong class="jxr_keyword">return</strong> ClassUtils.getUniquePropertyKeys(type.getJavaClass());
 <a class="jxr_linenumber" name="532" href="#532">532</a>     }
 <a class="jxr_linenumber" name="533" href="#533">533</a> 
 <a class="jxr_linenumber" name="534" href="#534">534</a>     <em class="jxr_javadoccomment">/**</em>

@@ -107,7 +107,7 @@
 <pre>public class <span class="strong">PermissionGrantResource</span>
 extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></pre>
 <div class="block">Provides a web service interface for the PermissionGrant model.
- 
+ <p>
  FIXME: PermissionGrant is not currently an AccessibleEntity so
  handling it is complicated. We need to re-architect the REST views
  to handle more than just the initially-envisaged scenarios.</div>
@@ -130,7 +130,7 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></h3>
-<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
+<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#request">request</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#requestHeaders">requestHeaders</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
 </ul>
 </li>
 </ul>
@@ -231,7 +231,6 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;getPermissionGrant(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
                                              throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a>,
                                                     <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                    <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
                                                     <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/SerializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">SerializationError</a></pre>
 <div class="block">Fetch a given permission grant.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The ID of the permission grant</dd>
@@ -239,7 +238,6 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/SerializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">SerializationError</a></code></dd></dl>
 </li>
 </ul>
@@ -251,14 +249,12 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <h4>revokePermissionGrant</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;revokePermissionGrant(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
                                                 throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                                       <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                       <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+                                                       <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a></pre>
 <div class="block">Revoke a particular permission grant.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The ID of the permission grant</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a></code></dd></dl>
 </li>
 </ul>
 </li>

@@ -372,7 +372,7 @@
 <a class="jxr_linenumber" name="362" href="#362">362</a>         String typeName = vertex.getProperty(EntityType.TYPE_KEY);
 <a class="jxr_linenumber" name="363" href="#363">363</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="364" href="#364">364</a>             <a href="../../../../../eu/ehri/project/models/EntityClass.html">EntityClass</a> entityClass = EntityClass.withName(typeName);
-<a class="jxr_linenumber" name="365" href="#365">365</a>             <strong class="jxr_keyword">return</strong> ClassUtils.getPropertyKeys(entityClass.getEntityClass());
+<a class="jxr_linenumber" name="365" href="#365">365</a>             <strong class="jxr_keyword">return</strong> ClassUtils.getPropertyKeys(entityClass.getJavaClass());
 <a class="jxr_linenumber" name="366" href="#366">366</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
 <a class="jxr_linenumber" name="367" href="#367">367</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> EmptyIterable&lt;&gt;();
 <a class="jxr_linenumber" name="368" href="#368">368</a>         }

@@ -358,7 +358,7 @@
 <a class="jxr_linenumber" name="348" href="#348">348</a>             String id = item.getProperty(EntityType.ID_KEY);
 <a class="jxr_linenumber" name="349" href="#349">349</a>             logger.trace(<span class="jxr_string">"Serializing {} ({}) at depth {}"</span>, id, type, depth);
 <a class="jxr_linenumber" name="350" href="#350">350</a> 
-<a class="jxr_linenumber" name="351" href="#351">351</a>             Class&lt;? <strong class="jxr_keyword">extends</strong> Frame&gt; cls = type.getEntityClass();
+<a class="jxr_linenumber" name="351" href="#351">351</a>             Class&lt;? <strong class="jxr_keyword">extends</strong> Frame&gt; cls = type.getJavaClass();
 <a class="jxr_linenumber" name="352" href="#352">352</a>             Bundle.Builder builder = Bundle.Builder.withClass(type)
 <a class="jxr_linenumber" name="353" href="#353">353</a>                     .setId(id)
 <a class="jxr_linenumber" name="354" href="#354">354</a>                     .addData(getVertexData(item, type, lite))
@@ -530,7 +530,7 @@
 <a class="jxr_linenumber" name="520" href="#520">520</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="521" href="#521">521</a>     <strong class="jxr_keyword">private</strong> List&lt;String&gt; getMandatoryOrSpecificProps(<a href="../../../../eu/ehri/project/models/EntityClass.html">EntityClass</a> type) {
 <a class="jxr_linenumber" name="522" href="#522">522</a>         <strong class="jxr_keyword">return</strong> Lists.newArrayList(
-<a class="jxr_linenumber" name="523" href="#523">523</a>                 Iterables.concat(ClassUtils.getMandatoryPropertyKeys(type.getEntityClass()),
+<a class="jxr_linenumber" name="523" href="#523">523</a>                 Iterables.concat(ClassUtils.getMandatoryPropertyKeys(type.getJavaClass()),
 <a class="jxr_linenumber" name="524" href="#524">524</a>                         includeProps));
 <a class="jxr_linenumber" name="525" href="#525">525</a>     }
 <a class="jxr_linenumber" name="526" href="#526">526</a> 
@@ -581,7 +581,7 @@
 <a class="jxr_linenumber" name="571" href="#571">571</a>         <strong class="jxr_keyword">if</strong> (depth &lt; maxTraversals) {
 <a class="jxr_linenumber" name="572" href="#572">572</a>             Class&lt;?&gt; cls = EntityClass.withName(
 <a class="jxr_linenumber" name="573" href="#573">573</a>                     (String) item.asVertex().getProperty(EntityType.TYPE_KEY))
-<a class="jxr_linenumber" name="574" href="#574">574</a>                     .getEntityClass();
+<a class="jxr_linenumber" name="574" href="#574">574</a>                     .getJavaClass();
 <a class="jxr_linenumber" name="575" href="#575">575</a>             Map&lt;String, Method&gt; fetchMethods = ClassUtils.getFetchMethods(cls);
 <a class="jxr_linenumber" name="576" href="#576">576</a>             <strong class="jxr_keyword">for</strong> (Map.Entry&lt;String, Method&gt; entry : fetchMethods.entrySet()) {
 <a class="jxr_linenumber" name="577" href="#577">577</a> 

@@ -139,8 +139,7 @@
 <ul class="blockListLast">
 <li class="blockList">
 <h4>list</h4>
-<pre>javax.ws.rs.core.Response&nbsp;list()
-                               throws <a href="../../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></pre>
+<pre>javax.ws.rs.core.Response&nbsp;list()</pre>
 <div class="block">List available resources. The default behaviour is to
  return a page of 20 items.
  <p>
@@ -151,9 +150,9 @@
  <p>
  The page, limit, and total number of items is returned in the Content-Range response
  header in the form:
-
+ <p>
  <pre><code>page=1; count=20; total=50</code></pre>
-
+ <p>
  If the header <code>X-Stream</code> is set to <code>true</code>
  no count of total items will be performed. This is more efficient when returning large
  numbers of items or when limiting is disabled completely.
@@ -163,9 +162,7 @@
  <code>curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&amp;limit=10
  </code>
  </pre></div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>A list of serialized item representations</dd>
-<dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd></dl>
+<dl><dt><span class="strong">Returns:</span></dt><dd>A list of serialized item representations</dd></dl>
 </li>
 </ul>
 </li>

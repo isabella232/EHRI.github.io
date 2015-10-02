@@ -121,7 +121,7 @@ Vocabulary is not possible via this API.</p>
         <a name="path__cvocConcept.html"></a>
       <h1>/cvocConcept</h1>
       <p class="note">Mount Point: <a href="../cvocConcept">/cvocConcept</a></p>
-      <a name="GETpath__cvocConcept.html"></a>
+      <a name="GET"></a>
       <h2>GET</h2>
       <p>
             List available resources. The default behaviour is to
@@ -134,9 +134,9 @@ Item lists are paginated using the <tt>page</tt> parameter.
 <p>
 The page, limit, and total number of items is returned in the Content-Range response
 header in the form:
-
+<p>
 <pre><code>page=1; count=20; total=50</code></pre>
-
+<p>
 If the header <tt>X-Stream</tt> is set to <tt>true</tt>
 no count of total items will be performed. This is more efficient when returning large
 numbers of items or when limiting is disabled completely.
@@ -160,35 +160,6 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         </tr>
       </table>
       <p>A list of serialized item representations</p>
-      <a name="PUTpath__cvocConcept.html"></a>
-      <h2>PUT</h2>
-      <p>
-            Update a resource.
-          </p>
-      <h3>Request Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-            <td>bundle</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>A resource bundle, including its ID.</p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A serialized representation of the updated resource.</p>
         <a name="path__cvocConcept_-id-.html"></a>
       <h1>/cvocConcept/{id}</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}">/cvocConcept/{id}</a></p>
@@ -196,11 +167,11 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         The following operations are supported on this resource:
       </p>
       <ul>
-        <li><a href="#GETpath__cvocConcept_-id-.html">GET</a></li>
-        <li><a href="#PUTpath__cvocConcept_-id-.html">PUT</a></li>
-        <li><a href="#DELETEpath__cvocConcept_-id-.html">DELETE</a></li>
+        <li><a href="#GET">GET</a></li>
+        <li><a href="#PUT">PUT</a></li>
+        <li><a href="#DELETE">DELETE</a></li>
       </ul>
-      <a name="GETpath__cvocConcept_-id-.html"></a>
+      <a name="GET"></a>
       <h2>GET</h2>
       <p>
             Fetch a resource by id.
@@ -234,7 +205,7 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         </tr>
       </table>
       <p>A serialized item representation</p>
-      <a name="PUTpath__cvocConcept_-id-.html"></a>
+      <a name="PUT"></a>
       <h2>PUT</h2>
       <p>
             Update a resource.
@@ -280,7 +251,7 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         </tr>
       </table>
       <p>A serialized representation of the updated resource.</p>
-      <a name="DELETEpath__cvocConcept_-id-.html"></a>
+      <a name="DELETE"></a>
       <h2>DELETE</h2>
       <p>
             Delete a resource.
@@ -317,7 +288,7 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         <a name="path__cvocConcept_-id-_broader_list.html"></a>
       <h1>/cvocConcept/{id}/broader/list</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/broader/list">/cvocConcept/{id}/broader/list</a></p>
-      <a name="GETpath__cvocConcept_-id-_broader_list.html"></a>
+      <a name="GET"></a>
       <h2>GET</h2>
       <p>
             List broader concepts.
@@ -354,7 +325,7 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         <a name="path__cvocConcept_-id-_cvocConcept.html"></a>
       <h1>/cvocConcept/{id}/cvocConcept</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/cvocConcept">/cvocConcept/{id}/cvocConcept</a></p>
-      <a name="POSTpath__cvocConcept_-id-_cvocConcept.html"></a>
+      <a name="POST"></a>
       <h2>POST</h2>
       <p>
             Create a subordinate resource.
@@ -411,7 +382,7 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         <a name="path__cvocConcept_-id-_list.html"></a>
       <h1>/cvocConcept/{id}/list</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/list">/cvocConcept/{id}/list</a></p>
-      <a name="GETpath__cvocConcept_-id-_list.html"></a>
+      <a name="GET"></a>
       <h2>GET</h2>
       <p>
             List available resources subordinate to this item. Behaviour is the same
@@ -464,7 +435,7 @@ curl http://localhost:7474/ehri/[RESOURCE]/[ID]/list
         <a name="path__cvocConcept_-id-_narrower_-idNarrower-.html"></a>
       <h1>/cvocConcept/{id}/narrower/{idNarrower}</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/narrower/{idNarrower}">/cvocConcept/{id}/narrower/{idNarrower}</a></p>
-      <a name="POSTpath__cvocConcept_-id-_narrower_-idNarrower-.html"></a>
+      <a name="POST"></a>
       <h2>POST</h2>
       <p>
             Add an existing concept to the list of 'narrower' relations.
@@ -506,7 +477,7 @@ curl http://localhost:7474/ehri/[RESOURCE]/[ID]/list
         </tr>
       </table>
       <p>(no documentation provided)</p>
-      <a name="DELETEpath__cvocConcept_-id-_narrower_-idNarrower-.html"></a>
+      <a name="DELETE"></a>
       <h2>DELETE</h2>
       <p>
             Remove a narrower relationship between two concepts.
@@ -551,7 +522,7 @@ curl http://localhost:7474/ehri/[RESOURCE]/[ID]/list
         <a name="path__cvocConcept_-id-_related_-idRelated-.html"></a>
       <h1>/cvocConcept/{id}/related/{idRelated}</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/related/{idRelated}">/cvocConcept/{id}/related/{idRelated}</a></p>
-      <a name="POSTpath__cvocConcept_-id-_related_-idRelated-.html"></a>
+      <a name="POST"></a>
       <h2>POST</h2>
       <p>
             Add a relation by creating the 'related' edge between the two <em>existing</em>
@@ -594,7 +565,7 @@ items.
         </tr>
       </table>
       <p>(no documentation provided)</p>
-      <a name="DELETEpath__cvocConcept_-id-_related_-idRelated-.html"></a>
+      <a name="DELETE"></a>
       <h2>DELETE</h2>
       <p>
             Remove a relation by deleting the edge, not the vertex of the related
@@ -640,7 +611,7 @@ concept.
         <a name="path__cvocConcept_-id-_related_list.html"></a>
       <h1>/cvocConcept/{id}/related/list</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/related/list">/cvocConcept/{id}/related/list</a></p>
-      <a name="GETpath__cvocConcept_-id-_related_list.html"></a>
+      <a name="GET"></a>
       <h2>GET</h2>
       <p>
             List concepts related to another concept.
@@ -677,7 +648,7 @@ concept.
         <a name="path__cvocConcept_-id-_relatedBy_list.html"></a>
       <h1>/cvocConcept/{id}/relatedBy/list</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/relatedBy/list">/cvocConcept/{id}/relatedBy/list</a></p>
-      <a name="GETpath__cvocConcept_-id-_relatedBy_list.html"></a>
+      <a name="GET"></a>
       <h2>GET</h2>
       <p>
             List concepts related to another concept. This is the

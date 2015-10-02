@@ -150,12 +150,12 @@
 <a class="jxr_linenumber" name="140" href="#140">140</a>             PermissionScope scope, UserProfile user, String logMessage) <strong class="jxr_keyword">throws</strong> DeserializationError,
 <a class="jxr_linenumber" name="141" href="#141">141</a>             ValidationError, PermissionDenied {
 <a class="jxr_linenumber" name="142" href="#142">142</a> 
-<a class="jxr_linenumber" name="143" href="#143">143</a>         <strong class="jxr_keyword">if</strong> (!AccessibleEntity.<strong class="jxr_keyword">class</strong>.isAssignableFrom(bundle.getBundleClass())) {
-<a class="jxr_linenumber" name="144" href="#144">144</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"Item class: "</span> + bundle.getBundleClass().getSimpleName() +
+<a class="jxr_linenumber" name="143" href="#143">143</a>         <strong class="jxr_keyword">if</strong> (!AccessibleEntity.<strong class="jxr_keyword">class</strong>.isAssignableFrom(bundle.getBundleJavaClass())) {
+<a class="jxr_linenumber" name="144" href="#144">144</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"Item class: "</span> + bundle.getBundleJavaClass().getSimpleName() +
 <a class="jxr_linenumber" name="145" href="#145">145</a>                     <span class="jxr_string">" is not a first-class database item"</span>);
 <a class="jxr_linenumber" name="146" href="#146">146</a>         }
 <a class="jxr_linenumber" name="147" href="#147">147</a> 
-<a class="jxr_linenumber" name="148" href="#148">148</a>         LoggingCrudViews&lt;?&gt; view = <strong class="jxr_keyword">new</strong> LoggingCrudViews(graph, bundle.getBundleClass(), scope);
+<a class="jxr_linenumber" name="148" href="#148">148</a>         LoggingCrudViews&lt;?&gt; view = <strong class="jxr_keyword">new</strong> LoggingCrudViews(graph, bundle.getBundleJavaClass(), scope);
 <a class="jxr_linenumber" name="149" href="#149">149</a>         <strong class="jxr_keyword">if</strong> (cmdLine.hasOption(<span class="jxr_string">"update"</span>)) {
 <a class="jxr_linenumber" name="150" href="#150">150</a>             view.createOrUpdate(bundle.withId(id), user, getLogMessage(logMessage));
 <a class="jxr_linenumber" name="151" href="#151">151</a>         } <strong class="jxr_keyword">else</strong> {

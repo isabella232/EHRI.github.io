@@ -132,6 +132,14 @@ implements <a href="../../../../eu/ehri/project/importers/ImportManager.html" ti
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#actioner">actioner</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#currentFile">currentFile</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#currentPosition">currentPosition</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected com.tinkerpop.frames.FramedGraph&lt;?&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#framedGraph">framedGraph</a></strong></code>&nbsp;</td>
 </tr>
@@ -204,16 +212,23 @@ implements <a href="../../../../eu/ehri/project/importers/ImportManager.html" ti
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFiles(java.util.List,%20java.lang.String)">importFiles</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;paths,
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFiles(org.apache.commons.compress.archivers.ArchiveInputStream,%20java.lang.String)">importFiles</a></strong>(org.apache.commons.compress.archivers.ArchiveInputStream&nbsp;inputStream,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
 <div class="block">Import multiple files in the same batch/transaction.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#importFiles(java.util.List,%20java.lang.String)">importFiles</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;paths,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
+<div class="block">Import multiple files in the same batch/transaction.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#isTolerant()">isTolerant</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html" title="class in eu.ehri.project.importers">AbstractImportManager</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html#setTolerant(boolean)">setTolerant</a></strong>(boolean&nbsp;tolerant)</code>
 <div class="block">Tell the importer to simply skip invalid items rather than throwing an
@@ -267,6 +282,24 @@ implements <a href="../../../../eu/ehri/project/importers/ImportManager.html" ti
 <li class="blockList">
 <h4>actioner</h4>
 <pre>protected final&nbsp;<a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a> actioner</pre>
+</li>
+</ul>
+<a name="currentFile">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>currentFile</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> currentFile</pre>
+</li>
+</ul>
+<a name="currentPosition">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>currentPosition</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a> currentPosition</pre>
 </li>
 </ul>
 <a name="importerClass">
@@ -390,6 +423,26 @@ implements <a href="../../../../eu/ehri/project/importers/ImportManager.html" ti
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../eu/ehri/project/importers/ImportManager.html#importFiles(java.util.List,%20java.lang.String)">importFiles</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>paths</code> - a list of file paths to description objects</dd><dd><code>logMessage</code> - a log message</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code><a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd></dl>
+</li>
+</ul>
+<a name="importFiles(org.apache.commons.compress.archivers.ArchiveInputStream, java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>importFiles</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;importFiles(org.apache.commons.compress.archivers.ArchiveInputStream&nbsp;inputStream,
+                    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)
+                      throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                             <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
+<div class="block">Import multiple files in the same batch/transaction.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../eu/ehri/project/importers/ImportManager.html#importFiles(org.apache.commons.compress.archivers.ArchiveInputStream,%20java.lang.String)">importFiles</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../eu/ehri/project/importers/ImportManager.html" title="interface in eu.ehri.project.importers">ImportManager</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>inputStream</code> - a compressed archive containing multiple files</dd><dd><code>logMessage</code> - a log message</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 <dd><code><a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd></dl>

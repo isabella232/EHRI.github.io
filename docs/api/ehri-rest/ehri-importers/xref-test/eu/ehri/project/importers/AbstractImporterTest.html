@@ -105,7 +105,7 @@
 <a class="jxr_linenumber" name="95" href="#95">95</a>              <strong class="jxr_keyword">for</strong> (String key : v.getPropertyKeys()) {
 <a class="jxr_linenumber" name="96" href="#96">96</a>                  String value = <span class="jxr_string">""</span>;
 <a class="jxr_linenumber" name="97" href="#97">97</a>                  <strong class="jxr_keyword">if</strong> (v.getProperty(key) instanceof String[]) {
-<a class="jxr_linenumber" name="98" href="#98">98</a>                      String[] list = (String[]) v.getProperty(key);
+<a class="jxr_linenumber" name="98" href="#98">98</a>                      String[] list = v.getProperty(key);
 <a class="jxr_linenumber" name="99" href="#99">99</a>                      <strong class="jxr_keyword">for</strong> (String o : list) {
 <a class="jxr_linenumber" name="100" href="#100">100</a>                         value += <span class="jxr_string">"["</span> + o + <span class="jxr_string">"] "</span>;
 <a class="jxr_linenumber" name="101" href="#101">101</a>                     }
@@ -137,7 +137,7 @@
 <a class="jxr_linenumber" name="127" href="#127">127</a>         Iterable&lt;Description&gt; descriptions = c.getDescriptions();
 <a class="jxr_linenumber" name="128" href="#128">128</a>         <strong class="jxr_keyword">for</strong> (Description d : descriptions) {
 <a class="jxr_linenumber" name="129" href="#129">129</a>             String lang = d.getLanguageOfDescription();
-<a class="jxr_linenumber" name="130" href="#130">130</a>             String prefLabel = (String) d.asVertex().getProperty(Ontology.PREFLABEL); <em class="jxr_comment">// can't use the getPrefLabel() !</em>
+<a class="jxr_linenumber" name="130" href="#130">130</a>             String prefLabel = d.getName();
 <a class="jxr_linenumber" name="131" href="#131">131</a>             out.print(<span class="jxr_string">", \&quot;"</span> + prefLabel + <span class="jxr_string">"\&quot;("</span> + lang + <span class="jxr_string">")"</span>);
 <a class="jxr_linenumber" name="132" href="#132">132</a>         }
 <a class="jxr_linenumber" name="133" href="#133">133</a>         <em class="jxr_comment">// TODO Print related concept ids?</em>

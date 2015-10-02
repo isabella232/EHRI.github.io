@@ -158,7 +158,7 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></h3>
-<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
+<code><a href="../../../eu/ehri/extension/AbstractRestResource.html#ACCESSOR_PARAM">ACCESSOR_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#DEFAULT_LIST_LIMIT">DEFAULT_LIST_LIMIT</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#FILTER_PARAM">FILTER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#graph">graph</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#GROUP_PARAM">GROUP_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ID_PARAM">ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#INCLUDE_PROPS_PARAM">INCLUDE_PROPS_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonFactory">jsonFactory</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#jsonMapper">jsonMapper</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LIMIT_PARAM">LIMIT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#logger">logger</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#manager">manager</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#OFFSET_PARAM">OFFSET_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#request">request</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#requestHeaders">requestHeaders</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#SORT_PARAM">SORT_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#STREAM_HEADER_NAME">STREAM_HEADER_NAME</a>, <a href="../../../eu/ehri/extension/AbstractRestResource.html#uriInfo">uriInfo</a></code></li>
 </ul>
 </li>
 </ul>
@@ -399,7 +399,6 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
                           boolean&nbsp;excludeSingle,
                           boolean&nbsp;tolerant)
                             throws <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                   <a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a>,
                                    <a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
                                    <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
                                    <a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
@@ -411,7 +410,6 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <dt><span class="strong">Returns:</span></dt><dd>the number of links created</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
-<dd><code><a href="../../../eu/ehri/extension/errors/BadRequester.html" title="class in eu.ehri.extension.errors">BadRequester</a></code></dd>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
 <dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
 <dd><code><a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></code></dd></dl>
@@ -497,12 +495,12 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
                            <a href="../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools">IdRegenerator.IdCollisionError</a></pre>
 <div class="block">Regenerate the hierarchical graph ID for a given item, optionally
  renaming it.
-
+ <p>
  The default mode is to output items whose IDs would change, without
  actually changing them. The <code>collisions</code> parameter will <b>only</b>
  output items that would cause collisions if renamed, whereas <code>tolerant</code>
  mode will skip them altogether.
-
+ <p>
  The <code>commit</code> flag will cause renaming to take place.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - the item's existing ID</dd><dd><code>collisions</code> - only output items that if renamed to the
                    regenerated ID would cause collisions</dd><dd><code>tolerant</code> - skip items that could cause collisions rather
@@ -529,12 +527,12 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
                                    <a href="../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools">IdRegenerator.IdCollisionError</a></pre>
 <div class="block">Regenerate the hierarchical graph ID all items of a given
  type.
-
+ <p>
  The default mode is to output items whose IDs would change, without
  actually changing them. The <code>collisions</code> parameter will <b>only</b>
  output items that would cause collisions if renamed, whereas <code>tolerant</code>
  mode will skip them altogether.
-
+ <p>
  The <code>commit</code> flag will cause renaming to take place.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>type</code> - the item type</dd><dd><code>collisions</code> - only output items that if renamed to the
                    regenerated ID would cause collisions</dd><dd><code>tolerant</code> - skip items that could cause collisions rather
@@ -561,12 +559,12 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
                                     <a href="../../../eu/ehri/project/tools/IdRegenerator.IdCollisionError.html" title="class in eu.ehri.project.tools">IdRegenerator.IdCollisionError</a></pre>
 <div class="block">Regenerate the hierarchical graph ID for all items within the
  permission scope and lower levels.
-
+ <p>
  The default mode is to output items whose IDs would change, without
  actually changing them. The <code>collisions</code> parameter will <b>only</b>
  output items that would cause collisions if renamed, whereas <code>tolerant</code>
  mode will skip them altogether.
-
+ <p>
  The <code>commit</code> flag will cause renaming to take place.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>scopeId</code> - the scope item's ID</dd><dd><code>collisions</code> - only output items that if renamed to the
                    regenerated ID would cause collisions</dd><dd><code>tolerant</code> - skip items that could cause collisions rather
