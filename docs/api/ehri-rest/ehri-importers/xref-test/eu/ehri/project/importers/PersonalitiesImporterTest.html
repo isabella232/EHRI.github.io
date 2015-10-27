@@ -29,62 +29,63 @@
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
-<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.XmlImportProperties;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.AccessibleEntity;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.AuthoritativeSet;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.events.SystemEvent;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> org.neo4j.helpers.collection.Iterables;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
-<a class="jxr_linenumber" name="34" href="#34">34</a>  
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="36" href="#36">36</a>  <em class="jxr_javadoccomment"> * @author Linda Reijnhoudt (https://github.com/lindareijnhoudt)</em>
-<a class="jxr_linenumber" name="37" href="#37">37</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/importers/PersonalitiesImporterTest.html">PersonalitiesImporterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a>{
-<a class="jxr_linenumber" name="39" href="#39">39</a>      
-<a class="jxr_linenumber" name="40" href="#40">40</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(PersonalitiesImporterTest.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="41" href="#41">41</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SINGLE_EAD = <span class="jxr_string">"Personalities_small.csv"</span>;
-<a class="jxr_linenumber" name="42" href="#42">42</a>  
-<a class="jxr_linenumber" name="43" href="#43">43</a>      @Test
-<a class="jxr_linenumber" name="44" href="#44">44</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testImportItemsT() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="45" href="#45">45</a>          AuthoritativeSet authoritativeSet = manager.getFrame(<span class="jxr_string">"auths"</span>, AuthoritativeSet.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="46" href="#46">46</a>          <strong class="jxr_keyword">int</strong> voccount = toList(authoritativeSet.getAuthoritativeItems()).size();
-<a class="jxr_linenumber" name="47" href="#47">47</a>          assertEquals(2, voccount);
-<a class="jxr_linenumber" name="48" href="#48">48</a>          logger.debug(<span class="jxr_string">"number of items: "</span> + voccount);
-<a class="jxr_linenumber" name="49" href="#49">49</a>          
-<a class="jxr_linenumber" name="50" href="#50">50</a>          <strong class="jxr_keyword">final</strong> String logMessage = <span class="jxr_string">"Importing some WP18 Personalities records"</span>;
-<a class="jxr_linenumber" name="51" href="#51">51</a>          XmlImportProperties p = <strong class="jxr_keyword">new</strong> XmlImportProperties(<span class="jxr_string">"personalities.properties"</span>);
-<a class="jxr_linenumber" name="52" href="#52">52</a>          assertTrue(p.containsProperty(<span class="jxr_string">"Othernames"</span>));
-<a class="jxr_linenumber" name="53" href="#53">53</a>          assertTrue(p.containsProperty(<span class="jxr_string">"DateofbirthYYYY-MM-DD"</span>));
-<a class="jxr_linenumber" name="54" href="#54">54</a>          assertTrue(p.containsProperty(<span class="jxr_string">"Pseudonyms"</span>));
-<a class="jxr_linenumber" name="55" href="#55">55</a>          
-<a class="jxr_linenumber" name="56" href="#56">56</a>  
-<a class="jxr_linenumber" name="57" href="#57">57</a>          <strong class="jxr_keyword">int</strong> count = getNodeCount(graph);
-<a class="jxr_linenumber" name="58" href="#58">58</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(SINGLE_EAD);
-<a class="jxr_linenumber" name="59" href="#59">59</a>          ImportLog log = <strong class="jxr_keyword">new</strong> CsvImportManager(graph, authoritativeSet, validUser, PersonalitiesImporter.<strong class="jxr_keyword">class</strong>).importFile(ios, logMessage);
-<a class="jxr_linenumber" name="60" href="#60">60</a>          SystemEvent ev = actionManager.getLatestGlobalEvent();
-<a class="jxr_linenumber" name="61" href="#61">61</a>          System.out.println(Iterables.toList(authoritativeSet.getAuthoritativeItems()));
-<a class="jxr_linenumber" name="62" href="#62">62</a>          <em class="jxr_comment">/*</em>
-<a class="jxr_linenumber" name="63" href="#63">63</a>  <em class="jxr_comment">         * 8 HistAgent</em>
-<a class="jxr_linenumber" name="64" href="#64">64</a>  <em class="jxr_comment">         * 8 HistAgentDesc</em>
-<a class="jxr_linenumber" name="65" href="#65">65</a>  <em class="jxr_comment">         * 8 more DatePeriods</em>
-<a class="jxr_linenumber" name="66" href="#66">66</a>  <em class="jxr_comment">         * 9 more import Event links (1 for every Unit, 1 for the User)</em>
-<a class="jxr_linenumber" name="67" href="#67">67</a>  <em class="jxr_comment">         * 1 more import Event</em>
-<a class="jxr_linenumber" name="68" href="#68">68</a>  <em class="jxr_comment">         */</em>
-<a class="jxr_linenumber" name="69" href="#69">69</a>          assertEquals(count+34, getNodeCount(graph));
-<a class="jxr_linenumber" name="70" href="#70">70</a>          assertEquals(voccount + 8, toList(authoritativeSet.getAuthoritativeItems()).size());
-<a class="jxr_linenumber" name="71" href="#71">71</a>  
-<a class="jxr_linenumber" name="72" href="#72">72</a>          <em class="jxr_comment">// Check permission scopes are correct.</em>
-<a class="jxr_linenumber" name="73" href="#73">73</a>          <strong class="jxr_keyword">for</strong> (AccessibleEntity subject : ev.getSubjects()) {
-<a class="jxr_linenumber" name="74" href="#74">74</a>              assertEquals(authoritativeSet, subject.getPermissionScope());
-<a class="jxr_linenumber" name="75" href="#75">75</a>          }
-<a class="jxr_linenumber" name="76" href="#76">76</a>      }
-<a class="jxr_linenumber" name="77" href="#77">77</a>  }
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.CsvImportManager;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.XmlImportProperties;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.AccessibleEntity;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.AuthoritativeSet;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.events.SystemEvent;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> org.neo4j.helpers.collection.Iterables;
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <em class="jxr_javadoccomment"> * @author Linda Reijnhoudt (https://github.com/lindareijnhoudt)</em>
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/importers/PersonalitiesImporterTest.html">PersonalitiesImporterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a>{
+<a class="jxr_linenumber" name="40" href="#40">40</a>      
+<a class="jxr_linenumber" name="41" href="#41">41</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(PersonalitiesImporterTest.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SINGLE_EAD = <span class="jxr_string">"Personalities_small.csv"</span>;
+<a class="jxr_linenumber" name="43" href="#43">43</a>  
+<a class="jxr_linenumber" name="44" href="#44">44</a>      @Test
+<a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testImportItemsT() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="46" href="#46">46</a>          AuthoritativeSet authoritativeSet = manager.getFrame(<span class="jxr_string">"auths"</span>, AuthoritativeSet.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="47" href="#47">47</a>          <strong class="jxr_keyword">int</strong> voccount = toList(authoritativeSet.getAuthoritativeItems()).size();
+<a class="jxr_linenumber" name="48" href="#48">48</a>          assertEquals(2, voccount);
+<a class="jxr_linenumber" name="49" href="#49">49</a>          logger.debug(<span class="jxr_string">"number of items: "</span> + voccount);
+<a class="jxr_linenumber" name="50" href="#50">50</a>          
+<a class="jxr_linenumber" name="51" href="#51">51</a>          <strong class="jxr_keyword">final</strong> String logMessage = <span class="jxr_string">"Importing some WP18 Personalities records"</span>;
+<a class="jxr_linenumber" name="52" href="#52">52</a>          XmlImportProperties p = <strong class="jxr_keyword">new</strong> XmlImportProperties(<span class="jxr_string">"personalities.properties"</span>);
+<a class="jxr_linenumber" name="53" href="#53">53</a>          assertTrue(p.containsProperty(<span class="jxr_string">"Othernames"</span>));
+<a class="jxr_linenumber" name="54" href="#54">54</a>          assertTrue(p.containsProperty(<span class="jxr_string">"DateofbirthYYYY-MM-DD"</span>));
+<a class="jxr_linenumber" name="55" href="#55">55</a>          assertTrue(p.containsProperty(<span class="jxr_string">"Pseudonyms"</span>));
+<a class="jxr_linenumber" name="56" href="#56">56</a>          
+<a class="jxr_linenumber" name="57" href="#57">57</a>  
+<a class="jxr_linenumber" name="58" href="#58">58</a>          <strong class="jxr_keyword">int</strong> count = getNodeCount(graph);
+<a class="jxr_linenumber" name="59" href="#59">59</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(SINGLE_EAD);
+<a class="jxr_linenumber" name="60" href="#60">60</a>          ImportLog log = <strong class="jxr_keyword">new</strong> CsvImportManager(graph, authoritativeSet, validUser, PersonalitiesImporter.<strong class="jxr_keyword">class</strong>).importFile(ios, logMessage);
+<a class="jxr_linenumber" name="61" href="#61">61</a>          SystemEvent ev = actionManager.getLatestGlobalEvent();
+<a class="jxr_linenumber" name="62" href="#62">62</a>          System.out.println(Iterables.toList(authoritativeSet.getAuthoritativeItems()));
+<a class="jxr_linenumber" name="63" href="#63">63</a>          <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="64" href="#64">64</a>  <em class="jxr_comment">         * 8 HistAgent</em>
+<a class="jxr_linenumber" name="65" href="#65">65</a>  <em class="jxr_comment">         * 8 HistAgentDesc</em>
+<a class="jxr_linenumber" name="66" href="#66">66</a>  <em class="jxr_comment">         * 8 more DatePeriods</em>
+<a class="jxr_linenumber" name="67" href="#67">67</a>  <em class="jxr_comment">         * 9 more import Event links (1 for every Unit, 1 for the User)</em>
+<a class="jxr_linenumber" name="68" href="#68">68</a>  <em class="jxr_comment">         * 1 more import Event</em>
+<a class="jxr_linenumber" name="69" href="#69">69</a>  <em class="jxr_comment">         */</em>
+<a class="jxr_linenumber" name="70" href="#70">70</a>          assertEquals(count+34, getNodeCount(graph));
+<a class="jxr_linenumber" name="71" href="#71">71</a>          assertEquals(voccount + 8, toList(authoritativeSet.getAuthoritativeItems()).size());
+<a class="jxr_linenumber" name="72" href="#72">72</a>  
+<a class="jxr_linenumber" name="73" href="#73">73</a>          <em class="jxr_comment">// Check permission scopes are correct.</em>
+<a class="jxr_linenumber" name="74" href="#74">74</a>          <strong class="jxr_keyword">for</strong> (AccessibleEntity subject : ev.getSubjects()) {
+<a class="jxr_linenumber" name="75" href="#75">75</a>              assertEquals(authoritativeSet, subject.getPermissionScope());
+<a class="jxr_linenumber" name="76" href="#76">76</a>          }
+<a class="jxr_linenumber" name="77" href="#77">77</a>      }
+<a class="jxr_linenumber" name="78" href="#78">78</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

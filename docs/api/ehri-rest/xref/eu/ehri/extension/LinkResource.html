@@ -40,7 +40,7 @@
 <a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.*;
 <a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Link;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.UndeterminedRelationship;
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.AccessPoint;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.*;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.views.DescriptionViews;
@@ -151,7 +151,7 @@
 <a class="jxr_linenumber" name="141" href="#141">141</a>             <strong class="jxr_keyword">throws</strong> AccessDenied, PermissionDenied, ItemNotFound, ValidationError, <a href="../../../eu/ehri/project/exceptions/SerializationError.html">SerializationError</a> {
 <a class="jxr_linenumber" name="142" href="#142">142</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
 <a class="jxr_linenumber" name="143" href="#143">143</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> userProfile = getRequesterUserProfile();
-<a class="jxr_linenumber" name="144" href="#144">144</a>             <a href="../../../eu/ehri/project/models/UndeterminedRelationship.html">UndeterminedRelationship</a> rel = manager.getFrame(id, UndeterminedRelationship.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="144" href="#144">144</a>             <a href="../../../eu/ehri/project/models/AccessPoint.html">AccessPoint</a> rel = manager.getFrame(id, AccessPoint.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="145" href="#145">145</a>             <a href="../../../eu/ehri/project/models/base/Description.html">Description</a> description = rel.getDescription();
 <a class="jxr_linenumber" name="146" href="#146">146</a>             <strong class="jxr_keyword">if</strong> (description == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="147" href="#147">147</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a>(id);

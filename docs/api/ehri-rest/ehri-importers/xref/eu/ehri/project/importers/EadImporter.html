@@ -38,11 +38,11 @@
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.PermissionDenied;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.SerializationError;
 <a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Link;
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.UndeterminedRelationship;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.AccessPoint;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Link;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.UserProfile;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.AbstractUnit;
 <a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.AccessibleEntity;
@@ -72,7 +72,7 @@
 <a class="jxr_linenumber" name="62" href="#62">62</a>  <em class="jxr_javadoccomment"> * procedure. An EAD a single entity at the highest level of description or multiple top-level entities, with or without</em>
 <a class="jxr_linenumber" name="63" href="#63">63</a>  <em class="jxr_javadoccomment"> * a hierarchical structure describing their child items. This means that we need to recursively descend through the</em>
 <a class="jxr_linenumber" name="64" href="#64">64</a>  <em class="jxr_javadoccomment"> * archdesc and c,c01-12 levels.</em>
-<a class="jxr_linenumber" name="65" href="#65">65</a>  <em class="jxr_javadoccomment"> * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="65" href="#65">65</a>  <em class="jxr_javadoccomment"> * &lt;p/&gt;</em>
 <a class="jxr_linenumber" name="66" href="#66">66</a>  <em class="jxr_javadoccomment"> * TODO: Extensive cleanups, optimisation, and rationalisation.</em>
 <a class="jxr_linenumber" name="67" href="#67">67</a>  <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="68" href="#68">68</a>  <em class="jxr_javadoccomment"> * @author Linda Reijnhoudt (https://github.com/lindareijnhoudt)</em>
@@ -81,8 +81,8 @@
 <a class="jxr_linenumber" name="71" href="#71">71</a>  
 <a class="jxr_linenumber" name="72" href="#72">72</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(EadImporter.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="73" href="#73">73</a>      <em class="jxr_comment">//the EadImporter can import ead as DocumentaryUnits, the default, or overwrite those and create VirtualUnits instead.</em>
-<a class="jxr_linenumber" name="74" href="#74">74</a>      <strong class="jxr_keyword">private</strong> EntityClass unitEntity = EntityClass.DOCUMENTARY_UNIT;
-<a class="jxr_linenumber" name="75" href="#75">75</a>      <strong class="jxr_keyword">private</strong> Serializer mergeSerializer;
+<a class="jxr_linenumber" name="74" href="#74">74</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> EntityClass unitEntity = EntityClass.DOCUMENTARY_UNIT;
+<a class="jxr_linenumber" name="75" href="#75">75</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Serializer mergeSerializer;
 <a class="jxr_linenumber" name="76" href="#76">76</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String ACCESS_POINT = <span class="jxr_string">"AccessPoint"</span>;
 <a class="jxr_linenumber" name="77" href="#77">77</a>  
 <a class="jxr_linenumber" name="78" href="#78">78</a>      <em class="jxr_javadoccomment">/**</em>
@@ -125,7 +125,7 @@
 <a class="jxr_linenumber" name="115" href="#115">115</a>             <strong class="jxr_keyword">for</strong> (String s : rel.keySet()) {
 <a class="jxr_linenumber" name="116" href="#116">116</a>                 logger.debug(s);
 <a class="jxr_linenumber" name="117" href="#117">117</a>             }
-<a class="jxr_linenumber" name="118" href="#118">118</a>             descBundle = descBundle.withRelation(Ontology.HAS_ACCESS_POINT, <strong class="jxr_keyword">new</strong> Bundle(EntityClass.UNDETERMINED_RELATIONSHIP, rel));
+<a class="jxr_linenumber" name="118" href="#118">118</a>             descBundle = descBundle.withRelation(Ontology.HAS_ACCESS_POINT, <strong class="jxr_keyword">new</strong> Bundle(EntityClass.ACCESS_POINT, rel));
 <a class="jxr_linenumber" name="119" href="#119">119</a>         }
 <a class="jxr_linenumber" name="120" href="#120">120</a>         Map&lt;String, Object&gt; unknowns = extractUnknownProperties(itemData);
 <a class="jxr_linenumber" name="121" href="#121">121</a>         <strong class="jxr_keyword">if</strong> (!unknowns.isEmpty()) {
@@ -272,14 +272,14 @@
 <a class="jxr_linenumber" name="262" href="#262">262</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="263" href="#263">263</a> <em class="jxr_javadoccomment">     * subclasses can override this method to cater to their special needs for UndeterminedRelationships</em>
 <a class="jxr_linenumber" name="264" href="#264">264</a> <em class="jxr_javadoccomment">     * by default, it expects something like this in the original EAD:</em>
-<a class="jxr_linenumber" name="265" href="#265">265</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="265" href="#265">265</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
 <a class="jxr_linenumber" name="266" href="#266">266</a> <em class="jxr_javadoccomment">     * &lt;pre&gt;</em>
 <a class="jxr_linenumber" name="267" href="#267">267</a> <em class="jxr_javadoccomment">     * {@code</em>
 <a class="jxr_linenumber" name="268" href="#268">268</a> <em class="jxr_javadoccomment">     * &lt;persname source="terezin-victims" authfilenumber="PERSON.ITI.1514982"&gt;Kien,</em>
 <a class="jxr_linenumber" name="269" href="#269">269</a> <em class="jxr_javadoccomment">     * Leonhard (* 11.5.1886)&lt;/persname&gt;</em>
 <a class="jxr_linenumber" name="270" href="#270">270</a> <em class="jxr_javadoccomment">     * }</em>
 <a class="jxr_linenumber" name="271" href="#271">271</a> <em class="jxr_javadoccomment">     * &lt;/pre&gt;</em>
-<a class="jxr_linenumber" name="272" href="#272">272</a> <em class="jxr_javadoccomment">     * &lt;p&gt;</em>
+<a class="jxr_linenumber" name="272" href="#272">272</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
 <a class="jxr_linenumber" name="273" href="#273">273</a> <em class="jxr_javadoccomment">     * it works in unison with the extractRelations() method.</em>
 <a class="jxr_linenumber" name="274" href="#274">274</a> <em class="jxr_javadoccomment">     *</em>
 <a class="jxr_linenumber" name="275" href="#275">275</a> <em class="jxr_javadoccomment">     * @param unit       the current unit</em>
@@ -292,7 +292,7 @@
 <a class="jxr_linenumber" name="282" href="#282">282</a>         <em class="jxr_comment">//so they have id's. </em>
 <a class="jxr_linenumber" name="283" href="#283">283</a>         <strong class="jxr_keyword">for</strong> (Description unitdesc : unit.getDescriptions()) {
 <a class="jxr_linenumber" name="284" href="#284">284</a>             <em class="jxr_comment">// Put the set of relationships into a HashSet to remove duplicates.</em>
-<a class="jxr_linenumber" name="285" href="#285">285</a>             <strong class="jxr_keyword">for</strong> (UndeterminedRelationship rel : Sets.newHashSet(unitdesc.getUndeterminedRelationships())) {
+<a class="jxr_linenumber" name="285" href="#285">285</a>             <strong class="jxr_keyword">for</strong> (AccessPoint rel : Sets.newHashSet(unitdesc.getAccessPoints())) {
 <a class="jxr_linenumber" name="286" href="#286">286</a>                 <em class="jxr_comment">/*</em>
 <a class="jxr_linenumber" name="287" href="#287">287</a> <em class="jxr_comment">                 * the wp2 undetermined relationship that can be resolved have a 'cvoc' and a 'concept' attribute.</em>
 <a class="jxr_linenumber" name="288" href="#288">288</a> <em class="jxr_comment">                 * they need to be found in the vocabularies that are in the graph</em>
@@ -355,13 +355,13 @@
 <a class="jxr_linenumber" name="345" href="#345">345</a>                         <em class="jxr_comment">//try to find the original name</em>
 <a class="jxr_linenumber" name="346" href="#346">346</a>                         relationNode.put(Ontology.NAME_KEY, origRelation.get(<span class="jxr_string">"name"</span>));
 <a class="jxr_linenumber" name="347" href="#347">347</a>                         relationNode.put(<span class="jxr_string">"cvoc"</span>, origRelation.get(<span class="jxr_string">"cvoc"</span>));
-<a class="jxr_linenumber" name="348" href="#348">348</a>                         relationNode.put(Ontology.UNDETERMINED_RELATIONSHIP_TYPE, origRelation.get(<span class="jxr_string">"type"</span>));
+<a class="jxr_linenumber" name="348" href="#348">348</a>                         relationNode.put(Ontology.ACCESS_POINT_TYPE, origRelation.get(<span class="jxr_string">"type"</span>));
 <a class="jxr_linenumber" name="349" href="#349">349</a>                     } <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="350" href="#350">350</a>                         relationNode.put(Ontology.NAME_KEY, origRelation.get(REL));
 <a class="jxr_linenumber" name="351" href="#351">351</a>                     }
-<a class="jxr_linenumber" name="352" href="#352">352</a>                     <strong class="jxr_keyword">if</strong> (!relationNode.containsKey(Ontology.UNDETERMINED_RELATIONSHIP_TYPE)) {
+<a class="jxr_linenumber" name="352" href="#352">352</a>                     <strong class="jxr_keyword">if</strong> (!relationNode.containsKey(Ontology.ACCESS_POINT_TYPE)) {
 <a class="jxr_linenumber" name="353" href="#353">353</a>                         logger.debug(<span class="jxr_string">"relationNode without type: "</span> + relationNode.get(Ontology.NAME_KEY));
-<a class="jxr_linenumber" name="354" href="#354">354</a>                         relationNode.put(Ontology.UNDETERMINED_RELATIONSHIP_TYPE, <span class="jxr_string">"corporateBodyAccess"</span>);
+<a class="jxr_linenumber" name="354" href="#354">354</a>                         relationNode.put(Ontology.ACCESS_POINT_TYPE, <span class="jxr_string">"corporateBodyAccess"</span>);
 <a class="jxr_linenumber" name="355" href="#355">355</a>                     }
 <a class="jxr_linenumber" name="356" href="#356">356</a>                     list.add(relationNode);
 <a class="jxr_linenumber" name="357" href="#357">357</a>                 }
@@ -380,15 +380,15 @@
 <a class="jxr_linenumber" name="370" href="#370">370</a>                         Map&lt;String, Object&gt; relationNode = Maps.newHashMap();
 <a class="jxr_linenumber" name="371" href="#371">371</a>                         <strong class="jxr_keyword">for</strong> (String eventkey : origRelation.keySet()) {
 <a class="jxr_linenumber" name="372" href="#372">372</a>                             <strong class="jxr_keyword">if</strong> (eventkey.endsWith(ACCESS_POINT)) {
-<a class="jxr_linenumber" name="373" href="#373">373</a>                                 relationNode.put(Ontology.UNDETERMINED_RELATIONSHIP_TYPE, eventkey.substring(0, eventkey.indexOf(<span class="jxr_string">"Point"</span>)));
+<a class="jxr_linenumber" name="373" href="#373">373</a>                                 relationNode.put(Ontology.ACCESS_POINT_TYPE, eventkey.substring(0, eventkey.indexOf(<span class="jxr_string">"Point"</span>)));
 <a class="jxr_linenumber" name="374" href="#374">374</a>                                 relationNode.put(Ontology.NAME_KEY, origRelation.get(eventkey));
 <a class="jxr_linenumber" name="375" href="#375">375</a> <em class="jxr_comment">//logger.debug("------------------" + eventkey.substring(0, eventkey.indexOf("Point")) + ": "+ origRelation.get(eventkey));                            </em>
 <a class="jxr_linenumber" name="376" href="#376">376</a>                             } <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="377" href="#377">377</a>                                 relationNode.put(eventkey, origRelation.get(eventkey));
 <a class="jxr_linenumber" name="378" href="#378">378</a>                             }
 <a class="jxr_linenumber" name="379" href="#379">379</a>                         }
-<a class="jxr_linenumber" name="380" href="#380">380</a>                         <strong class="jxr_keyword">if</strong> (!relationNode.containsKey(Ontology.UNDETERMINED_RELATIONSHIP_TYPE)) {
-<a class="jxr_linenumber" name="381" href="#381">381</a>                             relationNode.put(Ontology.UNDETERMINED_RELATIONSHIP_TYPE, <span class="jxr_string">"corporateBodyAccess"</span>);
+<a class="jxr_linenumber" name="380" href="#380">380</a>                         <strong class="jxr_keyword">if</strong> (!relationNode.containsKey(Ontology.ACCESS_POINT_TYPE)) {
+<a class="jxr_linenumber" name="381" href="#381">381</a>                             relationNode.put(Ontology.ACCESS_POINT_TYPE, <span class="jxr_string">"corporateBodyAccess"</span>);
 <a class="jxr_linenumber" name="382" href="#382">382</a>                         }
 <a class="jxr_linenumber" name="383" href="#383">383</a>                         <em class="jxr_comment">//if no name is given, it was apparently an empty &lt;controlaccess&gt; tag?</em>
 <a class="jxr_linenumber" name="384" href="#384">384</a>                         <strong class="jxr_keyword">if</strong> (relationNode.containsKey(Ontology.NAME_KEY)) {
@@ -397,7 +397,7 @@
 <a class="jxr_linenumber" name="387" href="#387">387</a>                     }
 <a class="jxr_linenumber" name="388" href="#388">388</a>                 } <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="389" href="#389">389</a>                     Map&lt;String, Object&gt; relationNode = Maps.newHashMap();
-<a class="jxr_linenumber" name="390" href="#390">390</a>                     relationNode.put(Ontology.UNDETERMINED_RELATIONSHIP_TYPE, key.substring(0, key.indexOf(<span class="jxr_string">"Point"</span>)));
+<a class="jxr_linenumber" name="390" href="#390">390</a>                     relationNode.put(Ontology.ACCESS_POINT_TYPE, key.substring(0, key.indexOf(<span class="jxr_string">"Point"</span>)));
 <a class="jxr_linenumber" name="391" href="#391">391</a>                     relationNode.put(Ontology.NAME_KEY, data.get(key));
 <a class="jxr_linenumber" name="392" href="#392">392</a>                     list.add(relationNode);
 <a class="jxr_linenumber" name="393" href="#393">393</a> 

@@ -191,7 +191,7 @@
 <a class="jxr_linenumber" name="181" href="#181">181</a> <em class="jxr_javadoccomment">     * @param accessors A set of users/groups who can access the item</em>
 <a class="jxr_linenumber" name="182" href="#182">182</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="183" href="#183">183</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setAccessors(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html">AccessibleEntity</a> entity,
-<a class="jxr_linenumber" name="184" href="#184">184</a>             Iterable&lt;Accessor&gt; accessors) {
+<a class="jxr_linenumber" name="184" href="#184">184</a>             Collection&lt;Accessor&gt; accessors) {
 <a class="jxr_linenumber" name="185" href="#185">185</a>         Set&lt;Accessor&gt; accessorVertices = Sets.newHashSet(accessors);
 <a class="jxr_linenumber" name="186" href="#186">186</a>         Set&lt;Accessor&gt; remove = Sets.newHashSet();
 <a class="jxr_linenumber" name="187" href="#187">187</a>         <strong class="jxr_keyword">for</strong> (Accessor accessor : entity.getAccessors()) {
@@ -610,7 +610,7 @@
 <a class="jxr_linenumber" name="600" href="#600">600</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../eu/ehri/project/models/PermissionGrant.html">PermissionGrant</a> createPermissionGrant() {
 <a class="jxr_linenumber" name="601" href="#601">601</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="602" href="#602">602</a>             Vertex vertex = manager.createVertex(
-<a class="jxr_linenumber" name="603" href="#603">603</a>                     EntityClass.PERMISSION_GRANT.getIdgen()
+<a class="jxr_linenumber" name="603" href="#603">603</a>                     EntityClass.PERMISSION_GRANT.getIdGen()
 <a class="jxr_linenumber" name="604" href="#604">604</a>                             .generateId(Lists.&lt;String&gt;newArrayList(), <strong class="jxr_keyword">null</strong>),
 <a class="jxr_linenumber" name="605" href="#605">605</a>                     EntityClass.PERMISSION_GRANT,
 <a class="jxr_linenumber" name="606" href="#606">606</a>                     Maps.&lt;String, Object&gt;newHashMap());

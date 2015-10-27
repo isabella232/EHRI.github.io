@@ -36,7 +36,7 @@
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html" title="class in eu.ehri.project.importers"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../eu/ehri/project/importers/AraEadImporter.html" title="class in eu.ehri.project.importers"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?eu/ehri/project/importers/AbstractImporter.html" target="_top">Frames</a></li>
@@ -188,22 +188,22 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#changeForbiddenMultivaluedProperties(java.lang.String,%20java.lang.Object,%20eu.ehri.project.models.EntityClass)">changeForbiddenMultivaluedProperties</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                                    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
-                                    <a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;entity)</code>
-<div class="block">only properties that have the multivalued-status can actually be multivalued.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#extractDates(T)">extractDates</a></strong>(<a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="type parameter in AbstractImporter">T</a>&nbsp;data)</code>
 <div class="block">Extract a list of DatePeriod bundles from an item's data.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#extractMaintenanceEvent(T)">extractMaintenanceEvent</a></strong>(<a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="type parameter in AbstractImporter">T</a>&nbsp;itemData)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#flattenNonMultivaluedProperties(java.lang.String,%20java.lang.Object,%20eu.ehri.project.models.EntityClass)">flattenNonMultivaluedProperties</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
+                               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
+                               <a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;entity)</code>
+<div class="block">only properties that have the multivalued-status can actually be multivalued.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
@@ -308,7 +308,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <ul class="blockListLast">
 <li class="blockList">
 <h4>callbacks</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</a>&gt; callbacks</pre>
+<pre>protected final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</a>&gt; callbacks</pre>
 </li>
 </ul>
 </li>
@@ -439,15 +439,15 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>returns a List of Maps with DatePeriod.START_DATE and DatePeriod.END_DATE values</dd></dl>
 </li>
 </ul>
-<a name="changeForbiddenMultivaluedProperties(java.lang.String, java.lang.Object, eu.ehri.project.models.EntityClass)">
+<a name="flattenNonMultivaluedProperties(java.lang.String, java.lang.Object, eu.ehri.project.models.EntityClass)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>changeForbiddenMultivaluedProperties</h4>
-<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;changeForbiddenMultivaluedProperties(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
-                                          <a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;entity)</pre>
+<h4>flattenNonMultivaluedProperties</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;flattenNonMultivaluedProperties(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
+                                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
+                                     <a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;entity)</pre>
 <div class="block">only properties that have the multivalued-status can actually be multivalued. all other properties will be
  flattened by this method.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>key</code> - a property key</dd><dd><code>value</code> - a property value</dd><dd><code>entity</code> - the EntityClass with which this frameMap must comply</dd></dl>
@@ -513,7 +513,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <div class="subNav">
 <ul class="navList">
 <li>Prev Class</li>
-<li><a href="../../../../eu/ehri/project/importers/AbstractImportManager.html" title="class in eu.ehri.project.importers"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../eu/ehri/project/importers/AraEadImporter.html" title="class in eu.ehri.project.importers"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?eu/ehri/project/importers/AbstractImporter.html" target="_top">Frames</a></li>

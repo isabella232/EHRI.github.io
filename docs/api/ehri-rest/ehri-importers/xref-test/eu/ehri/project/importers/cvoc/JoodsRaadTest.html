@@ -95,7 +95,7 @@
 <a class="jxr_linenumber" name="85" href="#85">85</a>  
 <a class="jxr_linenumber" name="86" href="#86">86</a>          <em class="jxr_comment">// get a top concept</em>
 <a class="jxr_linenumber" name="87" href="#87">87</a>          String skosConceptId = <span class="jxr_string">"698"</span>;
-<a class="jxr_linenumber" name="88" href="#88">88</a>          Query&lt;Concept&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;Concept&gt;(graph, Concept.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="88" href="#88">88</a>          Query&lt;Concept&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;&gt;(graph, Concept.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="89" href="#89">89</a>          <em class="jxr_comment">// Query for document identifier.</em>
 <a class="jxr_linenumber" name="90" href="#90">90</a>          List&lt;Concept&gt; list = toList(query.setLimit(1).page(
 <a class="jxr_linenumber" name="91" href="#91">91</a>                  Ontology.IDENTIFIER_KEY, skosConceptId, validUser));

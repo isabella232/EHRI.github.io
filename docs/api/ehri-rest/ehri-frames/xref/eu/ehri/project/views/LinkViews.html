@@ -42,7 +42,7 @@
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Link;
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.UndeterminedRelationship;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.AccessPoint;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.AccessibleEntity;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessor;
 <a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Actioner;
@@ -150,12 +150,12 @@
 <a class="jxr_linenumber" name="140" href="#140">140</a>         <em class="jxr_comment">//helper.checkEntityPermission(t2, user, PermissionType.ANNOTATE);</em>
 <a class="jxr_linenumber" name="141" href="#141">141</a>         helper.checkEntityPermission(description.getEntity(), user, PermissionType.UPDATE);
 <a class="jxr_linenumber" name="142" href="#142">142</a>         <a href="../../../../eu/ehri/project/models/Link.html">Link</a> link = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a>(graph).create(bundle, Link.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="143" href="#143">143</a>         <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> relBundle = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.UNDETERMINED_RELATIONSHIP)
+<a class="jxr_linenumber" name="143" href="#143">143</a>         <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> relBundle = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.ACCESS_POINT)
 <a class="jxr_linenumber" name="144" href="#144">144</a>                 .withDataValue(Ontology.NAME_KEY, bodyName)
-<a class="jxr_linenumber" name="145" href="#145">145</a>                 .withDataValue(Ontology.UNDETERMINED_RELATIONSHIP_TYPE, bodyType)
+<a class="jxr_linenumber" name="145" href="#145">145</a>                 .withDataValue(Ontology.ACCESS_POINT_TYPE, bodyType)
 <a class="jxr_linenumber" name="146" href="#146">146</a>                 .withDataValue(Ontology.LINK_HAS_DESCRIPTION, link.getDescription());
-<a class="jxr_linenumber" name="147" href="#147">147</a>         <a href="../../../../eu/ehri/project/models/UndeterminedRelationship.html">UndeterminedRelationship</a> rel = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a>(graph).create(relBundle, UndeterminedRelationship.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="148" href="#148">148</a>         description.addUndeterminedRelationship(rel);
+<a class="jxr_linenumber" name="147" href="#147">147</a>         <a href="../../../../eu/ehri/project/models/AccessPoint.html">AccessPoint</a> rel = <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a>(graph).create(relBundle, AccessPoint.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="148" href="#148">148</a>         description.addAccessPoint(rel);
 <a class="jxr_linenumber" name="149" href="#149">149</a>         link.addLinkTarget(t1);
 <a class="jxr_linenumber" name="150" href="#150">150</a>         link.addLinkTarget(t2);
 <a class="jxr_linenumber" name="151" href="#151">151</a>         link.setLinker(user);

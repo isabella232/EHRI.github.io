@@ -1818,7 +1818,14 @@
     <wadl:resource path="/tools/_setIdsOnEventLinks">
       <wadl:method name="POST">
         <wadl:response>
-          <wadl:representation mediaType="text/csv"/>
+          <wadl:representation mediaType="text/plain"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/tools/_setLabels">
+      <wadl:method name="POST">
+        <wadl:response>
+          <wadl:representation mediaType="text/plain"/>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
@@ -1973,7 +1980,8 @@
       </wadl:param>
       <wadl:param name="did" style="template">
         <wadl:doc>
-          <![CDATA[the ID of the description being annotated]]>
+          <![CDATA[the ID]]>
+<![CDATA[of the description being annotated]]>
         </wadl:doc>
       </wadl:param>
       <wadl:method name="POST">
@@ -2219,7 +2227,8 @@
       <wadl:method name="GET">
         <wadl:doc>
           <![CDATA[List available resources subordinate to this item. Behaviour is the same]]>
-<![CDATA[as the general list method with respect to parameters.]]>
+<![CDATA[as the general list met]]>
+<![CDATA[hod with respect to parameters.]]>
 <![CDATA[<p>]]>
 <![CDATA[Example:]]>
 <![CDATA[<pre>]]>
@@ -2655,7 +2664,8 @@
         <wadl:request>
           <wadl:param name="aggregation" style="query">
             <wadl:doc>
-              <![CDATA[The manner in which to aggregate the results, accepting]]>
+              <![CDATA[The manner in which to aggregate the resu]]>
+<![CDATA[lts, accepting]]>
 <![CDATA["user", "strict" or "off" (no aggregation). Default is]]>
 <![CDATA[<b>strict</b>.]]>
             </wadl:doc>
@@ -2663,8 +2673,7 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[a list of ev]]>
-<![CDATA[ent ranges]]>
+            <![CDATA[a list of event ranges]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -2857,8 +2866,7 @@
 <![CDATA[<p>]]>
 <![CDATA[The default mode is to output items whose IDs would change, without]]>
 <![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
-<![CDATA[output items that would cause collision]]>
-<![CDATA[s if renamed, whereas tolerant]]>
+<![CDATA[output items that would cause collisions if renamed, whereas tolerant]]>
 <![CDATA[mode will skip them altogether.]]>
 <![CDATA[<p>]]>
 <![CDATA[The commit flag will cause renaming to take place.]]>
@@ -3383,8 +3391,7 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[the number of li]]>
-<![CDATA[nks created]]>
+            <![CDATA[the number of links created]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>

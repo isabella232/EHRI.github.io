@@ -329,7 +329,7 @@
 <a class="jxr_linenumber" name="319" href="#319">319</a>         <strong class="jxr_keyword">for</strong> (Map.Entry&lt;String, URI&gt; rel : RELATION_PROPS.entrySet()) {
 <a class="jxr_linenumber" name="320" href="#320">320</a>             <strong class="jxr_keyword">for</strong> (RDFNode annotation : getObjectWithPredicate(item, rel.getValue())) {
 <a class="jxr_linenumber" name="321" href="#321">321</a>                 <strong class="jxr_keyword">if</strong> (annotation.isLiteral()) {
-<a class="jxr_linenumber" name="322" href="#322">322</a>                     undetermined.add(<strong class="jxr_keyword">new</strong> Bundle(EntityClass.UNDETERMINED_RELATIONSHIP)
+<a class="jxr_linenumber" name="322" href="#322">322</a>                     undetermined.add(<strong class="jxr_keyword">new</strong> Bundle(EntityClass.ACCESS_POINT)
 <a class="jxr_linenumber" name="323" href="#323">323</a>                             .withDataValue(Ontology.ANNOTATION_TYPE, rel.getKey())
 <a class="jxr_linenumber" name="324" href="#324">324</a>                             .withDataValue(Ontology.NAME_KEY, annotation.toString()));
 <a class="jxr_linenumber" name="325" href="#325">325</a>                 } <strong class="jxr_keyword">else</strong> {
@@ -339,7 +339,7 @@
 <a class="jxr_linenumber" name="329" href="#329">329</a>                         <strong class="jxr_keyword">if</strong> (found != <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="330" href="#330">330</a>                             linkedItems.put(found, rel.getKey());
 <a class="jxr_linenumber" name="331" href="#331">331</a>                         } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="332" href="#332">332</a>                             undetermined.add(<strong class="jxr_keyword">new</strong> Bundle(EntityClass.UNDETERMINED_RELATIONSHIP)
+<a class="jxr_linenumber" name="332" href="#332">332</a>                             undetermined.add(<strong class="jxr_keyword">new</strong> Bundle(EntityClass.ACCESS_POINT)
 <a class="jxr_linenumber" name="333" href="#333">333</a>                                     .withDataValue(Ontology.ANNOTATION_TYPE, <span class="jxr_string">"associate"</span>)
 <a class="jxr_linenumber" name="334" href="#334">334</a>                                     .withDataValue(prefix, rel.getKey().substring(rel.getKey().indexOf(<span class="jxr_string">":"</span>) + 1))
 <a class="jxr_linenumber" name="335" href="#335">335</a>                                     .withDataValue(Ontology.NAME_KEY, annotation.toString()));

@@ -81,6 +81,10 @@
  the database.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.managers">eu.ehri.project.importers.managers</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
 </tbody>
 </table>
 </li>
@@ -117,10 +121,6 @@
 <div class="block">Extract datevalues from datamap</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/importers/SaxImportManager.html" title="class in eu.ehri.project.importers">SaxImportManager</a></code></td>
-<td class="colLast"><span class="strong">SaxImportManager.</span><code><strong><a href="../../../../../../eu/ehri/project/importers/SaxImportManager.html#withProperties(eu.ehri.project.importers.properties.XmlImportProperties)">withProperties</a></strong>(<a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;properties)</code>&nbsp;</td>
-</tr>
 </tbody>
 </table>
 <table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation">
@@ -139,7 +139,7 @@
 </tr>
 <tr class="altColor">
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/EadHandler.html#EadHandler(eu.ehri.project.importers.AbstractImporter,%20eu.ehri.project.importers.properties.XmlImportProperties)">EadHandler</a></strong>(<a href="../../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;importer,
-          <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;xmlImportProperties)</code>
+          <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;properties)</code>
 <div class="block">Create an EadHandler using some importer, and a mapping of paths to node properties.</div>
 </td>
 </tr>
@@ -152,7 +152,49 @@
                  <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;properties)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class,%20java.lang.Class,%20eu.ehri.project.importers.properties.XmlImportProperties)">SaxImportManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/SaxXmlHandler.html#SaxXmlHandler(eu.ehri.project.importers.AbstractImporter,%20eu.ehri.project.importers.properties.XmlImportProperties)">SaxXmlHandler</a></strong>(<a href="../../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;importer,
+             <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;properties)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/UshmmHandler.html#UshmmHandler(eu.ehri.project.importers.AbstractImporter,%20eu.ehri.project.importers.properties.XmlImportProperties)">UshmmHandler</a></strong>(<a href="../../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;importer,
+            <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;props)</code>
+<div class="block">Generic constructor, available so that the generic REST call can be made on the USHMM Handler.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/VirtualEadHandler.html#VirtualEadHandler(eu.ehri.project.importers.AbstractImporter,%20eu.ehri.project.importers.properties.XmlImportProperties)">VirtualEadHandler</a></strong>(<a href="../../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;importer,
+                 <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;xmlImportProperties)</code>
+<div class="block">Create an EadHandler using some importer, and a mapping of paths to node properties.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.managers">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a> in <a href="../../../../../../eu/ehri/project/importers/managers/package-summary.html">eu.ehri.project.importers.managers</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../../eu/ehri/project/importers/managers/package-summary.html">eu.ehri.project.importers.managers</a> with parameters of type <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></code></td>
+<td class="colLast"><span class="strong">SaxImportManager.</span><code><strong><a href="../../../../../../eu/ehri/project/importers/managers/SaxImportManager.html#withProperties(eu.ehri.project.importers.properties.XmlImportProperties)">withProperties</a></strong>(<a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;properties)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation">
+<caption><span>Constructors in <a href="../../../../../../eu/ehri/project/importers/managers/package-summary.html">eu.ehri.project.importers.managers</a> with parameters of type <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class,%20java.lang.Class,%20eu.ehri.project.importers.properties.XmlImportProperties)">SaxImportManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
                 <a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope,
                 <a href="../../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&gt;&nbsp;importerClass,
@@ -161,32 +203,16 @@
 <div class="block">Constructor.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/SaxXmlHandler.html#SaxXmlHandler(eu.ehri.project.importers.AbstractImporter,%20eu.ehri.project.importers.properties.XmlImportProperties)">SaxXmlHandler</a></strong>(<a href="../../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;importer,
-             <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;properties)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/UshmmHandler.html#UshmmHandler(eu.ehri.project.importers.AbstractImporter,%20eu.ehri.project.importers.properties.XmlImportProperties)">UshmmHandler</a></strong>(<a href="../../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;importer,
-            <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;props)</code>
-<div class="block">Generic constructor, available so that the generic REST call can be made on the USHMM Handler.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/VirtualEadHandler.html#VirtualEadHandler(eu.ehri.project.importers.AbstractImporter,%20eu.ehri.project.importers.properties.XmlImportProperties)">VirtualEadHandler</a></strong>(<a href="../../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;importer,
-                 <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;xmlImportProperties)</code>
-<div class="block">Create an EadHandler using some importer, and a mapping of paths to node properties.</div>
-</td>
-</tr>
 </tbody>
 </table>
 <table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation">
-<caption><span>Constructor parameters in <a href="../../../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> with type arguments of type <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>Constructor parameters in <a href="../../../../../../eu/ehri/project/importers/managers/package-summary.html">eu.ehri.project.importers.managers</a> with type arguments of type <a href="../../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class,%20java.lang.Class,%20com.google.common.base.Optional,%20java.util.List)">SaxImportManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class,%20java.lang.Class,%20com.google.common.base.Optional,%20java.util.List)">SaxImportManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
                 <a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope,
                 <a href="../../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&gt;&nbsp;importerClass,

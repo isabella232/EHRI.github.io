@@ -76,7 +76,7 @@
 <a class="jxr_linenumber" name="66" href="#66">66</a>  
 <a class="jxr_linenumber" name="67" href="#67">67</a>          <em class="jxr_comment">// get a top concept</em>
 <a class="jxr_linenumber" name="68" href="#68">68</a>          String skosConceptId = <span class="jxr_string">"PLACE.ČSÚ.544256"</span>;
-<a class="jxr_linenumber" name="69" href="#69">69</a>          Query&lt;Concept&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;Concept&gt;(graph, Concept.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="69" href="#69">69</a>          Query&lt;Concept&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;&gt;(graph, Concept.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="70" href="#70">70</a>  
 <a class="jxr_linenumber" name="71" href="#71">71</a>          <em class="jxr_comment">// Query for document identifier.</em>
 <a class="jxr_linenumber" name="72" href="#72">72</a>          List&lt;Concept&gt; list = toList(query.setLimit(1).page(

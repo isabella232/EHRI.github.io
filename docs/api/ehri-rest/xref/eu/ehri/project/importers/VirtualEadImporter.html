@@ -123,7 +123,7 @@
 <a class="jxr_linenumber" name="113" href="#113">113</a>             }
 <a class="jxr_linenumber" name="114" href="#114">114</a>             <strong class="jxr_keyword">for</strong> (Map&lt;String, Object&gt; rel : extractRelations(itemData)) {<em class="jxr_comment">//, (String) unit.getErrors().get(IdentifiableEntity.IDENTIFIER_KEY)</em>
 <a class="jxr_linenumber" name="115" href="#115">115</a>                 logger.debug(<span class="jxr_string">"relation found: "</span> + rel.get(Ontology.NAME_KEY));
-<a class="jxr_linenumber" name="116" href="#116">116</a>                 descBundle = descBundle.withRelation(Ontology.HAS_ACCESS_POINT, <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.UNDETERMINED_RELATIONSHIP, rel));
+<a class="jxr_linenumber" name="116" href="#116">116</a>                 descBundle = descBundle.withRelation(Ontology.HAS_ACCESS_POINT, <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.ACCESS_POINT, rel));
 <a class="jxr_linenumber" name="117" href="#117">117</a>             }
 <a class="jxr_linenumber" name="118" href="#118">118</a>             Map&lt;String, Object&gt; unknowns = extractUnknownProperties(itemData);
 <a class="jxr_linenumber" name="119" href="#119">119</a>             <strong class="jxr_keyword">if</strong> (!unknowns.isEmpty()) {
@@ -176,14 +176,14 @@
 <a class="jxr_linenumber" name="166" href="#166">166</a>                     <strong class="jxr_keyword">for</strong> (String eventkey : origRelation.keySet()) {
 <a class="jxr_linenumber" name="167" href="#167">167</a>                         logger.debug(eventkey);
 <a class="jxr_linenumber" name="168" href="#168">168</a>                         <strong class="jxr_keyword">if</strong> (eventkey.endsWith(REL)) {
-<a class="jxr_linenumber" name="169" href="#169">169</a>                             relationNode.put(Ontology.UNDETERMINED_RELATIONSHIP_TYPE, eventkey);
+<a class="jxr_linenumber" name="169" href="#169">169</a>                             relationNode.put(Ontology.ACCESS_POINT_TYPE, eventkey);
 <a class="jxr_linenumber" name="170" href="#170">170</a>                             relationNode.put(Ontology.NAME_KEY, origRelation.get(eventkey));
 <a class="jxr_linenumber" name="171" href="#171">171</a>                         } <strong class="jxr_keyword">else</strong> {
 <a class="jxr_linenumber" name="172" href="#172">172</a>                             relationNode.put(eventkey, origRelation.get(eventkey));
 <a class="jxr_linenumber" name="173" href="#173">173</a>                         }
 <a class="jxr_linenumber" name="174" href="#174">174</a>                     }
-<a class="jxr_linenumber" name="175" href="#175">175</a>                     <strong class="jxr_keyword">if</strong> (!relationNode.containsKey(Ontology.UNDETERMINED_RELATIONSHIP_TYPE)) {
-<a class="jxr_linenumber" name="176" href="#176">176</a>                         relationNode.put(Ontology.UNDETERMINED_RELATIONSHIP_TYPE, <span class="jxr_string">"corporateBodyAccessPoint"</span>);
+<a class="jxr_linenumber" name="175" href="#175">175</a>                     <strong class="jxr_keyword">if</strong> (!relationNode.containsKey(Ontology.ACCESS_POINT_TYPE)) {
+<a class="jxr_linenumber" name="176" href="#176">176</a>                         relationNode.put(Ontology.ACCESS_POINT_TYPE, <span class="jxr_string">"corporateBodyAccessPoint"</span>);
 <a class="jxr_linenumber" name="177" href="#177">177</a>                     }
 <a class="jxr_linenumber" name="178" href="#178">178</a>                     list.add(relationNode);
 <a class="jxr_linenumber" name="179" href="#179">179</a>                 }

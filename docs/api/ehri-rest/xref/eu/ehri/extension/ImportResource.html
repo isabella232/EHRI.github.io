@@ -38,7 +38,7 @@
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
 <a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporter;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.CsvImportManager;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.CsvImportManager;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.EacHandler;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.EacImporter;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.EadHandler;
@@ -46,8 +46,8 @@
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.EagHandler;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.EagImporter;
 <a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportManager;
-<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.SaxImportManager;
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.ImportManager;
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.SaxImportManager;
 <a class="jxr_linenumber" name="41" href="#41">41</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.SaxXmlHandler;
 <a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.cvoc.SkosImporter;
 <a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.cvoc.SkosImporterFactory;
@@ -243,7 +243,7 @@
 <a class="jxr_linenumber" name="233" href="#233">233</a> 
 <a class="jxr_linenumber" name="234" href="#234">234</a>             <em class="jxr_comment">// Run the import!</em>
 <a class="jxr_linenumber" name="235" href="#235">235</a>             String message = getLogMessage(logMessage).orNull();
-<a class="jxr_linenumber" name="236" href="#236">236</a>             <a href="../../../eu/ehri/project/importers/ImportManager.html">ImportManager</a> importManager = <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/project/importers/SaxImportManager.html">SaxImportManager</a>(graph, scope, user, importer, handler)
+<a class="jxr_linenumber" name="236" href="#236">236</a>             <a href="../../../eu/ehri/project/importers/managers/ImportManager.html">ImportManager</a> importManager = <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/project/importers/managers/SaxImportManager.html">SaxImportManager</a>(graph, scope, user, importer, handler)
 <a class="jxr_linenumber" name="237" href="#237">237</a>                     .withProperties(propertyFile)
 <a class="jxr_linenumber" name="238" href="#238">238</a>                     .setTolerant(tolerant);
 <a class="jxr_linenumber" name="239" href="#239">239</a>             <a href="../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = importDataStream(importManager, message, data,
@@ -332,7 +332,7 @@
 <a class="jxr_linenumber" name="322" href="#322">322</a> 
 <a class="jxr_linenumber" name="323" href="#323">323</a>             <em class="jxr_comment">// Run the import!</em>
 <a class="jxr_linenumber" name="324" href="#324">324</a>             String message = getLogMessage(logMessage).orNull();
-<a class="jxr_linenumber" name="325" href="#325">325</a>             <a href="../../../eu/ehri/project/importers/ImportManager.html">ImportManager</a> importManager = <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/project/importers/CsvImportManager.html">CsvImportManager</a>(graph, scope, user, importer);
+<a class="jxr_linenumber" name="325" href="#325">325</a>             <a href="../../../eu/ehri/project/importers/managers/ImportManager.html">ImportManager</a> importManager = <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/project/importers/managers/CsvImportManager.html">CsvImportManager</a>(graph, scope, user, importer);
 <a class="jxr_linenumber" name="326" href="#326">326</a>             <a href="../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = importDataStream(importManager, message, data,
 <a class="jxr_linenumber" name="327" href="#327">327</a>                     MediaType.valueOf(CSV_MEDIA_TYPE));
 <a class="jxr_linenumber" name="328" href="#328">328</a>             tx.success();
@@ -348,7 +348,7 @@
 <a class="jxr_linenumber" name="338" href="#338">338</a> 
 <a class="jxr_linenumber" name="339" href="#339">339</a>     <em class="jxr_comment">// Helpers</em>
 <a class="jxr_linenumber" name="340" href="#340">340</a> 
-<a class="jxr_linenumber" name="341" href="#341">341</a>     <strong class="jxr_keyword">private</strong> <a href="../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> importDataStream(<a href="../../../eu/ehri/project/importers/ImportManager.html">ImportManager</a> importManager, String message, InputStream data,
+<a class="jxr_linenumber" name="341" href="#341">341</a>     <strong class="jxr_keyword">private</strong> <a href="../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> importDataStream(<a href="../../../eu/ehri/project/importers/managers/ImportManager.html">ImportManager</a> importManager, String message, InputStream data,
 <a class="jxr_linenumber" name="342" href="#342">342</a>             MediaType... accepts) <strong class="jxr_keyword">throws</strong> IOException, ValidationError, InputParseError, ArchiveException {
 <a class="jxr_linenumber" name="343" href="#343">343</a>         MediaType mediaType = requestHeaders.getMediaType();
 <a class="jxr_linenumber" name="344" href="#344">344</a>         <strong class="jxr_keyword">if</strong> (MediaType.TEXT_PLAIN_TYPE.equals(mediaType)) {
@@ -363,8 +363,8 @@
 <a class="jxr_linenumber" name="353" href="#353">353</a>         }
 <a class="jxr_linenumber" name="354" href="#354">354</a>     }
 <a class="jxr_linenumber" name="355" href="#355">355</a> 
-<a class="jxr_linenumber" name="356" href="#356">356</a>     <strong class="jxr_keyword">private</strong> <a href="../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> importArchive(<a href="../../../eu/ehri/project/importers/ImportManager.html">ImportManager</a> importManager, String logMessage, InputStream data)
-<a class="jxr_linenumber" name="357" href="#357">357</a>             <strong class="jxr_keyword">throws</strong> IOException, ValidationError, ArchiveException {
+<a class="jxr_linenumber" name="356" href="#356">356</a>     <strong class="jxr_keyword">private</strong> <a href="../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> importArchive(<a href="../../../eu/ehri/project/importers/managers/ImportManager.html">ImportManager</a> importManager, String logMessage, InputStream data)
+<a class="jxr_linenumber" name="357" href="#357">357</a>             <strong class="jxr_keyword">throws</strong> IOException, ValidationError, ArchiveException, <a href="../../../eu/ehri/project/importers/exceptions/InputParseError.html">InputParseError</a> {
 <a class="jxr_linenumber" name="358" href="#358">358</a>         logger.info(<span class="jxr_string">"Import via compressed archive..."</span>);
 <a class="jxr_linenumber" name="359" href="#359">359</a>         <strong class="jxr_keyword">try</strong> (BufferedInputStream bis = <strong class="jxr_keyword">new</strong> BufferedInputStream(data);
 <a class="jxr_linenumber" name="360" href="#360">360</a>              ArchiveInputStream archiveInputStream = <strong class="jxr_keyword">new</strong>

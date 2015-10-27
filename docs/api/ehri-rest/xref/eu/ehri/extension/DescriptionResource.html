@@ -33,7 +33,7 @@
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.Tx;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Entities;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.*;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.UndeterminedRelationship;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.AccessPoint;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.UserProfile;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessor;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.DescribedEntity;
@@ -146,7 +146,7 @@
 <a class="jxr_linenumber" name="136" href="#136">136</a>     @POST
 <a class="jxr_linenumber" name="137" href="#137">137</a>     @Consumes(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="138" href="#138">138</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="139" href="#139">139</a>     @Path(<span class="jxr_string">"/{id:.+}/{did:.+}/"</span> + Entities.UNDETERMINED_RELATIONSHIP)
+<a class="jxr_linenumber" name="139" href="#139">139</a>     @Path(<span class="jxr_string">"/{id:.+}/{did:.+}/"</span> + Entities.ACCESS_POINT)
 <a class="jxr_linenumber" name="140" href="#140">140</a>     <strong class="jxr_keyword">public</strong> Response createAccessPoint(@PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="141" href="#141">141</a>                                       @PathParam(<span class="jxr_string">"did"</span>) String did, <a href="../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle)
 <a class="jxr_linenumber" name="142" href="#142">142</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
@@ -155,9 +155,9 @@
 <a class="jxr_linenumber" name="145" href="#145">145</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = getRequesterUserProfile();
 <a class="jxr_linenumber" name="146" href="#146">146</a>             <a href="../../../eu/ehri/project/models/base/DescribedEntity.html">DescribedEntity</a> item = views.detail(id, user);
 <a class="jxr_linenumber" name="147" href="#147">147</a>             <a href="../../../eu/ehri/project/models/base/Description.html">Description</a> desc = manager.getFrame(did, Description.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="148" href="#148">148</a>             <a href="../../../eu/ehri/project/models/UndeterminedRelationship.html">UndeterminedRelationship</a> rel = descriptionViews.create(id, bundle,
-<a class="jxr_linenumber" name="149" href="#149">149</a>                     UndeterminedRelationship.<strong class="jxr_keyword">class</strong>, user, getLogMessage());
-<a class="jxr_linenumber" name="150" href="#150">150</a>             desc.addUndeterminedRelationship(rel);
+<a class="jxr_linenumber" name="148" href="#148">148</a>             <a href="../../../eu/ehri/project/models/AccessPoint.html">AccessPoint</a> rel = descriptionViews.create(id, bundle,
+<a class="jxr_linenumber" name="149" href="#149">149</a>                     AccessPoint.<strong class="jxr_keyword">class</strong>, user, getLogMessage());
+<a class="jxr_linenumber" name="150" href="#150">150</a>             desc.addAccessPoint(rel);
 <a class="jxr_linenumber" name="151" href="#151">151</a>             Response response = buildResponse(item, rel, Response.Status.CREATED);
 <a class="jxr_linenumber" name="152" href="#152">152</a>             tx.success();
 <a class="jxr_linenumber" name="153" href="#153">153</a>             <strong class="jxr_keyword">return</strong> response;
@@ -168,7 +168,7 @@
 <a class="jxr_linenumber" name="158" href="#158">158</a> 
 <a class="jxr_linenumber" name="159" href="#159">159</a>     @SuppressWarnings(<span class="jxr_string">"unused"</span>)
 <a class="jxr_linenumber" name="160" href="#160">160</a>     @DELETE
-<a class="jxr_linenumber" name="161" href="#161">161</a>     @Path(<span class="jxr_string">"/{id:.+}/{did:.+}/"</span> + Entities.UNDETERMINED_RELATIONSHIP + <span class="jxr_string">"/{apid:.+}"</span>)
+<a class="jxr_linenumber" name="161" href="#161">161</a>     @Path(<span class="jxr_string">"/{id:.+}/{did:.+}/"</span> + Entities.ACCESS_POINT + <span class="jxr_string">"/{apid:.+}"</span>)
 <a class="jxr_linenumber" name="162" href="#162">162</a>     <strong class="jxr_keyword">public</strong> Response deleteAccessPoint(@PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="163" href="#163">163</a>                                       @PathParam(<span class="jxr_string">"did"</span>) String did, @PathParam(<span class="jxr_string">"apid"</span>) String apid)
 <a class="jxr_linenumber" name="164" href="#164">164</a>             <strong class="jxr_keyword">throws</strong> AccessDenied, PermissionDenied, ValidationError,

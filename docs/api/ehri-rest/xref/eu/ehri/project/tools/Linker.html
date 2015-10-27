@@ -43,7 +43,7 @@
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Link;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
-<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.UndeterminedRelationship;
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.AccessPoint;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.UserProfile;
 <a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
 <a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
@@ -134,7 +134,7 @@
 <a class="jxr_linenumber" name="124" href="#124">124</a> 
 <a class="jxr_linenumber" name="125" href="#125">125</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnit doc : repository.getAllCollections()) {
 <a class="jxr_linenumber" name="126" href="#126">126</a>             <strong class="jxr_keyword">for</strong> (DocumentDescription description : doc.getDocumentDescriptions()) {
-<a class="jxr_linenumber" name="127" href="#127">127</a>                 <strong class="jxr_keyword">for</strong> (UndeterminedRelationship relationship : description.getUndeterminedRelationships()) {
+<a class="jxr_linenumber" name="127" href="#127">127</a>                 <strong class="jxr_keyword">for</strong> (AccessPoint relationship : description.getAccessPoints()) {
 <a class="jxr_linenumber" name="128" href="#128">128</a>                     <strong class="jxr_keyword">if</strong> (accessPointTypes.isEmpty() || accessPointTypes
 <a class="jxr_linenumber" name="129" href="#129">129</a>                             .contains(relationship.getRelationshipType())) {
 <a class="jxr_linenumber" name="130" href="#130">130</a>                         String trimmedName = relationship.getName().trim();
@@ -221,7 +221,7 @@
 <a class="jxr_linenumber" name="211" href="#211">211</a>         <strong class="jxr_keyword">long</strong> linkCount = 0L;
 <a class="jxr_linenumber" name="212" href="#212">212</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnit doc : repository.getAllCollections()) {
 <a class="jxr_linenumber" name="213" href="#213">213</a>             <strong class="jxr_keyword">for</strong> (DocumentDescription description : doc.getDocumentDescriptions()) {
-<a class="jxr_linenumber" name="214" href="#214">214</a>                 <strong class="jxr_keyword">for</strong> (UndeterminedRelationship relationship : description.getUndeterminedRelationships()) {
+<a class="jxr_linenumber" name="214" href="#214">214</a>                 <strong class="jxr_keyword">for</strong> (AccessPoint relationship : description.getAccessPoints()) {
 <a class="jxr_linenumber" name="215" href="#215">215</a>                     <strong class="jxr_keyword">if</strong> (accessPointTypes.isEmpty() || accessPointTypes
 <a class="jxr_linenumber" name="216" href="#216">216</a>                             .contains(relationship.getRelationshipType())) {
 <a class="jxr_linenumber" name="217" href="#217">217</a> 
@@ -358,7 +358,7 @@
 <a class="jxr_linenumber" name="348" href="#348">348</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">true</strong>;
 <a class="jxr_linenumber" name="349" href="#349">349</a>     }
 <a class="jxr_linenumber" name="350" href="#350">350</a> 
-<a class="jxr_linenumber" name="351" href="#351">351</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String getIdentifier(<a href="../../../../eu/ehri/project/models/UndeterminedRelationship.html">UndeterminedRelationship</a> relationship) {
+<a class="jxr_linenumber" name="351" href="#351">351</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String getIdentifier(<a href="../../../../eu/ehri/project/models/AccessPoint.html">AccessPoint</a> relationship) {
 <a class="jxr_linenumber" name="352" href="#352">352</a>         <strong class="jxr_keyword">return</strong> Slugify.slugify(relationship.getName().trim())
 <a class="jxr_linenumber" name="353" href="#353">353</a>                 .replaceAll(<span class="jxr_string">"^-+"</span>, <span class="jxr_string">""</span>)
 <a class="jxr_linenumber" name="354" href="#354">354</a>                 .replaceAll(<span class="jxr_string">"-+$"</span>, <span class="jxr_string">""</span>);

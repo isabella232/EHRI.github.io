@@ -60,7 +60,7 @@
 <a class="jxr_linenumber" name="50" href="#50">50</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/importers/VirtualEadHandler.html">VirtualEadHandler</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/importers/SaxXmlHandler.html">SaxXmlHandler</a> {
 <a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String AUTHOR = <span class="jxr_string">"authors"</span>,
 <a class="jxr_linenumber" name="52" href="#52">52</a>              SOURCEFILEID = <span class="jxr_string">"sourceFileId"</span>;
-<a class="jxr_linenumber" name="53" href="#53">53</a>      List&lt;MaintenanceEvent&gt; maintenanceEvents = Lists.newArrayList();
+<a class="jxr_linenumber" name="53" href="#53">53</a>      <strong class="jxr_keyword">final</strong> List&lt;MaintenanceEvent&gt; maintenanceEvents = Lists.newArrayList();
 <a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> ImmutableMap&lt;String, Class&lt;? <strong class="jxr_keyword">extends</strong> Frame&gt;&gt; possibleSubnodes = ImmutableMap.&lt;String, Class&lt;?
 <a class="jxr_linenumber" name="55" href="#55">55</a>              <strong class="jxr_keyword">extends</strong> Frame&gt;&gt;of(<span class="jxr_string">"maintenanceEvent"</span>, MaintenanceEvent.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="56" href="#56">56</a>  
@@ -309,132 +309,116 @@
 <a class="jxr_linenumber" name="299" href="#299">299</a>     }
 <a class="jxr_linenumber" name="300" href="#300">300</a> 
 <a class="jxr_linenumber" name="301" href="#301">301</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="302" href="#302">302</a> <em class="jxr_javadoccomment">     * Handler-specific code for extraction or generation of description languages.</em>
-<a class="jxr_linenumber" name="303" href="#303">303</a> <em class="jxr_javadoccomment">     * Default method is empty; override when necessary.</em>
+<a class="jxr_linenumber" name="302" href="#302">302</a> <em class="jxr_javadoccomment">     * Checks given currentGraph for a language and sets a default language code</em>
+<a class="jxr_linenumber" name="303" href="#303">303</a> <em class="jxr_javadoccomment">     * for the description if no language is found.</em>
 <a class="jxr_linenumber" name="304" href="#304">304</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="305" href="#305">305</a> <em class="jxr_javadoccomment">     * @param currentGraph</em>
+<a class="jxr_linenumber" name="305" href="#305">305</a> <em class="jxr_javadoccomment">     * @param currentGraph Data at the current node level</em>
 <a class="jxr_linenumber" name="306" href="#306">306</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="307" href="#307">307</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> extractEadLanguage(Map&lt;String, Object&gt; currentGraph) {
-<a class="jxr_linenumber" name="308" href="#308">308</a>         <em class="jxr_comment">// TODO Auto-generated method stub</em>
-<a class="jxr_linenumber" name="309" href="#309">309</a> 
-<a class="jxr_linenumber" name="310" href="#310">310</a>     }
-<a class="jxr_linenumber" name="311" href="#311">311</a> 
-<a class="jxr_linenumber" name="312" href="#312">312</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="313" href="#313">313</a> <em class="jxr_javadoccomment">     * Checks given currentGraph for a language and sets a default language code</em>
-<a class="jxr_linenumber" name="314" href="#314">314</a> <em class="jxr_javadoccomment">     * for the description if no language is found.</em>
-<a class="jxr_linenumber" name="315" href="#315">315</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="316" href="#316">316</a> <em class="jxr_javadoccomment">     * @param currentGraph Data at the current node level</em>
+<a class="jxr_linenumber" name="307" href="#307">307</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> useDefaultLanguage(Map&lt;String, Object&gt; currentGraph) {
+<a class="jxr_linenumber" name="308" href="#308">308</a>         useDefaultLanguage(currentGraph, getDefaultLanguage());
+<a class="jxr_linenumber" name="309" href="#309">309</a>     }
+<a class="jxr_linenumber" name="310" href="#310">310</a> 
+<a class="jxr_linenumber" name="311" href="#311">311</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="312" href="#312">312</a> <em class="jxr_javadoccomment">     * Checks given currentGraph for a language and sets a default language code</em>
+<a class="jxr_linenumber" name="313" href="#313">313</a> <em class="jxr_javadoccomment">     * for the description if no language is found.</em>
+<a class="jxr_linenumber" name="314" href="#314">314</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="315" href="#315">315</a> <em class="jxr_javadoccomment">     * @param currentGraph    Data at the current node level</em>
+<a class="jxr_linenumber" name="316" href="#316">316</a> <em class="jxr_javadoccomment">     * @param defaultLanguage Language code to use as default</em>
 <a class="jxr_linenumber" name="317" href="#317">317</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="318" href="#318">318</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> useDefaultLanguage(Map&lt;String, Object&gt; currentGraph) {
-<a class="jxr_linenumber" name="319" href="#319">319</a>         useDefaultLanguage(currentGraph, getDefaultLanguage());
-<a class="jxr_linenumber" name="320" href="#320">320</a>     }
-<a class="jxr_linenumber" name="321" href="#321">321</a> 
-<a class="jxr_linenumber" name="322" href="#322">322</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="323" href="#323">323</a> <em class="jxr_javadoccomment">     * Checks given currentGraph for a language and sets a default language code</em>
-<a class="jxr_linenumber" name="324" href="#324">324</a> <em class="jxr_javadoccomment">     * for the description if no language is found.</em>
-<a class="jxr_linenumber" name="325" href="#325">325</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="326" href="#326">326</a> <em class="jxr_javadoccomment">     * @param currentGraph    Data at the current node level</em>
-<a class="jxr_linenumber" name="327" href="#327">327</a> <em class="jxr_javadoccomment">     * @param defaultLanguage Language code to use as default</em>
-<a class="jxr_linenumber" name="328" href="#328">328</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="329" href="#329">329</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> useDefaultLanguage(Map&lt;String, Object&gt; currentGraph, String defaultLanguage) {
-<a class="jxr_linenumber" name="330" href="#330">330</a> 
-<a class="jxr_linenumber" name="331" href="#331">331</a>         <strong class="jxr_keyword">if</strong> (!currentGraph.containsKey(Ontology.LANGUAGE_OF_DESCRIPTION)) {
-<a class="jxr_linenumber" name="332" href="#332">332</a>             logger.debug(<span class="jxr_string">"Using default language code: "</span> + defaultLanguage);
-<a class="jxr_linenumber" name="333" href="#333">333</a>             currentGraph.put(Ontology.LANGUAGE_OF_DESCRIPTION, defaultLanguage);
-<a class="jxr_linenumber" name="334" href="#334">334</a>         }
-<a class="jxr_linenumber" name="335" href="#335">335</a>     }
-<a class="jxr_linenumber" name="336" href="#336">336</a> 
-<a class="jxr_linenumber" name="337" href="#337">337</a>     <strong class="jxr_keyword">protected</strong> String getDefaultLanguage() {
-<a class="jxr_linenumber" name="338" href="#338">338</a>         <strong class="jxr_keyword">return</strong> eadLanguage;
-<a class="jxr_linenumber" name="339" href="#339">339</a>     }
-<a class="jxr_linenumber" name="340" href="#340">340</a> 
-<a class="jxr_linenumber" name="341" href="#341">341</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="342" href="#342">342</a> <em class="jxr_javadoccomment">     * Handler-specific code for extraction or generation of unit titles.</em>
-<a class="jxr_linenumber" name="343" href="#343">343</a> <em class="jxr_javadoccomment">     * Default method is empty; override when necessary.</em>
-<a class="jxr_linenumber" name="344" href="#344">344</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="345" href="#345">345</a> <em class="jxr_javadoccomment">     * @param currentGraph Data at the current node level</em>
-<a class="jxr_linenumber" name="346" href="#346">346</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="347" href="#347">347</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> extractTitle(Map&lt;String, Object&gt; currentGraph) {
-<a class="jxr_linenumber" name="348" href="#348">348</a> 
-<a class="jxr_linenumber" name="349" href="#349">349</a>     }
-<a class="jxr_linenumber" name="350" href="#350">350</a> 
-<a class="jxr_linenumber" name="351" href="#351">351</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="352" href="#352">352</a> <em class="jxr_javadoccomment">     * Handler-specific code for extraction or generation of unit dates.</em>
-<a class="jxr_linenumber" name="353" href="#353">353</a> <em class="jxr_javadoccomment">     * Default method is empty; override when necessary.</em>
-<a class="jxr_linenumber" name="354" href="#354">354</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="355" href="#355">355</a> <em class="jxr_javadoccomment">     * @param currentGraph Data at the current node level</em>
-<a class="jxr_linenumber" name="356" href="#356">356</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="357" href="#357">357</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> extractDate(Map&lt;String, Object&gt; currentGraph) {
-<a class="jxr_linenumber" name="358" href="#358">358</a> 
-<a class="jxr_linenumber" name="359" href="#359">359</a>     }
-<a class="jxr_linenumber" name="360" href="#360">360</a> 
-<a class="jxr_linenumber" name="361" href="#361">361</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="362" href="#362">362</a> <em class="jxr_javadoccomment">     * Handler-specific code for extraction or generation of unit IDs.</em>
-<a class="jxr_linenumber" name="363" href="#363">363</a> <em class="jxr_javadoccomment">     * Default method is empty; override when necessary.</em>
+<a class="jxr_linenumber" name="318" href="#318">318</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> useDefaultLanguage(Map&lt;String, Object&gt; currentGraph, String defaultLanguage) {
+<a class="jxr_linenumber" name="319" href="#319">319</a> 
+<a class="jxr_linenumber" name="320" href="#320">320</a>         <strong class="jxr_keyword">if</strong> (!currentGraph.containsKey(Ontology.LANGUAGE_OF_DESCRIPTION)) {
+<a class="jxr_linenumber" name="321" href="#321">321</a>             logger.debug(<span class="jxr_string">"Using default language code: "</span> + defaultLanguage);
+<a class="jxr_linenumber" name="322" href="#322">322</a>             currentGraph.put(Ontology.LANGUAGE_OF_DESCRIPTION, defaultLanguage);
+<a class="jxr_linenumber" name="323" href="#323">323</a>         }
+<a class="jxr_linenumber" name="324" href="#324">324</a>     }
+<a class="jxr_linenumber" name="325" href="#325">325</a> 
+<a class="jxr_linenumber" name="326" href="#326">326</a>     <strong class="jxr_keyword">protected</strong> String getDefaultLanguage() {
+<a class="jxr_linenumber" name="327" href="#327">327</a>         <strong class="jxr_keyword">return</strong> eadLanguage;
+<a class="jxr_linenumber" name="328" href="#328">328</a>     }
+<a class="jxr_linenumber" name="329" href="#329">329</a> 
+<a class="jxr_linenumber" name="330" href="#330">330</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="331" href="#331">331</a> <em class="jxr_javadoccomment">     * Handler-specific code for extraction or generation of unit titles.</em>
+<a class="jxr_linenumber" name="332" href="#332">332</a> <em class="jxr_javadoccomment">     * Default method is empty; override when necessary.</em>
+<a class="jxr_linenumber" name="333" href="#333">333</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="334" href="#334">334</a> <em class="jxr_javadoccomment">     * @param currentGraph Data at the current node level</em>
+<a class="jxr_linenumber" name="335" href="#335">335</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="336" href="#336">336</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> extractTitle(Map&lt;String, Object&gt; currentGraph) {
+<a class="jxr_linenumber" name="337" href="#337">337</a> 
+<a class="jxr_linenumber" name="338" href="#338">338</a>     }
+<a class="jxr_linenumber" name="339" href="#339">339</a> 
+<a class="jxr_linenumber" name="340" href="#340">340</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="341" href="#341">341</a> <em class="jxr_javadoccomment">     * Handler-specific code for extraction or generation of unit dates.</em>
+<a class="jxr_linenumber" name="342" href="#342">342</a> <em class="jxr_javadoccomment">     * Default method is empty; override when necessary.</em>
+<a class="jxr_linenumber" name="343" href="#343">343</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="344" href="#344">344</a> <em class="jxr_javadoccomment">     * @param currentGraph Data at the current node level</em>
+<a class="jxr_linenumber" name="345" href="#345">345</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="346" href="#346">346</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> extractDate(Map&lt;String, Object&gt; currentGraph) {
+<a class="jxr_linenumber" name="347" href="#347">347</a> 
+<a class="jxr_linenumber" name="348" href="#348">348</a>     }
+<a class="jxr_linenumber" name="349" href="#349">349</a> 
+<a class="jxr_linenumber" name="350" href="#350">350</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="351" href="#351">351</a> <em class="jxr_javadoccomment">     * Handler-specific code for extraction or generation of unit IDs.</em>
+<a class="jxr_linenumber" name="352" href="#352">352</a> <em class="jxr_javadoccomment">     * Default method is empty; override when necessary.</em>
+<a class="jxr_linenumber" name="353" href="#353">353</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="354" href="#354">354</a> <em class="jxr_javadoccomment">     * @param currentGraph Data at the current node level</em>
+<a class="jxr_linenumber" name="355" href="#355">355</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="356" href="#356">356</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> extractIdentifier(Map&lt;String, Object&gt; currentGraph) {
+<a class="jxr_linenumber" name="357" href="#357">357</a> 
+<a class="jxr_linenumber" name="358" href="#358">358</a>     }
+<a class="jxr_linenumber" name="359" href="#359">359</a> 
+<a class="jxr_linenumber" name="360" href="#360">360</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="361" href="#361">361</a> <em class="jxr_javadoccomment">     * Helper method to add identifiers to the list of other identifiers.</em>
+<a class="jxr_linenumber" name="362" href="#362">362</a> <em class="jxr_javadoccomment">     * The property named Ontology.OTHER_IDENTIFIERS (i.e. "otherIdentifiers")</em>
+<a class="jxr_linenumber" name="363" href="#363">363</a> <em class="jxr_javadoccomment">     * is always an ArrayList of Strings.</em>
 <a class="jxr_linenumber" name="364" href="#364">364</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="365" href="#365">365</a> <em class="jxr_javadoccomment">     * @param currentGraph Data at the current node level</em>
-<a class="jxr_linenumber" name="366" href="#366">366</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="367" href="#367">367</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> extractIdentifier(Map&lt;String, Object&gt; currentGraph) {
-<a class="jxr_linenumber" name="368" href="#368">368</a> 
-<a class="jxr_linenumber" name="369" href="#369">369</a>     }
-<a class="jxr_linenumber" name="370" href="#370">370</a> 
-<a class="jxr_linenumber" name="371" href="#371">371</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="372" href="#372">372</a> <em class="jxr_javadoccomment">     * Helper method to add identifiers to the list of other identifiers.</em>
-<a class="jxr_linenumber" name="373" href="#373">373</a> <em class="jxr_javadoccomment">     * The property named Ontology.OTHER_IDENTIFIERS (i.e. "otherIdentifiers")</em>
-<a class="jxr_linenumber" name="374" href="#374">374</a> <em class="jxr_javadoccomment">     * is always an ArrayList of Strings.</em>
-<a class="jxr_linenumber" name="375" href="#375">375</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="376" href="#376">376</a> <em class="jxr_javadoccomment">     * @param currentGraph    the node representation to add the otherIdentifier to</em>
-<a class="jxr_linenumber" name="377" href="#377">377</a> <em class="jxr_javadoccomment">     * @param otherIdentifier the alternative identifier to add</em>
-<a class="jxr_linenumber" name="378" href="#378">378</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="379" href="#379">379</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> addOtherIdentifier(Map&lt;String, Object&gt; currentGraph, String otherIdentifier) {
-<a class="jxr_linenumber" name="380" href="#380">380</a>         <strong class="jxr_keyword">if</strong> (currentGraph.containsKey(Ontology.OTHER_IDENTIFIERS)) {
-<a class="jxr_linenumber" name="381" href="#381">381</a>             logger.debug(<span class="jxr_string">"adding alternative id: "</span> + otherIdentifier);
-<a class="jxr_linenumber" name="382" href="#382">382</a>             Object oids = currentGraph.get(Ontology.OTHER_IDENTIFIERS);
-<a class="jxr_linenumber" name="383" href="#383">383</a>             <strong class="jxr_keyword">if</strong> (oids != <strong class="jxr_keyword">null</strong> &amp;&amp; oids instanceof ArrayList&lt;?&gt;) {
-<a class="jxr_linenumber" name="384" href="#384">384</a>                 ((ArrayList&lt;String&gt;) oids).add(otherIdentifier);
-<a class="jxr_linenumber" name="385" href="#385">385</a>                 logger.debug(<span class="jxr_string">"alternative ID added"</span>);
-<a class="jxr_linenumber" name="386" href="#386">386</a>             }
-<a class="jxr_linenumber" name="387" href="#387">387</a>         } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="388" href="#388">388</a>             logger.debug(<span class="jxr_string">"adding first alt id: "</span> + otherIdentifier);
-<a class="jxr_linenumber" name="389" href="#389">389</a>             List&lt;String&gt; oids = Lists.newArrayList();
-<a class="jxr_linenumber" name="390" href="#390">390</a>             oids.add(otherIdentifier);
-<a class="jxr_linenumber" name="391" href="#391">391</a>             currentGraph.put(Ontology.OTHER_IDENTIFIERS, oids);
+<a class="jxr_linenumber" name="365" href="#365">365</a> <em class="jxr_javadoccomment">     * @param currentGraph    the node representation to add the otherIdentifier to</em>
+<a class="jxr_linenumber" name="366" href="#366">366</a> <em class="jxr_javadoccomment">     * @param otherIdentifier the alternative identifier to add</em>
+<a class="jxr_linenumber" name="367" href="#367">367</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="368" href="#368">368</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">void</strong> addOtherIdentifier(Map&lt;String, Object&gt; currentGraph, String otherIdentifier) {
+<a class="jxr_linenumber" name="369" href="#369">369</a>         <strong class="jxr_keyword">if</strong> (currentGraph.containsKey(Ontology.OTHER_IDENTIFIERS)) {
+<a class="jxr_linenumber" name="370" href="#370">370</a>             logger.debug(<span class="jxr_string">"adding alternative id: "</span> + otherIdentifier);
+<a class="jxr_linenumber" name="371" href="#371">371</a>             Object oids = currentGraph.get(Ontology.OTHER_IDENTIFIERS);
+<a class="jxr_linenumber" name="372" href="#372">372</a>             <strong class="jxr_keyword">if</strong> (oids != <strong class="jxr_keyword">null</strong> &amp;&amp; oids instanceof ArrayList&lt;?&gt;) {
+<a class="jxr_linenumber" name="373" href="#373">373</a>                 ((ArrayList&lt;String&gt;) oids).add(otherIdentifier);
+<a class="jxr_linenumber" name="374" href="#374">374</a>                 logger.debug(<span class="jxr_string">"alternative ID added"</span>);
+<a class="jxr_linenumber" name="375" href="#375">375</a>             }
+<a class="jxr_linenumber" name="376" href="#376">376</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="377" href="#377">377</a>             logger.debug(<span class="jxr_string">"adding first alt id: "</span> + otherIdentifier);
+<a class="jxr_linenumber" name="378" href="#378">378</a>             List&lt;String&gt; oids = Lists.newArrayList();
+<a class="jxr_linenumber" name="379" href="#379">379</a>             oids.add(otherIdentifier);
+<a class="jxr_linenumber" name="380" href="#380">380</a>             currentGraph.put(Ontology.OTHER_IDENTIFIERS, oids);
+<a class="jxr_linenumber" name="381" href="#381">381</a>         }
+<a class="jxr_linenumber" name="382" href="#382">382</a>     }
+<a class="jxr_linenumber" name="383" href="#383">383</a> 
+<a class="jxr_linenumber" name="384" href="#384">384</a>     @Override
+<a class="jxr_linenumber" name="385" href="#385">385</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">boolean</strong> needToCreateSubNode(String qName) {
+<a class="jxr_linenumber" name="386" href="#386">386</a>         <em class="jxr_comment">//child or parent unit:</em>
+<a class="jxr_linenumber" name="387" href="#387">387</a>         <strong class="jxr_keyword">boolean</strong> need = isUnitDelimiter(qName);
+<a class="jxr_linenumber" name="388" href="#388">388</a>         <em class="jxr_comment">//controlAccess </em>
+<a class="jxr_linenumber" name="389" href="#389">389</a>         String path = getImportantPath(currentPath);
+<a class="jxr_linenumber" name="390" href="#390">390</a>         <strong class="jxr_keyword">if</strong> (path != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="391" href="#391">391</a>             need = need || path.endsWith(<span class="jxr_string">"AccessPoint"</span>);
 <a class="jxr_linenumber" name="392" href="#392">392</a>         }
-<a class="jxr_linenumber" name="393" href="#393">393</a>     }
-<a class="jxr_linenumber" name="394" href="#394">394</a> 
-<a class="jxr_linenumber" name="395" href="#395">395</a>     @Override
-<a class="jxr_linenumber" name="396" href="#396">396</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">boolean</strong> needToCreateSubNode(String qName) {
-<a class="jxr_linenumber" name="397" href="#397">397</a>         <em class="jxr_comment">//child or parent unit:</em>
-<a class="jxr_linenumber" name="398" href="#398">398</a>         <strong class="jxr_keyword">boolean</strong> need = isUnitDelimiter(qName);
-<a class="jxr_linenumber" name="399" href="#399">399</a>         <em class="jxr_comment">//controlAccess </em>
-<a class="jxr_linenumber" name="400" href="#400">400</a>         String path = getImportantPath(currentPath);
-<a class="jxr_linenumber" name="401" href="#401">401</a>         <strong class="jxr_keyword">if</strong> (path != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="402" href="#402">402</a>             need = need || path.endsWith(<span class="jxr_string">"AccessPoint"</span>);
-<a class="jxr_linenumber" name="403" href="#403">403</a>         }
-<a class="jxr_linenumber" name="404" href="#404">404</a>         <strong class="jxr_keyword">return</strong> need || possibleSubnodes.containsKey(getImportantPath(currentPath));
-<a class="jxr_linenumber" name="405" href="#405">405</a>     }
-<a class="jxr_linenumber" name="406" href="#406">406</a> 
-<a class="jxr_linenumber" name="407" href="#407">407</a>     @Override
-<a class="jxr_linenumber" name="408" href="#408">408</a>     <strong class="jxr_keyword">protected</strong> List&lt;String&gt; getSchemas() {
-<a class="jxr_linenumber" name="409" href="#409">409</a>         <strong class="jxr_keyword">return</strong> Lists.newArrayList(<span class="jxr_string">"xlink.xsd"</span>, <span class="jxr_string">"ead.xsd"</span>);
+<a class="jxr_linenumber" name="393" href="#393">393</a>         <strong class="jxr_keyword">return</strong> need || possibleSubnodes.containsKey(getImportantPath(currentPath));
+<a class="jxr_linenumber" name="394" href="#394">394</a>     }
+<a class="jxr_linenumber" name="395" href="#395">395</a> 
+<a class="jxr_linenumber" name="396" href="#396">396</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="397" href="#397">397</a> <em class="jxr_javadoccomment">     * Determine if the element represents a unit delimiter</em>
+<a class="jxr_linenumber" name="398" href="#398">398</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="399" href="#399">399</a> <em class="jxr_javadoccomment">     * @param elementName The XML element name</em>
+<a class="jxr_linenumber" name="400" href="#400">400</a> <em class="jxr_javadoccomment">     * @return Whether or not we're moved to a new item</em>
+<a class="jxr_linenumber" name="401" href="#401">401</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="402" href="#402">402</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> isUnitDelimiter(String elementName) {
+<a class="jxr_linenumber" name="403" href="#403">403</a>         <strong class="jxr_keyword">return</strong> childItemPattern.matcher(elementName).matches() || elementName.equals(ARCHDESC);
+<a class="jxr_linenumber" name="404" href="#404">404</a>     }
+<a class="jxr_linenumber" name="405" href="#405">405</a> 
+<a class="jxr_linenumber" name="406" href="#406">406</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> addAuthor(Map&lt;String, Object&gt; currentGraph) {
+<a class="jxr_linenumber" name="407" href="#407">407</a>         <strong class="jxr_keyword">if</strong> (getAuthor() != <strong class="jxr_keyword">null</strong> &amp;&amp; !currentGraph.containsKey(AUTHOR)) {
+<a class="jxr_linenumber" name="408" href="#408">408</a>             currentGraph.put(AUTHOR, getAuthor());
+<a class="jxr_linenumber" name="409" href="#409">409</a>         }
 <a class="jxr_linenumber" name="410" href="#410">410</a>     }
-<a class="jxr_linenumber" name="411" href="#411">411</a> 
-<a class="jxr_linenumber" name="412" href="#412">412</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="413" href="#413">413</a> <em class="jxr_javadoccomment">     * Determine if the element represents a unit delimiter</em>
-<a class="jxr_linenumber" name="414" href="#414">414</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="415" href="#415">415</a> <em class="jxr_javadoccomment">     * @param elementName The XML element name</em>
-<a class="jxr_linenumber" name="416" href="#416">416</a> <em class="jxr_javadoccomment">     * @return Whether or not we're moved to a new item</em>
-<a class="jxr_linenumber" name="417" href="#417">417</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="418" href="#418">418</a>     <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">boolean</strong> isUnitDelimiter(String elementName) {
-<a class="jxr_linenumber" name="419" href="#419">419</a>         <strong class="jxr_keyword">return</strong> childItemPattern.matcher(elementName).matches() || elementName.equals(ARCHDESC);
-<a class="jxr_linenumber" name="420" href="#420">420</a>     }
-<a class="jxr_linenumber" name="421" href="#421">421</a> 
-<a class="jxr_linenumber" name="422" href="#422">422</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> addAuthor(Map&lt;String, Object&gt; currentGraph) {
-<a class="jxr_linenumber" name="423" href="#423">423</a>         <strong class="jxr_keyword">if</strong> (getAuthor() != <strong class="jxr_keyword">null</strong> &amp;&amp; !currentGraph.containsKey(AUTHOR)) {
-<a class="jxr_linenumber" name="424" href="#424">424</a>             currentGraph.put(AUTHOR, getAuthor());
-<a class="jxr_linenumber" name="425" href="#425">425</a>         }
-<a class="jxr_linenumber" name="426" href="#426">426</a>     }
-<a class="jxr_linenumber" name="427" href="#427">427</a> }
+<a class="jxr_linenumber" name="411" href="#411">411</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

@@ -120,7 +120,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
  procedure. An EAD a single entity at the highest level of description or multiple top-level entities, with or without
  a hierarchical structure describing their child items. This means that we need to recursively descend through the
  archdesc and c,c01-12 levels.
- <p>
+ <p/>
  TODO: Extensive cleanups, optimisation, and rationalisation.</div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>Linda Reijnhoudt (https://github.com/lindareijnhoudt)</dd></dl>
@@ -159,7 +159,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;eu.ehri.project.importers.<a href="../../../../eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</a></h3>
-<code><a href="../../../../eu/ehri/project/importers/MapImporter.html#DESCRIPTION_ID">DESCRIPTION_ID</a>, <a href="../../../../eu/ehri/project/importers/MapImporter.html#OBJECT_ID">OBJECT_ID</a></code></li>
+<code><a href="../../../../eu/ehri/project/importers/MapImporter.html#OBJECT_ID">OBJECT_ID</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="fields_inherited_from_class_eu.ehri.project.importers.AbstractImporter">
@@ -255,7 +255,8 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/EadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit,%20eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</a></strong>(<a href="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a>&nbsp;unit,
                               <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle)</code>
 <div class="block">subclasses can override this method to cater to their special needs for UndeterminedRelationships
- by default, it expects something like this in the original EAD:</div>
+ by default, it expects something like this in the original EAD:
+ <p/></div>
 </td>
 </tr>
 </table>
@@ -278,7 +279,7 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;eu.ehri.project.importers.<a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></h3>
-<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#addCallback(eu.ehri.project.importers.ImportCallback)">addCallback</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#changeForbiddenMultivaluedProperties(java.lang.String,%20java.lang.Object,%20eu.ehri.project.models.EntityClass)">changeForbiddenMultivaluedProperties</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPermissionScope()">getPermissionScope</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister()">getPersister</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister(java.util.List)">getPersister</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#handleCallbacks(eu.ehri.project.persistence.Mutation)">handleCallbacks</a></code></li>
+<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#addCallback(eu.ehri.project.importers.ImportCallback)">addCallback</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#flattenNonMultivaluedProperties(java.lang.String,%20java.lang.Object,%20eu.ehri.project.models.EntityClass)">flattenNonMultivaluedProperties</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPermissionScope()">getPermissionScope</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister()">getPersister</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister(java.util.List)">getPersister</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#handleCallbacks(eu.ehri.project.persistence.Mutation)">handleCallbacks</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -392,13 +393,13 @@ extends <a href="../../../../eu/ehri/project/importers/EaImporter.html" title="c
                                        throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
 <div class="block">subclasses can override this method to cater to their special needs for UndeterminedRelationships
  by default, it expects something like this in the original EAD:
- <p>
+ <p/>
  <pre>
  <code>&lt;persname source="terezin-victims" authfilenumber="PERSON.ITI.1514982"&gt;Kien,
  Leonhard (* 11.5.1886)&lt;/persname&gt;
  </code>
  </pre>
- <p>
+ <p/>
  it works in unison with the extractRelations() method.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>unit</code> - the current unit</dd><dd><code>descBundle</code> - - not used</dd>
 <dt><span class="strong">Throws:</span></dt>
