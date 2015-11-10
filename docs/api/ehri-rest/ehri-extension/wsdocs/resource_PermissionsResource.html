@@ -52,6 +52,7 @@
             <li class="current">
               <a href="resource_PermissionsResource.html">PermissionsResource</a>
               <ul>
+                <li><a href="resource_AccessPointResource.html">AccessPointResource</a></li>
                 <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
@@ -99,15 +100,6 @@
         </li>
         <li>
         <a href="#path__permission_-userId-_scope_-id-.html">/permission/{userId}/scope/{id}</a>
-        </li>
-        <li>
-        <a href="#path__permission_list_-id-.html">/permission/list/{id}</a>
-        </li>
-        <li>
-        <a href="#path__permission_listForItem_-id-.html">/permission/listForItem/{id}</a>
-        </li>
-        <li>
-        <a href="#path__permission_listForScope_-id-.html">/permission/listForScope/{id}</a>
         </li>
       </ul>
         <a name="path__permission.html"></a>
@@ -412,117 +404,6 @@ on the Authorization header.
         </tr>
       </table>
       <p>The new permission matrix</p>
-        <a name="path__permission_list_-id-.html"></a>
-      <h1>/permission/list/{id}</h1>
-      <p class="note">Mount Point: <a href="../permission/list/{id}">/permission/list/{id}</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Get a list of permission grants for the given user
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            The user's id
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of permission grants for the user</p>
-        <a name="path__permission_listForItem_-id-.html"></a>
-      <h1>/permission/listForItem/{id}</h1>
-      <p class="note">Mount Point: <a href="../permission/listForItem/{id}">/permission/listForItem/{id}</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            List all the permission grants that relate specifically to this item.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of grants for this item</p>
-        <a name="path__permission_listForScope_-id-.html"></a>
-      <h1>/permission/listForScope/{id}</h1>
-      <p class="note">Mount Point: <a href="../permission/listForScope/{id}">/permission/listForScope/{id}</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            List all the permission grants that relate specifically to this scope.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of grants for the given scope</p>
 
       <div class="clear" />
     </div>

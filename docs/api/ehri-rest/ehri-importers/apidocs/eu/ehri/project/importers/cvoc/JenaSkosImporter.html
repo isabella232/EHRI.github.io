@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JenaSkosImporter (Import Tools 0.11.0-SNAPSHOT API)</title>
+<title>JenaSkosImporter (Import Tools 0.11.2-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="JenaSkosImporter (Import Tools 0.11.0-SNAPSHOT API)";
+        parent.document.title="JenaSkosImporter (Import Tools 0.11.2-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -102,6 +102,7 @@
 <pre>public final class <span class="strong">JenaSkosImporter</span>
 extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../eu/ehri/project/importers/cvoc/SkosImporter.html" title="interface in eu.ehri.project.importers.cvoc">SkosImporter</a></pre>
+<div class="block">Import SKOS RDF.</div>
 <dl><dt><span class="strong">Author:</span></dt>
   <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
 </li>
@@ -125,18 +126,6 @@ implements <a href="../../../../../eu/ehri/project/importers/cvoc/SkosImporter.h
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/cvoc/JenaSkosImporter.html#DEFAULT_LANG">DEFAULT_LANG</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/cvoc/JenaSkosImporter.html#GENERAL_PROPS">GENERAL_PROPS</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</a>&gt;&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/cvoc/JenaSkosImporter.html#LANGUAGE_PROPS">LANGUAGE_PROPS</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/cvoc/JenaSkosImporter.html#RELATION_PROPS">RELATION_PROPS</a></strong></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -242,38 +231,11 @@ implements <a href="../../../../../eu/ehri/project/importers/cvoc/SkosImporter.h
 <a name="DEFAULT_LANG">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>DEFAULT_LANG</h4>
 <pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> DEFAULT_LANG</pre>
 <dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#eu.ehri.project.importers.cvoc.JenaSkosImporter.DEFAULT_LANG">Constant Field Values</a></dd></dl>
-</li>
-</ul>
-<a name="LANGUAGE_PROPS">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>LANGUAGE_PROPS</h4>
-<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</a>&gt;&gt; LANGUAGE_PROPS</pre>
-</li>
-</ul>
-<a name="GENERAL_PROPS">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>GENERAL_PROPS</h4>
-<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</a>&gt; GENERAL_PROPS</pre>
-</li>
-</ul>
-<a name="RELATION_PROPS">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>RELATION_PROPS</h4>
-<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</a>&gt; RELATION_PROPS</pre>
 </li>
 </ul>
 </li>

@@ -52,6 +52,7 @@
             <li class="current">
               <a href="resource_CvocConceptResource.html">CvocConceptResource</a>
               <ul>
+                <li><a href="resource_AccessPointResource.html">AccessPointResource</a></li>
                 <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
@@ -97,7 +98,7 @@ Vocabulary is not possible via this API.</p>
         <a href="#path__cvocConcept_-id-.html">/cvocConcept/{id}</a>
         </li>
         <li>
-        <a href="#path__cvocConcept_-id-_broader_list.html">/cvocConcept/{id}/broader/list</a>
+        <a href="#path__cvocConcept_-id-_broader.html">/cvocConcept/{id}/broader</a>
         </li>
         <li>
         <a href="#path__cvocConcept_-id-_cvocConcept.html">/cvocConcept/{id}/cvocConcept</a>
@@ -109,13 +110,13 @@ Vocabulary is not possible via this API.</p>
         <a href="#path__cvocConcept_-id-_narrower_-idNarrower-.html">/cvocConcept/{id}/narrower/{idNarrower}</a>
         </li>
         <li>
+        <a href="#path__cvocConcept_-id-_related.html">/cvocConcept/{id}/related</a>
+        </li>
+        <li>
         <a href="#path__cvocConcept_-id-_related_-idRelated-.html">/cvocConcept/{id}/related/{idRelated}</a>
         </li>
         <li>
-        <a href="#path__cvocConcept_-id-_related_list.html">/cvocConcept/{id}/related/list</a>
-        </li>
-        <li>
-        <a href="#path__cvocConcept_-id-_relatedBy_list.html">/cvocConcept/{id}/relatedBy/list</a>
+        <a href="#path__cvocConcept_-id-_relatedBy.html">/cvocConcept/{id}/relatedBy</a>
         </li>
       </ul>
         <a name="path__cvocConcept.html"></a>
@@ -285,9 +286,9 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         </tr>
       </table>
       <p>A response with 200 representing a successful deletion.</p>
-        <a name="path__cvocConcept_-id-_broader_list.html"></a>
-      <h1>/cvocConcept/{id}/broader/list</h1>
-      <p class="note">Mount Point: <a href="../cvocConcept/{id}/broader/list">/cvocConcept/{id}/broader/list</a></p>
+        <a name="path__cvocConcept_-id-_broader.html"></a>
+      <h1>/cvocConcept/{id}/broader</h1>
+      <p class="note">Mount Point: <a href="../cvocConcept/{id}/broader">/cvocConcept/{id}/broader</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
@@ -519,6 +520,43 @@ curl http://localhost:7474/ehri/[RESOURCE]/[ID]/list
         </tr>
       </table>
       <p>(no documentation provided)</p>
+        <a name="path__cvocConcept_-id-_related.html"></a>
+      <h1>/cvocConcept/{id}/related</h1>
+      <p class="note">Mount Point: <a href="../cvocConcept/{id}/related">/cvocConcept/{id}/related</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            List concepts related to another concept.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            The item ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A list of related resources</p>
         <a name="path__cvocConcept_-id-_related_-idRelated-.html"></a>
       <h1>/cvocConcept/{id}/related/{idRelated}</h1>
       <p class="note">Mount Point: <a href="../cvocConcept/{id}/related/{idRelated}">/cvocConcept/{id}/related/{idRelated}</a></p>
@@ -608,46 +646,9 @@ concept.
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__cvocConcept_-id-_related_list.html"></a>
-      <h1>/cvocConcept/{id}/related/list</h1>
-      <p class="note">Mount Point: <a href="../cvocConcept/{id}/related/list">/cvocConcept/{id}/related/list</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            List concepts related to another concept.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            The item ID
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of related resources</p>
-        <a name="path__cvocConcept_-id-_relatedBy_list.html"></a>
-      <h1>/cvocConcept/{id}/relatedBy/list</h1>
-      <p class="note">Mount Point: <a href="../cvocConcept/{id}/relatedBy/list">/cvocConcept/{id}/relatedBy/list</a></p>
+        <a name="path__cvocConcept_-id-_relatedBy.html"></a>
+      <h1>/cvocConcept/{id}/relatedBy</h1>
+      <p class="note">Mount Point: <a href="../cvocConcept/{id}/relatedBy">/cvocConcept/{id}/relatedBy</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>

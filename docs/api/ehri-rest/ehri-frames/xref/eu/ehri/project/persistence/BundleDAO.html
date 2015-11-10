@@ -215,7 +215,7 @@
 <a class="jxr_linenumber" name="205" href="#205">205</a>         <strong class="jxr_keyword">try</strong> {
 <a class="jxr_linenumber" name="206" href="#206">206</a>             <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> nodeBundle = serializer.vertexFrameToBundle(node);
 <a class="jxr_linenumber" name="207" href="#207">207</a>             <strong class="jxr_keyword">if</strong> (!nodeBundle.equals(bundle)) {
-<a class="jxr_linenumber" name="208" href="#208">208</a>                 logger.trace(<span class="jxr_string">"Bundles differ\n\n{}\n\n{}"</span>, bundle.toJson(), nodeBundle.toJson());
+<a class="jxr_linenumber" name="208" href="#208">208</a>                 logger.trace(<span class="jxr_string">"Bundles differ\nnew:\n{}\nold:\n{}"</span>, bundle.toJson(), nodeBundle.toJson());
 <a class="jxr_linenumber" name="209" href="#209">209</a>                 node = manager.updateVertex(bundle.getId(), bundle.getType(),
 <a class="jxr_linenumber" name="210" href="#210">210</a>                         bundle.getData(), bundle.getPropertyKeys());
 <a class="jxr_linenumber" name="211" href="#211">211</a>                 updateDependents(node, bundle.getBundleJavaClass(), bundle.getRelations());

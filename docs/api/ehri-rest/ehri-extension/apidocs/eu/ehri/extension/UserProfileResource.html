@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>UserProfileResource (Web Service 0.11.0-SNAPSHOT API)</title>
+<title>UserProfileResource (Web Service 0.11.2-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="UserProfileResource (Web Service 0.11.0-SNAPSHOT API)";
+        parent.document.title="UserProfileResource (Web Service 0.11.2-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -186,7 +186,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></h3>
-<code><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclManager">aclManager</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclViews">aclViews</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#actionManager">actionManager</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#cls">cls</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#helper">helper</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#querier">querier</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#views">views</a></code></li>
+<code><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclManager">aclManager</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclViews">aclViews</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#actionManager">actionManager</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#AGGREGATION_PARAM">AGGREGATION_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#cls">cls</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#EVENT_TYPE_PARAM">EVENT_TYPE_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#FROM_PARAM">FROM_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#helper">helper</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#ITEM_ID_PARAM">ITEM_ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#ITEM_TYPE_PARAM">ITEM_TYPE_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#querier">querier</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#SHOW_PARAM">SHOW_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#TO_PARAM">TO_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#USER_PARAM">USER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#views">views</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="fields_inherited_from_class_eu.ehri.extension.AbstractRestResource">
@@ -225,6 +225,21 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#aggregateEventsForUser(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateEventsForUser</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
+                      <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/views/EventViews.Aggregation.html?is-external=true" title="class or interface in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)</code>
+<div class="block">Aggregate actions that are relevant to a given user based on
+ the other users that they follow and the items they watch.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#aggregateUserActions(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateUserActions</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
+                    <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/views/EventViews.Aggregation.html?is-external=true" title="class or interface in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)</code>
+<div class="block">Fetch an aggregate list of a user's actions.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
@@ -298,39 +313,45 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#listWatching(java.lang.String)">listWatching</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#listPermissionGrants(java.lang.String)">listPermissionGrants</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<div class="block">Get a list of permission grants for the given user</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#pageLinks(java.lang.String)">pageLinks</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#listWatching(java.lang.String)">listWatching</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#pageVirtualUnits(java.lang.String)">pageVirtualUnits</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#pageLinks(java.lang.String)">pageLinks</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#pageVirtualUnits(java.lang.String)">pageVirtualUnits</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#unblockUserProfile(java.lang.String,%20java.util.List)">unblockUserProfile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;otherIds)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#unfollowUserProfile(java.lang.String,%20java.util.List)">unfollowUserProfile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                    <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;otherIds)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#unwatchItem(java.lang.String,%20java.util.List)">unwatchItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;otherIds)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
       <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
 <div class="block">Update a resource.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/UserProfileResource.html#watchItem(java.lang.String,%20java.util.List)">watchItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;otherIds)</code>&nbsp;</td>
@@ -341,7 +362,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></h3>
-<code><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler,%20eu.ehri.project.views.impl.LoggingCrudViews)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String)">deleteItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">deleteItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List,%20eu.ehri.project.models.base.Accessor)">getAccessors</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getItem(java.lang.String)">getItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#listItems()">listItems</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(eu.ehri.project.persistence.Bundle)">updateItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateItem</a></code></li>
+<code><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler,%20eu.ehri.project.views.impl.LoggingCrudViews)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String)">deleteItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">deleteItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List,%20eu.ehri.project.models.base.Accessor)">getAccessors</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getEventViewsBuilder()">getEventViewsBuilder</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getItem(java.lang.String)">getItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#listItems()">listItems</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(eu.ehri.project.persistence.Bundle)">updateItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateItem</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_eu.ehri.extension.AbstractRestResource">
@@ -826,12 +847,63 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <a name="pageVirtualUnits(java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>pageVirtualUnits</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;pageVirtualUnits(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)
                                            throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
+</li>
+</ul>
+<a name="aggregateUserActions(java.lang.String, eu.ehri.project.views.EventViews.Aggregation)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aggregateUserActions</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;aggregateUserActions(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
+                                             <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/views/EventViews.Aggregation.html?is-external=true" title="class or interface in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
+                                               throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+<div class="block">Fetch an aggregate list of a user's actions.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user's ID</dd><dd><code>aggregation</code> - The manner in which to aggregate the results, accepting
+                    "user", "strict" or "off" (no aggregation). Default is
+                    <b>strict</b>.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a list of event ranges</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
+</li>
+</ul>
+<a name="aggregateEventsForUser(java.lang.String, eu.ehri.project.views.EventViews.Aggregation)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>aggregateEventsForUser</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;aggregateEventsForUser(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
+                                               <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/views/EventViews.Aggregation.html?is-external=true" title="class or interface in eu.ehri.project.views">EventViews.Aggregation</a>&nbsp;aggregation)
+                                                 throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+<div class="block">Aggregate actions that are relevant to a given user based on
+ the other users that they follow and the items they watch.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>userId</code> - the user's ID</dd><dd><code>aggregation</code> - The manner in which to aggregate the results, accepting
+                    "user", "strict" or "off" (no aggregation). Default is
+                    "user".</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
+</li>
+</ul>
+<a name="listPermissionGrants(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>listPermissionGrants</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listPermissionGrants(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+                                               throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+<div class="block">Get a list of permission grants for the given user</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The user's id</dd>
+<dt><span class="strong">Returns:</span></dt><dd>A list of permission grants for the user</dd>
+<dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>

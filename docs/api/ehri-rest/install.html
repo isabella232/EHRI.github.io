@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20151027" />
+    <meta name="Date-Revision-yyyymmdd" content="20151110" />
     <meta http-equiv="Content-Language" content="en" />
     <title>EHRI Backend &#x2013; Setup of development environment</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2015-10-27
+                  <li id="publishDate">Last Published: 2015-11-10
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.11.0-SNAPSHOT
+                  <li id="projectVersion">Version: 0.11.2-SNAPSHOT
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -301,13 +301,13 @@ mvn install
 
 <div class="source">
 <div class="source">
-<pre>curl -L -0 http://neo4j.com/artifact.php?name=neo4j-community-2.2.5-unix.tar.gz | tar zx
+<pre>curl -L -0 http://neo4j.com/artifact.php?name=neo4j-community-2.3.0-unix.tar.gz | tar zx
 </pre></div></div>
 <p>We&#x2019;ll need to refer to the installation location a lot so save it as an environment variable:</p>
 
 <div class="source">
 <div class="source">
-<pre>export NEO4J_HOME=neo4j-community-2.2.5
+<pre>export NEO4J_HOME=neo4j-community-2.3.0
 </pre></div></div>
 <p>Once both the EHRI server code has been compiled and Neo4j standalone has been downloaded and extracted, we can install the former into the latter. The following script ensures the code is packaged and then installs the EHRI jars and various other dependencies into the <tt>$NEO4J_HOME/plugin/ehri</tt> directory:</p>
 

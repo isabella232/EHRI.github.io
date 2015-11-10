@@ -52,6 +52,7 @@
             <li class="current">
               <a href="resource_VocabularyResource.html">VocabularyResource</a>
               <ul>
+                <li><a href="resource_AccessPointResource.html">AccessPointResource</a></li>
                 <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
@@ -100,6 +101,9 @@ containers for Concepts.</p>
         </li>
         <li>
         <a href="#path__cvocVocabulary_-id-_cvocConcept.html">/cvocVocabulary/{id}/cvocConcept</a>
+        </li>
+        <li>
+        <a href="#path__cvocVocabulary_-id-_export.html">/cvocVocabulary/{id}/export</a>
         </li>
         <li>
         <a href="#path__cvocVocabulary_-id-_list.html">/cvocVocabulary/{id}/list</a>
@@ -409,6 +413,59 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         </tr>
       </table>
       <p>A serialized representation of the created resource.</p>
+        <a name="path__cvocVocabulary_-id-_export.html"></a>
+      <h1>/cvocVocabulary/{id}/export</h1>
+      <p class="note">Mount Point: <a href="../cvocVocabulary/{id}/export">/cvocVocabulary/{id}/export</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Export the given vocabulary as SKOS.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the vocabulary id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>format</td>
+          <td>
+            the RDF format. Can be one of: RDF/XML, N3, TTL
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>baseUri</td>
+          <td>
+            the base URI for exported items
+          </td>
+          <td>query</td>
+          <td>http://data.ehri-project.eu#</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/turtle<br/>application/n-triples<br/>application/rdf+xml</td>
+        </tr>
+      </table>
+      <p>a SKOS vocabulary</p>
         <a name="path__cvocVocabulary_-id-_list.html"></a>
       <h1>/cvocVocabulary/{id}/list</h1>
       <p class="note">Mount Point: <a href="../cvocVocabulary/{id}/list">/cvocVocabulary/{id}/list</a></p>
