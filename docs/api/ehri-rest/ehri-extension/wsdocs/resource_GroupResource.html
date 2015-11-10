@@ -52,7 +52,6 @@
             <li class="current">
               <a href="resource_GroupResource.html">GroupResource</a>
               <ul>
-                <li><a href="resource_AccessPointResource.html">AccessPointResource</a></li>
                 <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
@@ -97,6 +96,9 @@
         </li>
         <li>
         <a href="#path__group_-id-_-aid-.html">/group/{id}/{aid}</a>
+        </li>
+        <li>
+        <a href="#path__group_-id-_count.html">/group/{id}/count</a>
         </li>
         <li>
         <a href="#path__group_-id-_list.html">/group/{id}/list</a>
@@ -404,6 +406,48 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         <tr>
           <td align="right">media types:</td>
           <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__group_-id-_count.html"></a>
+      <h1>/group/{id}/count</h1>
+      <p class="note">Mount Point: <a href="../group/{id}/count">/group/{id}/count</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>all</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
         </tr>
       </table>
       <p>(no documentation provided)</p>

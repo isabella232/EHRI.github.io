@@ -108,7 +108,92 @@
 <a class="jxr_linenumber" name="98" href="#98">98</a>          assertTrue(goodFiltered.size() &gt; 0);
 <a class="jxr_linenumber" name="99" href="#99">99</a>          assertEquals(0, badFiltered.size());
 <a class="jxr_linenumber" name="100" href="#100">100</a>     }
-<a class="jxr_linenumber" name="101" href="#101">101</a> }
+<a class="jxr_linenumber" name="101" href="#101">101</a> 
+<a class="jxr_linenumber" name="102" href="#102">102</a>     @Test
+<a class="jxr_linenumber" name="103" href="#103">103</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetActionsForItem() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="104" href="#104">104</a> 
+<a class="jxr_linenumber" name="105" href="#105">105</a>         <em class="jxr_comment">// Create an item</em>
+<a class="jxr_linenumber" name="106" href="#106">106</a>         client.resource(
+<a class="jxr_linenumber" name="107" href="#107">107</a>                 ehriUri(Entities.COUNTRY, COUNTRY_CODE, Entities.REPOSITORY));
+<a class="jxr_linenumber" name="108" href="#108">108</a>         ClientResponse response = jsonCallAs(getAdminUserProfileId(),
+<a class="jxr_linenumber" name="109" href="#109">109</a>                 ehriUri(Entities.COUNTRY, COUNTRY_CODE, Entities.REPOSITORY))
+<a class="jxr_linenumber" name="110" href="#110">110</a>                 .entity(jsonAgentTestString)
+<a class="jxr_linenumber" name="111" href="#111">111</a>                 .post(ClientResponse.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="112" href="#112">112</a> 
+<a class="jxr_linenumber" name="113" href="#113">113</a>         <em class="jxr_comment">// Get the id</em>
+<a class="jxr_linenumber" name="114" href="#114">114</a>         String url = response.getLocation().toString();
+<a class="jxr_linenumber" name="115" href="#115">115</a>         String id = url.substring(url.lastIndexOf(<span class="jxr_string">"/"</span>) + 1);
+<a class="jxr_linenumber" name="116" href="#116">116</a> 
+<a class="jxr_linenumber" name="117" href="#117">117</a>         response = jsonCallAs(getAdminUserProfileId(),
+<a class="jxr_linenumber" name="118" href="#118">118</a>                 ehriUri(Entities.SYSTEM_EVENT, <span class="jxr_string">"for"</span>, id))
+<a class="jxr_linenumber" name="119" href="#119">119</a>                 .get(ClientResponse.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="120" href="#120">120</a>         assertStatus(OK, response);
+<a class="jxr_linenumber" name="121" href="#121">121</a>     }
+<a class="jxr_linenumber" name="122" href="#122">122</a> 
+<a class="jxr_linenumber" name="123" href="#123">123</a>     @Test
+<a class="jxr_linenumber" name="124" href="#124">124</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testPersonalisedEventList() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="125" href="#125">125</a> 
+<a class="jxr_linenumber" name="126" href="#126">126</a>         <em class="jxr_comment">// Create an event by updating an item...</em>
+<a class="jxr_linenumber" name="127" href="#127">127</a>         ClientResponse response = jsonCallAs(getAdminUserProfileId(),
+<a class="jxr_linenumber" name="128" href="#128">128</a>                 ehriUri(Entities.REPOSITORY, <span class="jxr_string">"r1"</span>))
+<a class="jxr_linenumber" name="129" href="#129">129</a>                 .entity(jsonAgentTestString)
+<a class="jxr_linenumber" name="130" href="#130">130</a>                 .header(AbstractRestResource.LOG_MESSAGE_HEADER_NAME, <span class="jxr_string">"Testing update"</span>)
+<a class="jxr_linenumber" name="131" href="#131">131</a>                 .put(ClientResponse.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="132" href="#132">132</a>         assertStatus(OK, response);
+<a class="jxr_linenumber" name="133" href="#133">133</a> 
+<a class="jxr_linenumber" name="134" href="#134">134</a>         <em class="jxr_comment">// At present, the personalised event stream for the validUser user should</em>
+<a class="jxr_linenumber" name="135" href="#135">135</a>         <em class="jxr_comment">// contain all the regular events.</em>
+<a class="jxr_linenumber" name="136" href="#136">136</a>         String user = getRegularUserProfileId();
+<a class="jxr_linenumber" name="137" href="#137">137</a>         String personalisedEventUrl = <span class="jxr_string">"/"</span> + Entities.SYSTEM_EVENT + <span class="jxr_string">"/aggregateForUser/"</span> + user;
+<a class="jxr_linenumber" name="138" href="#138">138</a>         List&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt; events = getItemListOfLists(personalisedEventUrl, user);
+<a class="jxr_linenumber" name="139" href="#139">139</a>         assertEquals(1, events.size());
+<a class="jxr_linenumber" name="140" href="#140">140</a> 
+<a class="jxr_linenumber" name="141" href="#141">141</a>         <em class="jxr_comment">// Now only fetch events related to items we're watching - this list</em>
+<a class="jxr_linenumber" name="142" href="#142">142</a>         <em class="jxr_comment">// should currently be empty...</em>
+<a class="jxr_linenumber" name="143" href="#143">143</a>         String personalisedEventUrlWatched = personalisedEventUrl + <span class="jxr_string">"?"</span> + SystemEventResource.SHOW_PARAM + <span class="jxr_string">"="</span> + EventViews.ShowType.watched;
+<a class="jxr_linenumber" name="144" href="#144">144</a>         events = getItemListOfLists(personalisedEventUrlWatched, user);
+<a class="jxr_linenumber" name="145" href="#145">145</a>         assertEquals(0, events.size());
+<a class="jxr_linenumber" name="146" href="#146">146</a> 
+<a class="jxr_linenumber" name="147" href="#147">147</a>         <em class="jxr_comment">// Now start watching item r1.</em>
+<a class="jxr_linenumber" name="148" href="#148">148</a>         URI watchUrl = UriBuilder.fromPath(getExtensionEntryPointUri())
+<a class="jxr_linenumber" name="149" href="#149">149</a>                 .segment(Entities.USER_PROFILE)
+<a class="jxr_linenumber" name="150" href="#150">150</a>                 .segment(user)
+<a class="jxr_linenumber" name="151" href="#151">151</a>                 .segment(WATCHING)
+<a class="jxr_linenumber" name="152" href="#152">152</a>                 .queryParam(ID_PARAM, <span class="jxr_string">"r1"</span>).build();
+<a class="jxr_linenumber" name="153" href="#153">153</a> 
+<a class="jxr_linenumber" name="154" href="#154">154</a>         jsonCallAs(user, watchUrl).post(ClientResponse.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="155" href="#155">155</a> 
+<a class="jxr_linenumber" name="156" href="#156">156</a>         <em class="jxr_comment">// Now our event list should contain one item, the update</em>
+<a class="jxr_linenumber" name="157" href="#157">157</a>         <em class="jxr_comment">// we did initially.</em>
+<a class="jxr_linenumber" name="158" href="#158">158</a>         events = getItemListOfLists(personalisedEventUrlWatched, user);
+<a class="jxr_linenumber" name="159" href="#159">159</a>         assertEquals(1, events.size());
+<a class="jxr_linenumber" name="160" href="#160">160</a> 
+<a class="jxr_linenumber" name="161" href="#161">161</a>         <em class="jxr_comment">// Stop watching item r1, which should empty the list</em>
+<a class="jxr_linenumber" name="162" href="#162">162</a>         jsonCallAs(user, watchUrl).delete(ClientResponse.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="163" href="#163">163</a> 
+<a class="jxr_linenumber" name="164" href="#164">164</a>         events = getItemListOfLists(personalisedEventUrlWatched, user);
+<a class="jxr_linenumber" name="165" href="#165">165</a>         assertEquals(0, events.size());
+<a class="jxr_linenumber" name="166" href="#166">166</a> 
+<a class="jxr_linenumber" name="167" href="#167">167</a>         <em class="jxr_comment">// Only get events for people we follow, excluding those</em>
+<a class="jxr_linenumber" name="168" href="#168">168</a>         <em class="jxr_comment">// for items we watch...</em>
+<a class="jxr_linenumber" name="169" href="#169">169</a>         String personalisedEventUrlFollowed = personalisedEventUrl + <span class="jxr_string">"?"</span> + SystemEventResource.SHOW_PARAM
+<a class="jxr_linenumber" name="170" href="#170">170</a>                 + <span class="jxr_string">"="</span> + EventViews.ShowType.followed;
+<a class="jxr_linenumber" name="171" href="#171">171</a>         events = getItemListOfLists(personalisedEventUrlFollowed, user);
+<a class="jxr_linenumber" name="172" href="#172">172</a>         assertEquals(0, events.size());
+<a class="jxr_linenumber" name="173" href="#173">173</a> 
+<a class="jxr_linenumber" name="174" href="#174">174</a>         <em class="jxr_comment">// Now follow the other user...</em>
+<a class="jxr_linenumber" name="175" href="#175">175</a>         URI followUrl = UriBuilder.fromPath(getExtensionEntryPointUri())
+<a class="jxr_linenumber" name="176" href="#176">176</a>                 .segment(Entities.USER_PROFILE)
+<a class="jxr_linenumber" name="177" href="#177">177</a>                 .segment(user)
+<a class="jxr_linenumber" name="178" href="#178">178</a>                 .segment(FOLLOWING)
+<a class="jxr_linenumber" name="179" href="#179">179</a>                 .queryParam(ID_PARAM, getAdminUserProfileId()).build();
+<a class="jxr_linenumber" name="180" href="#180">180</a>         jsonCallAs(user, followUrl).post(ClientResponse.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="181" href="#181">181</a> 
+<a class="jxr_linenumber" name="182" href="#182">182</a>         <em class="jxr_comment">// We should get the event again...</em>
+<a class="jxr_linenumber" name="183" href="#183">183</a>         events = getItemListOfLists(personalisedEventUrlFollowed, user);
+<a class="jxr_linenumber" name="184" href="#184">184</a>         assertEquals(1, events.size());
+<a class="jxr_linenumber" name="185" href="#185">185</a>     }
+<a class="jxr_linenumber" name="186" href="#186">186</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

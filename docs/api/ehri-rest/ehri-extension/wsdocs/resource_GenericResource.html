@@ -52,7 +52,6 @@
             <li class="current">
               <a href="resource_GenericResource.html">GenericResource</a>
               <ul>
-                <li><a href="resource_AccessPointResource.html">AccessPointResource</a></li>
                 <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
@@ -97,16 +96,7 @@ regardless of their specific type.</p>
         <a href="#path__entities_-id-.html">/entities/{id}</a>
         </li>
         <li>
-        <a href="#path__entities_-id-_permissionGrant.html">/entities/{id}/permissionGrant</a>
-        </li>
-        <li>
-        <a href="#path__entities_-id-_permissionGrant_scope.html">/entities/{id}/permissionGrant/scope</a>
-        </li>
-        <li>
-        <a href="#path__entities_-id-_systemEvent.html">/entities/{id}/systemEvent</a>
-        </li>
-        <li>
-        <a href="#path__entities_-id-_version.html">/entities/{id}/version</a>
+        <a href="#path__entities_listByGraphId.html">/entities/listByGraphId</a>
         </li>
       </ul>
         <a name="path__entities.html"></a>
@@ -128,15 +118,7 @@ regardless of their specific type.</p>
         <tr>
           <td>id</td>
           <td>
-            a list of string IDs
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>gid</td>
-          <td>
-            a list of graph number IDs
+            A list of string IDs
           </td>
           <td>query</td>
           <td></td>
@@ -170,8 +152,7 @@ regardless of their specific type.</p>
           <td>application/json</td>
         </tr>
       </table>
-      <p>A JSON-encoded list of IDs, which can consist of
-either strings or (if a number) graph (long) ids.</p>
+      <p>A JSON-encoded list of string IDs</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -221,13 +202,14 @@ either strings or (if a number) graph (long) ids.</p>
         </tr>
       </table>
       <p>A serialized representation.</p>
-        <a name="path__entities_-id-_permissionGrant.html"></a>
-      <h1>/entities/{id}/permissionGrant</h1>
-      <p class="note">Mount Point: <a href="../entities/{id}/permissionGrant">/entities/{id}/permissionGrant</a></p>
+        <a name="path__entities_listByGraphId.html"></a>
+      <h1>/entities/listByGraphId</h1>
+      <p class="note">Mount Point: <a href="../entities/listByGraphId">/entities/listByGraphId</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            List all the permission grants that relate specifically to this item.
+            Fetch a list of items by their internal graph ID (gid), which is
+provided in the bundle metadata section of the default response.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -238,130 +220,11 @@ either strings or (if a number) graph (long) ids.</p>
           <th>default</th>
         </tr>
         <tr>
-          <td>id</td>
+          <td>gid</td>
           <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of grants for this item</p>
-        <a name="path__entities_-id-_permissionGrant_scope.html"></a>
-      <h1>/entities/{id}/permissionGrant/scope</h1>
-      <p class="note">Mount Point: <a href="../entities/{id}/permissionGrant/scope">/entities/{id}/permissionGrant/scope</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            List all the permission grants that relate specifically to this scope.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of grants for the given scope</p>
-        <a name="path__entities_-id-_systemEvent.html"></a>
-      <h1>/entities/{id}/systemEvent</h1>
-      <p class="note">Mount Point: <a href="../entities/{id}/systemEvent">/entities/{id}/systemEvent</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Lookup and page the history for a given item.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            The event id
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>aggregation</td>
-          <td>
-            the aggregation stategy
+            A list of graph IDs
           </td>
           <td>query</td>
-          <td>user</td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>A list of events</p>
-        <a name="path__entities_-id-_version.html"></a>
-      <h1>/entities/{id}/version</h1>
-      <p class="note">Mount Point: <a href="../entities/{id}/version">/entities/{id}/version</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Lookup and page the versions for a given item.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            the event id
-          </td>
-          <td>path</td>
           <td></td>
         </tr>
       </table>
@@ -373,10 +236,40 @@ either strings or (if a number) graph (long) ids.</p>
         </tr>
         <tr>
           <td align="right">media types:</td>
-          <td>*/*<br/>application/xml</td>
+          <td>application/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>a list of versions</p>
+      <p>A serialized list of items</p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Fetch a list of items by their internal graph ID (gid), which is
+provided in the bundle metadata section of the default response.
+          </p>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>json</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>A JSON-encoded list of graph IDs</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>A serialized list of items</p>
 
       <div class="clear" />
     </div>

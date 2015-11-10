@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>VirtualUnitResource (EHRI Backend 0.11.2-SNAPSHOT API)</title>
+<title>VirtualUnitResource (EHRI Backend 0.11.1-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="VirtualUnitResource (EHRI Backend 0.11.2-SNAPSHOT API)";
+        parent.document.title="VirtualUnitResource (EHRI Backend 0.11.1-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -158,7 +158,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></h3>
-<code><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclManager">aclManager</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclViews">aclViews</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#actionManager">actionManager</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#AGGREGATION_PARAM">AGGREGATION_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#cls">cls</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#EVENT_TYPE_PARAM">EVENT_TYPE_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#FROM_PARAM">FROM_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#helper">helper</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#ITEM_ID_PARAM">ITEM_ID_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#ITEM_TYPE_PARAM">ITEM_TYPE_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#querier">querier</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#SHOW_PARAM">SHOW_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#TO_PARAM">TO_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#USER_PARAM">USER_PARAM</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#views">views</a></code></li>
+<code><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclManager">aclManager</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#aclViews">aclViews</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#actionManager">actionManager</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#cls">cls</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#helper">helper</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#querier">querier</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#views">views</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="fields_inherited_from_class_eu.ehri.extension.AbstractRestResource">
@@ -245,16 +245,20 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/VirtualUnitResource.html#listVirtualUnitsForUser(java.lang.String)">listVirtualUnitsForUser</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/VirtualUnitResource.html#moveIncludedVirtualUnits(java.lang.String,%20java.lang.String,%20java.util.List)">moveIncludedVirtualUnits</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fromId,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toId,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;includedIds)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/VirtualUnitResource.html#removeIncludedVirtualUnits(java.lang.String,%20java.util.List)">removeIncludedVirtualUnits</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                           <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;includedIds)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/VirtualUnitResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
       <a href="../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
@@ -267,7 +271,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;eu.ehri.extension.<a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></h3>
-<code><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler,%20eu.ehri.project.views.impl.LoggingCrudViews)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String)">deleteItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">deleteItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List,%20eu.ehri.project.models.base.Accessor)">getAccessors</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getEventViewsBuilder()">getEventViewsBuilder</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getItem(java.lang.String)">getItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#listItems()">listItems</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(eu.ehri.project.persistence.Bundle)">updateItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateItem</a></code></li>
+<code><a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#createItem(eu.ehri.project.persistence.Bundle,%20java.util.List,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler,%20eu.ehri.project.views.impl.LoggingCrudViews)">createItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String)">deleteItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">deleteItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getAccessors(java.util.List,%20eu.ehri.project.models.base.Accessor)">getAccessors</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getItem(java.lang.String)">getItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#listItems()">listItems</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(eu.ehri.project.persistence.Bundle)">updateItem</a>, <a href="../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateItem</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_eu.ehri.extension.AbstractRestResource">
@@ -531,7 +535,7 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <a name="createChildVirtualUnit(java.lang.String, eu.ehri.project.persistence.Bundle, java.util.List, java.util.List)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>createChildVirtualUnit</h4>
 <pre>public&nbsp;javax.ws.rs.core.Response&nbsp;createChildVirtualUnit(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
@@ -548,6 +552,20 @@ implements <a href="../../../eu/ehri/extension/base/GetResource.html" title="int
 <dd><code><a href="../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
 <dd><code><a href="../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
+<dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
+</li>
+</ul>
+<a name="listVirtualUnitsForUser(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>listVirtualUnitsForUser</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listVirtualUnitsForUser(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)
+                                                  throws <a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a>,
+                                                         <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+<dl><dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="../../../eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></code></dd>
 <dd><code><a href="../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>

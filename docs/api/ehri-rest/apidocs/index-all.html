@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Index (EHRI Backend 0.11.2-SNAPSHOT API)</title>
+<title>Index (EHRI Backend 0.11.1-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="./stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Index (EHRI Backend 0.11.2-SNAPSHOT API)";
+        parent.document.title="Index (EHRI Backend 0.11.1-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -161,12 +161,6 @@
 <div class="block">Holds the information on a relationship specified in some Description,
  but without the target-end of the relationship being determined.</div>
 </dd>
-<dt><a href="./eu/ehri/extension/AccessPointResource.html" title="class in eu.ehri.extension"><span class="strong">AccessPointResource</span></a> - Class in <a href="./eu/ehri/extension/package-summary.html">eu.ehri.extension</a></dt>
-<dd>
-<div class="block">Provides a web service interface for the undetermined relationship model.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AccessPointResource.html#AccessPointResource(org.neo4j.graphdb.GraphDatabaseService)">AccessPointResource(GraphDatabaseService)</a></span> - Constructor for class eu.ehri.extension.<a href="./eu/ehri/extension/AccessPointResource.html" title="class in eu.ehri.extension">AccessPointResource</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/extension/AccessResource.html" title="class in eu.ehri.extension"><span class="strong">AccessResource</span></a> - Class in <a href="./eu/ehri/extension/package-summary.html">eu.ehri.extension</a></dt>
 <dd>
 <div class="block">Provides a RESTful(ish) interface for setting PermissionTarget perms.</div>
@@ -514,11 +508,11 @@
 <dd>
 <div class="block">Aggregate a user's actions.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/GenericResource.html#aggregateEvents(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateEvents(String, EventViews.Aggregation)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#aggregateEventsForItem(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateEventsForItem(String, EventViews.Aggregation)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>
 <div class="block">Lookup and page the history for a given item.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/UserProfileResource.html#aggregateEventsForUser(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateEventsForUser(String, EventViews.Aggregation)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#aggregateEventsForUser(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateEventsForUser(String, EventViews.Aggregation)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>
 <div class="block">Aggregate actions that are relevant to a given user based on
  the other users that they follow and the items they watch.</div>
@@ -527,11 +521,11 @@
 <dd>
 <div class="block">Aggregate an item's events.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/UserProfileResource.html#aggregateUserActions(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateUserActions(String, EventViews.Aggregation)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#aggregateUserActions(java.lang.String,%20eu.ehri.project.views.EventViews.Aggregation)">aggregateUserActions(String, EventViews.Aggregation)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>
 <div class="block">Fetch an aggregate list of a user's actions.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html#AGGREGATION_PARAM">AGGREGATION_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#AGGREGATION_PARAM">AGGREGATION_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/utils/pipes/AggregatorPipe.html" title="class in eu.ehri.project.utils.pipes"><span class="strong">AggregatorPipe</span></a>&lt;<a href="./eu/ehri/project/utils/pipes/AggregatorPipe.html" title="type parameter in AggregatorPipe">E</a>&gt; - Class in <a href="./eu/ehri/project/utils/pipes/package-summary.html">eu.ehri.project.utils.pipes</a></dt>
 <dd>
@@ -1023,6 +1017,8 @@
 <dd>
 <div class="block">Count all items of a given type.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/GroupResource.html#countChildResources(java.lang.String,%20boolean)">countChildResources(String, boolean)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/GroupResource.html" title="class in eu.ehri.extension">GroupResource</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/definitions/Entities.html#COUNTRY">COUNTRY</a></span> - Static variable in class eu.ehri.project.definitions.<a href="./eu/ehri/project/definitions/Entities.html" title="class in eu.ehri.project.definitions">Entities</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/models/Country.html" title="interface in eu.ehri.project.models"><span class="strong">Country</span></a> - Interface in <a href="./eu/ehri/project/models/package-summary.html">eu.ehri.project.models</a></dt>
@@ -1373,8 +1369,6 @@
 <dd>
 <div class="block">Add an default order clause, to be used if no custom order is specified.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AccessPointResource.html#delete(java.lang.String)">delete(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/AccessPointResource.html" title="class in eu.ehri.extension">AccessPointResource</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/AnnotationResource.html#delete(java.lang.String)">delete(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/AnnotationResource.html" title="class in eu.ehri.extension">AnnotationResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/AuthoritativeSetResource.html#delete(java.lang.String)">delete(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</a></dt>
@@ -1437,6 +1431,10 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/DescriptionResource.html#deleteAccessPoint(java.lang.String,%20java.lang.String,%20java.lang.String)">deleteAccessPoint(String, String, String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/DescriptionResource.html" title="class in eu.ehri.extension">DescriptionResource</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/LinkResource.html#deleteAccessPoint(java.lang.String)">deleteAccessPoint(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/LinkResource.html" title="class in eu.ehri.extension">LinkResource</a></dt>
+<dd>
+<div class="block">Delete an access point.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/AuthoritativeSetResource.html#deleteAllAuthoritativeSetHistoricalAgents(java.lang.String)">deleteAllAuthoritativeSetHistoricalAgents(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/VocabularyResource.html#deleteAllVocabularyConcepts(java.lang.String)">deleteAllVocabularyConcepts(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/VocabularyResource.html" title="class in eu.ehri.extension">VocabularyResource</a></dt>
@@ -1964,7 +1962,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/definitions/Ontology.html#EVENT_TYPE">EVENT_TYPE</a></span> - Static variable in class eu.ehri.project.definitions.<a href="./eu/ehri/project/definitions/Ontology.html" title="class in eu.ehri.project.definitions">Ontology</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html#EVENT_TYPE_PARAM">EVENT_TYPE_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#EVENT_TYPE_PARAM">EVENT_TYPE_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/models/events/EventLink.html" title="interface in eu.ehri.project.models.events"><span class="strong">EventLink</span></a> - Interface in <a href="./eu/ehri/project/models/events/package-summary.html">eu.ehri.project.models.events</a></dt>
 <dd>&nbsp;</dd>
@@ -2269,7 +2267,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.html#from(java.lang.String)">from(String)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.html" title="class in eu.ehri.project.views">EventViews</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html#FROM_PARAM">FROM_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#FROM_PARAM">FROM_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/Bundle.html#fromData(java.lang.Object)">fromData(Object)</a></span> - Static method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></dt>
 <dd>
@@ -2337,8 +2335,6 @@
  regardless of their specific type.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/GenericResource.html#GenericResource(org.neo4j.graphdb.GraphDatabaseService)">GenericResource(GraphDatabaseService)</a></span> - Constructor for class eu.ehri.extension.<a href="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AccessPointResource.html#get(java.lang.String)">get(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/AccessPointResource.html" title="class in eu.ehri.extension">AccessPointResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/AnnotationResource.html#get(java.lang.String)">get(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/AnnotationResource.html" title="class in eu.ehri.extension">AnnotationResource</a></dt>
 <dd>&nbsp;</dd>
@@ -2844,8 +2840,6 @@
 <dd>
 <div class="block">Get the type of this event context.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html#getEventViewsBuilder()">getEventViewsBuilder()</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#getFeatures()">getFeatures()</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getFeatures()">getFeatures()</a></span> - Method in class eu.ehri.project.core.impl.neo4j.<a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Graph</a></dt>
@@ -3308,6 +3302,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#getPersister()">getPersister()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/models/cvoc/ConceptDescription.html#getPrefLabel()">getPrefLabel()</a></span> - Method in interface eu.ehri.project.models.cvoc.<a href="./eu/ehri/project/models/cvoc/ConceptDescription.html" title="interface in eu.ehri.project.models.cvoc">ConceptDescription</a></dt>
+<dd>
+<div class="block">The language property has the codes for language.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/Mutation.html#getPrior()">getPrior()</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/VersionedEntity.html#getPriorVersion()">getPriorVersion()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/VersionedEntity.html" title="interface in eu.ehri.project.models.base">VersionedEntity</a></dt>
@@ -4478,11 +4476,11 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/AbstractRestResource.html" title="class in eu.ehri.extension">AbstractRestResource</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html#ITEM_ID_PARAM">ITEM_ID_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#ITEM_ID_PARAM">ITEM_ID_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/definitions/Ontology.html#ITEM_IN_AUTHORITATIVE_SET">ITEM_IN_AUTHORITATIVE_SET</a></span> - Static variable in class eu.ehri.project.definitions.<a href="./eu/ehri/project/definitions/Ontology.html" title="class in eu.ehri.project.definitions">Ontology</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html#ITEM_TYPE_PARAM">ITEM_TYPE_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#ITEM_TYPE_PARAM">ITEM_TYPE_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/models/base/ItemHolder.html" title="interface in eu.ehri.project.models.base"><span class="strong">ItemHolder</span></a> - Interface in <a href="./eu/ehri/project/models/base/package-summary.html">eu.ehri.project.models.base</a></dt>
 <dd>
@@ -4651,8 +4649,6 @@
 <dd>
 <div class="block">Constructor with system scope.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AccessPointResource.html#list()">list()</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/AccessPointResource.html" title="class in eu.ehri.extension">AccessPointResource</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/AnnotationResource.html#list()">list()</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/AnnotationResource.html" title="class in eu.ehri.extension">AnnotationResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/AuthoritativeSetResource.html#list()">list()</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/AuthoritativeSetResource.html" title="class in eu.ehri.extension">AuthoritativeSetResource</a></dt>
@@ -4669,7 +4665,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/DocumentaryUnitResource.html#list()">list()</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/DocumentaryUnitResource.html" title="class in eu.ehri.extension">DocumentaryUnitResource</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/GenericResource.html#list(java.util.List,%20java.util.List)">list(List&lt;String&gt;, List&lt;Long&gt;)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/GenericResource.html#list(java.util.List)">list(List&lt;String&gt;)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a></dt>
 <dd>
 <div class="block">Fetch a list of items by their ID.</div>
 </dd>
@@ -4707,6 +4703,16 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/UserProfileResource.html#listBlocked(java.lang.String)">listBlocked(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/GenericResource.html#listByGid(java.util.List)">listByGid(List&lt;Long&gt;)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a></dt>
+<dd>
+<div class="block">Fetch a list of items by their internal graph ID (gid), which is
+ provided in the bundle metadata section of the default response.</div>
+</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/GenericResource.html#listByGidFromJson(java.lang.String)">listByGidFromJson(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a></dt>
+<dd>
+<div class="block">Fetch a list of items by their internal graph ID (gid), which is
+ provided in the bundle metadata section of the default response.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.html#listByUser(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">listByUser(UserProfile, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.html" title="class in eu.ehri.project.views">EventViews</a></dt>
 <dd>
 <div class="block">List a user's actions.</div>
@@ -4740,10 +4746,19 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/commands/ListEntities.html#ListEntities()">ListEntities()</a></span> - Constructor for class eu.ehri.project.commands.<a href="./eu/ehri/project/commands/ListEntities.html" title="class in eu.ehri.project.commands">ListEntities</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#listEventsForUser(java.lang.String)">listEventsForUser(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
+<dd>
+<div class="block">List actions that are relevant to a given user based on
+ the other users that they follow and the items they watch.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/UserProfileResource.html#listFollowers(java.lang.String)">listFollowers(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/UserProfileResource.html#listFollowing(java.lang.String)">listFollowing(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/VersionResource.html#listFor(java.lang.String)">listFor(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/VersionResource.html" title="class in eu.ehri.extension">VersionResource</a></dt>
+<dd>
+<div class="block">Lookup and page the versions for a given item.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.html#listForItem(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Accessor)">listForItem(AccessibleEntity, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.html" title="class in eu.ehri.project.views">EventViews</a></dt>
 <dd>
 <div class="block">List an item's events.</div>
@@ -4758,15 +4773,15 @@
 <dd>
 <div class="block">List all instances of the 'entity' accessible to the given user.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/GenericResource.html#listPermissionGrants(java.lang.String)">listPermissionGrants(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a></dt>
-<dd>
-<div class="block">List all the permission grants that relate specifically to this item.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/UserProfileResource.html#listPermissionGrants(java.lang.String)">listPermissionGrants(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/PermissionsResource.html#listPermissionGrants(java.lang.String)">listPermissionGrants(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/PermissionsResource.html" title="class in eu.ehri.extension">PermissionsResource</a></dt>
 <dd>
 <div class="block">Get a list of permission grants for the given user</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/GenericResource.html#listPermissionGrantsForScope(java.lang.String)">listPermissionGrantsForScope(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/PermissionsResource.html#listPermissionGrantsForItem(java.lang.String)">listPermissionGrantsForItem(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/PermissionsResource.html" title="class in eu.ehri.extension">PermissionsResource</a></dt>
+<dd>
+<div class="block">List all the permission grants that relate specifically to this item.</div>
+</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/PermissionsResource.html#listPermissionGrantsForScope(java.lang.String)">listPermissionGrantsForScope(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/PermissionsResource.html" title="class in eu.ehri.extension">PermissionsResource</a></dt>
 <dd>
 <div class="block">List all the permission grants that relate specifically to this scope.</div>
 </dd>
@@ -4776,10 +4791,12 @@
 </dd>
 <dt><a href="./eu/ehri/extension/base/ListResource.html" title="interface in eu.ehri.extension.base"><span class="strong">ListResource</span></a> - Interface in <a href="./eu/ehri/extension/base/package-summary.html">eu.ehri.extension.base</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/GenericResource.html#listVersions(java.lang.String)">listVersions(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#listUserActions(java.lang.String)">listUserActions(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>
-<div class="block">Lookup and page the versions for a given item.</div>
+<div class="block">Fetch a list of a user's actions.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/VirtualUnitResource.html#listVirtualUnitsForUser(java.lang.String)">listVirtualUnitsForUser(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/VirtualUnitResource.html" title="class in eu.ehri.extension">VirtualUnitResource</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/UserProfileResource.html#listWatching(java.lang.String)">listWatching(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/commands/GraphML.html#loadDump(com.tinkerpop.frames.FramedGraph,%20org.apache.commons.cli.CommandLine)">loadDump(FramedGraph&lt;?&gt;, CommandLine)</a></span> - Method in class eu.ehri.project.commands.<a href="./eu/ehri/project/commands/GraphML.html" title="class in eu.ehri.project.commands">GraphML</a></dt>
@@ -5155,6 +5172,10 @@
 <dd>
 <div class="block">Return a Page instance containing a total of total items, and an iterable
  for the given page/count.</div>
+</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#pageEventsForItem(java.lang.String)">pageEventsForItem(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
+<dd>
+<div class="block">Lookup and page the history for a given item.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/UserProfileResource.html#pageLinks(java.lang.String)">pageLinks(String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a></dt>
 <dd>&nbsp;</dd>
@@ -6112,7 +6133,7 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/cvoc/Concept.html#setVocabulary(eu.ehri.project.models.cvoc.Vocabulary)">setVocabulary(Vocabulary)</a></span> - Method in interface eu.ehri.project.models.cvoc.<a href="./eu/ehri/project/models/cvoc/Concept.html" title="interface in eu.ehri.project.models.cvoc">Concept</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html#SHOW_PARAM">SHOW_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#SHOW_PARAM">SHOW_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#shutdown()">shutdown()</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
 <dd>&nbsp;</dd>
@@ -6296,7 +6317,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.html#to(java.lang.String)">to(String)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.html" title="class in eu.ehri.project.views">EventViews</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html#TO_PARAM">TO_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#TO_PARAM">TO_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/Bundle.html#toData()">toData()</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></dt>
 <dd>
@@ -6573,7 +6594,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/definitions/Ontology.html#USER_FOLLOWS_USER">USER_FOLLOWS_USER</a></span> - Static variable in class eu.ehri.project.definitions.<a href="./eu/ehri/project/definitions/Ontology.html" title="class in eu.ehri.project.definitions">Ontology</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html#USER_PARAM">USER_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/AbstractAccessibleEntityResource.html" title="class in eu.ehri.extension">AbstractAccessibleEntityResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/SystemEventResource.html#USER_PARAM">USER_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/SystemEventResource.html" title="class in eu.ehri.extension">SystemEventResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/definitions/Entities.html#USER_PROFILE">USER_PROFILE</a></span> - Static variable in class eu.ehri.project.definitions.<a href="./eu/ehri/project/definitions/Entities.html" title="class in eu.ehri.project.definitions">Entities</a></dt>
 <dd>&nbsp;</dd>

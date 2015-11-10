@@ -52,7 +52,6 @@
             <li class="current">
               <a href="resource_UserProfileResource.html">UserProfileResource</a>
               <ul>
-                <li><a href="resource_AccessPointResource.html">AccessPointResource</a></li>
                 <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
@@ -96,9 +95,6 @@
         <a href="#path__userProfile_-id-.html">/userProfile/{id}</a>
         </li>
         <li>
-        <a href="#path__userProfile_-userId-_activity.html">/userProfile/{userId}/activity</a>
-        </li>
-        <li>
         <a href="#path__userProfile_-userId-_annotation.html">/userProfile/{userId}/annotation</a>
         </li>
         <li>
@@ -124,12 +120,6 @@
         </li>
         <li>
         <a href="#path__userProfile_-userId-_link.html">/userProfile/{userId}/link</a>
-        </li>
-        <li>
-        <a href="#path__userProfile_-userId-_permissionGrant.html">/userProfile/{userId}/permissionGrant</a>
-        </li>
-        <li>
-        <a href="#path__userProfile_-userId-_systemEvent.html">/userProfile/{userId}/systemEvent</a>
         </li>
         <li>
         <a href="#path__userProfile_-userId-_virtualUnit.html">/userProfile/{userId}/virtualUnit</a>
@@ -356,54 +346,6 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         </tr>
       </table>
       <p>A response with 200 representing a successful deletion.</p>
-        <a name="path__userProfile_-userId-_activity.html"></a>
-      <h1>/userProfile/{userId}/activity</h1>
-      <p class="note">Mount Point: <a href="../userProfile/{userId}/activity">/userProfile/{userId}/activity</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Aggregate actions that are relevant to a given user based on
-the other users that they follow and the items they watch.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>userId</td>
-          <td>
-            the user's ID
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>aggregation</td>
-          <td>
-            The manner in which to aggregate the results, accepting
-"user", "strict" or "off" (no aggregation). Default is
-"user".
-          </td>
-          <td>query</td>
-          <td>user</td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
         <a name="path__userProfile_-userId-_annotation.html"></a>
       <h1>/userProfile/{userId}/annotation</h1>
       <p class="note">Mount Point: <a href="../userProfile/{userId}/annotation">/userProfile/{userId}/annotation</a></p>
@@ -914,90 +856,6 @@ the other users that they follow and the items they watch.
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__userProfile_-userId-_permissionGrant.html"></a>
-      <h1>/userProfile/{userId}/permissionGrant</h1>
-      <p class="note">Mount Point: <a href="../userProfile/{userId}/permissionGrant">/userProfile/{userId}/permissionGrant</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Get a list of permission grants for the given user
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            The user's id
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of permission grants for the user</p>
-        <a name="path__userProfile_-userId-_systemEvent.html"></a>
-      <h1>/userProfile/{userId}/systemEvent</h1>
-      <p class="note">Mount Point: <a href="../userProfile/{userId}/systemEvent">/userProfile/{userId}/systemEvent</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Fetch an aggregate list of a user's actions.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>userId</td>
-          <td>
-            the user's ID
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>aggregation</td>
-          <td>
-            The manner in which to aggregate the results, accepting
-"user", "strict" or "off" (no aggregation). Default is
-<b>strict</b>.
-          </td>
-          <td>query</td>
-          <td>strict</td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>a list of event ranges</p>
         <a name="path__userProfile_-userId-_virtualUnit.html"></a>
       <h1>/userProfile/{userId}/virtualUnit</h1>
       <p class="note">Mount Point: <a href="../userProfile/{userId}/virtualUnit">/userProfile/{userId}/virtualUnit</a></p>

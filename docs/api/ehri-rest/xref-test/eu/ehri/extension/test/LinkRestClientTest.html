@@ -42,16 +42,16 @@
 <a class="jxr_linenumber" name="32" href="#32">32</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetLinks() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="33" href="#33">33</a>          <em class="jxr_comment">// Fetch annotations for an item.</em>
 <a class="jxr_linenumber" name="34" href="#34">34</a>          ClientResponse response = jsonCallAs(getAdminUserProfileId(),
-<a class="jxr_linenumber" name="35" href="#35">35</a>                  ehriUri(Entities.LINK, <span class="jxr_string">"c1"</span>, <span class="jxr_string">"list"</span>))
+<a class="jxr_linenumber" name="35" href="#35">35</a>                  ehriUri(Entities.LINK, <span class="jxr_string">"for"</span>, <span class="jxr_string">"c1"</span>))
 <a class="jxr_linenumber" name="36" href="#36">36</a>                  .get(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="37" href="#37">37</a>          assertStatus(OK, response);
 <a class="jxr_linenumber" name="38" href="#38">38</a>      }
 <a class="jxr_linenumber" name="39" href="#39">39</a>  
 <a class="jxr_linenumber" name="40" href="#40">40</a>      @Test
 <a class="jxr_linenumber" name="41" href="#41">41</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testDeleteAccessPoint() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="42" href="#42">42</a>          <em class="jxr_comment">// Delete an access point (undetermined relationship)</em>
+<a class="jxr_linenumber" name="42" href="#42">42</a>          <em class="jxr_comment">// Create a link annotation between two objects</em>
 <a class="jxr_linenumber" name="43" href="#43">43</a>          ClientResponse response = jsonCallAs(getAdminUserProfileId(),
-<a class="jxr_linenumber" name="44" href="#44">44</a>                  ehriUri(Entities.ACCESS_POINT, <span class="jxr_string">"ur1"</span>))
+<a class="jxr_linenumber" name="44" href="#44">44</a>                  ehriUri(Entities.LINK, <span class="jxr_string">"accessPoint"</span>, <span class="jxr_string">"ur1"</span>))
 <a class="jxr_linenumber" name="45" href="#45">45</a>                  .delete(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="46" href="#46">46</a>          assertStatus(OK, response);
 <a class="jxr_linenumber" name="47" href="#47">47</a>      }

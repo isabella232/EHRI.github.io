@@ -52,7 +52,6 @@
             <li class="current">
               <a href="resource_LinkResource.html">LinkResource</a>
               <ul>
-                <li><a href="resource_AccessPointResource.html">AccessPointResource</a></li>
                 <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
@@ -96,13 +95,16 @@
         <a href="#path__link_-id-.html">/link/{id}</a>
         </li>
         <li>
-        <a href="#path__link_-id-_-linkId-.html">/link/{id}/{linkId}</a>
-        </li>
-        <li>
-        <a href="#path__link_-id-_list.html">/link/{id}/list</a>
-        </li>
-        <li>
         <a href="#path__link_-targetId-_-sourceId-.html">/link/{targetId}/{sourceId}</a>
+        </li>
+        <li>
+        <a href="#path__link_accessPoint_-id-.html">/link/accessPoint/{id}</a>
+        </li>
+        <li>
+        <a href="#path__link_for_-id-.html">/link/for/{id}</a>
+        </li>
+        <li>
+        <a href="#path__link_for_-id-_-linkId-.html">/link/for/{id}/{linkId}</a>
         </li>
       </ul>
         <a name="path__link.html"></a>
@@ -272,89 +274,6 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__link_-id-_-linkId-.html"></a>
-      <h1>/link/{id}/{linkId}</h1>
-      <p class="note">Mount Point: <a href="../link/{id}/{linkId}">/link/{id}/{linkId}</a></p>
-      <a name="DELETE"></a>
-      <h2>DELETE</h2>
-      <p>
-            Delete a link. If the optional ?accessPoint=[ID] parameter is also given
-the access point associated with the link will also be deleted.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>linkId</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>*/*<br/>application/xml</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__link_-id-_list.html"></a>
-      <h1>/link/{id}/list</h1>
-      <p class="note">Mount Point: <a href="../link/{id}/list">/link/{id}/list</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Returns a list of items linked to the given description.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
         <a name="path__link_-targetId-_-sourceId-.html"></a>
       <h1>/link/{targetId}/{sourceId}</h1>
       <p class="note">Mount Point: <a href="../link/{targetId}/{sourceId}">/link/{targetId}/{sourceId}</a></p>
@@ -428,6 +347,126 @@ the access point associated with the link will also be deleted.
         </tr>
       </table>
       <p>The created link item</p>
+        <a name="path__link_accessPoint_-id-.html"></a>
+      <h1>/link/accessPoint/{id}</h1>
+      <p class="note">Mount Point: <a href="../link/accessPoint/{id}">/link/accessPoint/{id}</a></p>
+      <a name="DELETE"></a>
+      <h2>DELETE</h2>
+      <p>
+            Delete an access point.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__link_for_-id-.html"></a>
+      <h1>/link/for/{id}</h1>
+      <p class="note">Mount Point: <a href="../link/for/{id}">/link/for/{id}</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Returns a list of items linked to the given description.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__link_for_-id-_-linkId-.html"></a>
+      <h1>/link/for/{id}/{linkId}</h1>
+      <p class="note">Mount Point: <a href="../link/for/{id}/{linkId}">/link/for/{id}/{linkId}</a></p>
+      <a name="DELETE"></a>
+      <h2>DELETE</h2>
+      <p>
+            Delete a link. If the optional ?accessPoint=[ID] parameter is also given
+the access point associated with the link will also be deleted.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>linkId</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
 
       <div class="clear" />
     </div>

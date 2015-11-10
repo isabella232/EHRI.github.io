@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>PermissionsResource (Web Service 0.11.2-SNAPSHOT API)</title>
+<title>PermissionsResource (Web Service 0.11.1-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="PermissionsResource (Web Service 0.11.2-SNAPSHOT API)";
+        parent.document.title="PermissionsResource (Web Service 0.11.1-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -194,13 +194,31 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/PermissionsResource.html#listPermissionGrants(java.lang.String)">listPermissionGrants</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<div class="block">Get a list of permission grants for the given user</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/PermissionsResource.html#listPermissionGrantsForItem(java.lang.String)">listPermissionGrantsForItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<div class="block">List all the permission grants that relate specifically to this item.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><code><strong><a href="../../../eu/ehri/extension/PermissionsResource.html#listPermissionGrantsForScope(java.lang.String)">listPermissionGrantsForScope</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<div class="block">List all the permission grants that relate specifically to this scope.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/acl/InheritedGlobalPermissionSet.html?is-external=true" title="class or interface in eu.ehri.project.acl">InheritedGlobalPermissionSet</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/PermissionsResource.html#setGlobalMatrix(java.lang.String,%20eu.ehri.project.acl.GlobalPermissionSet)">setGlobalMatrix</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/acl/GlobalPermissionSet.html?is-external=true" title="class or interface in eu.ehri.project.acl">GlobalPermissionSet</a>&nbsp;globals)</code>
 <div class="block">Set a user's global permission matrix.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/acl/InheritedItemPermissionSet.html?is-external=true" title="class or interface in eu.ehri.project.acl">InheritedItemPermissionSet</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/PermissionsResource.html#setItemPermissions(java.lang.String,%20java.lang.String,%20eu.ehri.project.acl.ItemPermissionSet)">setItemPermissions</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
@@ -208,7 +226,7 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <div class="block">Set a user's permissions on a given item.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/acl/InheritedGlobalPermissionSet.html?is-external=true" title="class or interface in eu.ehri.project.acl">InheritedGlobalPermissionSet</a></code></td>
 <td class="colLast"><code><strong><a href="../../../eu/ehri/extension/PermissionsResource.html#setScopedPermissions(java.lang.String,%20java.lang.String,%20eu.ehri.project.acl.GlobalPermissionSet)">setScopedPermissions</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
@@ -273,6 +291,51 @@ extends <a href="../../../eu/ehri/extension/AbstractRestResource.html" title="cl
 <div class="block">Get the cache control that should be applied to permission
  data.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>A cache control object</dd></dl>
+</li>
+</ul>
+<a name="listPermissionGrants(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>listPermissionGrants</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listPermissionGrants(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+                                               throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+<div class="block">Get a list of permission grants for the given user</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The user's id</dd>
+<dt><span class="strong">Returns:</span></dt><dd>A list of permission grants for the user</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
+</li>
+</ul>
+<a name="listPermissionGrantsForItem(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>listPermissionGrantsForItem</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listPermissionGrantsForItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+                                                      throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                                             <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+<div class="block">List all the permission grants that relate specifically to this item.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>A list of grants for this item</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/PermissionDenied.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">PermissionDenied</a></code></dd>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
+</li>
+</ul>
+<a name="listPermissionGrantsForScope(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>listPermissionGrantsForScope</h4>
+<pre>public&nbsp;javax.ws.rs.core.Response&nbsp;listPermissionGrantsForScope(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)
+                                                       throws <a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+<div class="block">List all the permission grants that relate specifically to this scope.</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>A list of grants for the given scope</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-frames/apidocs/eu/ehri/project/exceptions/ItemNotFound.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
 <a name="getGlobalMatrix()">

@@ -169,7 +169,7 @@
 <a class="jxr_linenumber" name="159" href="#159">159</a>     }
 <a class="jxr_linenumber" name="160" href="#160">160</a> 
 <a class="jxr_linenumber" name="161" href="#161">161</a>     @DELETE
-<a class="jxr_linenumber" name="162" href="#162">162</a>     @Path(<span class="jxr_string">"{id:.+}/all"</span>)
+<a class="jxr_linenumber" name="162" href="#162">162</a>     @Path(<span class="jxr_string">"/{id:.+}/all"</span>)
 <a class="jxr_linenumber" name="163" href="#163">163</a>     <strong class="jxr_keyword">public</strong> Response deleteAllVocabularyConcepts(@PathParam(<span class="jxr_string">"id"</span>) String id)
 <a class="jxr_linenumber" name="164" href="#164">164</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, AccessDenied, <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html">PermissionDenied</a> {
 <a class="jxr_linenumber" name="165" href="#165">165</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
@@ -197,7 +197,7 @@
 <a class="jxr_linenumber" name="187" href="#187">187</a>     @POST
 <a class="jxr_linenumber" name="188" href="#188">188</a>     @Consumes(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="189" href="#189">189</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="190" href="#190">190</a>     @Path(<span class="jxr_string">"{id:.+}/"</span> + Entities.CVOC_CONCEPT)
+<a class="jxr_linenumber" name="190" href="#190">190</a>     @Path(<span class="jxr_string">"/{id:.+}/"</span> + Entities.CVOC_CONCEPT)
 <a class="jxr_linenumber" name="191" href="#191">191</a>     @Override
 <a class="jxr_linenumber" name="192" href="#192">192</a>     <strong class="jxr_keyword">public</strong> Response createChild(@PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="193" href="#193">193</a>             <a href="../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle, @QueryParam(ACCESSOR_PARAM) List&lt;String&gt; accessors)
@@ -241,43 +241,44 @@
 <a class="jxr_linenumber" name="231" href="#231">231</a>     @Produces({TURTLE_MIMETYPE, RDF_XML_MIMETYPE, N3_MIMETYPE})
 <a class="jxr_linenumber" name="232" href="#232">232</a>     <strong class="jxr_keyword">public</strong> Response exportSkos(@PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="233" href="#233">233</a>             <strong class="jxr_keyword">final</strong> @QueryParam(<span class="jxr_string">"format"</span>) String format,
-<a class="jxr_linenumber" name="234" href="#234">234</a>             <strong class="jxr_keyword">final</strong> @QueryParam(<span class="jxr_string">"baseUri"</span>) @DefaultValue(SkosRDFVocabulary.DEFAULT_BASE_URI) String baseUri)
+<a class="jxr_linenumber" name="234" href="#234">234</a>             <strong class="jxr_keyword">final</strong> @QueryParam(<span class="jxr_string">"baseUri"</span>) String baseUri)
 <a class="jxr_linenumber" name="235" href="#235">235</a>             <strong class="jxr_keyword">throws</strong> IOException, <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a> {
 <a class="jxr_linenumber" name="236" href="#236">236</a>         <strong class="jxr_keyword">final</strong> String rdfFormat = getRdfFormat(format, <span class="jxr_string">"TTL"</span>);
-<a class="jxr_linenumber" name="237" href="#237">237</a>         <strong class="jxr_keyword">final</strong> MediaType mediaType = MediaType.valueOf(RDF_MIMETYPE_FORMATS
-<a class="jxr_linenumber" name="238" href="#238">238</a>                 .inverse().get(rdfFormat));
-<a class="jxr_linenumber" name="239" href="#239">239</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
-<a class="jxr_linenumber" name="240" href="#240">240</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="241" href="#241">241</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = getRequesterUserProfile();
-<a class="jxr_linenumber" name="242" href="#242">242</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/models/cvoc/Vocabulary.html">Vocabulary</a> vocabulary = views.detail(id, user);
-<a class="jxr_linenumber" name="243" href="#243">243</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/exporters/cvoc/SkosExporter.html">SkosExporter</a> skosImporter = <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/project/exporters/cvoc/JenaSkosExporter.html">JenaSkosExporter</a>(graph, vocabulary)
-<a class="jxr_linenumber" name="244" href="#244">244</a>                     .setFormat(format);
-<a class="jxr_linenumber" name="245" href="#245">245</a>             <strong class="jxr_keyword">return</strong> Response.ok(<strong class="jxr_keyword">new</strong> StreamingOutput() {
-<a class="jxr_linenumber" name="246" href="#246">246</a>                 @Override
-<a class="jxr_linenumber" name="247" href="#247">247</a>                 <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> write(OutputStream outputStream) <strong class="jxr_keyword">throws</strong> IOException, WebApplicationException {
-<a class="jxr_linenumber" name="248" href="#248">248</a>                     skosImporter.export(outputStream, baseUri);
-<a class="jxr_linenumber" name="249" href="#249">249</a>                 }
-<a class="jxr_linenumber" name="250" href="#250">250</a>             }).type(mediaType +<span class="jxr_string">"; charset=utf-8"</span>).build();
-<a class="jxr_linenumber" name="251" href="#251">251</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="252" href="#252">252</a>             tx.close();
-<a class="jxr_linenumber" name="253" href="#253">253</a>             <strong class="jxr_keyword">throw</strong> e;
-<a class="jxr_linenumber" name="254" href="#254">254</a>         }
-<a class="jxr_linenumber" name="255" href="#255">255</a>     }
-<a class="jxr_linenumber" name="256" href="#256">256</a> 
-<a class="jxr_linenumber" name="257" href="#257">257</a>     <strong class="jxr_keyword">private</strong> String getRdfFormat(String format, String defaultFormat) {
-<a class="jxr_linenumber" name="258" href="#258">258</a>         <strong class="jxr_keyword">if</strong> (format == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="259" href="#259">259</a>             <strong class="jxr_keyword">for</strong> (String mimeValue : RDF_MIMETYPE_FORMATS.keySet()) {
-<a class="jxr_linenumber" name="260" href="#260">260</a>                 MediaType mime = MediaType.valueOf(mimeValue);
-<a class="jxr_linenumber" name="261" href="#261">261</a>                 <strong class="jxr_keyword">if</strong> (requestHeaders.getAcceptableMediaTypes().contains(mime)) {
-<a class="jxr_linenumber" name="262" href="#262">262</a>                     <strong class="jxr_keyword">return</strong> RDF_MIMETYPE_FORMATS.get(mimeValue);
-<a class="jxr_linenumber" name="263" href="#263">263</a>                 }
-<a class="jxr_linenumber" name="264" href="#264">264</a>             }
-<a class="jxr_linenumber" name="265" href="#265">265</a>             <strong class="jxr_keyword">return</strong> defaultFormat;
-<a class="jxr_linenumber" name="266" href="#266">266</a>         } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="267" href="#267">267</a>             <strong class="jxr_keyword">return</strong> RDF_MIMETYPE_FORMATS.containsValue(format) ? format : defaultFormat;
-<a class="jxr_linenumber" name="268" href="#268">268</a>         }
-<a class="jxr_linenumber" name="269" href="#269">269</a>     }
-<a class="jxr_linenumber" name="270" href="#270">270</a> }
+<a class="jxr_linenumber" name="237" href="#237">237</a>         <strong class="jxr_keyword">final</strong> String base = baseUri == <strong class="jxr_keyword">null</strong> ? SkosRDFVocabulary.DEFAULT_BASE_URI : baseUri;
+<a class="jxr_linenumber" name="238" href="#238">238</a>         <strong class="jxr_keyword">final</strong> MediaType mediaType = MediaType.valueOf(RDF_MIMETYPE_FORMATS
+<a class="jxr_linenumber" name="239" href="#239">239</a>                 .inverse().get(rdfFormat));
+<a class="jxr_linenumber" name="240" href="#240">240</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="241" href="#241">241</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="242" href="#242">242</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = getRequesterUserProfile();
+<a class="jxr_linenumber" name="243" href="#243">243</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/models/cvoc/Vocabulary.html">Vocabulary</a> vocabulary = views.detail(id, user);
+<a class="jxr_linenumber" name="244" href="#244">244</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/exporters/cvoc/SkosExporter.html">SkosExporter</a> skosImporter = <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/project/exporters/cvoc/JenaSkosExporter.html">JenaSkosExporter</a>(graph, vocabulary)
+<a class="jxr_linenumber" name="245" href="#245">245</a>                     .setFormat(format);
+<a class="jxr_linenumber" name="246" href="#246">246</a>             <strong class="jxr_keyword">return</strong> Response.ok(<strong class="jxr_keyword">new</strong> StreamingOutput() {
+<a class="jxr_linenumber" name="247" href="#247">247</a>                 @Override
+<a class="jxr_linenumber" name="248" href="#248">248</a>                 <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> write(OutputStream outputStream) <strong class="jxr_keyword">throws</strong> IOException, WebApplicationException {
+<a class="jxr_linenumber" name="249" href="#249">249</a>                     skosImporter.export(outputStream, base);
+<a class="jxr_linenumber" name="250" href="#250">250</a>                 }
+<a class="jxr_linenumber" name="251" href="#251">251</a>             }).type(mediaType + <span class="jxr_string">"; charset=utf-8"</span>).build();
+<a class="jxr_linenumber" name="252" href="#252">252</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="253" href="#253">253</a>             tx.close();
+<a class="jxr_linenumber" name="254" href="#254">254</a>             <strong class="jxr_keyword">throw</strong> e;
+<a class="jxr_linenumber" name="255" href="#255">255</a>         }
+<a class="jxr_linenumber" name="256" href="#256">256</a>     }
+<a class="jxr_linenumber" name="257" href="#257">257</a> 
+<a class="jxr_linenumber" name="258" href="#258">258</a>     <strong class="jxr_keyword">private</strong> String getRdfFormat(String format, String defaultFormat) {
+<a class="jxr_linenumber" name="259" href="#259">259</a>         <strong class="jxr_keyword">if</strong> (format == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="260" href="#260">260</a>             <strong class="jxr_keyword">for</strong> (String mimeValue : RDF_MIMETYPE_FORMATS.keySet()) {
+<a class="jxr_linenumber" name="261" href="#261">261</a>                 MediaType mime = MediaType.valueOf(mimeValue);
+<a class="jxr_linenumber" name="262" href="#262">262</a>                 <strong class="jxr_keyword">if</strong> (requestHeaders.getAcceptableMediaTypes().contains(mime)) {
+<a class="jxr_linenumber" name="263" href="#263">263</a>                     <strong class="jxr_keyword">return</strong> RDF_MIMETYPE_FORMATS.get(mimeValue);
+<a class="jxr_linenumber" name="264" href="#264">264</a>                 }
+<a class="jxr_linenumber" name="265" href="#265">265</a>             }
+<a class="jxr_linenumber" name="266" href="#266">266</a>             <strong class="jxr_keyword">return</strong> defaultFormat;
+<a class="jxr_linenumber" name="267" href="#267">267</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="268" href="#268">268</a>             <strong class="jxr_keyword">return</strong> RDF_MIMETYPE_FORMATS.containsValue(format) ? format : defaultFormat;
+<a class="jxr_linenumber" name="269" href="#269">269</a>         }
+<a class="jxr_linenumber" name="270" href="#270">270</a>     }
+<a class="jxr_linenumber" name="271" href="#271">271</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>
