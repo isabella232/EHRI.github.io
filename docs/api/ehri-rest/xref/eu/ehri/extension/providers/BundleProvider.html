@@ -44,29 +44,27 @@
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> java.lang.annotation.Annotation;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> java.lang.reflect.Type;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  
-<a class="jxr_linenumber" name="37" href="#37">37</a>  <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="38" href="#38">38</a>  <em class="jxr_javadoccomment"> * @author Mike Bryant (<a href="http://github.com/mikesname)" target="alexandria_uri">http://github.com/mikesname)</a></em>
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="40" href="#40">40</a>  @Provider
-<a class="jxr_linenumber" name="41" href="#41">41</a>  @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/extension/providers/BundleProvider.html">BundleProvider</a> <strong class="jxr_keyword">implements</strong> MessageBodyReader&lt;Bundle&gt; {
-<a class="jxr_linenumber" name="43" href="#43">43</a>      @Override
-<a class="jxr_linenumber" name="44" href="#44">44</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isReadable(Class&lt;?&gt; aClass, Type type, Annotation[] annotations, MediaType mediaType) {
-<a class="jxr_linenumber" name="45" href="#45">45</a>          <strong class="jxr_keyword">return</strong> aClass == Bundle.<strong class="jxr_keyword">class</strong>;
-<a class="jxr_linenumber" name="46" href="#46">46</a>      }
-<a class="jxr_linenumber" name="47" href="#47">47</a>  
-<a class="jxr_linenumber" name="48" href="#48">48</a>      @Override
-<a class="jxr_linenumber" name="49" href="#49">49</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> readFrom(Class&lt;Bundle&gt; bundleClass, Type type, Annotation[] annotations,
-<a class="jxr_linenumber" name="50" href="#50">50</a>                             MediaType mediaType, MultivaluedMap&lt;String,
-<a class="jxr_linenumber" name="51" href="#51">51</a>              String&gt; headers, InputStream stream) <strong class="jxr_keyword">throws</strong> IOException, WebApplicationException {
-<a class="jxr_linenumber" name="52" href="#52">52</a>  
-<a class="jxr_linenumber" name="53" href="#53">53</a>          <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="54" href="#54">54</a>              <strong class="jxr_keyword">return</strong> Bundle.fromStream(stream);
-<a class="jxr_linenumber" name="55" href="#55">55</a>          } <strong class="jxr_keyword">catch</strong> (DeserializationError deserializationError) {
-<a class="jxr_linenumber" name="56" href="#56">56</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/extension/errors/WebDeserializationError.html">WebDeserializationError</a>(deserializationError);
-<a class="jxr_linenumber" name="57" href="#57">57</a>          }
-<a class="jxr_linenumber" name="58" href="#58">58</a>      }
-<a class="jxr_linenumber" name="59" href="#59">59</a>  }
+<a class="jxr_linenumber" name="37" href="#37">37</a>  
+<a class="jxr_linenumber" name="38" href="#38">38</a>  @Provider
+<a class="jxr_linenumber" name="39" href="#39">39</a>  @Consumes(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/extension/providers/BundleProvider.html">BundleProvider</a> <strong class="jxr_keyword">implements</strong> MessageBodyReader&lt;Bundle&gt; {
+<a class="jxr_linenumber" name="41" href="#41">41</a>      @Override
+<a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isReadable(Class&lt;?&gt; aClass, Type type, Annotation[] annotations, MediaType mediaType) {
+<a class="jxr_linenumber" name="43" href="#43">43</a>          <strong class="jxr_keyword">return</strong> aClass == Bundle.<strong class="jxr_keyword">class</strong>;
+<a class="jxr_linenumber" name="44" href="#44">44</a>      }
+<a class="jxr_linenumber" name="45" href="#45">45</a>  
+<a class="jxr_linenumber" name="46" href="#46">46</a>      @Override
+<a class="jxr_linenumber" name="47" href="#47">47</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> readFrom(Class&lt;Bundle&gt; bundleClass, Type type, Annotation[] annotations,
+<a class="jxr_linenumber" name="48" href="#48">48</a>                             MediaType mediaType, MultivaluedMap&lt;String,
+<a class="jxr_linenumber" name="49" href="#49">49</a>              String&gt; headers, InputStream stream) <strong class="jxr_keyword">throws</strong> IOException, WebApplicationException {
+<a class="jxr_linenumber" name="50" href="#50">50</a>  
+<a class="jxr_linenumber" name="51" href="#51">51</a>          <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="52" href="#52">52</a>              <strong class="jxr_keyword">return</strong> Bundle.fromStream(stream);
+<a class="jxr_linenumber" name="53" href="#53">53</a>          } <strong class="jxr_keyword">catch</strong> (DeserializationError deserializationError) {
+<a class="jxr_linenumber" name="54" href="#54">54</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/extension/errors/WebDeserializationError.html">WebDeserializationError</a>(deserializationError);
+<a class="jxr_linenumber" name="55" href="#55">55</a>          }
+<a class="jxr_linenumber" name="56" href="#56">56</a>      }
+<a class="jxr_linenumber" name="57" href="#57">57</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

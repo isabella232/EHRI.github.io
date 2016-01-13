@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>EntityClass (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>EntityClass (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="EntityClass (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="EntityClass (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -35,7 +35,7 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../eu/ehri/project/models/DocumentDescription.html" title="interface in eu.ehri.project.models"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../eu/ehri/project/models/DocumentaryUnitDescription.html" title="interface in eu.ehri.project.models"><span class="strong">Prev Class</span></a></li>
 <li><a href="../../../../eu/ehri/project/models/Group.html" title="interface in eu.ehri.project.models"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -108,8 +108,6 @@
 extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is-external=true" title="class or interface in java.lang">Enum</a>&lt;<a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&gt;</pre>
 <div class="block">Mapping of Entity type names to Frames interfaces classes and
  their associated id generator classes.</div>
-<dl><dt><span class="strong">Author:</span></dt>
-  <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
 </li>
 </ul>
 </div>
@@ -158,10 +156,10 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is
 <td class="colOne"><code><strong><a href="../../../../eu/ehri/project/models/EntityClass.html#DATE_PERIOD">DATE_PERIOD</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/models/EntityClass.html#DOCUMENT_DESCRIPTION">DOCUMENT_DESCRIPTION</a></strong></code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/models/EntityClass.html#DOCUMENTARY_UNIT">DOCUMENTARY_UNIT</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/models/EntityClass.html#DOCUMENTARY_UNIT">DOCUMENTARY_UNIT</a></strong></code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/models/EntityClass.html#DOCUMENTARY_UNIT_DESCRIPTION">DOCUMENTARY_UNIT_DESCRIPTION</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><strong><a href="../../../../eu/ehri/project/models/EntityClass.html#EVENT_LINK">EVENT_LINK</a></strong></code>&nbsp;</td>
@@ -233,7 +231,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Enum.html?is
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&gt;</code></td>
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/EntityClass.html#getJavaClass()">getJavaClass</a></strong>()</code>
 <div class="block">Get the interface to which this EntityType refers.</div>
 </td>
@@ -384,13 +382,13 @@ the order they are declared.</div>
 <pre>public static final&nbsp;<a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a> VIRTUAL_UNIT</pre>
 </li>
 </ul>
-<a name="DOCUMENT_DESCRIPTION">
+<a name="DOCUMENTARY_UNIT_DESCRIPTION">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>DOCUMENT_DESCRIPTION</h4>
-<pre>public static final&nbsp;<a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a> DOCUMENT_DESCRIPTION</pre>
+<h4>DOCUMENTARY_UNIT_DESCRIPTION</h4>
+<pre>public static final&nbsp;<a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a> DOCUMENTARY_UNIT_DESCRIPTION</pre>
 </li>
 </ul>
 <a name="REPOSITORY_DESCRIPTION">
@@ -606,7 +604,7 @@ not permitted.)</div>
 <ul class="blockList">
 <li class="blockList">
 <h4>getJavaClass</h4>
-<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&gt;&nbsp;getJavaClass()</pre>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;getJavaClass()</pre>
 <div class="block">Get the interface to which this EntityType refers.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>the Java model class associated with the type</dd></dl>
 </li>
@@ -670,7 +668,7 @@ not permitted.)</div>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../eu/ehri/project/models/DocumentDescription.html" title="interface in eu.ehri.project.models"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../eu/ehri/project/models/DocumentaryUnitDescription.html" title="interface in eu.ehri.project.models"><span class="strong">Prev Class</span></a></li>
 <li><a href="../../../../eu/ehri/project/models/Group.html" title="interface in eu.ehri.project.models"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -711,6 +709,6 @@ not permitted.)</div>
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

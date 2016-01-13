@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>GraphSONTest xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../testapidocs/eu/ehri/project/commands/GraphSONTest.html">View Javadoc</a></div><pre>
+
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_comment"> * Copyright 2015 Data Archiving and Networked Services (an institute of</em>
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <em class="jxr_comment"> * Koninklijke Nederlandse Akademie van Wetenschappen), King's College London,</em>
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <em class="jxr_comment"> * Georg-August-Universitaet Goettingen Stiftung Oeffentlichen Rechts</em>
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <em class="jxr_comment"> * Licensed under the EUPL, Version 1.1 or – as soon they will be approved by</em>
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <em class="jxr_comment"> * the European Commission - subsequent versions of the EUPL (the "Licence");</em>
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <em class="jxr_comment"> * You may not use this work except in compliance with the Licence.</em>
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <em class="jxr_comment"> * You may obtain a copy of the Licence at:</em>
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <em class="jxr_comment"> * https://joinup.ec.europa.eu/software/page/eupl</em>
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_comment"> * Unless required by applicable law or agreed to in writing, software</em>
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <em class="jxr_comment"> * distributed under the Licence is distributed on an "AS IS" basis,</em>
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <em class="jxr_comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</em>
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <em class="jxr_comment"> * See the Licence for the specific language governing</em>
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_comment"> * permissions and limitations under the Licence.</em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.commands;
+<a class="jxr_linenumber" name="21" href="#21">21</a>  
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.TransactionalGraph;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.GraphTestBase;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.utils.fixtures.FixtureLoader;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.utils.fixtures.FixtureLoaderFactory;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.cli.CommandLine;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> java.io.File;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> java.util.List;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  
+<a class="jxr_linenumber" name="36" href="#36">36</a>  
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/commands/GraphSONTest.html">GraphSONTest</a> <strong class="jxr_keyword">extends</strong> GraphTestBase {
+<a class="jxr_linenumber" name="38" href="#38">38</a>      <strong class="jxr_keyword">protected</strong> FixtureLoader helper;
+<a class="jxr_linenumber" name="39" href="#39">39</a>  
+<a class="jxr_linenumber" name="40" href="#40">40</a>      @Test
+<a class="jxr_linenumber" name="41" href="#41">41</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testSaveDumpAndRead() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="42" href="#42">42</a>  
+<a class="jxr_linenumber" name="43" href="#43">43</a>          <em class="jxr_comment">// 1. Load the (YAML) fixtures into a graph.</em>
+<a class="jxr_linenumber" name="44" href="#44">44</a>          <em class="jxr_comment">// 2. Dump it as JSON.</em>
+<a class="jxr_linenumber" name="45" href="#45">45</a>          <em class="jxr_comment">// 3. Load the JSON into another graph.</em>
+<a class="jxr_linenumber" name="46" href="#46">46</a>          <em class="jxr_comment">// 4. Compare the before and after graphs and check</em>
+<a class="jxr_linenumber" name="47" href="#47">47</a>          <em class="jxr_comment">//     nothing's changed.</em>
+<a class="jxr_linenumber" name="48" href="#48">48</a>  
+<a class="jxr_linenumber" name="49" href="#49">49</a>          <em class="jxr_comment">// Setup will create the database but not load the fixtures...</em>
+<a class="jxr_linenumber" name="50" href="#50">50</a>          FramedGraph&lt;? <strong class="jxr_keyword">extends</strong> TransactionalGraph&gt; graph1 = getFramedGraph();
+<a class="jxr_linenumber" name="51" href="#51">51</a>          helper = FixtureLoaderFactory.getInstance(graph1);
+<a class="jxr_linenumber" name="52" href="#52">52</a>          helper.loadTestData();
+<a class="jxr_linenumber" name="53" href="#53">53</a>          graph1.getBaseGraph().commit();
+<a class="jxr_linenumber" name="54" href="#54">54</a>  
+<a class="jxr_linenumber" name="55" href="#55">55</a>          List&lt;VertexProxy&gt; graphState1 = getGraphState(graph1);
+<a class="jxr_linenumber" name="56" href="#56">56</a>  
+<a class="jxr_linenumber" name="57" href="#57">57</a>          File temp = File.createTempFile(<span class="jxr_string">"temp-file-name"</span>, <span class="jxr_string">".tmp"</span>);
+<a class="jxr_linenumber" name="58" href="#58">58</a>          temp.deleteOnExit();
+<a class="jxr_linenumber" name="59" href="#59">59</a>          assertEquals(0L, temp.length());
+<a class="jxr_linenumber" name="60" href="#60">60</a>  
+<a class="jxr_linenumber" name="61" href="#61">61</a>          String filePath = temp.getAbsolutePath();
+<a class="jxr_linenumber" name="62" href="#62">62</a>          String[] outArgs = <strong class="jxr_keyword">new</strong> String[]{<span class="jxr_string">"--dump"</span>, filePath};
+<a class="jxr_linenumber" name="63" href="#63">63</a>  
+<a class="jxr_linenumber" name="64" href="#64">64</a>          GraphSON graphSON = <strong class="jxr_keyword">new</strong> GraphSON();
+<a class="jxr_linenumber" name="65" href="#65">65</a>          CommandLine outCmdLine = graphSON.getCmdLine(outArgs);
+<a class="jxr_linenumber" name="66" href="#66">66</a>  
+<a class="jxr_linenumber" name="67" href="#67">67</a>          assertEquals(0, graphSON.execWithOptions(graph1, outCmdLine));
+<a class="jxr_linenumber" name="68" href="#68">68</a>          graph1.shutdown();
+<a class="jxr_linenumber" name="69" href="#69">69</a>  
+<a class="jxr_linenumber" name="70" href="#70">70</a>          assertTrue(temp.exists());
+<a class="jxr_linenumber" name="71" href="#71">71</a>          assertTrue(temp.length() &gt; 0L);
+<a class="jxr_linenumber" name="72" href="#72">72</a>  
+<a class="jxr_linenumber" name="73" href="#73">73</a>          FramedGraph&lt;? <strong class="jxr_keyword">extends</strong> TransactionalGraph&gt; graph2 = getFramedGraph();
+<a class="jxr_linenumber" name="74" href="#74">74</a>  
+<a class="jxr_linenumber" name="75" href="#75">75</a>          String[] inArgs = <strong class="jxr_keyword">new</strong> String[]{<span class="jxr_string">"--load"</span>, filePath};
+<a class="jxr_linenumber" name="76" href="#76">76</a>          CommandLine inCmdLine = graphSON.getCmdLine(inArgs);
+<a class="jxr_linenumber" name="77" href="#77">77</a>          assertEquals(0, graphSON.execWithOptions(graph2, inCmdLine));
+<a class="jxr_linenumber" name="78" href="#78">78</a>  
+<a class="jxr_linenumber" name="79" href="#79">79</a>          List&lt;VertexProxy&gt; graphState2 = getGraphState(graph2);
+<a class="jxr_linenumber" name="80" href="#80">80</a>  
+<a class="jxr_linenumber" name="81" href="#81">81</a>          GraphDiff graphDiff = diffGraph(graphState1, graphState2);
+<a class="jxr_linenumber" name="82" href="#82">82</a>          assertEquals(0, graphDiff.added.size());
+<a class="jxr_linenumber" name="83" href="#83">83</a>          assertEquals(0, graphDiff.removed.size());
+<a class="jxr_linenumber" name="84" href="#84">84</a>      }
+<a class="jxr_linenumber" name="85" href="#85">85</a>  }
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

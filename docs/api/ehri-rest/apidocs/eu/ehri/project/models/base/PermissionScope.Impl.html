@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>PermissionScope.Impl (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>PermissionScope.Impl (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="PermissionScope.Impl (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="PermissionScope.Impl (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -95,7 +95,7 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.tinkerpop.blueprints.Vertex&gt;, com.tinkerpop.frames.VertexFrame, <a href="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>, <a href="../../../../../eu/ehri/project/models/base/IdentifiableEntity.html" title="interface in eu.ehri.project.models.base">IdentifiableEntity</a>, <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a></dd>
+<dd>com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.tinkerpop.blueprints.Vertex&gt;, com.tinkerpop.frames.VertexFrame, <a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>, <a href="../../../../../eu/ehri/project/models/base/Identifiable.html" title="interface in eu.ehri.project.models.base">Identifiable</a>, <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a></dd>
 </dl>
 <dl>
 <dt>Enclosing interface:</dt>
@@ -157,7 +157,7 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</code></td>
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/models/base/PermissionScope.Impl.html#getAllContainedItems()">getAllContainedItems</a></strong>()</code>
 <div class="block">Get an iterable of all items within this scope, recursively down
  to all lower levels.</div>
@@ -199,18 +199,18 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <code><a href="../../../../../eu/ehri/project/models/base/PermissionScope.html#getContainedItems()">getContainedItems</a>, <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html#getPermissionGrants()">getPermissionGrants</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.IdentifiableEntity">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Identifiable">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../../eu/ehri/project/models/base/IdentifiableEntity.html" title="interface in eu.ehri.project.models.base">IdentifiableEntity</a></h3>
-<code><a href="../../../../../eu/ehri/project/models/base/IdentifiableEntity.html#getIdentifier()">getIdentifier</a></code></li>
+<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../../eu/ehri/project/models/base/Identifiable.html" title="interface in eu.ehri.project.models.base">Identifiable</a></h3>
+<code><a href="../../../../../eu/ehri/project/models/base/Identifiable.html#getIdentifier()">getIdentifier</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Frame">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Entity">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a></h3>
-<code><a href="../../../../../eu/ehri/project/models/base/Frame.html#getId()">getId</a>, <a href="../../../../../eu/ehri/project/models/base/Frame.html#getType()">getType</a></code></li>
+<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a></h3>
+<code><a href="../../../../../eu/ehri/project/models/base/Entity.html#as(java.lang.Class)">as</a>, <a href="../../../../../eu/ehri/project/models/base/Entity.html#getId()">getId</a>, <a href="../../../../../eu/ehri/project/models/base/Entity.html#getProperty(java.lang.String)">getProperty</a>, <a href="../../../../../eu/ehri/project/models/base/Entity.html#getPropertyKeys()">getPropertyKeys</a>, <a href="../../../../../eu/ehri/project/models/base/Entity.html#getType()">getType</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_com.tinkerpop.frames.VertexFrame">
@@ -256,7 +256,7 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <ul class="blockList">
 <li class="blockList">
 <h4>getAllContainedItems</h4>
-<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;&nbsp;getAllContainedItems()</pre>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;getAllContainedItems()</pre>
 <div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/models/base/PermissionScope.html#getAllContainedItems()">PermissionScope</a></code></strong></div>
 <div class="block">Get an iterable of all items within this scope, recursively down
  to all lower levels.</div>
@@ -364,6 +364,6 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

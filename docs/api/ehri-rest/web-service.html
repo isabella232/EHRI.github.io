@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20151110" />
+    <meta name="Date-Revision-yyyymmdd" content="20160113" />
     <meta http-equiv="Content-Language" content="en" />
     <title>EHRI Backend &#x2013; Using the Web Service</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2015-11-10
+                  <li id="publishDate">Last Published: 2016-01-13
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.11.2-SNAPSHOT
+                  <li id="projectVersion">Version: 0.12.0-SNAPSHOT
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -152,28 +152,28 @@
                 
       <li>
   
-                          <a href="ehri-frames/index.html" title="Core Java API">
+                          <a href="ehri-core/index.html" title="Core Java API">
           <i class="none"></i>
         Core Java API</a>
             </li>
                 
       <li>
   
-                          <a href="ehri-extension/index.html" title="Web Service">
+                          <a href="ehri-ws/index.html" title="Web Service">
           <i class="none"></i>
         Web Service</a>
             </li>
                 
       <li>
   
-                          <a href="ehri-importers/index.html" title="Import Tools">
+                          <a href="ehri-io/index.html" title="Import Tools">
           <i class="none"></i>
         Import Tools</a>
             </li>
                 
       <li>
   
-                          <a href="ehri-cmdline/index.html" title="Command Line Utilities">
+                          <a href="ehri-cli/index.html" title="Command Line Utilities">
           <i class="none"></i>
         Command Line Utilities</a>
             </li>
@@ -204,7 +204,7 @@
                               
       <li>
   
-                          <a href="ehri-extension/wsdocs/index.html" title="Web API">
+                          <a href="ehri-ws/wsdocs/index.html" title="Web API">
           <i class="none"></i>
         Web API</a>
             </li>
@@ -247,7 +247,7 @@
 
 <div class="source">
 <div class="source">
-<pre>curl http://localhost:7474/ehri/userProfile/mike
+<pre>curl http://localhost:7474/ehri/UserProfile/mike
 </pre></div></div>
 <p>If all goes well you should see something like:</p>
 
@@ -255,7 +255,7 @@
 <div class="source">
 <pre>{
   &quot;id&quot; : &quot;mike&quot;,
-  &quot;type&quot; : &quot;userProfile&quot;,
+  &quot;type&quot; : &quot;UserProfile&quot;,
   &quot;data&quot; : {
     &quot;identifier&quot; : &quot;mike&quot;,
     &quot;name&quot; : &quot;Mike Bryant&quot;
@@ -278,7 +278,7 @@
             &quot;following&quot; : 0
           },
           &quot;id&quot; : &quot;admin&quot;,
-          &quot;type&quot; : &quot;group&quot;
+          &quot;type&quot; : &quot;Group&quot;
         } ]
       },
       &quot;data&quot; : {
@@ -289,7 +289,7 @@
         &quot;childCount&quot; : 1
       },
       &quot;id&quot; : &quot;a2035f24-6845-11e5-92aa-ed4cb7d1dda8&quot;,
-      &quot;type&quot; : &quot;systemEvent&quot;
+      &quot;type&quot; : &quot;SystemEvent&quot;
     } ],
     &quot;belongsTo&quot; : [ {
       &quot;relationships&quot; : { },
@@ -301,7 +301,7 @@
         &quot;childCount&quot; : 1
       },
       &quot;id&quot; : &quot;admin&quot;,
-      &quot;type&quot; : &quot;group&quot;
+      &quot;type&quot; : &quot;Group&quot;
     } ]
   }
 }
@@ -312,27 +312,27 @@
   
 <li>The user profile has global ID <tt>mike</tt>, which is the same as the local (non-hierarchical) identifier <tt>mike</tt></li>
   
-<li>The profile is of type <tt>userProfile</tt></li>
+<li>The profile is of type <tt>UserProfile</tt></li>
   
-<li>It has a <tt>belongsTo</tt> relationship to a <tt>group</tt> item with ID <tt>admin</tt></li>
+<li>It has a <tt>belongsTo</tt> relationship to a <tt>Group</tt> item with ID <tt>admin</tt></li>
   
-<li>There was a <tt>systemEvent</tt> of type <tt>creation</tt>, &#x201c;actioned&#x201d; (or initiated) by <tt>admin</tt>.</li>
+<li>There was a <tt>SystemEvent</tt> of type <tt>creation</tt>, &#x201c;actioned&#x201d; (or initiated) by <tt>admin</tt>.</li>
 </ul>
 <p>Assuming that worked, lets go on and create the following:</p>
 
 <ol style="list-style-type: decimal">
   
-<li>a <tt>country</tt> item (via the web service RESTful API)</li>
+<li>a <tt>Country</tt> item (via the web service RESTful API)</li>
   
-<li>a <tt>repository</tt> item via <a class="externalLink" href="http://www.apex-project.eu/index.php/en/outcomes/standards/eag-2012">EAG</a> XML import  .de/) XML import)</li>
+<li>a <tt>Repository</tt> item via <a class="externalLink" href="http://www.apex-project.eu/index.php/en/outcomes/standards/eag-2012">EAG</a> XML import  .de/) XML import)</li>
   
-<li>a <tt>documentaryUnit</tt> item via <a class="externalLink" href="http://www.loc.gov/ead/">EAD</a> XML import</li>
+<li>a <tt>DocumentaryUnit</tt> item via <a class="externalLink" href="http://www.loc.gov/ead/">EAD</a> XML import</li>
 </ol>
 <p>Items 1, 2, and 3 here have a hierarchical relationship, which means that we need to create them in order, since the documentary unit item will &#x201c;belong&#x201d; to the repository, and the repository to the country item.</p>
 <div class="section">
 <h2><a name="Web_service_usage_conventions"></a>Web service usage conventions</h2>
 <p>Before we start, lets just explain a couple of conventions for using the web service. You&#x2019;ll notice below that any requests that <i>change</i> data, e.g. <tt>POST</tt>, <tt>PUT</tt>, <tt>DELETE</tt> methods, require an <tt>X-User: $USER</tt> header. This identifier the &#x201c;actioner&#x201d; to the system and allows the permission system to determine if they have adequate permissions (obviously, it&#x2019;s the responsibility of the client application to verify people are who they say they are, but the web service does not handle authentication, only authorisation.)</p>
-<p>We also use the <tt>X-LogMessage</tt> header when we want to tell the system what we&#x2019;re doing. This will end up as the  <tt>logMessage</tt> property on the <tt>systemEvent</tt> item associated with the change.</p></div>
+<p>We also use the <tt>X-LogMessage</tt> header when we want to tell the system what we&#x2019;re doing. This will end up as the  <tt>logMessage</tt> property on the <tt>SystemEvent</tt> item associated with the change.</p></div>
 <div class="section">
 <h2><a name="Creating_the_country"></a>Creating the country</h2>
 <p>We&#x2019;re going to create the country via the &#x201c;RESTful&#x201d; web service API. The only data we absolutely need for the country item is an ISO-3166-1 alpha-2 (2 letter) code. For now we&#x2019;ll use <tt>nl</tt>, for the Netherlands.</p>
@@ -351,21 +351,21 @@
 <div class="source">
 <div class="source">
 <pre>{
-  &quot;type&quot;: &quot;country&quot;,
+  &quot;type&quot;: &quot;Country&quot;,
   &quot;data&quot;: {
     &quot;identifier&quot;: &quot;nl&quot;
   }
 }
 </pre></div></div>
-<p>Let&#x2019;s send that via CURL to the <tt>/ehri/country</tt> endpoint, using <tt>application/json</tt> as the content type:</p>
+<p>Let&#x2019;s send that via CURL to the <tt>/ehri/Country</tt> endpoint, using <tt>application/json</tt> as the content type:</p>
 
 <div class="source">
 <div class="source">
 <pre>curl -X POST \
      -H &quot;X-User: mike&quot; \
      -H &quot;Content-type: application/json&quot; \
-     --data '{&quot;type&quot;: &quot;country&quot;, &quot;data&quot;: {&quot;identifier&quot;: &quot;nl&quot;}}' \
-     http://localhost:7474/ehri/country
+     --data '{&quot;type&quot;: &quot;Country&quot;, &quot;data&quot;: {&quot;identifier&quot;: &quot;nl&quot;}}' \
+     http://localhost:7474/ehri/Country
 </pre></div></div>
 <p>We should recieve the newly-create item as the response, with more system-created metadata:</p>
 
@@ -376,7 +376,7 @@
   &quot;data&quot; : {
     &quot;identifier&quot; : &quot;nl&quot;
   },
-  &quot;type&quot; : &quot;country&quot;,
+  &quot;type&quot; : &quot;Country&quot;,
   &quot;relationships&quot; : {
     &quot;lifecycleEvent&quot; : [ {
       &quot;id&quot; : &quot;1faabf00-6903-11e5-a63f-d32c8c516fe2&quot;,
@@ -384,7 +384,7 @@
         &quot;timestamp&quot; : &quot;2015-10-02T13:43:04.105+01:00&quot;,
         &quot;eventType&quot; : &quot;creation&quot;
       },
-      &quot;type&quot; : &quot;systemEvent&quot;,
+      &quot;type&quot; : &quot;SystemEvent&quot;,
       &quot;relationships&quot; : {
         &quot;hasActioner&quot; : [ {
           &quot;id&quot; : &quot;mike&quot;,
@@ -392,7 +392,7 @@
             &quot;name&quot; : &quot;mike&quot;,
             &quot;identifier&quot; : &quot;mike&quot;
           },
-          &quot;type&quot; : &quot;userProfile&quot;,
+          &quot;type&quot; : &quot;UserProfile&quot;,
           &quot;relationships&quot; : { },
           &quot;meta&quot; : {
             &quot;following&quot; : 0,
@@ -424,7 +424,7 @@
 
 <div class="source">
 <div class="source">
-<pre>curl http://localhost:7474/ehri/country/nl
+<pre>curl http://localhost:7474/ehri/Country/nl
 </pre></div></div>
 <p>This should give the same result as when we created it.</p></div>
 <div class="section">
@@ -457,7 +457,7 @@
 
 <div class="source">
 <div class="source">
-<pre>curl http://localhost:7474/ehri/repository
+<pre>curl http://localhost:7474/ehri/Repository
 </pre></div></div>
 <p>This gives us the somewhat more extensive data:</p>
 
@@ -512,7 +512,7 @@
                                     &quot;gid&quot;: 33
                                 },
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;address&quot;
+                                &quot;type&quot;: &quot;Address&quot;
                             }
                         ],
                         &quot;hasUnknownProperty&quot;: [
@@ -527,11 +527,11 @@
                                     &quot;gid&quot;: 32
                                 },
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;property&quot;
+                                &quot;type&quot;: &quot;UnknownProperty&quot;
                             }
                         ]
                     },
-                    &quot;type&quot;: &quot;repositoryDescription&quot;
+                    &quot;type&quot;: &quot;RepositoryDescription&quot;
                 }
             ],
             &quot;hasCountry&quot;: [
@@ -544,7 +544,7 @@
                         &quot;childCount&quot;: 1
                     },
                     &quot;relationships&quot;: {},
-                    &quot;type&quot;: &quot;country&quot;
+                    &quot;type&quot;: &quot;Country&quot;
                 }
             ],
             &quot;lifecycleEvent&quot;: [
@@ -571,15 +571,15 @@
                                     &quot;watching&quot;: 0
                                 },
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;userProfile&quot;
+                                &quot;type&quot;: &quot;UserProfile&quot;
                             }
                         ]
                     },
-                    &quot;type&quot;: &quot;systemEvent&quot;
+                    &quot;type&quot;: &quot;SystemEvent&quot;
                 }
             ]
         },
-        &quot;type&quot;: &quot;repository&quot;
+        &quot;type&quot;: &quot;Repository&quot;
     }
 ]
 </pre></div></div>
@@ -591,7 +591,7 @@
   
 <li>there is a <tt>hasCountry</tt> relationship pointing to our <tt>nl</tt> country</li>
   
-<li>there is a <tt>describes</tt> relationship to a <tt>repositoryDescription</tt> item with (default)  <tt>languageCode</tt> value <tt>eng</tt>, that contains the bulk of the data in our EAG file.</li>
+<li>there is a <tt>describes</tt> relationship to a <tt>RepositoryDescription</tt> item with (default)  <tt>languageCode</tt> value <tt>eng</tt>, that contains the bulk of the data in our EAG file.</li>
   
 <li>the system ID is <tt>nl-test_repository</tt>, and the identifier value is <tt>test_repository</tt>.</li>
 </ul>
@@ -599,7 +599,7 @@
 
 <div class="source">
 <div class="source">
-<pre>curl http://localhost:7474/ehri/repository/nl-test_repository
+<pre>curl http://localhost:7474/ehri/Repository/nl-test_repository
 </pre></div></div></div>
 <div class="section">
 <h2><a name="Importing_a_documentary_unit_via_EAD"></a>Importing a documentary unit via EAD</h2>
@@ -620,7 +620,7 @@
 <div class="source">
 <pre>{&quot;message&quot;:&quot;Testing EAD import&quot;,&quot;updated&quot;:0,&quot;created&quot;:1,&quot;unchanged&quot;:0}
 </pre></div></div>
-<p>Running <tt>GET</tt> on the <tt>/ehri/documentaryUnit</tt> method lists the units in the system, giving us this rather verbose output:</p>
+<p>Running <tt>GET</tt> on the <tt>/ehri/DocumentaryUnit</tt> method lists the units in the system, giving us this rather verbose output:</p>
 
 <div class="source">
 <div class="source">
@@ -672,7 +672,7 @@
                                     &quot;gid&quot;: 42
                                 },
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;datePeriod&quot;
+                                &quot;type&quot;: &quot;DatePeriod&quot;
                             },
                             {
                                 &quot;data&quot;: {
@@ -685,7 +685,7 @@
                                     &quot;gid&quot;: 43
                                 },
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;datePeriod&quot;
+                                &quot;type&quot;: &quot;DatePeriod&quot;
                             }
                         ],
                         &quot;hasUnknownProperty&quot;: [
@@ -710,7 +710,7 @@
                                     &quot;gid&quot;: 41
                                 },
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;property&quot;
+                                &quot;type&quot;: &quot;UnknownProperty&quot;
                             }
                         ],
                         &quot;relatesTo&quot;: [
@@ -724,7 +724,7 @@
                                     &quot;gid&quot;: 40
                                 },
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;relationship&quot;
+                                &quot;type&quot;: &quot;AccessPoint&quot;
                             },
                             {
                                 &quot;data&quot;: {
@@ -736,11 +736,11 @@
                                     &quot;gid&quot;: 39
                                 },
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;relationship&quot;
+                                &quot;type&quot;: &quot;AccessPoint&quot;
                             }
                         ]
                     },
-                    &quot;type&quot;: &quot;documentDescription&quot;
+                    &quot;type&quot;: &quot;DocumentaryUnitDescription&quot;
                 }
             ],
             &quot;heldBy&quot;: [
@@ -762,7 +762,7 @@
                                 },
                                 &quot;id&quot;: &quot;nl-test_repository.eng-test_repository_desc&quot;,
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;repositoryDescription&quot;
+                                &quot;type&quot;: &quot;RepositoryDescription&quot;
                             }
                         ],
                         &quot;hasCountry&quot;: [
@@ -775,11 +775,11 @@
                                     &quot;childCount&quot;: 1
                                 },
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;country&quot;
+                                &quot;type&quot;: &quot;Country&quot;
                             }
                         ]
                     },
-                    &quot;type&quot;: &quot;repository&quot;
+                    &quot;type&quot;: &quot;Repository&quot;
                 }
             ],
             &quot;lifecycleEvent&quot;: [
@@ -806,15 +806,15 @@
                                     &quot;watching&quot;: 0
                                 },
                                 &quot;relationships&quot;: {},
-                                &quot;type&quot;: &quot;userProfile&quot;
+                                &quot;type&quot;: &quot;UserProfile&quot;
                             }
                         ]
                     },
-                    &quot;type&quot;: &quot;systemEvent&quot;
+                    &quot;type&quot;: &quot;SystemEvent&quot;
                 }
             ]
         },
-        &quot;type&quot;: &quot;documentaryUnit&quot;
+        &quot;type&quot;: &quot;DocumentaryUnit&quot;
     }
 ]
 </pre></div></div>
@@ -839,7 +839,7 @@
     <footer>
             <div class="container-fluid">
                       <div class="row-fluid">
-                              <p >Copyright &copy;                    2015
+                              <p >Copyright &copy;                    2016
                         <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>.
             All rights reserved.      
                     

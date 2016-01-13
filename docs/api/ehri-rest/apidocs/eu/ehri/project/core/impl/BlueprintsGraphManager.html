@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>BlueprintsGraphManager (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>BlueprintsGraphManager (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="BlueprintsGraphManager (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="BlueprintsGraphManager (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -79,7 +79,7 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">eu.ehri.project.core.impl</div>
-<h2 title="Class BlueprintsGraphManager" class="title">Class BlueprintsGraphManager&lt;T extends com.tinkerpop.blueprints.IndexableGraph&gt;</h2>
+<h2 title="Class BlueprintsGraphManager" class="title">Class BlueprintsGraphManager&lt;T extends com.tinkerpop.blueprints.Graph&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -103,15 +103,13 @@
 </dl>
 <hr>
 <br>
-<pre>public class <span class="strong">BlueprintsGraphManager&lt;T extends com.tinkerpop.blueprints.IndexableGraph&gt;</span>
+<pre>public class <span class="strong">BlueprintsGraphManager&lt;T extends com.tinkerpop.blueprints.Graph&gt;</span>
 extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></pre>
 <div class="block">Implementation of GraphManager that uses a single index to manage all nodes.
-
+ <p/>
  This class can be extended for when specific graph implementations (such
  as Neo4j) can provide more efficient implementations of certain methods.</div>
-<dl><dt><span class="strong">Author:</span></dt>
-  <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
 </li>
 </ul>
 </div>
@@ -135,10 +133,6 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#graph">graph</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#INDEX_NAME">INDEX_NAME</a></strong></code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#METADATA_PREFIX">METADATA_PREFIX</a></strong></code>&nbsp;</td>
 </tr>
@@ -175,13 +169,6 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;E extends <a href="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&gt;&nbsp;<br>E</code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#cast(eu.ehri.project.models.base.Frame,%20java.lang.Class)">cast</a></strong>(<a href="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&nbsp;frame,
-    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>
-<div class="block">Cast one frame to another.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Vertex</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#createVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map)">createVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
@@ -189,7 +176,7 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <div class="block">Create a vertex with the given id, type, and data.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Vertex</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#createVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map,%20java.lang.Iterable)">createVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
@@ -199,27 +186,52 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
  property keys should be indexed.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#deleteVertex(java.lang.String)">deleteVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Delete a vertex with the given ID.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#deleteVertex(com.tinkerpop.blueprints.Vertex)">deleteVertex</a></strong>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</code>
 <div class="block">Delete the given vertex.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#exists(java.lang.String)">exists</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Check if a node with the given ID exists or not.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;E&gt;&nbsp;com.tinkerpop.blueprints.CloseableIterable&lt;E&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getEntities(eu.ehri.project.models.EntityClass,%20java.lang.Class)">getEntities</a></strong>(<a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>
+<div class="block">Get an Iterable of vertices of the given type, frames with the given
+ interface class.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>&lt;E&gt;&nbsp;E</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getEntity(java.lang.String,%20java.lang.Class)">getEntity</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>
+<div class="block">Get a node with the given ID, and frame it with the given interface
+ class.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>&lt;E&gt;&nbsp;E</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getEntity(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.lang.Class)">getEntity</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+         <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>
+<div class="block">Get a node with the given ID and type, framing it with the given
+ interface class.</div>
+</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getEntityClass(eu.ehri.project.models.base.Frame)">getEntityClass</a></strong>(<a href="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&nbsp;frame)</code>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getEntityClass(eu.ehri.project.models.base.Entity)">getEntityClass</a></strong>(<a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&nbsp;entity)</code>
 <div class="block">Get the type of an arbitrary framed vertex.</div>
 </td>
 </tr>
@@ -230,80 +242,55 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;E&gt;&nbsp;E</code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getFrame(java.lang.String,%20java.lang.Class)">getFrame</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>
-<div class="block">Get a node with the given ID, and frame it with the given interface
- class.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>&lt;E&gt;&nbsp;E</code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getFrame(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.lang.Class)">getFrame</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-        <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
-        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>
-<div class="block">Get a node with the given ID and type, framing it with the given
- interface class.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;E&gt;&nbsp;com.tinkerpop.blueprints.CloseableIterable&lt;E&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getFrames(eu.ehri.project.models.EntityClass,%20java.lang.Class)">getFrames</a></strong>(<a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
-         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>
-<div class="block">Get an Iterable of vertices of the given type, frames with the given
- interface class.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.frames.FramedGraph&lt;<a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="type parameter in BlueprintsGraphManager">T</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getGraph()">getGraph</a></strong>()</code>
 <div class="block">Get a pointer to the underlying graph.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getId(com.tinkerpop.blueprints.Vertex)">getId</a></strong>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</code>
 <div class="block">Get the id of a given vertex.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getProperties(com.tinkerpop.blueprints.Vertex)">getProperties</a></strong>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</code>
 <div class="block">Get a vertex's properties.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getType(com.tinkerpop.blueprints.Vertex)">getType</a></strong>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</code>
 <div class="block">Get the id of a given vertex.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Vertex</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getVertex(java.lang.String)">getVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Get a node with the given ID.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Vertex</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getVertex(java.lang.String,%20eu.ehri.project.models.EntityClass)">getVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
          <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type)</code>
 <div class="block">Get a node with the given ID and type.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.CloseableIterable&lt;com.tinkerpop.blueprints.Vertex&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getVertices(eu.ehri.project.models.EntityClass)">getVertices</a></strong>(<a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type)</code>
 <div class="block">Get a CloseableIterable of vertices with the given entity class.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.CloseableIterable&lt;com.tinkerpop.blueprints.Vertex&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getVertices(java.lang.Iterable)">getVertices</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;ids)</code>
 <div class="block">Get a CloseableIterable of vertices with the given ids.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.CloseableIterable&lt;com.tinkerpop.blueprints.Vertex&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getVertices(java.lang.String,%20java.lang.Object,%20eu.ehri.project.models.EntityClass)">getVertices</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value,
@@ -311,6 +298,10 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <div class="block">Get a CloseableIterable of vertices with the given type, and the given
  key/value indexed property.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#initialize()">initialize</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -374,16 +365,6 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="INDEX_NAME">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>INDEX_NAME</h4>
-<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> INDEX_NAME</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#eu.ehri.project.core.impl.BlueprintsGraphManager.INDEX_NAME">Constant Field Values</a></dd></dl>
-</li>
-</ul>
 <a name="METADATA_PREFIX">
 <!--   -->
 </a>
@@ -400,7 +381,7 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>graph</h4>
-<pre>protected final&nbsp;com.tinkerpop.frames.FramedGraph&lt;<a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="type parameter in BlueprintsGraphManager">T</a> extends com.tinkerpop.blueprints.IndexableGraph&gt; graph</pre>
+<pre>protected final&nbsp;com.tinkerpop.frames.FramedGraph&lt;<a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="type parameter in BlueprintsGraphManager">T</a> extends com.tinkerpop.blueprints.Graph&gt; graph</pre>
 </li>
 </ul>
 </li>
@@ -441,23 +422,6 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getGraph()">getGraph</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
 </dl>
-</li>
-</ul>
-<a name="cast(eu.ehri.project.models.base.Frame, java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>cast</h4>
-<pre>public&nbsp;&lt;E extends <a href="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&gt;&nbsp;E&nbsp;cast(<a href="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&nbsp;frame,
-                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html#cast(eu.ehri.project.models.base.Frame,%20java.lang.Class)">GraphManager</a></code></strong></div>
-<div class="block">Cast one frame to another.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#cast(eu.ehri.project.models.base.Frame,%20java.lang.Class)">cast</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>frame</code> - The given frame</dd><dd><code>cls</code> - The frame class to cast into</dd>
-<dt><span class="strong">Returns:</span></dt><dd>The input frame cast as the output class</dd></dl>
 </li>
 </ul>
 <a name="getId(com.tinkerpop.blueprints.Vertex)">
@@ -523,20 +487,20 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <dt><span class="strong">Returns:</span></dt><dd>The vertex's entity class</dd></dl>
 </li>
 </ul>
-<a name="getEntityClass(eu.ehri.project.models.base.Frame)">
+<a name="getEntityClass(eu.ehri.project.models.base.Entity)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getEntityClass</h4>
-<pre>public&nbsp;<a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;getEntityClass(<a href="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&nbsp;frame)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntityClass(eu.ehri.project.models.base.Frame)">GraphManager</a></code></strong></div>
+<pre>public&nbsp;<a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;getEntityClass(<a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&nbsp;entity)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntityClass(eu.ehri.project.models.base.Entity)">GraphManager</a></code></strong></div>
 <div class="block">Get the type of an arbitrary framed vertex.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntityClass(eu.ehri.project.models.base.Frame)">getEntityClass</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>frame</code> - A framed vertex</dd>
-<dt><span class="strong">Returns:</span></dt><dd>The frame's entity class</dd></dl>
+<dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntityClass(eu.ehri.project.models.base.Entity)">getEntityClass</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>entity</code> - A framed vertex</dd>
+<dt><span class="strong">Returns:</span></dt><dd>The entity's entity class</dd></dl>
 </li>
 </ul>
 <a name="exists(java.lang.String)">
@@ -555,63 +519,63 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <dt><span class="strong">Returns:</span></dt><dd>Whether or not a node with that ID exists in the graph.</dd></dl>
 </li>
 </ul>
-<a name="getFrame(java.lang.String, java.lang.Class)">
+<a name="getEntity(java.lang.String, java.lang.Class)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getFrame</h4>
-<pre>public&nbsp;&lt;E&gt;&nbsp;E&nbsp;getFrame(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)
-           throws <a href="../../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getFrame(java.lang.String,%20java.lang.Class)">GraphManager</a></code></strong></div>
+<h4>getEntity</h4>
+<pre>public&nbsp;&lt;E&gt;&nbsp;E&nbsp;getEntity(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)
+            throws <a href="../../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntity(java.lang.String,%20java.lang.Class)">GraphManager</a></code></strong></div>
 <div class="block">Get a node with the given ID, and frame it with the given interface
  class.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getFrame(java.lang.String,%20java.lang.Class)">getFrame</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
+<dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntity(java.lang.String,%20java.lang.Class)">getEntity</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The vertex's string ID</dd><dd><code>cls</code> - The desired frame class</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The framed vertex</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
-<a name="getFrame(java.lang.String, eu.ehri.project.models.EntityClass, java.lang.Class)">
+<a name="getEntity(java.lang.String, eu.ehri.project.models.EntityClass, java.lang.Class)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getFrame</h4>
-<pre>public&nbsp;&lt;E&gt;&nbsp;E&nbsp;getFrame(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-             <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
-             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)
-           throws <a href="../../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getFrame(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.lang.Class)">GraphManager</a></code></strong></div>
+<h4>getEntity</h4>
+<pre>public&nbsp;&lt;E&gt;&nbsp;E&nbsp;getEntity(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+              <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)
+            throws <a href="../../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntity(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.lang.Class)">GraphManager</a></code></strong></div>
 <div class="block">Get a node with the given ID and type, framing it with the given
  interface class.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getFrame(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.lang.Class)">getFrame</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
+<dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntity(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.lang.Class)">getEntity</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The vertex's string ID</dd><dd><code>type</code> - The entity type</dd><dd><code>cls</code> - The desired frame class</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The framed vertex</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="../../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd></dl>
 </li>
 </ul>
-<a name="getFrames(eu.ehri.project.models.EntityClass, java.lang.Class)">
+<a name="getEntities(eu.ehri.project.models.EntityClass, java.lang.Class)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getFrames</h4>
-<pre>public&nbsp;&lt;E&gt;&nbsp;com.tinkerpop.blueprints.CloseableIterable&lt;E&gt;&nbsp;getFrames(<a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
-                                                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getFrames(eu.ehri.project.models.EntityClass,%20java.lang.Class)">GraphManager</a></code></strong></div>
+<h4>getEntities</h4>
+<pre>public&nbsp;&lt;E&gt;&nbsp;com.tinkerpop.blueprints.CloseableIterable&lt;E&gt;&nbsp;getEntities(<a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
+                                                            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntities(eu.ehri.project.models.EntityClass,%20java.lang.Class)">GraphManager</a></code></strong></div>
 <div class="block">Get an Iterable of vertices of the given type, frames with the given
  interface class.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getFrames(eu.ehri.project.models.EntityClass,%20java.lang.Class)">getFrames</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
+<dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntities(eu.ehri.project.models.EntityClass,%20java.lang.Class)">getEntities</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>type</code> - The entity type</dd>
 <dt><span class="strong">Returns:</span></dt><dd>An iterable of framed vertices with the given framed class.</dd></dl>
 </li>
@@ -867,7 +831,7 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <a name="rebuildIndex()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>rebuildIndex</h4>
 <pre>public&nbsp;void&nbsp;rebuildIndex()</pre>
@@ -876,6 +840,19 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#rebuildIndex()">rebuildIndex</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="initialize()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>initialize</h4>
+<pre>public&nbsp;void&nbsp;initialize()</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/core/GraphManager.html#initialize()">initialize</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -946,6 +923,6 @@ implements <a href="../../../../../eu/ehri/project/core/GraphManager.html" title
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

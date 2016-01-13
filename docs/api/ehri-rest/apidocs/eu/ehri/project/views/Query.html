@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Query (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>Query (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Query (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="Query (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -79,7 +79,7 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">eu.ehri.project.views</div>
-<h2 title="Class Query" class="title">Class Query&lt;E extends <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</h2>
+<h2 title="Class Query" class="title">Class Query&lt;E extends <a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -100,14 +100,12 @@
 </dl>
 <hr>
 <br>
-<pre>public final class <span class="strong">Query&lt;E extends <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</span>
+<pre>public final class <span class="strong">Query&lt;E extends <a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</span>
 extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interface in eu.ehri.project.views">Scoped</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&gt;</pre>
 <div class="block">Handles querying Accessible Entities, with ACL semantics.
  <p>
  TODO: Possibly refactor more of the ACL logic into AclManager.</div>
-<dl><dt><span class="strong">Author:</span></dt>
-  <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
 </li>
 </ul>
 </div>
@@ -134,7 +132,7 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.FramedVertexIterableAdaptor.html" title="class in eu.ehri.project.views">Query.FramedVertexIterableAdaptor</a>&lt;<a href="../../../../eu/ehri/project/views/Query.FramedVertexIterableAdaptor.html" title="type parameter in Query.FramedVertexIterableAdaptor">T</a> extends <a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&gt;</strong></code>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.FramedVertexIterableAdaptor.html" title="class in eu.ehri.project.views">Query.FramedVertexIterableAdaptor</a>&lt;<a href="../../../../eu/ehri/project/views/Query.FramedVertexIterableAdaptor.html" title="type parameter in Query.FramedVertexIterableAdaptor">T</a> extends <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;</strong></code>
 <div class="block">Wrapper method for FramedVertexIterables that converts a
  <code>FramedVertexIterable&lt;T&gt;</code> back into a plain <code>Iterable&lt;Vertex&gt;</code>.</div>
 </td>
@@ -302,7 +300,7 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>&lt;T extends <a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&gt;&nbsp;<br><a href="../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;T&gt;</code></td>
+<td class="colFirst"><code>&lt;T extends <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br><a href="../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#page(java.lang.Iterable,%20eu.ehri.project.models.base.Accessor,%20java.lang.Class)">page</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;&nbsp;vertices,
     <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user,
     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
@@ -435,9 +433,9 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>page</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&gt;&nbsp;<a href="../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;T&gt;&nbsp;page(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;&nbsp;vertices,
-                                   <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user,
-                                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</pre>
+<pre>public&nbsp;&lt;T extends <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<a href="../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;T&gt;&nbsp;page(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;&nbsp;vertices,
+                                    <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user,
+                                    <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</pre>
 <div class="block">Return a Page instance containing a total of total items, and an iterable
  for the given page/count.</div>
 </li>
@@ -723,6 +721,6 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

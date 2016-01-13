@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>LoggingCrudViews (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>LoggingCrudViews (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="LoggingCrudViews (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="LoggingCrudViews (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -79,7 +79,7 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">eu.ehri.project.views.impl</div>
-<h2 title="Class LoggingCrudViews" class="title">Class LoggingCrudViews&lt;E extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</h2>
+<h2 title="Class LoggingCrudViews" class="title">Class LoggingCrudViews&lt;E extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -100,13 +100,11 @@
 </dl>
 <hr>
 <br>
-<pre>public class <span class="strong">LoggingCrudViews&lt;E extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</span>
+<pre>public class <span class="strong">LoggingCrudViews&lt;E extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</span>
 extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;E&gt;</pre>
 <div class="block">Views class that handles creating Action objects that provide an audit log
  for CRUD actions.</div>
-<dl><dt><span class="strong">Author:</span></dt>
-  <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
 </li>
 </ul>
 </div>
@@ -211,7 +209,7 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;&nbsp;<br><a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</a>&lt;T&gt;</code></td>
+<td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;<br><a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html#setClass(java.lang.Class)">setClass</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Obtain a new view for a different class.</div>
 </td>
@@ -302,14 +300,14 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 <h4>create</h4>
 <pre>public&nbsp;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a>&nbsp;create(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
        <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)
-                                  throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                         <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
-                                         <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
+                            throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                   <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                   <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
 <div class="block">Create a new object of type `E` from the given data, saving an Action log
  with the default creation message.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#create(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">create</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</code></dd>
+<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#create(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">create</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>bundle</code> - The item's data bundle</dd><dd><code>user</code> - The current user</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The created framed vertex</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -327,9 +325,9 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 <pre>public&nbsp;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a>&nbsp;create(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
        <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user,
        com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)
-                                  throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                         <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
-                                         <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
+                            throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                   <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                   <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
 <div class="block">Create a new object of type `E` from the given data, saving an Action log
  with the given log message.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>bundle</code> - The item's data bundle</dd><dd><code>user</code> - The current user</dd><dd><code>logMessage</code> - A log message</dd>
@@ -348,14 +346,14 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 <h4>createOrUpdate</h4>
 <pre>public&nbsp;<a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a>&gt;&nbsp;createOrUpdate(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
                          <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)
-                                                    throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                           <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
-                                                           <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
+                                              throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                                     <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                                     <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
 <div class="block">Create or update a new object of type `E` from the given data, saving an
  Action log with the default creation message.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#createOrUpdate(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">createOrUpdate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</code></dd>
+<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#createOrUpdate(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">createOrUpdate</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>bundle</code> - The item's data bundle</dd><dd><code>user</code> - The current user</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The created framed vertex</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -373,9 +371,9 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 <pre>public&nbsp;<a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a>&gt;&nbsp;createOrUpdate(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
                          <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user,
                          com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)
-                                                    throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                           <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
-                                                           <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
+                                              throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                                     <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                                     <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
 <div class="block">Create or update a new object of type `E` from the given data, saving an
  Action log with the given log message.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>bundle</code> - The item's data bundle</dd><dd><code>user</code> - The current user</dd><dd><code>logMessage</code> - A log message</dd>
@@ -394,14 +392,14 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 <h4>update</h4>
 <pre>public&nbsp;<a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a>&gt;&nbsp;update(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
                  <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)
-                                            throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                   <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
-                                                   <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
+                                      throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                             <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                             <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
 <div class="block">Update an object of type `E` from the given data, saving an Action log
  with the default update message.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#update(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</code></dd>
+<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#update(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">update</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>bundle</code> - The item's data bundle</dd><dd><code>user</code> - The current user</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The updated framed vertex</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -419,9 +417,9 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 <pre>public&nbsp;<a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a>&gt;&nbsp;update(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
                  <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user,
                  com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)
-                                            throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
-                                                   <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
-                                                   <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
+                                      throws <a href="../../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a>,
+                                             <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                             <a href="../../../../../eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions">DeserializationError</a></pre>
 <div class="block">Update an object of type `E` from the given data, saving an Action log
  with the given log message.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>bundle</code> - The item's data bundle</dd><dd><code>user</code> - The current user</dd><dd><code>logMessage</code> - A log message</dd>
@@ -448,7 +446,7 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
  log with the default deletion message.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#delete(java.lang.String,%20eu.ehri.project.models.base.Accessor)">delete</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</code></dd>
+<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#delete(java.lang.String,%20eu.ehri.project.models.base.Accessor)">delete</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The item ID</dd><dd><code>user</code> - The current user</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The number of vertices deleted</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -490,11 +488,11 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 <h4>detail</h4>
 <pre>public&nbsp;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a>&nbsp;detail(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
        <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)
-                                  throws <a href="../../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
+                            throws <a href="../../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></pre>
 <div class="block">Fetch an item, as a user.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#detail(java.lang.String,%20eu.ehri.project.models.base.Accessor)">detail</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</code></dd>
+<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#detail(java.lang.String,%20eu.ehri.project.models.base.Accessor)">detail</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>id</code> - The item ID</dd><dd><code>user</code> - The current user</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The item</dd>
 <dt><span class="strong">Throws:</span></dt>
@@ -511,7 +509,7 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 <div class="block">Set the permission scope of the view.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#setScope(eu.ehri.project.models.base.PermissionScope)">setScope</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</code></dd>
+<dd><code><a href="../../../../../eu/ehri/project/views/Crud.html#setScope(eu.ehri.project.models.base.PermissionScope)">setScope</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a> extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>scope</code> - A permission scope</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A new view</dd></dl>
 </li>
@@ -522,7 +520,7 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setClass</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;&nbsp;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</a>&lt;T&gt;&nbsp;setClass(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</pre>
+<pre>public&nbsp;&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;<a href="../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</a>&lt;T&gt;&nbsp;setClass(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</pre>
 <div class="block">Obtain a new view for a different class.</div>
 <dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - The generic type of the given class</dd><dt><span class="strong">Parameters:</span></dt><dd><code>cls</code> - The class of the item T</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A new view object</dd></dl>
@@ -595,6 +593,6 @@ implements <a href="../../../../../eu/ehri/project/views/Crud.html" title="inter
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

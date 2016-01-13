@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Link (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>Link (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Link (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="Link (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -87,16 +87,14 @@
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>, <a href="../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base">AnnotatableEntity</a>, <a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>, <a href="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>, <a href="../../../../eu/ehri/project/models/base/TemporalEntity.html" title="interface in eu.ehri.project.models.base">TemporalEntity</a>, <a href="../../../../eu/ehri/project/models/base/VersionedEntity.html" title="interface in eu.ehri.project.models.base">VersionedEntity</a>, com.tinkerpop.frames.VertexFrame</dd>
+<dd><a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>, <a href="../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a>, <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>, <a href="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>, <a href="../../../../eu/ehri/project/models/base/Temporal.html" title="interface in eu.ehri.project.models.base">Temporal</a>, <a href="../../../../eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a>, com.tinkerpop.frames.VertexFrame</dd>
 </dl>
 <hr>
 <br>
 <pre>public interface <span class="strong">Link</span>
-extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>, <a href="../../../../eu/ehri/project/models/base/TemporalEntity.html" title="interface in eu.ehri.project.models.base">TemporalEntity</a></pre>
+extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>, <a href="../../../../eu/ehri/project/models/base/Temporal.html" title="interface in eu.ehri.project.models.base">Temporal</a></pre>
 <div class="block">Links two items together with a given body, with may either be
  a text property or some other entity.</div>
-<dl><dt><span class="strong">Author:</span></dt>
-  <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
 </li>
 </ul>
 </div>
@@ -147,18 +145,18 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Link.html#addLinkBody(eu.ehri.project.models.base.AccessibleEntity)">addLinkBody</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Link.html#addLinkBody(eu.ehri.project.models.base.Accessible)">addLinkBody</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;entity)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Link.html#addLinkTarget(eu.ehri.project.models.base.LinkableEntity)">addLinkTarget</a></strong>(<a href="../../../../eu/ehri/project/models/base/LinkableEntity.html" title="interface in eu.ehri.project.models.base">LinkableEntity</a>&nbsp;entity)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Link.html#addLinkTarget(eu.ehri.project.models.base.Linkable)">addLinkTarget</a></strong>(<a href="../../../../eu/ehri/project/models/base/Linkable.html" title="interface in eu.ehri.project.models.base">Linkable</a>&nbsp;entity)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Link.html#getDescription()">getDescription</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;</code></td>
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Link.html#getLinkBodies()">getLinkBodies</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -166,7 +164,7 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Link.html#getLinker()">getLinker</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/base/LinkableEntity.html" title="interface in eu.ehri.project.models.base">LinkableEntity</a>&gt;</code></td>
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/base/Linkable.html" title="interface in eu.ehri.project.models.base">Linkable</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Link.html#getLinkTargets()">getLinkTargets</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -186,11 +184,11 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 <code><a href="../../../../eu/ehri/project/models/base/Promotable.html#addDemotion(eu.ehri.project.models.UserProfile)">addDemotion</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html#addPromotion(eu.ehri.project.models.UserProfile)">addPromotion</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html#getDemoters()">getDemoters</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html#getPromoters()">getPromoters</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html#getPromotionScore()">getPromotionScore</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html#isPromotable()">isPromotable</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html#isPromoted()">isPromoted</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html#isPromotedBy(eu.ehri.project.models.UserProfile)">isPromotedBy</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html#removeDemotion(eu.ehri.project.models.UserProfile)">removeDemotion</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html#removePromotion(eu.ehri.project.models.UserProfile)">removePromotion</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html#updatePromotionScoreCache()">updatePromotionScoreCache</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.AccessibleEntity">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Accessible">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a></h3>
-<code><a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html#addAccessor(eu.ehri.project.models.base.Accessor)">addAccessor</a>, <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html#getAccessors()">getAccessors</a>, <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html#getHistory()">getHistory</a>, <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html#getLatestEvent()">getLatestEvent</a>, <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html#getPermissionScope()">getPermissionScope</a>, <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html#getPermissionScopes()">getPermissionScopes</a>, <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html#hasAccessRestriction()">hasAccessRestriction</a>, <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html#removeAccessor(eu.ehri.project.models.base.Accessor)">removeAccessor</a>, <a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">setPermissionScope</a></code></li>
+<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></h3>
+<code><a href="../../../../eu/ehri/project/models/base/Accessible.html#addAccessor(eu.ehri.project.models.base.Accessor)">addAccessor</a>, <a href="../../../../eu/ehri/project/models/base/Accessible.html#getAccessors()">getAccessors</a>, <a href="../../../../eu/ehri/project/models/base/Accessible.html#getHistory()">getHistory</a>, <a href="../../../../eu/ehri/project/models/base/Accessible.html#getLatestEvent()">getLatestEvent</a>, <a href="../../../../eu/ehri/project/models/base/Accessible.html#getPermissionScope()">getPermissionScope</a>, <a href="../../../../eu/ehri/project/models/base/Accessible.html#getPermissionScopes()">getPermissionScopes</a>, <a href="../../../../eu/ehri/project/models/base/Accessible.html#hasAccessRestriction()">hasAccessRestriction</a>, <a href="../../../../eu/ehri/project/models/base/Accessible.html#removeAccessor(eu.ehri.project.models.base.Accessor)">removeAccessor</a>, <a href="../../../../eu/ehri/project/models/base/Accessible.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">setPermissionScope</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.PermissionGrantTarget">
@@ -200,25 +198,25 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 <code><a href="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html#getPermissionGrants()">getPermissionGrants</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.VersionedEntity">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Versioned">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/VersionedEntity.html" title="interface in eu.ehri.project.models.base">VersionedEntity</a></h3>
-<code><a href="../../../../eu/ehri/project/models/base/VersionedEntity.html#getAllPriorVersions()">getAllPriorVersions</a>, <a href="../../../../eu/ehri/project/models/base/VersionedEntity.html#getPriorVersion()">getPriorVersion</a></code></li>
+<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a></h3>
+<code><a href="../../../../eu/ehri/project/models/base/Versioned.html#getAllPriorVersions()">getAllPriorVersions</a>, <a href="../../../../eu/ehri/project/models/base/Versioned.html#getPriorVersion()">getPriorVersion</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.AnnotatableEntity">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Annotatable">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/AnnotatableEntity.html" title="interface in eu.ehri.project.models.base">AnnotatableEntity</a></h3>
-<code><a href="../../../../eu/ehri/project/models/base/AnnotatableEntity.html#addAnnotation(eu.ehri.project.models.Annotation)">addAnnotation</a>, <a href="../../../../eu/ehri/project/models/base/AnnotatableEntity.html#addAnnotationPart(eu.ehri.project.models.Annotation)">addAnnotationPart</a>, <a href="../../../../eu/ehri/project/models/base/AnnotatableEntity.html#getAnnotations()">getAnnotations</a></code></li>
+<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a></h3>
+<code><a href="../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotation(eu.ehri.project.models.Annotation)">addAnnotation</a>, <a href="../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotationPart(eu.ehri.project.models.Annotation)">addAnnotationPart</a>, <a href="../../../../eu/ehri/project/models/base/Annotatable.html#getAnnotations()">getAnnotations</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Frame">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Entity">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a></h3>
-<code><a href="../../../../eu/ehri/project/models/base/Frame.html#getId()">getId</a>, <a href="../../../../eu/ehri/project/models/base/Frame.html#getType()">getType</a></code></li>
+<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a></h3>
+<code><a href="../../../../eu/ehri/project/models/base/Entity.html#as(java.lang.Class)">as</a>, <a href="../../../../eu/ehri/project/models/base/Entity.html#getId()">getId</a>, <a href="../../../../eu/ehri/project/models/base/Entity.html#getProperty(java.lang.String)">getProperty</a>, <a href="../../../../eu/ehri/project/models/base/Entity.html#getPropertyKeys()">getPropertyKeys</a>, <a href="../../../../eu/ehri/project/models/base/Entity.html#getType()">getType</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_com.tinkerpop.frames.VertexFrame">
@@ -228,11 +226,11 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 <code>asVertex</code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.TemporalEntity">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Temporal">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/TemporalEntity.html" title="interface in eu.ehri.project.models.base">TemporalEntity</a></h3>
-<code><a href="../../../../eu/ehri/project/models/base/TemporalEntity.html#addDatePeriod(eu.ehri.project.models.DatePeriod)">addDatePeriod</a>, <a href="../../../../eu/ehri/project/models/base/TemporalEntity.html#getDatePeriods()">getDatePeriods</a>, <a href="../../../../eu/ehri/project/models/base/TemporalEntity.html#setDatePeriods(java.lang.Iterable)">setDatePeriods</a></code></li>
+<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Temporal.html" title="interface in eu.ehri.project.models.base">Temporal</a></h3>
+<code><a href="../../../../eu/ehri/project/models/base/Temporal.html#addDatePeriod(eu.ehri.project.models.DatePeriod)">addDatePeriod</a>, <a href="../../../../eu/ehri/project/models/base/Temporal.html#getDatePeriods()">getDatePeriods</a>, <a href="../../../../eu/ehri/project/models/base/Temporal.html#setDatePeriods(java.lang.Iterable)">setDatePeriods</a></code></li>
 </ul>
 </li>
 </ul>
@@ -272,16 +270,16 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getLinkTargets</h4>
-<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/base/LinkableEntity.html" title="interface in eu.ehri.project.models.base">LinkableEntity</a>&gt;&nbsp;getLinkTargets()</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/base/Linkable.html" title="interface in eu.ehri.project.models.base">Linkable</a>&gt;&nbsp;getLinkTargets()</pre>
 </li>
 </ul>
-<a name="addLinkTarget(eu.ehri.project.models.base.LinkableEntity)">
+<a name="addLinkTarget(eu.ehri.project.models.base.Linkable)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addLinkTarget</h4>
-<pre>void&nbsp;addLinkTarget(<a href="../../../../eu/ehri/project/models/base/LinkableEntity.html" title="interface in eu.ehri.project.models.base">LinkableEntity</a>&nbsp;entity)</pre>
+<pre>void&nbsp;addLinkTarget(<a href="../../../../eu/ehri/project/models/base/Linkable.html" title="interface in eu.ehri.project.models.base">Linkable</a>&nbsp;entity)</pre>
 </li>
 </ul>
 <a name="getLinkBodies()">
@@ -290,16 +288,16 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getLinkBodies</h4>
-<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;&nbsp;getLinkBodies()</pre>
+<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;getLinkBodies()</pre>
 </li>
 </ul>
-<a name="addLinkBody(eu.ehri.project.models.base.AccessibleEntity)">
+<a name="addLinkBody(eu.ehri.project.models.base.Accessible)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addLinkBody</h4>
-<pre>void&nbsp;addLinkBody(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;entity)</pre>
+<pre>void&nbsp;addLinkBody(<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;entity)</pre>
 </li>
 </ul>
 <a name="getLinkType()">
@@ -387,6 +385,6 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

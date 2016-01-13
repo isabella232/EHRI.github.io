@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Neo4j2Graph (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>Neo4j2Graph (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Neo4j2Graph (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="Neo4j2Graph (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -36,7 +36,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2EdgeIterable.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Index.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../../index.html?eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" target="_top">Frames</a></li>
@@ -95,7 +95,7 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>com.tinkerpop.blueprints.Graph, com.tinkerpop.blueprints.IndexableGraph, com.tinkerpop.blueprints.MetaGraph&lt;org.neo4j.graphdb.GraphDatabaseService&gt;, com.tinkerpop.blueprints.TransactionalGraph</dd>
+<dd>com.tinkerpop.blueprints.Graph, com.tinkerpop.blueprints.MetaGraph&lt;org.neo4j.graphdb.GraphDatabaseService&gt;, com.tinkerpop.blueprints.TransactionalGraph</dd>
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
@@ -105,10 +105,8 @@
 <br>
 <pre>public class <span class="strong">Neo4j2Graph</span>
 extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements com.tinkerpop.blueprints.TransactionalGraph, com.tinkerpop.blueprints.IndexableGraph, com.tinkerpop.blueprints.MetaGraph&lt;org.neo4j.graphdb.GraphDatabaseService&gt;</pre>
+implements com.tinkerpop.blueprints.TransactionalGraph, com.tinkerpop.blueprints.MetaGraph&lt;org.neo4j.graphdb.GraphDatabaseService&gt;</pre>
 <div class="block">A Blueprints implementation of the graph database Neo4j (http://neo4j.org)</div>
-<dl><dt><span class="strong">Author:</span></dt>
-  <dd>Marko A. Rodriguez (http://markorodriguez.com)</dd></dl>
 </li>
 </ul>
 </div>
@@ -216,33 +214,17 @@ implements com.tinkerpop.blueprints.TransactionalGraph, com.tinkerpop.blueprints
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#commit()">commit</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;<br>com.tinkerpop.blueprints.Index&lt;T&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#createIndex(java.lang.String,%20java.lang.Class,%20com.tinkerpop.blueprints.Parameter...)">createIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;indexClass,
-           com.tinkerpop.blueprints.Parameter...&nbsp;indexParameters)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;<br>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#createKeyIndex(java.lang.String,%20java.lang.Class,%20com.tinkerpop.blueprints.Parameter...)">createKeyIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;elementClass,
-              com.tinkerpop.blueprints.Parameter...&nbsp;indexParameters)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#dropIndex(java.lang.String)">dropIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName)</code></td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;<br>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#dropKeyIndex(java.lang.String,%20java.lang.Class)">dropKeyIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;elementClass)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Edge</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getEdge(java.lang.Object)">getEdge</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;id)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Edge&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getEdges()">getEdges</a></strong>()</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getEdges()">getEdges</a></strong>()</code>
+<div class="block">
+ <p/>
+ The underlying Neo4j graph does not natively support this method within a
+ transaction.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Edge&gt;</code></td>
@@ -254,23 +236,6 @@ implements com.tinkerpop.blueprints.TransactionalGraph, com.tinkerpop.blueprints
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getFeatures()">getFeatures</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;<br>com.tinkerpop.blueprints.Index&lt;T&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getIndex(java.lang.String,%20java.lang.Class)">getIndex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
-        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;indexClass)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;<br><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getIndexedKeys(java.lang.Class)">getIndexedKeys</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;elementClass)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Index&lt;? extends com.tinkerpop.blueprints.Element&gt;&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getIndices()">getIndices</a></strong>()</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;<br><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getInternalIndexKeys(java.lang.Class)">getInternalIndexKeys</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;elementClass)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>org.neo4j.graphdb.GraphDatabaseService</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getRawGraph()">getRawGraph</a></strong>()</code>&nbsp;</td>
 </tr>
@@ -280,12 +245,27 @@ implements com.tinkerpop.blueprints.TransactionalGraph, com.tinkerpop.blueprints
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Vertex&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getVertices()">getVertices</a></strong>()</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getVertices()">getVertices</a></strong>()</code>
+<div class="block">
+ <p/>
+ The underlying Neo4j graph does not natively support this method within a
+ transaction.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Vertex&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getVertices(java.lang.String,%20java.lang.Object)">getVertices</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>com.tinkerpop.blueprints.CloseableIterable&lt;com.tinkerpop.blueprints.Vertex&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getVerticesByLabel(java.lang.String)">getVerticesByLabel</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>com.tinkerpop.blueprints.CloseableIterable&lt;com.tinkerpop.blueprints.Vertex&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#getVerticesByLabelKeyValue(java.lang.String,%20java.lang.String,%20java.lang.Object)">getVerticesByLabelKeyValue</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label,
+                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
+                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
@@ -314,23 +294,13 @@ implements com.tinkerpop.blueprints.TransactionalGraph, com.tinkerpop.blueprints
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#setCheckElementsInTransaction(boolean)">setCheckElementsInTransaction</a></strong>(boolean&nbsp;checkElementsInTransaction)</code>
-<div class="block"><strong>Deprecated.</strong>&nbsp;
-<div class="block"><i>since Blueprints 2.7.0/Neo4j 2.2.x this method is
- no longer required since Neo4j indexes no longer return
- deleted elements.</i></div>
-</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#shutdown()">shutdown</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#stopTransaction(com.tinkerpop.blueprints.TransactionalGraph.Conclusion)">stopTransaction</a></strong>(com.tinkerpop.blueprints.TransactionalGraph.Conclusion&nbsp;conclusion)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#toString()">toString</a></strong>()</code>&nbsp;</td>
 </tr>
@@ -436,30 +406,6 @@ implements com.tinkerpop.blueprints.TransactionalGraph, com.tinkerpop.blueprints
 <pre>protected&nbsp;boolean&nbsp;checkElementsInTransaction()</pre>
 </li>
 </ul>
-<a name="setCheckElementsInTransaction(boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setCheckElementsInTransaction</h4>
-<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;void&nbsp;setCheckElementsInTransaction(boolean&nbsp;checkElementsInTransaction)</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>since Blueprints 2.7.0/Neo4j 2.2.x this method is
- no longer required since Neo4j indexes no longer return
- deleted elements.</i></div>
-<div class="block">Neo4j's transactions are not consistent between the graph and the graph
- indices. Moreover, global graph operations are not consistent. For
- example, if a vertex is removed and then an index is queried in the same
- transaction, the removed vertex can be returned. This method allows the
- developer to turn on/off a Neo4j2Graph 'hack' that ensures transactional
- consistency. The default behavior for Neo4j2Graph is to use Neo4j's native
- behavior which ensures speed at the expensive of consistency. Note that
- this boolean switch is local to the current thread (i.e. a ThreadLocal
- variable).</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>checkElementsInTransaction</code> - check whether an element is in the transaction between
-                                   returning it</dd></dl>
-</li>
-</ul>
 <a name="init()">
 <!--   -->
 </a>
@@ -467,75 +413,6 @@ public&nbsp;void&nbsp;setCheckElementsInTransaction(boolean&nbsp;checkElementsIn
 <li class="blockList">
 <h4>init</h4>
 <pre>protected&nbsp;void&nbsp;init()</pre>
-</li>
-</ul>
-<a name="getInternalIndexKeys(java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getInternalIndexKeys</h4>
-<pre>public&nbsp;&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getInternalIndexKeys(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;elementClass)</pre>
-</li>
-</ul>
-<a name="createIndex(java.lang.String, java.lang.Class, com.tinkerpop.blueprints.Parameter...)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createIndex</h4>
-<pre>public&nbsp;&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;com.tinkerpop.blueprints.Index&lt;T&gt;&nbsp;createIndex(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
-                                                                                         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;indexClass,
-                                                                                         com.tinkerpop.blueprints.Parameter...&nbsp;indexParameters)</pre>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code>createIndex</code>&nbsp;in interface&nbsp;<code>com.tinkerpop.blueprints.IndexableGraph</code></dd>
-</dl>
-</li>
-</ul>
-<a name="getIndex(java.lang.String, java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getIndex</h4>
-<pre>public&nbsp;&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;com.tinkerpop.blueprints.Index&lt;T&gt;&nbsp;getIndex(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName,
-                                                                                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;indexClass)</pre>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code>getIndex</code>&nbsp;in interface&nbsp;<code>com.tinkerpop.blueprints.IndexableGraph</code></dd>
-</dl>
-</li>
-</ul>
-<a name="dropIndex(java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>dropIndex</h4>
-<pre>public&nbsp;void&nbsp;dropIndex(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;indexName)</pre>
-<div class="block">
- <p>
- Note that this method will force a successful closing of the current
- thread's transaction. As such, once the index is dropped, the operation
- is committed.</div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code>dropIndex</code>&nbsp;in interface&nbsp;<code>com.tinkerpop.blueprints.IndexableGraph</code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>indexName</code> - the name of the index to drop</dd></dl>
-</li>
-</ul>
-<a name="getIndices()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getIndices</h4>
-<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Index&lt;? extends com.tinkerpop.blueprints.Element&gt;&gt;&nbsp;getIndices()</pre>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code>getIndices</code>&nbsp;in interface&nbsp;<code>com.tinkerpop.blueprints.IndexableGraph</code></dd>
-</dl>
 </li>
 </ul>
 <a name="addVertex(java.lang.Object)">
@@ -572,7 +449,7 @@ public&nbsp;void&nbsp;setCheckElementsInTransaction(boolean&nbsp;checkElementsIn
 <h4>getVertices</h4>
 <pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Vertex&gt;&nbsp;getVertices()</pre>
 <div class="block">
- <p>
+ <p/>
  The underlying Neo4j graph does not natively support this method within a
  transaction. If the graph is not currently in a transaction, then the
  operation runs efficiently and correctly. If the graph is currently in a
@@ -583,6 +460,26 @@ public&nbsp;void&nbsp;setCheckElementsInTransaction(boolean&nbsp;checkElementsIn
 <dt><strong>Specified by:</strong></dt>
 <dd><code>getVertices</code>&nbsp;in interface&nbsp;<code>com.tinkerpop.blueprints.Graph</code></dd>
 <dt><span class="strong">Returns:</span></dt><dd>all the vertices in the graph</dd></dl>
+</li>
+</ul>
+<a name="getVerticesByLabel(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVerticesByLabel</h4>
+<pre>public&nbsp;com.tinkerpop.blueprints.CloseableIterable&lt;com.tinkerpop.blueprints.Vertex&gt;&nbsp;getVerticesByLabel(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label)</pre>
+</li>
+</ul>
+<a name="getVerticesByLabelKeyValue(java.lang.String, java.lang.String, java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVerticesByLabelKeyValue</h4>
+<pre>public&nbsp;com.tinkerpop.blueprints.CloseableIterable&lt;com.tinkerpop.blueprints.Vertex&gt;&nbsp;getVerticesByLabelKeyValue(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label,
+                                                                                                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
+                                                                                                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
 </li>
 </ul>
 <a name="getVertices(java.lang.String, java.lang.Object)">
@@ -607,7 +504,7 @@ public&nbsp;void&nbsp;setCheckElementsInTransaction(boolean&nbsp;checkElementsIn
 <h4>getEdges</h4>
 <pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Edge&gt;&nbsp;getEdges()</pre>
 <div class="block">
- <p>
+ <p/>
  The underlying Neo4j graph does not natively support this method within a
  transaction. If the graph is not currently in a transaction, then the
  operation runs efficiently and correctly. If the graph is currently in a
@@ -632,36 +529,6 @@ public&nbsp;void&nbsp;setCheckElementsInTransaction(boolean&nbsp;checkElementsIn
 <dt><strong>Specified by:</strong></dt>
 <dd><code>getEdges</code>&nbsp;in interface&nbsp;<code>com.tinkerpop.blueprints.Graph</code></dd>
 </dl>
-</li>
-</ul>
-<a name="dropKeyIndex(java.lang.String, java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>dropKeyIndex</h4>
-<pre>public&nbsp;&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;void&nbsp;dropKeyIndex(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                                                             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;elementClass)</pre>
-</li>
-</ul>
-<a name="createKeyIndex(java.lang.String, java.lang.Class, com.tinkerpop.blueprints.Parameter...)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>createKeyIndex</h4>
-<pre>public&nbsp;&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;void&nbsp;createKeyIndex(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
-                                                               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;elementClass,
-                                                               com.tinkerpop.blueprints.Parameter...&nbsp;indexParameters)</pre>
-</li>
-</ul>
-<a name="getIndexedKeys(java.lang.Class)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getIndexedKeys</h4>
-<pre>public&nbsp;&lt;T extends com.tinkerpop.blueprints.Element&gt;&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getIndexedKeys(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;elementClass)</pre>
 </li>
 </ul>
 <a name="removeVertex(com.tinkerpop.blueprints.Vertex)">
@@ -869,7 +736,7 @@ public&nbsp;void&nbsp;setCheckElementsInTransaction(boolean&nbsp;checkElementsIn
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2EdgeIterable.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Index.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html" title="class in eu.ehri.project.core.impl.neo4j"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../../index.html?eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" target="_top">Frames</a></li>
@@ -909,6 +776,6 @@ public&nbsp;void&nbsp;setCheckElementsInTransaction(boolean&nbsp;checkElementsIn
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

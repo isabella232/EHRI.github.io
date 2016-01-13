@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>UkrainianUnitImporter (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>UkrainianUnitImporter (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="UkrainianUnitImporter (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="UkrainianUnitImporter (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -109,8 +109,6 @@
 extends <a href="../../../../eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</a></pre>
 <div class="block">Importer of Ukrainian units, which are encoded in a slightly different way
  than other documentary units.</div>
-<dl><dt><span class="strong">Author:</span></dt>
-  <dd>Linda Reijnhoudt (https://github.com/lindareijnhoudt)</dd></dl>
 </li>
 </ul>
 </div>
@@ -186,13 +184,13 @@ extends <a href="../../../../eu/ehri/project/importers/MapImporter.html" title="
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/UkrainianUnitImporter.html#constructDateMap(java.util.Map)">constructDateMap</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a></code></td>
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/UkrainianUnitImporter.html#importItem(java.util.Map)">importItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)</code>
 <div class="block">Import an item representation into the graph, and return the Node.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a></code></td>
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/UkrainianUnitImporter.html#importItem(java.util.Map,%20java.util.List)">importItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;scopeIds)</code>
 <div class="block">Import an item representation into the graph at a certain depth, and return the Node.</div>
@@ -277,8 +275,8 @@ extends <a href="../../../../eu/ehri/project/importers/MapImporter.html" title="
 <ul class="blockList">
 <li class="blockList">
 <h4>importItem</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;importItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)
-                            throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;importItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)
+                      throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T)">AbstractImporter</a></code></strong></div>
 <div class="block">Import an item representation into the graph, and return the Node.</div>
 <dl>
@@ -296,9 +294,9 @@ extends <a href="../../../../eu/ehri/project/importers/MapImporter.html" title="
 <ul class="blockList">
 <li class="blockList">
 <h4>importItem</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;importItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
-                          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;scopeIds)
-                            throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;importItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+                    <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;scopeIds)
+                      throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T,%20java.util.List)">AbstractImporter</a></code></strong></div>
 <div class="block">Import an item representation into the graph at a certain depth, and return the Node.</div>
 <dl>
@@ -387,6 +385,6 @@ extends <a href="../../../../eu/ehri/project/importers/MapImporter.html" title="
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

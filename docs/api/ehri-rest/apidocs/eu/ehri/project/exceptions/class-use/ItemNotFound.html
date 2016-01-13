@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Class eu.ehri.project.exceptions.ItemNotFound (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>Uses of Class eu.ehri.project.exceptions.ItemNotFound (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class eu.ehri.project.exceptions.ItemNotFound (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="Uses of Class eu.ehri.project.exceptions.ItemNotFound (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -414,20 +414,6 @@
                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;did)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">AbstractAccessibleEntityResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String)">deleteItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
-<div class="block">Delete (remove) an instance of the 'entity' in the database</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">AbstractAccessibleEntityResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#deleteItem(java.lang.String,%20eu.ehri.extension.AbstractAccessibleEntityResource.Handler)">deleteItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-          <a href="../../../../../eu/ehri/extension/AbstractAccessibleEntityResource.Handler.html" title="interface in eu.ehri.extension">AbstractAccessibleEntityResource.Handler</a>&lt;<a href="../../../../../eu/ehri/extension/AbstractAccessibleEntityResource.html" title="type parameter in AbstractAccessibleEntityResource">E</a>&gt;&nbsp;preProcess)</code>
-<div class="block">Delete (remove) an instance of the 'entity' in the database,
- running a handler callback beforehand.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">LinkResource.</span><code><strong><a href="../../../../../eu/ehri/extension/LinkResource.html#deleteLinkForItem(java.lang.String,%20java.lang.String)">deleteLinkForItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;linkId)</code>
@@ -436,16 +422,41 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">HistoricalAgentResource.</span><code><strong><a href="../../../../../eu/ehri/extension/HistoricalAgentResource.html#exportEac(java.lang.String,%20java.lang.String)">exportEac</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;lang)</code>
+<div class="block">Export the given historical agent as an EAC document.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">DocumentaryUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/DocumentaryUnitResource.html#exportEad(java.lang.String,%20java.lang.String)">exportEad</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;lang)</code>
+<div class="block">Export the given documentary unit as EAD.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">RepositoryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/RepositoryResource.html#exportEag(java.lang.String,%20java.lang.String)">exportEag</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;lang)</code>
+<div class="block">Export the given repository as an EAG file.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VocabularyResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VocabularyResource.html#exportSkos(java.lang.String,%20java.lang.String,%20java.lang.String)">exportSkos</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;format,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;baseUri)</code>
 <div class="block">Export the given vocabulary as SKOS.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#followUserProfile(java.lang.String,%20java.util.List)">followUserProfile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                  <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;otherIds)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><span class="strong">ToolsResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ToolsResource.html#fullUpgradeDb1to2()">fullUpgradeDb1to2</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
@@ -549,30 +560,24 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">AbstractAccessibleEntityResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#getItem(java.lang.String)">getItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
-<div class="block">Retieve (get) an instance of the 'entity' in the database</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">PermissionGrantResource.</span><code><strong><a href="../../../../../eu/ehri/extension/PermissionGrantResource.html#getPermissionGrant(java.lang.String)">getPermissionGrant</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Fetch a given permission grant.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html" title="class in eu.ehri.project.acl">InheritedGlobalPermissionSet</a></code></td>
 <td class="colLast"><span class="strong">PermissionsResource.</span><code><strong><a href="../../../../../eu/ehri/extension/PermissionsResource.html#getScopedMatrix(java.lang.String,%20java.lang.String)">getScopedMatrix</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Get the user's permissions for a given scope.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VersionResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VersionResource.html#getVersion(java.lang.String)">getVersion</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Get a version item.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">ImportResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ImportResource.html#importCsv(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importCsv</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
@@ -581,7 +586,7 @@
 <div class="block">Import a set of CSV files.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">ImportResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ImportResource.html#importEac(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEac</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
@@ -593,7 +598,7 @@
 <div class="block">Import EAC files.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">ImportResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ImportResource.html#importEad(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEad</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
@@ -605,7 +610,7 @@
 <div class="block">Import a set of EAD files.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">ImportResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ImportResource.html#importEag(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEag</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
@@ -617,7 +622,7 @@
 <div class="block">Import EAG files.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">ImportResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ImportResource.html#importSkos(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importSkos</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
@@ -628,77 +633,77 @@
  column of the file extensions table <a href="https://jena.apache.org/documentation/io/">here</a>.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#isBlocking(java.lang.String,%20java.lang.String)">isBlocking</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;otherId)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#isFollower(java.lang.String,%20java.lang.String)">isFollower</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;otherId)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#isFollowing(java.lang.String,%20java.lang.String)">isFollowing</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;otherId)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#isWatching(java.lang.String,%20java.lang.String)">isWatching</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;otherId)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">GenericResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GenericResource.html#list(java.util.List)">list</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;ids)</code>
 <div class="block">Fetch a list of items by their ID.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#listAnnotations(java.lang.String)">listAnnotations</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">AnnotationResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AnnotationResource.html#listAnnotationsForSubtree(java.lang.String)">listAnnotationsForSubtree</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Return a map of annotations for the subtree of the given item and its
  child items.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#listBlocked(java.lang.String)">listBlocked</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">GenericResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GenericResource.html#listByGid(java.util.List)">listByGid</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;ids)</code>
 <div class="block">Fetch a list of items by their internal graph ID (gid), which is
  provided in the bundle metadata section of the default response.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">GenericResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GenericResource.html#listByGidFromJson(java.lang.String)">listByGidFromJson</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;json)</code>
 <div class="block">Fetch a list of items by their internal graph ID (gid), which is
  provided in the bundle metadata section of the default response.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">AuthoritativeSetResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#listChildren(java.lang.String,%20boolean)">listChildren</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             boolean&nbsp;all)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VocabularyResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VocabularyResource.html#listChildren(java.lang.String,%20boolean)">listChildren</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             boolean&nbsp;all)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">RepositoryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/RepositoryResource.html#listChildren(java.lang.String,%20boolean)">listChildren</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             boolean&nbsp;all)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">GroupResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GroupResource.html#listChildren(java.lang.String,%20boolean)">listChildren</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             boolean&nbsp;all)</code>
@@ -706,129 +711,129 @@
  UserProfiles and sub-Groups (direct descendants)</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">DocumentaryUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/DocumentaryUnitResource.html#listChildren(java.lang.String,%20boolean)">listChildren</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             boolean&nbsp;all)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">CountryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CountryResource.html#listChildren(java.lang.String,%20boolean)">listChildren</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             boolean&nbsp;all)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">CvocConceptResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CvocConceptResource.html#listChildren(java.lang.String,%20boolean)">listChildren</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             boolean&nbsp;all)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VirtualUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VirtualUnitResource.html#listChildVirtualUnits(java.lang.String,%20boolean)">listChildVirtualUnits</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                      boolean&nbsp;all)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">SystemEventResource.</span><code><strong><a href="../../../../../eu/ehri/extension/SystemEventResource.html#listEventsForUser(java.lang.String)">listEventsForUser</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>
 <div class="block">List actions that are relevant to a given user based on
  the other users that they follow and the items they watch.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#listFollowers(java.lang.String)">listFollowers</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#listFollowing(java.lang.String)">listFollowing</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VersionResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VersionResource.html#listFor(java.lang.String)">listFor</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Lookup and page the versions for a given item.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">GenericResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GenericResource.html#listFromJson(java.lang.String)">listFromJson</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;json)</code>
 <div class="block">Fetch a list of items by their ID.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VirtualUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VirtualUnitResource.html#listIncludedVirtualUnits(java.lang.String)">listIncludedVirtualUnits</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">PermissionsResource.</span><code><strong><a href="../../../../../eu/ehri/extension/PermissionsResource.html#listPermissionGrants(java.lang.String)">listPermissionGrants</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Get a list of permission grants for the given user</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">PermissionsResource.</span><code><strong><a href="../../../../../eu/ehri/extension/PermissionsResource.html#listPermissionGrantsForItem(java.lang.String)">listPermissionGrantsForItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">List all the permission grants that relate specifically to this item.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">PermissionsResource.</span><code><strong><a href="../../../../../eu/ehri/extension/PermissionsResource.html#listPermissionGrantsForScope(java.lang.String)">listPermissionGrantsForScope</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">List all the permission grants that relate specifically to this scope.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">LinkResource.</span><code><strong><a href="../../../../../eu/ehri/extension/LinkResource.html#listRelatedItems(java.lang.String)">listRelatedItems</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Returns a list of items linked to the given description.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">SystemEventResource.</span><code><strong><a href="../../../../../eu/ehri/extension/SystemEventResource.html#listUserActions(java.lang.String)">listUserActions</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>
 <div class="block">Fetch a list of a user's actions.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VirtualUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VirtualUnitResource.html#listVirtualUnitsForUser(java.lang.String)">listVirtualUnitsForUser</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#listWatching(java.lang.String)">listWatching</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VirtualUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VirtualUnitResource.html#moveIncludedVirtualUnits(java.lang.String,%20java.lang.String,%20java.util.List)">moveIncludedVirtualUnits</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fromId,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toId,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;includedIds)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">SystemEventResource.</span><code><strong><a href="../../../../../eu/ehri/extension/SystemEventResource.html#pageEventsForItem(java.lang.String)">pageEventsForItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Lookup and page the history for a given item.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#pageLinks(java.lang.String)">pageLinks</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">SystemEventResource.</span><code><strong><a href="../../../../../eu/ehri/extension/SystemEventResource.html#pageSubjectsForEvent(java.lang.String)">pageSubjectsForEvent</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Fetch a page of subjects for a given event.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#pageVirtualUnits(java.lang.String)">pageVirtualUnits</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">ToolsResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ToolsResource.html#regenerateDescriptionIds(int,%20boolean)">regenerateDescriptionIds</a></strong>(int&nbsp;bufferSize,
                         boolean&nbsp;commit)</code>
 <div class="block">Regenerate description IDs.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">ToolsResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ToolsResource.html#regenerateId(java.lang.String,%20boolean,%20boolean,%20boolean)">regenerateId</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             boolean&nbsp;collisions,
@@ -838,7 +843,7 @@
  renaming it.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><span class="strong">ToolsResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ToolsResource.html#regenerateIdsForScope(java.lang.String,%20boolean,%20boolean,%20boolean)">regenerateIdsForScope</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
                      boolean&nbsp;collisions,
@@ -848,38 +853,38 @@
  permission scope and lower levels.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">PromotionResource.</span><code><strong><a href="../../../../../eu/ehri/extension/PromotionResource.html#removeDemotion(java.lang.String)">removeDemotion</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Remove a down vote.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VirtualUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VirtualUnitResource.html#removeIncludedVirtualUnits(java.lang.String,%20java.util.List)">removeIncludedVirtualUnits</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                           <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;includedIds)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">GroupResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GroupResource.html#removeMember(java.lang.String,%20java.lang.String)">removeMember</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;aid)</code>
 <div class="block">Remove an accessor from a group.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">CvocConceptResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CvocConceptResource.html#removeNarrowerCvocConcept(java.lang.String,%20java.lang.String)">removeNarrowerCvocConcept</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idNarrower)</code>
 <div class="block">Remove a narrower relationship between two concepts.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">PromotionResource.</span><code><strong><a href="../../../../../eu/ehri/extension/PromotionResource.html#removePromotion(java.lang.String)">removePromotion</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Remove an up vote.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">CvocConceptResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CvocConceptResource.html#removeRelatedCvocConcept(java.lang.String,%20java.lang.String)">removeRelatedCvocConcept</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;idRelated)</code>
@@ -887,22 +892,18 @@
  concept.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">PermissionGrantResource.</span><code><strong><a href="../../../../../eu/ehri/extension/PermissionGrantResource.html#revokePermissionGrant(java.lang.String)">revokePermissionGrant</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Revoke a particular permission grant.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html" title="class in eu.ehri.project.acl">InheritedGlobalPermissionSet</a></code></td>
 <td class="colLast"><span class="strong">PermissionsResource.</span><code><strong><a href="../../../../../eu/ehri/extension/PermissionsResource.html#setGlobalMatrix(java.lang.String,%20eu.ehri.project.acl.GlobalPermissionSet)">setGlobalMatrix</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
                <a href="../../../../../eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</a>&nbsp;globals)</code>
 <div class="block">Set a user's global permission matrix.</div>
 </td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><span class="strong">ToolsResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ToolsResource.html#setIdsOnEventLinks()">setIdsOnEventLinks</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/acl/InheritedItemPermissionSet.html" title="class in eu.ehri.project.acl">InheritedItemPermissionSet</a></code></td>
@@ -1019,13 +1020,6 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">AbstractAccessibleEntityResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AbstractAccessibleEntityResource.html#updateItem(java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-          <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;rawBundle)</code>
-<div class="block">Update (change) an instance of the 'entity' in the database</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#watchItem(java.lang.String,%20java.util.List)">watchItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;userId,
          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;otherIds)</code>&nbsp;</td>
 </tr>
@@ -1058,6 +1052,20 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">AbstractAccessibleResource.</span><code><strong><a href="../../../../../eu/ehri/extension/base/AbstractAccessibleResource.html#deleteItem(java.lang.String)">deleteItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<div class="block">Delete (remove) an instance of the 'entity' in the database</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">AbstractAccessibleResource.</span><code><strong><a href="../../../../../eu/ehri/extension/base/AbstractAccessibleResource.html#deleteItem(java.lang.String,%20eu.ehri.extension.base.AbstractAccessibleResource.Handler)">deleteItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+          <a href="../../../../../eu/ehri/extension/base/AbstractAccessibleResource.Handler.html" title="interface in eu.ehri.extension.base">AbstractAccessibleResource.Handler</a>&lt;<a href="../../../../../eu/ehri/extension/base/AbstractAccessibleResource.html" title="type parameter in AbstractAccessibleResource">E</a>&gt;&nbsp;preProcess)</code>
+<div class="block">Delete (remove) an instance of the 'entity' in the database,
+ running a handler callback beforehand.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">GetResource.</span><code><strong><a href="../../../../../eu/ehri/extension/base/GetResource.html#get(java.lang.String)">get</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
 <div class="block">Fetch a resource by id.</div>
@@ -1065,16 +1073,29 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">AbstractAccessibleResource.</span><code><strong><a href="../../../../../eu/ehri/extension/base/AbstractAccessibleResource.html#getItem(java.lang.String)">getItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>
+<div class="block">Retieve (get) an instance of the 'entity' in the database</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">ParentResource.</span><code><strong><a href="../../../../../eu/ehri/extension/base/ParentResource.html#listChildren(java.lang.String,%20boolean)">listChildren</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
             boolean&nbsp;all)</code>
 <div class="block">List available resources subordinate to this item.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UpdateResource.</span><code><strong><a href="../../../../../eu/ehri/extension/base/UpdateResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
 <div class="block">Update a resource.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">AbstractAccessibleResource.</span><code><strong><a href="../../../../../eu/ehri/extension/base/AbstractAccessibleResource.html#updateItem(java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+          <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;rawBundle)</code>
+<div class="block">Update (change) an instance of the 'entity' in the database</div>
 </td>
 </tr>
 </tbody>
@@ -1156,17 +1177,17 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">GraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/GraphManager.html#getFrame(java.lang.String,%20java.lang.Class)">getFrame</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
+<td class="colLast"><span class="strong">GraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntity(java.lang.String,%20java.lang.Class)">getEntity</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Get a node with the given ID, and frame it with the given interface
  class.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td>
-<td class="colLast"><span class="strong">GraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/GraphManager.html#getFrame(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.lang.Class)">getFrame</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-        <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
-        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
+<td class="colLast"><span class="strong">GraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/GraphManager.html#getEntity(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.lang.Class)">getEntity</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+         <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Get a node with the given ID and type, framing it with the given
  interface class.</div>
 </td>
@@ -1228,23 +1249,22 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;E&gt;&nbsp;E</code></td>
-<td class="colLast"><span class="strong">BlueprintsGraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getFrame(java.lang.String,%20java.lang.Class)">getFrame</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">BlueprintsGraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getEntity(java.lang.String,%20java.lang.Class)">getEntity</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;E&gt;&nbsp;E</code></td>
-<td class="colLast"><span class="strong">BlueprintsGraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getFrame(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.lang.Class)">getFrame</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-        <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
-        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">BlueprintsGraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getEntity(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.lang.Class)">getEntity</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+         <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;E&gt;&nbsp;cls)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Vertex</code></td>
-<td class="colLast"><span class="strong">BlueprintsGraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getVertex(java.lang.String)">getVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">Neo4jGraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/impl/Neo4jGraphManager.html#getVertex(java.lang.String)">getVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Vertex</code></td>
-<td class="colLast"><span class="strong">Neo4jGraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/impl/Neo4jGraphManager.html#getVertex(java.lang.String,%20eu.ehri.project.models.EntityClass)">getVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-         <a href="../../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">BlueprintsGraphManager.</span><code><strong><a href="../../../../../eu/ehri/project/core/impl/BlueprintsGraphManager.html#getVertex(java.lang.String)">getVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Vertex</code></td>
@@ -1290,7 +1310,7 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&gt;&nbsp;<br><a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;T&gt;</code></td>
+<td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br><a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;T&gt;</code></td>
 <td class="colLast"><span class="strong">BundleDAO.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleDAO.html#update(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">update</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Entry-point for updating a bundle.</div>
@@ -1353,7 +1373,7 @@
            <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;&nbsp;<br>T</code></td>
+<td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;<br>T</code></td>
 <td class="colLast"><span class="strong">DescriptionViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/DescriptionViews.html#create(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.lang.Class,%20eu.ehri.project.models.base.Accessor,%20com.google.common.base.Optional)">create</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;parentId,
       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;data,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;descriptionClass,
@@ -1433,7 +1453,7 @@
       <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&gt;&nbsp;<br><a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;T&gt;</code></td>
+<td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;<br><a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;T&gt;</code></td>
 <td class="colLast"><span class="strong">DescriptionViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/DescriptionViews.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.lang.Class,%20eu.ehri.project.models.base.Accessor,%20com.google.common.base.Optional)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;parentId,
       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;data,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;descriptionClass,
@@ -1552,6 +1572,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

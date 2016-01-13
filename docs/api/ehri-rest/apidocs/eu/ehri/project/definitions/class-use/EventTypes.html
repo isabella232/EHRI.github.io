@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Class eu.ehri.project.definitions.EventTypes (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>Uses of Class eu.ehri.project.definitions.EventTypes (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class eu.ehri.project.definitions.EventTypes (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="Uses of Class eu.ehri.project.definitions.EventTypes (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -81,17 +81,24 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.project.models">eu.ehri.project.models</a></td>
+<td class="colLast">
+<div class="block">The interfaces in this package specify the classes of entities that map to graph
+ frame classes.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.models.events">eu.ehri.project.models.events</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#eu.ehri.project.persistence">eu.ehri.project.persistence</a></td>
 <td class="colLast">
 <div class="block">Classes dealing with persistence of
  relational item data in sub-tree format.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.views">eu.ehri.project.views</a></td>
 <td class="colLast">
 <div class="block">Classes that provide data access &quot;views&quot; on the
@@ -126,6 +133,26 @@
 <td class="colLast"><span class="strong">EventTypes.</span><code><strong><a href="../../../../../eu/ehri/project/definitions/EventTypes.html#values()">values</a></strong>()</code>
 <div class="block">Returns an array containing the constants of this enum type, in
 the order they are declared.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.models">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a> in <a href="../../../../../eu/ehri/project/models/package-summary.html">eu.ehri.project.models</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../eu/ehri/project/models/package-summary.html">eu.ehri.project.models</a> with parameters of type <a href="../../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../eu/ehri/project/models/MaintenanceEventType.html" title="enum in eu.ehri.project.models">MaintenanceEventType</a></code></td>
+<td class="colLast"><span class="strong">MaintenanceEventType.</span><code><strong><a href="../../../../../eu/ehri/project/models/MaintenanceEventType.html#fromSystemEventType(eu.ehri.project.definitions.EventTypes)">fromSystemEventType</a></strong>(<a href="../../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;eventType)</code>
+<div class="block">Map EAC/EAG maintenance event type from system event types.</div>
 </td>
 </tr>
 </tbody>
@@ -179,7 +206,7 @@ the order they are declared.</div>
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
-<td class="colLast"><span class="strong">ActionManager.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes)">newEventContext</a></strong>(<a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;subject,
+<td class="colLast"><span class="strong">ActionManager.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.Accessible,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes)">newEventContext</a></strong>(<a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;subject,
                <a href="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
                <a href="../../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type)</code>
 <div class="block">Create an action for the given subject, user, and type.</div>
@@ -187,7 +214,7 @@ the order they are declared.</div>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
-<td class="colLast"><span class="strong">ActionManager.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes,%20com.google.common.base.Optional)">newEventContext</a></strong>(<a href="../../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;subject,
+<td class="colLast"><span class="strong">ActionManager.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.Accessible,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes,%20com.google.common.base.Optional)">newEventContext</a></strong>(<a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;subject,
                <a href="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
                <a href="../../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type,
                com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>
@@ -280,6 +307,6 @@ the order they are declared.</div>
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

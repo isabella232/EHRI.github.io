@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ActionManager (EHRI Backend 0.11.1-SNAPSHOT API)</title>
+<title>ActionManager (EHRI Backend 0.12.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ActionManager (EHRI Backend 0.11.1-SNAPSHOT API)";
+        parent.document.title="ActionManager (EHRI Backend 0.12.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -126,8 +126,6 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
  e1--[actionHasEvent]-&gt;-- Event 1 ---[hasEvent]--&lt;--e1
  </code>
  </pre></div>
-<dl><dt><span class="strong">Author:</span></dt>
-  <dd>Mike Bryant (http://github.com/mikesname)</dd></dl>
 </li>
 </ul>
 </div>
@@ -204,8 +202,8 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#ActionManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.Frame)">ActionManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
-             <a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&nbsp;scope)</code>
+<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#ActionManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.Entity)">ActionManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+             <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&nbsp;scope)</code>
 <div class="block">Constructor with scope.</div>
 </td>
 </tr>
@@ -253,7 +251,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;subject,
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.Accessible,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;subject,
                <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
                <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type)</code>
 <div class="block">Create an action for the given subject, user, and type.</div>
@@ -261,7 +259,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.AccessibleEntity,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes,%20com.google.common.base.Optional)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;subject,
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#newEventContext(eu.ehri.project.models.base.Accessible,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.definitions.EventTypes,%20com.google.common.base.Optional)">newEventContext</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;subject,
                <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
                <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type,
                com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>
@@ -298,7 +296,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#setScope(eu.ehri.project.models.base.Frame)">setScope</a></strong>(<a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&nbsp;frame)</code>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/ActionManager.html#setScope(eu.ehri.project.models.base.Entity)">setScope</a></strong>(<a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&nbsp;frame)</code>
 <div class="block">Set the scope of this action.</div>
 </td>
 </tr>
@@ -372,14 +370,14 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="ActionManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.Frame)">
+<a name="ActionManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.Entity)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>ActionManager</h4>
 <pre>public&nbsp;ActionManager(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
-             <a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&nbsp;scope)</pre>
+             <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&nbsp;scope)</pre>
 <div class="block">Constructor with scope.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>graph</code> - The framed graph</dd></dl>
 </li>
@@ -452,13 +450,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>An EventContext object</dd></dl>
 </li>
 </ul>
-<a name="newEventContext(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Actioner, eu.ehri.project.definitions.EventTypes)">
+<a name="newEventContext(eu.ehri.project.models.base.Accessible, eu.ehri.project.models.base.Actioner, eu.ehri.project.definitions.EventTypes)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>newEventContext</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;newEventContext(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;subject,
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;newEventContext(<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;subject,
                                          <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
                                          <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type)</pre>
 <div class="block">Create an action for the given subject, user, and type.</div>
@@ -466,13 +464,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>An EventContext object</dd></dl>
 </li>
 </ul>
-<a name="newEventContext(eu.ehri.project.models.base.AccessibleEntity, eu.ehri.project.models.base.Actioner, eu.ehri.project.definitions.EventTypes, com.google.common.base.Optional)">
+<a name="newEventContext(eu.ehri.project.models.base.Accessible, eu.ehri.project.models.base.Actioner, eu.ehri.project.definitions.EventTypes, com.google.common.base.Optional)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>newEventContext</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;newEventContext(<a href="../../../../eu/ehri/project/models/base/AccessibleEntity.html" title="interface in eu.ehri.project.models.base">AccessibleEntity</a>&nbsp;subject,
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;newEventContext(<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;subject,
                                          <a href="../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;user,
                                          <a href="../../../../eu/ehri/project/definitions/EventTypes.html" title="enum in eu.ehri.project.definitions">EventTypes</a>&nbsp;type,
                                          com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</pre>
@@ -482,13 +480,13 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dt><span class="strong">Returns:</span></dt><dd>An EventContext object</dd></dl>
 </li>
 </ul>
-<a name="setScope(eu.ehri.project.models.base.Frame)">
+<a name="setScope(eu.ehri.project.models.base.Entity)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setScope</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</a>&nbsp;setScope(<a href="../../../../eu/ehri/project/models/base/Frame.html" title="interface in eu.ehri.project.models.base">Frame</a>&nbsp;frame)</pre>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</a>&nbsp;setScope(<a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&nbsp;frame)</pre>
 <div class="block">Set the scope of this action.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>frame</code> - The current permission scope</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A new ActionManager instance.</dd></dl>
@@ -621,6 +619,6 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2015 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>
