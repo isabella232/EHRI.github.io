@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Interface eu.ehri.project.models.base.Entity (EHRI Backend 0.12.0-SNAPSHOT API)</title>
+<title>Uses of Interface eu.ehri.project.models.base.Entity (EHRI Backend 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Interface eu.ehri.project.models.base.Entity (EHRI Backend 0.12.0-SNAPSHOT API)";
+        parent.document.title="Uses of Interface eu.ehri.project.models.base.Entity (EHRI Backend 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -161,12 +161,18 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected &lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br><a href="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;T&gt;</code></td>
+<td class="colLast"><span class="strong">AbstractRestResource.</span><code><strong><a href="../../../../../../eu/ehri/extension/base/AbstractRestResource.html#getQuery(java.lang.Class)">getQuery</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
+<div class="block">Get a query object configured according to incoming parameters.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected &lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">AbstractRestResource.</span><code><strong><a href="../../../../../../eu/ehri/extension/base/AbstractRestResource.html#single(T)">single</a></strong>(T&nbsp;item)</code>
 <div class="block">Return a default response from a single frame item.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected &lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">AbstractRestResource.</span><code><strong><a href="../../../../../../eu/ehri/extension/base/AbstractRestResource.html#streamingList(java.lang.Iterable,%20eu.ehri.project.persistence.Serializer,%20eu.ehri.project.core.Tx)">streamingList</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;&nbsp;list,
              <a href="../../../../../../eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a>&nbsp;serializer,
@@ -175,21 +181,21 @@
  entity converter.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected &lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">AbstractRestResource.</span><code><strong><a href="../../../../../../eu/ehri/extension/base/AbstractRestResource.html#streamingList(java.lang.Iterable,%20eu.ehri.project.core.Tx)">streamingList</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;&nbsp;list,
              <a href="../../../../../../eu/ehri/project/core/Tx.html" title="interface in eu.ehri.project.core">Tx</a>&nbsp;tx)</code>
 <div class="block">Return a streaming response from an iterable.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected &lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">AbstractRestResource.</span><code><strong><a href="../../../../../../eu/ehri/extension/base/AbstractRestResource.html#streamingListOfLists(java.lang.Iterable,%20eu.ehri.project.core.Tx)">streamingListOfLists</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;? extends <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;T&gt;&gt;&nbsp;lists,
                     <a href="../../../../../../eu/ehri/project/core/Tx.html" title="interface in eu.ehri.project.core">Tx</a>&nbsp;tx)</code>
 <div class="block">Return a streaming response from an iterable of item lists.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected &lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">AbstractRestResource.</span><code><strong><a href="../../../../../../eu/ehri/extension/base/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page,%20eu.ehri.project.persistence.Serializer,%20eu.ehri.project.core.Tx)">streamingPage</a></strong>(<a href="../../../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;T&gt;&nbsp;page,
              <a href="../../../../../../eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a>&nbsp;serializer,
@@ -198,7 +204,7 @@
  the given entity converter.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected &lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">AbstractRestResource.</span><code><strong><a href="../../../../../../eu/ehri/extension/base/AbstractRestResource.html#streamingPage(eu.ehri.project.views.Query.Page,%20eu.ehri.project.core.Tx)">streamingPage</a></strong>(<a href="../../../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;T&gt;&nbsp;page,
              <a href="../../../../../../eu/ehri/project/core/Tx.html" title="interface in eu.ehri.project.core">Tx</a>&nbsp;tx)</code>
@@ -270,11 +276,11 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br>T</code></td>
-<td class="colLast"><span class="strong">SystemScope.</span><code><strong><a href="../../../../../../eu/ehri/project/acl/SystemScope.html#as(java.lang.Class)">as</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">AnonymousAccessor.</span><code><strong><a href="../../../../../../eu/ehri/project/acl/AnonymousAccessor.html#as(java.lang.Class)">as</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br>T</code></td>
-<td class="colLast"><span class="strong">AnonymousAccessor.</span><code><strong><a href="../../../../../../eu/ehri/project/acl/AnonymousAccessor.html#as(java.lang.Class)">as</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">SystemScope.</span><code><strong><a href="../../../../../../eu/ehri/project/acl/SystemScope.html#as(java.lang.Class)">as</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -533,7 +539,8 @@
 <tr class="altColor">
 <td class="colFirst"><code>interface&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base">AbstractUnit</a></strong></code>
-<div class="block">An abstract entity that has the features that documentary units need.</div>
+<div class="block">An abstract entity representing either a documentary (physical) unit
+ or a virtual unit.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -563,7 +570,7 @@
 <tr class="rowColor">
 <td class="colFirst"><code>interface&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</a></strong></code>
-<div class="block">An entity that can annotate <a href="../../../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base"><code>Annotatable</code></a>s.</div>
+<div class="block">An entity that can annotate <a href="../../../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base"><code>Annotatable</code></a> items.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -736,11 +743,7 @@
 <tr class="rowColor">
 <td class="colFirst"><code>interface&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/models/cvoc/ConceptDescription.html" title="interface in eu.ehri.project.models.cvoc">ConceptDescription</a></strong></code>
-<div class="block">labels, notes and texts that describe the concept, for a specific language 
- are combined into this description
- 
- NOTE: we should only allow one prefLabel (and thus one ConceptDescription) per language, 
- but we cannot model that</div>
+<div class="block">Description for a SKOS concept.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -882,14 +885,14 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br>T</code></td>
-<td class="colLast"><span class="strong">BundleDAO.</span><code><strong><a href="../../../../../../eu/ehri/project/persistence/BundleDAO.html#create(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">create</a></strong>(<a href="../../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+<td class="colLast"><span class="strong">BundleManager.</span><code><strong><a href="../../../../../../eu/ehri/project/persistence/BundleManager.html#create(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">create</a></strong>(<a href="../../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Entry-point for creating a bundle.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br><a href="../../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;T&gt;</code></td>
-<td class="colLast"><span class="strong">BundleDAO.</span><code><strong><a href="../../../../../../eu/ehri/project/persistence/BundleDAO.html#createOrUpdate(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">createOrUpdate</a></strong>(<a href="../../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+<td class="colLast"><span class="strong">BundleManager.</span><code><strong><a href="../../../../../../eu/ehri/project/persistence/BundleManager.html#createOrUpdate(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">createOrUpdate</a></strong>(<a href="../../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Entry point for creating or updating a bundle, depending on whether it has a supplied id.</div>
 </td>
@@ -929,7 +932,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br><a href="../../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;T&gt;</code></td>
-<td class="colLast"><span class="strong">BundleDAO.</span><code><strong><a href="../../../../../../eu/ehri/project/persistence/BundleDAO.html#update(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">update</a></strong>(<a href="../../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+<td class="colLast"><span class="strong">BundleManager.</span><code><strong><a href="../../../../../../eu/ehri/project/persistence/BundleManager.html#update(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">update</a></strong>(<a href="../../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Entry-point for updating a bundle.</div>
 </td>
@@ -1030,6 +1033,18 @@
 <th class="colLast" scope="col">Class and Description</th>
 </tr>
 <tbody>
+<tr class="altColor">
+<td class="colFirst"><code>class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;E extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;</strong></code>
+<div class="block">Handles querying Entity entities with ACL semantics.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views">Query.Builder</a>&lt;E extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;</strong></code>
+<div class="block">Query builder.</div>
+</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/views/Query.FramedVertexIterableAdaptor.html" title="class in eu.ehri.project.views">Query.FramedVertexIterableAdaptor</a>&lt;T extends <a href="../../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;</strong></code>

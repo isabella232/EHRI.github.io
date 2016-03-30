@@ -52,7 +52,7 @@
 <a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_javadoccomment"> * Provides a web service interface for managing countries</em>
 <a class="jxr_linenumber" name="43" href="#43">43</a>  <em class="jxr_javadoccomment"> * and creating repositories within them.</em>
 <a class="jxr_linenumber" name="44" href="#44">44</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="45" href="#45">45</a>  @Path(Entities.COUNTRY)
+<a class="jxr_linenumber" name="45" href="#45">45</a>  @Path(AbstractRestResource.RESOURCE_ENDPOINT_PREFIX + <span class="jxr_string">"/"</span> + Entities.COUNTRY)
 <a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../eu/ehri/extension/CountryResource.html">CountryResource</a>
 <a class="jxr_linenumber" name="47" href="#47">47</a>          <strong class="jxr_keyword">extends</strong> AbstractAccessibleResource&lt;Country&gt;
 <a class="jxr_linenumber" name="48" href="#48">48</a>          <strong class="jxr_keyword">implements</strong> CreateResource, GetResource, ListResource, UpdateResource, ParentResource, <a href="../../../eu/ehri/extension/base/DeleteResource.html">DeleteResource</a> {
@@ -63,7 +63,7 @@
 <a class="jxr_linenumber" name="53" href="#53">53</a>  
 <a class="jxr_linenumber" name="54" href="#54">54</a>      @GET
 <a class="jxr_linenumber" name="55" href="#55">55</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="56" href="#56">56</a>      @Path(<span class="jxr_string">"{id:.+}"</span>)
+<a class="jxr_linenumber" name="56" href="#56">56</a>      @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="57" href="#57">57</a>      @Override
 <a class="jxr_linenumber" name="58" href="#58">58</a>      <strong class="jxr_keyword">public</strong> Response get(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="59" href="#59">59</a>          <strong class="jxr_keyword">return</strong> getItem(id);
@@ -78,7 +78,7 @@
 <a class="jxr_linenumber" name="68" href="#68">68</a>  
 <a class="jxr_linenumber" name="69" href="#69">69</a>      @GET
 <a class="jxr_linenumber" name="70" href="#70">70</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="71" href="#71">71</a>      @Path(<span class="jxr_string">"/{id:.+}/list"</span>)
+<a class="jxr_linenumber" name="71" href="#71">71</a>      @Path(<span class="jxr_string">"{id:[^/]+}/list"</span>)
 <a class="jxr_linenumber" name="72" href="#72">72</a>      @Override
 <a class="jxr_linenumber" name="73" href="#73">73</a>      <strong class="jxr_keyword">public</strong> Response listChildren(@PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="74" href="#74">74</a>                                   @QueryParam(ALL_PARAM) @DefaultValue(<span class="jxr_string">"false"</span>) <strong class="jxr_keyword">boolean</strong> all) <strong class="jxr_keyword">throws</strong> ItemNotFound {
@@ -111,7 +111,7 @@
 <a class="jxr_linenumber" name="101" href="#101">101</a>     @PUT
 <a class="jxr_linenumber" name="102" href="#102">102</a>     @Consumes(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="103" href="#103">103</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="104" href="#104">104</a>     @Path(<span class="jxr_string">"{id:.+}"</span>)
+<a class="jxr_linenumber" name="104" href="#104">104</a>     @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="105" href="#105">105</a>     @Override
 <a class="jxr_linenumber" name="106" href="#106">106</a>     <strong class="jxr_keyword">public</strong> Response update(@PathParam(<span class="jxr_string">"id"</span>) String id, <a href="../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle)
 <a class="jxr_linenumber" name="107" href="#107">107</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
@@ -124,51 +124,50 @@
 <a class="jxr_linenumber" name="114" href="#114">114</a>     }
 <a class="jxr_linenumber" name="115" href="#115">115</a> 
 <a class="jxr_linenumber" name="116" href="#116">116</a>     @DELETE
-<a class="jxr_linenumber" name="117" href="#117">117</a>     @Path(<span class="jxr_string">"{id:.+}"</span>)
+<a class="jxr_linenumber" name="117" href="#117">117</a>     @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="118" href="#118">118</a>     @Override
-<a class="jxr_linenumber" name="119" href="#119">119</a>     <strong class="jxr_keyword">public</strong> Response delete(@PathParam(<span class="jxr_string">"id"</span>) String id)
+<a class="jxr_linenumber" name="119" href="#119">119</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> delete(@PathParam(<span class="jxr_string">"id"</span>) String id)
 <a class="jxr_linenumber" name="120" href="#120">120</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, <a href="../../../eu/ehri/project/exceptions/ValidationError.html">ValidationError</a> {
 <a class="jxr_linenumber" name="121" href="#121">121</a>         <strong class="jxr_keyword">try</strong> (Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="122" href="#122">122</a>             Response response = deleteItem(id);
+<a class="jxr_linenumber" name="122" href="#122">122</a>             deleteItem(id);
 <a class="jxr_linenumber" name="123" href="#123">123</a>             tx.success();
-<a class="jxr_linenumber" name="124" href="#124">124</a>             <strong class="jxr_keyword">return</strong> response;
-<a class="jxr_linenumber" name="125" href="#125">125</a>         }
-<a class="jxr_linenumber" name="126" href="#126">126</a>     }
-<a class="jxr_linenumber" name="127" href="#127">127</a> 
-<a class="jxr_linenumber" name="128" href="#128">128</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="129" href="#129">129</a> <em class="jxr_javadoccomment">     * Create a top-level repository unit for this country.</em>
-<a class="jxr_linenumber" name="130" href="#130">130</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="131" href="#131">131</a> <em class="jxr_javadoccomment">     * @param id     The country id</em>
-<a class="jxr_linenumber" name="132" href="#132">132</a> <em class="jxr_javadoccomment">     * @param bundle The new repository data</em>
-<a class="jxr_linenumber" name="133" href="#133">133</a> <em class="jxr_javadoccomment">     * @return The new repository</em>
-<a class="jxr_linenumber" name="134" href="#134">134</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="135" href="#135">135</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
-<a class="jxr_linenumber" name="136" href="#136">136</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
-<a class="jxr_linenumber" name="137" href="#137">137</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="138" href="#138">138</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="139" href="#139">139</a>     @POST
-<a class="jxr_linenumber" name="140" href="#140">140</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="141" href="#141">141</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="142" href="#142">142</a>     @Path(<span class="jxr_string">"/{id:.+}/"</span> + Entities.REPOSITORY)
-<a class="jxr_linenumber" name="143" href="#143">143</a>     @Override
-<a class="jxr_linenumber" name="144" href="#144">144</a>     <strong class="jxr_keyword">public</strong> Response createChild(@PathParam(<span class="jxr_string">"id"</span>) String id,
-<a class="jxr_linenumber" name="145" href="#145">145</a>                                 <a href="../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle, @QueryParam(ACCESSOR_PARAM) List&lt;String&gt; accessors)
-<a class="jxr_linenumber" name="146" href="#146">146</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
-<a class="jxr_linenumber" name="147" href="#147">147</a>             DeserializationError, <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a> {
-<a class="jxr_linenumber" name="148" href="#148">148</a>         <strong class="jxr_keyword">try</strong> (Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="149" href="#149">149</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = getRequesterUserProfile();
-<a class="jxr_linenumber" name="150" href="#150">150</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/models/Country.html">Country</a> country = views.detail(id, user);
-<a class="jxr_linenumber" name="151" href="#151">151</a>             Response item = createItem(bundle, accessors, <strong class="jxr_keyword">new</strong> Handler&lt;Repository&gt;() {
-<a class="jxr_linenumber" name="152" href="#152">152</a>                 @Override
-<a class="jxr_linenumber" name="153" href="#153">153</a>                 <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> process(<a href="../../../eu/ehri/project/models/Repository.html">Repository</a> repository) <strong class="jxr_keyword">throws</strong> PermissionDenied {
-<a class="jxr_linenumber" name="154" href="#154">154</a>                     repository.setCountry(country);
-<a class="jxr_linenumber" name="155" href="#155">155</a>                 }
-<a class="jxr_linenumber" name="156" href="#156">156</a>             }, views.setScope(country).setClass(Repository.<strong class="jxr_keyword">class</strong>));
-<a class="jxr_linenumber" name="157" href="#157">157</a>             tx.success();
-<a class="jxr_linenumber" name="158" href="#158">158</a>             <strong class="jxr_keyword">return</strong> item;
-<a class="jxr_linenumber" name="159" href="#159">159</a>         }
-<a class="jxr_linenumber" name="160" href="#160">160</a>     }
-<a class="jxr_linenumber" name="161" href="#161">161</a> }
+<a class="jxr_linenumber" name="124" href="#124">124</a>         }
+<a class="jxr_linenumber" name="125" href="#125">125</a>     }
+<a class="jxr_linenumber" name="126" href="#126">126</a> 
+<a class="jxr_linenumber" name="127" href="#127">127</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="128" href="#128">128</a> <em class="jxr_javadoccomment">     * Create a top-level repository unit for this country.</em>
+<a class="jxr_linenumber" name="129" href="#129">129</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="130" href="#130">130</a> <em class="jxr_javadoccomment">     * @param id     The country id</em>
+<a class="jxr_linenumber" name="131" href="#131">131</a> <em class="jxr_javadoccomment">     * @param bundle The new repository data</em>
+<a class="jxr_linenumber" name="132" href="#132">132</a> <em class="jxr_javadoccomment">     * @return The new repository</em>
+<a class="jxr_linenumber" name="133" href="#133">133</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="134" href="#134">134</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
+<a class="jxr_linenumber" name="135" href="#135">135</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
+<a class="jxr_linenumber" name="136" href="#136">136</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="137" href="#137">137</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="138" href="#138">138</a>     @POST
+<a class="jxr_linenumber" name="139" href="#139">139</a>     @Consumes(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="140" href="#140">140</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="141" href="#141">141</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + Entities.REPOSITORY)
+<a class="jxr_linenumber" name="142" href="#142">142</a>     @Override
+<a class="jxr_linenumber" name="143" href="#143">143</a>     <strong class="jxr_keyword">public</strong> Response createChild(@PathParam(<span class="jxr_string">"id"</span>) String id,
+<a class="jxr_linenumber" name="144" href="#144">144</a>                                 <a href="../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle, @QueryParam(ACCESSOR_PARAM) List&lt;String&gt; accessors)
+<a class="jxr_linenumber" name="145" href="#145">145</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
+<a class="jxr_linenumber" name="146" href="#146">146</a>             DeserializationError, <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a> {
+<a class="jxr_linenumber" name="147" href="#147">147</a>         <strong class="jxr_keyword">try</strong> (Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="148" href="#148">148</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = getRequesterUserProfile();
+<a class="jxr_linenumber" name="149" href="#149">149</a>             <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/models/Country.html">Country</a> country = views.detail(id, user);
+<a class="jxr_linenumber" name="150" href="#150">150</a>             Response item = createItem(bundle, accessors, <strong class="jxr_keyword">new</strong> Handler&lt;Repository&gt;() {
+<a class="jxr_linenumber" name="151" href="#151">151</a>                 @Override
+<a class="jxr_linenumber" name="152" href="#152">152</a>                 <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> process(<a href="../../../eu/ehri/project/models/Repository.html">Repository</a> repository) <strong class="jxr_keyword">throws</strong> PermissionDenied {
+<a class="jxr_linenumber" name="153" href="#153">153</a>                     repository.setCountry(country);
+<a class="jxr_linenumber" name="154" href="#154">154</a>                 }
+<a class="jxr_linenumber" name="155" href="#155">155</a>             }, views.setScope(country).setClass(Repository.<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="156" href="#156">156</a>             tx.success();
+<a class="jxr_linenumber" name="157" href="#157">157</a>             <strong class="jxr_keyword">return</strong> item;
+<a class="jxr_linenumber" name="158" href="#158">158</a>         }
+<a class="jxr_linenumber" name="159" href="#159">159</a>     }
+<a class="jxr_linenumber" name="160" href="#160">160</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

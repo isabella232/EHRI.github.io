@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>DocumentaryUnit.Impl (EHRI Core API 0.12.0-SNAPSHOT API)</title>
+<title>DocumentaryUnit.Impl (EHRI Core API 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="DocumentaryUnit.Impl (EHRI Core API 0.12.0-SNAPSHOT API)";
+        parent.document.title="DocumentaryUnit.Impl (EHRI Core API 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -250,14 +250,14 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;eu.ehri.project.models.<a href="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a></h3>
-<code><a href="../../../../eu/ehri/project/models/DocumentaryUnit.html#getDocumentDescriptions()">getDocumentDescriptions</a>, <a href="../../../../eu/ehri/project/models/DocumentaryUnit.html#getParent()">getParent</a></code></li>
+<code><a href="../../../../eu/ehri/project/models/DocumentaryUnit.html#getDocumentDescriptions()">getDocumentDescriptions</a>, <a href="../../../../eu/ehri/project/models/DocumentaryUnit.html#getParent()">getParent</a>, <a href="../../../../eu/ehri/project/models/DocumentaryUnit.html#getRepositoryIfTopLevel()">getRepositoryIfTopLevel</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Described">
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a></h3>
-<code><a href="../../../../eu/ehri/project/models/base/Described.html#addDescription(eu.ehri.project.models.base.Description)">addDescription</a>, <a href="../../../../eu/ehri/project/models/base/Described.html#getDescriptions()">getDescriptions</a>, <a href="../../../../eu/ehri/project/models/base/Described.html#removeDescription(eu.ehri.project.models.base.Description)">removeDescription</a>, <a href="../../../../eu/ehri/project/models/base/Described.html#setDescriptions(java.lang.Iterable)">setDescriptions</a></code></li>
+<code><a href="../../../../eu/ehri/project/models/base/Described.html#addDescription(eu.ehri.project.models.base.Description)">addDescription</a>, <a href="../../../../eu/ehri/project/models/base/Described.html#getDescriptions()">getDescriptions</a>, <a href="../../../../eu/ehri/project/models/base/Described.html#removeDescription(eu.ehri.project.models.base.Description)">removeDescription</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.PermissionScope">
@@ -295,20 +295,6 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <code><a href="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html#getPermissionGrants()">getPermissionGrants</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Versioned">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a></h3>
-<code><a href="../../../../eu/ehri/project/models/base/Versioned.html#getAllPriorVersions()">getAllPriorVersions</a>, <a href="../../../../eu/ehri/project/models/base/Versioned.html#getPriorVersion()">getPriorVersion</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Annotatable">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a></h3>
-<code><a href="../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotation(eu.ehri.project.models.Annotation)">addAnnotation</a>, <a href="../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotationPart(eu.ehri.project.models.Annotation)">addAnnotationPart</a>, <a href="../../../../eu/ehri/project/models/base/Annotatable.html#getAnnotations()">getAnnotations</a></code></li>
-</ul>
-<ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Entity">
 <!--   -->
 </a>
@@ -328,6 +314,20 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 </a>
 <h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Watchable.html" title="interface in eu.ehri.project.models.base">Watchable</a></h3>
 <code><a href="../../../../eu/ehri/project/models/base/Watchable.html#getWatchedCount()">getWatchedCount</a>, <a href="../../../../eu/ehri/project/models/base/Watchable.html#getWatchers()">getWatchers</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Versioned">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a></h3>
+<code><a href="../../../../eu/ehri/project/models/base/Versioned.html#getAllPriorVersions()">getAllPriorVersions</a>, <a href="../../../../eu/ehri/project/models/base/Versioned.html#getPriorVersion()">getPriorVersion</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Annotatable">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a></h3>
+<code><a href="../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotation(eu.ehri.project.models.Annotation)">addAnnotation</a>, <a href="../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotationPart(eu.ehri.project.models.Annotation)">addAnnotationPart</a>, <a href="../../../../eu/ehri/project/models/base/Annotatable.html#getAnnotations()">getAnnotations</a></code></li>
 </ul>
 </li>
 </ul>
@@ -451,7 +451,7 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../eu/ehri/project/models/DocumentaryUnit.html#getRepository()">getRepository</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>the Repository that holds this DocumentaryUnit</dd></dl>
+<dt><span class="strong">Returns:</span></dt><dd>the repository that holds this DocumentaryUnit</dd></dl>
 </li>
 </ul>
 <a name="getAncestors()">

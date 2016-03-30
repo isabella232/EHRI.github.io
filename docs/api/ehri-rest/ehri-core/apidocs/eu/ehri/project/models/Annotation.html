@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Annotation (EHRI Core API 0.12.0-SNAPSHOT API)</title>
+<title>Annotation (EHRI Core API 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Annotation (EHRI Core API 0.12.0-SNAPSHOT API)";
+        parent.document.title="Annotation (EHRI Core API 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -87,7 +87,7 @@
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>, <a href="../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a>, <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>, <a href="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>, <a href="../../../../eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a>, com.tinkerpop.frames.VertexFrame</dd>
+<dd><a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>, <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>, <a href="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a>, <a href="../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>, com.tinkerpop.frames.VertexFrame</dd>
 </dl>
 <hr>
 <br>
@@ -149,7 +149,7 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</a></code></td>
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Annotation.html#getAnnotator()">getAnnotator</a></strong>()</code>
 <div class="block">Fetch the annotator of this annotation.</div>
 </td>
@@ -175,7 +175,7 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Annotation.html#setAnnotator(eu.ehri.project.models.base.Annotator)">setAnnotator</a></strong>(<a href="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</a>&nbsp;annotator)</code>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/models/Annotation.html#setAnnotator(eu.ehri.project.models.UserProfile)">setAnnotator</a></strong>(<a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;annotator)</code>
 <div class="block">Set the annotator of this annotation.</div>
 </td>
 </tr>
@@ -200,20 +200,6 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 </a>
 <h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a></h3>
 <code><a href="../../../../eu/ehri/project/models/base/PermissionGrantTarget.html#getPermissionGrants()">getPermissionGrants</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Versioned">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a></h3>
-<code><a href="../../../../eu/ehri/project/models/base/Versioned.html#getAllPriorVersions()">getAllPriorVersions</a>, <a href="../../../../eu/ehri/project/models/base/Versioned.html#getPriorVersion()">getPriorVersion</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Annotatable">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a></h3>
-<code><a href="../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotation(eu.ehri.project.models.Annotation)">addAnnotation</a>, <a href="../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotationPart(eu.ehri.project.models.Annotation)">addAnnotationPart</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Entity">
@@ -251,10 +237,7 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 <h4>getAnnotations</h4>
 <pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</a>&gt;&nbsp;getAnnotations()</pre>
 <div class="block">Fetch annotations that have been made <i>on this annotation.</i></div>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../eu/ehri/project/models/base/Annotatable.html#getAnnotations()">getAnnotations</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>an iterable of annotation frames</dd></dl>
+<dl><dt><span class="strong">Returns:</span></dt><dd>an iterable of annotation frames</dd></dl>
 </li>
 </ul>
 <a name="getAnnotator()">
@@ -263,18 +246,18 @@ extends <a href="../../../../eu/ehri/project/models/base/Promotable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getAnnotator</h4>
-<pre><a href="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</a>&nbsp;getAnnotator()</pre>
+<pre><a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;getAnnotator()</pre>
 <div class="block">Fetch the annotator of this annotation.</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>an annotator frame</dd></dl>
 </li>
 </ul>
-<a name="setAnnotator(eu.ehri.project.models.base.Annotator)">
+<a name="setAnnotator(eu.ehri.project.models.UserProfile)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setAnnotator</h4>
-<pre>void&nbsp;setAnnotator(<a href="../../../../eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</a>&nbsp;annotator)</pre>
+<pre>void&nbsp;setAnnotator(<a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;annotator)</pre>
 <div class="block">Set the annotator of this annotation.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>annotator</code> - an annotator frame</dd></dl>
 </li>

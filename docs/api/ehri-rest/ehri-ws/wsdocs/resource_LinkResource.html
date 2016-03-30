@@ -52,14 +52,12 @@
             <li class="current">
               <a href="resource_LinkResource.html">LinkResource</a>
               <ul>
-                <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
                 <li><a href="resource_AuthoritativeSetResource.html">AuthoritativeSetResource</a></li>
                 <li><a href="resource_ContentTypeResource.html">ContentTypeResource</a></li>
                 <li><a href="resource_CountryResource.html">CountryResource</a></li>
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
-                <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
@@ -68,7 +66,6 @@
                 <li><a href="resource_LinkResource.html">LinkResource</a></li>
                 <li><a href="resource_PermissionGrantResource.html">PermissionGrantResource</a></li>
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
-                <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
@@ -89,27 +86,15 @@
       <p>The following resources are applicable:</p>
       <ul>
         <li>
-        <a href="#path__Link.html">/Link</a>
+        <a href="#path__classes_Link.html">/classes/Link</a>
         </li>
         <li>
-        <a href="#path__Link_-id-.html">/Link/{id}</a>
-        </li>
-        <li>
-        <a href="#path__Link_-targetId-_-sourceId-.html">/Link/{targetId}/{sourceId}</a>
-        </li>
-        <li>
-        <a href="#path__Link_accessPoint_-id-.html">/Link/accessPoint/{id}</a>
-        </li>
-        <li>
-        <a href="#path__Link_for_-id-.html">/Link/for/{id}</a>
-        </li>
-        <li>
-        <a href="#path__Link_for_-id-_-linkId-.html">/Link/for/{id}/{linkId}</a>
+        <a href="#path__classes_Link_-id-.html">/classes/Link/{id}</a>
         </li>
       </ul>
-        <a name="path__Link.html"></a>
-      <h1>/Link</h1>
-      <p class="note">Mount Point: <a href="../Link">/Link</a></p>
+        <a name="path__classes_Link.html"></a>
+      <h1>/classes/Link</h1>
+      <p class="note">Mount Point: <a href="../classes/Link">/classes/Link</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
@@ -149,9 +134,79 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         </tr>
       </table>
       <p>A list of serialized item representations</p>
-        <a name="path__Link_-id-.html"></a>
-      <h1>/Link/{id}</h1>
-      <p class="note">Mount Point: <a href="../Link/{id}">/Link/{id}</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Create a link between two items.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>source</td>
+          <td>
+            The link source
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>target</td>
+          <td>
+            The link target
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>body</td>
+          <td>
+            optional list of entities to provide the body
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>accessibleTo</td>
+          <td>
+            The IDs of accessors who can see this link
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>bundle</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>The link body data</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the created link item</p>
+        <a name="path__classes_Link_-id-.html"></a>
+      <h1>/classes/Link/{id}</h1>
+      <p class="note">Mount Point: <a href="../classes/Link/{id}">/classes/Link/{id}</a></p>
       <p>
         The following operations are supported on this resource:
       </p>
@@ -243,7 +298,7 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
       <a name="DELETE"></a>
       <h2>DELETE</h2>
       <p>
-            Delete a link.
+            Delete a resource.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -256,217 +311,12 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         <tr>
           <td>id</td>
           <td>
-            (no documentation provided)
+            The resource ID.
           </td>
           <td>path</td>
           <td></td>
         </tr>
       </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>*/*<br/>application/xml</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__Link_-targetId-_-sourceId-.html"></a>
-      <h1>/Link/{targetId}/{sourceId}</h1>
-      <p class="note">Mount Point: <a href="../Link/{targetId}/{sourceId}">/Link/{targetId}/{sourceId}</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Create a link between two items.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>targetId</td>
-          <td>
-            The link target
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>sourceId</td>
-          <td>
-            The link source
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>body</td>
-          <td>
-            optional list of entities to provide the body
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>accessibleTo</td>
-          <td>
-            The IDs of accessors who can see this link
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Request Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-            <td>bundle</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>The link body data</p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>The created link item</p>
-        <a name="path__Link_accessPoint_-id-.html"></a>
-      <h1>/Link/accessPoint/{id}</h1>
-      <p class="note">Mount Point: <a href="../Link/accessPoint/{id}">/Link/accessPoint/{id}</a></p>
-      <a name="DELETE"></a>
-      <h2>DELETE</h2>
-      <p>
-            Delete an access point.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>*/*<br/>application/xml</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__Link_for_-id-.html"></a>
-      <h1>/Link/for/{id}</h1>
-      <p class="note">Mount Point: <a href="../Link/for/{id}">/Link/for/{id}</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Returns a list of items linked to the given description.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__Link_for_-id-_-linkId-.html"></a>
-      <h1>/Link/for/{id}/{linkId}</h1>
-      <p class="note">Mount Point: <a href="../Link/for/{id}/{linkId}">/Link/for/{id}/{linkId}</a></p>
-      <a name="DELETE"></a>
-      <h2>DELETE</h2>
-      <p>
-            Delete a link. If the optional ?accessPoint=[ID] parameter is also given
-the access point associated with the link will also be deleted.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>linkId</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>*/*<br/>application/xml</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
 
       <div class="clear" />
     </div>

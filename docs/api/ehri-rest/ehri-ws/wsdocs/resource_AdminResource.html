@@ -52,14 +52,12 @@
             <li class="current">
               <a href="resource_AdminResource.html">AdminResource</a>
               <ul>
-                <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
                 <li><a href="resource_AuthoritativeSetResource.html">AuthoritativeSetResource</a></li>
                 <li><a href="resource_ContentTypeResource.html">ContentTypeResource</a></li>
                 <li><a href="resource_CountryResource.html">CountryResource</a></li>
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
-                <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
@@ -68,7 +66,6 @@
                 <li><a href="resource_LinkResource.html">LinkResource</a></li>
                 <li><a href="resource_PermissionGrantResource.html">PermissionGrantResource</a></li>
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
-                <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
@@ -90,58 +87,18 @@ and general graph-maintenance functionality.</p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
-        <a href="#path__admin__exportGraphSON.html">/admin/_exportGraphSON</a>
+        <a href="#path__admin_create-default-user-profile.html">/admin/create-default-user-profile</a>
         </li>
         <li>
-        <a href="#path__admin__exportJSON.html">/admin/_exportJSON</a>
+        <a href="#path__admin_export-json.html">/admin/export-json</a>
         </li>
         <li>
-        <a href="#path__admin_createDefaultUserProfile.html">/admin/createDefaultUserProfile</a>
+        <a href="#path__admin_sudo export-graphson.html">/admin/sudo export-graphson</a>
         </li>
       </ul>
-        <a name="path__admin__exportGraphSON.html"></a>
-      <h1>/admin/_exportGraphSON</h1>
-      <p class="note">Mount Point: <a href="../admin/_exportGraphSON">/admin/_exportGraphSON</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Export the DB as a stream of JSON in
-<a href="https://github.com/tinkerpop/blueprints/wiki/GraphSON-Reader-and-Writer-Library">GraphSON</a> format.
-<p/>
-The mode used is EXTENDED.
-          </p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__admin__exportJSON.html"></a>
-      <h1>/admin/_exportJSON</h1>
-      <p class="note">Mount Point: <a href="../admin/_exportJSON">/admin/_exportJSON</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__admin_createDefaultUserProfile.html"></a>
-      <h1>/admin/createDefaultUserProfile</h1>
-      <p class="note">Mount Point: <a href="../admin/createDefaultUserProfile">/admin/createDefaultUserProfile</a></p>
+        <a name="path__admin_create-default-user-profile.html"></a>
+      <h1>/admin/create-default-user-profile</h1>
+      <p class="note">Mount Point: <a href="../admin/create-default-user-profile">/admin/create-default-user-profile</a></p>
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
@@ -188,6 +145,46 @@ The mode used is EXTENDED.
         </tr>
       </table>
       <p>A new user</p>
+        <a name="path__admin_export-json.html"></a>
+      <h1>/admin/export-json</h1>
+      <p class="note">Mount Point: <a href="../admin/export-json">/admin/export-json</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__admin_sudo export-graphson.html"></a>
+      <h1>/admin/sudo export-graphson</h1>
+      <p class="note">Mount Point: <a href="../admin/sudo export-graphson">/admin/sudo export-graphson</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Export the DB as a stream of JSON in
+<a href="https://github.com/tinkerpop/blueprints/wiki/GraphSON-Reader-and-Writer-Library">GraphSON</a> format.
+<p/>
+The mode used is EXTENDED.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
 
       <div class="clear" />
     </div>

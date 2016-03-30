@@ -1,0 +1,536 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- NewPage -->
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>VirtualEadImporter (Import/Export Tools 0.13.0-SNAPSHOT API)</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<script type="text/javascript"><!--
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="VirtualEadImporter (Import/Export Tools 0.13.0-SNAPSHOT API)";
+    }
+//-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a name="navbar_top">
+<!--   -->
+</a><a href="#skip-navbar_top" title="Skip navigation links"></a><a name="navbar_top_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/VirtualEadImporter.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadHandler.html" title="class in eu.ehri.project.importers.ead"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?eu/ehri/project/importers/ead/VirtualEadImporter.html" target="_top">Frames</a></li>
+<li><a href="VirtualEadImporter.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<div class="subTitle">eu.ehri.project.importers.ead</div>
+<h2 title="Class VirtualEadImporter" class="title">Class VirtualEadImporter</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">java.lang.Object</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">eu.ehri.project.importers.AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">eu.ehri.project.importers.MapImporter</a></li>
+<li>
+<ul class="inheritance">
+<li><a href="../../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">eu.ehri.project.importers.EaImporter</a></li>
+<li>
+<ul class="inheritance">
+<li>eu.ehri.project.importers.ead.VirtualEadImporter</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr>
+<br>
+<pre>public class <span class="strong">VirtualEadImporter</span>
+extends <a href="../../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</a></pre>
+<div class="block">Import EAD describing a Virtual Collection. some rules governing virtual collections:
+ <p>
+ the archdesc should describe the purpose of this vc. it can not in itself refer to a DU.
+ <p>
+ every c level is either 1) a virtual level (=VirtualLevel), or 2) it points to an existing DocumentaryUnit
+ (=VirtualReferrer) (and consequently to the entire subtree beneath it) 1) there is no repository-tag with a
+ ehri-label
+ <p>
+ 2) there is exactly one repository-tag with an ehri-label &lt;repository
+ label="ehri_repository_vc"&gt;il-002777&lt;/repository&gt; (this will not be shown in the portal) and exactly one unitid with
+ a ehri-main-identifier label, that is identical to the existing unitid within the graph for this repository
+ <p>
+ all other tags will be ignored, since the DocumentsDescription of the referred DocumentaryUnit will be shown. there
+ should not be any c-levels beneath such a c-level</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#REPOID">REPOID</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected static <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#UNITID">UNITID</a></strong></code>&nbsp;</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_eu.ehri.project.importers.EaImporter">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;eu.ehri.project.importers.<a href="../../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</a></h3>
+<code><a href="../../../../../eu/ehri/project/importers/EaImporter.html#LINK_TARGET">LINK_TARGET</a>, <a href="../../../../../eu/ehri/project/importers/EaImporter.html#RESOLVED_LINK_DESC">RESOLVED_LINK_DESC</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_eu.ehri.project.importers.MapImporter">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;eu.ehri.project.importers.<a href="../../../../../eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</a></h3>
+<code><a href="../../../../../eu/ehri/project/importers/MapImporter.html#OBJECT_ID">OBJECT_ID</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="fields_inherited_from_class_eu.ehri.project.importers.AbstractImporter">
+<!--   -->
+</a>
+<h3>Fields inherited from class&nbsp;eu.ehri.project.importers.<a href="../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></h3>
+<code><a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#callbacks">callbacks</a>, <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#framedGraph">framedGraph</a>, <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#log">log</a>, <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#manager">manager</a>, <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#permissionScope">permissionScope</a></code></li>
+</ul>
+</li>
+</ul>
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#VirtualEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">VirtualEadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+                  <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
+<div class="block">Construct an EadImporter object.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#extractDocumentaryUnit(java.util.Map)">extractDocumentaryUnit</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)</code>
+<div class="block">Extract DocumentaryUnit properties from the itemData and return them as a new Map.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#extractDocumentDescription(java.util.Map,%20int)">extractDocumentDescription</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+                          int&nbsp;depth)</code>
+<div class="block">Creates a Map containing properties of a Documentary Unit description.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#extractRelations(java.util.Map)">extractRelations</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;data)</code>
+<div class="block">Extract node representations for related nodes based on the 'relation' property in the supplied data Map.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#extractVirtualUnit(java.util.Map)">extractVirtualUnit</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)</code>
+<div class="block">Creates a Map containing properties of a Virtual Unit.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#importAsVirtualCollection()">importAsVirtualCollection</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Accessible.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Accessible</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#importItem(java.util.Map)">importItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)</code>
+<div class="block">Import an item representation into the graph, and return the Node.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/AbstractUnit.html?is-external=true" title="class or interface in eu.ehri.project.models.base">AbstractUnit</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#importItem(java.util.Map,%20java.util.List)">importItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
+<div class="block">Import a single archdesc or c01-12 item, keeping a reference to the hierarchical depth.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.importers.EaImporter">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;eu.ehri.project.importers.<a href="../../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</a></h3>
+<code><a href="../../../../../eu/ehri/project/importers/EaImporter.html#extractAddress(java.util.Map)">extractAddress</a>, <a href="../../../../../eu/ehri/project/importers/EaImporter.html#extractUnit(java.util.Map)">extractUnit</a>, <a href="../../../../../eu/ehri/project/importers/EaImporter.html#extractUnitDescription(java.util.Map,%20eu.ehri.project.models.EntityClass)">extractUnitDescription</a>, <a href="../../../../../eu/ehri/project/importers/EaImporter.html#extractUnknownProperties(java.util.Map)">extractUnknownProperties</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.importers.MapImporter">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;eu.ehri.project.importers.<a href="../../../../../eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</a></h3>
+<code><a href="../../../../../eu/ehri/project/importers/MapImporter.html#extractDates(java.util.Map)">extractDates</a>, <a href="../../../../../eu/ehri/project/importers/MapImporter.html#extractMaintenanceEvent(java.util.Map)">extractMaintenanceEvent</a>, <a href="../../../../../eu/ehri/project/importers/MapImporter.html#extractOtherProperties(java.util.Map)">extractOtherProperties</a>, <a href="../../../../../eu/ehri/project/importers/MapImporter.html#getMaintenanceEvent(java.util.Map)">getMaintenanceEvent</a>, <a href="../../../../../eu/ehri/project/importers/MapImporter.html#importMaintenanceEvent(java.util.Map)">importMaintenanceEvent</a>, <a href="../../../../../eu/ehri/project/importers/MapImporter.html#normaliseDate(java.lang.String,%20java.lang.String)">normaliseDate</a>, <a href="../../../../../eu/ehri/project/importers/MapImporter.html#replaceDates(java.util.Map,%20java.util.List)">replaceDates</a>, <a href="../../../../../eu/ehri/project/importers/MapImporter.html#returnDatesAsString(java.util.Map,%20eu.ehri.project.importers.properties.XmlImportProperties)">returnDatesAsString</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.importers.AbstractImporter">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;eu.ehri.project.importers.<a href="../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></h3>
+<code><a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#addCallback(eu.ehri.project.importers.ImportCallback)">addCallback</a>, <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#flattenNonMultivaluedProperties(java.lang.String,%20java.lang.Object,%20eu.ehri.project.models.EntityClass)">flattenNonMultivaluedProperties</a>, <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#getPermissionScope()">getPermissionScope</a>, <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister()">getPersister</a>, <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister(java.util.List)">getPersister</a>, <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#handleCallbacks(eu.ehri.project.persistence.Mutation)">handleCallbacks</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="REPOID">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>REPOID</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> REPOID</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#eu.ehri.project.importers.ead.VirtualEadImporter.REPOID">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+<a name="UNITID">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>UNITID</h4>
+<pre>protected static final&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> UNITID</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../../constant-values.html#eu.ehri.project.importers.ead.VirtualEadImporter.UNITID">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="VirtualEadImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.importers.ImportLog)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>VirtualEadImporter</h4>
+<pre>public&nbsp;VirtualEadImporter(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+                  <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</pre>
+<div class="block">Construct an EadImporter object.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>graph</code> - the framed graph</dd><dd><code>permissionScope</code> - the permission scope</dd><dd><code>log</code> - the import log</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="importItem(java.util.Map, java.util.List)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>importItem</h4>
+<pre>public&nbsp;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/AbstractUnit.html?is-external=true" title="class or interface in eu.ehri.project.models.base">AbstractUnit</a>&nbsp;importItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+                      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)
+                        throws <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></pre>
+<div class="block">Import a single archdesc or c01-12 item, keeping a reference to the hierarchical depth. this will import the
+ structure as VirtualUnits, which either have a DocDescription (VirtualLevel, like series) or they point to an
+ existing DocDesc from an existing DocumentaryUnit (VirtualReferrer).</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T,%20java.util.List)">importItem</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>itemData</code> - The data map</dd><dd><code>idPath</code> - The identifiers of parent documents, not including those of the overall permission scope</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the imported node</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code> - when the itemData does not contain an identifier for the unit or...</dd></dl>
+</li>
+</ul>
+<a name="extractRelations(java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>extractRelations</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;&nbsp;extractRelations(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;data)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../eu/ehri/project/importers/EaImporter.html#extractRelations(java.util.Map)">EaImporter</a></code></strong></div>
+<div class="block">Extract node representations for related nodes based on the 'relation' property in the supplied data Map.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/importers/EaImporter.html#extractRelations(java.util.Map)">extractRelations</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>data</code> - a Map containing raw properties of a unit</dd>
+<dt><span class="strong">Returns:</span></dt><dd>an Iterable of new Maps representing related nodes and their types</dd></dl>
+</li>
+</ul>
+<a name="extractVirtualUnit(java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>extractVirtualUnit</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;extractVirtualUnit(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)
+                                         throws <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></pre>
+<div class="block">Creates a Map containing properties of a Virtual Unit.
+ <p>
+ These properties are the unit's identifiers.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>itemData</code> - Map of all extracted information</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a Map representing a Documentary Unit node</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code></dd></dl>
+</li>
+</ul>
+<a name="extractDocumentaryUnit(java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>extractDocumentaryUnit</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;extractDocumentaryUnit(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)
+                                             throws <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../eu/ehri/project/importers/EaImporter.html#extractDocumentaryUnit(java.util.Map)">EaImporter</a></code></strong></div>
+<div class="block">Extract DocumentaryUnit properties from the itemData and return them as a new Map.
+ This implementation only extracts the objectIdentifier.
+ <p/>
+ This implementation does not throw ValidationErrors.</div>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/importers/EaImporter.html#extractDocumentaryUnit(java.util.Map)">extractDocumentaryUnit</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>itemData</code> - a Map containing raw properties of a DocumentaryUnit</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a new Map containing the objectIdentifier property</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code> - never</dd></dl>
+</li>
+</ul>
+<a name="extractDocumentDescription(java.util.Map, int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>extractDocumentDescription</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;extractDocumentDescription(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData,
+                                            int&nbsp;depth)
+                                                 throws <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></pre>
+<div class="block">Creates a Map containing properties of a Documentary Unit description. These properties are the unit
+ description's properties: all except the doc unit identifiers and unknown properties.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>itemData</code> - Map of all extracted information</dd><dd><code>depth</code> - depth of node in the tree</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a Map representing a Documentary Unit Description node</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code></dd></dl>
+</li>
+</ul>
+<a name="importItem(java.util.Map)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>importItem</h4>
+<pre>public&nbsp;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Accessible.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Accessible</a>&nbsp;importItem(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;itemData)
+                      throws <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T)">AbstractImporter</a></code></strong></div>
+<div class="block">Import an item representation into the graph, and return the Node.</div>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code><a href="../../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T)">importItem</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&gt;</code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>itemData</code> - the item representation to import</dd>
+<dt><span class="strong">Returns:</span></dt><dd>the imported node</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code> - when the item representation does not validate</dd></dl>
+</li>
+</ul>
+<a name="importAsVirtualCollection()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>importAsVirtualCollection</h4>
+<pre>public&nbsp;void&nbsp;importAsVirtualCollection()</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a name="navbar_bottom">
+<!--   -->
+</a><a href="#skip-navbar_bottom" title="Skip navigation links"></a><a name="navbar_bottom_firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../overview-summary.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="class-use/VirtualEadImporter.html">Use</a></li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList">
+<li><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadHandler.html" title="class in eu.ehri.project.importers.ead"><span class="strong">Prev Class</span></a></li>
+<li>Next Class</li>
+</ul>
+<ul class="navList">
+<li><a href="../../../../../index.html?eu/ehri/project/importers/ead/VirtualEadImporter.html" target="_top">Frames</a></li>
+<li><a href="VirtualEadImporter.html" target="_top">No Frames</a></li>
+</ul>
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../allclasses-noframe.html">All Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
+<li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
+<li><a href="#method_detail">Method</a></li>
+</ul>
+</div>
+<a name="skip-navbar_bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+<p class="legalCopy"><small>Copyright &#169; 2016 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+</body>
+</html>

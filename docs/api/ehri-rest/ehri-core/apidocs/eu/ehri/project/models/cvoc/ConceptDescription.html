@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ConceptDescription (EHRI Core API 0.12.0-SNAPSHOT API)</title>
+<title>ConceptDescription (EHRI Core API 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="ConceptDescription (EHRI Core API 0.12.0-SNAPSHOT API)";
+        parent.document.title="ConceptDescription (EHRI Core API 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -63,13 +63,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li>Method</li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li>Method</li>
 </ul>
 </div>
 <a name="skip-navbar_top">
@@ -87,17 +87,13 @@
 <li class="blockList">
 <dl>
 <dt>All Superinterfaces:</dt>
-<dd><a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>, <a href="../../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a>, <a href="../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a>, <a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>, <a href="../../../../../eu/ehri/project/models/base/Named.html" title="interface in eu.ehri.project.models.base">Named</a>, <a href="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a>, <a href="../../../../../eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a>, com.tinkerpop.frames.VertexFrame</dd>
+<dd><a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>, <a href="../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a>, <a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>, <a href="../../../../../eu/ehri/project/models/base/Named.html" title="interface in eu.ehri.project.models.base">Named</a>, <a href="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a>, com.tinkerpop.frames.VertexFrame</dd>
 </dl>
 <hr>
 <br>
 <pre>public interface <span class="strong">ConceptDescription</span>
 extends <a href="../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a></pre>
-<div class="block">labels, notes and texts that describe the concept, for a specific language 
- are combined into this description
- 
- NOTE: we should only allow one prefLabel (and thus one ConceptDescription) per language, 
- but we cannot model that</div>
+<div class="block">Description for a SKOS concept.</div>
 </li>
 </ul>
 </div>
@@ -132,19 +128,6 @@ extends <a href="../../../../../eu/ehri/project/models/base/Description.html" ti
 <!--   -->
 </a>
 <h3>Method Summary</h3>
-<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Method and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/models/cvoc/ConceptDescription.html#getPrefLabel()">getPrefLabel</a></strong>()</code>
-<div class="block">The language property has the codes for language.</div>
-</td>
-</tr>
-</table>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Description">
 <!--   -->
@@ -174,20 +157,6 @@ extends <a href="../../../../../eu/ehri/project/models/base/Description.html" ti
 <code><a href="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html#getPermissionGrants()">getPermissionGrants</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Versioned">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../../eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a></h3>
-<code><a href="../../../../../eu/ehri/project/models/base/Versioned.html#getAllPriorVersions()">getAllPriorVersions</a>, <a href="../../../../../eu/ehri/project/models/base/Versioned.html#getPriorVersion()">getPriorVersion</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Annotatable">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a></h3>
-<code><a href="../../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotation(eu.ehri.project.models.Annotation)">addAnnotation</a>, <a href="../../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotationPart(eu.ehri.project.models.Annotation)">addAnnotationPart</a>, <a href="../../../../../eu/ehri/project/models/base/Annotatable.html#getAnnotations()">getAnnotations</a></code></li>
-</ul>
-<ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Entity">
 <!--   -->
 </a>
@@ -200,41 +169,6 @@ extends <a href="../../../../../eu/ehri/project/models/base/Description.html" ti
 </a>
 <h3>Methods inherited from interface&nbsp;com.tinkerpop.frames.VertexFrame</h3>
 <code>asVertex</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="details">
-<ul class="blockList">
-<li class="blockList">
-<!-- ============ METHOD DETAIL ========== -->
-<ul class="blockList">
-<li class="blockList"><a name="method_detail">
-<!--   -->
-</a>
-<h3>Method Detail</h3>
-<a name="getPrefLabel()">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>getPrefLabel</h4>
-<pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getPrefLabel()</pre>
-<div class="block">The language property has the codes for language. 
- what is the default? Likely it is "en". 
-  
- We want to be able to easily convert to SKOS and use standards, so 
- xml:lang: "This attribute must be set to a language identifier, 
- as defined by IETF RFC 4646 (http://www.ietf.org/rfc/rfc4646.txt) or successor."
- 
- Validation is complex, but wellformdness checks can be simpler. 
-   [a-z0-9] and minus sign '-' as separator betwen subtags  
-   and "All subtags have a maximum length of eight characters." 
-   and case insensitive comparison must be used 
-   and the first subtag is the "Primary Language"</div>
-</li>
 </ul>
 </li>
 </ul>
@@ -290,13 +224,13 @@ extends <a href="../../../../../eu/ehri/project/models/base/Description.html" ti
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_summary">Method</a></li>
+<li>Method</li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li><a href="#method_detail">Method</a></li>
+<li>Method</li>
 </ul>
 </div>
 <a name="skip-navbar_bottom">

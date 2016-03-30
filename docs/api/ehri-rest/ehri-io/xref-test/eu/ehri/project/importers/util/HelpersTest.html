@@ -29,34 +29,35 @@
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers.util;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
-<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.utils.LanguageHelpers;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/util/HelpersTest.html">HelpersTest</a> {
-<a class="jxr_linenumber" name="27" href="#27">27</a>      @Test
-<a class="jxr_linenumber" name="28" href="#28">28</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testIso639DashTwoCode() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="29" href="#29">29</a>          <em class="jxr_comment">// two-to-three</em>
-<a class="jxr_linenumber" name="30" href="#30">30</a>          assertEquals(<span class="jxr_string">"sqi"</span>, Helpers.iso639DashTwoCode(<span class="jxr_string">"sq"</span>));
-<a class="jxr_linenumber" name="31" href="#31">31</a>          <em class="jxr_comment">// bibliographic to term</em>
-<a class="jxr_linenumber" name="32" href="#32">32</a>          assertEquals(<span class="jxr_string">"sqi"</span>, Helpers.iso639DashTwoCode(<span class="jxr_string">"alb"</span>));
-<a class="jxr_linenumber" name="33" href="#33">33</a>          <em class="jxr_comment">// name to code</em>
-<a class="jxr_linenumber" name="34" href="#34">34</a>          <em class="jxr_comment">// FIXME fails when executed on a server with a Dutch locale</em>
-<a class="jxr_linenumber" name="35" href="#35">35</a>          assertEquals(<span class="jxr_string">"eng"</span>, Helpers.iso639DashTwoCode(<span class="jxr_string">"English"</span>));
-<a class="jxr_linenumber" name="36" href="#36">36</a>      }
-<a class="jxr_linenumber" name="37" href="#37">37</a>  
-<a class="jxr_linenumber" name="38" href="#38">38</a>      @Test
-<a class="jxr_linenumber" name="39" href="#39">39</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testIso639DashOneCode() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="40" href="#40">40</a>          assertEquals(<span class="jxr_string">"en"</span>, Helpers.iso639DashOneCode(<span class="jxr_string">"eng"</span>));
-<a class="jxr_linenumber" name="41" href="#41">41</a>          assertEquals(<span class="jxr_string">"cs"</span>, Helpers.iso639DashOneCode(<span class="jxr_string">"ces"</span>));
-<a class="jxr_linenumber" name="42" href="#42">42</a>          assertEquals(<span class="jxr_string">"cs"</span>, Helpers.iso639DashOneCode(<span class="jxr_string">"cze"</span>));
-<a class="jxr_linenumber" name="43" href="#43">43</a>          assertEquals(<span class="jxr_string">"sq"</span>, Helpers.iso639DashOneCode(<span class="jxr_string">"sqi"</span>));
-<a class="jxr_linenumber" name="44" href="#44">44</a>          assertEquals(<span class="jxr_string">"en"</span>, Helpers.iso639DashOneCode(<span class="jxr_string">"English"</span>));
-<a class="jxr_linenumber" name="45" href="#45">45</a>          assertEquals(<span class="jxr_string">"en-Latn"</span>, Helpers.iso639DashOneCode(<span class="jxr_string">"eng-Latn"</span>));
-<a class="jxr_linenumber" name="46" href="#46">46</a>          assertEquals(<span class="jxr_string">"en"</span>, Helpers.iso639DashOneCode(<span class="jxr_string">"eng-"</span>));
-<a class="jxr_linenumber" name="47" href="#47">47</a>          assertEquals(<span class="jxr_string">"---"</span>, Helpers.iso639DashOneCode(<span class="jxr_string">"---"</span>));
-<a class="jxr_linenumber" name="48" href="#48">48</a>      }
-<a class="jxr_linenumber" name="49" href="#49">49</a>  }
+<a class="jxr_linenumber" name="26" href="#26">26</a>  
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/util/HelpersTest.html">HelpersTest</a> {
+<a class="jxr_linenumber" name="28" href="#28">28</a>      @Test
+<a class="jxr_linenumber" name="29" href="#29">29</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testIso639DashTwoCode() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="30" href="#30">30</a>          <em class="jxr_comment">// two-to-three</em>
+<a class="jxr_linenumber" name="31" href="#31">31</a>          assertEquals(<span class="jxr_string">"sqi"</span>, LanguageHelpers.iso639DashTwoCode(<span class="jxr_string">"sq"</span>));
+<a class="jxr_linenumber" name="32" href="#32">32</a>          <em class="jxr_comment">// bibliographic to term</em>
+<a class="jxr_linenumber" name="33" href="#33">33</a>          assertEquals(<span class="jxr_string">"sqi"</span>, LanguageHelpers.iso639DashTwoCode(<span class="jxr_string">"alb"</span>));
+<a class="jxr_linenumber" name="34" href="#34">34</a>          <em class="jxr_comment">// name to code</em>
+<a class="jxr_linenumber" name="35" href="#35">35</a>          <em class="jxr_comment">// FIXME fails when executed on a server with a Dutch locale</em>
+<a class="jxr_linenumber" name="36" href="#36">36</a>          assertEquals(<span class="jxr_string">"eng"</span>, LanguageHelpers.iso639DashTwoCode(<span class="jxr_string">"English"</span>));
+<a class="jxr_linenumber" name="37" href="#37">37</a>      }
+<a class="jxr_linenumber" name="38" href="#38">38</a>  
+<a class="jxr_linenumber" name="39" href="#39">39</a>      @Test
+<a class="jxr_linenumber" name="40" href="#40">40</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testIso639DashOneCode() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="41" href="#41">41</a>          assertEquals(<span class="jxr_string">"en"</span>, LanguageHelpers.iso639DashOneCode(<span class="jxr_string">"eng"</span>));
+<a class="jxr_linenumber" name="42" href="#42">42</a>          assertEquals(<span class="jxr_string">"cs"</span>, LanguageHelpers.iso639DashOneCode(<span class="jxr_string">"ces"</span>));
+<a class="jxr_linenumber" name="43" href="#43">43</a>          assertEquals(<span class="jxr_string">"cs"</span>, LanguageHelpers.iso639DashOneCode(<span class="jxr_string">"cze"</span>));
+<a class="jxr_linenumber" name="44" href="#44">44</a>          assertEquals(<span class="jxr_string">"sq"</span>, LanguageHelpers.iso639DashOneCode(<span class="jxr_string">"sqi"</span>));
+<a class="jxr_linenumber" name="45" href="#45">45</a>          assertEquals(<span class="jxr_string">"en"</span>, LanguageHelpers.iso639DashOneCode(<span class="jxr_string">"English"</span>));
+<a class="jxr_linenumber" name="46" href="#46">46</a>          assertEquals(<span class="jxr_string">"en-Latn"</span>, LanguageHelpers.iso639DashOneCode(<span class="jxr_string">"eng-Latn"</span>));
+<a class="jxr_linenumber" name="47" href="#47">47</a>          assertEquals(<span class="jxr_string">"en"</span>, LanguageHelpers.iso639DashOneCode(<span class="jxr_string">"eng-"</span>));
+<a class="jxr_linenumber" name="48" href="#48">48</a>          assertEquals(<span class="jxr_string">"---"</span>, LanguageHelpers.iso639DashOneCode(<span class="jxr_string">"---"</span>));
+<a class="jxr_linenumber" name="49" href="#49">49</a>      }
+<a class="jxr_linenumber" name="50" href="#50">50</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

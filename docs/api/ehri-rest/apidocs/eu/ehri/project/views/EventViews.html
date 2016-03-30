@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>EventViews (EHRI Backend 0.12.0-SNAPSHOT API)</title>
+<title>EventViews (EHRI Backend 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="EventViews (EHRI Backend 0.12.0-SNAPSHOT API)";
+        parent.document.title="EventViews (EHRI Backend 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -173,16 +173,16 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/EventViews.html#aggregateByUser(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">aggregateByUser</a></strong>(<a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
-               <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
-<div class="block">Aggregate a user's actions.</div>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/EventViews.html#aggregateForItem(eu.ehri.project.models.base.Accessible,%20eu.ehri.project.models.base.Accessor)">aggregateForItem</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;item,
+                <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Aggregate an item's events.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/EventViews.html#aggregateForItem(eu.ehri.project.models.base.Accessible,%20eu.ehri.project.models.base.Accessor)">aggregateForItem</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&nbsp;item,
-                <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
-<div class="block">Aggregate an item's events.</div>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/EventViews.html#aggregateUserActions(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">aggregateUserActions</a></strong>(<a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
+                    <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<div class="block">Aggregate a user's actions.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -350,14 +350,14 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <div class="block">Aggregate an item's events.</div>
 </li>
 </ul>
-<a name="aggregateByUser(eu.ehri.project.models.UserProfile, eu.ehri.project.models.base.Accessor)">
+<a name="aggregateUserActions(eu.ehri.project.models.UserProfile, eu.ehri.project.models.base.Accessor)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>aggregateByUser</h4>
-<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&gt;&nbsp;aggregateByUser(<a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
-                                          <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
+<h4>aggregateUserActions</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&gt;&nbsp;aggregateUserActions(<a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
+                                               <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</pre>
 <div class="block">Aggregate a user's actions.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>byUser</code> - the user</dd><dd><code>accessor</code> - the current accessor</dd>
 <dt><span class="strong">Returns:</span></dt><dd>an event stream</dd></dl>

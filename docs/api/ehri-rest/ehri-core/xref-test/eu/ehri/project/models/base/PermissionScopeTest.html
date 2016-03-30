@@ -33,7 +33,7 @@
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.BundleDAO;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.BundleManager;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.AbstractFixtureTest;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.TestData;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> org.junit.Before;
@@ -103,7 +103,7 @@
 <a class="jxr_linenumber" name="93" href="#93">93</a>  
 <a class="jxr_linenumber" name="94" href="#94">94</a>          Bundle docBundle = Bundle.fromData(TestData.getTestDocBundle());
 <a class="jxr_linenumber" name="95" href="#95">95</a>          Repository repo = manager.getEntity(<span class="jxr_string">"r1"</span>, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="96" href="#96">96</a>          BundleDAO dao = <strong class="jxr_keyword">new</strong> BundleDAO(graph, repo.idPath());
+<a class="jxr_linenumber" name="96" href="#96">96</a>          BundleManager dao = <strong class="jxr_keyword">new</strong> BundleManager(graph, repo.idPath());
 <a class="jxr_linenumber" name="97" href="#97">97</a>          DocumentaryUnit doc = dao.create(docBundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="98" href="#98">98</a>          assertEquals(<span class="jxr_string">"nl-r1-someid_01"</span>, doc.getId());
 <a class="jxr_linenumber" name="99" href="#99">99</a>          doc.setPermissionScope(repo);

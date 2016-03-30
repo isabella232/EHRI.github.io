@@ -52,14 +52,12 @@
             <li class="current">
               <a href="resource_ImportResource.html">ImportResource</a>
               <ul>
-                <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
                 <li><a href="resource_AuthoritativeSetResource.html">AuthoritativeSetResource</a></li>
                 <li><a href="resource_ContentTypeResource.html">ContentTypeResource</a></li>
                 <li><a href="resource_CountryResource.html">CountryResource</a></li>
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
-                <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
@@ -68,7 +66,6 @@
                 <li><a href="resource_LinkResource.html">LinkResource</a></li>
                 <li><a href="resource_PermissionGrantResource.html">PermissionGrantResource</a></li>
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
-                <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
@@ -89,6 +86,9 @@
       <p>The following resources are applicable:</p>
       <ul>
         <li>
+        <a href="#path__import_batch.html">/import/batch</a>
+        </li>
+        <li>
         <a href="#path__import_csv.html">/import/csv</a>
         </li>
         <li>
@@ -104,6 +104,127 @@
         <a href="#path__import_skos.html">/import/skos</a>
         </li>
       </ul>
+        <a name="path__import_batch.html"></a>
+      <h1>/import/batch</h1>
+      <p class="note">Mount Point: <a href="../import/batch">/import/batch</a></p>
+      <a name="PUT"></a>
+      <h2>PUT</h2>
+      <p>
+            Update a batch of items via JSON containing (partial)
+data bundles.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>scope</td>
+          <td>
+            the ID of there item's permission scope
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>tolerant</td>
+          <td>
+            whether to allow individual validation failures
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>version</td>
+          <td>
+            whether to create a version prior to delete
+          </td>
+          <td>query</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>log</td>
+          <td>
+            an optional log message
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>inputStream</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>a JSON document containing partial bundles containing
+the needed data transformations</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>an import log describing the changes committed</p>
+      <a name="DELETE"></a>
+      <h2>DELETE</h2>
+      <p>
+            Delete a batch of objects via JSON containing their IDs.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>scope</td>
+          <td>
+            the ID of there item's permission scope
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>version</td>
+          <td>
+            whether to create a version prior to delete
+          </td>
+          <td>query</td>
+          <td>true</td>
+        </tr>
+        <tr>
+          <td>log</td>
+          <td>
+            an optional log message.
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            a list of IDs to delete
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
         <a name="path__import_csv.html"></a>
       <h1>/import/csv</h1>
       <p class="note">Mount Point: <a href="../import/csv">/import/csv</a></p>
@@ -113,7 +234,7 @@
             Import a set of CSV files. See EAD handler for options and
 defaults but substitute text/csv for the input mimetype when
 a single file is POSTed.
-<p>
+<p/>
 Additional note: no handler class is required.
           </p>
       <h3>Parameters</h3>
@@ -277,9 +398,9 @@ Additional note: no handler class is required.
 The Content-Type header is used to distinguish the contents.
 <br>
 <b>Note:</b> The archive does not currently support compression.
-<p>
+<p/>
 The way you would run with would typically be:
-<p>
+<p/>
 <pre>
 {@code
 curl -X POST \
@@ -291,9 +412,9 @@ curl -X POST \
 # it needs url encoding.
 }
 </pre>
-<p>
+<p/>
 (Assuming <tt>ead-list.txt</tt> is a list of newline separated EAD file paths.)
-<p>
+<p/>
 (TODO: Might be better to use a different way of encoding the local file paths...)
           </p>
       <h3>Parameters</h3>
@@ -307,7 +428,7 @@ curl -X POST \
         <tr>
           <td>scope</td>
           <td>
-            The id of the import scope (i.e. repository)
+            the id of the import scope (i.e. repository)
           </td>
           <td>query</td>
           <td></td>
@@ -315,7 +436,7 @@ curl -X POST \
         <tr>
           <td>tolerant</td>
           <td>
-            Whether or not to die on the first validation error
+            whether or not to die on the first validation error
           </td>
           <td>query</td>
           <td>false</td>
@@ -323,7 +444,7 @@ curl -X POST \
         <tr>
           <td>log</td>
           <td>
-            Log message for import. If this refers to an accessible local file
+            log message for import. If this refers to an accessible local file
 its contents will be used.
           </td>
           <td>query</td>
@@ -332,7 +453,7 @@ its contents will be used.
         <tr>
           <td>properties</td>
           <td>
-            A local file path pointing to an import properties
+            a local file path pointing to an import properties
 configuration file.
           </td>
           <td>query</td>
@@ -341,7 +462,7 @@ configuration file.
         <tr>
           <td>handler</td>
           <td>
-            The fully-qualified handler class name
+            the fully-qualified handler class name
 (defaults to EadHandler)
           </td>
           <td>query</td>
@@ -350,7 +471,7 @@ configuration file.
         <tr>
           <td>importer</td>
           <td>
-            The fully-qualified import class name
+            the fully-qualified import class name
 (defaults to EadImporter)
           </td>
           <td>query</td>
@@ -368,7 +489,7 @@ configuration file.
           <td>application/xml<br/>text/plain<br/>text/xml<br/>application/octet-stream</td>
         </tr>
       </table>
-      <p>File data containing one of: a single EAD file,
+      <p>file data containing one of: a single EAD file,
 multiple EAD files in an archive, a list of local file
 paths. The Content-Type header is used to distinguish
 the contents.</p>
@@ -383,7 +504,7 @@ the contents.</p>
           <td>application/json<br/></td>
         </tr>
       </table>
-      <p>A JSON object showing how many records were created,
+      <p>a JSON object showing how many records were created,
 updated, or unchanged.</p>
         <a name="path__import_eag.html"></a>
       <h1>/import/eag</h1>
@@ -482,9 +603,9 @@ updated, or unchanged.</p>
       <p>
             Import a SKOS file, of varying formats, as specified by the &quot;language&quot;
 column of the file extensions table <a href="https://jena.apache.org/documentation/io/">here</a>.
-<p>
+<p/>
 Example:
-<p>
+<p/>
 <pre>
 {@code
 curl -X POST \
@@ -505,7 +626,7 @@ curl -X POST \
         <tr>
           <td>scope</td>
           <td>
-            The id of the import scope (i.e. repository)
+            the id of the import scope (i.e. repository)
           </td>
           <td>query</td>
           <td></td>
@@ -513,7 +634,7 @@ curl -X POST \
         <tr>
           <td>tolerant</td>
           <td>
-            Whether or not to die on the first validation error
+            whether or not to die on the first validation error
           </td>
           <td>query</td>
           <td>false</td>
@@ -521,7 +642,7 @@ curl -X POST \
         <tr>
           <td>log</td>
           <td>
-            Log message for import. If this refers to an accessible local file
+            log message for import. If this refers to an accessible local file
 its contents will be used.
           </td>
           <td>query</td>
@@ -530,7 +651,7 @@ its contents will be used.
         <tr>
           <td>format</td>
           <td>
-            The RDF format of the POSTed data
+            the RDF format of the POSTed data
           </td>
           <td>query</td>
           <td></td>
@@ -547,7 +668,7 @@ its contents will be used.
           <td>*/*<br/>application/xml<br/></td>
         </tr>
       </table>
-      <p>A stream of SKOS data in a valid format.</p>
+      <p>a stream of SKOS data in a valid format.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -559,7 +680,7 @@ its contents will be used.
           <td>application/json</td>
         </tr>
       </table>
-      <p>A JSON object showing how many records were created,
+      <p>a JSON object showing how many records were created,
 updated, or unchanged.</p>
 
       <div class="clear" />

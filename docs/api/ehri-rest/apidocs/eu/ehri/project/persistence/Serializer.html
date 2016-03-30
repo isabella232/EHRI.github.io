@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Serializer (EHRI Backend 0.12.0-SNAPSHOT API)</title>
+<title>Serializer (EHRI Backend 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Serializer (EHRI Backend 0.12.0-SNAPSHOT API)";
+        parent.document.title="Serializer (EHRI Backend 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -238,6 +238,12 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/Serializer.html#withDepth(int)">withDepth</a></strong>(int&nbsp;depth)</code>
+<div class="block">Create a new serializer from this one, with the given depth.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/persistence/Serializer.html#withIncludedProperties(java.util.List)">withIncludedProperties</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;includeProps)</code>
 <div class="block">Create a new serializer from this one, with extra included properties.</div>
 </td>
@@ -299,8 +305,20 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <h4>withIncludedProperties</h4>
 <pre>public&nbsp;<a href="../../../../eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a>&nbsp;withIncludedProperties(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;includeProps)</pre>
 <div class="block">Create a new serializer from this one, with extra included properties.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>includeProps</code> - A set of properties to include.</dd>
-<dt><span class="strong">Returns:</span></dt><dd>A new serializer.</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>includeProps</code> - a set of properties to include.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a new serializer.</dd></dl>
+</li>
+</ul>
+<a name="withDepth(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withDepth</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a>&nbsp;withDepth(int&nbsp;depth)</pre>
+<div class="block">Create a new serializer from this one, with the given depth.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>depth</code> - the maximum depth of traversal</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a new serializer</dd></dl>
 </li>
 </ul>
 <a name="getIncludedProperties()">

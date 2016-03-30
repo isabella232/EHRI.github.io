@@ -41,7 +41,7 @@
 <a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.MaintenanceEvent;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessible;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.PermissionScope;
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.BundleDAO;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.BundleManager;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Mutation;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
@@ -72,7 +72,7 @@
 <a class="jxr_linenumber" name="62" href="#62">62</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> FramedGraph&lt;?&gt; framedGraph;
 <a class="jxr_linenumber" name="63" href="#63">63</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/core/GraphManager.html">GraphManager</a> manager;
 <a class="jxr_linenumber" name="64" href="#64">64</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log;
-<a class="jxr_linenumber" name="65" href="#65">65</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> List&lt;ImportCallback&gt; callbacks = Lists.newLinkedList();
+<a class="jxr_linenumber" name="65" href="#65">65</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> List&lt;ImportCallback&gt; callbacks = Lists.newArrayList();
 <a class="jxr_linenumber" name="66" href="#66">66</a>  
 <a class="jxr_linenumber" name="67" href="#67">67</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../eu/ehri/project/importers/properties/NodeProperties.html">NodeProperties</a> pc;
 <a class="jxr_linenumber" name="68" href="#68">68</a>  
@@ -91,13 +91,13 @@
 <a class="jxr_linenumber" name="81" href="#81">81</a>          <strong class="jxr_keyword">return</strong> permissionScope;
 <a class="jxr_linenumber" name="82" href="#82">82</a>      }
 <a class="jxr_linenumber" name="83" href="#83">83</a>  
-<a class="jxr_linenumber" name="84" href="#84">84</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a> getPersister(List&lt;String&gt; scopeIds) {
-<a class="jxr_linenumber" name="85" href="#85">85</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a>(framedGraph,
+<a class="jxr_linenumber" name="84" href="#84">84</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a> getPersister(List&lt;String&gt; scopeIds) {
+<a class="jxr_linenumber" name="85" href="#85">85</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a>(framedGraph,
 <a class="jxr_linenumber" name="86" href="#86">86</a>                  Lists.newArrayList(Iterables.concat(permissionScope.idPath(), scopeIds)));
 <a class="jxr_linenumber" name="87" href="#87">87</a>      }
 <a class="jxr_linenumber" name="88" href="#88">88</a>  
-<a class="jxr_linenumber" name="89" href="#89">89</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a> getPersister() {
-<a class="jxr_linenumber" name="90" href="#90">90</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleDAO.html">BundleDAO</a>(framedGraph, permissionScope.idPath());
+<a class="jxr_linenumber" name="89" href="#89">89</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a> getPersister() {
+<a class="jxr_linenumber" name="90" href="#90">90</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a>(framedGraph, permissionScope.idPath());
 <a class="jxr_linenumber" name="91" href="#91">91</a>      }
 <a class="jxr_linenumber" name="92" href="#92">92</a>  
 <a class="jxr_linenumber" name="93" href="#93">93</a>      <em class="jxr_javadoccomment">/**</em>

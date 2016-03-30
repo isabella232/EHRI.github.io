@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Interface eu.ehri.project.models.UserProfile (EHRI Backend 0.12.0-SNAPSHOT API)</title>
+<title>Uses of Interface eu.ehri.project.models.UserProfile (EHRI Backend 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Interface eu.ehri.project.models.UserProfile (EHRI Backend 0.12.0-SNAPSHOT API)";
+        parent.document.title="Uses of Interface eu.ehri.project.models.UserProfile (EHRI Backend 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -188,6 +188,12 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a></code></td>
+<td class="colLast"><span class="strong">Annotation.</span><code><strong><a href="../../../../../eu/ehri/project/models/Annotation.html#getAnnotator()">getAnnotator</a></strong>()</code>
+<div class="block">Fetch the annotator of this annotation.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a></code></td>
 <td class="colLast"><span class="strong">Link.</span><code><strong><a href="../../../../../eu/ehri/project/models/Link.html#getLinker()">getLinker</a></strong>()</code>&nbsp;</td>
 </tr>
 </tbody>
@@ -305,6 +311,12 @@
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">UserProfile.Impl.</span><code><strong><a href="../../../../../eu/ehri/project/models/UserProfile.Impl.html#removeFollowing(eu.ehri.project.models.UserProfile)">removeFollowing</a></strong>(<a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="strong">Annotation.</span><code><strong><a href="../../../../../eu/ehri/project/models/Annotation.html#setAnnotator(eu.ehri.project.models.UserProfile)">setAnnotator</a></strong>(<a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;annotator)</code>
+<div class="block">Set the annotator of this annotation.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -446,19 +458,53 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;&gt;</code></td>
-<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/EventViews.html#aggregateByUser(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">aggregateByUser</a></strong>(<a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
-               <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
+<td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/EventViews.html#aggregateUserActions(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">aggregateUserActions</a></strong>(<a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
+                    <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
 <div class="block">Aggregate a user's actions.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</a></code></td>
+<td class="colLast"><span class="strong">AnnotationViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/AnnotationViews.html#create(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">create</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;did,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+      <a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)</code>
+<div class="block">Create an annotation for a dependent node of an item.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></code></td>
+<td class="colLast"><span class="strong">LinkViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/LinkViews.html#create(java.lang.String,%20java.lang.String,%20java.util.List,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">create</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId2,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;bodies,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+      <a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)</code>
+<div class="block">Create a link between two items.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></code></td>
+<td class="colLast"><span class="strong">LinkViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/LinkViews.html#createAccessPointLink(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">createAccessPointLink</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId2,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;descriptionId,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bodyName,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bodyType,
+                     <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+                     <a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)</code>
+<div class="block">Create a link between two items, along with an access point on the given description.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">PromotionViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/PromotionViews.html#downVote(eu.ehri.project.models.base.Promotable,%20eu.ehri.project.models.UserProfile)">downVote</a></strong>(<a href="../../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>&nbsp;item,
         <a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user)</code>
 <div class="block">Down vote an item, removing an up vote if there is one.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;</code></td>
 <td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/EventViews.html#listAsUser(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">listAsUser</a></strong>(<a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;asUser,
           <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
@@ -466,46 +512,46 @@
  to items they watch or users they follow.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&gt;</code></td>
 <td class="colLast"><span class="strong">EventViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/EventViews.html#listByUser(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">listByUser</a></strong>(<a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;byUser,
           <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>
 <div class="block">List a user's actions.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">UserProfileViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/UserProfileViews.html#removeBlocked(eu.ehri.project.models.UserProfile,%20java.util.List,%20eu.ehri.project.models.base.Accessor)">removeBlocked</a></strong>(<a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
              <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;ids,
              <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">PromotionViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/PromotionViews.html#removeDownVote(eu.ehri.project.models.base.Promotable,%20eu.ehri.project.models.UserProfile)">removeDownVote</a></strong>(<a href="../../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>&nbsp;item,
               <a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user)</code>
 <div class="block">Remove a down vote.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">UserProfileViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/UserProfileViews.html#removeFollowers(eu.ehri.project.models.UserProfile,%20java.util.List,%20eu.ehri.project.models.base.Accessor)">removeFollowers</a></strong>(<a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
                <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;ids,
                <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">PromotionViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/PromotionViews.html#removeUpVote(eu.ehri.project.models.base.Promotable,%20eu.ehri.project.models.UserProfile)">removeUpVote</a></strong>(<a href="../../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>&nbsp;item,
             <a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user)</code>
 <div class="block">Remove an up vote.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">UserProfileViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/UserProfileViews.html#removeWatching(eu.ehri.project.models.UserProfile,%20java.util.List,%20eu.ehri.project.models.base.Accessor)">removeWatching</a></strong>(<a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;ids,
               <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;accessor)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><span class="strong">PromotionViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/PromotionViews.html#upVote(eu.ehri.project.models.base.Promotable,%20eu.ehri.project.models.UserProfile)">upVote</a></strong>(<a href="../../../../../eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a>&nbsp;item,
       <a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user)</code>

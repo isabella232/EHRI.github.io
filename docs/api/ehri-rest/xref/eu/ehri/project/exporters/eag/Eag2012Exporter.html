@@ -19,7 +19,7 @@
 <a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
 <a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.acl.AnonymousAccessor;
 <a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exporters.DocumentWriter;
-<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exporters.util.Helpers;
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.utils.LanguageHelpers;
 <a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Address;
 <a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Country;
 <a class="jxr_linenumber" name="15" href="#15">15</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.MaintenanceEvent;
@@ -52,7 +52,7 @@
 <a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
 <a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> java.util.Set;
 <a class="jxr_linenumber" name="44" href="#44">44</a>  
-<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> eu.ehri.project.exporters.util.Helpers.createCDataElement;
+<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> eu.ehri.project.utils.LanguageHelpers.createCDataElement;
 <a class="jxr_linenumber" name="46" href="#46">46</a>  
 <a class="jxr_linenumber" name="47" href="#47">47</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="48" href="#48">48</a>  <em class="jxr_javadoccomment"> * Export EAG 2012 XML.</em>
@@ -112,7 +112,7 @@
 <a class="jxr_linenumber" name="102" href="#102">102</a>         doc.appendChild(rootElem);
 <a class="jxr_linenumber" name="103" href="#103">103</a> 
 <a class="jxr_linenumber" name="104" href="#104">104</a> 
-<a class="jxr_linenumber" name="105" href="#105">105</a>         <strong class="jxr_keyword">for</strong> (Description desc : Helpers.getBestDescription(
+<a class="jxr_linenumber" name="105" href="#105">105</a>         <strong class="jxr_keyword">for</strong> (Description desc : LanguageHelpers.getBestDescription(
 <a class="jxr_linenumber" name="106" href="#106">106</a>                 repository, Optional.&lt;Description&gt;absent(), langCode).asSet()) {
 <a class="jxr_linenumber" name="107" href="#107">107</a> 
 <a class="jxr_linenumber" name="108" href="#108">108</a>             addControlSection(doc, rootElem, repository, country, desc);
@@ -132,7 +132,7 @@
 <a class="jxr_linenumber" name="122" href="#122">122</a>             repositoriesElem.appendChild(repoElem);
 <a class="jxr_linenumber" name="123" href="#123">123</a> 
 <a class="jxr_linenumber" name="124" href="#124">124</a>             Element geogAreaElem = doc.createElement(<span class="jxr_string">"geogarea"</span>);
-<a class="jxr_linenumber" name="125" href="#125">125</a>             geogAreaElem.setTextContent(Helpers.countryCodeToContinent(country.getCode())
+<a class="jxr_linenumber" name="125" href="#125">125</a>             geogAreaElem.setTextContent(LanguageHelpers.countryCodeToContinent(country.getCode())
 <a class="jxr_linenumber" name="126" href="#126">126</a>                     .or(<span class="jxr_string">"Europe"</span>)); <em class="jxr_comment">// FIXME: Default???</em>
 <a class="jxr_linenumber" name="127" href="#127">127</a>             repoElem.appendChild(geogAreaElem);
 <a class="jxr_linenumber" name="128" href="#128">128</a> 

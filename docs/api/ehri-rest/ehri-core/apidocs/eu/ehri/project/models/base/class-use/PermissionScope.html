@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Interface eu.ehri.project.models.base.PermissionScope (EHRI Core API 0.12.0-SNAPSHOT API)</title>
+<title>Uses of Interface eu.ehri.project.models.base.PermissionScope (EHRI Core API 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Interface eu.ehri.project.models.base.PermissionScope (EHRI Core API 0.12.0-SNAPSHOT API)";
+        parent.document.title="Uses of Interface eu.ehri.project.models.base.PermissionScope (EHRI Core API 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -347,7 +347,8 @@
 <tr class="altColor">
 <td class="colFirst"><code>interface&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base">AbstractUnit</a></strong></code>
-<div class="block">An abstract entity that has the features that documentary units need.</div>
+<div class="block">An abstract entity representing either a documentary (physical) unit
+ or a virtual unit.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -380,7 +381,9 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a></code></td>
-<td class="colLast"><span class="strong">Accessible.</span><code><strong><a href="../../../../../../eu/ehri/project/models/base/Accessible.html#getPermissionScope()">getPermissionScope</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><span class="strong">Accessible.</span><code><strong><a href="../../../../../../eu/ehri/project/models/base/Accessible.html#getPermissionScope()">getPermissionScope</a></strong>()</code>
+<div class="block">Fetch the permission scope to which this item belongs, if any.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -393,14 +396,6 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&gt;</code></td>
-<td class="colLast"><span class="strong">Accessible.</span><code><strong><a href="../../../../../../eu/ehri/project/models/base/Accessible.html#getPermissionScopes()">getPermissionScopes</a></strong>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&gt;</code></td>
-<td class="colLast"><span class="strong">Accessible.Impl.</span><code><strong><a href="../../../../../../eu/ehri/project/models/base/Accessible.Impl.html#getPermissionScopes()">getPermissionScopes</a></strong>()</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&gt;</code></td>
 <td class="colLast"><span class="strong">PermissionScope.</span><code><strong><a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html#getPermissionScopes()">getPermissionScopes</a></strong>()</code>
 <div class="block">Get an iterable of the parent and all the parents higher permission
  scopes, recursively.</div>
@@ -409,6 +404,17 @@
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&gt;</code></td>
 <td class="colLast"><span class="strong">PermissionScope.Impl.</span><code><strong><a href="../../../../../../eu/ehri/project/models/base/PermissionScope.Impl.html#getPermissionScopes()">getPermissionScopes</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&gt;</code></td>
+<td class="colLast"><span class="strong">Accessible.</span><code><strong><a href="../../../../../../eu/ehri/project/models/base/Accessible.html#getPermissionScopes()">getPermissionScopes</a></strong>()</code>
+<div class="block">Get the full hierarchy of permission scopes to which this
+ item belongs.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&gt;</code></td>
+<td class="colLast"><span class="strong">Accessible.Impl.</span><code><strong><a href="../../../../../../eu/ehri/project/models/base/Accessible.Impl.html#getPermissionScopes()">getPermissionScopes</a></strong>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -421,7 +427,9 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><span class="strong">Accessible.</span><code><strong><a href="../../../../../../eu/ehri/project/models/base/Accessible.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">setPermissionScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">Accessible.</span><code><strong><a href="../../../../../../eu/ehri/project/models/base/Accessible.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">setPermissionScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>
+<div class="block">Set this item's permission scope.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -545,38 +553,34 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../../eu/ehri/project/views/Crud.html" title="type parameter in Crud">E</a>&gt;</code></td>
-<td class="colLast"><span class="strong">Crud.</span><code><strong><a href="../../../../../../eu/ehri/project/views/Crud.html#setScope(eu.ehri.project.models.base.PermissionScope)">setScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/ViewHelper.html" title="class in eu.ehri.project.views">ViewHelper</a></code></td>
 <td class="colLast"><span class="strong">ViewHelper.</span><code><strong><a href="../../../../../../eu/ehri/project/views/ViewHelper.html#setScope(eu.ehri.project.models.base.PermissionScope)">setScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>
 <div class="block">Set the scope under which ACL and permission operations will take place.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</a></code></td>
-<td class="colLast"><span class="strong">AclViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/AclViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
-</tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../../eu/ehri/project/views/Crud.html" title="type parameter in Crud">E</a>&gt;</code></td>
+<td class="colLast"><span class="strong">Crud.</span><code><strong><a href="../../../../../../eu/ehri/project/views/Crud.html#setScope(eu.ehri.project.models.base.PermissionScope)">setScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/LinkViews.html" title="class in eu.ehri.project.views">LinkViews</a></code></td>
 <td class="colLast"><span class="strong">LinkViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/LinkViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></code></td>
-<td class="colLast"><span class="strong">Query.</span><code><strong><a href="../../../../../../eu/ehri/project/views/Query.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/PromotionViews.html" title="class in eu.ehri.project.views">PromotionViews</a></code></td>
-<td class="colLast"><span class="strong">PromotionViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/PromotionViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/AnnotationViews.html" title="class in eu.ehri.project.views">AnnotationViews</a></code></td>
-<td class="colLast"><span class="strong">AnnotationViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/AnnotationViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/Scoped.html" title="type parameter in Scoped">T</a></code></td>
 <td class="colLast"><span class="strong">Scoped.</span><code><strong><a href="../../../../../../eu/ehri/project/views/Scoped.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/PromotionViews.html" title="class in eu.ehri.project.views">PromotionViews</a></code></td>
+<td class="colLast"><span class="strong">PromotionViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/PromotionViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/AnnotationViews.html" title="class in eu.ehri.project.views">AnnotationViews</a></code></td>
+<td class="colLast"><span class="strong">AnnotationViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/AnnotationViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</a></code></td>
+<td class="colLast"><span class="strong">AclViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/AclViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -629,14 +633,14 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../../eu/ehri/project/views/impl/CrudViews.html" title="type parameter in CrudViews">E</a>&gt;</code></td>
-<td class="colLast"><span class="strong">CrudViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/impl/CrudViews.html#setScope(eu.ehri.project.models.base.PermissionScope)">setScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>
+<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</a>&lt;<a href="../../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a>&gt;</code></td>
+<td class="colLast"><span class="strong">LoggingCrudViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html#setScope(eu.ehri.project.models.base.PermissionScope)">setScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>
 <div class="block">Set the permission scope of the view.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="class in eu.ehri.project.views.impl">LoggingCrudViews</a>&lt;<a href="../../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html" title="type parameter in LoggingCrudViews">E</a>&gt;</code></td>
-<td class="colLast"><span class="strong">LoggingCrudViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/impl/LoggingCrudViews.html#setScope(eu.ehri.project.models.base.PermissionScope)">setScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>
+<td class="colFirst"><code><a href="../../../../../../eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a>&lt;<a href="../../../../../../eu/ehri/project/views/impl/CrudViews.html" title="type parameter in CrudViews">E</a>&gt;</code></td>
+<td class="colLast"><span class="strong">CrudViews.</span><code><strong><a href="../../../../../../eu/ehri/project/views/impl/CrudViews.html#setScope(eu.ehri.project.models.base.PermissionScope)">setScope</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>
 <div class="block">Set the permission scope of the view.</div>
 </td>
 </tr>

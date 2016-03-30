@@ -62,7 +62,7 @@
 <a class="jxr_linenumber" name="52" href="#52">52</a>          ActionManager am = <strong class="jxr_keyword">new</strong> ActionManager(graph);
 <a class="jxr_linenumber" name="53" href="#53">53</a>          <em class="jxr_comment">// Create a user and log it</em>
 <a class="jxr_linenumber" name="54" href="#54">54</a>          Bundle userBundle = Bundle.fromData(TestData.getTestUserBundle());
-<a class="jxr_linenumber" name="55" href="#55">55</a>          UserProfile user = <strong class="jxr_keyword">new</strong> BundleDAO(graph).create(userBundle, UserProfile.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="55" href="#55">55</a>          UserProfile user = <strong class="jxr_keyword">new</strong> BundleManager(graph).create(userBundle, UserProfile.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="56" href="#56">56</a>          ActionManager.EventContext ctx1 = am.newEventContext(user,
 <a class="jxr_linenumber" name="57" href="#57">57</a>                  graph.frame(validUser.asVertex(), Actioner.<strong class="jxr_keyword">class</strong>),
 <a class="jxr_linenumber" name="58" href="#58">58</a>                  EventTypes.creation);
@@ -70,7 +70,7 @@
 <a class="jxr_linenumber" name="60" href="#60">60</a>  
 <a class="jxr_linenumber" name="61" href="#61">61</a>          <em class="jxr_comment">// Create a repository and log that too...</em>
 <a class="jxr_linenumber" name="62" href="#62">62</a>          Bundle repoBundle = Bundle.fromData(TestData.getTestAgentBundle());
-<a class="jxr_linenumber" name="63" href="#63">63</a>          Repository repository = <strong class="jxr_keyword">new</strong> BundleDAO(graph).create(repoBundle, Repository.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="63" href="#63">63</a>          Repository repository = <strong class="jxr_keyword">new</strong> BundleManager(graph).create(repoBundle, Repository.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="64" href="#64">64</a>  
 <a class="jxr_linenumber" name="65" href="#65">65</a>          ActionManager.EventContext ctx2 = am.newEventContext(repository,
 <a class="jxr_linenumber" name="66" href="#66">66</a>                  graph.frame(validUser.asVertex(), Actioner.<strong class="jxr_keyword">class</strong>),
@@ -107,7 +107,7 @@
 <a class="jxr_linenumber" name="97" href="#97">97</a>          ActionManager am = <strong class="jxr_keyword">new</strong> ActionManager(graph, r1);
 <a class="jxr_linenumber" name="98" href="#98">98</a>  
 <a class="jxr_linenumber" name="99" href="#99">99</a>          Bundle docBundle = Bundle.fromData(TestData.getTestDocBundle());
-<a class="jxr_linenumber" name="100" href="#100">100</a>         DocumentaryUnit doc = <strong class="jxr_keyword">new</strong> BundleDAO(graph).create(docBundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="100" href="#100">100</a>         DocumentaryUnit doc = <strong class="jxr_keyword">new</strong> BundleManager(graph).create(docBundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="101" href="#101">101</a>         ActionManager.EventContext ctx = am.newEventContext(doc,
 <a class="jxr_linenumber" name="102" href="#102">102</a>                 graph.frame(validUser.asVertex(), Actioner.<strong class="jxr_keyword">class</strong>),
 <a class="jxr_linenumber" name="103" href="#103">103</a>                 EventTypes.creation);
@@ -120,7 +120,7 @@
 <a class="jxr_linenumber" name="110" href="#110">110</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCreatingNewEventDoesNotTouchGraph() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="111" href="#111">111</a>         ActionManager am = <strong class="jxr_keyword">new</strong> ActionManager(graph);
 <a class="jxr_linenumber" name="112" href="#112">112</a>         Bundle docBundle = Bundle.fromData(TestData.getTestDocBundle());
-<a class="jxr_linenumber" name="113" href="#113">113</a>         BundleDAO dao = <strong class="jxr_keyword">new</strong> BundleDAO(graph);
+<a class="jxr_linenumber" name="113" href="#113">113</a>         BundleManager dao = <strong class="jxr_keyword">new</strong> BundleManager(graph);
 <a class="jxr_linenumber" name="114" href="#114">114</a>         DocumentaryUnit doc = dao.create(docBundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="115" href="#115">115</a>         <strong class="jxr_keyword">int</strong> nodesBefore = getNodeCount(graph);
 <a class="jxr_linenumber" name="116" href="#116">116</a>         <strong class="jxr_keyword">int</strong> edgesBefore = getEdgeCount(graph);
@@ -144,7 +144,7 @@
 <a class="jxr_linenumber" name="134" href="#134">134</a>         ActionManager am = <strong class="jxr_keyword">new</strong> ActionManager(graph, r1);
 <a class="jxr_linenumber" name="135" href="#135">135</a> 
 <a class="jxr_linenumber" name="136" href="#136">136</a>         Bundle docBundle = Bundle.fromData(TestData.getTestDocBundle());
-<a class="jxr_linenumber" name="137" href="#137">137</a>         BundleDAO dao = <strong class="jxr_keyword">new</strong> BundleDAO(graph);
+<a class="jxr_linenumber" name="137" href="#137">137</a>         BundleManager dao = <strong class="jxr_keyword">new</strong> BundleManager(graph);
 <a class="jxr_linenumber" name="138" href="#138">138</a>         DocumentaryUnit doc = dao.create(docBundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="139" href="#139">139</a>         ActionManager.EventContext ctx1 = am.newEventContext(doc,
 <a class="jxr_linenumber" name="140" href="#140">140</a>                 graph.frame(validUser.asVertex(), Actioner.<strong class="jxr_keyword">class</strong>),

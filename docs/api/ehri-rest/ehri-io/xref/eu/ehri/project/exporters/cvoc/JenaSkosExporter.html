@@ -37,11 +37,11 @@
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Vertex;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.cvoc.SkosRDFVocabulary;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.util.Helpers;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.AccessPoint;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Description;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.AccessPoint;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Description;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.utils.LanguageHelpers;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  
@@ -123,7 +123,7 @@
 <a class="jxr_linenumber" name="113" href="#113">113</a> 
 <a class="jxr_linenumber" name="114" href="#114">114</a>             <strong class="jxr_keyword">for</strong> (Description description : concept.getDescriptions()) {
 <a class="jxr_linenumber" name="115" href="#115">115</a>                 Vertex cdv = description.asVertex();
-<a class="jxr_linenumber" name="116" href="#116">116</a>                 String lang = Helpers.iso639DashOneCode(description.getLanguageOfDescription());
+<a class="jxr_linenumber" name="116" href="#116">116</a>                 String lang = LanguageHelpers.iso639DashOneCode(description.getLanguageOfDescription());
 <a class="jxr_linenumber" name="117" href="#117">117</a>                 model.add(resource, prefLabelProp, description.getName(), lang);
 <a class="jxr_linenumber" name="118" href="#118">118</a>                 <strong class="jxr_keyword">for</strong> (String key : cdv.getPropertyKeys()) {
 <a class="jxr_linenumber" name="119" href="#119">119</a>                     writeProperty(model, resource, key, cdv.getProperty(key), lang);

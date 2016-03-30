@@ -39,7 +39,7 @@
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.acl.AnonymousAccessor;
 <a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Entities;
 <a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exporters.DocumentWriter;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exporters.util.Helpers;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.utils.LanguageHelpers;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.AccessPoint;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DatePeriod;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.HistoricalAgent;
@@ -71,7 +71,7 @@
 <a class="jxr_linenumber" name="61" href="#61">61</a>  <strong class="jxr_keyword">import</strong> java.util.List;
 <a class="jxr_linenumber" name="62" href="#62">62</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
 <a class="jxr_linenumber" name="63" href="#63">63</a>  
-<a class="jxr_linenumber" name="64" href="#64">64</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> eu.ehri.project.exporters.util.Helpers.createCDataElement;
+<a class="jxr_linenumber" name="64" href="#64">64</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> eu.ehri.project.utils.LanguageHelpers.createCDataElement;
 <a class="jxr_linenumber" name="65" href="#65">65</a>  
 <a class="jxr_linenumber" name="66" href="#66">66</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="67" href="#67">67</a>  <em class="jxr_javadoccomment"> * Export EAC 2010 XML.</em>
@@ -129,7 +129,7 @@
 <a class="jxr_linenumber" name="119" href="#119">119</a>                 <span class="jxr_string">"urn:isbn:1-931666-33-4 http://eac.staatsbibliothek-berlin.de/schema/cpf.xsd"</span>);
 <a class="jxr_linenumber" name="120" href="#120">120</a>         doc.appendChild(rootElem);
 <a class="jxr_linenumber" name="121" href="#121">121</a> 
-<a class="jxr_linenumber" name="122" href="#122">122</a>         <strong class="jxr_keyword">for</strong> (Description desc : Helpers.getBestDescription(
+<a class="jxr_linenumber" name="122" href="#122">122</a>         <strong class="jxr_keyword">for</strong> (Description desc : LanguageHelpers.getBestDescription(
 <a class="jxr_linenumber" name="123" href="#123">123</a>                 agent, Optional.&lt;Description&gt;absent(), langCode).asSet()) {
 <a class="jxr_linenumber" name="124" href="#124">124</a> 
 <a class="jxr_linenumber" name="125" href="#125">125</a>             addControlSection(agent, doc, rootElem, desc);
@@ -359,240 +359,239 @@
 <a class="jxr_linenumber" name="349" href="#349">349</a>         controlElem.appendChild(langDecElem);
 <a class="jxr_linenumber" name="350" href="#350">350</a>         Element lang = doc.createElement(<span class="jxr_string">"language"</span>);
 <a class="jxr_linenumber" name="351" href="#351">351</a>         lang.setAttribute(<span class="jxr_string">"languageCode"</span>, desc.getLanguageOfDescription());
-<a class="jxr_linenumber" name="352" href="#352">352</a>         lang.setTextContent(eu.ehri.project.importers.util
-<a class="jxr_linenumber" name="353" href="#353">353</a>                 .Helpers.codeToName(desc.getLanguageOfDescription()));
-<a class="jxr_linenumber" name="354" href="#354">354</a>         langDecElem.appendChild(lang);
-<a class="jxr_linenumber" name="355" href="#355">355</a> 
-<a class="jxr_linenumber" name="356" href="#356">356</a>         <em class="jxr_comment">// Add a convention declaration for EHRI's name policy</em>
-<a class="jxr_linenumber" name="357" href="#357">357</a>         Element nameConvDecElem = doc.createElement(<span class="jxr_string">"conventionDeclaration"</span>);
-<a class="jxr_linenumber" name="358" href="#358">358</a>         controlElem.appendChild(nameConvDecElem);
-<a class="jxr_linenumber" name="359" href="#359">359</a>         Element nameConvAbbrElem = doc.createElement(<span class="jxr_string">"abbreviation"</span>);
-<a class="jxr_linenumber" name="360" href="#360">360</a>         nameConvAbbrElem.setTextContent(<span class="jxr_string">"ehri"</span>);
-<a class="jxr_linenumber" name="361" href="#361">361</a>         nameConvDecElem.appendChild(nameConvAbbrElem);
-<a class="jxr_linenumber" name="362" href="#362">362</a>         Element nameConvCitElem = doc.createElement(<span class="jxr_string">"citation"</span>);
-<a class="jxr_linenumber" name="363" href="#363">363</a>         nameConvCitElem.setTextContent(<span class="jxr_string">"EHRI Naming Policy"</span>);
-<a class="jxr_linenumber" name="364" href="#364">364</a>         nameConvDecElem.appendChild(nameConvCitElem);
-<a class="jxr_linenumber" name="365" href="#365">365</a> 
-<a class="jxr_linenumber" name="366" href="#366">366</a>         <em class="jxr_comment">// NB: Assume script is Latin!!!</em>
-<a class="jxr_linenumber" name="367" href="#367">367</a>         Element scriptElem = doc.createElement(<span class="jxr_string">"script"</span>);
-<a class="jxr_linenumber" name="368" href="#368">368</a>         scriptElem.setAttribute(<span class="jxr_string">"scriptCode"</span>, <span class="jxr_string">"Latn"</span>);
-<a class="jxr_linenumber" name="369" href="#369">369</a>         scriptElem.setTextContent(<span class="jxr_string">"Latin"</span>);
-<a class="jxr_linenumber" name="370" href="#370">370</a>         langDecElem.appendChild(scriptElem);
-<a class="jxr_linenumber" name="371" href="#371">371</a> 
-<a class="jxr_linenumber" name="372" href="#372">372</a>         addRevisionDesc(doc, controlElem, agent, desc);
-<a class="jxr_linenumber" name="373" href="#373">373</a> 
-<a class="jxr_linenumber" name="374" href="#374">374</a>         <strong class="jxr_keyword">for</strong> (Object sources : Optional.fromNullable(desc.getProperty(<span class="jxr_string">"source"</span>)).asSet()) {
-<a class="jxr_linenumber" name="375" href="#375">375</a>             List sourceValues = sources instanceof List
-<a class="jxr_linenumber" name="376" href="#376">376</a>                     ? (List) sources
-<a class="jxr_linenumber" name="377" href="#377">377</a>                     : Lists.newArrayList(sources);
-<a class="jxr_linenumber" name="378" href="#378">378</a>             Element sourcesElem = doc.createElement(<span class="jxr_string">"sources"</span>);
-<a class="jxr_linenumber" name="379" href="#379">379</a>             controlElem.appendChild(sourcesElem);
-<a class="jxr_linenumber" name="380" href="#380">380</a>             <strong class="jxr_keyword">for</strong> (Object value : sourceValues) {
-<a class="jxr_linenumber" name="381" href="#381">381</a>                 Element sourceElem = doc.createElement(<span class="jxr_string">"source"</span>);
-<a class="jxr_linenumber" name="382" href="#382">382</a>                 sourcesElem.appendChild(sourceElem);
-<a class="jxr_linenumber" name="383" href="#383">383</a>                 Element sourceEntryElem = doc.createElement(<span class="jxr_string">"sourceEntry"</span>);
-<a class="jxr_linenumber" name="384" href="#384">384</a>                 sourceElem.appendChild(sourceEntryElem);
-<a class="jxr_linenumber" name="385" href="#385">385</a>                 sourceEntryElem.setTextContent(value.toString());
-<a class="jxr_linenumber" name="386" href="#386">386</a>             }
-<a class="jxr_linenumber" name="387" href="#387">387</a>         }
-<a class="jxr_linenumber" name="388" href="#388">388</a>     }
+<a class="jxr_linenumber" name="352" href="#352">352</a>         lang.setTextContent(LanguageHelpers.codeToName(desc.getLanguageOfDescription()));
+<a class="jxr_linenumber" name="353" href="#353">353</a>         langDecElem.appendChild(lang);
+<a class="jxr_linenumber" name="354" href="#354">354</a> 
+<a class="jxr_linenumber" name="355" href="#355">355</a>         <em class="jxr_comment">// Add a convention declaration for EHRI's name policy</em>
+<a class="jxr_linenumber" name="356" href="#356">356</a>         Element nameConvDecElem = doc.createElement(<span class="jxr_string">"conventionDeclaration"</span>);
+<a class="jxr_linenumber" name="357" href="#357">357</a>         controlElem.appendChild(nameConvDecElem);
+<a class="jxr_linenumber" name="358" href="#358">358</a>         Element nameConvAbbrElem = doc.createElement(<span class="jxr_string">"abbreviation"</span>);
+<a class="jxr_linenumber" name="359" href="#359">359</a>         nameConvAbbrElem.setTextContent(<span class="jxr_string">"ehri"</span>);
+<a class="jxr_linenumber" name="360" href="#360">360</a>         nameConvDecElem.appendChild(nameConvAbbrElem);
+<a class="jxr_linenumber" name="361" href="#361">361</a>         Element nameConvCitElem = doc.createElement(<span class="jxr_string">"citation"</span>);
+<a class="jxr_linenumber" name="362" href="#362">362</a>         nameConvCitElem.setTextContent(<span class="jxr_string">"EHRI Naming Policy"</span>);
+<a class="jxr_linenumber" name="363" href="#363">363</a>         nameConvDecElem.appendChild(nameConvCitElem);
+<a class="jxr_linenumber" name="364" href="#364">364</a> 
+<a class="jxr_linenumber" name="365" href="#365">365</a>         <em class="jxr_comment">// NB: Assume script is Latin!!!</em>
+<a class="jxr_linenumber" name="366" href="#366">366</a>         Element scriptElem = doc.createElement(<span class="jxr_string">"script"</span>);
+<a class="jxr_linenumber" name="367" href="#367">367</a>         scriptElem.setAttribute(<span class="jxr_string">"scriptCode"</span>, <span class="jxr_string">"Latn"</span>);
+<a class="jxr_linenumber" name="368" href="#368">368</a>         scriptElem.setTextContent(<span class="jxr_string">"Latin"</span>);
+<a class="jxr_linenumber" name="369" href="#369">369</a>         langDecElem.appendChild(scriptElem);
+<a class="jxr_linenumber" name="370" href="#370">370</a> 
+<a class="jxr_linenumber" name="371" href="#371">371</a>         addRevisionDesc(doc, controlElem, agent, desc);
+<a class="jxr_linenumber" name="372" href="#372">372</a> 
+<a class="jxr_linenumber" name="373" href="#373">373</a>         <strong class="jxr_keyword">for</strong> (Object sources : Optional.fromNullable(desc.getProperty(<span class="jxr_string">"source"</span>)).asSet()) {
+<a class="jxr_linenumber" name="374" href="#374">374</a>             List sourceValues = sources instanceof List
+<a class="jxr_linenumber" name="375" href="#375">375</a>                     ? (List) sources
+<a class="jxr_linenumber" name="376" href="#376">376</a>                     : Lists.newArrayList(sources);
+<a class="jxr_linenumber" name="377" href="#377">377</a>             Element sourcesElem = doc.createElement(<span class="jxr_string">"sources"</span>);
+<a class="jxr_linenumber" name="378" href="#378">378</a>             controlElem.appendChild(sourcesElem);
+<a class="jxr_linenumber" name="379" href="#379">379</a>             <strong class="jxr_keyword">for</strong> (Object value : sourceValues) {
+<a class="jxr_linenumber" name="380" href="#380">380</a>                 Element sourceElem = doc.createElement(<span class="jxr_string">"source"</span>);
+<a class="jxr_linenumber" name="381" href="#381">381</a>                 sourcesElem.appendChild(sourceElem);
+<a class="jxr_linenumber" name="382" href="#382">382</a>                 Element sourceEntryElem = doc.createElement(<span class="jxr_string">"sourceEntry"</span>);
+<a class="jxr_linenumber" name="383" href="#383">383</a>                 sourceElem.appendChild(sourceEntryElem);
+<a class="jxr_linenumber" name="384" href="#384">384</a>                 sourceEntryElem.setTextContent(value.toString());
+<a class="jxr_linenumber" name="385" href="#385">385</a>             }
+<a class="jxr_linenumber" name="386" href="#386">386</a>         }
+<a class="jxr_linenumber" name="387" href="#387">387</a>     }
+<a class="jxr_linenumber" name="388" href="#388">388</a> 
 <a class="jxr_linenumber" name="389" href="#389">389</a> 
-<a class="jxr_linenumber" name="390" href="#390">390</a> 
-<a class="jxr_linenumber" name="391" href="#391">391</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> addRevisionDesc(Document doc, Element controlElem, Described entity, Description desc) {
-<a class="jxr_linenumber" name="392" href="#392">392</a> 
-<a class="jxr_linenumber" name="393" href="#393">393</a>         Element mainHistElem = doc.createElement(<span class="jxr_string">"maintenanceHistory"</span>);
-<a class="jxr_linenumber" name="394" href="#394">394</a>         controlElem.appendChild(mainHistElem);
-<a class="jxr_linenumber" name="395" href="#395">395</a> 
-<a class="jxr_linenumber" name="396" href="#396">396</a>         <em class="jxr_comment">// Pre-ingest events</em>
-<a class="jxr_linenumber" name="397" href="#397">397</a>         List&lt;MaintenanceEvent&gt; maintenanceEvents = Lists
-<a class="jxr_linenumber" name="398" href="#398">398</a>                 .newArrayList(desc.getMaintenanceEvents());
-<a class="jxr_linenumber" name="399" href="#399">399</a>         <strong class="jxr_keyword">for</strong> (MaintenanceEvent event : maintenanceEvents) {
-<a class="jxr_linenumber" name="400" href="#400">400</a>             Element eventElem = doc.createElement(<span class="jxr_string">"maintenanceEvent"</span>);
-<a class="jxr_linenumber" name="401" href="#401">401</a> 
-<a class="jxr_linenumber" name="402" href="#402">402</a>             Element eventTypeElem = doc.createElement(<span class="jxr_string">"eventType"</span>);
-<a class="jxr_linenumber" name="403" href="#403">403</a>             eventTypeElem.setTextContent(event.getEventType().name());
-<a class="jxr_linenumber" name="404" href="#404">404</a>             eventElem.appendChild(eventTypeElem);
-<a class="jxr_linenumber" name="405" href="#405">405</a> 
-<a class="jxr_linenumber" name="406" href="#406">406</a>             Element eventDateTimeElem = doc.createElement(<span class="jxr_string">"eventDateTime"</span>);
-<a class="jxr_linenumber" name="407" href="#407">407</a>             <em class="jxr_comment">// TODO: Normalise and put standardDateTime attribute here?</em>
-<a class="jxr_linenumber" name="408" href="#408">408</a>             eventDateTimeElem.setTextContent((String) event.getProperty(<span class="jxr_string">"maintenanceEvent/date"</span>));
-<a class="jxr_linenumber" name="409" href="#409">409</a>             eventElem.appendChild(eventDateTimeElem);
-<a class="jxr_linenumber" name="410" href="#410">410</a> 
-<a class="jxr_linenumber" name="411" href="#411">411</a>             Element agentTypeElem = doc.createElement(<span class="jxr_string">"agentType"</span>);
-<a class="jxr_linenumber" name="412" href="#412">412</a>             agentTypeElem.setTextContent(MaintenanceEventAgentType.human.name());
-<a class="jxr_linenumber" name="413" href="#413">413</a>             eventElem.appendChild(agentTypeElem);
-<a class="jxr_linenumber" name="414" href="#414">414</a> 
-<a class="jxr_linenumber" name="415" href="#415">415</a>             Element agentElem = doc.createElement(<span class="jxr_string">"agent"</span>);
-<a class="jxr_linenumber" name="416" href="#416">416</a>             agentElem.setTextContent(<span class="jxr_string">"EHRI"</span>);
-<a class="jxr_linenumber" name="417" href="#417">417</a>             eventElem.appendChild(agentElem);
-<a class="jxr_linenumber" name="418" href="#418">418</a> 
-<a class="jxr_linenumber" name="419" href="#419">419</a>             String eventDesc = event.getProperty(<span class="jxr_string">"maintenanceEvent/source"</span>);
-<a class="jxr_linenumber" name="420" href="#420">420</a>             <strong class="jxr_keyword">if</strong> (eventDesc != <strong class="jxr_keyword">null</strong> &amp;&amp; !eventDesc.trim().isEmpty()) {
-<a class="jxr_linenumber" name="421" href="#421">421</a>                 Element eventDescElem = doc.createElement(<span class="jxr_string">"eventDescription"</span>);
-<a class="jxr_linenumber" name="422" href="#422">422</a>                 eventElem.appendChild(eventDescElem);
-<a class="jxr_linenumber" name="423" href="#423">423</a>                 eventDescElem.setTextContent(eventDesc);
-<a class="jxr_linenumber" name="424" href="#424">424</a>             }
-<a class="jxr_linenumber" name="425" href="#425">425</a> 
-<a class="jxr_linenumber" name="426" href="#426">426</a>             mainHistElem.appendChild(eventElem);
-<a class="jxr_linenumber" name="427" href="#427">427</a>         }
-<a class="jxr_linenumber" name="428" href="#428">428</a> 
-<a class="jxr_linenumber" name="429" href="#429">429</a>         <em class="jxr_comment">// Post-ingest events</em>
-<a class="jxr_linenumber" name="430" href="#430">430</a>         List&lt;List&lt;SystemEvent&gt;&gt; systemEvents = Lists.newArrayList(eventManager
-<a class="jxr_linenumber" name="431" href="#431">431</a>                 .aggregateForItem(entity, AnonymousAccessor.getInstance()));
-<a class="jxr_linenumber" name="432" href="#432">432</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = systemEvents.size() - 1; i &gt;= 0; i--) {
-<a class="jxr_linenumber" name="433" href="#433">433</a>             List&lt;SystemEvent&gt; agg = systemEvents.get(i);
-<a class="jxr_linenumber" name="434" href="#434">434</a>             SystemEvent event = agg.get(0);
-<a class="jxr_linenumber" name="435" href="#435">435</a> 
-<a class="jxr_linenumber" name="436" href="#436">436</a>             Element eventElem = doc.createElement(<span class="jxr_string">"maintenanceEvent"</span>);
-<a class="jxr_linenumber" name="437" href="#437">437</a> 
-<a class="jxr_linenumber" name="438" href="#438">438</a>             Element eventTypeElem = doc.createElement(<span class="jxr_string">"eventType"</span>);
-<a class="jxr_linenumber" name="439" href="#439">439</a>             eventTypeElem.setTextContent(MaintenanceEventType
-<a class="jxr_linenumber" name="440" href="#440">440</a>                     .fromSystemEventType(event.getEventType()).name());
-<a class="jxr_linenumber" name="441" href="#441">441</a>             eventElem.appendChild(eventTypeElem);
-<a class="jxr_linenumber" name="442" href="#442">442</a> 
-<a class="jxr_linenumber" name="443" href="#443">443</a>             Element eventDateTimeElem = doc.createElement(<span class="jxr_string">"eventDateTime"</span>);
-<a class="jxr_linenumber" name="444" href="#444">444</a>             DateTime dateTime = <strong class="jxr_keyword">new</strong> DateTime(event.getTimestamp());
-<a class="jxr_linenumber" name="445" href="#445">445</a>             eventDateTimeElem.setTextContent(DateTimeFormat.longDateTime().print(dateTime));
-<a class="jxr_linenumber" name="446" href="#446">446</a>             eventDateTimeElem.setAttribute(<span class="jxr_string">"standardDateTime"</span>, dateTime.toString());
-<a class="jxr_linenumber" name="447" href="#447">447</a>             eventElem.appendChild(eventDateTimeElem);
-<a class="jxr_linenumber" name="448" href="#448">448</a> 
-<a class="jxr_linenumber" name="449" href="#449">449</a>             Element agentTypeElem = doc.createElement(<span class="jxr_string">"agentType"</span>);
-<a class="jxr_linenumber" name="450" href="#450">450</a>             agentTypeElem.setTextContent(MaintenanceEventAgentType.human.name());
-<a class="jxr_linenumber" name="451" href="#451">451</a>             eventElem.appendChild(agentTypeElem);
-<a class="jxr_linenumber" name="452" href="#452">452</a> 
-<a class="jxr_linenumber" name="453" href="#453">453</a>             Element agentElem = doc.createElement(<span class="jxr_string">"agent"</span>);
-<a class="jxr_linenumber" name="454" href="#454">454</a>             <strong class="jxr_keyword">if</strong> (event.getActioner() != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="455" href="#455">455</a>                 agentElem.setTextContent(event.getActioner().getName());
-<a class="jxr_linenumber" name="456" href="#456">456</a>             }
-<a class="jxr_linenumber" name="457" href="#457">457</a>             eventElem.appendChild(agentElem);
-<a class="jxr_linenumber" name="458" href="#458">458</a> 
-<a class="jxr_linenumber" name="459" href="#459">459</a>             <strong class="jxr_keyword">if</strong> (event.getLogMessage() != <strong class="jxr_keyword">null</strong> &amp;&amp; !event.getLogMessage().isEmpty()) {
-<a class="jxr_linenumber" name="460" href="#460">460</a>                 Element eventDescElem = doc.createElement(<span class="jxr_string">"eventDescription"</span>);
-<a class="jxr_linenumber" name="461" href="#461">461</a>                 eventElem.appendChild(eventDescElem);
-<a class="jxr_linenumber" name="462" href="#462">462</a>                 eventDescElem.setTextContent(event.getLogMessage());
-<a class="jxr_linenumber" name="463" href="#463">463</a>             }
-<a class="jxr_linenumber" name="464" href="#464">464</a> 
-<a class="jxr_linenumber" name="465" href="#465">465</a>             mainHistElem.appendChild(eventElem);
-<a class="jxr_linenumber" name="466" href="#466">466</a>         }
-<a class="jxr_linenumber" name="467" href="#467">467</a> 
-<a class="jxr_linenumber" name="468" href="#468">468</a>         <em class="jxr_comment">// We must provide a default event</em>
-<a class="jxr_linenumber" name="469" href="#469">469</a>         <strong class="jxr_keyword">if</strong> (maintenanceEvents.isEmpty() &amp;&amp; systemEvents.isEmpty()) {
-<a class="jxr_linenumber" name="470" href="#470">470</a>             logger.debug(<span class="jxr_string">"No events found for element {}, using fallback"</span>, entity.getId());
-<a class="jxr_linenumber" name="471" href="#471">471</a>             Element eventElem = doc.createElement(<span class="jxr_string">"maintenanceEvent"</span>);
-<a class="jxr_linenumber" name="472" href="#472">472</a> 
-<a class="jxr_linenumber" name="473" href="#473">473</a>             Element eventTypeElem = doc.createElement(<span class="jxr_string">"eventType"</span>);
-<a class="jxr_linenumber" name="474" href="#474">474</a>             eventTypeElem.setTextContent(MaintenanceEventType.created.name());
-<a class="jxr_linenumber" name="475" href="#475">475</a>             eventElem.appendChild(eventTypeElem);
-<a class="jxr_linenumber" name="476" href="#476">476</a> 
-<a class="jxr_linenumber" name="477" href="#477">477</a>             Element eventDateTimeElem = doc.createElement(<span class="jxr_string">"eventDateTime"</span>);
-<a class="jxr_linenumber" name="478" href="#478">478</a>             DateTime dateTime = DateTime.now();
-<a class="jxr_linenumber" name="479" href="#479">479</a>             eventDateTimeElem.setTextContent(DateTimeFormat.longDateTime().print(dateTime));
-<a class="jxr_linenumber" name="480" href="#480">480</a>             eventDateTimeElem.setAttribute(<span class="jxr_string">"standardDateTime"</span>, dateTime.toString());
-<a class="jxr_linenumber" name="481" href="#481">481</a>             eventElem.appendChild(eventDateTimeElem);
-<a class="jxr_linenumber" name="482" href="#482">482</a> 
-<a class="jxr_linenumber" name="483" href="#483">483</a>             Element agentTypeElem = doc.createElement(<span class="jxr_string">"agentType"</span>);
-<a class="jxr_linenumber" name="484" href="#484">484</a>             agentTypeElem.setTextContent(MaintenanceEventAgentType.machine.name());
-<a class="jxr_linenumber" name="485" href="#485">485</a>             eventElem.appendChild(agentTypeElem);
-<a class="jxr_linenumber" name="486" href="#486">486</a> 
-<a class="jxr_linenumber" name="487" href="#487">487</a>             Element agentElem = doc.createElement(<span class="jxr_string">"agent"</span>);
-<a class="jxr_linenumber" name="488" href="#488">488</a>             agentElem.setTextContent(entity.getId());
-<a class="jxr_linenumber" name="489" href="#489">489</a>             eventElem.appendChild(agentElem);
-<a class="jxr_linenumber" name="490" href="#490">490</a> 
-<a class="jxr_linenumber" name="491" href="#491">491</a>             mainHistElem.appendChild(eventElem);
-<a class="jxr_linenumber" name="492" href="#492">492</a>         }
-<a class="jxr_linenumber" name="493" href="#493">493</a>     }
-<a class="jxr_linenumber" name="494" href="#494">494</a> 
-<a class="jxr_linenumber" name="495" href="#495">495</a>     <strong class="jxr_keyword">protected</strong> Optional&lt;String&gt; getLinkDescription(Link link) {
-<a class="jxr_linenumber" name="496" href="#496">496</a>         String desc = link.getDescription();
-<a class="jxr_linenumber" name="497" href="#497">497</a>         <strong class="jxr_keyword">if</strong> (desc == <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="498" href="#498">498</a>             <strong class="jxr_keyword">for</strong> (Accessible other : link.getLinkBodies()) {
-<a class="jxr_linenumber" name="499" href="#499">499</a>                 <strong class="jxr_keyword">if</strong> (other.getType().equals(Entities.ACCESS_POINT)) {
-<a class="jxr_linenumber" name="500" href="#500">500</a>                     AccessPoint ap = other.as(AccessPoint.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="501" href="#501">501</a>                     desc = ap.getProperty(<span class="jxr_string">"description"</span>);
-<a class="jxr_linenumber" name="502" href="#502">502</a>                 }
-<a class="jxr_linenumber" name="503" href="#503">503</a>             }
-<a class="jxr_linenumber" name="504" href="#504">504</a>         }
-<a class="jxr_linenumber" name="505" href="#505">505</a>         <strong class="jxr_keyword">if</strong> (desc != <strong class="jxr_keyword">null</strong> &amp;&amp; !desc.trim().isEmpty()) {
-<a class="jxr_linenumber" name="506" href="#506">506</a>             <strong class="jxr_keyword">return</strong> Optional.of(desc);
-<a class="jxr_linenumber" name="507" href="#507">507</a>         }
-<a class="jxr_linenumber" name="508" href="#508">508</a>         <strong class="jxr_keyword">return</strong> Optional.absent();
-<a class="jxr_linenumber" name="509" href="#509">509</a>     }
-<a class="jxr_linenumber" name="510" href="#510">510</a> 
-<a class="jxr_linenumber" name="511" href="#511">511</a>     <strong class="jxr_keyword">protected</strong> Optional&lt;String&gt; getLinkName(Described entity,
-<a class="jxr_linenumber" name="512" href="#512">512</a>             Description description, Link link, String lang) {
-<a class="jxr_linenumber" name="513" href="#513">513</a>         <strong class="jxr_keyword">for</strong> (Accessible other : link.getLinkBodies()) {
-<a class="jxr_linenumber" name="514" href="#514">514</a>             <em class="jxr_comment">// We only use an access point body for the name of this link</em>
-<a class="jxr_linenumber" name="515" href="#515">515</a>             <em class="jxr_comment">// if the access point is on the current entity (otherwise the</em>
-<a class="jxr_linenumber" name="516" href="#516">516</a>             <em class="jxr_comment">// link will have the same name as our current item.)</em>
-<a class="jxr_linenumber" name="517" href="#517">517</a>             <strong class="jxr_keyword">if</strong> (other.getType().equals(Entities.ACCESS_POINT)) {
-<a class="jxr_linenumber" name="518" href="#518">518</a>                 AccessPoint ap = other.as(AccessPoint.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="519" href="#519">519</a>                 <strong class="jxr_keyword">for</strong> (AccessPoint outAp : description.getAccessPoints()) {
-<a class="jxr_linenumber" name="520" href="#520">520</a>                     <strong class="jxr_keyword">if</strong> (outAp.equals(ap)) {
-<a class="jxr_linenumber" name="521" href="#521">521</a>                         <strong class="jxr_keyword">return</strong> Optional.of(ap.getName());
-<a class="jxr_linenumber" name="522" href="#522">522</a>                     }
-<a class="jxr_linenumber" name="523" href="#523">523</a>                 }
-<a class="jxr_linenumber" name="524" href="#524">524</a>             }
-<a class="jxr_linenumber" name="525" href="#525">525</a>         }
-<a class="jxr_linenumber" name="526" href="#526">526</a>         <strong class="jxr_keyword">for</strong> (Accessible other : link.getLinkTargets()) {
-<a class="jxr_linenumber" name="527" href="#527">527</a>             <strong class="jxr_keyword">if</strong> (!other.equals(entity)) {
-<a class="jxr_linenumber" name="528" href="#528">528</a>                 <strong class="jxr_keyword">return</strong> Optional.of(getEntityName(other.as(Described.<strong class="jxr_keyword">class</strong>), lang));
-<a class="jxr_linenumber" name="529" href="#529">529</a>             }
-<a class="jxr_linenumber" name="530" href="#530">530</a>         }
-<a class="jxr_linenumber" name="531" href="#531">531</a> 
-<a class="jxr_linenumber" name="532" href="#532">532</a>         <strong class="jxr_keyword">return</strong> Optional.absent();
-<a class="jxr_linenumber" name="533" href="#533">533</a>     }
-<a class="jxr_linenumber" name="534" href="#534">534</a> 
-<a class="jxr_linenumber" name="535" href="#535">535</a>     <strong class="jxr_keyword">protected</strong> Optional&lt;String&gt; getLinkEntityId(Described entity, Link link) {
-<a class="jxr_linenumber" name="536" href="#536">536</a>         <strong class="jxr_keyword">for</strong> (Accessible other : link.getLinkTargets()) {
-<a class="jxr_linenumber" name="537" href="#537">537</a>             <strong class="jxr_keyword">if</strong> (!other.equals(entity)) {
-<a class="jxr_linenumber" name="538" href="#538">538</a>                 <strong class="jxr_keyword">return</strong> Optional.of(other.getId());
-<a class="jxr_linenumber" name="539" href="#539">539</a>             }
-<a class="jxr_linenumber" name="540" href="#540">540</a>         }
-<a class="jxr_linenumber" name="541" href="#541">541</a>         <strong class="jxr_keyword">return</strong> Optional.absent();
-<a class="jxr_linenumber" name="542" href="#542">542</a>     }
-<a class="jxr_linenumber" name="543" href="#543">543</a> 
-<a class="jxr_linenumber" name="544" href="#544">544</a>     <strong class="jxr_keyword">protected</strong> String getEntityName(Described entity, String lang) {
-<a class="jxr_linenumber" name="545" href="#545">545</a>         <strong class="jxr_keyword">return</strong> Helpers.getBestDescription(entity, lang).transform(<strong class="jxr_keyword">new</strong> Function&lt;Description, String&gt;() {
-<a class="jxr_linenumber" name="546" href="#546">546</a>             @Override
-<a class="jxr_linenumber" name="547" href="#547">547</a>             <strong class="jxr_keyword">public</strong> String apply(Description description) {
-<a class="jxr_linenumber" name="548" href="#548">548</a>                 <strong class="jxr_keyword">return</strong> description.getName();
-<a class="jxr_linenumber" name="549" href="#549">549</a>             }
-<a class="jxr_linenumber" name="550" href="#550">550</a>         }).or(entity.getIdentifier()); <em class="jxr_comment">// Fallback</em>
-<a class="jxr_linenumber" name="551" href="#551">551</a>     }
-<a class="jxr_linenumber" name="552" href="#552">552</a> 
-<a class="jxr_linenumber" name="553" href="#553">553</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> addTextElements(Document doc, Element parent, Description desc, String key, String path)
-<a class="jxr_linenumber" name="554" href="#554">554</a>             <strong class="jxr_keyword">throws</strong> IOException {
-<a class="jxr_linenumber" name="555" href="#555">555</a>         <strong class="jxr_keyword">for</strong> (Object prop : Optional.fromNullable(desc.getProperty(key)).asSet()) {
-<a class="jxr_linenumber" name="556" href="#556">556</a>             String elemName = path;
-<a class="jxr_linenumber" name="557" href="#557">557</a>             Element top = parent;
-<a class="jxr_linenumber" name="558" href="#558">558</a>             <strong class="jxr_keyword">if</strong> (elemName.contains(<span class="jxr_string">"/"</span>)) {
-<a class="jxr_linenumber" name="559" href="#559">559</a>                 List&lt;String&gt; strings = Splitter.on(<span class="jxr_string">"/"</span>).splitToList(elemName);
-<a class="jxr_linenumber" name="560" href="#560">560</a>                 <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; strings.size() - 1; i++) {
-<a class="jxr_linenumber" name="561" href="#561">561</a>                     Element next = doc.createElement(strings.get(i));
-<a class="jxr_linenumber" name="562" href="#562">562</a>                     top.appendChild(next);
-<a class="jxr_linenumber" name="563" href="#563">563</a>                     top = next;
-<a class="jxr_linenumber" name="564" href="#564">564</a>                 }
-<a class="jxr_linenumber" name="565" href="#565">565</a>                 elemName = strings.get(strings.size() - 1);
-<a class="jxr_linenumber" name="566" href="#566">566</a>             }
-<a class="jxr_linenumber" name="567" href="#567">567</a>             List values = prop instanceof List
-<a class="jxr_linenumber" name="568" href="#568">568</a>                     ? (List) prop
-<a class="jxr_linenumber" name="569" href="#569">569</a>                     : Lists.newArrayList(prop);
-<a class="jxr_linenumber" name="570" href="#570">570</a>             <strong class="jxr_keyword">for</strong> (Object value : values) {
-<a class="jxr_linenumber" name="571" href="#571">571</a>                 Element propElem = (Element) top.appendChild(doc.createElement(elemName));
-<a class="jxr_linenumber" name="572" href="#572">572</a>                 propElem.setTextContent(value.toString());
-<a class="jxr_linenumber" name="573" href="#573">573</a>             }
-<a class="jxr_linenumber" name="574" href="#574">574</a>         }
-<a class="jxr_linenumber" name="575" href="#575">575</a>     }
-<a class="jxr_linenumber" name="576" href="#576">576</a> 
-<a class="jxr_linenumber" name="577" href="#577">577</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> addPureTextElements(Document doc, Element parent, Description desc, String key, String path)
-<a class="jxr_linenumber" name="578" href="#578">578</a>             <strong class="jxr_keyword">throws</strong> IOException {
-<a class="jxr_linenumber" name="579" href="#579">579</a>         <strong class="jxr_keyword">for</strong> (Object prop : Optional.fromNullable(desc.getProperty(key)).asSet()) {
-<a class="jxr_linenumber" name="580" href="#580">580</a>             Element propElem = doc.createElement(path);
-<a class="jxr_linenumber" name="581" href="#581">581</a>             parent.appendChild(propElem);
-<a class="jxr_linenumber" name="582" href="#582">582</a>             createCDataElement(doc, propElem, <span class="jxr_string">"p"</span>, prop.toString());
-<a class="jxr_linenumber" name="583" href="#583">583</a>         }
-<a class="jxr_linenumber" name="584" href="#584">584</a>     }
-<a class="jxr_linenumber" name="585" href="#585">585</a> }
+<a class="jxr_linenumber" name="390" href="#390">390</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> addRevisionDesc(Document doc, Element controlElem, Described entity, Description desc) {
+<a class="jxr_linenumber" name="391" href="#391">391</a> 
+<a class="jxr_linenumber" name="392" href="#392">392</a>         Element mainHistElem = doc.createElement(<span class="jxr_string">"maintenanceHistory"</span>);
+<a class="jxr_linenumber" name="393" href="#393">393</a>         controlElem.appendChild(mainHistElem);
+<a class="jxr_linenumber" name="394" href="#394">394</a> 
+<a class="jxr_linenumber" name="395" href="#395">395</a>         <em class="jxr_comment">// Pre-ingest events</em>
+<a class="jxr_linenumber" name="396" href="#396">396</a>         List&lt;MaintenanceEvent&gt; maintenanceEvents = Lists
+<a class="jxr_linenumber" name="397" href="#397">397</a>                 .newArrayList(desc.getMaintenanceEvents());
+<a class="jxr_linenumber" name="398" href="#398">398</a>         <strong class="jxr_keyword">for</strong> (MaintenanceEvent event : maintenanceEvents) {
+<a class="jxr_linenumber" name="399" href="#399">399</a>             Element eventElem = doc.createElement(<span class="jxr_string">"maintenanceEvent"</span>);
+<a class="jxr_linenumber" name="400" href="#400">400</a> 
+<a class="jxr_linenumber" name="401" href="#401">401</a>             Element eventTypeElem = doc.createElement(<span class="jxr_string">"eventType"</span>);
+<a class="jxr_linenumber" name="402" href="#402">402</a>             eventTypeElem.setTextContent(event.getEventType().name());
+<a class="jxr_linenumber" name="403" href="#403">403</a>             eventElem.appendChild(eventTypeElem);
+<a class="jxr_linenumber" name="404" href="#404">404</a> 
+<a class="jxr_linenumber" name="405" href="#405">405</a>             Element eventDateTimeElem = doc.createElement(<span class="jxr_string">"eventDateTime"</span>);
+<a class="jxr_linenumber" name="406" href="#406">406</a>             <em class="jxr_comment">// TODO: Normalise and put standardDateTime attribute here?</em>
+<a class="jxr_linenumber" name="407" href="#407">407</a>             eventDateTimeElem.setTextContent((String) event.getProperty(<span class="jxr_string">"maintenanceEvent/date"</span>));
+<a class="jxr_linenumber" name="408" href="#408">408</a>             eventElem.appendChild(eventDateTimeElem);
+<a class="jxr_linenumber" name="409" href="#409">409</a> 
+<a class="jxr_linenumber" name="410" href="#410">410</a>             Element agentTypeElem = doc.createElement(<span class="jxr_string">"agentType"</span>);
+<a class="jxr_linenumber" name="411" href="#411">411</a>             agentTypeElem.setTextContent(MaintenanceEventAgentType.human.name());
+<a class="jxr_linenumber" name="412" href="#412">412</a>             eventElem.appendChild(agentTypeElem);
+<a class="jxr_linenumber" name="413" href="#413">413</a> 
+<a class="jxr_linenumber" name="414" href="#414">414</a>             Element agentElem = doc.createElement(<span class="jxr_string">"agent"</span>);
+<a class="jxr_linenumber" name="415" href="#415">415</a>             agentElem.setTextContent(<span class="jxr_string">"EHRI"</span>);
+<a class="jxr_linenumber" name="416" href="#416">416</a>             eventElem.appendChild(agentElem);
+<a class="jxr_linenumber" name="417" href="#417">417</a> 
+<a class="jxr_linenumber" name="418" href="#418">418</a>             String eventDesc = event.getProperty(<span class="jxr_string">"maintenanceEvent/source"</span>);
+<a class="jxr_linenumber" name="419" href="#419">419</a>             <strong class="jxr_keyword">if</strong> (eventDesc != <strong class="jxr_keyword">null</strong> &amp;&amp; !eventDesc.trim().isEmpty()) {
+<a class="jxr_linenumber" name="420" href="#420">420</a>                 Element eventDescElem = doc.createElement(<span class="jxr_string">"eventDescription"</span>);
+<a class="jxr_linenumber" name="421" href="#421">421</a>                 eventElem.appendChild(eventDescElem);
+<a class="jxr_linenumber" name="422" href="#422">422</a>                 eventDescElem.setTextContent(eventDesc);
+<a class="jxr_linenumber" name="423" href="#423">423</a>             }
+<a class="jxr_linenumber" name="424" href="#424">424</a> 
+<a class="jxr_linenumber" name="425" href="#425">425</a>             mainHistElem.appendChild(eventElem);
+<a class="jxr_linenumber" name="426" href="#426">426</a>         }
+<a class="jxr_linenumber" name="427" href="#427">427</a> 
+<a class="jxr_linenumber" name="428" href="#428">428</a>         <em class="jxr_comment">// Post-ingest events</em>
+<a class="jxr_linenumber" name="429" href="#429">429</a>         List&lt;List&lt;SystemEvent&gt;&gt; systemEvents = Lists.newArrayList(eventManager
+<a class="jxr_linenumber" name="430" href="#430">430</a>                 .aggregateForItem(entity, AnonymousAccessor.getInstance()));
+<a class="jxr_linenumber" name="431" href="#431">431</a>         <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = systemEvents.size() - 1; i &gt;= 0; i--) {
+<a class="jxr_linenumber" name="432" href="#432">432</a>             List&lt;SystemEvent&gt; agg = systemEvents.get(i);
+<a class="jxr_linenumber" name="433" href="#433">433</a>             SystemEvent event = agg.get(0);
+<a class="jxr_linenumber" name="434" href="#434">434</a> 
+<a class="jxr_linenumber" name="435" href="#435">435</a>             Element eventElem = doc.createElement(<span class="jxr_string">"maintenanceEvent"</span>);
+<a class="jxr_linenumber" name="436" href="#436">436</a> 
+<a class="jxr_linenumber" name="437" href="#437">437</a>             Element eventTypeElem = doc.createElement(<span class="jxr_string">"eventType"</span>);
+<a class="jxr_linenumber" name="438" href="#438">438</a>             eventTypeElem.setTextContent(MaintenanceEventType
+<a class="jxr_linenumber" name="439" href="#439">439</a>                     .fromSystemEventType(event.getEventType()).name());
+<a class="jxr_linenumber" name="440" href="#440">440</a>             eventElem.appendChild(eventTypeElem);
+<a class="jxr_linenumber" name="441" href="#441">441</a> 
+<a class="jxr_linenumber" name="442" href="#442">442</a>             Element eventDateTimeElem = doc.createElement(<span class="jxr_string">"eventDateTime"</span>);
+<a class="jxr_linenumber" name="443" href="#443">443</a>             DateTime dateTime = <strong class="jxr_keyword">new</strong> DateTime(event.getTimestamp());
+<a class="jxr_linenumber" name="444" href="#444">444</a>             eventDateTimeElem.setTextContent(DateTimeFormat.longDateTime().print(dateTime));
+<a class="jxr_linenumber" name="445" href="#445">445</a>             eventDateTimeElem.setAttribute(<span class="jxr_string">"standardDateTime"</span>, dateTime.toString());
+<a class="jxr_linenumber" name="446" href="#446">446</a>             eventElem.appendChild(eventDateTimeElem);
+<a class="jxr_linenumber" name="447" href="#447">447</a> 
+<a class="jxr_linenumber" name="448" href="#448">448</a>             Element agentTypeElem = doc.createElement(<span class="jxr_string">"agentType"</span>);
+<a class="jxr_linenumber" name="449" href="#449">449</a>             agentTypeElem.setTextContent(MaintenanceEventAgentType.human.name());
+<a class="jxr_linenumber" name="450" href="#450">450</a>             eventElem.appendChild(agentTypeElem);
+<a class="jxr_linenumber" name="451" href="#451">451</a> 
+<a class="jxr_linenumber" name="452" href="#452">452</a>             Element agentElem = doc.createElement(<span class="jxr_string">"agent"</span>);
+<a class="jxr_linenumber" name="453" href="#453">453</a>             <strong class="jxr_keyword">if</strong> (event.getActioner() != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="454" href="#454">454</a>                 agentElem.setTextContent(event.getActioner().getName());
+<a class="jxr_linenumber" name="455" href="#455">455</a>             }
+<a class="jxr_linenumber" name="456" href="#456">456</a>             eventElem.appendChild(agentElem);
+<a class="jxr_linenumber" name="457" href="#457">457</a> 
+<a class="jxr_linenumber" name="458" href="#458">458</a>             <strong class="jxr_keyword">if</strong> (event.getLogMessage() != <strong class="jxr_keyword">null</strong> &amp;&amp; !event.getLogMessage().isEmpty()) {
+<a class="jxr_linenumber" name="459" href="#459">459</a>                 Element eventDescElem = doc.createElement(<span class="jxr_string">"eventDescription"</span>);
+<a class="jxr_linenumber" name="460" href="#460">460</a>                 eventElem.appendChild(eventDescElem);
+<a class="jxr_linenumber" name="461" href="#461">461</a>                 eventDescElem.setTextContent(event.getLogMessage());
+<a class="jxr_linenumber" name="462" href="#462">462</a>             }
+<a class="jxr_linenumber" name="463" href="#463">463</a> 
+<a class="jxr_linenumber" name="464" href="#464">464</a>             mainHistElem.appendChild(eventElem);
+<a class="jxr_linenumber" name="465" href="#465">465</a>         }
+<a class="jxr_linenumber" name="466" href="#466">466</a> 
+<a class="jxr_linenumber" name="467" href="#467">467</a>         <em class="jxr_comment">// We must provide a default event</em>
+<a class="jxr_linenumber" name="468" href="#468">468</a>         <strong class="jxr_keyword">if</strong> (maintenanceEvents.isEmpty() &amp;&amp; systemEvents.isEmpty()) {
+<a class="jxr_linenumber" name="469" href="#469">469</a>             logger.debug(<span class="jxr_string">"No events found for element {}, using fallback"</span>, entity.getId());
+<a class="jxr_linenumber" name="470" href="#470">470</a>             Element eventElem = doc.createElement(<span class="jxr_string">"maintenanceEvent"</span>);
+<a class="jxr_linenumber" name="471" href="#471">471</a> 
+<a class="jxr_linenumber" name="472" href="#472">472</a>             Element eventTypeElem = doc.createElement(<span class="jxr_string">"eventType"</span>);
+<a class="jxr_linenumber" name="473" href="#473">473</a>             eventTypeElem.setTextContent(MaintenanceEventType.created.name());
+<a class="jxr_linenumber" name="474" href="#474">474</a>             eventElem.appendChild(eventTypeElem);
+<a class="jxr_linenumber" name="475" href="#475">475</a> 
+<a class="jxr_linenumber" name="476" href="#476">476</a>             Element eventDateTimeElem = doc.createElement(<span class="jxr_string">"eventDateTime"</span>);
+<a class="jxr_linenumber" name="477" href="#477">477</a>             DateTime dateTime = DateTime.now();
+<a class="jxr_linenumber" name="478" href="#478">478</a>             eventDateTimeElem.setTextContent(DateTimeFormat.longDateTime().print(dateTime));
+<a class="jxr_linenumber" name="479" href="#479">479</a>             eventDateTimeElem.setAttribute(<span class="jxr_string">"standardDateTime"</span>, dateTime.toString());
+<a class="jxr_linenumber" name="480" href="#480">480</a>             eventElem.appendChild(eventDateTimeElem);
+<a class="jxr_linenumber" name="481" href="#481">481</a> 
+<a class="jxr_linenumber" name="482" href="#482">482</a>             Element agentTypeElem = doc.createElement(<span class="jxr_string">"agentType"</span>);
+<a class="jxr_linenumber" name="483" href="#483">483</a>             agentTypeElem.setTextContent(MaintenanceEventAgentType.machine.name());
+<a class="jxr_linenumber" name="484" href="#484">484</a>             eventElem.appendChild(agentTypeElem);
+<a class="jxr_linenumber" name="485" href="#485">485</a> 
+<a class="jxr_linenumber" name="486" href="#486">486</a>             Element agentElem = doc.createElement(<span class="jxr_string">"agent"</span>);
+<a class="jxr_linenumber" name="487" href="#487">487</a>             agentElem.setTextContent(entity.getId());
+<a class="jxr_linenumber" name="488" href="#488">488</a>             eventElem.appendChild(agentElem);
+<a class="jxr_linenumber" name="489" href="#489">489</a> 
+<a class="jxr_linenumber" name="490" href="#490">490</a>             mainHistElem.appendChild(eventElem);
+<a class="jxr_linenumber" name="491" href="#491">491</a>         }
+<a class="jxr_linenumber" name="492" href="#492">492</a>     }
+<a class="jxr_linenumber" name="493" href="#493">493</a> 
+<a class="jxr_linenumber" name="494" href="#494">494</a>     <strong class="jxr_keyword">protected</strong> Optional&lt;String&gt; getLinkDescription(Link link) {
+<a class="jxr_linenumber" name="495" href="#495">495</a>         String desc = link.getDescription();
+<a class="jxr_linenumber" name="496" href="#496">496</a>         <strong class="jxr_keyword">if</strong> (desc == <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="497" href="#497">497</a>             <strong class="jxr_keyword">for</strong> (Accessible other : link.getLinkBodies()) {
+<a class="jxr_linenumber" name="498" href="#498">498</a>                 <strong class="jxr_keyword">if</strong> (other.getType().equals(Entities.ACCESS_POINT)) {
+<a class="jxr_linenumber" name="499" href="#499">499</a>                     AccessPoint ap = other.as(AccessPoint.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="500" href="#500">500</a>                     desc = ap.getProperty(<span class="jxr_string">"description"</span>);
+<a class="jxr_linenumber" name="501" href="#501">501</a>                 }
+<a class="jxr_linenumber" name="502" href="#502">502</a>             }
+<a class="jxr_linenumber" name="503" href="#503">503</a>         }
+<a class="jxr_linenumber" name="504" href="#504">504</a>         <strong class="jxr_keyword">if</strong> (desc != <strong class="jxr_keyword">null</strong> &amp;&amp; !desc.trim().isEmpty()) {
+<a class="jxr_linenumber" name="505" href="#505">505</a>             <strong class="jxr_keyword">return</strong> Optional.of(desc);
+<a class="jxr_linenumber" name="506" href="#506">506</a>         }
+<a class="jxr_linenumber" name="507" href="#507">507</a>         <strong class="jxr_keyword">return</strong> Optional.absent();
+<a class="jxr_linenumber" name="508" href="#508">508</a>     }
+<a class="jxr_linenumber" name="509" href="#509">509</a> 
+<a class="jxr_linenumber" name="510" href="#510">510</a>     <strong class="jxr_keyword">protected</strong> Optional&lt;String&gt; getLinkName(Described entity,
+<a class="jxr_linenumber" name="511" href="#511">511</a>             Description description, Link link, String lang) {
+<a class="jxr_linenumber" name="512" href="#512">512</a>         <strong class="jxr_keyword">for</strong> (Accessible other : link.getLinkBodies()) {
+<a class="jxr_linenumber" name="513" href="#513">513</a>             <em class="jxr_comment">// We only use an access point body for the name of this link</em>
+<a class="jxr_linenumber" name="514" href="#514">514</a>             <em class="jxr_comment">// if the access point is on the current entity (otherwise the</em>
+<a class="jxr_linenumber" name="515" href="#515">515</a>             <em class="jxr_comment">// link will have the same name as our current item.)</em>
+<a class="jxr_linenumber" name="516" href="#516">516</a>             <strong class="jxr_keyword">if</strong> (other.getType().equals(Entities.ACCESS_POINT)) {
+<a class="jxr_linenumber" name="517" href="#517">517</a>                 AccessPoint ap = other.as(AccessPoint.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="518" href="#518">518</a>                 <strong class="jxr_keyword">for</strong> (AccessPoint outAp : description.getAccessPoints()) {
+<a class="jxr_linenumber" name="519" href="#519">519</a>                     <strong class="jxr_keyword">if</strong> (outAp.equals(ap)) {
+<a class="jxr_linenumber" name="520" href="#520">520</a>                         <strong class="jxr_keyword">return</strong> Optional.of(ap.getName());
+<a class="jxr_linenumber" name="521" href="#521">521</a>                     }
+<a class="jxr_linenumber" name="522" href="#522">522</a>                 }
+<a class="jxr_linenumber" name="523" href="#523">523</a>             }
+<a class="jxr_linenumber" name="524" href="#524">524</a>         }
+<a class="jxr_linenumber" name="525" href="#525">525</a>         <strong class="jxr_keyword">for</strong> (Accessible other : link.getLinkTargets()) {
+<a class="jxr_linenumber" name="526" href="#526">526</a>             <strong class="jxr_keyword">if</strong> (!other.equals(entity)) {
+<a class="jxr_linenumber" name="527" href="#527">527</a>                 <strong class="jxr_keyword">return</strong> Optional.of(getEntityName(other.as(Described.<strong class="jxr_keyword">class</strong>), lang));
+<a class="jxr_linenumber" name="528" href="#528">528</a>             }
+<a class="jxr_linenumber" name="529" href="#529">529</a>         }
+<a class="jxr_linenumber" name="530" href="#530">530</a> 
+<a class="jxr_linenumber" name="531" href="#531">531</a>         <strong class="jxr_keyword">return</strong> Optional.absent();
+<a class="jxr_linenumber" name="532" href="#532">532</a>     }
+<a class="jxr_linenumber" name="533" href="#533">533</a> 
+<a class="jxr_linenumber" name="534" href="#534">534</a>     <strong class="jxr_keyword">protected</strong> Optional&lt;String&gt; getLinkEntityId(Described entity, Link link) {
+<a class="jxr_linenumber" name="535" href="#535">535</a>         <strong class="jxr_keyword">for</strong> (Accessible other : link.getLinkTargets()) {
+<a class="jxr_linenumber" name="536" href="#536">536</a>             <strong class="jxr_keyword">if</strong> (!other.equals(entity)) {
+<a class="jxr_linenumber" name="537" href="#537">537</a>                 <strong class="jxr_keyword">return</strong> Optional.of(other.getId());
+<a class="jxr_linenumber" name="538" href="#538">538</a>             }
+<a class="jxr_linenumber" name="539" href="#539">539</a>         }
+<a class="jxr_linenumber" name="540" href="#540">540</a>         <strong class="jxr_keyword">return</strong> Optional.absent();
+<a class="jxr_linenumber" name="541" href="#541">541</a>     }
+<a class="jxr_linenumber" name="542" href="#542">542</a> 
+<a class="jxr_linenumber" name="543" href="#543">543</a>     <strong class="jxr_keyword">protected</strong> String getEntityName(Described entity, String lang) {
+<a class="jxr_linenumber" name="544" href="#544">544</a>         <strong class="jxr_keyword">return</strong> LanguageHelpers.getBestDescription(entity, lang).transform(<strong class="jxr_keyword">new</strong> Function&lt;Description, String&gt;() {
+<a class="jxr_linenumber" name="545" href="#545">545</a>             @Override
+<a class="jxr_linenumber" name="546" href="#546">546</a>             <strong class="jxr_keyword">public</strong> String apply(Description description) {
+<a class="jxr_linenumber" name="547" href="#547">547</a>                 <strong class="jxr_keyword">return</strong> description.getName();
+<a class="jxr_linenumber" name="548" href="#548">548</a>             }
+<a class="jxr_linenumber" name="549" href="#549">549</a>         }).or(entity.getIdentifier()); <em class="jxr_comment">// Fallback</em>
+<a class="jxr_linenumber" name="550" href="#550">550</a>     }
+<a class="jxr_linenumber" name="551" href="#551">551</a> 
+<a class="jxr_linenumber" name="552" href="#552">552</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> addTextElements(Document doc, Element parent, Description desc, String key, String path)
+<a class="jxr_linenumber" name="553" href="#553">553</a>             <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="554" href="#554">554</a>         <strong class="jxr_keyword">for</strong> (Object prop : Optional.fromNullable(desc.getProperty(key)).asSet()) {
+<a class="jxr_linenumber" name="555" href="#555">555</a>             String elemName = path;
+<a class="jxr_linenumber" name="556" href="#556">556</a>             Element top = parent;
+<a class="jxr_linenumber" name="557" href="#557">557</a>             <strong class="jxr_keyword">if</strong> (elemName.contains(<span class="jxr_string">"/"</span>)) {
+<a class="jxr_linenumber" name="558" href="#558">558</a>                 List&lt;String&gt; strings = Splitter.on(<span class="jxr_string">"/"</span>).splitToList(elemName);
+<a class="jxr_linenumber" name="559" href="#559">559</a>                 <strong class="jxr_keyword">for</strong> (<strong class="jxr_keyword">int</strong> i = 0; i &lt; strings.size() - 1; i++) {
+<a class="jxr_linenumber" name="560" href="#560">560</a>                     Element next = doc.createElement(strings.get(i));
+<a class="jxr_linenumber" name="561" href="#561">561</a>                     top.appendChild(next);
+<a class="jxr_linenumber" name="562" href="#562">562</a>                     top = next;
+<a class="jxr_linenumber" name="563" href="#563">563</a>                 }
+<a class="jxr_linenumber" name="564" href="#564">564</a>                 elemName = strings.get(strings.size() - 1);
+<a class="jxr_linenumber" name="565" href="#565">565</a>             }
+<a class="jxr_linenumber" name="566" href="#566">566</a>             List values = prop instanceof List
+<a class="jxr_linenumber" name="567" href="#567">567</a>                     ? (List) prop
+<a class="jxr_linenumber" name="568" href="#568">568</a>                     : Lists.newArrayList(prop);
+<a class="jxr_linenumber" name="569" href="#569">569</a>             <strong class="jxr_keyword">for</strong> (Object value : values) {
+<a class="jxr_linenumber" name="570" href="#570">570</a>                 Element propElem = (Element) top.appendChild(doc.createElement(elemName));
+<a class="jxr_linenumber" name="571" href="#571">571</a>                 propElem.setTextContent(value.toString());
+<a class="jxr_linenumber" name="572" href="#572">572</a>             }
+<a class="jxr_linenumber" name="573" href="#573">573</a>         }
+<a class="jxr_linenumber" name="574" href="#574">574</a>     }
+<a class="jxr_linenumber" name="575" href="#575">575</a> 
+<a class="jxr_linenumber" name="576" href="#576">576</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> addPureTextElements(Document doc, Element parent, Description desc, String key, String path)
+<a class="jxr_linenumber" name="577" href="#577">577</a>             <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="578" href="#578">578</a>         <strong class="jxr_keyword">for</strong> (Object prop : Optional.fromNullable(desc.getProperty(key)).asSet()) {
+<a class="jxr_linenumber" name="579" href="#579">579</a>             Element propElem = doc.createElement(path);
+<a class="jxr_linenumber" name="580" href="#580">580</a>             parent.appendChild(propElem);
+<a class="jxr_linenumber" name="581" href="#581">581</a>             createCDataElement(doc, propElem, <span class="jxr_string">"p"</span>, prop.toString());
+<a class="jxr_linenumber" name="582" href="#582">582</a>         }
+<a class="jxr_linenumber" name="583" href="#583">583</a>     }
+<a class="jxr_linenumber" name="584" href="#584">584</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

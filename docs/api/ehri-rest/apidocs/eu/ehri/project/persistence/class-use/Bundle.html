@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Class eu.ehri.project.persistence.Bundle (EHRI Backend 0.12.0-SNAPSHOT API)</title>
+<title>Uses of Class eu.ehri.project.persistence.Bundle (EHRI Backend 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class eu.ehri.project.persistence.Bundle (EHRI Backend 0.12.0-SNAPSHOT API)";
+        parent.document.title="Uses of Class eu.ehri.project.persistence.Bundle (EHRI Backend 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -103,31 +103,32 @@
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="#eu.ehri.project.importers">eu.ehri.project.importers</a></td>
-<td class="colLast">
-<div class="block">Handlers and Importers and supporting classes to import files into
- the database.</div>
-</td>
+<td class="colFirst"><a href="#eu.ehri.project.importers.eac">eu.ehri.project.importers.eac</a></td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.ead">eu.ehri.project.importers.ead</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="#eu.ehri.project.models.idgen">eu.ehri.project.models.idgen</a></td>
 <td class="colLast">
 <div class="block">Classes that handle the generation of string
  identifiers for different kinds of resource.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.persistence">eu.ehri.project.persistence</a></td>
 <td class="colLast">
 <div class="block">Classes dealing with persistence of
  relational item data in sub-tree format.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#eu.ehri.project.persistence.utils">eu.ehri.project.persistence.utils</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.views">eu.ehri.project.views</a></td>
 <td class="colLast">
 <div class="block">Classes that provide data access &quot;views&quot; on the
@@ -135,7 +136,7 @@
  systems.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#eu.ehri.project.views.impl">eu.ehri.project.views.impl</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -157,12 +158,12 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">AuthoritativeSetResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#create(eu.ehri.project.persistence.Bundle,%20java.util.List)">create</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+<td class="colLast"><span class="strong">CountryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CountryResource.html#create(eu.ehri.project.persistence.Bundle,%20java.util.List)">create</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">HistoricalAgentResource.</span><code><strong><a href="../../../../../eu/ehri/extension/HistoricalAgentResource.html#create(eu.ehri.project.persistence.Bundle,%20java.util.List)">create</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+<td class="colLast"><span class="strong">AuthoritativeSetResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#create(eu.ehri.project.persistence.Bundle,%20java.util.List)">create</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -172,41 +173,60 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">CountryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CountryResource.html#create(eu.ehri.project.persistence.Bundle,%20java.util.List)">create</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+<td class="colLast"><span class="strong">HistoricalAgentResource.</span><code><strong><a href="../../../../../eu/ehri/extension/HistoricalAgentResource.html#create(eu.ehri.project.persistence.Bundle,%20java.util.List)">create</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">DescriptionResource.</span><code><strong><a href="../../../../../eu/ehri/extension/DescriptionResource.html#createAccessPoint(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle)">createAccessPoint</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;did,
-                 <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">LinkResource.</span><code><strong><a href="../../../../../eu/ehri/extension/LinkResource.html#create(eu.ehri.project.persistence.Bundle,%20java.lang.String,%20java.lang.String,%20java.util.List,%20java.util.List)">create</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;source,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;target,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;bodies,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>
+<div class="block">Create a link between two items.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">AnnotationResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AnnotationResource.html#createAnnotationFor(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">createAnnotationFor</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-                   <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-                   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>
-<div class="block">Create an annotation for a particular item.</div>
+<td class="colLast"><span class="strong">GenericResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GenericResource.html#createAccessPoint(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle)">createAccessPoint</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+                 <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;did,
+                 <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
+<div class="block">Create an access point on the given description, for the given
+ parent item.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">AnnotationResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AnnotationResource.html#createAnnotationFor(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">createAnnotationFor</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;did,
-                   <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-                   <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>
-<div class="block">Create an annotation for a dependent node on a given item.</div>
+<td class="colLast"><span class="strong">AnnotationResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AnnotationResource.html#createAnnotation(java.lang.String,%20java.lang.String,%20java.util.List,%20eu.ehri.project.persistence.Bundle)">createAnnotation</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;did,
+                <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors,
+                <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
+<div class="block">Create an annotation for a particular item.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">CountryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CountryResource.html#createChild(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">createChild</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+           <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>
+<div class="block">Create a top-level repository unit for this country.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">AuthoritativeSetResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#createChild(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">createChild</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
            <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VocabularyResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VocabularyResource.html#createChild(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">createChild</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+           <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">CvocConceptResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CvocConceptResource.html#createChild(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">createChild</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
            <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>&nbsp;</td>
 </tr>
@@ -226,20 +246,6 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">CountryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CountryResource.html#createChild(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">createChild</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-           <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>
-<div class="block">Create a top-level repository unit for this country.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">CvocConceptResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CvocConceptResource.html#createChild(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">createChild</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-           <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VirtualUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VirtualUnitResource.html#createChildVirtualUnit(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.util.List,%20java.util.List)">createChildVirtualUnit</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
                       <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors,
@@ -247,8 +253,10 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">DescriptionResource.</span><code><strong><a href="../../../../../eu/ehri/extension/DescriptionResource.html#createDescription(java.lang.String,%20eu.ehri.project.persistence.Bundle)">createDescription</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-                 <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">GenericResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GenericResource.html#createDescription(java.lang.String,%20eu.ehri.project.persistence.Bundle)">createDescription</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+                 <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
+<div class="block">Create a new description for this item.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
@@ -258,29 +266,44 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">LinkResource.</span><code><strong><a href="../../../../../eu/ehri/extension/LinkResource.html#createLinkFor(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.util.List,%20java.util.List)">createLinkFor</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId,
-             <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;sourceId,
-             <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-             <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;bodies,
-             <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>
-<div class="block">Create a link between two items.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">VirtualUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VirtualUnitResource.html#createTopLevelVirtualUnit(eu.ehri.project.persistence.Bundle,%20java.util.List,%20java.util.List)">createTopLevelVirtualUnit</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
                          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors,
                          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;includedIds)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">UserProfileResource.</span><code><strong><a href="../../../../../eu/ehri/extension/UserProfileResource.html#createUserProfile(eu.ehri.project.persistence.Bundle,%20java.util.List,%20java.util.List)">createUserProfile</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
                  <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;groupIds,
                  <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;accessors)</code>&nbsp;</td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">GroupResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GroupResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+</tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">VirtualUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VirtualUnitResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<td class="colLast"><span class="strong">CountryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CountryResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">AnnotationResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AnnotationResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">AuthoritativeSetResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">VocabularyResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VocabularyResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">CvocConceptResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CvocConceptResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -290,7 +313,17 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">AuthoritativeSetResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AuthoritativeSetResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<td class="colLast"><span class="strong">RepositoryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/RepositoryResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">DocumentaryUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/DocumentaryUnitResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
+<td class="colLast"><span class="strong">VirtualUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VirtualUnitResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -305,49 +338,18 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">VocabularyResource.</span><code><strong><a href="../../../../../eu/ehri/extension/VocabularyResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+<td class="colLast"><span class="strong">GenericResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GenericResource.html#updateDescription(java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateDescription</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+                 <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
+<div class="block">Update a description belonging to the given item.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">RepositoryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/RepositoryResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">GroupResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GroupResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">DocumentaryUnitResource.</span><code><strong><a href="../../../../../eu/ehri/extension/DocumentaryUnitResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">CountryResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CountryResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">AnnotationResource.</span><code><strong><a href="../../../../../eu/ehri/extension/AnnotationResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">CvocConceptResource.</span><code><strong><a href="../../../../../eu/ehri/extension/CvocConceptResource.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">DescriptionResource.</span><code><strong><a href="../../../../../eu/ehri/extension/DescriptionResource.html#updateDescription(java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateDescription</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-                 <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
-<td class="colLast"><span class="strong">DescriptionResource.</span><code><strong><a href="../../../../../eu/ehri/extension/DescriptionResource.html#updateDescriptionWithId(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateDescriptionWithId</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+<td class="colLast"><span class="strong">GenericResource.</span><code><strong><a href="../../../../../eu/ehri/extension/GenericResource.html#updateDescriptionWithId(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateDescriptionWithId</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
                        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;did,
-                       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+                       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
+<div class="block">Update a description with the given ID, belonging to the given parent item.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -417,7 +419,10 @@
 <td class="colFirst"><code>javax.ws.rs.core.Response</code></td>
 <td class="colLast"><span class="strong">AbstractAccessibleResource.</span><code><strong><a href="../../../../../eu/ehri/extension/base/AbstractAccessibleResource.html#updateItem(java.lang.String,%20eu.ehri.project.persistence.Bundle)">updateItem</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
           <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;rawBundle)</code>
-<div class="block">Update (change) an instance of the 'entity' in the database</div>
+<div class="block">Update (change) an instance of the 'entity' in the database
+ <p/>
+ If the Patch header is true top-level bundle data will be merged
+ instead of overwritten.</div>
 </td>
 </tr>
 </tbody>
@@ -527,12 +532,31 @@
 </tbody>
 </table>
 </li>
-<li class="blockList"><a name="eu.ehri.project.importers">
+<li class="blockList"><a name="eu.ehri.project.importers.eac">
 <!--   -->
 </a>
-<h3>Uses of <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a> in <a href="../../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a></h3>
+<h3>Uses of <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a> in <a href="../../../../../eu/ehri/project/importers/eac/package-summary.html">eu.ehri.project.importers.eac</a></h3>
 <table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
-<caption><span>Methods in <a href="../../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> that return <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>Methods in <a href="../../../../../eu/ehri/project/importers/eac/package-summary.html">eu.ehri.project.importers.eac</a> with parameters of type <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><span class="strong">EacImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/eac/EacImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.HistoricalAgent,%20eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</a></strong>(<a href="../../../../../eu/ehri/project/models/HistoricalAgent.html" title="interface in eu.ehri.project.models">HistoricalAgent</a>&nbsp;unit,
+                              <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.ead">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a> in <a href="../../../../../eu/ehri/project/importers/ead/package-summary.html">eu.ehri.project.importers.ead</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../eu/ehri/project/importers/ead/package-summary.html">eu.ehri.project.importers.ead</a> that return <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -540,7 +564,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
-<td class="colLast"><span class="strong">AraEadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/AraEadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
+<td class="colLast"><span class="strong">AraEadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/ead/AraEadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
                         <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
 <div class="block">finds any bundle in the graph with the same ObjectIdentifier.</div>
@@ -548,7 +572,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
-<td class="colLast"><span class="strong">EadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/EadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
+<td class="colLast"><span class="strong">EadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/ead/EadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
                         <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
 <div class="block">Finds any bundle in the graph with the same ObjectIdentifier.</div>
@@ -556,7 +580,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
-<td class="colLast"><span class="strong">IcaAtomEadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/IcaAtomEadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
+<td class="colLast"><span class="strong">IcaAtomEadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/ead/IcaAtomEadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
                         <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
 <div class="block">finds any bundle in the graph with the same ObjectIdentifier.</div>
@@ -565,7 +589,7 @@
 </tbody>
 </table>
 <table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
-<caption><span>Methods in <a href="../../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> with parameters of type <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>Methods in <a href="../../../../../eu/ehri/project/importers/ead/package-summary.html">eu.ehri.project.importers.ead</a> with parameters of type <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -573,7 +597,7 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
-<td class="colLast"><span class="strong">AraEadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/AraEadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
+<td class="colLast"><span class="strong">AraEadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/ead/AraEadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
                         <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
 <div class="block">finds any bundle in the graph with the same ObjectIdentifier.</div>
@@ -581,7 +605,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
-<td class="colLast"><span class="strong">EadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/EadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
+<td class="colLast"><span class="strong">EadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/ead/EadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
                         <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
 <div class="block">Finds any bundle in the graph with the same ObjectIdentifier.</div>
@@ -589,7 +613,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
-<td class="colLast"><span class="strong">IcaAtomEadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/IcaAtomEadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
+<td class="colLast"><span class="strong">IcaAtomEadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/ead/IcaAtomEadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;unit,
                         <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle,
                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;idPath)</code>
 <div class="block">finds any bundle in the graph with the same ObjectIdentifier.</div>
@@ -597,7 +621,7 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><span class="strong">EadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/EadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit,%20eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</a></strong>(<a href="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a>&nbsp;unit,
+<td class="colLast"><span class="strong">EadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/ead/EadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit,%20eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</a></strong>(<a href="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a>&nbsp;unit,
                               <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle)</code>
 <div class="block">subclasses can override this method to cater to their special needs for UndeterminedRelationships
  by default, it expects something like this in the original EAD:
@@ -606,12 +630,7 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><span class="strong">IcaAtomEadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/IcaAtomEadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit,%20eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</a></strong>(<a href="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a>&nbsp;frame,
-                              <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><span class="strong">EacImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/EacImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.HistoricalAgent,%20eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</a></strong>(<a href="../../../../../eu/ehri/project/models/HistoricalAgent.html" title="interface in eu.ehri.project.models">HistoricalAgent</a>&nbsp;unit,
+<td class="colLast"><span class="strong">IcaAtomEadImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/ead/IcaAtomEadImporter.html#solveUndeterminedRelationships(eu.ehri.project.models.DocumentaryUnit,%20eu.ehri.project.persistence.Bundle)">solveUndeterminedRelationships</a></strong>(<a href="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a>&nbsp;frame,
                               <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;descBundle)</code>&nbsp;</td>
 </tr>
 </tbody>
@@ -884,23 +903,27 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><code>static com.tinkerpop.blueprints.CloseableIterable&lt;<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&gt;</code></td>
+<td class="colLast"><span class="strong">Bundle.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/Bundle.html#bundleStream(java.io.InputStream)">bundleStream</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;inputStream)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>com.google.common.collect.Multimap&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&gt;</code></td>
 <td class="colLast"><span class="strong">Bundle.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/Bundle.html#getDependentRelations()">getDependentRelations</a></strong>()</code>
 <div class="block">Get only the bundle's relations which have a dependent
  relationship.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>com.google.common.base.Optional&lt;<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&gt;</code></td>
 <td class="colLast"><span class="strong">Mutation.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/Mutation.html#getPrior()">getPrior</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>com.google.common.collect.Multimap&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&gt;</code></td>
 <td class="colLast"><span class="strong">Bundle.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/Bundle.html#getRelations()">getRelations</a></strong>()</code>
 <div class="block">Get the bundle's relation bundles.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&gt;</code></td>
 <td class="colLast"><span class="strong">Bundle.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/Bundle.html#getRelations(java.lang.String)">getRelations</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;relation)</code>
 <div class="block">Get a set of relations.</div>
@@ -922,14 +945,14 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br>T</code></td>
-<td class="colLast"><span class="strong">BundleDAO.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleDAO.html#create(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">create</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+<td class="colLast"><span class="strong">BundleManager.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleManager.html#create(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">create</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Entry-point for creating a bundle.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br><a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;T&gt;</code></td>
-<td class="colLast"><span class="strong">BundleDAO.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleDAO.html#createOrUpdate(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">createOrUpdate</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+<td class="colLast"><span class="strong">BundleManager.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleManager.html#createOrUpdate(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">createOrUpdate</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Entry point for creating or updating a bundle, depending on whether it has a supplied id.</div>
 </td>
@@ -943,17 +966,21 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
-<td class="colLast"><span class="strong">BundleDAO.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleDAO.html#delete(eu.ehri.project.persistence.Bundle)">delete</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
+<td class="colLast"><span class="strong">BundleManager.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleManager.html#delete(eu.ehri.project.persistence.Bundle)">delete</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
 <div class="block">Delete a bundle and dependent items, returning the total number of vertices deleted.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../eu/ehri/project/persistence/Bundle.Builder.html" title="class in eu.ehri.project.persistence">Bundle.Builder</a></code></td>
+<td class="colLast"><span class="strong">Bundle.Builder.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/Bundle.Builder.html#from(eu.ehri.project.persistence.Bundle)">from</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
 <td class="colLast"><span class="strong">Bundle.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/Bundle.html#mergeDataWith(eu.ehri.project.persistence.Bundle)">mergeDataWith</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;otherBundle)</code>
 <div class="block">Merge this bundle's data with that of another.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><span class="strong">Bundle.Filter.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/Bundle.Filter.html#remove(java.lang.String,%20eu.ehri.project.persistence.Bundle)">remove</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;relationLabel,
       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
@@ -961,35 +988,35 @@
  match this predicate.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
 <td class="colLast"><span class="strong">Bundle.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/Bundle.html#removeRelation(java.lang.String,%20eu.ehri.project.persistence.Bundle)">removeRelation</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;relation,
               <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;item)</code>
 <div class="block">Remove a single relation.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br><a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;T&gt;</code></td>
-<td class="colLast"><span class="strong">BundleDAO.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleDAO.html#update(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">update</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+<td class="colLast"><span class="strong">BundleManager.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleManager.html#update(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">update</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls)</code>
 <div class="block">Entry-point for updating a bundle.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
 <td class="colLast"><span class="strong">BundleValidator.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleValidator.html#validateForCreate(eu.ehri.project.persistence.Bundle)">validateForCreate</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
 <div class="block">Validate the data in the bundle, according to the target class, and
  ensure it is fit for creating in the graph.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
 <td class="colLast"><span class="strong">BundleValidator.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/BundleValidator.html#validateForUpdate(eu.ehri.project.persistence.Bundle)">validateForUpdate</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle)</code>
 <div class="block">Validate the data in the bundle, according to the target class, and
  ensure it is fit for updating in the graph.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></code></td>
 <td class="colLast"><span class="strong">Bundle.</span><code><strong><a href="../../../../../eu/ehri/project/persistence/Bundle.html#withRelation(java.lang.String,%20eu.ehri.project.persistence.Bundle)">withRelation</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;relation,
             <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;other)</code>
@@ -1234,40 +1261,44 @@
 <td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;<br>T</code></td>
 <td class="colLast"><span class="strong">DescriptionViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/DescriptionViews.html#create(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.lang.Class,%20eu.ehri.project.models.base.Accessor,%20com.google.common.base.Optional)">create</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;parentId,
       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;data,
-      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;descriptionClass,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls,
       <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user,
-      com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>&nbsp;</td>
+      com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>
+<div class="block">Create a dependent item, belonging to the given parent.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</a></code></td>
+<td class="colLast"><span class="strong">AnnotationViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/AnnotationViews.html#create(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">create</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;did,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+      <a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)</code>
+<div class="block">Create an annotation for a dependent node of an item.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></code></td>
+<td class="colLast"><span class="strong">LinkViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/LinkViews.html#create(java.lang.String,%20java.lang.String,%20java.util.List,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">create</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId2,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;bodies,
+      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+      <a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)</code>
+<div class="block">Create a link between two items.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></code></td>
-<td class="colLast"><span class="strong">LinkViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/LinkViews.html#createAccessPointLink(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">createAccessPointLink</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
+<td class="colLast"><span class="strong">LinkViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/LinkViews.html#createAccessPointLink(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">createAccessPointLink</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId2,
                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;descriptionId,
                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bodyName,
                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bodyType,
                      <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-                     <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)</code>
+                     <a href="../../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)</code>
 <div class="block">Create a link between two items, along with an access point on the given description.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</a></code></td>
-<td class="colLast"><span class="strong">AnnotationViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/AnnotationViews.html#createFor(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor,%20java.util.Collection)">createFor</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;id,
-         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;did,
-         <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-         <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user,
-         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)</code>
-<div class="block">Create an annotation for a dependent node of an item.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></code></td>
-<td class="colLast"><span class="strong">LinkViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/LinkViews.html#createLink(java.lang.String,%20java.lang.String,%20java.util.List,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">createLink</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId2,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;bodies,
-          <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-          <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)</code>
-<div class="block">Create a link between two items.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1284,9 +1315,11 @@
 <td class="colFirst"><code>&lt;T extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;<br><a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;T&gt;</code></td>
 <td class="colLast"><span class="strong">DescriptionViews.</span><code><strong><a href="../../../../../eu/ehri/project/views/DescriptionViews.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.lang.Class,%20eu.ehri.project.models.base.Accessor,%20com.google.common.base.Optional)">update</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;parentId,
       <a href="../../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;data,
-      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;descriptionClass,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;T&gt;&nbsp;cls,
       <a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user,
-      com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>&nbsp;</td>
+      com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>
+<div class="block">Update a dependent item, belonging to the given parent.</div>
+</td>
 </tr>
 </tbody>
 </table>

@@ -19,18 +19,18 @@
 <a class="jxr_linenumber" name="9" href="#9">9</a>   
 <a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclVertex.html">AclVertex</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclElement.html">AclElement</a> <strong class="jxr_keyword">implements</strong> Vertex {
 <a class="jxr_linenumber" name="11" href="#11">11</a>  
-<a class="jxr_linenumber" name="12" href="#12">12</a>      <strong class="jxr_keyword">protected</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclVertex.html">AclVertex</a>(Vertex baseVertex, AclGraph&lt;?&gt; graph) {
-<a class="jxr_linenumber" name="13" href="#13">13</a>          <strong class="jxr_keyword">super</strong>(baseVertex, graph);
+<a class="jxr_linenumber" name="12" href="#12">12</a>      <strong class="jxr_keyword">protected</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclVertex.html">AclVertex</a>(Vertex baseVertex, AclGraph&lt;?&gt; aclGraph) {
+<a class="jxr_linenumber" name="13" href="#13">13</a>          <strong class="jxr_keyword">super</strong>(baseVertex, aclGraph);
 <a class="jxr_linenumber" name="14" href="#14">14</a>      }
 <a class="jxr_linenumber" name="15" href="#15">15</a>  
 <a class="jxr_linenumber" name="16" href="#16">16</a>      @Override
 <a class="jxr_linenumber" name="17" href="#17">17</a>      <strong class="jxr_keyword">public</strong> Iterable&lt;Edge&gt; getEdges(Direction direction, String... strings) {
-<a class="jxr_linenumber" name="18" href="#18">18</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclEdgeIterable.html">AclEdgeIterable</a>(((Vertex)<strong class="jxr_keyword">this</strong>.baseElement).getEdges(direction, strings), <strong class="jxr_keyword">this</strong>.graph);
+<a class="jxr_linenumber" name="18" href="#18">18</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclEdgeIterable.html">AclEdgeIterable</a>(((Vertex) <strong class="jxr_keyword">this</strong>.baseElement).getEdges(direction, strings), aclGraph);
 <a class="jxr_linenumber" name="19" href="#19">19</a>      }
 <a class="jxr_linenumber" name="20" href="#20">20</a>  
 <a class="jxr_linenumber" name="21" href="#21">21</a>      @Override
 <a class="jxr_linenumber" name="22" href="#22">22</a>      <strong class="jxr_keyword">public</strong> Iterable&lt;Vertex&gt; getVertices(Direction direction, String... strings) {
-<a class="jxr_linenumber" name="23" href="#23">23</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclVertexIterable.html">AclVertexIterable</a>(((Vertex)<strong class="jxr_keyword">this</strong>.baseElement).getVertices(direction, strings), <strong class="jxr_keyword">this</strong>.graph);
+<a class="jxr_linenumber" name="23" href="#23">23</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclVertexIterable.html">AclVertexIterable</a>(((Vertex) <strong class="jxr_keyword">this</strong>.baseElement).getVertices(direction, strings), aclGraph);
 <a class="jxr_linenumber" name="24" href="#24">24</a>      }
 <a class="jxr_linenumber" name="25" href="#25">25</a>  
 <a class="jxr_linenumber" name="26" href="#26">26</a>      @Override
@@ -38,7 +38,7 @@
 <a class="jxr_linenumber" name="28" href="#28">28</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> WrapperVertexQuery(((Vertex) <strong class="jxr_keyword">this</strong>.baseElement).query()) {
 <a class="jxr_linenumber" name="29" href="#29">29</a>              @Override
 <a class="jxr_linenumber" name="30" href="#30">30</a>              <strong class="jxr_keyword">public</strong> Iterable&lt;Vertex&gt; vertices() {
-<a class="jxr_linenumber" name="31" href="#31">31</a>                  <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclVertexIterable.html">AclVertexIterable</a>(<strong class="jxr_keyword">this</strong>.query.vertices(), graph);
+<a class="jxr_linenumber" name="31" href="#31">31</a>                  <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/acl/wrapper/AclVertexIterable.html">AclVertexIterable</a>(<strong class="jxr_keyword">this</strong>.query.vertices(), aclGraph);
 <a class="jxr_linenumber" name="32" href="#32">32</a>              }
 <a class="jxr_linenumber" name="33" href="#33">33</a>  
 <a class="jxr_linenumber" name="34" href="#34">34</a>              @Override
@@ -50,13 +50,18 @@
 <a class="jxr_linenumber" name="40" href="#40">40</a>  
 <a class="jxr_linenumber" name="41" href="#41">41</a>      @Override
 <a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">public</strong> Edge addEdge(String label, Vertex vertex) {
-<a class="jxr_linenumber" name="43" href="#43">43</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>.graph.addEdge(<strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">this</strong>, vertex, label);
+<a class="jxr_linenumber" name="43" href="#43">43</a>          <strong class="jxr_keyword">return</strong> aclGraph.addEdge(<strong class="jxr_keyword">null</strong>, <strong class="jxr_keyword">this</strong>, vertex, label);
 <a class="jxr_linenumber" name="44" href="#44">44</a>      }
 <a class="jxr_linenumber" name="45" href="#45">45</a>  
 <a class="jxr_linenumber" name="46" href="#46">46</a>      <strong class="jxr_keyword">public</strong> Vertex getBaseVertex() {
 <a class="jxr_linenumber" name="47" href="#47">47</a>          <strong class="jxr_keyword">return</strong> (Vertex) <strong class="jxr_keyword">this</strong>.baseElement;
 <a class="jxr_linenumber" name="48" href="#48">48</a>      }
-<a class="jxr_linenumber" name="49" href="#49">49</a>  }
+<a class="jxr_linenumber" name="49" href="#49">49</a>  
+<a class="jxr_linenumber" name="50" href="#50">50</a>      @Override
+<a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">public</strong> String toString() {
+<a class="jxr_linenumber" name="52" href="#52">52</a>          <strong class="jxr_keyword">return</strong> <span class="jxr_string">"aclvertex("</span> + aclGraph.getAccessor().getId() + <span class="jxr_string">")["</span> + getBaseVertex() + <span class="jxr_string">"]"</span>;
+<a class="jxr_linenumber" name="53" href="#53">53</a>      }
+<a class="jxr_linenumber" name="54" href="#54">54</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

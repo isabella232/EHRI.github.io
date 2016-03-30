@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>UshmmTest xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../testapidocs/eu/ehri/project/importers/ead/UshmmTest.html">View Javadoc</a></div><pre>
+
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <em class="jxr_comment">/*</em>
+<a class="jxr_linenumber" name="2" href="#2">2</a>   <em class="jxr_comment"> * Copyright 2015 Data Archiving and Networked Services (an institute of</em>
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <em class="jxr_comment"> * Koninklijke Nederlandse Akademie van Wetenschappen), King's College London,</em>
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <em class="jxr_comment"> * Georg-August-Universitaet Goettingen Stiftung Oeffentlichen Rechts</em>
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="6" href="#6">6</a>   <em class="jxr_comment"> * Licensed under the EUPL, Version 1.1 or – as soon they will be approved by</em>
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <em class="jxr_comment"> * the European Commission - subsequent versions of the EUPL (the "Licence");</em>
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <em class="jxr_comment"> * You may not use this work except in compliance with the Licence.</em>
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <em class="jxr_comment"> * You may obtain a copy of the Licence at:</em>
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <em class="jxr_comment"> * https://joinup.ec.europa.eu/software/page/eupl</em>
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <em class="jxr_comment"> *</em>
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <em class="jxr_comment"> * Unless required by applicable law or agreed to in writing, software</em>
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <em class="jxr_comment"> * distributed under the Licence is distributed on an "AS IS" basis,</em>
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <em class="jxr_comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</em>
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <em class="jxr_comment"> * See the Licence for the specific language governing</em>
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <em class="jxr_comment"> * permissions and limitations under the Licence.</em>
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <em class="jxr_comment"> */</em>
+<a class="jxr_linenumber" name="19" href="#19">19</a>  
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers.ead;
+<a class="jxr_linenumber" name="21" href="#21">21</a>  
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Vertex;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.SaxImportManager;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Description;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.events.SystemEvent;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> java.util.List;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
+<a class="jxr_linenumber" name="37" href="#37">37</a>  
+<a class="jxr_linenumber" name="38" href="#38">38</a>  
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/UshmmTest.html">UshmmTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="40" href="#40">40</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(UshmmTest.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="41" href="#41">41</a>      
+<a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SINGLE_EAD = <span class="jxr_string">"irn44515.xml"</span>;
+<a class="jxr_linenumber" name="43" href="#43">43</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String IMPORTED_ITEM_ID = <span class="jxr_string">"irn44645"</span>;
+<a class="jxr_linenumber" name="44" href="#44">44</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String IMPORTED_ITEM_ALT_ID = <span class="jxr_string">"RG-50.586*0032"</span>;
+<a class="jxr_linenumber" name="45" href="#45">45</a>  
+<a class="jxr_linenumber" name="46" href="#46">46</a>      <em class="jxr_comment">// Depends on fixtures</em>
+<a class="jxr_linenumber" name="47" href="#47">47</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String TEST_REPO = <span class="jxr_string">"r1"</span>;
+<a class="jxr_linenumber" name="48" href="#48">48</a>  
+<a class="jxr_linenumber" name="49" href="#49">49</a>      @Test
+<a class="jxr_linenumber" name="50" href="#50">50</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testImportItemsT() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="51" href="#51">51</a>          Repository agent = manager.getEntity(TEST_REPO, Repository.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="52" href="#52">52</a>          <strong class="jxr_keyword">final</strong> String logMessage = <span class="jxr_string">"Importing a single EAD by UshmmTest"</span>;
+<a class="jxr_linenumber" name="53" href="#53">53</a>  
+<a class="jxr_linenumber" name="54" href="#54">54</a>          <strong class="jxr_keyword">int</strong> origCount = getNodeCount(graph);
+<a class="jxr_linenumber" name="55" href="#55">55</a>  
+<a class="jxr_linenumber" name="56" href="#56">56</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(SINGLE_EAD);
+<a class="jxr_linenumber" name="57" href="#57">57</a>          ImportLog log = <strong class="jxr_keyword">new</strong> SaxImportManager(graph, agent, validUser, EadImporter.<strong class="jxr_keyword">class</strong>, UshmmHandler.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="58" href="#58">58</a>                  .setTolerant(Boolean.TRUE).importFile(ios, logMessage);
+<a class="jxr_linenumber" name="59" href="#59">59</a>  
+<a class="jxr_linenumber" name="60" href="#60">60</a>          printGraph(graph);
+<a class="jxr_linenumber" name="61" href="#61">61</a>          <em class="jxr_comment">/*<em class="jxr_comment"> How many new nodes will have been created? We should have</em></em>
+<a class="jxr_linenumber" name="62" href="#62">62</a>  <em class="jxr_comment">        * 2 more DocumentaryUnit</em>
+<a class="jxr_linenumber" name="63" href="#63">63</a>  <em class="jxr_comment">        * 2 more DocumentDescription</em>
+<a class="jxr_linenumber" name="64" href="#64">64</a>  <em class="jxr_comment">        * 1 more DatePeriod</em>
+<a class="jxr_linenumber" name="65" href="#65">65</a>  <em class="jxr_comment">        * 3 more import Event links</em>
+<a class="jxr_linenumber" name="66" href="#66">66</a>  <em class="jxr_comment">        * 1 more import Event</em>
+<a class="jxr_linenumber" name="67" href="#67">67</a>  <em class="jxr_comment">        * 17 more AccessPoints</em>
+<a class="jxr_linenumber" name="68" href="#68">68</a>  <em class="jxr_comment">        * 1 more MaintenanceEvent (creation)</em>
+<a class="jxr_linenumber" name="69" href="#69">69</a>  <em class="jxr_comment">        */</em>
+<a class="jxr_linenumber" name="70" href="#70">70</a>          <strong class="jxr_keyword">int</strong> createCount = origCount + 27;
+<a class="jxr_linenumber" name="71" href="#71">71</a>          assertEquals(createCount, getNodeCount(graph));
+<a class="jxr_linenumber" name="72" href="#72">72</a>  
+<a class="jxr_linenumber" name="73" href="#73">73</a>          <em class="jxr_comment">// Yet we've only created 2 *logical* item...</em>
+<a class="jxr_linenumber" name="74" href="#74">74</a>          assertEquals(2, log.getChanged());
+<a class="jxr_linenumber" name="75" href="#75">75</a>  
+<a class="jxr_linenumber" name="76" href="#76">76</a>          Iterable&lt;Vertex&gt; docs = graph.getVertices(<span class="jxr_string">"identifier"</span>, IMPORTED_ITEM_ID);
+<a class="jxr_linenumber" name="77" href="#77">77</a>          assertTrue(docs.iterator().hasNext());
+<a class="jxr_linenumber" name="78" href="#78">78</a>          DocumentaryUnit unit = graph.frame(docs.iterator().next(), DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="79" href="#79">79</a>          <strong class="jxr_keyword">for</strong>(Description d : unit.getDocumentDescriptions()) {
+<a class="jxr_linenumber" name="80" href="#80">80</a>              assertEquals(<span class="jxr_string">"Oral history interview with Dobrila Kukolj"</span>, d.getName());
+<a class="jxr_linenumber" name="81" href="#81">81</a>          	assertEquals(<span class="jxr_string">"eng"</span>, d.getLanguageOfDescription());
+<a class="jxr_linenumber" name="82" href="#82">82</a>          }
+<a class="jxr_linenumber" name="83" href="#83">83</a>          SystemEvent event = unit.getLatestEvent();
+<a class="jxr_linenumber" name="84" href="#84">84</a>          <strong class="jxr_keyword">if</strong> (event != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="85" href="#85">85</a>              logger.debug(<span class="jxr_string">"event: "</span> + event.getLogMessage());
+<a class="jxr_linenumber" name="86" href="#86">86</a>          }
+<a class="jxr_linenumber" name="87" href="#87">87</a>          
+<a class="jxr_linenumber" name="88" href="#88">88</a>          <em class="jxr_comment">// Check the alternative ID was added</em>
+<a class="jxr_linenumber" name="89" href="#89">89</a>          <strong class="jxr_keyword">boolean</strong> foundAltId = false;
+<a class="jxr_linenumber" name="90" href="#90">90</a>          <strong class="jxr_keyword">for</strong>(String altId : (List&lt;String&gt;) unit.getProperty(<span class="jxr_string">"otherIdentifiers"</span>)) {
+<a class="jxr_linenumber" name="91" href="#91">91</a>          	<strong class="jxr_keyword">if</strong> (altId.equals(IMPORTED_ITEM_ALT_ID)) {
+<a class="jxr_linenumber" name="92" href="#92">92</a>          		foundAltId = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="93" href="#93">93</a>          		<strong class="jxr_keyword">break</strong>;
+<a class="jxr_linenumber" name="94" href="#94">94</a>          	}
+<a class="jxr_linenumber" name="95" href="#95">95</a>          }
+<a class="jxr_linenumber" name="96" href="#96">96</a>          assertTrue(foundAltId);
+<a class="jxr_linenumber" name="97" href="#97">97</a>  
+<a class="jxr_linenumber" name="98" href="#98">98</a>          List&lt;SystemEvent&gt; actions = toList(unit.getHistory());
+<a class="jxr_linenumber" name="99" href="#99">99</a>          <em class="jxr_comment">// Check we've only got one action</em>
+<a class="jxr_linenumber" name="100" href="#100">100</a>         assertEquals(1, actions.size());
+<a class="jxr_linenumber" name="101" href="#101">101</a>         assertEquals(logMessage, actions.get(0).getLogMessage());
+<a class="jxr_linenumber" name="102" href="#102">102</a> 
+<a class="jxr_linenumber" name="103" href="#103">103</a>         <em class="jxr_comment">// Check scope is correct...</em>
+<a class="jxr_linenumber" name="104" href="#104">104</a>         assertEquals(agent, unit.getAncestors().iterator().next().getPermissionScope());
+<a class="jxr_linenumber" name="105" href="#105">105</a> 
+<a class="jxr_linenumber" name="106" href="#106">106</a> <em class="jxr_comment">//        // Now re-import the same file</em>
+<a class="jxr_linenumber" name="107" href="#107">107</a> <em class="jxr_comment">//        InputStream ios2 = ClassLoader.getSystemResourceAsStream(SINGLE_EAD);</em>
+<a class="jxr_linenumber" name="108" href="#108">108</a> <em class="jxr_comment">//        ImportLog log2 = new SaxImportManager(graph, agent, validUser, IcaAtomEadImporter.class, BundesarchiveEadHandler.class).importFile(ios2, logMessage);</em>
+<a class="jxr_linenumber" name="109" href="#109">109</a> <em class="jxr_comment">//</em>
+<a class="jxr_linenumber" name="110" href="#110">110</a> <em class="jxr_comment">//        // We should only have three more nodes, for </em>
+<a class="jxr_linenumber" name="111" href="#111">111</a> <em class="jxr_comment">//        // the action and </em>
+<a class="jxr_linenumber" name="112" href="#112">112</a> <em class="jxr_comment">//        // the user event links, </em>
+<a class="jxr_linenumber" name="113" href="#113">113</a> <em class="jxr_comment">//        // plus the global event</em>
+<a class="jxr_linenumber" name="114" href="#114">114</a> <em class="jxr_comment">//        assertEquals(createCount + 3, getNodeCount(graph));</em>
+<a class="jxr_linenumber" name="115" href="#115">115</a> <em class="jxr_comment">//        // And one logical item should've been updated</em>
+<a class="jxr_linenumber" name="116" href="#116">116</a> <em class="jxr_comment">//        assertEquals(1, log2.getUpdated());</em>
+<a class="jxr_linenumber" name="117" href="#117">117</a> 
+<a class="jxr_linenumber" name="118" href="#118">118</a>     }
+<a class="jxr_linenumber" name="119" href="#119">119</a> 
+<a class="jxr_linenumber" name="120" href="#120">120</a> }
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AclGraph (EHRI Core API 0.12.0-SNAPSHOT API)</title>
+<title>AclGraph (EHRI Core API 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AclGraph (EHRI Core API 0.12.0-SNAPSHOT API)";
+        parent.document.title="AclGraph (EHRI Core API 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -93,6 +93,7 @@
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>T</code> - the underlying graph</dd></dl>
 <dl>
 <dt>All Implemented Interfaces:</dt>
 <dd>com.tinkerpop.blueprints.Graph, com.tinkerpop.blueprints.util.wrappers.WrapperGraph&lt;T&gt;</dd>
@@ -102,6 +103,8 @@
 <pre>public class <span class="strong">AclGraph&lt;T extends com.tinkerpop.blueprints.Graph&gt;</span>
 extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.tinkerpop.blueprints.util.wrappers.WrapperGraph&lt;T&gt;, com.tinkerpop.blueprints.Graph</pre>
+<div class="block">A wrapper graph that hides vertices which are not accessible to the
+ given accessor.</div>
 </li>
 </ul>
 </div>
@@ -158,69 +161,87 @@ implements com.tinkerpop.blueprints.util.wrappers.WrapperGraph&lt;T&gt;, com.tin
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/acl/wrapper/AclVertex.html" title="class in eu.ehri.project.acl.wrapper">AclVertex</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#aclVertex(com.tinkerpop.blueprints.Vertex)">aclVertex</a></strong>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</code>
+<div class="block">Get an ACL-aware vertex from a generic one.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Edge</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#addEdge(java.lang.Object,%20com.tinkerpop.blueprints.Vertex,%20com.tinkerpop.blueprints.Vertex,%20java.lang.String)">addEdge</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o,
        com.tinkerpop.blueprints.Vertex&nbsp;vertex,
        com.tinkerpop.blueprints.Vertex&nbsp;vertex2,
        <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Vertex</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#addVertex(java.lang.Object)">addVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>&nbsp;</td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#evaluateEdge(com.tinkerpop.blueprints.Edge)">evaluateEdge</a></strong>(com.tinkerpop.blueprints.Edge&nbsp;edge)</code>&nbsp;</td>
+</tr>
 <tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#evaluateVertex(com.tinkerpop.blueprints.Vertex)">evaluateVertex</a></strong>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#getAccessor()">getAccessor</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html" title="type parameter in AclGraph">T</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#getBaseGraph()">getBaseGraph</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Edge</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#getEdge(java.lang.Object)">getEdge</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Edge&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#getEdges()">getEdges</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Edge&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#getEdges(java.lang.String,%20java.lang.Object)">getEdges</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s,
         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Features</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#getFeatures()">getFeatures</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.Vertex</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#getVertex(java.lang.Object)">getVertex</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Vertex&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#getVertices()">getVertices</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.tinkerpop.blueprints.Vertex&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#getVertices(java.lang.String,%20java.lang.Object)">getVertices</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>com.tinkerpop.blueprints.GraphQuery</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#query()">query</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#removeEdge(com.tinkerpop.blueprints.Edge)">removeEdge</a></strong>(com.tinkerpop.blueprints.Edge&nbsp;edge)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#removeVertex(com.tinkerpop.blueprints.Vertex)">removeVertex</a></strong>(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#shutdown()">shutdown</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/acl/wrapper/AclGraph.html#toString()">toString</a></strong>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -228,7 +249,7 @@ implements com.tinkerpop.blueprints.util.wrappers.WrapperGraph&lt;T&gt;, com.tin
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
+<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#clone()" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#finalize()" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 </li>
 </ul>
@@ -471,10 +492,53 @@ implements com.tinkerpop.blueprints.util.wrappers.WrapperGraph&lt;T&gt;, com.tin
 <a name="getAccessor()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getAccessor</h4>
 <pre>public&nbsp;<a href="../../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;getAccessor()</pre>
+</li>
+</ul>
+<a name="toString()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>toString</h4>
+<pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
+<dl>
+<dt><strong>Overrides:</strong></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="evaluateVertex(com.tinkerpop.blueprints.Vertex)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>evaluateVertex</h4>
+<pre>public&nbsp;boolean&nbsp;evaluateVertex(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</pre>
+</li>
+</ul>
+<a name="evaluateEdge(com.tinkerpop.blueprints.Edge)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>evaluateEdge</h4>
+<pre>public&nbsp;boolean&nbsp;evaluateEdge(com.tinkerpop.blueprints.Edge&nbsp;edge)</pre>
+</li>
+</ul>
+<a name="aclVertex(com.tinkerpop.blueprints.Vertex)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>aclVertex</h4>
+<pre>public&nbsp;<a href="../../../../../eu/ehri/project/acl/wrapper/AclVertex.html" title="class in eu.ehri.project.acl.wrapper">AclVertex</a>&nbsp;aclVertex(com.tinkerpop.blueprints.Vertex&nbsp;vertex)</pre>
+<div class="block">Get an ACL-aware vertex from a generic one.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>vertex</code> - a vertex</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a vertex with ACL behaviour</dd></dl>
 </li>
 </ul>
 </li>

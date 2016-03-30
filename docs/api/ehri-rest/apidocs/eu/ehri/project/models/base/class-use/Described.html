@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Interface eu.ehri.project.models.base.Described (EHRI Backend 0.12.0-SNAPSHOT API)</title>
+<title>Uses of Interface eu.ehri.project.models.base.Described (EHRI Backend 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Interface eu.ehri.project.models.base.Described (EHRI Backend 0.12.0-SNAPSHOT API)";
+        parent.document.title="Uses of Interface eu.ehri.project.models.base.Described (EHRI Backend 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -79,25 +79,25 @@
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="#eu.ehri.project.exporters.util">eu.ehri.project.exporters.util</a></td>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.models">eu.ehri.project.models</a></td>
 <td class="colLast">
 <div class="block">The interfaces in this package specify the classes of entities that map to graph
  frame classes.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.models.base">eu.ehri.project.models.base</a></td>
 <td class="colLast">
 <div class="block">The interfaces in this package specify the required and allowable properties of 
  classes of entities, so that entities can be validated.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#eu.ehri.project.models.cvoc">eu.ehri.project.models.cvoc</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="#eu.ehri.project.utils">eu.ehri.project.utils</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -140,33 +140,6 @@
            <a href="../../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a>&nbsp;description,
            <a href="../../../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a>&nbsp;link,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;lang)</code>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li class="blockList"><a name="eu.ehri.project.exporters.util">
-<!--   -->
-</a>
-<h3>Uses of <a href="../../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a> in <a href="../../../../../../eu/ehri/project/exporters/util/package-summary.html">eu.ehri.project.exporters.util</a></h3>
-<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
-<caption><span>Methods in <a href="../../../../../../eu/ehri/project/exporters/util/package-summary.html">eu.ehri.project.exporters.util</a> with parameters of type <a href="../../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a></span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Method and Description</th>
-</tr>
-<tbody>
-<tr class="altColor">
-<td class="colFirst"><code>static com.google.common.base.Optional&lt;<a href="../../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a>&gt;</code></td>
-<td class="colLast"><span class="strong">Helpers.</span><code><strong><a href="../../../../../../eu/ehri/project/exporters/util/Helpers.html#getBestDescription(eu.ehri.project.models.base.Described,%20com.google.common.base.Optional,%20java.lang.String)">getBestDescription</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a>&nbsp;item,
-                  com.google.common.base.Optional&lt;<a href="../../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a>&gt;&nbsp;priorDescOpt,
-                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;langCode)</code>
-<div class="block">Get the best description for a given language code.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>static com.google.common.base.Optional&lt;<a href="../../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a>&gt;</code></td>
-<td class="colLast"><span class="strong">Helpers.</span><code><strong><a href="../../../../../../eu/ehri/project/exporters/util/Helpers.html#getBestDescription(eu.ehri.project.models.base.Described,%20java.lang.String)">getBestDescription</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a>&nbsp;item,
-                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;langCode)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -252,7 +225,8 @@
 <tr class="altColor">
 <td class="colFirst"><code>interface&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base">AbstractUnit</a></strong></code>
-<div class="block">An abstract entity that has the features that documentary units need.</div>
+<div class="block">An abstract entity representing either a documentary (physical) unit
+ or a virtual unit.</div>
 </td>
 </tr>
 </tbody>
@@ -312,6 +286,33 @@
 </tbody>
 </table>
 </li>
+<li class="blockList"><a name="eu.ehri.project.utils">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a> in <a href="../../../../../../eu/ehri/project/utils/package-summary.html">eu.ehri.project.utils</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../../eu/ehri/project/utils/package-summary.html">eu.ehri.project.utils</a> with parameters of type <a href="../../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>static com.google.common.base.Optional&lt;<a href="../../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a>&gt;</code></td>
+<td class="colLast"><span class="strong">LanguageHelpers.</span><code><strong><a href="../../../../../../eu/ehri/project/utils/LanguageHelpers.html#getBestDescription(eu.ehri.project.models.base.Described,%20com.google.common.base.Optional,%20java.lang.String)">getBestDescription</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a>&nbsp;item,
+                  com.google.common.base.Optional&lt;<a href="../../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a>&gt;&nbsp;priorDescOpt,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;langCode)</code>
+<div class="block">Get the best description for a given language code.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static com.google.common.base.Optional&lt;<a href="../../../../../../eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a>&gt;</code></td>
+<td class="colLast"><span class="strong">LanguageHelpers.</span><code><strong><a href="../../../../../../eu/ehri/project/utils/LanguageHelpers.html#getBestDescription(eu.ehri.project.models.base.Described,%20java.lang.String)">getBestDescription</a></strong>(<a href="../../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a>&nbsp;item,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;langCode)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
 <li class="blockList"><a name="eu.ehri.project.views">
 <!--   -->
 </a>
@@ -325,7 +326,10 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>class&nbsp;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/views/DescriptionViews.html" title="class in eu.ehri.project.views">DescriptionViews</a>&lt;E extends <a href="../../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a>&gt;</strong></code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../../eu/ehri/project/views/DescriptionViews.html" title="class in eu.ehri.project.views">DescriptionViews</a>&lt;E extends <a href="../../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a>&gt;</strong></code>
+<div class="block">A view class for managing dependent item's, belonging to
+ a top-level content type.</div>
+</td>
 </tr>
 </tbody>
 </table>

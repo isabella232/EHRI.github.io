@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Package eu.ehri.project.importers (EHRI Backend 0.12.0-SNAPSHOT API)</title>
+<title>Uses of Package eu.ehri.project.importers (EHRI Backend 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Package eu.ehri.project.importers (EHRI Backend 0.12.0-SNAPSHOT API)";
+        parent.document.title="Uses of Package eu.ehri.project.importers (EHRI Backend 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -75,6 +75,18 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><a href="#eu.ehri.extension">eu.ehri.extension</a></td>
+<td class="colLast">
+<div class="block">Jersey resource classes for providing
+ web service access to the graph, via
+ the <a href="../../../../eu/ehri/project/views/package-summary.html"><code>eu.ehri.project.views</code></a> layer.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.extension.providers">eu.ehri.extension.providers</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.commands">eu.ehri.project.commands</a></td>
 <td class="colLast">
 <div class="block">Classes that represent actions that can
@@ -90,14 +102,76 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.csv">eu.ehri.project.importers.csv</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="#eu.ehri.project.importers.cvoc">eu.ehri.project.importers.cvoc</a></td>
 <td class="colLast">
 <div class="block">Tools to import controlled vocabularies into the graph database.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.eac">eu.ehri.project.importers.eac</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.ead">eu.ehri.project.importers.ead</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.eag">eu.ehri.project.importers.eag</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.json">eu.ehri.project.importers.json</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.importers.managers">eu.ehri.project.importers.managers</a></td>
 <td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.xml">eu.ehri.project.importers.xml</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.extension">
+<!--   -->
+</a>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
+<caption><span>Classes in <a href="../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> used by <a href="../../../../eu/ehri/extension/package-summary.html">eu.ehri.extension</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Class and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/ImportLog.html#eu.ehri.extension">ImportLog</a>
+<div class="block">Class that serves as a manifest for an import batch,
+ detailing how many items were created and updated,
+ and how many failed.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.extension.providers">
+<!--   -->
+</a>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
+<caption><span>Classes in <a href="../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> used by <a href="../../../../eu/ehri/extension/providers/package-summary.html">eu.ehri.extension.providers</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Class and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/ImportLog.html#eu.ehri.extension.providers">ImportLog</a>
+<div class="block">Class that serves as a manifest for an import batch,
+ detailing how many items were created and updated,
+ and how many failed.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -147,53 +221,58 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/CsvAuthoritativeItemImporter.html#eu.ehri.project.importers">CsvAuthoritativeItemImporter</a>
-<div class="block">Importer of authoritative items such as historical agents and concepts, loaded
- from a CSV file.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/EadHandler.html#eu.ehri.project.importers">EadHandler</a>
-<div class="block">Handler of EAD files.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/EadImporter.html#eu.ehri.project.importers">EadImporter</a>
-<div class="block">Import EAD for a given repository into the database.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/EaHandler.html#eu.ehri.project.importers">EaHandler</a>
-<div class="block">Base handler for EAD, EAC and EAG files, based on a SAX reader.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/EaImporter.html#eu.ehri.project.importers">EaImporter</a>
-<div class="block">Import Map based representations of EAD or EAC for a given repository into the database.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/ImportCallback.html#eu.ehri.project.importers">ImportCallback</a>
 <div class="block">Implementing classes do things after an item was imported and created
  a mutation ('created', 'updated', 'unchanged').</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/ImportLog.html#eu.ehri.project.importers">ImportLog</a>
 <div class="block">Class that serves as a manifest for an import batch,
  detailing how many items were created and updated,
  and how many failed.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/MapImporter.html#eu.ehri.project.importers">MapImporter</a>
 <div class="block">Importer of Map based representations of documentary units, historical agents,
  virtual collections and other entities.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/SaxXmlHandler.html#eu.ehri.project.importers">SaxXmlHandler</a>
 <div class="block">Reader of XML files, creator of <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>-based representations of EA* files.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.csv">
+<!--   -->
+</a>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
+<caption><span>Classes in <a href="../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> used by <a href="../../../../eu/ehri/project/importers/csv/package-summary.html">eu.ehri.project.importers.csv</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Class and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/AbstractImporter.html#eu.ehri.project.importers.csv">AbstractImporter</a>
+<div class="block">Base class for importers that import documentary units, historical agents and virtual collections,
+ with their constituent logical data, description(s), and date periods.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/ImportLog.html#eu.ehri.project.importers.csv">ImportLog</a>
+<div class="block">Class that serves as a manifest for an import batch,
+ detailing how many items were created and updated,
+ and how many failed.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/MapImporter.html#eu.ehri.project.importers.csv">MapImporter</a>
+<div class="block">Importer of Map based representations of documentary units, historical agents,
+ virtual collections and other entities.</div>
 </td>
 </tr>
 </tbody>
@@ -210,6 +289,153 @@
 <tbody>
 <tr class="altColor">
 <td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/ImportLog.html#eu.ehri.project.importers.cvoc">ImportLog</a>
+<div class="block">Class that serves as a manifest for an import batch,
+ detailing how many items were created and updated,
+ and how many failed.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.eac">
+<!--   -->
+</a>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
+<caption><span>Classes in <a href="../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> used by <a href="../../../../eu/ehri/project/importers/eac/package-summary.html">eu.ehri.project.importers.eac</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Class and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/AbstractImporter.html#eu.ehri.project.importers.eac">AbstractImporter</a>
+<div class="block">Base class for importers that import documentary units, historical agents and virtual collections,
+ with their constituent logical data, description(s), and date periods.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/EaHandler.html#eu.ehri.project.importers.eac">EaHandler</a>
+<div class="block">Base handler for EAD, EAC and EAG files, based on a SAX reader.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/EaImporter.html#eu.ehri.project.importers.eac">EaImporter</a>
+<div class="block">Import Map based representations of EAD or EAC for a given repository into the database.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/ImportLog.html#eu.ehri.project.importers.eac">ImportLog</a>
+<div class="block">Class that serves as a manifest for an import batch,
+ detailing how many items were created and updated,
+ and how many failed.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/MapImporter.html#eu.ehri.project.importers.eac">MapImporter</a>
+<div class="block">Importer of Map based representations of documentary units, historical agents,
+ virtual collections and other entities.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/SaxXmlHandler.html#eu.ehri.project.importers.eac">SaxXmlHandler</a>
+<div class="block">Reader of XML files, creator of <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>-based representations of EA* files.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.ead">
+<!--   -->
+</a>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
+<caption><span>Classes in <a href="../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> used by <a href="../../../../eu/ehri/project/importers/ead/package-summary.html">eu.ehri.project.importers.ead</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Class and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/AbstractImporter.html#eu.ehri.project.importers.ead">AbstractImporter</a>
+<div class="block">Base class for importers that import documentary units, historical agents and virtual collections,
+ with their constituent logical data, description(s), and date periods.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/EaImporter.html#eu.ehri.project.importers.ead">EaImporter</a>
+<div class="block">Import Map based representations of EAD or EAC for a given repository into the database.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/ImportLog.html#eu.ehri.project.importers.ead">ImportLog</a>
+<div class="block">Class that serves as a manifest for an import batch,
+ detailing how many items were created and updated,
+ and how many failed.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/MapImporter.html#eu.ehri.project.importers.ead">MapImporter</a>
+<div class="block">Importer of Map based representations of documentary units, historical agents,
+ virtual collections and other entities.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/SaxXmlHandler.html#eu.ehri.project.importers.ead">SaxXmlHandler</a>
+<div class="block">Reader of XML files, creator of <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>-based representations of EA* files.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.eag">
+<!--   -->
+</a>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
+<caption><span>Classes in <a href="../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> used by <a href="../../../../eu/ehri/project/importers/eag/package-summary.html">eu.ehri.project.importers.eag</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Class and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/AbstractImporter.html#eu.ehri.project.importers.eag">AbstractImporter</a>
+<div class="block">Base class for importers that import documentary units, historical agents and virtual collections,
+ with their constituent logical data, description(s), and date periods.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/EaImporter.html#eu.ehri.project.importers.eag">EaImporter</a>
+<div class="block">Import Map based representations of EAD or EAC for a given repository into the database.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/ImportLog.html#eu.ehri.project.importers.eag">ImportLog</a>
+<div class="block">Class that serves as a manifest for an import batch,
+ detailing how many items were created and updated,
+ and how many failed.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/MapImporter.html#eu.ehri.project.importers.eag">MapImporter</a>
+<div class="block">Importer of Map based representations of documentary units, historical agents,
+ virtual collections and other entities.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/SaxXmlHandler.html#eu.ehri.project.importers.eag">SaxXmlHandler</a>
+<div class="block">Reader of XML files, creator of <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>-based representations of EA* files.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.json">
+<!--   -->
+</a>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
+<caption><span>Classes in <a href="../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> used by <a href="../../../../eu/ehri/project/importers/json/package-summary.html">eu.ehri.project.importers.json</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Class and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/ImportLog.html#eu.ehri.project.importers.json">ImportLog</a>
 <div class="block">Class that serves as a manifest for an import batch,
  detailing how many items were created and updated,
  and how many failed.</div>
@@ -248,6 +474,29 @@
 </tr>
 <tr class="rowColor">
 <td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/SaxXmlHandler.html#eu.ehri.project.importers.managers">SaxXmlHandler</a>
+<div class="block">Reader of XML files, creator of <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>-based representations of EA* files.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.xml">
+<!--   -->
+</a>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation">
+<caption><span>Classes in <a href="../../../../eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a> used by <a href="../../../../eu/ehri/project/importers/xml/package-summary.html">eu.ehri.project.importers.xml</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Class and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/AbstractImporter.html#eu.ehri.project.importers.xml">AbstractImporter</a>
+<div class="block">Base class for importers that import documentary units, historical agents and virtual collections,
+ with their constituent logical data, description(s), and date periods.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><a href="../../../../eu/ehri/project/importers/class-use/SaxXmlHandler.html#eu.ehri.project.importers.xml">SaxXmlHandler</a>
 <div class="block">Reader of XML files, creator of <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>-based representations of EA* files.</div>
 </td>
 </tr>

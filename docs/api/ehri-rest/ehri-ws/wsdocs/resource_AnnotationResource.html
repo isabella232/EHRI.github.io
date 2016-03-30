@@ -52,14 +52,12 @@
             <li class="current">
               <a href="resource_AnnotationResource.html">AnnotationResource</a>
               <ul>
-                <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
                 <li><a href="resource_AuthoritativeSetResource.html">AuthoritativeSetResource</a></li>
                 <li><a href="resource_ContentTypeResource.html">ContentTypeResource</a></li>
                 <li><a href="resource_CountryResource.html">CountryResource</a></li>
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
-                <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
@@ -68,7 +66,6 @@
                 <li><a href="resource_LinkResource.html">LinkResource</a></li>
                 <li><a href="resource_PermissionGrantResource.html">PermissionGrantResource</a></li>
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
-                <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
@@ -89,21 +86,15 @@
       <p>The following resources are applicable:</p>
       <ul>
         <li>
-        <a href="#path__Annotation.html">/Annotation</a>
+        <a href="#path__classes_Annotation.html">/classes/Annotation</a>
         </li>
         <li>
-        <a href="#path__Annotation_-id-.html">/Annotation/{id}</a>
-        </li>
-        <li>
-        <a href="#path__Annotation_-id-_-did-.html">/Annotation/{id}/{did}</a>
-        </li>
-        <li>
-        <a href="#path__Annotation_for_-id-.html">/Annotation/for/{id}</a>
+        <a href="#path__classes_Annotation_-id-.html">/classes/Annotation/{id}</a>
         </li>
       </ul>
-        <a name="path__Annotation.html"></a>
-      <h1>/Annotation</h1>
-      <p class="note">Mount Point: <a href="../Annotation">/Annotation</a></p>
+        <a name="path__classes_Annotation.html"></a>
+      <h1>/classes/Annotation</h1>
+      <p class="note">Mount Point: <a href="../classes/Annotation">/classes/Annotation</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
@@ -143,15 +134,76 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         </tr>
       </table>
       <p>A list of serialized item representations</p>
-        <a name="path__Annotation_-id-.html"></a>
-      <h1>/Annotation/{id}</h1>
-      <p class="note">Mount Point: <a href="../Annotation/{id}">/Annotation/{id}</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Create an annotation for a particular item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>target</td>
+          <td>
+            the ID of the item being annotation
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>body</td>
+          <td>
+            the (optional) ID of the sub-item target, e.g. a description
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>accessibleTo</td>
+          <td>
+            user IDs who can access the annotation
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>bundle</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>the JSON representation of the annotation</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the annotation</p>
+        <a name="path__classes_Annotation_-id-.html"></a>
+      <h1>/classes/Annotation/{id}</h1>
+      <p class="note">Mount Point: <a href="../classes/Annotation/{id}">/classes/Annotation/{id}</a></p>
       <p>
         The following operations are supported on this resource:
       </p>
       <ul>
         <li><a href="#GET">GET</a></li>
-        <li><a href="#POST">POST</a></li>
         <li><a href="#PUT">PUT</a></li>
         <li><a href="#DELETE">DELETE</a></li>
       </ul>
@@ -189,60 +241,6 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
         </tr>
       </table>
       <p>A serialized item representation</p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Create an annotation for a particular item.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            the ID of the item being annotation
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>accessibleTo</td>
-          <td>
-            user IDs who can access the annotation
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Request Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-            <td>bundle</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>the JSON representation of the annotation</p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>the annotation</p>
       <a name="PUT"></a>
       <h2>PUT</h2>
       <p>
@@ -311,121 +309,6 @@ curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10
           <td></td>
         </tr>
       </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>*/*<br/>application/xml</td>
-        </tr>
-      </table>
-      <p>A response with 200 representing a successful deletion.</p>
-        <a name="path__Annotation_-id-_-did-.html"></a>
-      <h1>/Annotation/{id}/{did}</h1>
-      <p class="note">Mount Point: <a href="../Annotation/{id}/{did}">/Annotation/{id}/{did}</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Create an annotation for a dependent node on a given item.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            the ID of the item being annotation
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>did</td>
-          <td>
-            the ID of the description being annotated
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>accessibleTo</td>
-          <td>
-            user IDs who can access the annotation
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Request Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-            <td>bundle</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>the JSON representation of the annotation</p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>the annotation</p>
-        <a name="path__Annotation_for_-id-.html"></a>
-      <h1>/Annotation/for/{id}</h1>
-      <p class="note">Mount Point: <a href="../Annotation/for/{id}">/Annotation/for/{id}</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Return a map of annotations for the subtree of the given item and its
-child items. Standard list parameters apply.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            the item ID
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>a list of annotations on the item and it's dependent children.</p>
 
       <div class="clear" />
     </div>

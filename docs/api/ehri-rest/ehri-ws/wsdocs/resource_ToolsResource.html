@@ -52,14 +52,12 @@
             <li class="current">
               <a href="resource_ToolsResource.html">ToolsResource</a>
               <ul>
-                <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
                 <li><a href="resource_AuthoritativeSetResource.html">AuthoritativeSetResource</a></li>
                 <li><a href="resource_ContentTypeResource.html">ContentTypeResource</a></li>
                 <li><a href="resource_CountryResource.html">CountryResource</a></li>
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
-                <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
@@ -68,7 +66,6 @@
                 <li><a href="resource_LinkResource.html">LinkResource</a></li>
                 <li><a href="resource_PermissionGrantResource.html">PermissionGrantResource</a></li>
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
-                <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
@@ -90,561 +87,44 @@ fit anywhere else.</p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
-        <a href="#path__tools__findReplacePropertyName.html">/tools/_findReplacePropertyName</a>
+        <a href="#path__tools_full-upgrade-1to2.html">/tools/full-upgrade-1to2</a>
         </li>
         <li>
-        <a href="#path__tools__findReplacePropertyValue.html">/tools/_findReplacePropertyValue</a>
+        <a href="#path__tools_generate-concepts_-repositoryId-_-vocabularyId-.html">/tools/generate-concepts/{repositoryId}/{vocabularyId}</a>
         </li>
         <li>
-        <a href="#path__tools__findReplacePropertyValueRE.html">/tools/_findReplacePropertyValueRE</a>
+        <a href="#path__tools_regenerate-description-ids.html">/tools/regenerate-description-ids</a>
         </li>
         <li>
-        <a href="#path__tools__fullUpgrade1to2.html">/tools/_fullUpgrade1to2</a>
+        <a href="#path__tools_regenerate-id_-id-.html">/tools/regenerate-id/{id}</a>
         </li>
         <li>
-        <a href="#path__tools__regenerateDescriptionIds.html">/tools/_regenerateDescriptionIds</a>
+        <a href="#path__tools_regenerate-ids-for-scope_-scope-.html">/tools/regenerate-ids-for-scope/{scope}</a>
         </li>
         <li>
-        <a href="#path__tools__regenerateId_-id-.html">/tools/_regenerateId/{id}</a>
+        <a href="#path__tools_regenerate-ids-for-type_-type-.html">/tools/regenerate-ids-for-type/{type}</a>
         </li>
         <li>
-        <a href="#path__tools__regenerateIdsForScope_-scope-.html">/tools/_regenerateIdsForScope/{scope}</a>
+        <a href="#path__tools_schema.html">/tools/schema</a>
         </li>
         <li>
-        <a href="#path__tools__regenerateIdsForType_-type-.html">/tools/_regenerateIdsForType/{type}</a>
+        <a href="#path__tools_set-constraints.html">/tools/set-constraints</a>
         </li>
         <li>
-        <a href="#path__tools__setConstraints.html">/tools/_setConstraints</a>
+        <a href="#path__tools_set-labels.html">/tools/set-labels</a>
         </li>
         <li>
-        <a href="#path__tools__setLabels.html">/tools/_setLabels</a>
-        </li>
-        <li>
-        <a href="#path__tools__upgrade1to2.html">/tools/_upgrade1to2</a>
-        </li>
-        <li>
-        <a href="#path__tools_generateConcepts_-repositoryId-_-vocabularyId-.html">/tools/generateConcepts/{repositoryId}/{vocabularyId}</a>
+        <a href="#path__tools_upgrade-1to2.html">/tools/upgrade-1to2</a>
         </li>
       </ul>
-        <a name="path__tools__findReplacePropertyName.html"></a>
-      <h1>/tools/_findReplacePropertyName</h1>
-      <p class="note">Mount Point: <a href="../tools/_findReplacePropertyName">/tools/_findReplacePropertyName</a></p>
+        <a name="path__tools_full-upgrade-1to2.html"></a>
+      <h1>/tools/full-upgrade-1to2</h1>
+      <p class="note">Mount Point: <a href="../tools/full-upgrade-1to2">/tools/full-upgrade-1to2</a></p>
       <a name="POST"></a>
       <h2>POST</h2>
-      <p>
-            Change a property key name across an entire entity class.
-<p/>
-<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>type</td>
-          <td>
-            The type of entity
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>from</td>
-          <td>
-            The existing property key name
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>to</td>
-          <td>
-            The new property key name
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>The number of items changed</p>
-        <a name="path__tools__findReplacePropertyValue.html"></a>
-      <h1>/tools/_findReplacePropertyValue</h1>
-      <p class="note">Mount Point: <a href="../tools/_findReplacePropertyValue">/tools/_findReplacePropertyValue</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Find an replace a property value across an entire entity class, e.g.
-if a DocumentaryUnit has a property with name &quot;foo&quot; and value &quot;bar&quot;,
-change the value to &quot;baz&quot; on all items.
-<p/>
-<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>type</td>
-          <td>
-            The type of entity
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>
-            The name of the property to find and replace
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>from</td>
-          <td>
-            The property value to change
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>to</td>
-          <td>
-            The new value
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>How many items have been changed</p>
-        <a name="path__tools__findReplacePropertyValueRE.html"></a>
-      <h1>/tools/_findReplacePropertyValueRE</h1>
-      <p class="note">Mount Point: <a href="../tools/_findReplacePropertyValueRE">/tools/_findReplacePropertyValueRE</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Find an replace a regex-specified substring of a property value
-across an entire entity class e.g.
-if an Address has a property with name &quot;url&quot; and value &quot;www.foo.com/bar&quot;,
-providing a regex value <tt>^www</tt> and replacement <tt>http://www</tt> will
-give the property a value of &quot;http://www.foo.com/bar&quot;.
-<p/>
-<strong>Warning: This is a sharp tool! Back up the whole database first!</strong>
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>type</td>
-          <td>
-            The type of entity
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>
-            The name of the property to find and replace
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>pattern</td>
-          <td>
-            A regex specifying a substring of the property value
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>replace</td>
-          <td>
-            A replacement substring
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>How many items have been changed</p>
-        <a name="path__tools__fullUpgrade1to2.html"></a>
-      <h1>/tools/_fullUpgrade1to2</h1>
-      <p class="note">Mount Point: <a href="../tools/_fullUpgrade1to2">/tools/_fullUpgrade1to2</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/plain</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__tools__regenerateDescriptionIds.html"></a>
-      <h1>/tools/_regenerateDescriptionIds</h1>
-      <p class="note">Mount Point: <a href="../tools/_regenerateDescriptionIds">/tools/_regenerateDescriptionIds</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Regenerate description IDs.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>buffer</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
-          <td>-1</td>
-        </tr>
-        <tr>
-          <td>commit</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/plain</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__tools__regenerateId_-id-.html"></a>
-      <h1>/tools/_regenerateId/{id}</h1>
-      <p class="note">Mount Point: <a href="../tools/_regenerateId/{id}">/tools/_regenerateId/{id}</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Regenerate the hierarchical graph ID for a given item, optionally
-renaming it.
-<p/>
-The default mode is to output items whose IDs would change, without
-actually changing them. The collisions parameter will <b>only</b>
-output items that would cause collisions if renamed, whereas tolerant
-mode will skip them altogether.
-<p/>
-The commit flag will cause renaming to take place.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            the item's existing ID
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>collisions</td>
-          <td>
-            only output items that if renamed to the
-regenerated ID would cause collisions
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>tolerant</td>
-          <td>
-            skip items that could cause collisions rather
-then throwing an error
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>commit</td>
-          <td>
-            whether or not to rename the item
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/csv</td>
-        </tr>
-      </table>
-      <p>a tab old-to-new mapping, or an empty
-body if nothing was changed</p>
-        <a name="path__tools__regenerateIdsForScope_-scope-.html"></a>
-      <h1>/tools/_regenerateIdsForScope/{scope}</h1>
-      <p class="note">Mount Point: <a href="../tools/_regenerateIdsForScope/{scope}">/tools/_regenerateIdsForScope/{scope}</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Regenerate the hierarchical graph ID for all items within the
-permission scope and lower levels.
-<p/>
-The default mode is to output items whose IDs would change, without
-actually changing them. The collisions parameter will <b>only</b>
-output items that would cause collisions if renamed, whereas tolerant
-mode will skip them altogether.
-<p/>
-The commit flag will cause renaming to take place.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>scope</td>
-          <td>
-            the scope item's ID
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>collisions</td>
-          <td>
-            only output items that if renamed to the
-regenerated ID would cause collisions
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>tolerant</td>
-          <td>
-            skip items that could cause collisions rather
-then throwing an error
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>commit</td>
-          <td>
-            whether or not to rename the items
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/csv</td>
-        </tr>
-      </table>
-      <p>a tab list old-to-new mappings, or an empty
-body if nothing was changed</p>
-        <a name="path__tools__regenerateIdsForType_-type-.html"></a>
-      <h1>/tools/_regenerateIdsForType/{type}</h1>
-      <p class="note">Mount Point: <a href="../tools/_regenerateIdsForType/{type}">/tools/_regenerateIdsForType/{type}</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Regenerate the hierarchical graph ID all items of a given
-type.
-<p/>
-The default mode is to output items whose IDs would change, without
-actually changing them. The collisions parameter will <b>only</b>
-output items that would cause collisions if renamed, whereas tolerant
-mode will skip them altogether.
-<p/>
-The commit flag will cause renaming to take place.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>type</td>
-          <td>
-            the item type
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>collisions</td>
-          <td>
-            only output items that if renamed to the
-regenerated ID would cause collisions
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>tolerant</td>
-          <td>
-            skip items that could cause collisions rather
-then throwing an error
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-        <tr>
-          <td>commit</td>
-          <td>
-            whether or not to rename the items
-          </td>
-          <td>query</td>
-          <td>false</td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/csv</td>
-        </tr>
-      </table>
-      <p>a tab list old-to-new mappings, or an empty
-body if nothing was changed</p>
-        <a name="path__tools__setConstraints.html"></a>
-      <h1>/tools/_setConstraints</h1>
-      <p class="note">Mount Point: <a href="../tools/_setConstraints">/tools/_setConstraints</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/plain</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__tools__setLabels.html"></a>
-      <h1>/tools/_setLabels</h1>
-      <p class="note">Mount Point: <a href="../tools/_setLabels">/tools/_setLabels</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/plain</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__tools__upgrade1to2.html"></a>
-      <h1>/tools/_upgrade1to2</h1>
-      <p class="note">Mount Point: <a href="../tools/_upgrade1to2">/tools/_upgrade1to2</a></p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/plain</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__tools_generateConcepts_-repositoryId-_-vocabularyId-.html"></a>
-      <h1>/tools/generateConcepts/{repositoryId}/{vocabularyId}</h1>
-      <p class="note">Mount Point: <a href="../tools/generateConcepts/{repositoryId}/{vocabularyId}">/tools/generateConcepts/{repositoryId}/{vocabularyId}</a></p>
+        <a name="path__tools_generate-concepts_-repositoryId-_-vocabularyId-.html"></a>
+      <h1>/tools/generate-concepts/{repositoryId}/{vocabularyId}</h1>
+      <p class="note">Mount Point: <a href="../tools/generate-concepts/{repositoryId}/{vocabularyId}">/tools/generate-concepts/{repositoryId}/{vocabularyId}</a></p>
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
@@ -722,6 +202,351 @@ to slug collisions in the created concepts
         </tr>
       </table>
       <p>the number of links created</p>
+        <a name="path__tools_regenerate-description-ids.html"></a>
+      <h1>/tools/regenerate-description-ids</h1>
+      <p class="note">Mount Point: <a href="../tools/regenerate-description-ids">/tools/regenerate-description-ids</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Regenerate description IDs.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>buffer</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <td>commit</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/plain</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__tools_regenerate-id_-id-.html"></a>
+      <h1>/tools/regenerate-id/{id}</h1>
+      <p class="note">Mount Point: <a href="../tools/regenerate-id/{id}">/tools/regenerate-id/{id}</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Regenerate the hierarchical graph ID for a given item, optionally
+renaming it.
+<p/>
+The default mode is to output items whose IDs would change, without
+actually changing them. The collisions parameter will <b>only</b>
+output items that would cause collisions if renamed, whereas tolerant
+mode will skip them altogether.
+<p/>
+The commit flag will cause renaming to take place.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the item's existing ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>collisions</td>
+          <td>
+            only output items that if renamed to the
+regenerated ID would cause collisions
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>tolerant</td>
+          <td>
+            skip items that could cause collisions rather
+then throwing an error
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>commit</td>
+          <td>
+            whether or not to rename the item
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/csv</td>
+        </tr>
+      </table>
+      <p>a tab old-to-new mapping, or an empty
+body if nothing was changed</p>
+        <a name="path__tools_regenerate-ids-for-scope_-scope-.html"></a>
+      <h1>/tools/regenerate-ids-for-scope/{scope}</h1>
+      <p class="note">Mount Point: <a href="../tools/regenerate-ids-for-scope/{scope}">/tools/regenerate-ids-for-scope/{scope}</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Regenerate the hierarchical graph ID for all items within the
+permission scope and lower levels.
+<p/>
+The default mode is to output items whose IDs would change, without
+actually changing them. The collisions parameter will <b>only</b>
+output items that would cause collisions if renamed, whereas tolerant
+mode will skip them altogether.
+<p/>
+The commit flag will cause renaming to take place.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>scope</td>
+          <td>
+            the scope item's ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>collisions</td>
+          <td>
+            only output items that if renamed to the
+regenerated ID would cause collisions
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>tolerant</td>
+          <td>
+            skip items that could cause collisions rather
+then throwing an error
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>commit</td>
+          <td>
+            whether or not to rename the items
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/csv</td>
+        </tr>
+      </table>
+      <p>a tab list old-to-new mappings, or an empty
+body if nothing was changed</p>
+        <a name="path__tools_regenerate-ids-for-type_-type-.html"></a>
+      <h1>/tools/regenerate-ids-for-type/{type}</h1>
+      <p class="note">Mount Point: <a href="../tools/regenerate-ids-for-type/{type}">/tools/regenerate-ids-for-type/{type}</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Regenerate the hierarchical graph ID all items of a given
+type.
+<p/>
+The default mode is to output items whose IDs would change, without
+actually changing them. The collisions parameter will <b>only</b>
+output items that would cause collisions if renamed, whereas tolerant
+mode will skip them altogether.
+<p/>
+The commit flag will cause renaming to take place.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>
+            the item type
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>collisions</td>
+          <td>
+            only output items that if renamed to the
+regenerated ID would cause collisions
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>tolerant</td>
+          <td>
+            skip items that could cause collisions rather
+then throwing an error
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>commit</td>
+          <td>
+            whether or not to rename the items
+          </td>
+          <td>query</td>
+          <td>false</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/csv</td>
+        </tr>
+      </table>
+      <p>a tab list old-to-new mappings, or an empty
+body if nothing was changed</p>
+        <a name="path__tools_schema.html"></a>
+      <h1>/tools/schema</h1>
+      <p class="note">Mount Point: <a href="../tools/schema">/tools/schema</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Export an RDFS+OWL representation of the model schema.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>format</td>
+          <td>
+            the RDF format
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>baseUri</td>
+          <td>
+            the RDF base URI
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/turtle<br/>application/n-triples<br/>application/rdf+xml</td>
+        </tr>
+      </table>
+      <p>a streaming response</p>
+        <a name="path__tools_set-constraints.html"></a>
+      <h1>/tools/set-constraints</h1>
+      <p class="note">Mount Point: <a href="../tools/set-constraints">/tools/set-constraints</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+        <a name="path__tools_set-labels.html"></a>
+      <h1>/tools/set-labels</h1>
+      <p class="note">Mount Point: <a href="../tools/set-labels">/tools/set-labels</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/plain</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__tools_upgrade-1to2.html"></a>
+      <h1>/tools/upgrade-1to2</h1>
+      <p class="note">Mount Point: <a href="../tools/upgrade-1to2">/tools/upgrade-1to2</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/plain</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
 
       <div class="clear" />
     </div>

@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uses of Class eu.ehri.project.importers.ImportLog (EHRI Backend 0.12.0-SNAPSHOT API)</title>
+<title>Uses of Class eu.ehri.project.importers.ImportLog (EHRI Backend 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Uses of Class eu.ehri.project.importers.ImportLog (EHRI Backend 0.12.0-SNAPSHOT API)";
+        parent.document.title="Uses of Class eu.ehri.project.importers.ImportLog (EHRI Backend 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -75,6 +75,18 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><a href="#eu.ehri.extension">eu.ehri.extension</a></td>
+<td class="colLast">
+<div class="block">Jersey resource classes for providing
+ web service access to the graph, via
+ the <a href="../../../../../eu/ehri/project/views/package-summary.html"><code>eu.ehri.project.views</code></a> layer.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.extension.providers">eu.ehri.extension.providers</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.importers">eu.ehri.project.importers</a></td>
 <td class="colLast">
 <div class="block">Handlers and Importers and supporting classes to import files into
@@ -82,12 +94,32 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.csv">eu.ehri.project.importers.csv</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.importers.cvoc">eu.ehri.project.importers.cvoc</a></td>
 <td class="colLast">
 <div class="block">Tools to import controlled vocabularies into the graph database.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.eac">eu.ehri.project.importers.eac</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
 <tr class="altColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.ead">eu.ehri.project.importers.ead</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.eag">eu.ehri.project.importers.eag</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.json">eu.ehri.project.importers.json</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="#eu.ehri.project.importers.managers">eu.ehri.project.importers.managers</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -96,6 +128,108 @@
 </li>
 <li class="blockList">
 <ul class="blockList">
+<li class="blockList"><a name="eu.ehri.extension">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a> in <a href="../../../../../eu/ehri/extension/package-summary.html">eu.ehri.extension</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../eu/ehri/extension/package-summary.html">eu.ehri.extension</a> that return <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="strong">ImportResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ImportResource.html#batchUpdate(java.lang.String,%20java.lang.Boolean,%20java.lang.Boolean,%20java.lang.String,%20java.io.InputStream)">batchUpdate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;version,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;inputStream)</code>
+<div class="block">Update a batch of items via JSON containing (partial)
+ data bundles.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="strong">ImportResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ImportResource.html#importCsv(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importCsv</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)</code>
+<div class="block">Import a set of CSV files.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="strong">ImportResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ImportResource.html#importEac(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEac</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propertyFile,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;handlerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)</code>
+<div class="block">Import EAC files.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="strong">ImportResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ImportResource.html#importEad(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEad</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propertyFile,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;handlerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)</code>
+<div class="block">Import a set of EAD files.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="strong">ImportResource.</span><code><strong><a href="../../../../../eu/ehri/extension/ImportResource.html#importEag(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEag</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;scopeId,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html?is-external=true" title="class or interface in java.lang">Boolean</a>&nbsp;tolerant,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;propertyFile,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;handlerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;importerClass,
+         <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;data)</code>
+<div class="block">Import EAG files.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.extension.providers">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a> in <a href="../../../../../eu/ehri/extension/providers/package-summary.html">eu.ehri.extension.providers</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../eu/ehri/extension/providers/package-summary.html">eu.ehri.extension.providers</a> with parameters of type <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><span class="strong">ImportLogProvider.</span><code><strong><a href="../../../../../eu/ehri/extension/providers/ImportLogProvider.html#getSize(eu.ehri.project.importers.ImportLog,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize</a></strong>(<a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;importLog,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;aClass,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Type.html?is-external=true" title="class or interface in java.lang.reflect">Type</a>&nbsp;type,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>[]&nbsp;annotations,
+       javax.ws.rs.core.MediaType&nbsp;mediaType)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><span class="strong">ImportLogProvider.</span><code><strong><a href="../../../../../eu/ehri/extension/providers/ImportLogProvider.html#writeTo(eu.ehri.project.importers.ImportLog,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo</a></strong>(<a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;importLog,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;aClass,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Type.html?is-external=true" title="class or interface in java.lang.reflect">Type</a>&nbsp;type,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>[]&nbsp;annotations,
+       javax.ws.rs.core.MediaType&nbsp;mediaType,
+       javax.ws.rs.core.MultivaluedMap&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;multivaluedMap,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a>&nbsp;outputStream)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
 <li class="blockList"><a name="eu.ehri.project.importers">
 <!--   -->
 </a>
@@ -127,59 +261,9 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/AraEadImporter.html#AraEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">AraEadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
-              <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-              <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
-<div class="block">Construct an EadImporter object.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/CsvAuthoritativeItemImporter.html#CsvAuthoritativeItemImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvAuthoritativeItemImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
-                            <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-                            <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/CsvConceptImporter.html#CsvConceptImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvConceptImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
-                  <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/CsvHistoricalAgentImporter.html#CsvHistoricalAgentImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvHistoricalAgentImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
-                          <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-                          <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/EacImporter.html#EacImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EacImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
-           <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-           <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
-<div class="block">Construct an EacImporter object.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/EadImporter.html#EadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
-           <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-           <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
-<div class="block">Construct an EadImporter object.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/EagImporter.html#EagImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EagImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
-           <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-           <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
-<div class="block">Construct an EagImporter object.</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/EaImporter.html#EaImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EaImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
           <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
           <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
-<div class="block">Construct an EadImporter object.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/IcaAtomEadImporter.html#IcaAtomEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">IcaAtomEadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
-                  <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
 <div class="block">Construct an EadImporter object.</div>
 </td>
 </tr>
@@ -188,25 +272,46 @@
            <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
            <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/PersonalitiesImporter.html#PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">PersonalitiesImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
-                     <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-                     <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.csv">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a> in <a href="../../../../../eu/ehri/project/importers/csv/package-summary.html">eu.ehri.project.importers.csv</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation">
+<caption><span>Constructors in <a href="../../../../../eu/ehri/project/importers/csv/package-summary.html">eu.ehri.project.importers.csv</a> with parameters of type <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
 </tr>
+<tbody>
 <tr class="altColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/UkrainianUnitImporter.html#UkrainianUnitImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">UkrainianUnitImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
-                     <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-                     <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.html#CsvAuthoritativeItemImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvAuthoritativeItemImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
+                            <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+                            <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/VirtualEadImporter.html#VirtualEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">VirtualEadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/csv/CsvConceptImporter.html#CsvConceptImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvConceptImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
                   <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
-                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
-<div class="block">Construct an EadImporter object.</div>
-</td>
+                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/Wp2PersonalitiesImporter.html#Wp2PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">Wp2PersonalitiesImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.html#CsvHistoricalAgentImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvHistoricalAgentImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
+                          <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+                          <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/csv/PersonalitiesImporter.html#PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">PersonalitiesImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
+                     <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+                     <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/csv/UkrainianUnitImporter.html#UkrainianUnitImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">UkrainianUnitImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
+                     <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+                     <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.html#Wp2PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">Wp2PersonalitiesImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
                         <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
                         <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
 </tr>
@@ -226,16 +331,6 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><span class="strong">XmlSkosImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/cvoc/XmlSkosImporter.html#importFile(java.io.InputStream,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><span class="strong">OwlApiSkosImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/cvoc/OwlApiSkosImporter.html#importFile(java.io.InputStream,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
 <td class="colLast"><span class="strong">JenaSkosImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/cvoc/JenaSkosImporter.html#importFile(java.io.InputStream,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
 <div class="block">Import an input stream.</div>
@@ -247,18 +342,6 @@
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
 <div class="block">Import an input stream with a given log message.</div>
 </td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><span class="strong">XmlSkosImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/cvoc/XmlSkosImporter.html#importFile(java.lang.String,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePath,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
-<div class="block">management part **</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><span class="strong">OwlApiSkosImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/cvoc/OwlApiSkosImporter.html#importFile(java.lang.String,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePath,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
@@ -276,17 +359,114 @@
 </tr>
 </tbody>
 </table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.eac">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a> in <a href="../../../../../eu/ehri/project/importers/eac/package-summary.html">eu.ehri.project.importers.eac</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation">
+<caption><span>Constructors in <a href="../../../../../eu/ehri/project/importers/eac/package-summary.html">eu.ehri.project.importers.eac</a> with parameters of type <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/eac/EacImporter.html#EacImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EacImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+           <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+           <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
+<div class="block">Construct an EacImporter object.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.ead">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a> in <a href="../../../../../eu/ehri/project/importers/ead/package-summary.html">eu.ehri.project.importers.ead</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation">
+<caption><span>Constructors in <a href="../../../../../eu/ehri/project/importers/ead/package-summary.html">eu.ehri.project.importers.ead</a> with parameters of type <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/AraEadImporter.html#AraEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">AraEadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+              <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+              <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
+<div class="block">Construct an EadImporter object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/EadImporter.html#EadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+           <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+           <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
+<div class="block">Construct an EadImporter object.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/IcaAtomEadImporter.html#IcaAtomEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">IcaAtomEadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+                  <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
+<div class="block">Construct an EadImporter object.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/ead/VirtualEadImporter.html#VirtualEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">VirtualEadImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+                  <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
+<div class="block">Construct an EadImporter object.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.eag">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a> in <a href="../../../../../eu/ehri/project/importers/eag/package-summary.html">eu.ehri.project.importers.eag</a></h3>
+<table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation">
+<caption><span>Constructors in <a href="../../../../../eu/ehri/project/importers/eag/package-summary.html">eu.ehri.project.importers.eag</a> with parameters of type <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/eag/EagImporter.html#EagImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EagImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
+           <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+           <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
+<div class="block">Construct an EagImporter object.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="blockList"><a name="eu.ehri.project.importers.json">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a> in <a href="../../../../../eu/ehri/project/importers/json/package-summary.html">eu.ehri.project.importers.json</a></h3>
 <table border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
-<caption><span>Methods in <a href="../../../../../eu/ehri/project/importers/cvoc/package-summary.html">eu.ehri.project.importers.cvoc</a> with parameters of type <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>Methods in <a href="../../../../../eu/ehri/project/importers/json/package-summary.html">eu.ehri.project.importers.json</a> that return <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><span class="strong">XmlSkosImporter.</span><code><strong><a href="../../../../../eu/ehri/project/importers/cvoc/XmlSkosImporter.html#handleCallbacks(eu.ehri.project.persistence.Mutation,%20eu.ehri.project.importers.ImportLog)">handleCallbacks</a></strong>(<a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;? extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;mutation,
-               <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;manifest)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="strong">BatchOperations.</span><code><strong><a href="../../../../../eu/ehri/project/importers/json/BatchOperations.html#batchImport(java.io.InputStream,%20eu.ehri.project.models.base.Actioner,%20com.google.common.base.Optional)">batchImport</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;inputStream,
+           <a href="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
+           com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>
+<div class="block">Create or update a batch of items.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="strong">BatchOperations.</span><code><strong><a href="../../../../../eu/ehri/project/importers/json/BatchOperations.html#batchUpdate(java.io.InputStream,%20eu.ehri.project.models.base.Actioner,%20com.google.common.base.Optional)">batchUpdate</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;inputStream,
+           <a href="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
+           com.google.common.base.Optional&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;logMessage)</code>
+<div class="block">Update a batch of items.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -304,51 +484,51 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="strong">AbstractImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importFile(java.io.InputStream,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
 <td class="colLast"><span class="strong">ImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importFile(java.io.InputStream,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
 <div class="block">Import an item via an input stream.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><span class="strong">AbstractImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importFile(java.io.InputStream,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
+<td class="colLast"><span class="strong">AbstractImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importFile(java.lang.String,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePath,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
 <td class="colLast"><span class="strong">ImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importFile(java.lang.String,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePath,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
 <div class="block">Import a file by specifying its path.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><span class="strong">AbstractImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importFile(java.lang.String,%20java.lang.String)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;filePath,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
-</tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="strong">AbstractImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importFiles(org.apache.commons.compress.archivers.ArchiveInputStream,%20java.lang.String)">importFiles</a></strong>(org.apache.commons.compress.archivers.ArchiveInputStream&nbsp;inputStream,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
 <td class="colLast"><span class="strong">ImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importFiles(org.apache.commons.compress.archivers.ArchiveInputStream,%20java.lang.String)">importFiles</a></strong>(org.apache.commons.compress.archivers.ArchiveInputStream&nbsp;inputStream,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
 <div class="block">Import multiple items via an archive input stream.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><span class="strong">AbstractImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importFiles(org.apache.commons.compress.archivers.ArchiveInputStream,%20java.lang.String)">importFiles</a></strong>(org.apache.commons.compress.archivers.ArchiveInputStream&nbsp;inputStream,
+<td class="colLast"><span class="strong">AbstractImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importFiles(java.util.List,%20java.lang.String)">importFiles</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;paths,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
 <td class="colLast"><span class="strong">ImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importFiles(java.util.List,%20java.lang.String)">importFiles</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;paths,
            <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
 <div class="block">Import multiple files via a list of file paths.</div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><span class="strong">AbstractImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importFiles(java.util.List,%20java.lang.String)">importFiles</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;paths,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -360,19 +540,19 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>protected abstract void</code></td>
-<td class="colLast"><span class="strong">AbstractImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importFile(java.io.InputStream,%20eu.ehri.project.persistence.ActionManager.EventContext,%20eu.ehri.project.importers.ImportLog)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
-          <a href="../../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;eventContext,
-          <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
-<div class="block">Import an InputStream with an event context.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><span class="strong">SaxImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/SaxImportManager.html#importFile(java.io.InputStream,%20eu.ehri.project.persistence.ActionManager.EventContext,%20eu.ehri.project.importers.ImportLog)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
           <a href="../../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;eventContext,
           <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
 <div class="block">Import XML from the given InputStream, as part of the given action.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected abstract void</code></td>
+<td class="colLast"><span class="strong">AbstractImportManager.</span><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importFile(java.io.InputStream,%20eu.ehri.project.persistence.ActionManager.EventContext,%20eu.ehri.project.importers.ImportLog)">importFile</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;ios,
+          <a href="../../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;eventContext,
+          <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
+<div class="block">Import an InputStream with an event context.</div>
 </td>
 </tr>
 <tr class="altColor">

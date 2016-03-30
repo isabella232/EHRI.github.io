@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Index (EHRI Core API 0.12.0-SNAPSHOT API)</title>
+<title>Index (EHRI Core API 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="./stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Index (EHRI Core API 0.12.0-SNAPSHOT API)";
+        parent.document.title="Index (EHRI Core API 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -68,7 +68,8 @@
 <dl>
 <dt><a href="./eu/ehri/project/models/base/AbstractUnit.html" title="interface in eu.ehri.project.models.base"><span class="strong">AbstractUnit</span></a> - Interface in <a href="./eu/ehri/project/models/base/package-summary.html">eu.ehri.project.models.base</a></dt>
 <dd>
-<div class="block">An abstract entity that has the features that documentary units need.</div>
+<div class="block">An abstract entity representing either a documentary (physical) unit
+ or a virtual unit.</div>
 </dd>
 <dt><a href="./eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions"><span class="strong">AccessDenied</span></a> - Exception in <a href="./eu/ehri/project/exceptions/package-summary.html">eu.ehri.project.exceptions</a></dt>
 <dd>
@@ -111,8 +112,13 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclElement.html#AclElement(com.tinkerpop.blueprints.Element,%20eu.ehri.project.acl.wrapper.AclGraph)">AclElement(Element, AclGraph&lt;?&gt;)</a></span> - Constructor for class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclElement.html" title="class in eu.ehri.project.acl.wrapper">AclElement</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper"><span class="strong">AclGraph</span></a>&lt;<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="type parameter in AclGraph">T</a> extends com.tinkerpop.blueprints.Graph&gt; - Class in <a href="./eu/ehri/project/acl/wrapper/package-summary.html">eu.ehri.project.acl.wrapper</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclElement.html#aclGraph">aclGraph</a></span> - Variable in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclElement.html" title="class in eu.ehri.project.acl.wrapper">AclElement</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper"><span class="strong">AclGraph</span></a>&lt;<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="type parameter in AclGraph">T</a> extends com.tinkerpop.blueprints.Graph&gt; - Class in <a href="./eu/ehri/project/acl/wrapper/package-summary.html">eu.ehri.project.acl.wrapper</a></dt>
+<dd>
+<div class="block">A wrapper graph that hides vertices which are not accessible to the
+ given accessor.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#AclGraph(T,%20eu.ehri.project.models.base.Accessor)">AclGraph(T, Accessor)</a></span> - Constructor for class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl"><span class="strong">AclManager</span></a> - Class in <a href="./eu/ehri/project/acl/package-summary.html">eu.ehri.project.acl</a></dt>
@@ -126,6 +132,10 @@
 <dt><span class="strong"><a href="./eu/ehri/project/acl/AclManager.html#AclManager(com.tinkerpop.frames.FramedGraph)">AclManager(FramedGraph&lt;?&gt;)</a></span> - Constructor for class eu.ehri.project.acl.<a href="./eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</a></dt>
 <dd>
 <div class="block">Constructor.</div>
+</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#aclVertex(com.tinkerpop.blueprints.Vertex)">aclVertex(Vertex)</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
+<dd>
+<div class="block">Get an ACL-aware vertex from a generic one.</div>
 </dd>
 <dt><a href="./eu/ehri/project/acl/wrapper/AclVertex.html" title="class in eu.ehri.project.acl.wrapper"><span class="strong">AclVertex</span></a> - Class in <a href="./eu/ehri/project/acl/wrapper/package-summary.html">eu.ehri.project.acl.wrapper</a></dt>
 <dd>&nbsp;</dd>
@@ -228,7 +238,9 @@
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Promotable.Impl.html#addDemotion(eu.ehri.project.models.UserProfile)">addDemotion(UserProfile)</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Promotable.Impl.html" title="class in eu.ehri.project.models.base">Promotable.Impl</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Described.html#addDescription(eu.ehri.project.models.base.Description)">addDescription(Description)</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Add a description to this item.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#addEdge(java.lang.Object,%20com.tinkerpop.blueprints.Vertex,%20com.tinkerpop.blueprints.Vertex,%20java.lang.String)">addEdge(Object, Vertex, Vertex, String)</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclVertex.html#addEdge(java.lang.String,%20com.tinkerpop.blueprints.Vertex)">addEdge(String, Vertex)</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclVertex.html" title="class in eu.ehri.project.acl.wrapper">AclVertex</a></dt>
@@ -266,7 +278,9 @@
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html#addLabel(java.lang.String)">addLabel(String)</a></span> - Method in class eu.ehri.project.core.impl.neo4j.<a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Vertex</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Linkable.html#addLink(eu.ehri.project.models.Link)">addLink(Link)</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Linkable.html" title="interface in eu.ehri.project.models.base">Linkable</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Add a link to this item.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/Link.html#addLinkBody(eu.ehri.project.models.base.Accessible)">addLinkBody(Accessible)</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/Link.html#addLinkTarget(eu.ehri.project.models.base.Linkable)">addLinkTarget(Linkable)</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></dt>
@@ -358,13 +372,13 @@
 <dd>
 <div class="block">List events "interesting" for a user, with aggregation.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.html#aggregateByUser(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">aggregateByUser(UserProfile, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.html" title="class in eu.ehri.project.views">EventViews</a></dt>
-<dd>
-<div class="block">Aggregate a user's actions.</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.html#aggregateForItem(eu.ehri.project.models.base.Accessible,%20eu.ehri.project.models.base.Accessor)">aggregateForItem(Accessible, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.html" title="class in eu.ehri.project.views">EventViews</a></dt>
 <dd>
 <div class="block">Aggregate an item's events.</div>
+</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.html#aggregateUserActions(eu.ehri.project.models.UserProfile,%20eu.ehri.project.models.base.Accessor)">aggregateUserActions(UserProfile, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.html" title="class in eu.ehri.project.views">EventViews</a></dt>
+<dd>
+<div class="block">Aggregate a user's actions.</div>
 </dd>
 <dt><a href="./eu/ehri/project/utils/pipes/AggregatorPipe.html" title="class in eu.ehri.project.utils.pipes"><span class="strong">AggregatorPipe</span></a>&lt;<a href="./eu/ehri/project/utils/pipes/AggregatorPipe.html" title="type parameter in AggregatorPipe">E</a>&gt; - Class in <a href="./eu/ehri/project/utils/pipes/package-summary.html">eu.ehri.project.utils.pipes</a></dt>
 <dd>
@@ -397,7 +411,7 @@
 </dd>
 <dt><a href="./eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base"><span class="strong">Annotator</span></a> - Interface in <a href="./eu/ehri/project/models/base/package-summary.html">eu.ehri.project.models.base</a></dt>
 <dd>
-<div class="block">An entity that can annotate <a href="./eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base"><code>Annotatable</code></a>s.</div>
+<div class="block">An entity that can annotate <a href="./eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base"><code>Annotatable</code></a> items.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/Group.html#ANONYMOUS_GROUP_IDENTIFIER">ANONYMOUS_GROUP_IDENTIFIER</a></span> - Static variable in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/Group.html" title="interface in eu.ehri.project.models">Group</a></dt>
 <dd>&nbsp;</dd>
@@ -491,6 +505,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.Builder.html#build()">build()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.Builder.html" title="class in eu.ehri.project.views">EventViews.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/Query.Builder.html#build()">build()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views">Query.Builder</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence"><span class="strong">Bundle</span></a> - Class in <a href="./eu/ehri/project/persistence/package-summary.html">eu.ehri.project.persistence</a></dt>
 <dd>
 <div class="block">Class that represents a graph entity and subtree relations
@@ -522,18 +538,20 @@
 <dd>
 <div class="block">Filter predicate function interface.</div>
 </dd>
-<dt><a href="./eu/ehri/project/persistence/BundleDAO.html" title="class in eu.ehri.project.persistence"><span class="strong">BundleDAO</span></a> - Class in <a href="./eu/ehri/project/persistence/package-summary.html">eu.ehri.project.persistence</a></dt>
+<dt><a href="./eu/ehri/project/persistence/BundleManager.html" title="class in eu.ehri.project.persistence"><span class="strong">BundleManager</span></a> - Class in <a href="./eu/ehri/project/persistence/package-summary.html">eu.ehri.project.persistence</a></dt>
 <dd>
 <div class="block">Class responsible for creating, updating and deleting Bundles.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleDAO.html#BundleDAO(com.tinkerpop.frames.FramedGraph,%20java.util.Collection)">BundleDAO(FramedGraph&lt;?&gt;, Collection&lt;String&gt;)</a></span> - Constructor for class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleDAO.html" title="class in eu.ehri.project.persistence">BundleDAO</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleManager.html#BundleManager(com.tinkerpop.frames.FramedGraph,%20java.util.Collection)">BundleManager(FramedGraph&lt;?&gt;, Collection&lt;String&gt;)</a></span> - Constructor for class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleManager.html" title="class in eu.ehri.project.persistence">BundleManager</a></dt>
 <dd>
 <div class="block">Constructor with a given scope.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleDAO.html#BundleDAO(com.tinkerpop.frames.FramedGraph)">BundleDAO(FramedGraph&lt;?&gt;)</a></span> - Constructor for class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleDAO.html" title="class in eu.ehri.project.persistence">BundleDAO</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleManager.html#BundleManager(com.tinkerpop.frames.FramedGraph)">BundleManager(FramedGraph&lt;?&gt;)</a></span> - Constructor for class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleManager.html" title="class in eu.ehri.project.persistence">BundleManager</a></dt>
 <dd>
 <div class="block">Constructor with system scope.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/Bundle.html#bundleStream(java.io.InputStream)">bundleStream(InputStream)</a></span> - Static method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/persistence/utils/BundleUtils.html" title="class in eu.ehri.project.persistence.utils"><span class="strong">BundleUtils</span></a> - Class in <a href="./eu/ehri/project/persistence/utils/package-summary.html">eu.ehri.project.persistence.utils</a></dt>
 <dd>
 <div class="block">Helpers for working with the <a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence"><code>Bundle</code></a> format.</div>
@@ -602,13 +620,9 @@
 <dt><span class="strong"><a href="./eu/ehri/project/models/utils/ClassUtils.html#ClassUtils()">ClassUtils()</a></span> - Constructor for class eu.ehri.project.models.utils.<a href="./eu/ehri/project/models/utils/ClassUtils.html" title="class in eu.ehri.project.models.utils">ClassUtils</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#clearFilters()">clearFilters()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Clear the filter clauses from this query.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#clearOrdering()">clearOrdering()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Clear the filter clauses from this query.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclEdgeIterable.html#close()">close()</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclEdgeIterable.html" title="class in eu.ehri.project.acl.wrapper">AclEdgeIterable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclVertexIterable.html#close()">close()</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclVertexIterable.html" title="class in eu.ehri.project.acl.wrapper">AclVertexIterable</a></dt>
@@ -652,11 +666,7 @@
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/models/cvoc/ConceptDescription.html" title="interface in eu.ehri.project.models.cvoc"><span class="strong">ConceptDescription</span></a> - Interface in <a href="./eu/ehri/project/models/cvoc/package-summary.html">eu.ehri.project.models.cvoc</a></dt>
 <dd>
-<div class="block">labels, notes and texts that describe the concept, for a specific language 
- are combined into this description
- 
- NOTE: we should only allow one prefLabel (and thus one ConceptDescription) per language, 
- but we cannot model that</div>
+<div class="block">Description for a SKOS concept.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/PermissionType.html#contains(eu.ehri.project.acl.PermissionType)">contains(PermissionType)</a></span> - Method in enum eu.ehri.project.acl.<a href="./eu/ehri/project/acl/PermissionType.html" title="enum in eu.ehri.project.acl">PermissionType</a></dt>
 <dd>
@@ -673,10 +683,6 @@
 <div class="block">An enum of entity types that represent first-class
  content types, meaning that permissions can be
  granted up all items of that type.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#copy(eu.ehri.project.views.Query)">copy(Query&lt;E&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Copy constructor.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#count()">count()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
 <dd>
@@ -702,14 +708,20 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/Country.html#COUNTRY_CODE">COUNTRY_CODE</a></span> - Static variable in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/Country.html" title="interface in eu.ehri.project.models">Country</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleDAO.html#create(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">create(Bundle, Class&lt;T&gt;)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleDAO.html" title="class in eu.ehri.project.persistence">BundleDAO</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleManager.html#create(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">create(Bundle, Class&lt;T&gt;)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleManager.html" title="class in eu.ehri.project.persistence">BundleManager</a></dt>
 <dd>
 <div class="block">Entry-point for creating a bundle.</div>
+</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/AnnotationViews.html#create(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">create(String, String, Bundle, UserProfile, Collection&lt;Accessor&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/AnnotationViews.html" title="class in eu.ehri.project.views">AnnotationViews</a></dt>
+<dd>
+<div class="block">Create an annotation for a dependent node of an item.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Crud.html#create(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">create(Bundle, Accessor)</a></span> - Method in interface eu.ehri.project.views.<a href="./eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/DescriptionViews.html#create(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.lang.Class,%20eu.ehri.project.models.base.Accessor,%20com.google.common.base.Optional)">create(String, Bundle, Class&lt;T&gt;, Accessor, Optional&lt;String&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/DescriptionViews.html" title="class in eu.ehri.project.views">DescriptionViews</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Create a dependent item, belonging to the given parent.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/impl/CrudViews.html#create(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">create(Bundle, Accessor)</a></span> - Method in class eu.ehri.project.views.impl.<a href="./eu/ehri/project/views/impl/CrudViews.html" title="class in eu.ehri.project.views.impl">CrudViews</a></dt>
 <dd>
 <div class="block">Create a new object of type `E` from the given data, within the scope of
@@ -725,7 +737,11 @@
 <div class="block">Create a new object of type `E` from the given data, saving an Action log
  with the given log message.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/LinkViews.html#createAccessPointLink(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">createAccessPointLink(String, String, String, String, String, Bundle, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/LinkViews.html" title="class in eu.ehri.project.views">LinkViews</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/views/LinkViews.html#create(java.lang.String,%20java.lang.String,%20java.util.List,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">create(String, String, List&lt;String&gt;, Bundle, UserProfile, Collection&lt;Accessor&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/LinkViews.html" title="class in eu.ehri.project.views">LinkViews</a></dt>
+<dd>
+<div class="block">Create a link between two items.</div>
+</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/LinkViews.html#createAccessPointLink(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">createAccessPointLink(String, String, String, String, String, Bundle, UserProfile, Collection&lt;Accessor&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/LinkViews.html" title="class in eu.ehri.project.views">LinkViews</a></dt>
 <dd>
 <div class="block">Create a link between two items, along with an access point on the given description.</div>
 </dd>
@@ -737,19 +753,11 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/Mutation.html#created()">created()</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/AnnotationViews.html#createFor(java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor,%20java.util.Collection)">createFor(String, String, Bundle, Accessor, Collection&lt;Accessor&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/AnnotationViews.html" title="class in eu.ehri.project.views">AnnotationViews</a></dt>
-<dd>
-<div class="block">Create an annotation for a dependent node of an item.</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/Neo4jGraphManager.html#createIndicesAndConstraints(org.neo4j.graphdb.GraphDatabaseService)">createIndicesAndConstraints(GraphDatabaseService)</a></span> - Static method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/Neo4jGraphManager.html" title="class in eu.ehri.project.core.impl">Neo4jGraphManager</a></dt>
 <dd>
 <div class="block">Create</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/LinkViews.html#createLink(java.lang.String,%20java.lang.String,%20java.util.List,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">createLink(String, String, List&lt;String&gt;, Bundle, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/LinkViews.html" title="class in eu.ehri.project.views">LinkViews</a></dt>
-<dd>
-<div class="block">Create a link between two items.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleDAO.html#createOrUpdate(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">createOrUpdate(Bundle, Class&lt;T&gt;)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleDAO.html" title="class in eu.ehri.project.persistence">BundleDAO</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleManager.html#createOrUpdate(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">createOrUpdate(Bundle, Class&lt;T&gt;)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleManager.html" title="class in eu.ehri.project.persistence">BundleManager</a></dt>
 <dd>
 <div class="block">Entry point for creating or updating a bundle, depending on whether it has a supplied id.</div>
 </dd>
@@ -782,16 +790,9 @@
 <dd>
 <div class="block">Create a vertex with the given id, type, and data.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/core/GraphManager.html#createVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map,%20java.lang.Iterable)">createVertex(String, EntityClass, Map&lt;String, ?&gt;, Iterable&lt;String&gt;)</a></span> - Method in interface eu.ehri.project.core.<a href="./eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></dt>
-<dd>
-<div class="block">Create a vertex with the given id, type, and data, specifying which
- property keys should be indexed.</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html#createVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map)">createVertex(String, EntityClass, Map&lt;String, ?&gt;)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="class in eu.ehri.project.core.impl">BlueprintsGraphManager</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html#createVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map,%20java.lang.Iterable)">createVertex(String, EntityClass, Map&lt;String, ?&gt;, Iterable&lt;String&gt;)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="class in eu.ehri.project.core.impl">BlueprintsGraphManager</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/core/impl/Neo4jGraphManager.html#createVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map,%20java.lang.Iterable)">createVertex(String, EntityClass, Map&lt;String, ?&gt;, Iterable&lt;String&gt;)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/Neo4jGraphManager.html" title="class in eu.ehri.project.core.impl">Neo4jGraphManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/core/impl/Neo4jGraphManager.html#createVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map)">createVertex(String, EntityClass, Map&lt;String, ?&gt;)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/Neo4jGraphManager.html" title="class in eu.ehri.project.core.impl">Neo4jGraphManager</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views"><span class="strong">Crud</span></a>&lt;<a href="./eu/ehri/project/views/Crud.html" title="type parameter in Crud">E</a> extends <a href="./eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt; - Interface in <a href="./eu/ehri/project/views/package-summary.html">eu.ehri.project.views</a></dt>
 <dd>
@@ -839,17 +840,15 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/ActionManager.html#DEBUG_TYPE">DEBUG_TYPE</a></span> - Static variable in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#DEFAULT_LIMIT">DEFAULT_LIMIT</a></span> - Static variable in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/annotations/Fetch.html#DEFAULT_TRAVERSALS">DEFAULT_TRAVERSALS</a></span> - Static variable in annotation type eu.ehri.project.models.annotations.<a href="./eu/ehri/project/models/annotations/Fetch.html" title="annotation in eu.ehri.project.models.annotations">Fetch</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/utils/JavaHandlerUtils.html#defaultMaxLoops">defaultMaxLoops</a></span> - Static variable in class eu.ehri.project.models.utils.<a href="./eu/ehri/project/models/utils/JavaHandlerUtils.html" title="class in eu.ehri.project.models.utils">JavaHandlerUtils</a></dt>
 <dd>
 <div class="block">Pipe function with a max loop clause with the default of 20.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#defaultOrderBy(java.lang.String,%20eu.ehri.project.views.Query.Sort)">defaultOrderBy(String, Query.Sort)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Add an default order clause, to be used if no custom order is specified.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleDAO.html#delete(eu.ehri.project.persistence.Bundle)">delete(Bundle)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleDAO.html" title="class in eu.ehri.project.persistence">BundleDAO</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleManager.html#delete(eu.ehri.project.persistence.Bundle)">delete(Bundle)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleManager.html" title="class in eu.ehri.project.persistence">BundleManager</a></dt>
 <dd>
 <div class="block">Delete a bundle and dependent items, returning the total number of vertices deleted.</div>
 </dd>
@@ -861,7 +860,9 @@
 <dt><span class="strong"><a href="./eu/ehri/project/views/Crud.html#delete(java.lang.String,%20eu.ehri.project.models.base.Accessor)">delete(String, Accessor)</a></span> - Method in interface eu.ehri.project.views.<a href="./eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/DescriptionViews.html#delete(java.lang.String,%20java.lang.String,%20eu.ehri.project.models.base.Accessor,%20com.google.common.base.Optional)">delete(String, String, Accessor, Optional&lt;String&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/DescriptionViews.html" title="class in eu.ehri.project.views">DescriptionViews</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Delete a dependent item, belonging to the given parent.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/impl/CrudViews.html#delete(java.lang.String,%20eu.ehri.project.models.base.Accessor)">delete(String, Accessor)</a></span> - Method in class eu.ehri.project.views.impl.<a href="./eu/ehri/project/views/impl/CrudViews.html" title="class in eu.ehri.project.views.impl">CrudViews</a></dt>
 <dd>
 <div class="block">Delete an object bundle, following dependency cascades, within the scope
@@ -903,11 +904,6 @@
 <dd>
 <div class="block">The depth of this bundle tree, i.e.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#depthFilter(java.lang.String,%20com.tinkerpop.blueprints.Direction,%20java.lang.Integer)">depthFilter(String, Direction, Integer)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Filter out items that are over a certain depth in the given
- relationship chain.</div>
-</dd>
 <dt><a href="./eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base"><span class="strong">Described</span></a> - Interface in <a href="./eu/ehri/project/models/base/package-summary.html">eu.ehri.project.models.base</a></dt>
 <dd>
 <div class="block">An entity that can have descriptions.</div>
@@ -931,7 +927,10 @@
 <dt><span class="strong"><a href="./eu/ehri/project/models/idgen/DescriptionIdGenerator.html#descriptionJoiner">descriptionJoiner</a></span> - Static variable in enum eu.ehri.project.models.idgen.<a href="./eu/ehri/project/models/idgen/DescriptionIdGenerator.html" title="enum in eu.ehri.project.models.idgen">DescriptionIdGenerator</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/views/DescriptionViews.html" title="class in eu.ehri.project.views"><span class="strong">DescriptionViews</span></a>&lt;<a href="./eu/ehri/project/views/DescriptionViews.html" title="type parameter in DescriptionViews">E</a> extends <a href="./eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a>&gt; - Class in <a href="./eu/ehri/project/views/package-summary.html">eu.ehri.project.views</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">A view class for managing dependent item's, belonging to
+ a top-level content type.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/DescriptionViews.html#DescriptionViews(com.tinkerpop.frames.FramedGraph,%20java.lang.Class)">DescriptionViews(FramedGraph&lt;?&gt;, Class&lt;E&gt;)</a></span> - Constructor for class eu.ehri.project.views.<a href="./eu/ehri/project/views/DescriptionViews.html" title="class in eu.ehri.project.views">DescriptionViews</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/exceptions/DeserializationError.html" title="class in eu.ehri.project.exceptions"><span class="strong">DeserializationError</span></a> - Exception in <a href="./eu/ehri/project/exceptions/package-summary.html">eu.ehri.project.exceptions</a></dt>
@@ -1127,6 +1126,10 @@
 </dd>
 <dt><a href="./eu/ehri/project/views/impl/package-summary.html">eu.ehri.project.views.impl</a> - package eu.ehri.project.views.impl</dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#evaluateEdge(com.tinkerpop.blueprints.Edge)">evaluateEdge(Edge)</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#evaluateVertex(com.tinkerpop.blueprints.Vertex)">evaluateVertex(Vertex)</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/ActionManager.html#EVENT_LINK">EVENT_LINK</a></span> - Static variable in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/models/events/EventLink.html" title="interface in eu.ehri.project.models.events"><span class="strong">EventLink</span></a> - Interface in <a href="./eu/ehri/project/models/events/package-summary.html">eu.ehri.project.models.events</a></dt>
@@ -1170,30 +1173,13 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/utils/ClassUtils.html#FETCH_METHOD_PREFIX">FETCH_METHOD_PREFIX</a></span> - Static variable in class eu.ehri.project.models.utils.<a href="./eu/ehri/project/models/utils/ClassUtils.html" title="class in eu.ehri.project.models.utils">ClassUtils</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#filter(java.lang.String,%20eu.ehri.project.views.Query.FilterPredicate,%20java.lang.String)">filter(String, Query.FilterPredicate, String)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Add a filter clause.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#filter(java.util.Collection)">filter(Collection&lt;String&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Add a set of unparsed filter clauses.</div>
-</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#filter(java.lang.String,%20eu.ehri.project.views.Query.FilterPredicate,%20java.lang.Object)">filter(String, Query.FilterPredicate, Object)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/Bundle.html#filterRelations(eu.ehri.project.persistence.Bundle.Filter)">filterRelations(Bundle.Filter)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></dt>
 <dd>
 <div class="block">Filter relations, removing items that *match* the given
  filter function.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#filterTraversal(eu.ehri.project.views.QueryUtils.TraversalPath,%20eu.ehri.project.views.Query.FilterPredicate,%20java.lang.String)">filterTraversal(QueryUtils.TraversalPath, Query.FilterPredicate, String)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Add a filter clause.</div>
-</dd>
-<dt><a href="./eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools"><span class="strong">FindReplace</span></a> - Class in <a href="./eu/ehri/project/tools/package-summary.html">eu.ehri.project.tools</a></dt>
-<dd>
-<div class="block">A grab-bag of useful functions for making changes to the
- graph data.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/tools/FindReplace.html#FindReplace(com.tinkerpop.frames.FramedGraph)">FindReplace(FramedGraph&lt;?&gt;)</a></span> - Constructor for class eu.ehri.project.tools.<a href="./eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools">FindReplace</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/utils/fixtures/FixtureLoader.html" title="interface in eu.ehri.project.utils.fixtures"><span class="strong">FixtureLoader</span></a> - Interface in <a href="./eu/ehri/project/utils/fixtures/package-summary.html">eu.ehri.project.utils.fixtures</a></dt>
 <dd>
 <div class="block">Interface for classes which handle fixture loading.</div>
@@ -1214,6 +1200,8 @@
 <dt><span class="strong"><a href="./eu/ehri/project/acl/GlobalPermissionSet.html#from(java.util.Map)">from(Map&lt;ContentTypes, Collection&lt;PermissionType&gt;&gt;)</a></span> - Static method in class eu.ehri.project.acl.<a href="./eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/ItemPermissionSet.html#from(java.util.Set)">from(Set&lt;PermissionType&gt;)</a></span> - Static method in class eu.ehri.project.acl.<a href="./eu/ehri/project/acl/ItemPermissionSet.html" title="class in eu.ehri.project.acl">ItemPermissionSet</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/Bundle.Builder.html#from(eu.ehri.project.persistence.Bundle)">from(Bundle)</a></span> - Static method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Bundle.Builder.html" title="class in eu.ehri.project.persistence">Bundle.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.Builder.html#from(java.lang.String)">from(String)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.Builder.html" title="class in eu.ehri.project.views">EventViews.Builder</a></dt>
 <dd>&nbsp;</dd>
@@ -1287,8 +1275,6 @@
 <dd>
 <div class="block">XPath-like method for getting the value of a nested relation's attribute.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclElement.html#getAccessor()">getAccessor()</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclElement.html" title="class in eu.ehri.project.acl.wrapper">AclElement</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#getAccessor()">getAccessor()</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exceptions/AccessDenied.html#getAccessor()">getAccessor()</a></span> - Method in exception eu.ehri.project.exceptions.<a href="./eu/ehri/project/exceptions/AccessDenied.html" title="class in eu.ehri.project.exceptions">AccessDenied</a></dt>
@@ -1296,7 +1282,9 @@
 <dt><span class="strong"><a href="./eu/ehri/project/exceptions/PermissionDenied.html#getAccessor()">getAccessor()</a></span> - Method in exception eu.ehri.project.exceptions.<a href="./eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.html#getAccessors()">getAccessors()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Fetch accessors to which this item is restricted.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Description.html#getAccessPoints()">getAccessPoints()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/AclManager.html#getAclFilterFunction(eu.ehri.project.models.base.Accessor)">getAclFilterFunction(Accessor)</a></span> - Static method in class eu.ehri.project.acl.<a href="./eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</a></dt>
@@ -1363,12 +1351,11 @@
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessor.Impl.html#getAllParents()">getAllParents()</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessor.Impl.html" title="class in eu.ehri.project.models.base">Accessor.Impl</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Versioned.html#getAllPriorVersions()">getAllPriorVersions()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/models/base/Versioned.Impl.html#getAllPriorVersions()">getAllPriorVersions()</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Versioned.Impl.html" title="class in eu.ehri.project.models.base">Versioned.Impl</a></dt>
 <dd>
-<div class="block">Loops up through the chain of hasPriorVersion until the end, until it
- has been deleted, will be a item.</div>
+<div class="block">Loops through the chain of prior versions until the oldest existing version.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/models/base/Versioned.Impl.html#getAllPriorVersions()">getAllPriorVersions()</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Versioned.Impl.html" title="class in eu.ehri.project.models.base">Versioned.Impl</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/Group.html#getAllUserProfileMembers()">getAllUserProfileMembers()</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/Group.html" title="interface in eu.ehri.project.models">Group</a></dt>
 <dd>
 <div class="block">Get <b>all</b> members of this group, including members of
@@ -1393,7 +1380,9 @@
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Annotatable.html#getAnnotations()">getAnnotations()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Annotator.html#getAnnotations()">getAnnotations()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Annotator.html" title="interface in eu.ehri.project.models.base">Annotator</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Fetch annotations belonging to this item.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/UserProfile.html#getAnnotations()">getAnnotations()</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a></dt>
 <dd>
 <div class="block">Fetch annotations belonging to this user.</div>
@@ -1569,7 +1558,9 @@
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Description.html#getDescriptionCode()">getDescriptionCode()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Described.html#getDescriptions()">getDescriptions()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Fetch this item's descriptions.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/DocumentaryUnit.html#getDocumentDescriptions()">getDocumentDescriptions()</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a></dt>
 <dd>
 <div class="block">Get the description items for this documentary unit.</div>
@@ -1856,9 +1847,15 @@
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Actioner.Impl.html#getLatestAction()">getLatestAction()</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Actioner.Impl.html" title="class in eu.ehri.project.models.base">Actioner.Impl</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.html#getLatestEvent()">getLatestEvent()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Fetch the most recent event that affected this item.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.Impl.html#getLatestEvent()">getLatestEvent()</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.Impl.html" title="class in eu.ehri.project.models.base">Accessible.Impl</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/models/events/SystemEventQueue.html#getLatestEvent()">getLatestEvent()</a></span> - Method in interface eu.ehri.project.models.events.<a href="./eu/ehri/project/models/events/SystemEventQueue.html" title="interface in eu.ehri.project.models.events">SystemEventQueue</a></dt>
+<dd>
+<div class="block">Fetch the latest global event.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/ActionManager.html#getLatestGlobalEvent()">getLatestGlobalEvent()</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/ActionManager.html" title="class in eu.ehri.project.persistence">ActionManager</a></dt>
 <dd>
 <div class="block">Get the latest global event.</div>
@@ -1878,7 +1875,9 @@
 <div class="block">Fetch the links which make up the body of this UR (if any.)</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Linkable.html#getLinks()">getLinks()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Linkable.html" title="interface in eu.ehri.project.models.base">Linkable</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Fetch links attached to this item.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/UserProfile.html#getLinks()">getLinks()</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a></dt>
 <dd>
 <div class="block">Fetch links belonging to this user.</div>
@@ -1965,11 +1964,16 @@
 <div class="block">Get all permission grants that apply directly to this scope.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.html#getPermissionScope()">getPermissionScope()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Fetch the permission scope to which this item belongs, if any.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/SystemScope.html#getPermissionScopes()">getPermissionScopes()</a></span> - Method in enum eu.ehri.project.acl.<a href="./eu/ehri/project/acl/SystemScope.html" title="enum in eu.ehri.project.acl">SystemScope</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.html#getPermissionScopes()">getPermissionScopes()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Get the full hierarchy of permission scopes to which this
+ item belongs.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.Impl.html#getPermissionScopes()">getPermissionScopes()</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.Impl.html" title="class in eu.ehri.project.models.base">Accessible.Impl</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/PermissionScope.html#getPermissionScopes()">getPermissionScopes()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a></dt>
@@ -1979,14 +1983,16 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/PermissionScope.Impl.html#getPermissionScopes()">getPermissionScopes()</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/PermissionScope.Impl.html" title="class in eu.ehri.project.models.base">PermissionScope.Impl</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/models/cvoc/ConceptDescription.html#getPrefLabel()">getPrefLabel()</a></span> - Method in interface eu.ehri.project.models.cvoc.<a href="./eu/ehri/project/models/cvoc/ConceptDescription.html" title="interface in eu.ehri.project.models.cvoc">ConceptDescription</a></dt>
-<dd>
-<div class="block">The language property has the codes for language.</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/Mutation.html#getPrior()">getPrior()</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/models/events/SystemEvent.html#getPriorEvent()">getPriorEvent()</a></span> - Method in interface eu.ehri.project.models.events.<a href="./eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a></dt>
+<dd>
+<div class="block">Fetch the event chronologically prior to this one.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Versioned.html#getPriorVersion()">getPriorVersion()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Get the most recent version for this item, if one exists.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/events/SystemEvent.html#getPriorVersions()">getPriorVersions()</a></span> - Method in interface eu.ehri.project.models.events.<a href="./eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a></dt>
 <dd>
 <div class="block">If new versions have been created, fetch the prior versions
@@ -2015,8 +2021,6 @@
 <div class="block">Get an arbitrary property from the underlying vertex.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Entity.Impl.html#getProperty(java.lang.String)">getProperty(String)</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Entity.Impl.html" title="class in eu.ehri.project.models.base">Entity.Impl</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/QueryUtils.TraversalPath.html#getProperty()">getProperty()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/QueryUtils.TraversalPath.html" title="class in eu.ehri.project.views">QueryUtils.TraversalPath</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/AnonymousAccessor.html#getPropertyKeys()">getPropertyKeys()</a></span> - Method in enum eu.ehri.project.acl.<a href="./eu/ehri/project/acl/AnonymousAccessor.html" title="enum in eu.ehri.project.acl">AnonymousAccessor</a></dt>
 <dd>&nbsp;</dd>
@@ -2088,6 +2092,10 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/DocumentaryUnit.Impl.html#getRepository()">getRepository()</a></span> - Method in class eu.ehri.project.models.<a href="./eu/ehri/project/models/DocumentaryUnit.Impl.html" title="class in eu.ehri.project.models">DocumentaryUnit.Impl</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/models/DocumentaryUnit.html#getRepositoryIfTopLevel()">getRepositoryIfTopLevel()</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a></dt>
+<dd>
+<div class="block">Get the repository if this item is at the top of its hierarchy.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/AclManager.html#getScope()">getScope()</a></span> - Method in class eu.ehri.project.acl.<a href="./eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</a></dt>
 <dd>
 <div class="block">Get scope.</div>
@@ -2117,7 +2125,9 @@
 <div class="block">Return the subjects of this event.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/events/SystemEventQueue.html#getSystemEvents()">getSystemEvents()</a></span> - Method in interface eu.ehri.project.models.events.<a href="./eu/ehri/project/models/events/SystemEventQueue.html" title="interface in eu.ehri.project.models.events">SystemEventQueue</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Get a stream of system events, latest first.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/events/SystemEventQueue.Impl.html#getSystemEvents()">getSystemEvents()</a></span> - Method in class eu.ehri.project.models.events.<a href="./eu/ehri/project/models/events/SystemEventQueue.Impl.html" title="class in eu.ehri.project.models.events">SystemEventQueue.Impl</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/Annotation.html#getTargetParts()">getTargetParts()</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</a></dt>
@@ -2144,12 +2154,6 @@
 <div class="block">Get the current time as a timestamp.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.Page.html#getTotal()">getTotal()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/QueryUtils.html#getTraversalPath(java.lang.String)">getTraversalPath(String)</a></span> - Static method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/QueryUtils.html" title="class in eu.ehri.project.views">QueryUtils</a></dt>
-<dd>
-<div class="block">Attempt to parse a traversal pattern from a input string.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/QueryUtils.TraversalPath.html#getTraversals()">getTraversals()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/QueryUtils.TraversalPath.html" title="class in eu.ehri.project.views">QueryUtils.TraversalPath</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/events/Version.html#getTriggeringEvent()">getTriggeringEvent()</a></span> - Method in interface eu.ehri.project.models.events.<a href="./eu/ehri/project/models/events/Version.html" title="interface in eu.ehri.project.models.events">Version</a></dt>
 <dd>
@@ -2194,13 +2198,7 @@
 <dd>
 <div class="block">Get a node with the given ID.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/core/GraphManager.html#getVertex(java.lang.String,%20eu.ehri.project.models.EntityClass)">getVertex(String, EntityClass)</a></span> - Method in interface eu.ehri.project.core.<a href="./eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></dt>
-<dd>
-<div class="block">Get a node with the given ID and type.</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html#getVertex(java.lang.String)">getVertex(String)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="class in eu.ehri.project.core.impl">BlueprintsGraphManager</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html#getVertex(java.lang.String,%20eu.ehri.project.models.EntityClass)">getVertex(String, EntityClass)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="class in eu.ehri.project.core.impl">BlueprintsGraphManager</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html#getVertex(com.tinkerpop.blueprints.Direction)">getVertex(Direction)</a></span> - Method in class eu.ehri.project.core.impl.neo4j.<a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Edge</a></dt>
 <dd>&nbsp;</dd>
@@ -2225,7 +2223,7 @@
 <dt><span class="strong"><a href="./eu/ehri/project/core/GraphManager.html#getVertices(java.lang.String,%20java.lang.Object,%20eu.ehri.project.models.EntityClass)">getVertices(String, Object, EntityClass)</a></span> - Method in interface eu.ehri.project.core.<a href="./eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></dt>
 <dd>
 <div class="block">Get a CloseableIterable of vertices with the given type, and the given
- key/value indexed property.</div>
+ key/value property.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html#getVertices(eu.ehri.project.models.EntityClass)">getVertices(EntityClass)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="class in eu.ehri.project.core.impl">BlueprintsGraphManager</a></dt>
 <dd>&nbsp;</dd>
@@ -2307,8 +2305,6 @@
 <dd>
 <div class="block">Grant a user permissions to a content type.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclElement.html#graph">graph</a></span> - Variable in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclElement.html" title="class in eu.ehri.project.acl.wrapper">AclElement</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html#graph">graph</a></span> - Variable in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="class in eu.ehri.project.core.impl">BlueprintsGraphManager</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/utils/GraphInitializer.html" title="class in eu.ehri.project.utils"><span class="strong">GraphInitializer</span></a> - Class in <a href="./eu/ehri/project/utils/package-summary.html">eu.ehri.project.utils</a></dt>
@@ -2369,7 +2365,9 @@
 <dt><span class="strong"><a href="./eu/ehri/project/acl/ItemPermissionSet.html#has(eu.ehri.project.acl.PermissionType)">has(PermissionType)</a></span> - Method in class eu.ehri.project.acl.<a href="./eu/ehri/project/acl/ItemPermissionSet.html" title="class in eu.ehri.project.acl">ItemPermissionSet</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.html#hasAccessRestriction()">hasAccessRestriction()</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Determine if this item has access restrictions.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.Impl.html#hasAccessRestriction()">hasAccessRestriction()</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.Impl.html" title="class in eu.ehri.project.models.base">Accessible.Impl</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/utils/JavaHandlerUtils.html#hasEdge(com.tinkerpop.blueprints.Vertex,%20com.tinkerpop.blueprints.Direction,%20java.lang.String...)">hasEdge(Vertex, Direction, String...)</a></span> - Static method in class eu.ehri.project.models.utils.<a href="./eu/ehri/project/models/utils/JavaHandlerUtils.html" title="class in eu.ehri.project.models.utils">JavaHandlerUtils</a></dt>
@@ -2533,6 +2531,11 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exceptions/IntegrityError.html#IntegrityError(java.lang.String)">IntegrityError(String)</a></span> - Constructor for exception eu.ehri.project.exceptions.<a href="./eu/ehri/project/exceptions/IntegrityError.html" title="class in eu.ehri.project.exceptions">IntegrityError</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="./eu/ehri/project/models/annotations/InverseOf.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">InverseOf</span></a> - Annotation Type in <a href="./eu/ehri/project/models/annotations/package-summary.html">eu.ehri.project.models.annotations</a></dt>
+<dd>
+<div class="block">Indicates an adjacency that is the logical inverse of
+ another, and the label that should be used.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/AnonymousAccessor.html#isAdmin()">isAdmin()</a></span> - Method in enum eu.ehri.project.acl.<a href="./eu/ehri/project/acl/AnonymousAccessor.html" title="enum in eu.ehri.project.acl">AnonymousAccessor</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessor.Impl.html#isAdmin()">isAdmin()</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessor.Impl.html" title="class in eu.ehri.project.models.base">Accessor.Impl</a></dt>
@@ -2911,14 +2914,6 @@
 <dt><span class="strong"><a href="./eu/ehri/project/tools/DbUpgrader1to2.html#OLD_TYPE_KEY">OLD_TYPE_KEY</a></span> - Static variable in class eu.ehri.project.tools.<a href="./eu/ehri/project/tools/DbUpgrader1to2.html" title="class in eu.ehri.project.tools">DbUpgrader1to2</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#orderBy(java.lang.String,%20eu.ehri.project.views.Query.Sort)">orderBy(String, Query.Sort)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Add an order clause.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#orderBy(java.util.Collection)">orderBy(Collection&lt;String&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Add a set of string order clauses.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#orderByTraversal(eu.ehri.project.views.QueryUtils.TraversalPath,%20eu.ehri.project.views.Query.Sort)">orderByTraversal(QueryUtils.TraversalPath, Query.Sort)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/tools/JsonDataExporter.html#outputGraph(com.tinkerpop.blueprints.Graph,%20java.io.OutputStream)">outputGraph(Graph, OutputStream)</a></span> - Static method in class eu.ehri.project.tools.<a href="./eu/ehri/project/tools/JsonDataExporter.html" title="class in eu.ehri.project.tools">JsonDataExporter</a></dt>
 <dd>
@@ -3026,20 +3021,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/PromotionViews.NotPromotableError.html#PromotionViews.NotPromotableError(java.lang.String)">PromotionViews.NotPromotableError(String)</a></span> - Constructor for exception eu.ehri.project.views.<a href="./eu/ehri/project/views/PromotionViews.NotPromotableError.html" title="class in eu.ehri.project.views">PromotionViews.NotPromotableError</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/tools/FindReplace.html#propertyName(eu.ehri.project.models.EntityClass,%20java.lang.String,%20java.lang.String)">propertyName(EntityClass, String, String)</a></span> - Method in class eu.ehri.project.tools.<a href="./eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools">FindReplace</a></dt>
-<dd>
-<div class="block">Rename a property key across an entire class of items.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/tools/FindReplace.html#propertyValue(eu.ehri.project.models.EntityClass,%20java.lang.String,%20java.lang.String,%20java.lang.String)">propertyValue(EntityClass, String, String, String)</a></span> - Method in class eu.ehri.project.tools.<a href="./eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools">FindReplace</a></dt>
-<dd>
-<div class="block">Replace an existing property value with another value across an
- entire class of items.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/tools/FindReplace.html#propertyValueRE(eu.ehri.project.models.EntityClass,%20java.lang.String,%20java.util.regex.Pattern,%20java.lang.String)">propertyValueRE(EntityClass, String, Pattern, String)</a></span> - Method in class eu.ehri.project.tools.<a href="./eu/ehri/project/tools/FindReplace.html" title="class in eu.ehri.project.tools">FindReplace</a></dt>
-<dd>
-<div class="block">Replace a substring of a property value across an entire
- item class.</div>
-</dd>
 </dl>
 <a name="_Q_">
 <!--   -->
@@ -3056,14 +3037,20 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html#query()">query()</a></span> - Method in class eu.ehri.project.core.impl.neo4j.<a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Vertex</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views"><span class="strong">Query</span></a>&lt;<a href="./eu/ehri/project/views/Query.html" title="type parameter in Query">E</a> extends <a href="./eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt; - Class in <a href="./eu/ehri/project/views/package-summary.html">eu.ehri.project.views</a></dt>
+<dt><a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views"><span class="strong">Query</span></a>&lt;<a href="./eu/ehri/project/views/Query.html" title="type parameter in Query">E</a> extends <a href="./eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt; - Class in <a href="./eu/ehri/project/views/package-summary.html">eu.ehri.project.views</a></dt>
 <dd>
-<div class="block">Handles querying Accessible Entities, with ACL semantics.</div>
+<div class="block">Handles querying Entity entities with ACL semantics.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#Query(com.tinkerpop.frames.FramedGraph,%20java.lang.Class)">Query(FramedGraph&lt;?&gt;, Class&lt;E&gt;)</a></span> - Constructor for class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
 <dd>
 <div class="block">Simple constructor.</div>
 </dd>
+<dt><a href="./eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views"><span class="strong">Query.Builder</span></a>&lt;<a href="./eu/ehri/project/views/Query.Builder.html" title="type parameter in Query.Builder">E</a> extends <a href="./eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt; - Class in <a href="./eu/ehri/project/views/package-summary.html">eu.ehri.project.views</a></dt>
+<dd>
+<div class="block">Query builder.</div>
+</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/Query.Builder.html#Query.Builder(com.tinkerpop.frames.FramedGraph,%20java.lang.Class)">Query.Builder(FramedGraph&lt;?&gt;, Class&lt;E&gt;)</a></span> - Constructor for class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views">Query.Builder</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/views/Query.FilterPredicate.html" title="enum in eu.ehri.project.views"><span class="strong">Query.FilterPredicate</span></a> - Enum in <a href="./eu/ehri/project/views/package-summary.html">eu.ehri.project.views</a></dt>
 <dd>
 <div class="block">Filter predicates</div>
@@ -3092,25 +3079,12 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/QueryUtils.html#QueryUtils()">QueryUtils()</a></span> - Constructor for class eu.ehri.project.views.<a href="./eu/ehri/project/views/QueryUtils.html" title="class in eu.ehri.project.views">QueryUtils</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="./eu/ehri/project/views/QueryUtils.TraversalPath.html" title="class in eu.ehri.project.views"><span class="strong">QueryUtils.TraversalPath</span></a> - Class in <a href="./eu/ehri/project/views/package-summary.html">eu.ehri.project.views</a></dt>
-<dd>
-<div class="block">Class that represents a traversal path to a particular
- property of some relations.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/QueryUtils.TraversalPath.html#QueryUtils.TraversalPath(java.lang.String,%20java.util.List)">QueryUtils.TraversalPath(String, List&lt;Pair&lt;String, Direction&gt;&gt;)</a></span> - Constructor for class eu.ehri.project.views.<a href="./eu/ehri/project/views/QueryUtils.TraversalPath.html" title="class in eu.ehri.project.views">QueryUtils.TraversalPath</a></dt>
-<dd>&nbsp;</dd>
 </dl>
 <a name="_R_">
 <!--   -->
 </a>
 <h2 class="title">R</h2>
 <dl>
-<dt><span class="strong"><a href="./eu/ehri/project/core/GraphManager.html#rebuildIndex()">rebuildIndex()</a></span> - Method in interface eu.ehri.project.core.<a href="./eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></dt>
-<dd>
-<div class="block">Rebuild the internal graph index.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html#rebuildIndex()">rebuildIndex()</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="class in eu.ehri.project.core.impl">BlueprintsGraphManager</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/tools/IdRegenerator.html#reGenerateId(eu.ehri.project.models.base.Accessible)">reGenerateId(Accessible)</a></span> - Method in class eu.ehri.project.tools.<a href="./eu/ehri/project/tools/IdRegenerator.html" title="class in eu.ehri.project.tools">IdRegenerator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/tools/IdRegenerator.html#reGenerateId(eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Entity)">reGenerateId(PermissionScope, Entity)</a></span> - Method in class eu.ehri.project.tools.<a href="./eu/ehri/project/tools/IdRegenerator.html" title="class in eu.ehri.project.tools">IdRegenerator</a></dt>
@@ -3139,7 +3113,9 @@
 <div class="block">Revoke an accessor's access to an entity.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.html#removeAccessor(eu.ehri.project.models.base.Accessor)">removeAccessor(Accessor)</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Remove an accessor from having access to this item.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/AclViews.html#removeAccessorFromGroup(eu.ehri.project.models.Group,%20eu.ehri.project.models.base.Accessor,%20eu.ehri.project.models.base.Accessor)">removeAccessorFromGroup(Group, Accessor, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</a></dt>
 <dd>
 <div class="block">Remove a user from a group.</div>
@@ -3172,7 +3148,9 @@
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Promotable.html#removeDemotion(eu.ehri.project.models.UserProfile)">removeDemotion(UserProfile)</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Promotable.html" title="interface in eu.ehri.project.models.base">Promotable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Described.html#removeDescription(eu.ehri.project.models.base.Description)">removeDescription(Description)</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Remove a description from this item.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/PromotionViews.html#removeDownVote(eu.ehri.project.models.base.Promotable,%20eu.ehri.project.models.UserProfile)">removeDownVote(Promotable, UserProfile)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/PromotionViews.html" title="class in eu.ehri.project.views">PromotionViews</a></dt>
 <dd>
 <div class="block">Remove a down vote.</div>
@@ -3347,7 +3325,7 @@
 <dd>
 <div class="block">Set accessors for a given resource.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/models/Annotation.html#setAnnotator(eu.ehri.project.models.base.Annotator)">setAnnotator(Annotator)</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/models/Annotation.html#setAnnotator(eu.ehri.project.models.UserProfile)">setAnnotator(UserProfile)</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/Annotation.html" title="interface in eu.ehri.project.models">Annotation</a></dt>
 <dd>
 <div class="block">Set the annotator of this annotation.</div>
 </dd>
@@ -3376,12 +3354,12 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/tools/DbUpgrader1to2.html#setDbSchemaVersion()">setDbSchemaVersion()</a></span> - Method in class eu.ehri.project.tools.<a href="./eu/ehri/project/tools/DbUpgrader1to2.html" title="class in eu.ehri.project.tools">DbUpgrader1to2</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/models/base/Described.html#setDescriptions(java.lang.Iterable)">setDescriptions(Iterable&lt;Description&gt;)</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/events/SystemEvent.html#setEventScope(eu.ehri.project.models.base.Entity)">setEventScope(Entity)</a></span> - Method in interface eu.ehri.project.models.events.<a href="./eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a></dt>
 <dd>
 <div class="block">Set the scope of this event.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/Query.Builder.html#setFilters(java.util.Collection)">setFilters(Collection&lt;String&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views">Query.Builder</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/AclViews.html#setGlobalPermissionMatrix(eu.ehri.project.models.base.Accessor,%20eu.ehri.project.acl.GlobalPermissionSet,%20eu.ehri.project.models.base.Accessor)">setGlobalPermissionMatrix(Accessor, GlobalPermissionSet, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</a></dt>
 <dd>
 <div class="block">Set the global permission matrix for a user.</div>
@@ -3412,18 +3390,18 @@
 <dd>
 <div class="block">Set labels on a Neo4j-based vertex.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/Query.Builder.html#setLimit(int)">setLimit(int)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views">Query.Builder</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#setLimit(int)">setLimit(int)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Set the total applied to this query.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/Link.html#setLinker(eu.ehri.project.models.base.Accessor)">setLinker(Accessor)</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Description.html#setMaintenanceEvents(java.lang.Iterable)">setMaintenanceEvents(Iterable&lt;MaintenanceEvent&gt;)</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Description.html" title="interface in eu.ehri.project.models.base">Description</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/Query.Builder.html#setOffset(int)">setOffset(int)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views">Query.Builder</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#setOffset(int)">setOffset(int)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Set the page applied to this query.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/PermissionGrant.html#setPermission(eu.ehri.project.models.Permission)">setPermission(Permission)</a></span> - Method in interface eu.ehri.project.models.<a href="./eu/ehri/project/models/PermissionGrant.html" title="interface in eu.ehri.project.models">PermissionGrant</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/AclManager.html#setPermissionMatrix(eu.ehri.project.models.base.Accessor,%20eu.ehri.project.acl.GlobalPermissionSet)">setPermissionMatrix(Accessor, GlobalPermissionSet)</a></span> - Method in class eu.ehri.project.acl.<a href="./eu/ehri/project/acl/AclManager.html" title="class in eu.ehri.project.acl">AclManager</a></dt>
@@ -3433,7 +3411,9 @@
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.Impl.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">setPermissionScope(PermissionScope)</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.Impl.html" title="class in eu.ehri.project.models.base">Accessible.Impl</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/Accessible.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">setPermissionScope(PermissionScope)</a></span> - Method in interface eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Set this item's permission scope.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclElement.html#setProperty(java.lang.String,%20java.lang.Object)">setProperty(String, Object)</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclElement.html" title="class in eu.ehri.project.acl.wrapper">AclElement</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/GraphManager.html#setProperty(com.tinkerpop.blueprints.Vertex,%20java.lang.String,%20java.lang.Object)">setProperty(Vertex, String, Object)</a></span> - Method in interface eu.ehri.project.core.<a href="./eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></dt>
@@ -3468,12 +3448,12 @@
 <dd>
 <div class="block">Set the scope under which ACL and permission operations will take place.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/Query.Builder.html#setSort(java.util.Collection)">setSort(Collection&lt;String&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views">Query.Builder</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/views/Query.Builder.html#setStream(boolean)">setStream(boolean)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views">Query.Builder</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#setStream(boolean)">setStream(boolean)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
-<dd>
-<div class="block">Indicate that we want a stream of results and therefore
- don't care about the item total (which will be -1 as a
- result).</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/cvoc/Concept.html#setVocabulary(eu.ehri.project.models.cvoc.Vocabulary)">setVocabulary(Vocabulary)</a></span> - Method in interface eu.ehri.project.models.cvoc.<a href="./eu/ehri/project/models/cvoc/Concept.html" title="interface in eu.ehri.project.models.cvoc">Concept</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#shutdown()">shutdown()</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
@@ -3585,6 +3565,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclElement.html#toString()">toString()</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclElement.html" title="class in eu.ehri.project.acl.wrapper">AclElement</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#toString()">toString()</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclVertex.html#toString()">toString()</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclVertex.html" title="class in eu.ehri.project.acl.wrapper">AclVertex</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html#toString()">toString()</a></span> - Method in class eu.ehri.project.core.impl.neo4j.<a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Edge</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#toString()">toString()</a></span> - Method in class eu.ehri.project.core.impl.neo4j.<a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Graph</a></dt>
@@ -3598,8 +3582,6 @@
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/ErrorSet.html#toString()">toString()</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/ErrorSet.html" title="class in eu.ehri.project.persistence">ErrorSet</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.Page.html#toString()">toString()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/QueryUtils.TraversalPath.html#toString()">toString()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/QueryUtils.TraversalPath.html" title="class in eu.ehri.project.views">QueryUtils.TraversalPath</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/Bundle.html#toXml()">toXml()</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></dt>
 <dd>
@@ -3659,14 +3641,16 @@
 <div class="block">Holds information about the collection or institute, 
  but we don't specify (in the database) what it exactly means.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleDAO.html#update(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">update(Bundle, Class&lt;T&gt;)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleDAO.html" title="class in eu.ehri.project.persistence">BundleDAO</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleManager.html#update(eu.ehri.project.persistence.Bundle,%20java.lang.Class)">update(Bundle, Class&lt;T&gt;)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleManager.html" title="class in eu.ehri.project.persistence">BundleManager</a></dt>
 <dd>
 <div class="block">Entry-point for updating a bundle.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Crud.html#update(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">update(Bundle, Accessor)</a></span> - Method in interface eu.ehri.project.views.<a href="./eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/DescriptionViews.html#update(java.lang.String,%20eu.ehri.project.persistence.Bundle,%20java.lang.Class,%20eu.ehri.project.models.base.Accessor,%20com.google.common.base.Optional)">update(String, Bundle, Class&lt;T&gt;, Accessor, Optional&lt;String&gt;)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/DescriptionViews.html" title="class in eu.ehri.project.views">DescriptionViews</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Update a dependent item, belonging to the given parent.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/impl/CrudViews.html#update(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">update(Bundle, Accessor)</a></span> - Method in class eu.ehri.project.views.impl.<a href="./eu/ehri/project/views/impl/CrudViews.html" title="class in eu.ehri.project.views.impl">CrudViews</a></dt>
 <dd>
 <div class="block">Update an object bundle, also updating dependent items.</div>
@@ -3691,16 +3675,9 @@
 <dd>
 <div class="block">Create a vertex with the given id, type, and data.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/core/GraphManager.html#updateVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map,%20java.lang.Iterable)">updateVertex(String, EntityClass, Map&lt;String, ?&gt;, Iterable&lt;String&gt;)</a></span> - Method in interface eu.ehri.project.core.<a href="./eu/ehri/project/core/GraphManager.html" title="interface in eu.ehri.project.core">GraphManager</a></dt>
-<dd>
-<div class="block">Create a vertex with the given id, type, and data, specifying which
- property keys should be indexed.</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html#updateVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map)">updateVertex(String, EntityClass, Map&lt;String, ?&gt;)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="class in eu.ehri.project.core.impl">BlueprintsGraphManager</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html#updateVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map,%20java.lang.Iterable)">updateVertex(String, EntityClass, Map&lt;String, ?&gt;, Iterable&lt;String&gt;)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/BlueprintsGraphManager.html" title="class in eu.ehri.project.core.impl">BlueprintsGraphManager</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/core/impl/Neo4jGraphManager.html#updateVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map,%20java.lang.Iterable)">updateVertex(String, EntityClass, Map&lt;String, ?&gt;, Iterable&lt;String&gt;)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/Neo4jGraphManager.html" title="class in eu.ehri.project.core.impl">Neo4jGraphManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/core/impl/Neo4jGraphManager.html#updateVertex(java.lang.String,%20eu.ehri.project.models.EntityClass,%20java.util.Map)">updateVertex(String, EntityClass, Map&lt;String, ?&gt;)</a></span> - Method in class eu.ehri.project.core.impl.<a href="./eu/ehri/project/core/impl/Neo4jGraphManager.html" title="class in eu.ehri.project.core.impl">Neo4jGraphManager</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/tools/DbUpgrader1to2.html#upgradeIdAndTypeKeys()">upgradeIdAndTypeKeys()</a></span> - Method in class eu.ehri.project.tools.<a href="./eu/ehri/project/tools/DbUpgrader1to2.html" title="class in eu.ehri.project.tools">DbUpgrader1to2</a></dt>
 <dd>&nbsp;</dd>
@@ -4043,6 +4020,10 @@ the order they are declared.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/Serializer.Builder.html#withDepth(int)">withDepth(int)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Serializer.Builder.html" title="class in eu.ehri.project.persistence">Serializer.Builder</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/Serializer.html#withDepth(int)">withDepth(int)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a></dt>
+<dd>
+<div class="block">Create a new serializer from this one, with the given depth.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.html#withEntityClasses(eu.ehri.project.models.EntityClass...)">withEntityClasses(EntityClass...)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.html" title="class in eu.ehri.project.views">EventViews</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.Builder.html#withEntityTypes(java.lang.String...)">withEntityTypes(String...)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.Builder.html" title="class in eu.ehri.project.views">EventViews.Builder</a></dt>
@@ -4153,8 +4134,6 @@ the order they are declared.</div>
 <dt><span class="strong"><a href="./eu/ehri/project/views/LinkViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope(PermissionScope)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/LinkViews.html" title="class in eu.ehri.project.views">LinkViews</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/PromotionViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope(PermissionScope)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/PromotionViews.html" title="class in eu.ehri.project.views">PromotionViews</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/views/Query.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope(PermissionScope)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Scoped.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope(PermissionScope)</a></span> - Method in interface eu.ehri.project.views.<a href="./eu/ehri/project/views/Scoped.html" title="interface in eu.ehri.project.views">Scoped</a></dt>
 <dd>&nbsp;</dd>

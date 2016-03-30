@@ -52,14 +52,12 @@
             <li class="current">
               <a href="resource_PermissionsResource.html">PermissionsResource</a>
               <ul>
-                <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
                 <li><a href="resource_AuthoritativeSetResource.html">AuthoritativeSetResource</a></li>
                 <li><a href="resource_ContentTypeResource.html">ContentTypeResource</a></li>
                 <li><a href="resource_CountryResource.html">CountryResource</a></li>
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
-                <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
@@ -68,7 +66,6 @@
                 <li><a href="resource_LinkResource.html">LinkResource</a></li>
                 <li><a href="resource_PermissionGrantResource.html">PermissionGrantResource</a></li>
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
-                <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
@@ -89,30 +86,24 @@
       <p>The following resources are applicable:</p>
       <ul>
         <li>
-        <a href="#path__Permission.html">/Permission</a>
+        <a href="#path__permissions.html">/permissions</a>
         </li>
         <li>
-        <a href="#path__Permission_-userId-.html">/Permission/{userId}</a>
+        <a href="#path__permissions_-userOrGroup-.html">/permissions/{userOrGroup}</a>
         </li>
         <li>
-        <a href="#path__Permission_-userId-_-id-.html">/Permission/{userId}/{id}</a>
+        <a href="#path__permissions_-userOrGroup-_item_-id-.html">/permissions/{userOrGroup}/item/{id}</a>
         </li>
         <li>
-        <a href="#path__Permission_-userId-_scope_-id-.html">/Permission/{userId}/scope/{id}</a>
+        <a href="#path__permissions_-userOrGroup-_permission-grants.html">/permissions/{userOrGroup}/permission-grants</a>
         </li>
         <li>
-        <a href="#path__Permission_list_-id-.html">/Permission/list/{id}</a>
-        </li>
-        <li>
-        <a href="#path__Permission_listForItem_-id-.html">/Permission/listForItem/{id}</a>
-        </li>
-        <li>
-        <a href="#path__Permission_listForScope_-id-.html">/Permission/listForScope/{id}</a>
+        <a href="#path__permissions_-userOrGroup-_scope_-id-.html">/permissions/{userOrGroup}/scope/{id}</a>
         </li>
       </ul>
-        <a name="path__Permission.html"></a>
-      <h1>/Permission</h1>
-      <p class="note">Mount Point: <a href="../Permission">/Permission</a></p>
+        <a name="path__permissions.html"></a>
+      <h1>/permissions</h1>
+      <p class="note">Mount Point: <a href="../permissions">/permissions</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
@@ -131,9 +122,9 @@ on the Authorization header.
         </tr>
       </table>
       <p>The current user's global permissions</p>
-        <a name="path__Permission_-userId-.html"></a>
-      <h1>/Permission/{userId}</h1>
-      <p class="note">Mount Point: <a href="../Permission/{userId}">/Permission/{userId}</a></p>
+        <a name="path__permissions_-userOrGroup-.html"></a>
+      <h1>/permissions/{userOrGroup}</h1>
+      <p class="note">Mount Point: <a href="../permissions/{userOrGroup}">/permissions/{userOrGroup}</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
@@ -148,7 +139,7 @@ on the Authorization header.
           <th>default</th>
         </tr>
         <tr>
-          <td>userId</td>
+          <td>userOrGroup</td>
           <td>
             The user ID
           </td>
@@ -182,7 +173,7 @@ on the Authorization header.
           <th>default</th>
         </tr>
         <tr>
-          <td>userId</td>
+          <td>userOrGroup</td>
           <td>
             The user ID
           </td>
@@ -214,9 +205,9 @@ on the Authorization header.
         </tr>
       </table>
       <p>The new permissions</p>
-        <a name="path__Permission_-userId-_-id-.html"></a>
-      <h1>/Permission/{userId}/{id}</h1>
-      <p class="note">Mount Point: <a href="../Permission/{userId}/{id}">/Permission/{userId}/{id}</a></p>
+        <a name="path__permissions_-userOrGroup-_item_-id-.html"></a>
+      <h1>/permissions/{userOrGroup}/item/{id}</h1>
+      <p class="note">Mount Point: <a href="../permissions/{userOrGroup}/item/{id}">/permissions/{userOrGroup}/item/{id}</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
@@ -231,7 +222,7 @@ on the Authorization header.
           <th>default</th>
         </tr>
         <tr>
-          <td>userId</td>
+          <td>userOrGroup</td>
           <td>
             The user's ID
           </td>
@@ -273,7 +264,7 @@ on the Authorization header.
           <th>default</th>
         </tr>
         <tr>
-          <td>userId</td>
+          <td>userOrGroup</td>
           <td>
             the user id
           </td>
@@ -313,9 +304,46 @@ on the Authorization header.
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__Permission_-userId-_scope_-id-.html"></a>
-      <h1>/Permission/{userId}/scope/{id}</h1>
-      <p class="note">Mount Point: <a href="../Permission/{userId}/scope/{id}">/Permission/{userId}/scope/{id}</a></p>
+        <a name="path__permissions_-userOrGroup-_permission-grants.html"></a>
+      <h1>/permissions/{userOrGroup}/permission-grants</h1>
+      <p class="note">Mount Point: <a href="../permissions/{userOrGroup}/permission-grants">/permissions/{userOrGroup}/permission-grants</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Get a list of permission grants for the given user
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>userOrGroup</td>
+          <td>
+            the user's id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of permission grants for the user</p>
+        <a name="path__permissions_-userOrGroup-_scope_-id-.html"></a>
+      <h1>/permissions/{userOrGroup}/scope/{id}</h1>
+      <p class="note">Mount Point: <a href="../permissions/{userOrGroup}/scope/{id}">/permissions/{userOrGroup}/scope/{id}</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
@@ -330,7 +358,7 @@ on the Authorization header.
           <th>default</th>
         </tr>
         <tr>
-          <td>userId</td>
+          <td>userOrGroup</td>
           <td>
             The user's permissions
           </td>
@@ -372,7 +400,7 @@ on the Authorization header.
           <th>default</th>
         </tr>
         <tr>
-          <td>userId</td>
+          <td>userOrGroup</td>
           <td>
             the user
           </td>
@@ -412,117 +440,6 @@ on the Authorization header.
         </tr>
       </table>
       <p>The new permission matrix</p>
-        <a name="path__Permission_list_-id-.html"></a>
-      <h1>/Permission/list/{id}</h1>
-      <p class="note">Mount Point: <a href="../Permission/list/{id}">/Permission/list/{id}</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Get a list of permission grants for the given user
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            The user's id
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of permission grants for the user</p>
-        <a name="path__Permission_listForItem_-id-.html"></a>
-      <h1>/Permission/listForItem/{id}</h1>
-      <p class="note">Mount Point: <a href="../Permission/listForItem/{id}">/Permission/listForItem/{id}</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            List all the permission grants that relate specifically to this item.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of grants for this item</p>
-        <a name="path__Permission_listForScope_-id-.html"></a>
-      <h1>/Permission/listForScope/{id}</h1>
-      <p class="note">Mount Point: <a href="../Permission/listForScope/{id}">/Permission/listForScope/{id}</a></p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            List all the permission grants that relate specifically to this scope.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
-        </tr>
-      </table>
-      <p>A list of grants for the given scope</p>
 
       <div class="clear" />
     </div>

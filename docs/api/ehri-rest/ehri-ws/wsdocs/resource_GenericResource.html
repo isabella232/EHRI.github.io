@@ -52,14 +52,12 @@
             <li class="current">
               <a href="resource_GenericResource.html">GenericResource</a>
               <ul>
-                <li><a href="resource_AccessResource.html">AccessResource</a></li>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_AnnotationResource.html">AnnotationResource</a></li>
                 <li><a href="resource_AuthoritativeSetResource.html">AuthoritativeSetResource</a></li>
                 <li><a href="resource_ContentTypeResource.html">ContentTypeResource</a></li>
                 <li><a href="resource_CountryResource.html">CountryResource</a></li>
                 <li><a href="resource_CvocConceptResource.html">CvocConceptResource</a></li>
-                <li><a href="resource_DescriptionResource.html">DescriptionResource</a></li>
                 <li><a href="resource_DocumentaryUnitResource.html">DocumentaryUnitResource</a></li>
                 <li><a href="resource_GenericResource.html">GenericResource</a></li>
                 <li><a href="resource_GroupResource.html">GroupResource</a></li>
@@ -68,7 +66,6 @@
                 <li><a href="resource_LinkResource.html">LinkResource</a></li>
                 <li><a href="resource_PermissionGrantResource.html">PermissionGrantResource</a></li>
                 <li><a href="resource_PermissionsResource.html">PermissionsResource</a></li>
-                <li><a href="resource_PromotionResource.html">PromotionResource</a></li>
                 <li><a href="resource_RepositoryResource.html">RepositoryResource</a></li>
                 <li><a href="resource_SystemEventResource.html">SystemEventResource</a></li>
                 <li><a href="resource_ToolsResource.html">ToolsResource</a></li>
@@ -96,7 +93,43 @@ regardless of their specific type.</p>
         <a href="#path__entities_-id-.html">/entities/{id}</a>
         </li>
         <li>
-        <a href="#path__entities_listByGraphId.html">/entities/listByGraphId</a>
+        <a href="#path__entities_-id-_access.html">/entities/{id}/access</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_annotations.html">/entities/{id}/annotations</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_demote.html">/entities/{id}/demote</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_descriptions.html">/entities/{id}/descriptions</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_descriptions_-did-.html">/entities/{id}/descriptions/{did}</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_descriptions_-did-_access-points.html">/entities/{id}/descriptions/{did}/access-points</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_descriptions_-did-_access-points_-apid-.html">/entities/{id}/descriptions/{did}/access-points/{apid}</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_events.html">/entities/{id}/events</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_links.html">/entities/{id}/links</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_permission-grants.html">/entities/{id}/permission-grants</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_promote.html">/entities/{id}/promote</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_scope-permission-grants.html">/entities/{id}/scope-permission-grants</a>
+        </li>
+        <li>
+        <a href="#path__entities_-id-_versions.html">/entities/{id}/versions</a>
         </li>
       </ul>
         <a name="path__entities.html"></a>
@@ -118,7 +151,15 @@ regardless of their specific type.</p>
         <tr>
           <td>id</td>
           <td>
-            A list of string IDs
+            a list of string IDs
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>gid</td>
+          <td>
+            a list of graph number IDs
           </td>
           <td>query</td>
           <td></td>
@@ -152,7 +193,8 @@ regardless of their specific type.</p>
           <td>application/json</td>
         </tr>
       </table>
-      <p>A JSON-encoded list of string IDs</p>
+      <p>a JSON-encoded list of IDs, which can consist of
+either strings or (if a number) graph (long) ids.</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -184,7 +226,7 @@ regardless of their specific type.</p>
         <tr>
           <td>id</td>
           <td>
-            The item's ID
+            the item's ID
           </td>
           <td>path</td>
           <td></td>
@@ -202,14 +244,13 @@ regardless of their specific type.</p>
         </tr>
       </table>
       <p>A serialized representation.</p>
-        <a name="path__entities_listByGraphId.html"></a>
-      <h1>/entities/listByGraphId</h1>
-      <p class="note">Mount Point: <a href="../entities/listByGraphId">/entities/listByGraphId</a></p>
+        <a name="path__entities_-id-_access.html"></a>
+      <h1>/entities/{id}/access</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/access">/entities/{id}/access</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            Fetch a list of items by their internal graph ID (gid), which is
-provided in the bundle metadata section of the default response.
+            Get the accessors who are able to view an item.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -220,9 +261,52 @@ provided in the bundle metadata section of the default response.
           <th>default</th>
         </tr>
         <tr>
-          <td>gid</td>
+          <td>id</td>
           <td>
-            A list of graph IDs
+            the ID of the item
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>a list of accessor frames</p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Set the accessors who are able to view an item. If no accessors
+are set, the item is globally readable.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the ID of the item
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>accessibleTo</td>
+          <td>
+            the IDs of the users who can access this item.
           </td>
           <td>query</td>
           <td></td>
@@ -236,28 +320,35 @@ provided in the bundle metadata section of the default response.
         </tr>
         <tr>
           <td align="right">media types:</td>
-          <td>application/xml<br/>application/json</td>
+          <td>*/*<br/>application/xml</td>
         </tr>
       </table>
-      <p>A serialized list of items</p>
-      <a name="POST"></a>
-      <h2>POST</h2>
+      <p>the updated object</p>
+        <a name="path__entities_-id-_annotations.html"></a>
+      <h1>/entities/{id}/annotations</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/annotations">/entities/{id}/annotations</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
       <p>
-            Fetch a list of items by their internal graph ID (gid), which is
-provided in the bundle metadata section of the default response.
+            Return a (paged) list of annotations for the given item.
           </p>
-      <h3>Request Body</h3>
+      <h3>Parameters</h3>
       <table>
         <tr>
-          <td align="right">element:</td>
-            <td>json</td>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
         </tr>
         <tr>
-          <td align="right">media types:</td>
-          <td>*/*<br/>application/xml<br/></td>
+          <td>id</td>
+          <td>
+            the item ID
+          </td>
+          <td>path</td>
+          <td></td>
         </tr>
       </table>
-      <p>A JSON-encoded list of graph IDs</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -266,10 +357,627 @@ provided in the bundle metadata section of the default response.
         </tr>
         <tr>
           <td align="right">media types:</td>
-          <td>application/xml<br/>application/json</td>
+          <td>text/xml<br/>application/json</td>
         </tr>
       </table>
-      <p>A serialized list of items</p>
+      <p>a list of annotations on the item</p>
+        <a name="path__entities_-id-_demote.html"></a>
+      <h1>/entities/{id}/demote</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/demote">/entities/{id}/demote</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Down vote an item
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the ID of the item to promote.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>200 response</p>
+      <a name="DELETE"></a>
+      <h2>DELETE</h2>
+      <p>
+            Remove a down vote.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the ID of the item to remove
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>200 response</p>
+        <a name="path__entities_-id-_descriptions.html"></a>
+      <h1>/entities/{id}/descriptions</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/descriptions">/entities/{id}/descriptions</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Create a new description for this item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the item ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>bundle</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>the description bundle</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the new description</p>
+      <a name="PUT"></a>
+      <h2>PUT</h2>
+      <p>
+            Update a description belonging to the given item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the item ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>bundle</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>the description bundle</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the new description</p>
+        <a name="path__entities_-id-_descriptions_-did-.html"></a>
+      <h1>/entities/{id}/descriptions/{did}</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/descriptions/{did}">/entities/{id}/descriptions/{did}</a></p>
+      <a name="PUT"></a>
+      <h2>PUT</h2>
+      <p>
+            Update a description with the given ID, belonging to the given parent item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the item ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>did</td>
+          <td>
+            the description ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>bundle</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>the description bundle</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the new description</p>
+      <a name="DELETE"></a>
+      <h2>DELETE</h2>
+      <p>
+            Delete a description with the given ID, belonging to the given parent item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the item ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>did</td>
+          <td>
+            the description ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__entities_-id-_descriptions_-did-_access-points.html"></a>
+      <h1>/entities/{id}/descriptions/{did}/access-points</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/descriptions/{did}/access-points">/entities/{id}/descriptions/{did}/access-points</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Create an access point on the given description, for the given
+parent item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the parent item's ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>did</td>
+          <td>
+            the description's ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>bundle</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>the access point data</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>the new access point</p>
+        <a name="path__entities_-id-_descriptions_-did-_access-points_-apid-.html"></a>
+      <h1>/entities/{id}/descriptions/{did}/access-points/{apid}</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/descriptions/{did}/access-points/{apid}">/entities/{id}/descriptions/{did}/access-points/{apid}</a></p>
+      <a name="DELETE"></a>
+      <h2>DELETE</h2>
+      <p>
+            Delete the access point with the given ID, on the given description,
+belonging to the given parent item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the parent item's ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>did</td>
+          <td>
+            the description's ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>apid</td>
+          <td>
+            the access point's ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+        <a name="path__entities_-id-_events.html"></a>
+      <h1>/entities/{id}/events</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/events">/entities/{id}/events</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Lookup and page the history for a given item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the event id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>aggregation</td>
+          <td>
+            the aggregation strategy
+          </td>
+          <td>query</td>
+          <td>user</td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>A list of events</p>
+        <a name="path__entities_-id-_links.html"></a>
+      <h1>/entities/{id}/links</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/links">/entities/{id}/links</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Returns a list of items linked to the given description.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the item ID
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of links with the item as a target</p>
+        <a name="path__entities_-id-_permission-grants.html"></a>
+      <h1>/entities/{id}/permission-grants</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/permission-grants">/entities/{id}/permission-grants</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            List all the permission grants that relate specifically to this item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of grants for this item</p>
+        <a name="path__entities_-id-_promote.html"></a>
+      <h1>/entities/{id}/promote</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/promote">/entities/{id}/promote</a></p>
+      <a name="POST"></a>
+      <h2>POST</h2>
+      <p>
+            Up vote an item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the ID of the item to promote.
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>200 response</p>
+      <a name="DELETE"></a>
+      <h2>DELETE</h2>
+      <p>
+            Remove an up vote.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the ID of the item to remove
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>200 response</p>
+        <a name="path__entities_-id-_scope-permission-grants.html"></a>
+      <h1>/entities/{id}/scope-permission-grants</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/scope-permission-grants">/entities/{id}/scope-permission-grants</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            List all the permission grants that relate specifically to this scope.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>text/xml<br/>application/json</td>
+        </tr>
+      </table>
+      <p>a list of grants for which this item is the scope</p>
+        <a name="path__entities_-id-_versions.html"></a>
+      <h1>/entities/{id}/versions</h1>
+      <p class="note">Mount Point: <a href="../entities/{id}/versions">/entities/{id}/versions</a></p>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Lookup and page the versions for a given item.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>
+            the event id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml</td>
+        </tr>
+      </table>
+      <p>a list of versions</p>
 
       <div class="clear" />
     </div>

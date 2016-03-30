@@ -43,7 +43,7 @@
 <a class="jxr_linenumber" name="33" href="#33">33</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <em class="jxr_javadoccomment">     * Builder class for InheritedItemPermissionSets.</em>
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="36" href="#36">36</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">Builder</a> {
+<a class="jxr_linenumber" name="36" href="#36">36</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/acl/GlobalPermissionSet.html">Builder</a> {
 <a class="jxr_linenumber" name="37" href="#37">37</a>          <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> List&lt;AccessorPermissions&lt;List&lt;PermissionType&gt;&gt;&gt; perms
 <a class="jxr_linenumber" name="38" href="#38">38</a>                  = Lists.newArrayList();
 <a class="jxr_linenumber" name="39" href="#39">39</a>  
@@ -53,7 +53,7 @@
 <a class="jxr_linenumber" name="43" href="#43">43</a>  <em class="jxr_javadoccomment">         * @param accessorId    The primary accessor's ID</em>
 <a class="jxr_linenumber" name="44" href="#44">44</a>  <em class="jxr_javadoccomment">         * @param permissionSet The primary accessor's own global permissions</em>
 <a class="jxr_linenumber" name="45" href="#45">45</a>  <em class="jxr_javadoccomment">         */</em>
-<a class="jxr_linenumber" name="46" href="#46">46</a>          <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">Builder</a>(String accessorId, List&lt;PermissionType&gt; permissionSet) {
+<a class="jxr_linenumber" name="46" href="#46">46</a>          <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/acl/GlobalPermissionSet.html">Builder</a>(String accessorId, List&lt;PermissionType&gt; permissionSet) {
 <a class="jxr_linenumber" name="47" href="#47">47</a>              AccessorPermissions&lt;List&lt;PermissionType&gt;&gt; permissions
 <a class="jxr_linenumber" name="48" href="#48">48</a>                      = <strong class="jxr_keyword">new</strong> AccessorPermissions&lt;&gt;(accessorId, permissionSet);
 <a class="jxr_linenumber" name="49" href="#49">49</a>              perms.add(permissions);
@@ -66,7 +66,7 @@
 <a class="jxr_linenumber" name="56" href="#56">56</a>  <em class="jxr_javadoccomment">         * @param permissionSet The accessor's permissions</em>
 <a class="jxr_linenumber" name="57" href="#57">57</a>  <em class="jxr_javadoccomment">         * @return The builder</em>
 <a class="jxr_linenumber" name="58" href="#58">58</a>  <em class="jxr_javadoccomment">         */</em>
-<a class="jxr_linenumber" name="59" href="#59">59</a>          <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">Builder</a> withInheritedPermissions(String accessorId, List&lt;PermissionType&gt; permissionSet) {
+<a class="jxr_linenumber" name="59" href="#59">59</a>          <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/acl/GlobalPermissionSet.html">Builder</a> withInheritedPermissions(String accessorId, List&lt;PermissionType&gt; permissionSet) {
 <a class="jxr_linenumber" name="60" href="#60">60</a>              perms.add(<strong class="jxr_keyword">new</strong> AccessorPermissions&lt;&gt;(accessorId, permissionSet));
 <a class="jxr_linenumber" name="61" href="#61">61</a>              <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="62" href="#62">62</a>          }

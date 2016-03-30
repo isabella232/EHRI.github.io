@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Query (EHRI Core API 0.12.0-SNAPSHOT API)</title>
+<title>Query (EHRI Core API 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Query (EHRI Core API 0.12.0-SNAPSHOT API)";
+        parent.document.title="Query (EHRI Core API 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -36,7 +36,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../eu/ehri/project/views/PromotionViews.NotPromotableError.html" title="class in eu.ehri.project.views"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../eu/ehri/project/views/Query.FilterPredicate.html" title="enum in eu.ehri.project.views"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?eu/ehri/project/views/Query.html" target="_top">Frames</a></li>
@@ -61,13 +61,13 @@
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method_detail">Method</a></li>
 </ul>
@@ -79,7 +79,7 @@
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">eu.ehri.project.views</div>
-<h2 title="Class Query" class="title">Class Query&lt;E extends <a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</h2>
+<h2 title="Class Query" class="title">Class Query&lt;E extends <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -94,18 +94,11 @@
 <ul class="blockList">
 <li class="blockList">
 <dl><dt><span class="strong">Type Parameters:</span></dt><dd><code>E</code> - </dd></dl>
-<dl>
-<dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../eu/ehri/project/views/Scoped.html" title="interface in eu.ehri.project.views">Scoped</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&gt;</dd>
-</dl>
 <hr>
 <br>
-<pre>public final class <span class="strong">Query&lt;E extends <a href="../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</span>
-extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interface in eu.ehri.project.views">Scoped</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&gt;</pre>
-<div class="block">Handles querying Accessible Entities, with ACL semantics.
- <p>
- TODO: Possibly refactor more of the ACL logic into AclManager.</div>
+<pre>public final class <span class="strong">Query&lt;E extends <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;</span>
+extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">Handles querying Entity entities with ACL semantics.</div>
 </li>
 </ul>
 </div>
@@ -126,28 +119,53 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views">Query.Builder</a>&lt;<a href="../../../../eu/ehri/project/views/Query.Builder.html" title="type parameter in Query.Builder">E</a> extends <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;</strong></code>
+<div class="block">Query builder.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.FilterPredicate.html" title="enum in eu.ehri.project.views">Query.FilterPredicate</a></strong></code>
 <div class="block">Filter predicates</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.FramedVertexIterableAdaptor.html" title="class in eu.ehri.project.views">Query.FramedVertexIterableAdaptor</a>&lt;<a href="../../../../eu/ehri/project/views/Query.FramedVertexIterableAdaptor.html" title="type parameter in Query.FramedVertexIterableAdaptor">T</a> extends <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;</strong></code>
 <div class="block">Wrapper method for FramedVertexIterables that converts a
  <code>FramedVertexIterable&lt;T&gt;</code> back into a plain <code>Iterable&lt;Vertex&gt;</code>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;<a href="../../../../eu/ehri/project/views/Query.Page.html" title="type parameter in Query.Page">T</a>&gt;</strong></code>
 <div class="block">Class representing a page of content.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.Sort.html" title="enum in eu.ehri.project.views">Query.Sort</a></strong></code>
 <div class="block">Directions for sort.</div>
 </td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static int</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#DEFAULT_LIMIT">DEFAULT_LIMIT</a></strong></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -186,104 +204,49 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#clearFilters()">clearFilters</a></strong>()</code>
-<div class="block">Clear the filter clauses from this query.</div>
-</td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#clearFilters()">clearFilters</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#clearOrdering()">clearOrdering</a></strong>()</code>
-<div class="block">Clear the filter clauses from this query.</div>
-</td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#clearOrdering()">clearOrdering</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#copy(eu.ehri.project.views.Query)">copy</a></strong>(<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;other)</code>
-<div class="block">Copy constructor.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#count()">count</a></strong>()</code>
 <div class="block">Count items.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>long</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#count(eu.ehri.project.models.EntityClass)">count</a></strong>(<a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type)</code>
 <div class="block">Count all items of a given type.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;long</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#count(java.lang.Iterable)">count</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;&nbsp;vertices)</code>
 <div class="block">Count items accessible to a given user.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#defaultOrderBy(java.lang.String,%20eu.ehri.project.views.Query.Sort)">defaultOrderBy</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;field,
-              <a href="../../../../eu/ehri/project/views/Query.Sort.html" title="enum in eu.ehri.project.views">Query.Sort</a>&nbsp;order)</code>
-<div class="block">Add an default order clause, to be used if no custom order is specified.</div>
-</td>
-</tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#depthFilter(java.lang.String,%20com.tinkerpop.blueprints.Direction,%20java.lang.Integer)">depthFilter</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label,
-           com.tinkerpop.blueprints.Direction&nbsp;direction,
-           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&nbsp;depth)</code>
-<div class="block">Filter out items that are over a certain depth in the given
- relationship chain.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#filter(java.util.Collection)">filter</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;filters)</code>
-<div class="block">Add a set of unparsed filter clauses.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#filter(java.lang.String,%20eu.ehri.project.views.Query.FilterPredicate,%20java.lang.String)">filter</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;property,
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#filter(java.lang.String,%20eu.ehri.project.views.Query.FilterPredicate,%20java.lang.Object)">filter</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
       <a href="../../../../eu/ehri/project/views/Query.FilterPredicate.html" title="enum in eu.ehri.project.views">Query.FilterPredicate</a>&nbsp;predicate,
-      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
-<div class="block">Add a filter clause.</div>
-</td>
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#filterTraversal(eu.ehri.project.views.QueryUtils.TraversalPath,%20eu.ehri.project.views.Query.FilterPredicate,%20java.lang.String)">filterTraversal</a></strong>(<a href="../../../../eu/ehri/project/views/QueryUtils.TraversalPath.html" title="class in eu.ehri.project.views">QueryUtils.TraversalPath</a>&nbsp;path,
-               <a href="../../../../eu/ehri/project/views/Query.FilterPredicate.html" title="enum in eu.ehri.project.views">Query.FilterPredicate</a>&nbsp;predicate,
-               <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</code>
-<div class="block">Add a filter clause.</div>
-</td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#orderBy(java.lang.String,%20eu.ehri.project.views.Query.Sort)">orderBy</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
+       <a href="../../../../eu/ehri/project/views/Query.Sort.html" title="enum in eu.ehri.project.views">Query.Sort</a>&nbsp;order)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#orderBy(java.util.Collection)">orderBy</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;orderSpecs)</code>
-<div class="block">Add a set of string order clauses.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#orderBy(java.lang.String,%20eu.ehri.project.views.Query.Sort)">orderBy</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;field,
-       <a href="../../../../eu/ehri/project/views/Query.Sort.html" title="enum in eu.ehri.project.views">Query.Sort</a>&nbsp;order)</code>
-<div class="block">Add an order clause.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#orderByTraversal(eu.ehri.project.views.QueryUtils.TraversalPath,%20eu.ehri.project.views.Query.Sort)">orderByTraversal</a></strong>(<a href="../../../../eu/ehri/project/views/QueryUtils.TraversalPath.html" title="class in eu.ehri.project.views">QueryUtils.TraversalPath</a>&nbsp;tp,
-                <a href="../../../../eu/ehri/project/views/Query.Sort.html" title="enum in eu.ehri.project.views">Query.Sort</a>&nbsp;order)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#page(eu.ehri.project.models.base.Accessor)">page</a></strong>(<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)</code>
 <div class="block">Return a Page instance containing a total of total items, and an iterable
  for the given page/count.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#page(eu.ehri.project.models.EntityClass,%20eu.ehri.project.models.base.Accessor)">page</a></strong>(<a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type,
     <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)</code>
@@ -291,7 +254,7 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
  for the given page/count.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#page(java.lang.Iterable,%20eu.ehri.project.models.base.Accessor)">page</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;vertices,
     <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)</code>
@@ -299,7 +262,7 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
  for the given page/count.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>&gt;&nbsp;<br><a href="../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#page(java.lang.Iterable,%20eu.ehri.project.models.base.Accessor,%20java.lang.Class)">page</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;&nbsp;vertices,
     <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user,
@@ -308,7 +271,7 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
  for the given page/count.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#page(java.lang.String,%20java.lang.String,%20eu.ehri.project.models.base.Accessor)">page</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
     <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;query,
@@ -317,29 +280,17 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
  for the given page/count.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#setLimit(int)">setLimit</a></strong>(int&nbsp;limit)</code>
-<div class="block">Set the total applied to this query.</div>
-</td>
-</tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#setOffset(int)">setOffset</a></strong>(int&nbsp;offset)</code>
-<div class="block">Set the page applied to this query.</div>
-</td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#setLimit(int)">setLimit</a></strong>(int&nbsp;limit)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#setStream(boolean)">setStream</a></strong>(boolean&nbsp;stream)</code>
-<div class="block">Indicate that we want a stream of results and therefore
- don't care about the item total (which will be -1 as a
- result).</div>
-</td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#setOffset(int)">setOffset</a></strong>(int&nbsp;offset)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></strong>(<a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/Query.html#setStream(boolean)">setStream</a></strong>(boolean&nbsp;stream)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -357,6 +308,24 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field_detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="DEFAULT_LIMIT">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DEFAULT_LIMIT</h4>
+<pre>public static final&nbsp;int DEFAULT_LIMIT</pre>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../../constant-values.html#eu.ehri.project.views.Query.DEFAULT_LIMIT">Constant Field Values</a></dd></dl>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor_detail">
@@ -382,14 +351,70 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="copy(eu.ehri.project.views.Query)">
+<a name="setOffset(int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>copy</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;copy(<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;other)</pre>
-<div class="block">Copy constructor.</div>
+<h4>setOffset</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;setOffset(int&nbsp;offset)</pre>
+</li>
+</ul>
+<a name="setLimit(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setLimit</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;setLimit(int&nbsp;limit)</pre>
+</li>
+</ul>
+<a name="filter(java.lang.String, eu.ehri.project.views.Query.FilterPredicate, java.lang.Object)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>filter</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;filter(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
+              <a href="../../../../eu/ehri/project/views/Query.FilterPredicate.html" title="enum in eu.ehri.project.views">Query.FilterPredicate</a>&nbsp;predicate,
+              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
+</li>
+</ul>
+<a name="orderBy(java.lang.String, eu.ehri.project.views.Query.Sort)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>orderBy</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;orderBy(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
+               <a href="../../../../eu/ehri/project/views/Query.Sort.html" title="enum in eu.ehri.project.views">Query.Sort</a>&nbsp;order)</pre>
+</li>
+</ul>
+<a name="clearFilters()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clearFilters</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;clearFilters()</pre>
+</li>
+</ul>
+<a name="clearOrdering()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clearOrdering</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;clearOrdering()</pre>
+</li>
+</ul>
+<a name="setStream(boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setStream</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;setStream(boolean&nbsp;stream)</pre>
 </li>
 </ul>
 <a name="page(eu.ehri.project.models.base.Accessor)">
@@ -461,7 +486,7 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 <h4>count</h4>
 <pre>public&nbsp;long&nbsp;count()</pre>
 <div class="block">Count items.
- <p>
+ <p/>
  NB: Count doesn't 'account' for ACL privileges!</div>
 </li>
 </ul>
@@ -473,185 +498,20 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 <h4>count</h4>
 <pre>public&nbsp;&lt;T&gt;&nbsp;long&nbsp;count(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;T&gt;&nbsp;vertices)</pre>
 <div class="block">Count items accessible to a given user.
- <p>
+ <p/>
  NB: Count doesn't 'account' for ACL privileges!</div>
 </li>
 </ul>
 <a name="count(eu.ehri.project.models.EntityClass)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>count</h4>
 <pre>public&nbsp;long&nbsp;count(<a href="../../../../eu/ehri/project/models/EntityClass.html" title="enum in eu.ehri.project.models">EntityClass</a>&nbsp;type)</pre>
 <div class="block">Count all items of a given type.
- <p>
+ <p/>
  NB: Count doesn't 'account' for ACL privileges!</div>
-</li>
-</ul>
-<a name="setOffset(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setOffset</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;setOffset(int&nbsp;offset)</pre>
-<div class="block">Set the page applied to this query.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>offset</code> - An integer page to the stream.</dd></dl>
-</li>
-</ul>
-<a name="setLimit(int)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setLimit</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;setLimit(int&nbsp;limit)</pre>
-<div class="block">Set the total applied to this query.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>limit</code> - An integer total, or -1 for an unbounded stream.</dd></dl>
-</li>
-</ul>
-<a name="setStream(boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setStream</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;setStream(boolean&nbsp;stream)</pre>
-<div class="block">Indicate that we want a stream of results and therefore
- don't care about the item total (which will be -1 as a
- result).</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>stream</code> - Whether to stream results lazily.</dd></dl>
-</li>
-</ul>
-<a name="defaultOrderBy(java.lang.String, eu.ehri.project.views.Query.Sort)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>defaultOrderBy</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;defaultOrderBy(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;field,
-                      <a href="../../../../eu/ehri/project/views/Query.Sort.html" title="enum in eu.ehri.project.views">Query.Sort</a>&nbsp;order)</pre>
-<div class="block">Add an default order clause, to be used if no custom order is specified.</div>
-</li>
-</ul>
-<a name="orderBy(java.lang.String, eu.ehri.project.views.Query.Sort)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>orderBy</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;orderBy(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;field,
-               <a href="../../../../eu/ehri/project/views/Query.Sort.html" title="enum in eu.ehri.project.views">Query.Sort</a>&nbsp;order)</pre>
-<div class="block">Add an order clause.</div>
-</li>
-</ul>
-<a name="orderByTraversal(eu.ehri.project.views.QueryUtils.TraversalPath, eu.ehri.project.views.Query.Sort)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>orderByTraversal</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;orderByTraversal(<a href="../../../../eu/ehri/project/views/QueryUtils.TraversalPath.html" title="class in eu.ehri.project.views">QueryUtils.TraversalPath</a>&nbsp;tp,
-                        <a href="../../../../eu/ehri/project/views/Query.Sort.html" title="enum in eu.ehri.project.views">Query.Sort</a>&nbsp;order)</pre>
-</li>
-</ul>
-<a name="orderBy(java.util.Collection)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>orderBy</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;orderBy(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;orderSpecs)</pre>
-<div class="block">Add a set of string order clauses. Clauses must be of the form:
- <p>
- property__DIRECTION</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>orderSpecs</code> - list of orderSpecs</dd></dl>
-</li>
-</ul>
-<a name="clearFilters()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>clearFilters</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;clearFilters()</pre>
-<div class="block">Clear the filter clauses from this query.</div>
-</li>
-</ul>
-<a name="clearOrdering()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>clearOrdering</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;clearOrdering()</pre>
-<div class="block">Clear the filter clauses from this query.</div>
-</li>
-</ul>
-<a name="depthFilter(java.lang.String, com.tinkerpop.blueprints.Direction, java.lang.Integer)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>depthFilter</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;depthFilter(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label,
-                   com.tinkerpop.blueprints.Direction&nbsp;direction,
-                   <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&nbsp;depth)</pre>
-<div class="block">Filter out items that are over a certain depth in the given
- relationship chain.</div>
-</li>
-</ul>
-<a name="filter(java.lang.String, eu.ehri.project.views.Query.FilterPredicate, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>filter</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;filter(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;property,
-              <a href="../../../../eu/ehri/project/views/Query.FilterPredicate.html" title="enum in eu.ehri.project.views">Query.FilterPredicate</a>&nbsp;predicate,
-              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
-<div class="block">Add a filter clause.</div>
-</li>
-</ul>
-<a name="filterTraversal(eu.ehri.project.views.QueryUtils.TraversalPath, eu.ehri.project.views.Query.FilterPredicate, java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>filterTraversal</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;filterTraversal(<a href="../../../../eu/ehri/project/views/QueryUtils.TraversalPath.html" title="class in eu.ehri.project.views">QueryUtils.TraversalPath</a>&nbsp;path,
-                       <a href="../../../../eu/ehri/project/views/Query.FilterPredicate.html" title="enum in eu.ehri.project.views">Query.FilterPredicate</a>&nbsp;predicate,
-                       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
-<div class="block">Add a filter clause.</div>
-</li>
-</ul>
-<a name="filter(java.util.Collection)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>filter</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="type parameter in Query">E</a>&gt;&nbsp;filter(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;filters)</pre>
-<div class="block">Add a set of unparsed filter clauses. Clauses must be of the format:
- property__PREDICATE:value
- <p>
- If PREDICATE is omitted, EQUALS is the default.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>filters</code> - list of filters</dd>
-<dt><span class="strong">Returns:</span></dt><dd>a new query object</dd></dl>
-</li>
-</ul>
-<a name="withScope(eu.ehri.project.models.base.PermissionScope)">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>withScope</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&nbsp;withScope(<a href="../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</pre>
-<dl>
-<dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../eu/ehri/project/views/Scoped.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../eu/ehri/project/views/Scoped.html" title="interface in eu.ehri.project.views">Scoped</a>&lt;<a href="../../../../eu/ehri/project/views/Query.html" title="class in eu.ehri.project.views">Query</a>&gt;</code></dd>
-</dl>
 </li>
 </ul>
 </li>
@@ -681,7 +541,7 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../eu/ehri/project/views/PromotionViews.NotPromotableError.html" title="class in eu.ehri.project.views"><span class="strong">Prev Class</span></a></li>
-<li><a href="../../../../eu/ehri/project/views/Query.FilterPredicate.html" title="enum in eu.ehri.project.views"><span class="strong">Next Class</span></a></li>
+<li><a href="../../../../eu/ehri/project/views/Query.Builder.html" title="class in eu.ehri.project.views"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../index.html?eu/ehri/project/views/Query.html" target="_top">Frames</a></li>
@@ -706,13 +566,13 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested_class_summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field_summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor_summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method_summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field_detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor_detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method_detail">Method</a></li>
 </ul>

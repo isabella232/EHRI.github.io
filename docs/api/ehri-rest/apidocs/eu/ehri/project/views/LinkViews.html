@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>LinkViews (EHRI Backend 0.12.0-SNAPSHOT API)</title>
+<title>LinkViews (EHRI Backend 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="LinkViews (EHRI Backend 0.12.0-SNAPSHOT API)";
+        parent.document.title="LinkViews (EHRI Backend 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -148,24 +148,26 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/LinkViews.html#createAccessPointLink(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">createAccessPointLink</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/LinkViews.html#create(java.lang.String,%20java.lang.String,%20java.util.List,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">create</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId2,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;bodies,
+      <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+      <a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)</code>
+<div class="block">Create a link between two items.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/LinkViews.html#createAccessPointLink(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.UserProfile,%20java.util.Collection)">createAccessPointLink</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId2,
                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;descriptionId,
                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bodyName,
                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bodyType,
                      <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-                     <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)</code>
+                     <a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
+                     <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)</code>
 <div class="block">Create a link between two items, along with an access point on the given description.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/views/LinkViews.html#createLink(java.lang.String,%20java.lang.String,%20java.util.List,%20eu.ehri.project.persistence.Bundle,%20eu.ehri.project.models.base.Accessor)">createLink</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId2,
-          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;bodies,
-          <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-          <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)</code>
-<div class="block">Create a link between two items.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -225,20 +227,21 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="createLink(java.lang.String, java.lang.String, java.util.List, eu.ehri.project.persistence.Bundle, eu.ehri.project.models.base.Accessor)">
+<a name="create(java.lang.String, java.lang.String, java.util.List, eu.ehri.project.persistence.Bundle, eu.ehri.project.models.UserProfile, java.util.Collection)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>createLink</h4>
-<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a>&nbsp;createLink(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
-              <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId2,
-              <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;bodies,
-              <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-              <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)
-                throws <a href="../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                       <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
-                       <a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></pre>
+<h4>create</h4>
+<pre>public&nbsp;<a href="../../../../eu/ehri/project/models/Link.html" title="interface in eu.ehri.project.models">Link</a>&nbsp;create(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId1,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;targetId2,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;bodies,
+          <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+          <a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
+          <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)
+            throws <a href="../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
+                   <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                   <a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></pre>
 <div class="block">Create a link between two items.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>targetId1</code> - the identifier of a Accessible target of this Annotation</dd><dd><code>targetId2</code> - the identifier of a Annotator source of this Annotation</dd><dd><code>bundle</code> - the annotation itself</dd><dd><code>user</code> - the current user</dd>
 <dt><span class="strong">Returns:</span></dt><dd>A new link</dd>
@@ -248,7 +251,7 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
 <dd><code><a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd></dl>
 </li>
 </ul>
-<a name="createAccessPointLink(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, eu.ehri.project.persistence.Bundle, eu.ehri.project.models.base.Accessor)">
+<a name="createAccessPointLink(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, eu.ehri.project.persistence.Bundle, eu.ehri.project.models.UserProfile, java.util.Collection)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -260,7 +263,8 @@ implements <a href="../../../../eu/ehri/project/views/Scoped.html" title="interf
                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bodyName,
                          <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;bodyType,
                          <a href="../../../../eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
-                         <a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&nbsp;user)
+                         <a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user,
+                         <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../../eu/ehri/project/models/base/Accessor.html" title="interface in eu.ehri.project.models.base">Accessor</a>&gt;&nbsp;accessibleTo)
                            throws <a href="../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
                                   <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
                                   <a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></pre>

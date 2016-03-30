@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Accessible.Impl (EHRI Core API 0.12.0-SNAPSHOT API)</title>
+<title>Accessible.Impl (EHRI Core API 0.13.0-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Accessible.Impl (EHRI Core API 0.12.0-SNAPSHOT API)";
+        parent.document.title="Accessible.Impl (EHRI Core API 0.13.0-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -95,7 +95,7 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.tinkerpop.blueprints.Vertex&gt;, com.tinkerpop.frames.VertexFrame, <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>, <a href="../../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a>, <a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>, <a href="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a>, <a href="../../../../../eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a></dd>
+<dd>com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.tinkerpop.blueprints.Vertex&gt;, com.tinkerpop.frames.VertexFrame, <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>, <a href="../../../../../eu/ehri/project/models/base/Entity.html" title="interface in eu.ehri.project.models.base">Entity</a>, <a href="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a></dd>
 </dl>
 <dl>
 <dt>Enclosing interface:</dt>
@@ -171,19 +171,28 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/models/base/Accessible.Impl.html#getLatestEvent()">getLatestEvent</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/models/base/Accessible.Impl.html#getLatestEvent()">getLatestEvent</a></strong>()</code>
+<div class="block">Fetch the most recent event that affected this item.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/models/base/Accessible.Impl.html#getPermissionScopes()">getPermissionScopes</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/models/base/Accessible.Impl.html#getPermissionScopes()">getPermissionScopes</a></strong>()</code>
+<div class="block">Get the full hierarchy of permission scopes to which this
+ item belongs.</div>
+</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/models/base/Accessible.Impl.html#hasAccessRestriction()">hasAccessRestriction</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/models/base/Accessible.Impl.html#hasAccessRestriction()">hasAccessRestriction</a></strong>()</code>
+<div class="block">Determine if this item has access restrictions.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/models/base/Accessible.Impl.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">setPermissionScope</a></strong>(<a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/models/base/Accessible.Impl.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">setPermissionScope</a></strong>(<a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</code>
+<div class="block">Set this item's permission scope.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -213,20 +222,6 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 </a>
 <h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html" title="interface in eu.ehri.project.models.base">PermissionGrantTarget</a></h3>
 <code><a href="../../../../../eu/ehri/project/models/base/PermissionGrantTarget.html#getPermissionGrants()">getPermissionGrants</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Versioned">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../../eu/ehri/project/models/base/Versioned.html" title="interface in eu.ehri.project.models.base">Versioned</a></h3>
-<code><a href="../../../../../eu/ehri/project/models/base/Versioned.html#getAllPriorVersions()">getAllPriorVersions</a>, <a href="../../../../../eu/ehri/project/models/base/Versioned.html#getPriorVersion()">getPriorVersion</a></code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Annotatable">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;eu.ehri.project.models.base.<a href="../../../../../eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base">Annotatable</a></h3>
-<code><a href="../../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotation(eu.ehri.project.models.Annotation)">addAnnotation</a>, <a href="../../../../../eu/ehri/project/models/base/Annotatable.html#addAnnotationPart(eu.ehri.project.models.Annotation)">addAnnotationPart</a>, <a href="../../../../../eu/ehri/project/models/base/Annotatable.html#getAnnotations()">getAnnotations</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_eu.ehri.project.models.base.Entity">
@@ -296,10 +291,12 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <li class="blockList">
 <h4>setPermissionScope</h4>
 <pre>public&nbsp;void&nbsp;setPermissionScope(<a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope)</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/models/base/Accessible.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">Accessible</a></code></strong></div>
+<div class="block">Set this item's permission scope.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../../eu/ehri/project/models/base/Accessible.html#setPermissionScope(eu.ehri.project.models.base.PermissionScope)">setPermissionScope</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></code></dd>
-</dl>
+<dt><span class="strong">Parameters:</span></dt><dd><code>scope</code> - a permission scope frame</dd></dl>
 </li>
 </ul>
 <a name="getLatestEvent()">
@@ -309,10 +306,12 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <li class="blockList">
 <h4>getLatestEvent</h4>
 <pre>public&nbsp;<a href="../../../../../eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a>&nbsp;getLatestEvent()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/models/base/Accessible.html#getLatestEvent()">Accessible</a></code></strong></div>
+<div class="block">Fetch the most recent event that affected this item.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../../eu/ehri/project/models/base/Accessible.html#getLatestEvent()">getLatestEvent</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></code></dd>
-</dl>
+<dt><span class="strong">Returns:</span></dt><dd>a system event frame, or null</dd></dl>
 </li>
 </ul>
 <a name="getPermissionScopes()">
@@ -322,10 +321,13 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <li class="blockList">
 <h4>getPermissionScopes</h4>
 <pre>public&nbsp;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&gt;&nbsp;getPermissionScopes()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/models/base/Accessible.html#getPermissionScopes()">Accessible</a></code></strong></div>
+<div class="block">Get the full hierarchy of permission scopes to which this
+ item belongs.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../../eu/ehri/project/models/base/Accessible.html#getPermissionScopes()">getPermissionScopes</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></code></dd>
-</dl>
+<dt><span class="strong">Returns:</span></dt><dd>an iterable of permission scope frames</dd></dl>
 </li>
 </ul>
 <a name="getHistory()">
@@ -350,10 +352,12 @@ implements com.tinkerpop.frames.modules.javahandler.JavaHandlerContext&lt;com.ti
 <li class="blockList">
 <h4>hasAccessRestriction</h4>
 <pre>public&nbsp;boolean&nbsp;hasAccessRestriction()</pre>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/models/base/Accessible.html#hasAccessRestriction()">Accessible</a></code></strong></div>
+<div class="block">Determine if this item has access restrictions.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../../eu/ehri/project/models/base/Accessible.html#hasAccessRestriction()">hasAccessRestriction</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a></code></dd>
-</dl>
+<dt><span class="strong">Returns:</span></dt><dd>true, if the item is restricted, otherwise false</dd></dl>
 </li>
 </ul>
 </li>
