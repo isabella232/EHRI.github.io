@@ -958,7 +958,13 @@
               <![CDATA[whether or not to die on the first validation error]]>
             </wadl:doc>
           </wadl:param>
-          <wadl:param name="allow-update" style="query"/>
+          <wadl:param name="allow-update" style="query">
+            <wadl:doc>
+              <![CDATA[allow the importer to update items that already exist. If it]]>
+<![CDATA[attempts to do so without this option enabled an error will]]>
+<![CDATA[be thrown]]>
+            </wadl:doc>
+          </wadl:param>
           <wadl:param name="log" style="query">
             <wadl:doc>
               <![CDATA[log message for import. If this refers to an accessible local file]]>
@@ -1094,7 +1100,8 @@
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
-            <![CDATA[The permission matrix data]]>
+            <![CDATA[The permission matrix dat]]>
+<![CDATA[a]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:request>
@@ -1296,8 +1303,7 @@
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
-            <![CDATA[A resource bundle, with or without an ID]]>
-<![CDATA[.]]>
+            <![CDATA[A resource bundle, with or without an ID.]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:request>
@@ -1767,7 +1773,8 @@
       </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Get the accessors who are able to view an item.]]>
+          <![CDATA[Get the accessors]]>
+<![CDATA[who are able to view an item.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -1972,7 +1979,8 @@
         <wadl:request/>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[200 response]]>
+            <![CDATA[200 respons]]>
+<![CDATA[e]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -2041,8 +2049,7 @@
       <wadl:method name="POST">
         <wadl:doc>
           <![CDATA[Regenerate the hierarchical graph ID for a given item, optionally]]>
-<![CDATA[ren]]>
-<![CDATA[aming it.]]>
+<![CDATA[renaming it.]]>
 <![CDATA[<p/>]]>
 <![CDATA[The default mode is to output items whose IDs would change, without]]>
 <![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
@@ -2229,8 +2236,7 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A list of serialized item representa]]>
-<![CDATA[tions]]>
+            <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -2684,8 +2690,7 @@
           <wadl:param name="aggregation" style="query">
             <wadl:doc>
               <![CDATA[the manner in which to aggregate the results, accepting]]>
-<![CDATA["user", "strict" or "off" (no aggre]]>
-<![CDATA[gation). Default is]]>
+<![CDATA["user", "strict" or "off" (no aggregation). Default is]]>
 <![CDATA[<b>strict</b>.]]>
             </wadl:doc>
           </wadl:param>
