@@ -261,13 +261,15 @@
 <div class="source">
 <pre>tail -f /opt/webapps/neo4j-version/data/log/console.log
 </pre></div></div>
-<p><b>Next: Back up the database.</b> The Neo4j DB lives in /opt/webapps/data/graph.db. You  can back it up without shutting down the server by running</p>
+<div class="section">
+<h3><a name="Back_up_the_database"></a>Back up the database</h3>
+<p>The Neo4j DB lives in /opt/webapps/data/graph.db. You can back it up without shutting down the server by running:</p>
 
 <div class="source">
 <div class="source">
 <pre>/opt/webapps/neo4j-backup.sh graph.db.BAK
 </pre></div></div>
-<p>(To restore the DB, first shut down Neo4j, then replace /opt/webapps/data/graph.db with the backup directory.)</p></div>
+<p>To restore the DB the procedure is:  - shut down Neo4j  - replace /opt/webapps/data/graph.db with backup directory you specified previously  - ensure all files in the graph.db directory are owned and writable by the <tt>webadm</tt> group:  - chgrp -R webadm graph.db  - chmod -R g+rw graph.db  - restart Neo4j</p></div></div>
 <div class="section">
 <h2><a name="Procedure"></a>Procedure</h2>
 <p>Onwards with the ingest&#x2026;</p>
@@ -330,13 +332,13 @@ export LOG=`pwd`/LOG.txt
   
 <li>the <tt>properties=$PROPERTIES</tt> parameter tells it to file the import properties  in a local file</li>
 </ul>
-<p><b>Note</b>: when importing a single EAD containing ~50,000 items in a single transaction the staging server might run out of memory. If it does the only option is to increase the Neo4j heap size by uncommenting and setting the <tt>wrapper.java.maxmemory=MORE_MB</tt> (say,  3000) in <tt>$NEO4J_HOME/conf/neo4j-wrapper.conf</tt> and restarting Neo4j by running:</p>
+<p><b>Note</b>: when importing a single EAD containing ~50,000 items in a single transaction the staging server might run out of memory. If it does the only option is to increase the Neo4j heap size by uncommenting and setting the <tt>wrapper.java.maxmemory=MORE_MB</tt> (say,  3500) in <tt>$NEO4J_HOME/conf/neo4j-wrapper.conf</tt> and restarting Neo4j by running:</p>
 
 <div class="source">
 <div class="source">
 <pre>sudo service neo4j-service restart
 </pre></div></div>
-<p><i>Additional note</i>: <i>Certain date patterns are fuzzy parsed by the importer and invalid dates such as 31st April will currently throw a runtime exception. So fix all these first</i> ;)</p>
+<p><b>Additional note</b>: <i>Certain date patterns are fuzzy parsed by the importer and invalid dates such as 31st April will currently throw a runtime exception resulting in a BadRequest from the web service. So fix all these first</i> ;)</p>
 <p>If all goes well you should get something like this:</p>
 
 <div class="source">
