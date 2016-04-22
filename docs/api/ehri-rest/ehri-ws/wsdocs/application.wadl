@@ -24,7 +24,6 @@
           <wadl:doc>
             <![CDATA[A serialized list of items]]>
           </wadl:doc>
-          <wadl:representation mediaType="application/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -43,7 +42,6 @@
           <wadl:doc>
             <![CDATA[A serialized list of items]]>
           </wadl:doc>
-          <wadl:representation mediaType="application/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -82,19 +80,11 @@
           <wadl:doc>
             <![CDATA[A new user]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/admin/export-json">
-      <wadl:method name="GET">
-        <wadl:response>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-    <wadl:resource path="/admin/sudo export-graphson">
+    <wadl:resource path="/admin/export-graphson">
       <wadl:method name="GET">
         <wadl:doc>
           <![CDATA[Export the DB as a stream of JSON in]]>
@@ -102,6 +92,13 @@
 <![CDATA[<p/>]]>
 <![CDATA[The mode used is EXTENDED.]]>
         </wadl:doc>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/admin/export-json">
+      <wadl:method name="GET">
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -123,7 +120,8 @@
 <![CDATA[<p>]]>
 <![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
 <![CDATA[<p>]]>
-<![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
+<![CDATA[If th]]>
+<![CDATA[e header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
 <![CDATA[numbers of items or when limiting is disabled completely.]]>
 <![CDATA[<p>]]>
@@ -138,7 +136,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -171,7 +168,6 @@
           <wadl:doc>
             <![CDATA[the annotation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -180,15 +176,15 @@
       <wadl:method name="GET">
         <wadl:doc>
           <![CDATA[List available resources. The default behaviour is to]]>
-<![CDATA[return a page of 20 item]]>
-<![CDATA[s.]]>
+<![CDATA[return a page of 20 items.]]>
 <![CDATA[<p>]]>
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
 <![CDATA[parameter, and disabled completely using a value of -1.]]>
 <![CDATA[<p>]]>
 <![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
 <![CDATA[<p>]]>
-<![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
+<![CDATA[The page, limit, and total number of items is returned in the Content-Range respo]]>
+<![CDATA[nse]]>
 <![CDATA[header in the form:]]>
 <![CDATA[<p>]]>
 <![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
@@ -208,7 +204,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -231,7 +226,6 @@
           <wadl:doc>
             <![CDATA[A serialized resource representation.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -245,8 +239,7 @@
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
 <![CDATA[parameter, and disabled completely using a value of -1.]]>
 <![CDATA[<p>]]>
-<![CDATA[Item lists are pag]]>
-<![CDATA[inated using the <tt>page</tt> parameter.]]>
+<![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
 <![CDATA[<p>]]>
 <![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
 <![CDATA[header in the form:]]>
@@ -255,7 +248,8 @@
 <![CDATA[<p>]]>
 <![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
-<![CDATA[numbers of items or when limiting is disabled completely.]]>
+<![CDATA[numbers of items or when limiting]]>
+<![CDATA[is disabled completely.]]>
 <![CDATA[<p>]]>
 <![CDATA[Example:]]>
 <![CDATA[<pre>]]>
@@ -268,7 +262,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -304,7 +297,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -327,7 +319,6 @@
           <wadl:doc>
             <![CDATA[A serialized resource representation.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -363,7 +354,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -374,8 +364,65 @@
           <![CDATA[List available resources. The default behaviour is to]]>
 <![CDATA[return a page of 20 items.]]>
 <![CDATA[<p>]]>
-<![CDATA[The default list limit can be overri]]>
-<![CDATA[dden using the <tt>limit</tt>]]>
+<![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
+<![CDATA[parameter, and disabled completely using a value of -1.]]>
+<![CDATA[<p>]]>
+<![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
+<![CDATA[<p>]]>
+<![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
+<![CDATA[header in the form:]]>
+<![CDATA[<p>]]>
+<![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
+<![CDATA[<p>]]>
+<![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
+<![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
+<![CDATA[numbers of items or when limiting is disabled completely.]]>
+<![CDATA[<p>]]>
+<![CDATA[Example:]]>
+<![CDATA[<pre>]]>
+<![CDATA[{@code]]>
+<![CDATA[curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&l]]>
+<![CDATA[imit=10]]>
+<![CDATA[}]]>
+<![CDATA[</pre>]]>
+        </wadl:doc>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[A list of serialized item representations]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="POST">
+        <wadl:doc>
+          <![CDATA[Create a resource.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:doc>
+            <![CDATA[The resource data.]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+          <wadl:param name="accessibleTo" style="query">
+            <wadl:doc>
+              <![CDATA[The users/groups who can initially access this resource.]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[A serialized resource representation.]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/classes/DocumentaryUnit">
+      <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[List available resources. The default behaviour is to]]>
+<![CDATA[return a page of 20 items.]]>
+<![CDATA[<p>]]>
+<![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
 <![CDATA[parameter, and disabled completely using a value of -1.]]>
 <![CDATA[<p>]]>
 <![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
@@ -400,67 +447,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-      <wadl:method name="POST">
-        <wadl:doc>
-          <![CDATA[Create a resource.]]>
-        </wadl:doc>
-        <wadl:request>
-          <wadl:doc>
-            <![CDATA[The resource data.]]>
-          </wadl:doc>
-          <wadl:representation mediaType="application/json"/>
-          <wadl:param name="accessibleTo" style="query">
-            <wadl:doc>
-              <![CDATA[The users/groups who can initially access this resource.]]>
-            </wadl:doc>
-          </wadl:param>
-        </wadl:request>
-        <wadl:response>
-          <wadl:doc>
-            <![CDATA[A serialized resource representation.]]>
-          </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-    <wadl:resource path="/classes/DocumentaryUnit">
-      <wadl:method name="GET">
-        <wadl:doc>
-          <![CDATA[List available resources. The default behaviour is to]]>
-<![CDATA[return a page of 20 items.]]>
-<![CDATA[<p>]]>
-<![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
-<![CDATA[parameter, and disabled completely using a value of -1.]]>
-<![CDATA[<p>]]>
-<![CDATA[Item lists are paginated using the <tt>page</tt> paramete]]>
-<![CDATA[r.]]>
-<![CDATA[<p>]]>
-<![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
-<![CDATA[header in the form:]]>
-<![CDATA[<p>]]>
-<![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
-<![CDATA[<p>]]>
-<![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
-<![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
-<![CDATA[numbers of items or when limiting is disabled completely.]]>
-<![CDATA[<p>]]>
-<![CDATA[Example:]]>
-<![CDATA[<pre>]]>
-<![CDATA[{@code]]>
-<![CDATA[curl http://localhost:7474/ehri/[RESOURCE]/list?page=5&limit=10]]>
-<![CDATA[}]]>
-<![CDATA[</pre>]]>
-        </wadl:doc>
-        <wadl:response>
-          <wadl:doc>
-            <![CDATA[A list of serialized item representations]]>
-          </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -496,7 +482,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -507,7 +492,6 @@
           <wadl:param name="member" style="query"/>
         </wadl:request>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -524,7 +508,8 @@
 <![CDATA[Item lists are paginated using the <tt>page</tt> parameter.]]>
 <![CDATA[<p>]]>
 <![CDATA[The page, limit, and total number of items is returned in the Content-Range response]]>
-<![CDATA[header in the form:]]>
+<![CDATA[header in]]>
+<![CDATA[the form:]]>
 <![CDATA[<p>]]>
 <![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
 <![CDATA[<p>]]>
@@ -543,7 +528,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -566,7 +550,6 @@
           <wadl:doc>
             <![CDATA[A serialized resource representation.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -589,7 +572,8 @@
 <![CDATA[<p>]]>
 <![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
-<![CDATA[numbers of items or when limiting is disabled completely.]]>
+<![CDATA[numbers of items or when limiting is disabled complet]]>
+<![CDATA[ely.]]>
 <![CDATA[<p>]]>
 <![CDATA[Example:]]>
 <![CDATA[<pre>]]>
@@ -602,7 +586,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -627,8 +610,7 @@
           </wadl:param>
           <wadl:param name="body" style="query">
             <wadl:doc>
-              <![CDATA[optional list of entities]]>
-<![CDATA[to provide the body]]>
+              <![CDATA[optional list of entities to provide the body]]>
             </wadl:doc>
           </wadl:param>
           <wadl:param name="accessibleTo" style="query">
@@ -641,7 +623,6 @@
           <wadl:doc>
             <![CDATA[the created link item]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -662,7 +643,8 @@
 <![CDATA[<p>]]>
 <![CDATA[<pre><code>page=1; count=20; total=50</code></pre>]]>
 <![CDATA[<p>]]>
-<![CDATA[If the header <tt>X-Stream</tt> is set to <tt>true</tt>]]>
+<![CDATA[If the header <tt>X-Stream</tt> is s]]>
+<![CDATA[et to <tt>true</tt>]]>
 <![CDATA[no count of total items will be performed. This is more efficient when returning large]]>
 <![CDATA[numbers of items or when limiting is disabled completely.]]>
 <![CDATA[<p>]]>
@@ -677,7 +659,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -691,8 +672,7 @@
           <wadl:param name="aggregation" style="query">
             <wadl:doc>
               <![CDATA[The manner in which to aggregate the results, accepting]]>
-<![CDATA["user", "stri]]>
-<![CDATA[ct" or "off" (no aggregation). Default is]]>
+<![CDATA["user", "strict" or "off" (no aggregation). Default is]]>
 <![CDATA["user".]]>
             </wadl:doc>
           </wadl:param>
@@ -733,7 +713,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -744,7 +723,6 @@
           <wadl:param name="accessibleTo" style="query"/>
         </wadl:request>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -752,8 +730,7 @@
     <wadl:resource path="/classes/VirtualUnit">
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[List avail]]>
-<![CDATA[able resources. The default behaviour is to]]>
+          <![CDATA[List available resources. The default behaviour is to]]>
 <![CDATA[return a page of 20 items.]]>
 <![CDATA[<p>]]>
 <![CDATA[The default list limit can be overridden using the <tt>limit</tt>]]>
@@ -781,7 +758,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -792,7 +768,6 @@
           <wadl:param name="id" style="query"/>
         </wadl:request>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -812,7 +787,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation.]]>
           </wadl:doc>
-          <wadl:representation mediaType="application/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -899,6 +873,8 @@
           <wadl:representation mediaType="text/plain"/>
           <wadl:representation mediaType="application/octet-stream"/>
           <wadl:param name="scope" style="query"/>
+          <wadl:param name="tolerant" style="query"/>
+          <wadl:param name="allow-update" style="query"/>
           <wadl:param name="log" style="query"/>
           <wadl:param name="importer" style="query"/>
         </wadl:request>
@@ -919,6 +895,7 @@
           <wadl:representation mediaType="application/octet-stream"/>
           <wadl:param name="scope" style="query"/>
           <wadl:param name="tolerant" style="query"/>
+          <wadl:param name="allow-update" style="query"/>
           <wadl:param name="log" style="query"/>
           <wadl:param name="properties" style="query"/>
           <wadl:param name="handler" style="query"/>
@@ -957,7 +934,8 @@
 <![CDATA[<p/>]]>
 <![CDATA[(Assuming <tt>ead-list.txt</tt> is a list of newline separated EAD file paths.)]]>
 <![CDATA[<p/>]]>
-<![CDATA[(TODO: Might be better to use a different way of encoding the local file paths...)]]>
+<![CDATA[(TODO: Might be better t]]>
+<![CDATA[o use a different way of encoding the local file paths...)]]>
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
@@ -980,6 +958,7 @@
               <![CDATA[whether or not to die on the first validation error]]>
             </wadl:doc>
           </wadl:param>
+          <wadl:param name="allow-update" style="query"/>
           <wadl:param name="log" style="query">
             <wadl:doc>
               <![CDATA[log message for import. If this refers to an accessible local file]]>
@@ -1026,6 +1005,7 @@
           <wadl:representation mediaType="application/octet-stream"/>
           <wadl:param name="scope" style="query"/>
           <wadl:param name="tolerant" style="query"/>
+          <wadl:param name="allow-update" style="query"/>
           <wadl:param name="log" style="query"/>
           <wadl:param name="properties" style="query"/>
           <wadl:param name="handler" style="query"/>
@@ -1202,7 +1182,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1247,7 +1226,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1265,7 +1243,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1291,7 +1268,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1311,7 +1287,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1321,7 +1296,8 @@
         </wadl:doc>
         <wadl:request>
           <wadl:doc>
-            <![CDATA[A resource bundle, with or without an ID.]]>
+            <![CDATA[A resource bundle, with or without an ID]]>
+<![CDATA[.]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:request>
@@ -1329,7 +1305,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1343,8 +1318,7 @@
     <wadl:resource path="/classes/CvocConcept/{id}">
       <wadl:param name="id" style="template">
         <wadl:doc>
-          <![CDATA[The]]>
-<![CDATA[requested item id]]>
+          <![CDATA[The requested item id]]>
         </wadl:doc>
       </wadl:param>
       <wadl:method name="GET">
@@ -1356,7 +1330,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1374,7 +1347,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1400,7 +1372,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1418,7 +1389,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1444,7 +1414,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1462,7 +1431,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1488,7 +1456,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1506,7 +1473,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1532,7 +1498,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1550,7 +1515,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1576,7 +1540,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1621,7 +1584,6 @@
           <wadl:doc>
             <![CDATA[The permission grant]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1647,7 +1609,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1665,14 +1626,12 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
       <wadl:method name="DELETE">
         <wadl:doc>
-          <![CDATA[Delete a]]>
-<![CDATA[resource.]]>
+          <![CDATA[Delete a resource.]]>
         </wadl:doc>
         <wadl:request/>
       </wadl:method>
@@ -1692,7 +1651,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1712,7 +1670,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1730,7 +1687,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1776,7 +1732,6 @@
           <wadl:doc>
             <![CDATA[A serialized item representation]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1794,7 +1749,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the updated resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1820,8 +1774,7 @@
           <wadl:doc>
             <![CDATA[a list of accessor frames]]>
           </wadl:doc>
-          <wadl:representation mediaType="*/*"/>
-          <wadl:representation mediaType="application/xml"/>
+          <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
       <wadl:method name="POST">
@@ -1840,8 +1793,7 @@
           <wadl:doc>
             <![CDATA[the updated object]]>
           </wadl:doc>
-          <wadl:representation mediaType="*/*"/>
-          <wadl:representation mediaType="application/xml"/>
+          <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
@@ -1860,7 +1812,6 @@
           <wadl:doc>
             <![CDATA[a list of annotations on the item]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1880,8 +1831,7 @@
           <wadl:doc>
             <![CDATA[200 response]]>
           </wadl:doc>
-          <wadl:representation mediaType="*/*"/>
-          <wadl:representation mediaType="application/xml"/>
+          <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
       <wadl:method name="DELETE">
@@ -1893,8 +1843,7 @@
           <wadl:doc>
             <![CDATA[200 response]]>
           </wadl:doc>
-          <wadl:representation mediaType="*/*"/>
-          <wadl:representation mediaType="application/xml"/>
+          <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
@@ -1918,7 +1867,6 @@
           <wadl:doc>
             <![CDATA[the new description]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1936,7 +1884,6 @@
           <wadl:doc>
             <![CDATA[the new description]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1981,7 +1928,6 @@
           <wadl:doc>
             <![CDATA[a list of links with the item as a target]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -1997,7 +1943,6 @@
           <wadl:doc>
             <![CDATA[a list of grants for this item]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2017,8 +1962,7 @@
           <wadl:doc>
             <![CDATA[200 response]]>
           </wadl:doc>
-          <wadl:representation mediaType="*/*"/>
-          <wadl:representation mediaType="application/xml"/>
+          <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
       <wadl:method name="DELETE">
@@ -2030,8 +1974,7 @@
           <wadl:doc>
             <![CDATA[200 response]]>
           </wadl:doc>
-          <wadl:representation mediaType="*/*"/>
-          <wadl:representation mediaType="application/xml"/>
+          <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
@@ -2046,7 +1989,6 @@
           <wadl:doc>
             <![CDATA[a list of grants for which this item is the scope]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2086,7 +2028,6 @@
           <wadl:doc>
             <![CDATA[a list of permission grants for the user]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2100,7 +2041,8 @@
       <wadl:method name="POST">
         <wadl:doc>
           <![CDATA[Regenerate the hierarchical graph ID for a given item, optionally]]>
-<![CDATA[renaming it.]]>
+<![CDATA[ren]]>
+<![CDATA[aming it.]]>
 <![CDATA[<p/>]]>
 <![CDATA[The default mode is to output items whose IDs would change, without]]>
 <![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
@@ -2131,8 +2073,7 @@
         <wadl:response>
           <wadl:doc>
             <![CDATA[a tab old-to-new mapping, or an empty]]>
-<![CDATA[bod]]>
-<![CDATA[y if nothing was changed]]>
+<![CDATA[body if nothing was changed]]>
           </wadl:doc>
           <wadl:representation mediaType="text/csv"/>
         </wadl:response>
@@ -2195,8 +2136,7 @@
           <![CDATA[Regenerate the hierarchical graph ID all items of a given]]>
 <![CDATA[type.]]>
 <![CDATA[<p/>]]>
-<![CDATA[The default mode is to output items whose IDs woul]]>
-<![CDATA[d change, without]]>
+<![CDATA[The default mode is to output items whose IDs would change, without]]>
 <![CDATA[actually changing them. The collisions parameter will <b>only</b>]]>
 <![CDATA[output items that would cause collisions if renamed, whereas tolerant]]>
 <![CDATA[mode will skip them altogether.]]>
@@ -2256,7 +2196,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the created resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2290,9 +2229,9 @@
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[A list of serialized item representations]]>
+            <![CDATA[A list of serialized item representa]]>
+<![CDATA[tions]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2318,7 +2257,6 @@
           <wadl:doc>
             <![CDATA[The new repository]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2344,7 +2282,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2374,7 +2311,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the created resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2400,7 +2336,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2430,7 +2365,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the created resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2494,7 +2428,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2524,7 +2457,6 @@
           <wadl:doc>
             <![CDATA[A serialized representation of the created resource.]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2575,7 +2507,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2591,7 +2522,6 @@
           <wadl:param name="all" style="query"/>
         </wadl:request>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2658,7 +2588,6 @@
           <wadl:doc>
             <![CDATA[The new unit]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2709,7 +2638,6 @@
           <wadl:doc>
             <![CDATA[A list of serialized item representations]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2729,7 +2657,6 @@
           <wadl:doc>
             <![CDATA[a list of subject items]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2739,7 +2666,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2758,7 +2684,8 @@
           <wadl:param name="aggregation" style="query">
             <wadl:doc>
               <![CDATA[the manner in which to aggregate the results, accepting]]>
-<![CDATA["user", "strict" or "off" (no aggregation). Default is]]>
+<![CDATA["user", "strict" or "off" (no aggre]]>
+<![CDATA[gation). Default is]]>
 <![CDATA[<b>strict</b>.]]>
             </wadl:doc>
           </wadl:param>
@@ -2776,7 +2703,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2786,7 +2712,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2834,7 +2759,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2844,7 +2768,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2864,7 +2787,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2883,7 +2805,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2907,7 +2828,6 @@
           <wadl:param name="id" style="query"/>
         </wadl:request>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2917,7 +2837,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2947,7 +2866,6 @@
           <wadl:param name="all" style="query"/>
         </wadl:request>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -2977,14 +2895,12 @@
           <wadl:doc>
             <![CDATA[the new description]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
       <wadl:method name="DELETE">
         <wadl:doc>
-          <![CDATA[Delete a descript]]>
-<![CDATA[ion with the given ID, belonging to the given parent item.]]>
+          <![CDATA[Delete a description with the given ID, belonging to the given parent item.]]>
         </wadl:doc>
         <wadl:request/>
       </wadl:method>
@@ -3131,7 +3047,6 @@
           <wadl:doc>
             <![CDATA[A list of broader resources]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -3183,7 +3098,6 @@
           <wadl:doc>
             <![CDATA[A list of related resources]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -3239,7 +3153,6 @@
           <wadl:doc>
             <![CDATA[A list of related resources]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -3250,7 +3163,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -3261,7 +3173,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -3272,7 +3183,6 @@
       <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -3326,7 +3236,6 @@
           <wadl:doc>
             <![CDATA[the new access point]]>
           </wadl:doc>
-          <wadl:representation mediaType="text/xml"/>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -3349,8 +3258,7 @@
       </wadl:param>
       <wadl:method name="DELETE">
         <wadl:doc>
-          <![CDATA[Delete t]]>
-<![CDATA[he access point with the given ID, on the given description,]]>
+          <![CDATA[Delete the access point with the given ID, on the given description,]]>
 <![CDATA[belonging to the given parent item.]]>
         </wadl:doc>
         <wadl:request/>

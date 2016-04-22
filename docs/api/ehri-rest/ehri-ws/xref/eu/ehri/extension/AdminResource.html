@@ -93,7 +93,7 @@
 <a class="jxr_linenumber" name="83" href="#83">83</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="84" href="#84">84</a>      @GET
 <a class="jxr_linenumber" name="85" href="#85">85</a>      @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="86" href="#86">86</a>      @Path(<span class="jxr_string">"sudo export-graphson"</span>)
+<a class="jxr_linenumber" name="86" href="#86">86</a>      @Path(<span class="jxr_string">"export-graphson"</span>)
 <a class="jxr_linenumber" name="87" href="#87">87</a>      <strong class="jxr_keyword">public</strong> Response getGraphSON() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="88" href="#88">88</a>          <strong class="jxr_keyword">return</strong> Response.ok(<strong class="jxr_keyword">new</strong> StreamingOutput() {
 <a class="jxr_linenumber" name="89" href="#89">89</a>              @Override
@@ -134,7 +134,7 @@
 <a class="jxr_linenumber" name="124" href="#124">124</a> <em class="jxr_javadoccomment">     * @throws Exception</em>
 <a class="jxr_linenumber" name="125" href="#125">125</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="126" href="#126">126</a>     @POST
-<a class="jxr_linenumber" name="127" href="#127">127</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="127" href="#127">127</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="128" href="#128">128</a>     @Consumes(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="129" href="#129">129</a>     @Path(<span class="jxr_string">"create-default-user-profile"</span>)
 <a class="jxr_linenumber" name="130" href="#130">130</a>     <strong class="jxr_keyword">public</strong> Response createDefaultUserProfile(String jsonData,

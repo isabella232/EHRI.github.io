@@ -63,7 +63,7 @@
 <a class="jxr_linenumber" name="53" href="#53">53</a>      }
 <a class="jxr_linenumber" name="54" href="#54">54</a>  
 <a class="jxr_linenumber" name="55" href="#55">55</a>      @GET
-<a class="jxr_linenumber" name="56" href="#56">56</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="56" href="#56">56</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="57" href="#57">57</a>      @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="58" href="#58">58</a>      @Override
 <a class="jxr_linenumber" name="59" href="#59">59</a>      <strong class="jxr_keyword">public</strong> Response get(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
@@ -71,14 +71,14 @@
 <a class="jxr_linenumber" name="61" href="#61">61</a>      }
 <a class="jxr_linenumber" name="62" href="#62">62</a>  
 <a class="jxr_linenumber" name="63" href="#63">63</a>      @GET
-<a class="jxr_linenumber" name="64" href="#64">64</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="64" href="#64">64</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="65" href="#65">65</a>      @Override
 <a class="jxr_linenumber" name="66" href="#66">66</a>      <strong class="jxr_keyword">public</strong> Response list() {
 <a class="jxr_linenumber" name="67" href="#67">67</a>          <strong class="jxr_keyword">return</strong> listItems();
 <a class="jxr_linenumber" name="68" href="#68">68</a>      }
 <a class="jxr_linenumber" name="69" href="#69">69</a>  
 <a class="jxr_linenumber" name="70" href="#70">70</a>      @GET
-<a class="jxr_linenumber" name="71" href="#71">71</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="71" href="#71">71</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="72" href="#72">72</a>      @Path(<span class="jxr_string">"{id:[^/]+}/list"</span>)
 <a class="jxr_linenumber" name="73" href="#73">73</a>      @Override
 <a class="jxr_linenumber" name="74" href="#74">74</a>      <strong class="jxr_keyword">public</strong> Response listChildren(
@@ -98,7 +98,7 @@
 <a class="jxr_linenumber" name="88" href="#88">88</a>  
 <a class="jxr_linenumber" name="89" href="#89">89</a>      @POST
 <a class="jxr_linenumber" name="90" href="#90">90</a>      @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="91" href="#91">91</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="91" href="#91">91</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="92" href="#92">92</a>      @Override
 <a class="jxr_linenumber" name="93" href="#93">93</a>      <strong class="jxr_keyword">public</strong> Response create(<a href="../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle,
 <a class="jxr_linenumber" name="94" href="#94">94</a>                             @QueryParam(ACCESSOR_PARAM) List&lt;String&gt; accessors)
@@ -112,7 +112,7 @@
 <a class="jxr_linenumber" name="102" href="#102">102</a> 
 <a class="jxr_linenumber" name="103" href="#103">103</a>     @PUT
 <a class="jxr_linenumber" name="104" href="#104">104</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="105" href="#105">105</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="105" href="#105">105</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="106" href="#106">106</a>     @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="107" href="#107">107</a>     @Override
 <a class="jxr_linenumber" name="108" href="#108">108</a>     <strong class="jxr_keyword">public</strong> Response update(@PathParam(<span class="jxr_string">"id"</span>) String id, <a href="../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle)
@@ -159,7 +159,7 @@
 <a class="jxr_linenumber" name="149" href="#149">149</a> 
 <a class="jxr_linenumber" name="150" href="#150">150</a>     @POST
 <a class="jxr_linenumber" name="151" href="#151">151</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="152" href="#152">152</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="152" href="#152">152</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="153" href="#153">153</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + Entities.HISTORICAL_AGENT)
 <a class="jxr_linenumber" name="154" href="#154">154</a>     @Override
 <a class="jxr_linenumber" name="155" href="#155">155</a>     <strong class="jxr_keyword">public</strong> Response createChild(@PathParam(<span class="jxr_string">"id"</span>) String id,

@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AbstractImportManager (EHRI Backend 0.13.0-SNAPSHOT API)</title>
+<title>AbstractImportManager (EHRI Backend 0.13.2-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AbstractImportManager (EHRI Backend 0.13.0-SNAPSHOT API)";
+        parent.document.title="AbstractImportManager (EHRI Backend 0.13.2-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -130,24 +130,32 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#actioner">actioner</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#allowUpdates">allowUpdates</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#currentFile">currentFile</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#currentPosition">currentPosition</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected com.tinkerpop.frames.FramedGraph&lt;?&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#framedGraph">framedGraph</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importerClass">importerClass</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#permissionScope">permissionScope</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#tolerant">tolerant</a></strong></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -164,9 +172,11 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#AbstractImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class)">AbstractImportManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+<td class="colOne"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#AbstractImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class)">AbstractImportManager</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
                      <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope,
                      <a href="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
+                     boolean&nbsp;tolerant,
+                     boolean&nbsp;allowUpdates,
                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&gt;&nbsp;importerClass)</code>
 <div class="block">Constructor.</div>
 </td>
@@ -228,13 +238,6 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 <div class="block">Determine if the importer is in tolerant mode.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#setTolerant(boolean)">setTolerant</a></strong>(boolean&nbsp;tolerant)</code>
-<div class="block">Tell the importer to simply skip invalid items rather than throwing an
- exception.</div>
-</td>
-</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -284,6 +287,24 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 <pre>protected final&nbsp;<a href="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a> actioner</pre>
 </li>
 </ul>
+<a name="tolerant">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>tolerant</h4>
+<pre>protected final&nbsp;boolean tolerant</pre>
+</li>
+</ul>
+<a name="allowUpdates">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>allowUpdates</h4>
+<pre>protected final&nbsp;boolean allowUpdates</pre>
+</li>
+</ul>
 <a name="currentFile">
 <!--   -->
 </a>
@@ -319,7 +340,7 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="AbstractImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, java.lang.Class)">
+<a name="AbstractImportManager(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, boolean, boolean, java.lang.Class)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -328,9 +349,13 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 <pre>public&nbsp;AbstractImportManager(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
                      <a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope,
                      <a href="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
+                     boolean&nbsp;tolerant,
+                     boolean&nbsp;allowUpdates,
                      <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a>&gt;&nbsp;importerClass)</pre>
 <div class="block">Constructor.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>graph</code> - the framed graph</dd><dd><code>scope</code> - the permission scope</dd><dd><code>actioner</code> - the actioner</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>graph</code> - the framed graph</dd><dd><code>scope</code> - the permission scope</dd><dd><code>actioner</code> - the actioner</dd><dd><code>tolerant</code> - allow individual items to fail validation without
+                      failing an entire batch</dd><dd><code>allowUpdates</code> - allow this import manager to update data items as well
+                      as create them</dd><dd><code>importerClass</code> - the class of the item importer object</dd></dl>
 </li>
 </ul>
 </li>
@@ -341,18 +366,6 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="setTolerant(boolean)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setTolerant</h4>
-<pre>public&nbsp;<a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a>&nbsp;setTolerant(boolean&nbsp;tolerant)</pre>
-<div class="block">Tell the importer to simply skip invalid items rather than throwing an
- exception.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>tolerant</code> - true means it won't validateData the xml file</dd></dl>
-</li>
-</ul>
 <a name="isTolerant()">
 <!--   -->
 </a>

@@ -95,7 +95,7 @@
 <a class="jxr_linenumber" name="85" href="#85">85</a>      }
 <a class="jxr_linenumber" name="86" href="#86">86</a>  
 <a class="jxr_linenumber" name="87" href="#87">87</a>      @GET
-<a class="jxr_linenumber" name="88" href="#88">88</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="88" href="#88">88</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="89" href="#89">89</a>      @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="90" href="#90">90</a>      @Override
 <a class="jxr_linenumber" name="91" href="#91">91</a>      <strong class="jxr_keyword">public</strong> Response get(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
@@ -103,7 +103,7 @@
 <a class="jxr_linenumber" name="93" href="#93">93</a>      }
 <a class="jxr_linenumber" name="94" href="#94">94</a>  
 <a class="jxr_linenumber" name="95" href="#95">95</a>      @GET
-<a class="jxr_linenumber" name="96" href="#96">96</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="96" href="#96">96</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="97" href="#97">97</a>      @Override
 <a class="jxr_linenumber" name="98" href="#98">98</a>      <strong class="jxr_keyword">public</strong> Response list() {
 <a class="jxr_linenumber" name="99" href="#99">99</a>          <strong class="jxr_keyword">return</strong> listItems();
@@ -111,7 +111,7 @@
 <a class="jxr_linenumber" name="101" href="#101">101</a> 
 <a class="jxr_linenumber" name="102" href="#102">102</a>     @POST
 <a class="jxr_linenumber" name="103" href="#103">103</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="104" href="#104">104</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="104" href="#104">104</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="105" href="#105">105</a>     <strong class="jxr_keyword">public</strong> Response createUserProfile(<a href="../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle,
 <a class="jxr_linenumber" name="106" href="#106">106</a>             @QueryParam(GROUP_PARAM) List&lt;String&gt; groupIds,
 <a class="jxr_linenumber" name="107" href="#107">107</a>             @QueryParam(ACCESSOR_PARAM) List&lt;String&gt; accessors) <strong class="jxr_keyword">throws</strong> PermissionDenied,
@@ -140,7 +140,7 @@
 <a class="jxr_linenumber" name="130" href="#130">130</a> 
 <a class="jxr_linenumber" name="131" href="#131">131</a>     @PUT
 <a class="jxr_linenumber" name="132" href="#132">132</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="133" href="#133">133</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="133" href="#133">133</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="134" href="#134">134</a>     @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="135" href="#135">135</a>     @Override
 <a class="jxr_linenumber" name="136" href="#136">136</a>     <strong class="jxr_keyword">public</strong> Response update(@PathParam(<span class="jxr_string">"id"</span>) String id, <a href="../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle)
@@ -165,7 +165,7 @@
 <a class="jxr_linenumber" name="155" href="#155">155</a>     }
 <a class="jxr_linenumber" name="156" href="#156">156</a> 
 <a class="jxr_linenumber" name="157" href="#157">157</a>     @GET
-<a class="jxr_linenumber" name="158" href="#158">158</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="158" href="#158">158</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="159" href="#159">159</a>     @Path(<span class="jxr_string">"{userId:[^/]+}/"</span> + FOLLOWERS)
 <a class="jxr_linenumber" name="160" href="#160">160</a>     <strong class="jxr_keyword">public</strong> Response listFollowers(@PathParam(<span class="jxr_string">"userId"</span>) String userId) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="161" href="#161">161</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
@@ -181,7 +181,7 @@
 <a class="jxr_linenumber" name="171" href="#171">171</a>     }
 <a class="jxr_linenumber" name="172" href="#172">172</a> 
 <a class="jxr_linenumber" name="173" href="#173">173</a>     @GET
-<a class="jxr_linenumber" name="174" href="#174">174</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="174" href="#174">174</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="175" href="#175">175</a>     @Path(<span class="jxr_string">"{userId:[^/]+}/"</span> + FOLLOWING)
 <a class="jxr_linenumber" name="176" href="#176">176</a>     <strong class="jxr_keyword">public</strong> Response listFollowing(@PathParam(<span class="jxr_string">"userId"</span>) String userId) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="177" href="#177">177</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
@@ -197,7 +197,7 @@
 <a class="jxr_linenumber" name="187" href="#187">187</a>     }
 <a class="jxr_linenumber" name="188" href="#188">188</a> 
 <a class="jxr_linenumber" name="189" href="#189">189</a>     @GET
-<a class="jxr_linenumber" name="190" href="#190">190</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="190" href="#190">190</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="191" href="#191">191</a>     @Path(<span class="jxr_string">"{userId:[^/]+}/"</span> + IS_FOLLOWING + <span class="jxr_string">"/{otherId:[^/]+}"</span>)
 <a class="jxr_linenumber" name="192" href="#192">192</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isFollowing(
 <a class="jxr_linenumber" name="193" href="#193">193</a>             @PathParam(<span class="jxr_string">"userId"</span>) String userId,
@@ -214,7 +214,7 @@
 <a class="jxr_linenumber" name="204" href="#204">204</a>     }
 <a class="jxr_linenumber" name="205" href="#205">205</a> 
 <a class="jxr_linenumber" name="206" href="#206">206</a>     @GET
-<a class="jxr_linenumber" name="207" href="#207">207</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="207" href="#207">207</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="208" href="#208">208</a>     @Path(<span class="jxr_string">"{userId:[^/]+}/"</span> + IS_FOLLOWER + <span class="jxr_string">"/{otherId:[^/]+}"</span>)
 <a class="jxr_linenumber" name="209" href="#209">209</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isFollower(
 <a class="jxr_linenumber" name="210" href="#210">210</a>             @PathParam(<span class="jxr_string">"userId"</span>) String userId,
@@ -262,7 +262,7 @@
 <a class="jxr_linenumber" name="252" href="#252">252</a>     }
 <a class="jxr_linenumber" name="253" href="#253">253</a> 
 <a class="jxr_linenumber" name="254" href="#254">254</a>     @GET
-<a class="jxr_linenumber" name="255" href="#255">255</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="255" href="#255">255</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="256" href="#256">256</a>     @Path(<span class="jxr_string">"{userId:[^/]+}/"</span> + BLOCKED)
 <a class="jxr_linenumber" name="257" href="#257">257</a>     <strong class="jxr_keyword">public</strong> Response listBlocked(@PathParam(<span class="jxr_string">"userId"</span>) String userId) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="258" href="#258">258</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
@@ -278,7 +278,7 @@
 <a class="jxr_linenumber" name="268" href="#268">268</a>     }
 <a class="jxr_linenumber" name="269" href="#269">269</a> 
 <a class="jxr_linenumber" name="270" href="#270">270</a>     @GET
-<a class="jxr_linenumber" name="271" href="#271">271</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="271" href="#271">271</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="272" href="#272">272</a>     @Path(<span class="jxr_string">"{userId:[^/]+}/"</span> + IS_BLOCKING + <span class="jxr_string">"/{otherId:[^/]+}"</span>)
 <a class="jxr_linenumber" name="273" href="#273">273</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> isBlocking(
 <a class="jxr_linenumber" name="274" href="#274">274</a>             @PathParam(<span class="jxr_string">"userId"</span>) String userId,
@@ -326,7 +326,7 @@
 <a class="jxr_linenumber" name="316" href="#316">316</a>     }
 <a class="jxr_linenumber" name="317" href="#317">317</a> 
 <a class="jxr_linenumber" name="318" href="#318">318</a>     @GET
-<a class="jxr_linenumber" name="319" href="#319">319</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="319" href="#319">319</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="320" href="#320">320</a>     @Path(<span class="jxr_string">"{userId:[^/]+}/"</span> + WATCHING)
 <a class="jxr_linenumber" name="321" href="#321">321</a>     <strong class="jxr_keyword">public</strong> Response listWatching(@PathParam(<span class="jxr_string">"userId"</span>) String userId) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="322" href="#322">322</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
@@ -390,7 +390,7 @@
 <a class="jxr_linenumber" name="380" href="#380">380</a>     }
 <a class="jxr_linenumber" name="381" href="#381">381</a> 
 <a class="jxr_linenumber" name="382" href="#382">382</a>     @GET
-<a class="jxr_linenumber" name="383" href="#383">383</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="383" href="#383">383</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="384" href="#384">384</a>     @Path(<span class="jxr_string">"{userId:[^/]+}/"</span> + GenericResource.ANNOTATIONS)
 <a class="jxr_linenumber" name="385" href="#385">385</a>     <strong class="jxr_keyword">public</strong> Response listAnnotations(@PathParam(<span class="jxr_string">"userId"</span>) String userId) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="386" href="#386">386</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
@@ -406,7 +406,7 @@
 <a class="jxr_linenumber" name="396" href="#396">396</a>     }
 <a class="jxr_linenumber" name="397" href="#397">397</a> 
 <a class="jxr_linenumber" name="398" href="#398">398</a>     @GET
-<a class="jxr_linenumber" name="399" href="#399">399</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="399" href="#399">399</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="400" href="#400">400</a>     @Path(<span class="jxr_string">"{userId:[^/]+}/"</span> + GenericResource.LINKS)
 <a class="jxr_linenumber" name="401" href="#401">401</a>     <strong class="jxr_keyword">public</strong> Response pageLinks(@PathParam(<span class="jxr_string">"userId"</span>) String userId) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="402" href="#402">402</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
@@ -422,7 +422,7 @@
 <a class="jxr_linenumber" name="412" href="#412">412</a>     }
 <a class="jxr_linenumber" name="413" href="#413">413</a> 
 <a class="jxr_linenumber" name="414" href="#414">414</a>     @GET
-<a class="jxr_linenumber" name="415" href="#415">415</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="415" href="#415">415</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="416" href="#416">416</a>     @Path(<span class="jxr_string">"{userId:[^/]+}/"</span> + Entities.VIRTUAL_UNIT)
 <a class="jxr_linenumber" name="417" href="#417">417</a>     <strong class="jxr_keyword">public</strong> Response pageVirtualUnits(@PathParam(<span class="jxr_string">"userId"</span>) String userId) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="418" href="#418">418</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();

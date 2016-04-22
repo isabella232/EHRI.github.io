@@ -221,7 +221,7 @@
 <a class="jxr_linenumber" name="211" href="#211">211</a>         String user3 = <span class="jxr_string">"linda"</span>;
 <a class="jxr_linenumber" name="212" href="#212">212</a> 
 <a class="jxr_linenumber" name="213" href="#213">213</a>         URI followingUrl = entityUri(Entities.USER_PROFILE, user1, FOLLOWING);
-<a class="jxr_linenumber" name="214" href="#214">214</a>         List&lt;Map&lt;String, Object&gt;&gt; followers = getItemList(followingUrl, user1);
+<a class="jxr_linenumber" name="214" href="#214">214</a>         List&lt;Bundle&gt; followers = getItemList(followingUrl, user1);
 <a class="jxr_linenumber" name="215" href="#215">215</a>         assertTrue(followers.isEmpty());
 <a class="jxr_linenumber" name="216" href="#216">216</a> 
 <a class="jxr_linenumber" name="217" href="#217">217</a>         URI followUrl1 = entityUriBuilder(Entities.USER_PROFILE, user1, FOLLOWING)
@@ -260,7 +260,7 @@
 <a class="jxr_linenumber" name="250" href="#250">250</a>         String user1 = getRegularUserProfileId();
 <a class="jxr_linenumber" name="251" href="#251">251</a>         String user2 = getAdminUserProfileId();
 <a class="jxr_linenumber" name="252" href="#252">252</a>         URI blockedUrl = entityUri(Entities.USER_PROFILE, user1, BLOCKED);
-<a class="jxr_linenumber" name="253" href="#253">253</a>         List&lt;Map&lt;String, Object&gt;&gt; blocked = getItemList(blockedUrl, user1);
+<a class="jxr_linenumber" name="253" href="#253">253</a>         List&lt;Bundle&gt; blocked = getItemList(blockedUrl, user1);
 <a class="jxr_linenumber" name="254" href="#254">254</a>         assertTrue(blocked.isEmpty());
 <a class="jxr_linenumber" name="255" href="#255">255</a> 
 <a class="jxr_linenumber" name="256" href="#256">256</a>         URI blockUrl = entityUriBuilder(Entities.USER_PROFILE, user1, BLOCKED)
@@ -289,7 +289,7 @@
 <a class="jxr_linenumber" name="279" href="#279">279</a>         String item1 = <span class="jxr_string">"c1"</span>;
 <a class="jxr_linenumber" name="280" href="#280">280</a>         String item2 = <span class="jxr_string">"c2"</span>;
 <a class="jxr_linenumber" name="281" href="#281">281</a>         URI watchersUrl = entityUri(Entities.USER_PROFILE, user1, WATCHING);
-<a class="jxr_linenumber" name="282" href="#282">282</a>         List&lt;Map&lt;String, Object&gt;&gt; watching = getItemList(watchersUrl, user1);
+<a class="jxr_linenumber" name="282" href="#282">282</a>         List&lt;Bundle&gt; watching = getItemList(watchersUrl, user1);
 <a class="jxr_linenumber" name="283" href="#283">283</a>         assertTrue(watching.isEmpty());
 <a class="jxr_linenumber" name="284" href="#284">284</a> 
 <a class="jxr_linenumber" name="285" href="#285">285</a>         URI watchUrl1 = entityUriBuilder(Entities.USER_PROFILE, user1, WATCHING)

@@ -68,7 +68,7 @@
 <a class="jxr_linenumber" name="58" href="#58">58</a>  
 <a class="jxr_linenumber" name="59" href="#59">59</a>          List&lt;VertexProxy&gt; graphState1 = getGraphState(graph);
 <a class="jxr_linenumber" name="60" href="#60">60</a>          ImportLog log = <strong class="jxr_keyword">new</strong> CsvImportManager(graph, authoritativeSet, validUser,
-<a class="jxr_linenumber" name="61" href="#61">61</a>                  CsvAuthoritativeItemImporter.<strong class="jxr_keyword">class</strong>).importFile(ios, logMessage);
+<a class="jxr_linenumber" name="61" href="#61">61</a>                  false, false, CsvAuthoritativeItemImporter.<strong class="jxr_keyword">class</strong>).importFile(ios, logMessage);
 <a class="jxr_linenumber" name="62" href="#62">62</a>          assertEquals(9, log.getCreated());
 <a class="jxr_linenumber" name="63" href="#63">63</a>          printGraph(graph);
 <a class="jxr_linenumber" name="64" href="#64">64</a>  

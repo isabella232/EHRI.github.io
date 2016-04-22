@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AbstractImporter (Import/Export Tools 0.13.0-SNAPSHOT API)</title>
+<title>AbstractImporter (Import/Export Tools 0.13.2-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="AbstractImporter (Import/Export Tools 0.13.0-SNAPSHOT API)";
+        parent.document.title="AbstractImporter (Import/Export Tools 0.13.2-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -124,22 +124,26 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>protected <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Actioner.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Actioner</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#actioner">actioner</a></strong></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#callbacks">callbacks</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected com.tinkerpop.frames.FramedGraph&lt;?&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#framedGraph">framedGraph</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#log">log</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/core/GraphManager.html?is-external=true" title="class or interface in eu.ehri.project.core">GraphManager</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#manager">manager</a></strong></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#permissionScope">permissionScope</a></strong></code>&nbsp;</td>
 </tr>
@@ -158,8 +162,9 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#AbstractImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">AbstractImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
+<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#AbstractImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">AbstractImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
                 <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope,
+                <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Actioner.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
                 <a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
 <div class="block">Constructor.</div>
 </td>
@@ -204,41 +209,45 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Actioner.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Actioner</a></code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getActioner()">getActioner</a></strong>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getMaintenanceEvent(T)">getMaintenanceEvent</a></strong>(<a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="type parameter in AbstractImporter">T</a>&nbsp;event)</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPermissionScope()">getPermissionScope</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/BundleManager.html?is-external=true" title="class or interface in eu.ehri.project.persistence">BundleManager</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister()">getPersister</a></strong>()</code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/BundleManager.html?is-external=true" title="class or interface in eu.ehri.project.persistence">BundleManager</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister(java.util.List)">getPersister</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;scopeIds)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#handleCallbacks(eu.ehri.project.persistence.Mutation)">handleCallbacks</a></strong>(<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Mutation.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Mutation</a>&lt;? extends <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Accessible.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;mutation)</code>
 <div class="block">Call all registered ImportCallbacks for the given mutation.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Accessible.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Accessible</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T)">importItem</a></strong>(<a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="type parameter in AbstractImporter">T</a>&nbsp;itemData)</code>
 <div class="block">Import an item representation into the graph, and return the Node.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Accessible.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Accessible</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T,%20java.util.List)">importItem</a></strong>(<a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="type parameter in AbstractImporter">T</a>&nbsp;itemData,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;scopeIds)</code>
 <div class="block">Import an item representation into the graph at a certain depth, and return the Node.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>abstract <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/MaintenanceEvent.html?is-external=true" title="class or interface in eu.ehri.project.models">MaintenanceEvent</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importMaintenanceEvent(T)">importMaintenanceEvent</a></strong>(<a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="type parameter in AbstractImporter">T</a>&nbsp;event)</code>&nbsp;</td>
 </tr>
@@ -271,6 +280,15 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <li class="blockList">
 <h4>permissionScope</h4>
 <pre>protected final&nbsp;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</a> permissionScope</pre>
+</li>
+</ul>
+<a name="actioner">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>actioner</h4>
+<pre>protected final&nbsp;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Actioner.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Actioner</a> actioner</pre>
 </li>
 </ul>
 <a name="framedGraph">
@@ -317,7 +335,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="AbstractImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.importers.ImportLog)">
+<a name="AbstractImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, eu.ehri.project.importers.ImportLog)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -325,9 +343,10 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <h4>AbstractImporter</h4>
 <pre>public&nbsp;AbstractImporter(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;graph,
                 <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;scope,
+                <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Actioner.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
                 <a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</pre>
 <div class="block">Constructor.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>graph</code> - the framed graph</dd><dd><code>scope</code> - the permission scope</dd><dd><code>log</code> - the log object</dd></dl>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>graph</code> - the framed graph</dd><dd><code>scope</code> - the permission scope</dd><dd><code>actioner</code> - the user performing the import</dd><dd><code>log</code> - the log object</dd></dl>
 </li>
 </ul>
 </li>
@@ -356,6 +375,15 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <li class="blockList">
 <h4>getPermissionScope</h4>
 <pre>public&nbsp;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;getPermissionScope()</pre>
+</li>
+</ul>
+<a name="getActioner()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getActioner</h4>
+<pre>public&nbsp;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Actioner.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Actioner</a>&nbsp;getActioner()</pre>
 </li>
 </ul>
 <a name="getPersister(java.util.List)">

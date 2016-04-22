@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Index (EHRI Backend 0.13.0-SNAPSHOT API)</title>
+<title>Index (EHRI Backend 0.13.2-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="./stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Index (EHRI Backend 0.13.0-SNAPSHOT API)";
+        parent.document.title="Index (EHRI Backend 0.13.2-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -90,7 +90,7 @@
 <div class="block">Base class for importers that import documentary units, historical agents and virtual collections,
  with their constituent logical data, description(s), and date periods.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#AbstractImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">AbstractImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#AbstractImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">AbstractImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
@@ -98,7 +98,7 @@
 <dd>
 <div class="block">Base ImportManager.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#AbstractImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class)">AbstractImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, Class&lt;? extends AbstractImporter&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#AbstractImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class)">AbstractImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends AbstractImporter&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
@@ -229,6 +229,8 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/definitions/Ontology.html#ACTION_HAS_EVENT">ACTION_HAS_EVENT</a></span> - Static variable in class eu.ehri.project.definitions.<a href="./eu/ehri/project/definitions/Ontology.html" title="class in eu.ehri.project.definitions">Ontology</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#actioner">actioner</a></span> - Variable in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#actioner">actioner</a></span> - Variable in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base"><span class="strong">Actioner</span></a> - Interface in <a href="./eu/ehri/project/models/base/package-summary.html">eu.ehri.project.models.base</a></dt>
@@ -347,6 +349,11 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html#addEdge(java.lang.String,%20com.tinkerpop.blueprints.Vertex)">addEdge(String, Vertex)</a></span> - Method in class eu.ehri.project.core.impl.neo4j.<a href="./eu/ehri/project/core/impl/neo4j/Neo4j2Vertex.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Vertex</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#addError(java.lang.String,%20java.lang.String)">addError(String, String)</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
+<dd>
+<div class="block">Indicate that importing the item with the given id
+ failed with the given error.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/ErrorSet.Builder.html#addError(java.lang.String,%20java.lang.String)">addError(String, String)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/ErrorSet.Builder.html" title="class in eu.ehri.project.persistence">ErrorSet.Builder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/UserProfileViews.html#addFollowers(eu.ehri.project.models.UserProfile,%20java.util.List,%20eu.ehri.project.models.base.Accessor)">addFollowers(UserProfile, List&lt;String&gt;, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/UserProfileViews.html" title="class in eu.ehri.project.views">UserProfileViews</a></dt>
@@ -548,6 +555,12 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/base/AbstractRestResource.html#ALL_PARAM">ALL_PARAM</a></span> - Static variable in class eu.ehri.extension.base.<a href="./eu/ehri/extension/base/AbstractRestResource.html" title="class in eu.ehri.extension.base">AbstractRestResource</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#ALLOW_UPDATES_PARAM">ALLOW_UPDATES_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#allowUpdates">allowUpdates</a></span> - Variable in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#allowUpdates(boolean)">allowUpdates(boolean)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/models/base/Annotatable.html" title="interface in eu.ehri.project.models.base"><span class="strong">Annotatable</span></a> - Interface in <a href="./eu/ehri/project/models/base/package-summary.html">eu.ehri.project.models.base</a></dt>
 <dd>
 <div class="block">An entity that can be annotated.</div>
@@ -612,7 +625,7 @@
 <dd>
 <div class="block">Import EAD for a given repository into the database.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/AraEadImporter.html#AraEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">AraEadImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/AraEadImporter.html" title="class in eu.ehri.project.importers.ead">AraEadImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/AraEadImporter.html#AraEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">AraEadImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/AraEadImporter.html" title="class in eu.ehri.project.importers.ead">AraEadImporter</a></dt>
 <dd>
 <div class="block">Construct an EadImporter object.</div>
 </dd>
@@ -751,13 +764,9 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/LinkResource.html#BODY_PARAM">BODY_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/LinkResource.html" title="class in eu.ehri.extension">LinkResource</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="./eu/ehri/extension/providers/BooleanJsonProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">BooleanJsonProvider</span></a> - Class in <a href="./eu/ehri/extension/providers/package-summary.html">eu.ehri.extension.providers</a></dt>
+<dt><a href="./eu/ehri/extension/providers/BooleanProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">BooleanProvider</span></a> - Class in <a href="./eu/ehri/extension/providers/package-summary.html">eu.ehri.extension.providers</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanJsonProvider.html#BooleanJsonProvider()">BooleanJsonProvider()</a></span> - Constructor for class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanJsonProvider.html" title="class in eu.ehri.extension.providers">BooleanJsonProvider</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="./eu/ehri/extension/providers/BooleanXmlProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">BooleanXmlProvider</span></a> - Class in <a href="./eu/ehri/extension/providers/package-summary.html">eu.ehri.extension.providers</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanXmlProvider.html#BooleanXmlProvider()">BooleanXmlProvider()</a></span> - Constructor for class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanXmlProvider.html" title="class in eu.ehri.extension.providers">BooleanXmlProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanProvider.html#BooleanProvider()">BooleanProvider()</a></span> - Constructor for class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanProvider.html" title="class in eu.ehri.extension.providers">BooleanProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/GlobalPermissionSet.Builder.html#build()">build()</a></span> - Method in class eu.ehri.project.acl.<a href="./eu/ehri/project/acl/GlobalPermissionSet.Builder.html" title="class in eu.ehri.project.acl">GlobalPermissionSet.Builder</a></dt>
 <dd>&nbsp;</dd>
@@ -810,6 +819,10 @@
 <dd>
 <div class="block">Filter predicate function interface.</div>
 </dd>
+<dt><a href="./eu/ehri/project/persistence/BundleDeserializer.html" title="class in eu.ehri.project.persistence"><span class="strong">BundleDeserializer</span></a> - Class in <a href="./eu/ehri/project/persistence/package-summary.html">eu.ehri.project.persistence</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleDeserializer.html#BundleDeserializer()">BundleDeserializer()</a></span> - Constructor for class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleDeserializer.html" title="class in eu.ehri.project.persistence">BundleDeserializer</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/persistence/BundleManager.html" title="class in eu.ehri.project.persistence"><span class="strong">BundleManager</span></a> - Class in <a href="./eu/ehri/project/persistence/package-summary.html">eu.ehri.project.persistence</a></dt>
 <dd>
 <div class="block">Class responsible for creating, updating and deleting Bundles.</div>
@@ -885,8 +898,6 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/commands/Check.html#Check()">Check()</a></span> - Constructor for class eu.ehri.project.commands.<a href="./eu/ehri/project/commands/Check.html" title="class in eu.ehri.project.commands">Check</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/properties/PropertiesChecker.html#check(eu.ehri.project.importers.properties.ImportProperties,%20eu.ehri.project.models.EntityClass)">check(ImportProperties, EntityClass)</a></span> - Method in class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/PropertiesChecker.html" title="class in eu.ehri.project.importers.properties">PropertiesChecker</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/ViewHelper.html#checkContentPermission(eu.ehri.project.models.base.Accessor,%20eu.ehri.project.acl.ContentTypes,%20eu.ehri.project.acl.PermissionType)">checkContentPermission(Accessor, ContentTypes, PermissionType)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/ViewHelper.html" title="class in eu.ehri.project.views">ViewHelper</a></dt>
 <dd>
 <div class="block">Check permissions for a given type.</div>
@@ -898,10 +909,6 @@
 <dt><span class="strong"><a href="./eu/ehri/project/views/ViewHelper.html#checkEntityPermission(eu.ehri.project.models.base.Accessible,%20eu.ehri.project.models.base.Accessor,%20eu.ehri.project.acl.PermissionType)">checkEntityPermission(Accessible, Accessor, PermissionType)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/ViewHelper.html" title="class in eu.ehri.project.views">ViewHelper</a></dt>
 <dd>
 <div class="block">Check permissions for a given entity.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/base/AbstractRestResource.html#checkMediaType()">checkMediaType()</a></span> - Method in class eu.ehri.extension.base.<a href="./eu/ehri/extension/base/AbstractRestResource.html" title="class in eu.ehri.extension.base">AbstractRestResource</a></dt>
-<dd>
-<div class="block">Fetch the media type of the incoming request.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/commands/Check.html#checkPermissionScopes(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.core.GraphManager)">checkPermissionScopes(FramedGraph&lt;?&gt;, GraphManager)</a></span> - Method in class eu.ehri.project.commands.<a href="./eu/ehri/project/commands/Check.html" title="class in eu.ehri.project.commands">Check</a></dt>
 <dd>
@@ -1296,7 +1303,7 @@
 <div class="block">Importer of authoritative items such as historical agents and concepts, loaded
  from a CSV file.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.html#CsvAuthoritativeItemImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvAuthoritativeItemImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.html" title="class in eu.ehri.project.importers.csv">CsvAuthoritativeItemImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.html#CsvAuthoritativeItemImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">CsvAuthoritativeItemImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.html" title="class in eu.ehri.project.importers.csv">CsvAuthoritativeItemImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/commands/CsvConceptImport.html" title="class in eu.ehri.project.commands"><span class="strong">CsvConceptImport</span></a> - Class in <a href="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</a></dt>
 <dd>
@@ -1308,7 +1315,7 @@
 <dd>
 <div class="block">Importer of concepts loaded from a CSV file.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvConceptImporter.html#CsvConceptImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvConceptImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvConceptImporter.html" title="class in eu.ehri.project.importers.csv">CsvConceptImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvConceptImporter.html#CsvConceptImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">CsvConceptImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvConceptImporter.html" title="class in eu.ehri.project.importers.csv">CsvConceptImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/commands/CsvDocDescImport.html" title="class in eu.ehri.project.commands"><span class="strong">CsvDocDescImport</span></a> - Class in <a href="./eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</a></dt>
 <dd>
@@ -1320,13 +1327,13 @@
 <dd>
 <div class="block">Importer of historical agents loaded from a CSV file.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.html#CsvHistoricalAgentImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvHistoricalAgentImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.html" title="class in eu.ehri.project.importers.csv">CsvHistoricalAgentImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.html#CsvHistoricalAgentImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">CsvHistoricalAgentImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.html" title="class in eu.ehri.project.importers.csv">CsvHistoricalAgentImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/importers/managers/CsvImportManager.html" title="class in eu.ehri.project.importers.managers"><span class="strong">CsvImportManager</span></a> - Class in <a href="./eu/ehri/project/importers/managers/package-summary.html">eu.ehri.project.importers.managers</a></dt>
 <dd>
 <div class="block">Import manager to use with CSV files.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/CsvImportManager.html#CsvImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class)">CsvImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, Class&lt;? extends AbstractImporter&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/CsvImportManager.html" title="class in eu.ehri.project.importers.managers">CsvImportManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/CsvImportManager.html#CsvImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class)">CsvImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends AbstractImporter&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/CsvImportManager.html" title="class in eu.ehri.project.importers.managers">CsvImportManager</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/SaxXmlHandler.html#currentEntity">currentEntity</a></span> - Variable in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</a></dt>
 <dd>&nbsp;</dd>
@@ -1359,12 +1366,6 @@
 <h2 class="title">D</h2>
 <dl>
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/Bundle.html#DATA_KEY">DATA_KEY</a></span> - Static variable in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="./eu/ehri/project/persistence/utils/DataUtils.html" title="class in eu.ehri.project.persistence.utils"><span class="strong">DataUtils</span></a> - Class in <a href="./eu/ehri/project/persistence/utils/package-summary.html">eu.ehri.project.persistence.utils</a></dt>
-<dd>
-<div class="block">Bag of miscellaneous methods!</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/utils/DataUtils.html#DataUtils()">DataUtils()</a></span> - Constructor for class eu.ehri.project.persistence.utils.<a href="./eu/ehri/project/persistence/utils/DataUtils.html" title="class in eu.ehri.project.persistence.utils">DataUtils</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/definitions/Ontology.html#DATE_HAS_DESCRIPTION">DATE_HAS_DESCRIPTION</a></span> - Static variable in class eu.ehri.project.definitions.<a href="./eu/ehri/project/definitions/Ontology.html" title="class in eu.ehri.project.definitions">Ontology</a></dt>
 <dd>&nbsp;</dd>
@@ -1609,6 +1610,8 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/errors/mappers/DeserializationErrorMapper.html#DeserializationErrorMapper()">DeserializationErrorMapper()</a></span> - Constructor for class eu.ehri.extension.errors.mappers.<a href="./eu/ehri/extension/errors/mappers/DeserializationErrorMapper.html" title="class in eu.ehri.extension.errors.mappers">DeserializationErrorMapper</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/BundleDeserializer.html#deserialize(com.fasterxml.jackson.core.JsonParser,%20com.fasterxml.jackson.databind.DeserializationContext)">deserialize(JsonParser, DeserializationContext)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/BundleDeserializer.html" title="class in eu.ehri.project.persistence">BundleDeserializer</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Crud.html#detail(java.lang.String,%20eu.ehri.project.models.base.Accessor)">detail(String, Accessor)</a></span> - Method in interface eu.ehri.project.views.<a href="./eu/ehri/project/views/Crud.html" title="interface in eu.ehri.project.views">Crud</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/impl/CrudViews.html#detail(java.lang.String,%20eu.ehri.project.models.base.Accessor)">detail(String, Accessor)</a></span> - Method in class eu.ehri.project.views.impl.<a href="./eu/ehri/project/views/impl/CrudViews.html" title="class in eu.ehri.project.views.impl">CrudViews</a></dt>
@@ -1699,7 +1702,7 @@
 <dd>
 <div class="block">Import EAC for a given repository into the database.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/eac/EacImporter.html#EacImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EacImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.eac.<a href="./eu/ehri/project/importers/eac/EacImporter.html" title="class in eu.ehri.project.importers.eac">EacImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/eac/EacImporter.html#EacImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">EacImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.eac.<a href="./eu/ehri/project/importers/eac/EacImporter.html" title="class in eu.ehri.project.importers.eac">EacImporter</a></dt>
 <dd>
 <div class="block">Construct an EacImporter object.</div>
 </dd>
@@ -1751,7 +1754,7 @@
 <dd>
 <div class="block">Import EAD for a given repository into the database.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/EadImporter.html#EadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EadImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/EadImporter.html" title="class in eu.ehri.project.importers.ead">EadImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/EadImporter.html#EadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">EadImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/EadImporter.html" title="class in eu.ehri.project.importers.ead">EadImporter</a></dt>
 <dd>
 <div class="block">Construct an EadImporter object.</div>
 </dd>
@@ -1789,7 +1792,7 @@
 <dd>
 <div class="block">Importer of EAG-based descriptions.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/eag/EagImporter.html#EagImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EagImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.eag.<a href="./eu/ehri/project/importers/eag/EagImporter.html" title="class in eu.ehri.project.importers.eag">EagImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/eag/EagImporter.html#EagImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">EagImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.eag.<a href="./eu/ehri/project/importers/eag/EagImporter.html" title="class in eu.ehri.project.importers.eag">EagImporter</a></dt>
 <dd>
 <div class="block">Construct an EagImporter object.</div>
 </dd>
@@ -1803,7 +1806,7 @@
 <dd>
 <div class="block">Import Map based representations of EAD or EAC for a given repository into the database.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/EaImporter.html#EaImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EaImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/EaImporter.html#EaImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">EaImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</a></dt>
 <dd>
 <div class="block">Construct an EadImporter object.</div>
 </dd>
@@ -1903,10 +1906,6 @@
 <dt><span class="strong"><a href="./eu/ehri/project/persistence/Serializer.html#entityToJson(T)">entityToJson(T)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a></dt>
 <dd>
 <div class="block">Serialise a vertex frame to JSON.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/Serializer.html#entityToXmlString(T)">entityToXmlString(T)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a></dt>
-<dd>
-<div class="block">Serialise a vertex frame to XML string.</div>
 </dd>
 <dt><a href="./eu/ehri/project/models/annotations/EntityType.html" title="annotation in eu.ehri.project.models.annotations"><span class="strong">EntityType</span></a> - Annotation Type in <a href="./eu/ehri/project/models/annotations/package-summary.html">eu.ehri.project.models.annotations</a></dt>
 <dd>&nbsp;</dd>
@@ -2626,7 +2625,7 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/ViewHelper.html#getAclManager()">getAclManager()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/ViewHelper.html" title="class in eu.ehri.project.views">ViewHelper</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#getActioner()">getActioner()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#getActioner()">getActioner()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/events/SystemEvent.html#getActioner()">getActioner()</a></span> - Method in interface eu.ehri.project.models.events.<a href="./eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a></dt>
 <dd>
@@ -2677,8 +2676,6 @@
  to all lower levels.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/base/PermissionScope.Impl.html#getAllContainedItems()">getAllContainedItems()</a></span> - Method in class eu.ehri.project.models.base.<a href="./eu/ehri/project/models/base/PermissionScope.Impl.html" title="class in eu.ehri.project.models.base">PermissionScope.Impl</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/properties/XmlImportProperties.html#getAllNonAttributeProperties()">getAllNonAttributeProperties()</a></span> - Method in class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/properties/ImportProperties.html#getAllNonAttributeValues()">getAllNonAttributeValues()</a></span> - Method in interface eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/ImportProperties.html" title="interface in eu.ehri.project.importers.properties">ImportProperties</a></dt>
 <dd>&nbsp;</dd>
@@ -3081,8 +3078,6 @@
 <dd>
 <div class="block">Get the entity type string for a given class.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/properties/XmlImportProperties.html#getEntries()">getEntries()</a></span> - Method in class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#getErrored()">getErrored()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#getErrors()">getErrors()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
@@ -3441,6 +3436,8 @@
 <div class="block">Get an optional log message given a string that may or may not
  be empty.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#getLogMessage()">getLogMessage()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/events/SystemEvent.html#getLogMessage()">getLogMessage()</a></span> - Method in interface eu.ehri.project.models.events.<a href="./eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a></dt>
 <dd>
 <div class="block">Fetch the log message associated with this event.</div>
@@ -3691,14 +3688,6 @@
 <dd>
 <div class="block">Get the repository if this item is at the top of its hierarchy.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/base/AbstractRestResource.html#getRepresentation(com.tinkerpop.blueprints.Vertex)">getRepresentation(Vertex)</a></span> - Method in class eu.ehri.extension.base.<a href="./eu/ehri/extension/base/AbstractRestResource.html" title="class in eu.ehri.extension.base">AbstractRestResource</a></dt>
-<dd>
-<div class="block">Get a string representation (JSON or XML) of a given frame.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/base/AbstractRestResource.html#getRepresentation(eu.ehri.project.models.base.Entity)">getRepresentation(Entity)</a></span> - Method in class eu.ehri.extension.base.<a href="./eu/ehri/extension/base/AbstractRestResource.html" title="class in eu.ehri.extension.base">AbstractRestResource</a></dt>
-<dd>
-<div class="block">Get a string representation (JSON or XML) of a given frame.</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/base/AbstractRestResource.html#getRequesterUserProfile()">getRequesterUserProfile()</a></span> - Method in class eu.ehri.extension.base.<a href="./eu/ehri/extension/base/AbstractRestResource.html" title="class in eu.ehri.extension.base">AbstractRestResource</a></dt>
 <dd>
 <div class="block">Retrieve the account of the current user, who may be
@@ -3724,9 +3713,9 @@
 <dd>
 <div class="block">Get a serializer according to passed-in serialization config.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanJsonProvider.html#getSize(java.lang.Boolean,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize(Boolean, Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanJsonProvider.html" title="class in eu.ehri.extension.providers">BooleanJsonProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanProvider.html#getSize(java.lang.Boolean,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize(Boolean, Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanProvider.html" title="class in eu.ehri.extension.providers">BooleanProvider</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanXmlProvider.html#getSize(java.lang.Boolean,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize(Boolean, Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanXmlProvider.html" title="class in eu.ehri.extension.providers">BooleanXmlProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/BundleProvider.html#getSize(eu.ehri.project.persistence.Bundle,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize(Bundle, Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BundleProvider.html" title="class in eu.ehri.extension.providers">BundleProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/ImportLogProvider.html#getSize(eu.ehri.project.importers.ImportLog,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize(ImportLog, Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/ImportLogProvider.html" title="class in eu.ehri.extension.providers">ImportLogProvider</a></dt>
 <dd>&nbsp;</dd>
@@ -3734,9 +3723,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/InheritedItemPermissionSetProvider.html#getSize(eu.ehri.project.acl.InheritedItemPermissionSet,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize(InheritedItemPermissionSet, Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/InheritedItemPermissionSetProvider.html" title="class in eu.ehri.extension.providers">InheritedItemPermissionSetProvider</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberJsonProvider.html#getSize(java.lang.Number,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize(Number, Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberJsonProvider.html" title="class in eu.ehri.extension.providers">NumberJsonProvider</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberXmlProvider.html#getSize(java.lang.Number,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize(Number, Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberXmlProvider.html" title="class in eu.ehri.extension.providers">NumberXmlProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberProvider.html#getSize(java.lang.Number,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize(Number, Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberProvider.html" title="class in eu.ehri.extension.providers">NumberProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ead/EadHandler.html#getSourceFileId()">getSourceFileId()</a></span> - Method in class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/EadHandler.html" title="class in eu.ehri.project.importers.ead">EadHandler</a></dt>
 <dd>&nbsp;</dd>
@@ -3898,11 +3885,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exceptions/ItemNotFound.html#getValue()">getValue()</a></span> - Method in exception eu.ehri.project.exceptions.<a href="./eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/properties/XmlImportProperties.html#getValueForAttributeProperty(java.lang.String,%20java.lang.String)">getValueForAttributeProperty(String, String)</a></span> - Method in class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></dt>
-<dd>
-<div class="block">used to try to find the xml attribute value 'ehri_main_identifier' in
- properties like 'did/unitid/@ehrilabel$ehri_main_identifier=objectIdentifier'</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclEdge.html#getVertex(com.tinkerpop.blueprints.Direction)">getVertex(Direction)</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclEdge.html" title="class in eu.ehri.project.acl.wrapper">AclEdge</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/wrapper/AclGraph.html#getVertex(java.lang.Object)">getVertex(Object)</a></span> - Method in class eu.ehri.project.acl.wrapper.<a href="./eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
@@ -4249,7 +4231,7 @@
 <dd>
 <div class="block">Import EAD for a given repository into the database.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/IcaAtomEadImporter.html#IcaAtomEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">IcaAtomEadImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/IcaAtomEadImporter.html" title="class in eu.ehri.project.importers.ead">IcaAtomEadImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/IcaAtomEadImporter.html#IcaAtomEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">IcaAtomEadImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/IcaAtomEadImporter.html" title="class in eu.ehri.project.importers.ead">IcaAtomEadImporter</a></dt>
 <dd>
 <div class="block">Construct an EadImporter object.</div>
 </dd>
@@ -4316,7 +4298,7 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/commands/ImportCommand.html#ImportCommand(java.lang.Class,%20java.lang.Class)">ImportCommand(Class&lt;? extends SaxXmlHandler&gt;, Class&lt;? extends AbstractImporter&gt;)</a></span> - Constructor for class eu.ehri.project.commands.<a href="./eu/ehri/project/commands/ImportCommand.html" title="class in eu.ehri.project.commands">ImportCommand</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#importCsv(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importCsv(String, String, String, InputStream)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#importCsv(java.lang.String,%20java.lang.Boolean,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importCsv(String, Boolean, Boolean, String, String, InputStream)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
 <dd>
 <div class="block">Import a set of CSV files.</div>
 </dd>
@@ -4327,15 +4309,15 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/commands/ImportCsvCommand.html#ImportCsvCommand(java.lang.Class)">ImportCsvCommand(Class&lt;? extends MapImporter&gt;)</a></span> - Constructor for class eu.ehri.project.commands.<a href="./eu/ehri/project/commands/ImportCsvCommand.html" title="class in eu.ehri.project.commands">ImportCsvCommand</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#importEac(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEac(String, Boolean, String, String, String, String, InputStream)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#importEac(java.lang.String,%20java.lang.Boolean,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEac(String, Boolean, Boolean, String, String, String, String, InputStream)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
 <dd>
 <div class="block">Import EAC files.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#importEad(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEad(String, Boolean, String, String, String, String, InputStream)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#importEad(java.lang.String,%20java.lang.Boolean,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEad(String, Boolean, Boolean, String, String, String, String, InputStream)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
 <dd>
 <div class="block">Import a set of EAD files.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#importEag(java.lang.String,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEag(String, Boolean, String, String, String, String, InputStream)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#importEag(java.lang.String,%20java.lang.Boolean,%20java.lang.Boolean,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.io.InputStream)">importEag(String, Boolean, Boolean, String, String, String, String, InputStream)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
 <dd>
 <div class="block">Import EAG files.</div>
 </dd>
@@ -4463,10 +4445,12 @@
  detailing how many items were created and updated,
  and how many failed.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#ImportLog(eu.ehri.project.persistence.ActionManager.EventContext)">ImportLog(ActionManager.EventContext)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#ImportLog(com.google.common.base.Optional)">ImportLog(Optional&lt;String&gt;)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#ImportLog(java.lang.String,%20int,%20int,%20int,%20java.util.Map)">ImportLog(String, int, int, int, Map&lt;String, String&gt;)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/extension/providers/ImportLogProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">ImportLogProvider</span></a> - Class in <a href="./eu/ehri/extension/providers/package-summary.html">eu.ehri.extension.providers</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/ImportLogProvider.html#ImportLogProvider()">ImportLogProvider()</a></span> - Constructor for class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/ImportLogProvider.html" title="class in eu.ehri.extension.providers">ImportLogProvider</a></dt>
@@ -4639,11 +4623,6 @@
 <div class="block">Is this ErrorSet empty? It will be if there are
  no errors and none of the relations have errors.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/utils/DataUtils.html#isEmptySequence(java.lang.Object)">isEmptySequence(Object)</a></span> - Static method in class eu.ehri.project.persistence.utils.<a href="./eu/ehri/project/persistence/utils/DataUtils.html" title="class in eu.ehri.project.persistence.utils">DataUtils</a></dt>
-<dd>
-<div class="block">Ensure a value isn't an empty array or list, which will
- cause Neo4j to barf.</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/UserProfileResource.html#isFollower(java.lang.String,%20java.lang.String)">isFollower(String, String)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/UserProfile.Impl.html#isFollower(eu.ehri.project.models.UserProfile)">isFollower(UserProfile)</a></span> - Method in class eu.ehri.project.models.<a href="./eu/ehri/project/models/UserProfile.Impl.html" title="class in eu.ehri.project.models">UserProfile.Impl</a></dt>
@@ -4698,6 +4677,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/GlobalPermissionSetProvider.html#isReadable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isReadable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/GlobalPermissionSetProvider.html" title="class in eu.ehri.extension.providers">GlobalPermissionSetProvider</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/ImportLogProvider.html#isReadable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isReadable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/ImportLogProvider.html" title="class in eu.ehri.extension.providers">ImportLogProvider</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/ItemPermissionSetProvider.html#isReadable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isReadable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/ItemPermissionSetProvider.html" title="class in eu.ehri.extension.providers">ItemPermissionSetProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/properties/NodeProperties.html#isRequiredProperty(java.lang.String,%20java.lang.String)">isRequiredProperty(String, String)</a></span> - Method in class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/NodeProperties.html" title="class in eu.ehri.project.importers.properties">NodeProperties</a></dt>
@@ -4726,9 +4707,9 @@
 <dd>
 <div class="block">Ascertain whether this user is watching an item.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanJsonProvider.html#isWriteable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isWriteable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanJsonProvider.html" title="class in eu.ehri.extension.providers">BooleanJsonProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanProvider.html#isWriteable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isWriteable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanProvider.html" title="class in eu.ehri.extension.providers">BooleanProvider</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanXmlProvider.html#isWriteable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isWriteable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanXmlProvider.html" title="class in eu.ehri.extension.providers">BooleanXmlProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/BundleProvider.html#isWriteable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isWriteable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BundleProvider.html" title="class in eu.ehri.extension.providers">BundleProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/ImportLogProvider.html#isWriteable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isWriteable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/ImportLogProvider.html" title="class in eu.ehri.extension.providers">ImportLogProvider</a></dt>
 <dd>&nbsp;</dd>
@@ -4736,9 +4717,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/InheritedItemPermissionSetProvider.html#isWriteable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isWriteable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/InheritedItemPermissionSetProvider.html" title="class in eu.ehri.extension.providers">InheritedItemPermissionSetProvider</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberJsonProvider.html#isWriteable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isWriteable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberJsonProvider.html" title="class in eu.ehri.extension.providers">NumberJsonProvider</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberXmlProvider.html#isWriteable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isWriteable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberXmlProvider.html" title="class in eu.ehri.extension.providers">NumberXmlProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberProvider.html#isWriteable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isWriteable(Class&lt;?&gt;, Type, Annotation[], MediaType)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberProvider.html" title="class in eu.ehri.extension.providers">NumberProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/base/AbstractRestResource.html#ITEM_CACHE_TIME">ITEM_CACHE_TIME</a></span> - Static variable in class eu.ehri.extension.base.<a href="./eu/ehri/extension/base/AbstractRestResource.html" title="class in eu.ehri.extension.base">AbstractRestResource</a></dt>
 <dd>&nbsp;</dd>
@@ -5159,7 +5138,7 @@
 <div class="block">Importer of Map based representations of documentary units, historical agents,
  virtual collections and other entities.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/MapImporter.html#MapImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">MapImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/MapImporter.html#MapImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">MapImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/utils/JavaHandlerUtils.html#maxLoopFuncFactory(int)">maxLoopFuncFactory(int)</a></span> - Static method in class eu.ehri.project.models.utils.<a href="./eu/ehri/project/models/utils/JavaHandlerUtils.html" title="class in eu.ehri.project.models.utils">JavaHandlerUtils</a></dt>
 <dd>
@@ -5205,6 +5184,19 @@
 <div class="block">Maps the <a href="./eu/ehri/extension/errors/MissingOrInvalidUser.html" title="class in eu.ehri.extension.errors"><code>MissingOrInvalidUser</code></a> exception to the Bad Request response.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/errors/mappers/MissingOrInvalidUserErrorMapper.html#MissingOrInvalidUserErrorMapper()">MissingOrInvalidUserErrorMapper()</a></span> - Constructor for class eu.ehri.extension.errors.mappers.<a href="./eu/ehri/extension/errors/mappers/MissingOrInvalidUserErrorMapper.html" title="class in eu.ehri.extension.errors.mappers">MissingOrInvalidUserErrorMapper</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="./eu/ehri/project/importers/exceptions/ModeViolation.html" title="class in eu.ehri.project.importers.exceptions"><span class="strong">ModeViolation</span></a> - Exception in <a href="./eu/ehri/project/importers/exceptions/package-summary.html">eu.ehri.project.importers.exceptions</a></dt>
+<dd>
+<div class="block">Input data violates an import/export mode by altering data in
+ a way that was no foreseen.</div>
+</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/exceptions/ModeViolation.html#ModeViolation(java.lang.String)">ModeViolation(String)</a></span> - Constructor for exception eu.ehri.project.importers.exceptions.<a href="./eu/ehri/project/importers/exceptions/ModeViolation.html" title="class in eu.ehri.project.importers.exceptions">ModeViolation</a></dt>
+<dd>
+<div class="block">Constructor.</div>
+</dd>
+<dt><a href="./eu/ehri/extension/errors/mappers/ModeViolationMapper.html" title="class in eu.ehri.extension.errors.mappers"><span class="strong">ModeViolationMapper</span></a> - Class in <a href="./eu/ehri/extension/errors/mappers/package-summary.html">eu.ehri.extension.errors.mappers</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/errors/mappers/ModeViolationMapper.html#ModeViolationMapper()">ModeViolationMapper()</a></span> - Constructor for class eu.ehri.extension.errors.mappers.<a href="./eu/ehri/extension/errors/mappers/ModeViolationMapper.html" title="class in eu.ehri.extension.errors.mappers">ModeViolationMapper</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/VirtualUnitViews.html#moveIncludedUnits(eu.ehri.project.models.VirtualUnit,%20eu.ehri.project.models.VirtualUnit,%20java.lang.Iterable,%20eu.ehri.project.models.base.Accessor)">moveIncludedUnits(VirtualUnit, VirtualUnit, Iterable&lt;DocumentaryUnit&gt;, Accessor)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/VirtualUnitViews.html" title="class in eu.ehri.project.views">VirtualUnitViews</a></dt>
 <dd>&nbsp;</dd>
@@ -5343,13 +5335,9 @@
 <dd>
 <div class="block">Normalise a date in a string.</div>
 </dd>
-<dt><a href="./eu/ehri/extension/providers/NumberJsonProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">NumberJsonProvider</span></a> - Class in <a href="./eu/ehri/extension/providers/package-summary.html">eu.ehri.extension.providers</a></dt>
+<dt><a href="./eu/ehri/extension/providers/NumberProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">NumberProvider</span></a> - Class in <a href="./eu/ehri/extension/providers/package-summary.html">eu.ehri.extension.providers</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberJsonProvider.html#NumberJsonProvider()">NumberJsonProvider()</a></span> - Constructor for class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberJsonProvider.html" title="class in eu.ehri.extension.providers">NumberJsonProvider</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="./eu/ehri/extension/providers/NumberXmlProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">NumberXmlProvider</span></a> - Class in <a href="./eu/ehri/extension/providers/package-summary.html">eu.ehri.extension.providers</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberXmlProvider.html#NumberXmlProvider()">NumberXmlProvider()</a></span> - Constructor for class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberXmlProvider.html" title="class in eu.ehri.extension.providers">NumberXmlProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberProvider.html#NumberProvider()">NumberProvider()</a></span> - Constructor for class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberProvider.html" title="class in eu.ehri.extension.providers">NumberProvider</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a name="_O_">
@@ -5541,7 +5529,7 @@
 <dd>
 <div class="block">Importer of historical agents encoded in <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>s.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/PersonalitiesImporter.html#PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">PersonalitiesImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/PersonalitiesImporter.html" title="class in eu.ehri.project.importers.csv">PersonalitiesImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/PersonalitiesImporter.html#PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">PersonalitiesImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/PersonalitiesImporter.html" title="class in eu.ehri.project.importers.csv">PersonalitiesImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/definitions/Ontology.html#PREFLABEL">PREFLABEL</a></span> - Static variable in class eu.ehri.project.definitions.<a href="./eu/ehri/project/definitions/Ontology.html" title="class in eu.ehri.project.definitions">Ontology</a></dt>
 <dd>&nbsp;</dd>
@@ -5596,10 +5584,6 @@
 <dt><span class="strong"><a href="./eu/ehri/project/importers/SaxXmlHandler.html#properties">properties</a></span> - Variable in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#PROPERTIES_PARAM">PROPERTIES_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="./eu/ehri/project/importers/properties/PropertiesChecker.html" title="class in eu.ehri.project.importers.properties"><span class="strong">PropertiesChecker</span></a> - Class in <a href="./eu/ehri/project/importers/properties/package-summary.html">eu.ehri.project.importers.properties</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/properties/PropertiesChecker.html#PropertiesChecker(eu.ehri.project.importers.properties.NodeProperties)">PropertiesChecker(NodeProperties)</a></span> - Constructor for class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/PropertiesChecker.html" title="class in eu.ehri.project.importers.properties">PropertiesChecker</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/importers/properties/PropertiesRow.html" title="class in eu.ehri.project.importers.properties"><span class="strong">PropertiesRow</span></a> - Class in <a href="./eu/ehri/project/importers/properties/package-summary.html">eu.ehri.project.importers.properties</a></dt>
 <dd>&nbsp;</dd>
@@ -5699,6 +5683,8 @@
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/BundleProvider.html#readFrom(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.InputStream)">readFrom(Class&lt;Bundle&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, String&gt;, InputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BundleProvider.html" title="class in eu.ehri.extension.providers">BundleProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/GlobalPermissionSetProvider.html#readFrom(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.InputStream)">readFrom(Class&lt;GlobalPermissionSet&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, String&gt;, InputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/GlobalPermissionSetProvider.html" title="class in eu.ehri.extension.providers">GlobalPermissionSetProvider</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/ImportLogProvider.html#readFrom(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.InputStream)">readFrom(Class&lt;ImportLog&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, String&gt;, InputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/ImportLogProvider.html" title="class in eu.ehri.extension.providers">ImportLogProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/ItemPermissionSetProvider.html#readFrom(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.InputStream)">readFrom(Class&lt;ItemPermissionSet&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, String&gt;, InputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/ItemPermissionSetProvider.html" title="class in eu.ehri.extension.providers">ItemPermissionSetProvider</a></dt>
 <dd>&nbsp;</dd>
@@ -5993,15 +5979,15 @@
 <div class="block">Class that provides a front-end for importing XML files like EAD and EAC and
  nested lists of EAD documents into the graph.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class,%20java.lang.Class,%20com.google.common.base.Optional,%20java.util.List)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, Optional&lt;XmlImportProperties&gt;, List&lt;ImportCallback&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class,%20java.lang.Class,%20com.google.common.base.Optional,%20java.util.List)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, Optional&lt;XmlImportProperties&gt;, List&lt;ImportCallback&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class,%20java.lang.Class,%20java.util.List)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, List&lt;ImportCallback&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class,%20java.lang.Class,%20java.util.List)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, List&lt;ImportCallback&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class,%20java.lang.Class,%20eu.ehri.project.importers.properties.XmlImportProperties)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, XmlImportProperties)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class,%20java.lang.Class,%20eu.ehri.project.importers.properties.XmlImportProperties)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, XmlImportProperties)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
@@ -6163,11 +6149,6 @@
 <dd>
 <div class="block">Set default language for literals without a lang suffix.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#setErrored(java.lang.String,%20java.lang.String)">setErrored(String, String)</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
-<dd>
-<div class="block">Indicate that importing the item with the given id
- failed with the given error.</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/models/events/SystemEvent.html#setEventScope(eu.ehri.project.models.base.Entity)">setEventScope(Entity)</a></span> - Method in interface eu.ehri.project.models.events.<a href="./eu/ehri/project/models/events/SystemEvent.html" title="interface in eu.ehri.project.models.events">SystemEvent</a></dt>
 <dd>
 <div class="block">Set the scope of this event.</div>
@@ -6308,11 +6289,8 @@
 <div class="block">Toggle tolerant mode, which will prevent the entire batch
  failing if a single item fails to validate.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#setTolerant(boolean)">setTolerant(boolean)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
-<dd>
-<div class="block">Tell the importer to simply skip invalid items rather than throwing an
- exception.</div>
-</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#setTolerant(boolean)">setTolerant(boolean)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/json/BatchOperations.html#setVersioning(boolean)">setVersioning(boolean)</a></span> - Method in class eu.ehri.project.importers.json.<a href="./eu/ehri/project/importers/json/BatchOperations.html" title="class in eu.ehri.project.importers.json">BatchOperations</a></dt>
 <dd>
 <div class="block">Toggle versioning for item updates.</div>
@@ -6334,10 +6312,6 @@
 <dt><span class="strong"><a href="./eu/ehri/extension/base/AbstractRestResource.html#single(T)">single(T)</a></span> - Method in class eu.ehri.extension.base.<a href="./eu/ehri/extension/base/AbstractRestResource.html" title="class in eu.ehri.extension.base">AbstractRestResource</a></dt>
 <dd>
 <div class="block">Return a default response from a single frame item.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/base/AbstractRestResource.html#single(com.tinkerpop.blueprints.Vertex)">single(Vertex)</a></span> - Method in class eu.ehri.extension.base.<a href="./eu/ehri/extension/base/AbstractRestResource.html" title="class in eu.ehri.extension.base">AbstractRestResource</a></dt>
-<dd>
-<div class="block">Create a default response from a single vertex.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/ToolsResource.html#SINGLE_PARAM">SINGLE_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</a></dt>
 <dd>&nbsp;</dd>
@@ -6533,6 +6507,8 @@
 <dd>
 <div class="block">Serialize a error set to a JSON string.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#tolerant">tolerant</a></span> - Variable in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/ImportResource.html#TOLERANT_PARAM">TOLERANT_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/ToolsResource.html#TOLERANT_PARAM">TOLERANT_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="./eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</a></dt>
@@ -6556,10 +6532,16 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/errors/mappers/MissingOrInvalidUserErrorMapper.html#toResponse(eu.ehri.extension.errors.MissingOrInvalidUser)">toResponse(MissingOrInvalidUser)</a></span> - Method in class eu.ehri.extension.errors.mappers.<a href="./eu/ehri/extension/errors/mappers/MissingOrInvalidUserErrorMapper.html" title="class in eu.ehri.extension.errors.mappers">MissingOrInvalidUserErrorMapper</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/extension/errors/mappers/ModeViolationMapper.html#toResponse(eu.ehri.project.importers.exceptions.ModeViolation)">toResponse(ModeViolation)</a></span> - Method in class eu.ehri.extension.errors.mappers.<a href="./eu/ehri/extension/errors/mappers/ModeViolationMapper.html" title="class in eu.ehri.extension.errors.mappers">ModeViolationMapper</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/errors/mappers/PermissionDeniedMapper.html#toResponse(eu.ehri.project.exceptions.PermissionDenied)">toResponse(PermissionDenied)</a></span> - Method in class eu.ehri.extension.errors.mappers.<a href="./eu/ehri/extension/errors/mappers/PermissionDeniedMapper.html" title="class in eu.ehri.extension.errors.mappers">PermissionDeniedMapper</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/errors/mappers/ValidationErrorMapper.html#toResponse(eu.ehri.project.exceptions.ValidationError)">toResponse(ValidationError)</a></span> - Method in class eu.ehri.extension.errors.mappers.<a href="./eu/ehri/extension/errors/mappers/ValidationErrorMapper.html" title="class in eu.ehri.extension.errors.mappers">ValidationErrorMapper</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/persistence/Bundle.html#toStream(eu.ehri.project.persistence.Bundle,%20java.io.OutputStream)">toStream(Bundle, OutputStream)</a></span> - Static method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></dt>
+<dd>
+<div class="block">Write a bundle to a JSON stream.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/ContentTypes.html#toString()">toString()</a></span> - Method in enum eu.ehri.project.acl.<a href="./eu/ehri/project/acl/ContentTypes.html" title="enum in eu.ehri.project.acl">ContentTypes</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/GlobalPermissionSet.html#toString()">toString()</a></span> - Method in class eu.ehri.project.acl.<a href="./eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</a></dt>
@@ -6592,14 +6574,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/Query.Page.html#toString()">toString()</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/Query.Page.html" title="class in eu.ehri.project.views">Query.Page</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/Bundle.html#toXml()">toXml()</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></dt>
-<dd>
-<div class="block">Serialize a bundle to a JSON string.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/Bundle.html#toXmlString()">toXmlString()</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></dt>
-<dd>
-<div class="block">Serialize to an XML String.</div>
-</dd>
 <dt><a href="./eu/ehri/project/persistence/TraversalCallback.html" title="interface in eu.ehri.project.persistence"><span class="strong">TraversalCallback</span></a> - Interface in <a href="./eu/ehri/project/persistence/package-summary.html">eu.ehri.project.persistence</a></dt>
 <dd>
 <div class="block">Class representing a callback that is triggered when some
@@ -6654,7 +6628,7 @@
 <div class="block">Importer of Ukrainian units, which are encoded in a slightly different way
  than other documentary units.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/UkrainianUnitImporter.html#UkrainianUnitImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">UkrainianUnitImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/UkrainianUnitImporter.html" title="class in eu.ehri.project.importers.csv">UkrainianUnitImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/UkrainianUnitImporter.html#UkrainianUnitImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">UkrainianUnitImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/UkrainianUnitImporter.html" title="class in eu.ehri.project.importers.csv">UkrainianUnitImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/UserProfileResource.html#unblockUserProfile(java.lang.String,%20java.util.List)">unblockUserProfile(String, List&lt;String&gt;)</a></span> - Method in class eu.ehri.extension.<a href="./eu/ehri/extension/UserProfileResource.html" title="class in eu.ehri.extension">UserProfileResource</a></dt>
 <dd>&nbsp;</dd>
@@ -7146,14 +7120,6 @@ the order they are declared.</div>
 <dd>
 <div class="block">Serialise a vertex to JSON.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/Serializer.html#vertexToXml(com.tinkerpop.blueprints.Vertex)">vertexToXml(Vertex)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a></dt>
-<dd>
-<div class="block">Serialise a vertex frame to XML.</div>
-</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/persistence/Serializer.html#vertexToXmlString(com.tinkerpop.blueprints.Vertex)">vertexToXmlString(Vertex)</a></span> - Method in class eu.ehri.project.persistence.<a href="./eu/ehri/project/persistence/Serializer.html" title="class in eu.ehri.project.persistence">Serializer</a></dt>
-<dd>
-<div class="block">Serialise a vertex frame to XML string.</div>
-</dd>
 <dt><a href="./eu/ehri/project/views/ViewFactory.html" title="class in eu.ehri.project.views"><span class="strong">ViewFactory</span></a> - Class in <a href="./eu/ehri/project/views/package-summary.html">eu.ehri.project.views</a></dt>
 <dd>
 <div class="block">Factory for creating crud, with or without logging.</div>
@@ -7190,9 +7156,9 @@ the order they are declared.</div>
 <dd>
 <div class="block">Import EAD describing a Virtual Collection.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/VirtualEadImporter.html#VirtualEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">VirtualEadImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/VirtualEadImporter.html" title="class in eu.ehri.project.importers.ead">VirtualEadImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/VirtualEadImporter.html#VirtualEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">VirtualEadImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/VirtualEadImporter.html" title="class in eu.ehri.project.importers.ead">VirtualEadImporter</a></dt>
 <dd>
-<div class="block">Construct an EadImporter object.</div>
+<div class="block">Construct a VirtualEadImporter object.</div>
 </dd>
 <dt><a href="./eu/ehri/project/models/VirtualUnit.html" title="interface in eu.ehri.project.models"><span class="strong">VirtualUnit</span></a> - Interface in <a href="./eu/ehri/project/models/package-summary.html">eu.ehri.project.models</a></dt>
 <dd>
@@ -7379,8 +7345,6 @@ the order they are declared.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/acl/GlobalPermissionSet.html#withPermission(eu.ehri.project.acl.ContentTypes,%20eu.ehri.project.acl.PermissionType...)">withPermission(ContentTypes, PermissionType...)</a></span> - Method in class eu.ehri.project.acl.<a href="./eu/ehri/project/acl/GlobalPermissionSet.html" title="class in eu.ehri.project.acl">GlobalPermissionSet</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#withProperties(eu.ehri.project.importers.properties.XmlImportProperties)">withProperties(XmlImportProperties)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#withProperties(java.lang.String)">withProperties(String)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/EventViews.Builder.html#withRange(int,%20int)">withRange(int, int)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/EventViews.Builder.html" title="class in eu.ehri.project.views">EventViews.Builder</a></dt>
@@ -7415,6 +7379,8 @@ the order they are declared.</div>
 <dd>
 <div class="block">Set scope.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope(PermissionScope)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/AclViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope(PermissionScope)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/AclViews.html" title="class in eu.ehri.project.views">AclViews</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/views/AnnotationViews.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope(PermissionScope)</a></span> - Method in class eu.ehri.project.views.<a href="./eu/ehri/project/views/AnnotationViews.html" title="class in eu.ehri.project.views">AnnotationViews</a></dt>
@@ -7443,13 +7409,13 @@ the order they are declared.</div>
 <dd>
 <div class="block">Importer of historical agents described in WP2.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.html#Wp2PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">Wp2PersonalitiesImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.html" title="class in eu.ehri.project.importers.csv">Wp2PersonalitiesImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.html#Wp2PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">Wp2PersonalitiesImporter(FramedGraph&lt;?&gt;, Actioner, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.html" title="class in eu.ehri.project.importers.csv">Wp2PersonalitiesImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exporters/DocumentWriter.html#write(java.io.OutputStream)">write(OutputStream)</a></span> - Method in class eu.ehri.project.exporters.<a href="./eu/ehri/project/exporters/DocumentWriter.html" title="class in eu.ehri.project.exporters">DocumentWriter</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanJsonProvider.html#writeTo(java.lang.Boolean,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo(Boolean, Class&lt;?&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, Object&gt;, OutputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanJsonProvider.html" title="class in eu.ehri.extension.providers">BooleanJsonProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanProvider.html#writeTo(java.lang.Boolean,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo(Boolean, Class&lt;?&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, Object&gt;, OutputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanProvider.html" title="class in eu.ehri.extension.providers">BooleanProvider</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/BooleanXmlProvider.html#writeTo(java.lang.Boolean,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo(Boolean, Class&lt;?&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, Object&gt;, OutputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BooleanXmlProvider.html" title="class in eu.ehri.extension.providers">BooleanXmlProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/BundleProvider.html#writeTo(eu.ehri.project.persistence.Bundle,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo(Bundle, Class&lt;?&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, Object&gt;, OutputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/BundleProvider.html" title="class in eu.ehri.extension.providers">BundleProvider</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/ImportLogProvider.html#writeTo(eu.ehri.project.importers.ImportLog,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo(ImportLog, Class&lt;?&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, Object&gt;, OutputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/ImportLogProvider.html" title="class in eu.ehri.extension.providers">ImportLogProvider</a></dt>
 <dd>&nbsp;</dd>
@@ -7457,9 +7423,7 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/extension/providers/InheritedItemPermissionSetProvider.html#writeTo(eu.ehri.project.acl.InheritedItemPermissionSet,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo(InheritedItemPermissionSet, Class&lt;?&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, Object&gt;, OutputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/InheritedItemPermissionSetProvider.html" title="class in eu.ehri.extension.providers">InheritedItemPermissionSetProvider</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberJsonProvider.html#writeTo(java.lang.Number,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo(Number, Class&lt;?&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, Object&gt;, OutputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberJsonProvider.html" title="class in eu.ehri.extension.providers">NumberJsonProvider</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberXmlProvider.html#writeTo(java.lang.Number,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo(Number, Class&lt;?&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, Object&gt;, OutputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberXmlProvider.html" title="class in eu.ehri.extension.providers">NumberXmlProvider</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/extension/providers/NumberProvider.html#writeTo(java.lang.Number,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo(Number, Class&lt;?&gt;, Type, Annotation[], MediaType, MultivaluedMap&lt;String, Object&gt;, OutputStream)</a></span> - Method in class eu.ehri.extension.providers.<a href="./eu/ehri/extension/providers/NumberProvider.html" title="class in eu.ehri.extension.providers">NumberProvider</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a name="_X_">

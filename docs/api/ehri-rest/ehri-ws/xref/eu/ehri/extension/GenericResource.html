@@ -127,7 +127,7 @@
 <a class="jxr_linenumber" name="117" href="#117">117</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
 <a class="jxr_linenumber" name="118" href="#118">118</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="119" href="#119">119</a>     @GET
-<a class="jxr_linenumber" name="120" href="#120">120</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+<a class="jxr_linenumber" name="120" href="#120">120</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="121" href="#121">121</a>     <strong class="jxr_keyword">public</strong> Response list(@QueryParam(<span class="jxr_string">"id"</span>) List&lt;String&gt; ids,
 <a class="jxr_linenumber" name="122" href="#122">122</a>             @QueryParam(<span class="jxr_string">"gid"</span>) List&lt;Long&gt; gids) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="123" href="#123">123</a> 
@@ -171,7 +171,7 @@
 <a class="jxr_linenumber" name="161" href="#161">161</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
 <a class="jxr_linenumber" name="162" href="#162">162</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="163" href="#163">163</a>     @POST
-<a class="jxr_linenumber" name="164" href="#164">164</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+<a class="jxr_linenumber" name="164" href="#164">164</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="165" href="#165">165</a>     @Consumes(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="166" href="#166">166</a>     <strong class="jxr_keyword">public</strong> Response listFromJson(String json)
 <a class="jxr_linenumber" name="167" href="#167">167</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, PermissionDenied, DeserializationError, IOException {
@@ -187,7 +187,7 @@
 <a class="jxr_linenumber" name="177" href="#177">177</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
 <a class="jxr_linenumber" name="178" href="#178">178</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="179" href="#179">179</a>     @GET
-<a class="jxr_linenumber" name="180" href="#180">180</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+<a class="jxr_linenumber" name="180" href="#180">180</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="181" href="#181">181</a>     @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="182" href="#182">182</a>     <strong class="jxr_keyword">public</strong> Response get(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound, AccessDenied {
 <a class="jxr_linenumber" name="183" href="#183">183</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
@@ -201,7 +201,7 @@
 <a class="jxr_linenumber" name="191" href="#191">191</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> AccessDenied(currentUser.getId(), id);
 <a class="jxr_linenumber" name="192" href="#192">192</a>             }
 <a class="jxr_linenumber" name="193" href="#193">193</a> 
-<a class="jxr_linenumber" name="194" href="#194">194</a>             Response response = single(item);
+<a class="jxr_linenumber" name="194" href="#194">194</a>             Response response = single(graph.frame(item, Accessible.<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="195" href="#195">195</a>             tx.success();
 <a class="jxr_linenumber" name="196" href="#196">196</a>             <strong class="jxr_keyword">return</strong> response;
 <a class="jxr_linenumber" name="197" href="#197">197</a>         }
@@ -216,499 +216,509 @@
 <a class="jxr_linenumber" name="206" href="#206">206</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
 <a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="208" href="#208">208</a>     @GET
-<a class="jxr_linenumber" name="209" href="#209">209</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + ACCESS)
-<a class="jxr_linenumber" name="210" href="#210">210</a>     <strong class="jxr_keyword">public</strong> Response visibility(@PathParam(<span class="jxr_string">"id"</span>) String id)
-<a class="jxr_linenumber" name="211" href="#211">211</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, SerializationError {
-<a class="jxr_linenumber" name="212" href="#212">212</a>         <strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx();
-<a class="jxr_linenumber" name="213" href="#213">213</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="214" href="#214">214</a>             Accessible item = manager.getEntity(id, Accessible.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="215" href="#215">215</a>             Iterable&lt;Accessor&gt; accessors = item.getAccessors();
-<a class="jxr_linenumber" name="216" href="#216">216</a>             <strong class="jxr_keyword">return</strong> streamingList(accessors, tx);
-<a class="jxr_linenumber" name="217" href="#217">217</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="218" href="#218">218</a>             tx.close();
-<a class="jxr_linenumber" name="219" href="#219">219</a>             <strong class="jxr_keyword">throw</strong> e;
-<a class="jxr_linenumber" name="220" href="#220">220</a>         }
-<a class="jxr_linenumber" name="221" href="#221">221</a>     }
-<a class="jxr_linenumber" name="222" href="#222">222</a> 
-<a class="jxr_linenumber" name="223" href="#223">223</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="224" href="#224">224</a> <em class="jxr_javadoccomment">     * Set the accessors who are able to view an item. If no accessors</em>
-<a class="jxr_linenumber" name="225" href="#225">225</a> <em class="jxr_javadoccomment">     * are set, the item is globally readable.</em>
-<a class="jxr_linenumber" name="226" href="#226">226</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="227" href="#227">227</a> <em class="jxr_javadoccomment">     * @param id          the ID of the item</em>
-<a class="jxr_linenumber" name="228" href="#228">228</a> <em class="jxr_javadoccomment">     * @param accessorIds the IDs of the users who can access this item.</em>
-<a class="jxr_linenumber" name="229" href="#229">229</a> <em class="jxr_javadoccomment">     * @return the updated object</em>
-<a class="jxr_linenumber" name="230" href="#230">230</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="231" href="#231">231</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="232" href="#232">232</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="233" href="#233">233</a>     @POST
-<a class="jxr_linenumber" name="234" href="#234">234</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + ACCESS)
-<a class="jxr_linenumber" name="235" href="#235">235</a>     <strong class="jxr_keyword">public</strong> Response setVisibility(@PathParam(<span class="jxr_string">"id"</span>) String id,
-<a class="jxr_linenumber" name="236" href="#236">236</a>             @QueryParam(ACCESSOR_PARAM) List&lt;String&gt; accessorIds)
-<a class="jxr_linenumber" name="237" href="#237">237</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, SerializationError {
-<a class="jxr_linenumber" name="238" href="#238">238</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="239" href="#239">239</a>             Accessible item = manager.getEntity(id, Accessible.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="240" href="#240">240</a>             Accessor current = getRequesterUserProfile();
-<a class="jxr_linenumber" name="241" href="#241">241</a>             Set&lt;Accessor&gt; accessors = getAccessors(accessorIds, current);
-<a class="jxr_linenumber" name="242" href="#242">242</a>             aclViews.setAccessors(item, accessors, current);
-<a class="jxr_linenumber" name="243" href="#243">243</a>             Response response = single(item);
-<a class="jxr_linenumber" name="244" href="#244">244</a>             tx.success();
-<a class="jxr_linenumber" name="245" href="#245">245</a>             <strong class="jxr_keyword">return</strong> response;
-<a class="jxr_linenumber" name="246" href="#246">246</a>         }
-<a class="jxr_linenumber" name="247" href="#247">247</a>     }
-<a class="jxr_linenumber" name="248" href="#248">248</a> 
-<a class="jxr_linenumber" name="249" href="#249">249</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="250" href="#250">250</a> <em class="jxr_javadoccomment">     * Up vote an item.</em>
-<a class="jxr_linenumber" name="251" href="#251">251</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="252" href="#252">252</a> <em class="jxr_javadoccomment">     * @param id the ID of the item to promote.</em>
-<a class="jxr_linenumber" name="253" href="#253">253</a> <em class="jxr_javadoccomment">     * @return 200 response</em>
-<a class="jxr_linenumber" name="254" href="#254">254</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="255" href="#255">255</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="256" href="#256">256</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="257" href="#257">257</a>     @POST
-<a class="jxr_linenumber" name="258" href="#258">258</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + PROMOTE)
-<a class="jxr_linenumber" name="259" href="#259">259</a>     <strong class="jxr_keyword">public</strong> Response addPromotion(@PathParam(<span class="jxr_string">"id"</span>) String id)
-<a class="jxr_linenumber" name="260" href="#260">260</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
-<a class="jxr_linenumber" name="261" href="#261">261</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="262" href="#262">262</a>             Promotable item = manager.getEntity(id, Promotable.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="263" href="#263">263</a>             UserProfile currentUser = getCurrentUser();
-<a class="jxr_linenumber" name="264" href="#264">264</a>             pv.upVote(item, currentUser);
-<a class="jxr_linenumber" name="265" href="#265">265</a>             tx.success();
-<a class="jxr_linenumber" name="266" href="#266">266</a>             <strong class="jxr_keyword">return</strong> single(item);
-<a class="jxr_linenumber" name="267" href="#267">267</a>         } <strong class="jxr_keyword">catch</strong> (PromotionViews.NotPromotableError e) {
-<a class="jxr_linenumber" name="268" href="#268">268</a>             <strong class="jxr_keyword">return</strong> Response.status(Response.Status.BAD_REQUEST.getStatusCode())
-<a class="jxr_linenumber" name="269" href="#269">269</a>                     .entity(e.getMessage()).build();
-<a class="jxr_linenumber" name="270" href="#270">270</a>         }
-<a class="jxr_linenumber" name="271" href="#271">271</a>     }
-<a class="jxr_linenumber" name="272" href="#272">272</a> 
-<a class="jxr_linenumber" name="273" href="#273">273</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="274" href="#274">274</a> <em class="jxr_javadoccomment">     * Remove an up vote.</em>
-<a class="jxr_linenumber" name="275" href="#275">275</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="276" href="#276">276</a> <em class="jxr_javadoccomment">     * @param id the ID of the item to remove</em>
-<a class="jxr_linenumber" name="277" href="#277">277</a> <em class="jxr_javadoccomment">     * @return 200 response</em>
-<a class="jxr_linenumber" name="278" href="#278">278</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="279" href="#279">279</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="280" href="#280">280</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="281" href="#281">281</a>     @DELETE
-<a class="jxr_linenumber" name="282" href="#282">282</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + PROMOTE)
-<a class="jxr_linenumber" name="283" href="#283">283</a>     <strong class="jxr_keyword">public</strong> Response removePromotion(@PathParam(<span class="jxr_string">"id"</span>) String id)
-<a class="jxr_linenumber" name="284" href="#284">284</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, ValidationError {
-<a class="jxr_linenumber" name="285" href="#285">285</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="286" href="#286">286</a>             Promotable item = manager.getEntity(id, Promotable.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="287" href="#287">287</a>             UserProfile currentUser = getCurrentUser();
-<a class="jxr_linenumber" name="288" href="#288">288</a>             pv.removeUpVote(item, currentUser);
-<a class="jxr_linenumber" name="289" href="#289">289</a>             tx.success();
-<a class="jxr_linenumber" name="290" href="#290">290</a>             <strong class="jxr_keyword">return</strong> single(item);
-<a class="jxr_linenumber" name="291" href="#291">291</a>         }
-<a class="jxr_linenumber" name="292" href="#292">292</a>     }
-<a class="jxr_linenumber" name="293" href="#293">293</a> 
-<a class="jxr_linenumber" name="294" href="#294">294</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="295" href="#295">295</a> <em class="jxr_javadoccomment">     * Down vote an item</em>
-<a class="jxr_linenumber" name="296" href="#296">296</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="297" href="#297">297</a> <em class="jxr_javadoccomment">     * @param id the ID of the item to promote.</em>
-<a class="jxr_linenumber" name="298" href="#298">298</a> <em class="jxr_javadoccomment">     * @return 200 response</em>
-<a class="jxr_linenumber" name="299" href="#299">299</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="300" href="#300">300</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="301" href="#301">301</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="302" href="#302">302</a>     @POST
-<a class="jxr_linenumber" name="303" href="#303">303</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DEMOTE)
-<a class="jxr_linenumber" name="304" href="#304">304</a>     <strong class="jxr_keyword">public</strong> Response addDemotion(@PathParam(<span class="jxr_string">"id"</span>) String id)
-<a class="jxr_linenumber" name="305" href="#305">305</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
-<a class="jxr_linenumber" name="306" href="#306">306</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="307" href="#307">307</a>             Promotable item = manager.getEntity(id, Promotable.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="308" href="#308">308</a>             UserProfile currentUser = getCurrentUser();
-<a class="jxr_linenumber" name="309" href="#309">309</a>             pv.downVote(item, currentUser);
-<a class="jxr_linenumber" name="310" href="#310">310</a>             tx.success();
-<a class="jxr_linenumber" name="311" href="#311">311</a>             <strong class="jxr_keyword">return</strong> single(item);
-<a class="jxr_linenumber" name="312" href="#312">312</a>         } <strong class="jxr_keyword">catch</strong> (PromotionViews.NotPromotableError e) {
-<a class="jxr_linenumber" name="313" href="#313">313</a>             <strong class="jxr_keyword">return</strong> Response.status(Response.Status.BAD_REQUEST.getStatusCode())
-<a class="jxr_linenumber" name="314" href="#314">314</a>                     .entity(e.getMessage()).build();
-<a class="jxr_linenumber" name="315" href="#315">315</a>         }
-<a class="jxr_linenumber" name="316" href="#316">316</a>     }
-<a class="jxr_linenumber" name="317" href="#317">317</a> 
-<a class="jxr_linenumber" name="318" href="#318">318</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="319" href="#319">319</a> <em class="jxr_javadoccomment">     * Remove a down vote.</em>
-<a class="jxr_linenumber" name="320" href="#320">320</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="321" href="#321">321</a> <em class="jxr_javadoccomment">     * @param id the ID of the item to remove</em>
-<a class="jxr_linenumber" name="322" href="#322">322</a> <em class="jxr_javadoccomment">     * @return 200 response</em>
-<a class="jxr_linenumber" name="323" href="#323">323</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="324" href="#324">324</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="325" href="#325">325</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="326" href="#326">326</a>     @DELETE
-<a class="jxr_linenumber" name="327" href="#327">327</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DEMOTE)
-<a class="jxr_linenumber" name="328" href="#328">328</a>     <strong class="jxr_keyword">public</strong> Response removeDemotion(@PathParam(<span class="jxr_string">"id"</span>) String id)
-<a class="jxr_linenumber" name="329" href="#329">329</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, ValidationError {
-<a class="jxr_linenumber" name="330" href="#330">330</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="331" href="#331">331</a>             Promotable item = manager.getEntity(id, Promotable.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="332" href="#332">332</a>             UserProfile currentUser = getCurrentUser();
-<a class="jxr_linenumber" name="333" href="#333">333</a>             pv.removeDownVote(item, currentUser);
-<a class="jxr_linenumber" name="334" href="#334">334</a>             tx.success();
-<a class="jxr_linenumber" name="335" href="#335">335</a>             <strong class="jxr_keyword">return</strong> single(item);
-<a class="jxr_linenumber" name="336" href="#336">336</a>         }
-<a class="jxr_linenumber" name="337" href="#337">337</a>     }
-<a class="jxr_linenumber" name="338" href="#338">338</a> 
-<a class="jxr_linenumber" name="339" href="#339">339</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="340" href="#340">340</a> <em class="jxr_javadoccomment">     * Lookup and page the history for a given item.</em>
-<a class="jxr_linenumber" name="341" href="#341">341</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="342" href="#342">342</a> <em class="jxr_javadoccomment">     * @param id          the event id</em>
-<a class="jxr_linenumber" name="343" href="#343">343</a> <em class="jxr_javadoccomment">     * @param aggregation the aggregation strategy</em>
-<a class="jxr_linenumber" name="344" href="#344">344</a> <em class="jxr_javadoccomment">     * @return A list of events</em>
-<a class="jxr_linenumber" name="345" href="#345">345</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="346" href="#346">346</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="347" href="#347">347</a>     @GET
-<a class="jxr_linenumber" name="348" href="#348">348</a>     @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="349" href="#349">349</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + EVENTS)
-<a class="jxr_linenumber" name="350" href="#350">350</a>     <strong class="jxr_keyword">public</strong> Response events(
-<a class="jxr_linenumber" name="351" href="#351">351</a>             @PathParam(<span class="jxr_string">"id"</span>) String id,
-<a class="jxr_linenumber" name="352" href="#352">352</a>             @QueryParam(AGGREGATION_PARAM) @DefaultValue(<span class="jxr_string">"user"</span>) EventViews.Aggregation aggregation)
-<a class="jxr_linenumber" name="353" href="#353">353</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, AccessDenied {
-<a class="jxr_linenumber" name="354" href="#354">354</a>         Tx tx = graph.getBaseGraph().beginTx();
-<a class="jxr_linenumber" name="355" href="#355">355</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="356" href="#356">356</a>             Accessor accessor = getRequesterUserProfile();
-<a class="jxr_linenumber" name="357" href="#357">357</a>             Accessible item = views
-<a class="jxr_linenumber" name="358" href="#358">358</a>                     .setClass(Accessible.<strong class="jxr_keyword">class</strong>).detail(id, accessor);
-<a class="jxr_linenumber" name="359" href="#359">359</a>             EventViews eventViews = getEventViewsBuilder()
-<a class="jxr_linenumber" name="360" href="#360">360</a>                     .withAggregation(aggregation)
-<a class="jxr_linenumber" name="361" href="#361">361</a>                     .build();
-<a class="jxr_linenumber" name="362" href="#362">362</a>             <strong class="jxr_keyword">return</strong> streamingListOfLists(eventViews.aggregateForItem(item, accessor), tx);
-<a class="jxr_linenumber" name="363" href="#363">363</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="364" href="#364">364</a>             tx.close();
-<a class="jxr_linenumber" name="365" href="#365">365</a>             <strong class="jxr_keyword">throw</strong> e;
-<a class="jxr_linenumber" name="366" href="#366">366</a>         }
-<a class="jxr_linenumber" name="367" href="#367">367</a>     }
-<a class="jxr_linenumber" name="368" href="#368">368</a> 
-<a class="jxr_linenumber" name="369" href="#369">369</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="370" href="#370">370</a> <em class="jxr_javadoccomment">     * Return a (paged) list of annotations for the given item.</em>
-<a class="jxr_linenumber" name="371" href="#371">371</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="372" href="#372">372</a> <em class="jxr_javadoccomment">     * @param id the item ID</em>
-<a class="jxr_linenumber" name="373" href="#373">373</a> <em class="jxr_javadoccomment">     * @return a list of annotations on the item</em>
-<a class="jxr_linenumber" name="374" href="#374">374</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="375" href="#375">375</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="376" href="#376">376</a>     @GET
-<a class="jxr_linenumber" name="377" href="#377">377</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="378" href="#378">378</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + ANNOTATIONS)
-<a class="jxr_linenumber" name="379" href="#379">379</a>     <strong class="jxr_keyword">public</strong> Response annotations(
-<a class="jxr_linenumber" name="380" href="#380">380</a>             @PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
-<a class="jxr_linenumber" name="381" href="#381">381</a>         Tx tx = graph.getBaseGraph().beginTx();
-<a class="jxr_linenumber" name="382" href="#382">382</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="383" href="#383">383</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(Annotation.<strong class="jxr_keyword">class</strong>).page(
-<a class="jxr_linenumber" name="384" href="#384">384</a>                     manager.getEntity(id, Annotatable.<strong class="jxr_keyword">class</strong>).getAnnotations(),
-<a class="jxr_linenumber" name="385" href="#385">385</a>                     getRequesterUserProfile()), tx);
-<a class="jxr_linenumber" name="386" href="#386">386</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="387" href="#387">387</a>             tx.close();
-<a class="jxr_linenumber" name="388" href="#388">388</a>             <strong class="jxr_keyword">throw</strong> e;
-<a class="jxr_linenumber" name="389" href="#389">389</a>         }
-<a class="jxr_linenumber" name="390" href="#390">390</a>     }
-<a class="jxr_linenumber" name="391" href="#391">391</a> 
-<a class="jxr_linenumber" name="392" href="#392">392</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="393" href="#393">393</a> <em class="jxr_javadoccomment">     * Returns a list of items linked to the given description.</em>
-<a class="jxr_linenumber" name="394" href="#394">394</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="395" href="#395">395</a> <em class="jxr_javadoccomment">     * @param id the item ID</em>
-<a class="jxr_linenumber" name="396" href="#396">396</a> <em class="jxr_javadoccomment">     * @return a list of links with the item as a target</em>
-<a class="jxr_linenumber" name="397" href="#397">397</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="398" href="#398">398</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="399" href="#399">399</a>     @GET
-<a class="jxr_linenumber" name="400" href="#400">400</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="401" href="#401">401</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + LINKS)
-<a class="jxr_linenumber" name="402" href="#402">402</a>     <strong class="jxr_keyword">public</strong> Response links(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
-<a class="jxr_linenumber" name="403" href="#403">403</a>         Tx tx = graph.getBaseGraph().beginTx();
-<a class="jxr_linenumber" name="404" href="#404">404</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="405" href="#405">405</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(Link.<strong class="jxr_keyword">class</strong>).page(
-<a class="jxr_linenumber" name="406" href="#406">406</a>                     manager.getEntity(id, Linkable.<strong class="jxr_keyword">class</strong>).getLinks(),
-<a class="jxr_linenumber" name="407" href="#407">407</a>                     getRequesterUserProfile()), tx);
-<a class="jxr_linenumber" name="408" href="#408">408</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="409" href="#409">409</a>             tx.close();
-<a class="jxr_linenumber" name="410" href="#410">410</a>             <strong class="jxr_keyword">throw</strong> e;
-<a class="jxr_linenumber" name="411" href="#411">411</a>         }
-<a class="jxr_linenumber" name="412" href="#412">412</a>     }
-<a class="jxr_linenumber" name="413" href="#413">413</a> 
-<a class="jxr_linenumber" name="414" href="#414">414</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="415" href="#415">415</a> <em class="jxr_javadoccomment">     * List all the permission grants that relate specifically to this item.</em>
-<a class="jxr_linenumber" name="416" href="#416">416</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="417" href="#417">417</a> <em class="jxr_javadoccomment">     * @return a list of grants for this item</em>
-<a class="jxr_linenumber" name="418" href="#418">418</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="419" href="#419">419</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="420" href="#420">420</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="421" href="#421">421</a>     @GET
-<a class="jxr_linenumber" name="422" href="#422">422</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="423" href="#423">423</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + PERMISSION_GRANTS)
-<a class="jxr_linenumber" name="424" href="#424">424</a>     <strong class="jxr_keyword">public</strong> Response permissionGrants(@PathParam(<span class="jxr_string">"id"</span>) String id)
-<a class="jxr_linenumber" name="425" href="#425">425</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
-<a class="jxr_linenumber" name="426" href="#426">426</a>         Tx tx = graph.getBaseGraph().beginTx();
-<a class="jxr_linenumber" name="427" href="#427">427</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="428" href="#428">428</a>             PermissionGrantTarget target = manager.getEntity(id, PermissionGrantTarget.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="429" href="#429">429</a>             Accessor accessor = getRequesterUserProfile();
-<a class="jxr_linenumber" name="430" href="#430">430</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(PermissionGrant.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="431" href="#431">431</a>                     .page(target.getPermissionGrants(), accessor), tx);
-<a class="jxr_linenumber" name="432" href="#432">432</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="433" href="#433">433</a>             tx.close();
-<a class="jxr_linenumber" name="434" href="#434">434</a>             <strong class="jxr_keyword">throw</strong> e;
-<a class="jxr_linenumber" name="435" href="#435">435</a>         }
-<a class="jxr_linenumber" name="436" href="#436">436</a>     }
-<a class="jxr_linenumber" name="437" href="#437">437</a> 
-<a class="jxr_linenumber" name="438" href="#438">438</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="439" href="#439">439</a> <em class="jxr_javadoccomment">     * List all the permission grants that relate specifically to this scope.</em>
-<a class="jxr_linenumber" name="440" href="#440">440</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="441" href="#441">441</a> <em class="jxr_javadoccomment">     * @return a list of grants for which this item is the scope</em>
-<a class="jxr_linenumber" name="442" href="#442">442</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="443" href="#443">443</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="444" href="#444">444</a>     @GET
-<a class="jxr_linenumber" name="445" href="#445">445</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="446" href="#446">446</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + SCOPE_PERMISSION_GRANTS)
-<a class="jxr_linenumber" name="447" href="#447">447</a>     <strong class="jxr_keyword">public</strong> Response permissionGrantsAsScope(@PathParam(<span class="jxr_string">"id"</span>) String id)
-<a class="jxr_linenumber" name="448" href="#448">448</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound {
-<a class="jxr_linenumber" name="449" href="#449">449</a>         Tx tx = graph.getBaseGraph().beginTx();
-<a class="jxr_linenumber" name="450" href="#450">450</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="451" href="#451">451</a>             PermissionScope scope = manager.getEntity(id, PermissionScope.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="452" href="#452">452</a>             Accessor accessor = getRequesterUserProfile();
-<a class="jxr_linenumber" name="453" href="#453">453</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(PermissionGrant.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="454" href="#454">454</a>                     .page(scope.getPermissionGrants(), accessor), tx);
-<a class="jxr_linenumber" name="455" href="#455">455</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="456" href="#456">456</a>             tx.close();
-<a class="jxr_linenumber" name="457" href="#457">457</a>             <strong class="jxr_keyword">throw</strong> e;
-<a class="jxr_linenumber" name="458" href="#458">458</a>         }
-<a class="jxr_linenumber" name="459" href="#459">459</a>     }
-<a class="jxr_linenumber" name="460" href="#460">460</a> 
-<a class="jxr_linenumber" name="461" href="#461">461</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="462" href="#462">462</a> <em class="jxr_javadoccomment">     * Create a new description for this item.</em>
-<a class="jxr_linenumber" name="463" href="#463">463</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="464" href="#464">464</a> <em class="jxr_javadoccomment">     * @param id     the item ID</em>
-<a class="jxr_linenumber" name="465" href="#465">465</a> <em class="jxr_javadoccomment">     * @param bundle the description bundle</em>
-<a class="jxr_linenumber" name="466" href="#466">466</a> <em class="jxr_javadoccomment">     * @return the new description</em>
-<a class="jxr_linenumber" name="467" href="#467">467</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="468" href="#468">468</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
-<a class="jxr_linenumber" name="469" href="#469">469</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
-<a class="jxr_linenumber" name="470" href="#470">470</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="471" href="#471">471</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="472" href="#472">472</a>     @POST
-<a class="jxr_linenumber" name="473" href="#473">473</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="474" href="#474">474</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="475" href="#475">475</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS)
-<a class="jxr_linenumber" name="476" href="#476">476</a>     <strong class="jxr_keyword">public</strong> Response createDescription(@PathParam(<span class="jxr_string">"id"</span>) String id, Bundle bundle)
-<a class="jxr_linenumber" name="477" href="#477">477</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
-<a class="jxr_linenumber" name="478" href="#478">478</a>             DeserializationError, ItemNotFound {
-<a class="jxr_linenumber" name="479" href="#479">479</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="480" href="#480">480</a>             Accessor user = getRequesterUserProfile();
-<a class="jxr_linenumber" name="481" href="#481">481</a>             Described item = views.setClass(Described.<strong class="jxr_keyword">class</strong>).detail(id, user);
-<a class="jxr_linenumber" name="482" href="#482">482</a>             Description desc = dv.create(id, bundle,
-<a class="jxr_linenumber" name="483" href="#483">483</a>                     Description.<strong class="jxr_keyword">class</strong>, user, getLogMessage());
-<a class="jxr_linenumber" name="484" href="#484">484</a>             item.addDescription(desc);
-<a class="jxr_linenumber" name="485" href="#485">485</a>             Response response = buildResponse(item, desc, Response.Status.CREATED);
-<a class="jxr_linenumber" name="486" href="#486">486</a>             tx.success();
-<a class="jxr_linenumber" name="487" href="#487">487</a>             <strong class="jxr_keyword">return</strong> response;
-<a class="jxr_linenumber" name="488" href="#488">488</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
-<a class="jxr_linenumber" name="489" href="#489">489</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(serializationError);
-<a class="jxr_linenumber" name="490" href="#490">490</a>         }
-<a class="jxr_linenumber" name="491" href="#491">491</a>     }
-<a class="jxr_linenumber" name="492" href="#492">492</a> 
-<a class="jxr_linenumber" name="493" href="#493">493</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="494" href="#494">494</a> <em class="jxr_javadoccomment">     * Update a description belonging to the given item.</em>
-<a class="jxr_linenumber" name="495" href="#495">495</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="496" href="#496">496</a> <em class="jxr_javadoccomment">     * @param id     the item ID</em>
-<a class="jxr_linenumber" name="497" href="#497">497</a> <em class="jxr_javadoccomment">     * @param bundle the description bundle</em>
-<a class="jxr_linenumber" name="498" href="#498">498</a> <em class="jxr_javadoccomment">     * @return the new description</em>
-<a class="jxr_linenumber" name="499" href="#499">499</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="500" href="#500">500</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
-<a class="jxr_linenumber" name="501" href="#501">501</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
-<a class="jxr_linenumber" name="502" href="#502">502</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="503" href="#503">503</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="504" href="#504">504</a>     @PUT
-<a class="jxr_linenumber" name="505" href="#505">505</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="506" href="#506">506</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="507" href="#507">507</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS)
-<a class="jxr_linenumber" name="508" href="#508">508</a>     <strong class="jxr_keyword">public</strong> Response updateDescription(@PathParam(<span class="jxr_string">"id"</span>) String id, Bundle bundle)
-<a class="jxr_linenumber" name="509" href="#509">509</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
-<a class="jxr_linenumber" name="510" href="#510">510</a>             DeserializationError, ItemNotFound, SerializationError {
-<a class="jxr_linenumber" name="511" href="#511">511</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="512" href="#512">512</a>             Accessor userProfile = getRequesterUserProfile();
-<a class="jxr_linenumber" name="513" href="#513">513</a>             Described item = views.setClass(Described.<strong class="jxr_keyword">class</strong>).detail(id, userProfile);
-<a class="jxr_linenumber" name="514" href="#514">514</a>             Mutation&lt;Description&gt; desc = dv.update(id, bundle,
-<a class="jxr_linenumber" name="515" href="#515">515</a>                     Description.<strong class="jxr_keyword">class</strong>, userProfile, getLogMessage());
-<a class="jxr_linenumber" name="516" href="#516">516</a>             Response response = buildResponse(item, desc.getNode(), Response.Status.OK);
-<a class="jxr_linenumber" name="517" href="#517">517</a>             tx.success();
-<a class="jxr_linenumber" name="518" href="#518">518</a>             <strong class="jxr_keyword">return</strong> response;
-<a class="jxr_linenumber" name="519" href="#519">519</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
-<a class="jxr_linenumber" name="520" href="#520">520</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(serializationError);
-<a class="jxr_linenumber" name="521" href="#521">521</a>         }
-<a class="jxr_linenumber" name="522" href="#522">522</a>     }
-<a class="jxr_linenumber" name="523" href="#523">523</a> 
-<a class="jxr_linenumber" name="524" href="#524">524</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="525" href="#525">525</a> <em class="jxr_javadoccomment">     * Update a description with the given ID, belonging to the given parent item.</em>
-<a class="jxr_linenumber" name="526" href="#526">526</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="527" href="#527">527</a> <em class="jxr_javadoccomment">     * @param id     the item ID</em>
-<a class="jxr_linenumber" name="528" href="#528">528</a> <em class="jxr_javadoccomment">     * @param did    the description ID</em>
-<a class="jxr_linenumber" name="529" href="#529">529</a> <em class="jxr_javadoccomment">     * @param bundle the description bundle</em>
-<a class="jxr_linenumber" name="530" href="#530">530</a> <em class="jxr_javadoccomment">     * @return the new description</em>
-<a class="jxr_linenumber" name="531" href="#531">531</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="532" href="#532">532</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
-<a class="jxr_linenumber" name="533" href="#533">533</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
-<a class="jxr_linenumber" name="534" href="#534">534</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="535" href="#535">535</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="536" href="#536">536</a>     @PUT
-<a class="jxr_linenumber" name="537" href="#537">537</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="538" href="#538">538</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="539" href="#539">539</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS + <span class="jxr_string">"/{did:[^/]+}"</span>)
-<a class="jxr_linenumber" name="540" href="#540">540</a>     <strong class="jxr_keyword">public</strong> Response updateDescriptionWithId(@PathParam(<span class="jxr_string">"id"</span>) String id,
-<a class="jxr_linenumber" name="541" href="#541">541</a>             @PathParam(<span class="jxr_string">"did"</span>) String did, Bundle bundle)
-<a class="jxr_linenumber" name="542" href="#542">542</a>             <strong class="jxr_keyword">throws</strong> AccessDenied, PermissionDenied, ValidationError,
-<a class="jxr_linenumber" name="543" href="#543">543</a>             DeserializationError, ItemNotFound, SerializationError {
-<a class="jxr_linenumber" name="544" href="#544">544</a>         <strong class="jxr_keyword">return</strong> updateDescription(id, bundle.withId(did));
-<a class="jxr_linenumber" name="545" href="#545">545</a>     }
-<a class="jxr_linenumber" name="546" href="#546">546</a> 
-<a class="jxr_linenumber" name="547" href="#547">547</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="548" href="#548">548</a> <em class="jxr_javadoccomment">     * Delete a description with the given ID, belonging to the given parent item.</em>
-<a class="jxr_linenumber" name="549" href="#549">549</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="550" href="#550">550</a> <em class="jxr_javadoccomment">     * @param id  the item ID</em>
-<a class="jxr_linenumber" name="551" href="#551">551</a> <em class="jxr_javadoccomment">     * @param did the description ID</em>
-<a class="jxr_linenumber" name="552" href="#552">552</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="553" href="#553">553</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="554" href="#554">554</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
-<a class="jxr_linenumber" name="555" href="#555">555</a> <em class="jxr_javadoccomment">     * @throws SerializationError</em>
-<a class="jxr_linenumber" name="556" href="#556">556</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="557" href="#557">557</a>     @DELETE
-<a class="jxr_linenumber" name="558" href="#558">558</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS + <span class="jxr_string">"/{did:[^/]+}"</span>)
-<a class="jxr_linenumber" name="559" href="#559">559</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> deleteDescription(
-<a class="jxr_linenumber" name="560" href="#560">560</a>             @PathParam(<span class="jxr_string">"id"</span>) String id, @PathParam(<span class="jxr_string">"did"</span>) String did)
-<a class="jxr_linenumber" name="561" href="#561">561</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, ValidationError, SerializationError {
-<a class="jxr_linenumber" name="562" href="#562">562</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="563" href="#563">563</a>             Accessor user = getRequesterUserProfile();
-<a class="jxr_linenumber" name="564" href="#564">564</a>             dv.delete(id, did, user, getLogMessage());
-<a class="jxr_linenumber" name="565" href="#565">565</a>             tx.success();
-<a class="jxr_linenumber" name="566" href="#566">566</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
-<a class="jxr_linenumber" name="567" href="#567">567</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(serializationError);
-<a class="jxr_linenumber" name="568" href="#568">568</a>         }
-<a class="jxr_linenumber" name="569" href="#569">569</a>     }
-<a class="jxr_linenumber" name="570" href="#570">570</a> 
-<a class="jxr_linenumber" name="571" href="#571">571</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="572" href="#572">572</a> <em class="jxr_javadoccomment">     * Create an access point on the given description, for the given</em>
-<a class="jxr_linenumber" name="573" href="#573">573</a> <em class="jxr_javadoccomment">     * parent item.</em>
-<a class="jxr_linenumber" name="574" href="#574">574</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="575" href="#575">575</a> <em class="jxr_javadoccomment">     * @param id     the parent item's ID</em>
-<a class="jxr_linenumber" name="576" href="#576">576</a> <em class="jxr_javadoccomment">     * @param did    the description's ID</em>
-<a class="jxr_linenumber" name="577" href="#577">577</a> <em class="jxr_javadoccomment">     * @param bundle the access point data</em>
-<a class="jxr_linenumber" name="578" href="#578">578</a> <em class="jxr_javadoccomment">     * @return the new access point</em>
-<a class="jxr_linenumber" name="579" href="#579">579</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="580" href="#580">580</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
-<a class="jxr_linenumber" name="581" href="#581">581</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
-<a class="jxr_linenumber" name="582" href="#582">582</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="583" href="#583">583</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="584" href="#584">584</a>     @POST
-<a class="jxr_linenumber" name="585" href="#585">585</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="586" href="#586">586</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
-<a class="jxr_linenumber" name="587" href="#587">587</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS + <span class="jxr_string">"/{did:[^/]+}/"</span> + ACCESS_POINTS)
-<a class="jxr_linenumber" name="588" href="#588">588</a>     <strong class="jxr_keyword">public</strong> Response createAccessPoint(@PathParam(<span class="jxr_string">"id"</span>) String id,
-<a class="jxr_linenumber" name="589" href="#589">589</a>             @PathParam(<span class="jxr_string">"did"</span>) String did, Bundle bundle)
-<a class="jxr_linenumber" name="590" href="#590">590</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
-<a class="jxr_linenumber" name="591" href="#591">591</a>             DeserializationError, ItemNotFound {
-<a class="jxr_linenumber" name="592" href="#592">592</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="593" href="#593">593</a>             Accessor user = getRequesterUserProfile();
-<a class="jxr_linenumber" name="594" href="#594">594</a>             Described item = views.setClass(Described.<strong class="jxr_keyword">class</strong>).detail(id, user);
-<a class="jxr_linenumber" name="595" href="#595">595</a>             Description desc = manager.getEntity(did, Description.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="596" href="#596">596</a>             AccessPoint rel = dv.create(id, bundle,
-<a class="jxr_linenumber" name="597" href="#597">597</a>                     AccessPoint.<strong class="jxr_keyword">class</strong>, user, getLogMessage());
-<a class="jxr_linenumber" name="598" href="#598">598</a>             desc.addAccessPoint(rel);
-<a class="jxr_linenumber" name="599" href="#599">599</a>             Response response = buildResponse(item, rel, Response.Status.CREATED);
-<a class="jxr_linenumber" name="600" href="#600">600</a>             tx.success();
-<a class="jxr_linenumber" name="601" href="#601">601</a>             <strong class="jxr_keyword">return</strong> response;
-<a class="jxr_linenumber" name="602" href="#602">602</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
-<a class="jxr_linenumber" name="603" href="#603">603</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(serializationError);
-<a class="jxr_linenumber" name="604" href="#604">604</a>         }
-<a class="jxr_linenumber" name="605" href="#605">605</a>     }
-<a class="jxr_linenumber" name="606" href="#606">606</a> 
-<a class="jxr_linenumber" name="607" href="#607">607</a> 
-<a class="jxr_linenumber" name="608" href="#608">608</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="609" href="#609">609</a> <em class="jxr_javadoccomment">     * Lookup and page the versions for a given item.</em>
-<a class="jxr_linenumber" name="610" href="#610">610</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="611" href="#611">611</a> <em class="jxr_javadoccomment">     * @param id the event id</em>
-<a class="jxr_linenumber" name="612" href="#612">612</a> <em class="jxr_javadoccomment">     * @return a list of versions</em>
-<a class="jxr_linenumber" name="613" href="#613">613</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="614" href="#614">614</a> <em class="jxr_javadoccomment">     * @throws AccessDenied</em>
-<a class="jxr_linenumber" name="615" href="#615">615</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="616" href="#616">616</a>     @GET
-<a class="jxr_linenumber" name="617" href="#617">617</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + VERSIONS)
-<a class="jxr_linenumber" name="618" href="#618">618</a>     <strong class="jxr_keyword">public</strong> Response listFor(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound, AccessDenied {
-<a class="jxr_linenumber" name="619" href="#619">619</a>         <strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx();
-<a class="jxr_linenumber" name="620" href="#620">620</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="621" href="#621">621</a>             Accessor user = getRequesterUserProfile();
-<a class="jxr_linenumber" name="622" href="#622">622</a>             Versioned item = views.setClass(Versioned.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="623" href="#623">623</a>                     .detail(id, user);
-<a class="jxr_linenumber" name="624" href="#624">624</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(Version.<strong class="jxr_keyword">class</strong>).setStream(<strong class="jxr_keyword">true</strong>)
-<a class="jxr_linenumber" name="625" href="#625">625</a>                     .page(item.getAllPriorVersions(), user), tx);
-<a class="jxr_linenumber" name="626" href="#626">626</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="627" href="#627">627</a>             tx.close();
-<a class="jxr_linenumber" name="628" href="#628">628</a>             <strong class="jxr_keyword">throw</strong> e;
-<a class="jxr_linenumber" name="629" href="#629">629</a>         }
-<a class="jxr_linenumber" name="630" href="#630">630</a>     }
-<a class="jxr_linenumber" name="631" href="#631">631</a> 
-<a class="jxr_linenumber" name="632" href="#632">632</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="633" href="#633">633</a> <em class="jxr_javadoccomment">     * Delete the access point with the given ID, on the given description,</em>
-<a class="jxr_linenumber" name="634" href="#634">634</a> <em class="jxr_javadoccomment">     * belonging to the given parent item.</em>
-<a class="jxr_linenumber" name="635" href="#635">635</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="636" href="#636">636</a> <em class="jxr_javadoccomment">     * @param id   the parent item's ID</em>
-<a class="jxr_linenumber" name="637" href="#637">637</a> <em class="jxr_javadoccomment">     * @param did  the description's ID</em>
-<a class="jxr_linenumber" name="638" href="#638">638</a> <em class="jxr_javadoccomment">     * @param apid the access point's ID</em>
-<a class="jxr_linenumber" name="639" href="#639">639</a> <em class="jxr_javadoccomment">     * @throws AccessDenied</em>
-<a class="jxr_linenumber" name="640" href="#640">640</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
-<a class="jxr_linenumber" name="641" href="#641">641</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
-<a class="jxr_linenumber" name="642" href="#642">642</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
-<a class="jxr_linenumber" name="643" href="#643">643</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="644" href="#644">644</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="645" href="#645">645</a>     @DELETE
-<a class="jxr_linenumber" name="646" href="#646">646</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS + <span class="jxr_string">"/{did:[^/]+}/"</span> + ACCESS_POINTS + <span class="jxr_string">"/{apid:[^/]+}"</span>)
-<a class="jxr_linenumber" name="647" href="#647">647</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> deleteAccessPoint(@PathParam(<span class="jxr_string">"id"</span>) String id,
-<a class="jxr_linenumber" name="648" href="#648">648</a>             @PathParam(<span class="jxr_string">"did"</span>) String did, @PathParam(<span class="jxr_string">"apid"</span>) String apid)
-<a class="jxr_linenumber" name="649" href="#649">649</a>             <strong class="jxr_keyword">throws</strong> AccessDenied, PermissionDenied, ValidationError,
-<a class="jxr_linenumber" name="650" href="#650">650</a>             DeserializationError, ItemNotFound {
-<a class="jxr_linenumber" name="651" href="#651">651</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="652" href="#652">652</a>             UserProfile user = getCurrentUser();
-<a class="jxr_linenumber" name="653" href="#653">653</a>             dv.delete(id, apid, user, getLogMessage());
-<a class="jxr_linenumber" name="654" href="#654">654</a>             tx.success();
-<a class="jxr_linenumber" name="655" href="#655">655</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
-<a class="jxr_linenumber" name="656" href="#656">656</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(serializationError);
-<a class="jxr_linenumber" name="657" href="#657">657</a>         }
-<a class="jxr_linenumber" name="658" href="#658">658</a>     }
-<a class="jxr_linenumber" name="659" href="#659">659</a> 
-<a class="jxr_linenumber" name="660" href="#660">660</a>     <em class="jxr_comment">// Helpers</em>
-<a class="jxr_linenumber" name="661" href="#661">661</a> 
-<a class="jxr_linenumber" name="662" href="#662">662</a>     <strong class="jxr_keyword">private</strong> Response buildResponse(Described item, Entity data, Response.Status status)
-<a class="jxr_linenumber" name="663" href="#663">663</a>             <strong class="jxr_keyword">throws</strong> SerializationError {
-<a class="jxr_linenumber" name="664" href="#664">664</a>         <strong class="jxr_keyword">return</strong> Response.status(status).location(getItemUri(item))
-<a class="jxr_linenumber" name="665" href="#665">665</a>                 .entity((getSerializer().entityToJson(data))
-<a class="jxr_linenumber" name="666" href="#666">666</a>                         .getBytes(Charsets.UTF_8)).build();
-<a class="jxr_linenumber" name="667" href="#667">667</a>     }
-<a class="jxr_linenumber" name="668" href="#668">668</a> 
-<a class="jxr_linenumber" name="669" href="#669">669</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../eu/ehri/extension/GenericResource.html">IdSet</a> {
-<a class="jxr_linenumber" name="670" href="#670">670</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> List&lt;String&gt; ids;
-<a class="jxr_linenumber" name="671" href="#671">671</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> List&lt;Long&gt; gids;
-<a class="jxr_linenumber" name="672" href="#672">672</a> 
-<a class="jxr_linenumber" name="673" href="#673">673</a>         <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/extension/GenericResource.html">IdSet</a>(List&lt;String&gt; ids, List&lt;Long&gt; gids) {
-<a class="jxr_linenumber" name="674" href="#674">674</a>             <strong class="jxr_keyword">this</strong>.ids = ids;
-<a class="jxr_linenumber" name="675" href="#675">675</a>             <strong class="jxr_keyword">this</strong>.gids = gids;
-<a class="jxr_linenumber" name="676" href="#676">676</a>         }
+<a class="jxr_linenumber" name="209" href="#209">209</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="210" href="#210">210</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + ACCESS)
+<a class="jxr_linenumber" name="211" href="#211">211</a>     <strong class="jxr_keyword">public</strong> Response visibility(@PathParam(<span class="jxr_string">"id"</span>) String id)
+<a class="jxr_linenumber" name="212" href="#212">212</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, SerializationError {
+<a class="jxr_linenumber" name="213" href="#213">213</a>         <strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="214" href="#214">214</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="215" href="#215">215</a>             Accessible item = manager.getEntity(id, Accessible.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="216" href="#216">216</a>             Iterable&lt;Accessor&gt; accessors = item.getAccessors();
+<a class="jxr_linenumber" name="217" href="#217">217</a>             <strong class="jxr_keyword">return</strong> streamingList(accessors, tx);
+<a class="jxr_linenumber" name="218" href="#218">218</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="219" href="#219">219</a>             tx.close();
+<a class="jxr_linenumber" name="220" href="#220">220</a>             <strong class="jxr_keyword">throw</strong> e;
+<a class="jxr_linenumber" name="221" href="#221">221</a>         }
+<a class="jxr_linenumber" name="222" href="#222">222</a>     }
+<a class="jxr_linenumber" name="223" href="#223">223</a> 
+<a class="jxr_linenumber" name="224" href="#224">224</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="225" href="#225">225</a> <em class="jxr_javadoccomment">     * Set the accessors who are able to view an item. If no accessors</em>
+<a class="jxr_linenumber" name="226" href="#226">226</a> <em class="jxr_javadoccomment">     * are set, the item is globally readable.</em>
+<a class="jxr_linenumber" name="227" href="#227">227</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="228" href="#228">228</a> <em class="jxr_javadoccomment">     * @param id          the ID of the item</em>
+<a class="jxr_linenumber" name="229" href="#229">229</a> <em class="jxr_javadoccomment">     * @param accessorIds the IDs of the users who can access this item.</em>
+<a class="jxr_linenumber" name="230" href="#230">230</a> <em class="jxr_javadoccomment">     * @return the updated object</em>
+<a class="jxr_linenumber" name="231" href="#231">231</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="232" href="#232">232</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="233" href="#233">233</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="234" href="#234">234</a>     @POST
+<a class="jxr_linenumber" name="235" href="#235">235</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="236" href="#236">236</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + ACCESS)
+<a class="jxr_linenumber" name="237" href="#237">237</a>     <strong class="jxr_keyword">public</strong> Response setVisibility(@PathParam(<span class="jxr_string">"id"</span>) String id,
+<a class="jxr_linenumber" name="238" href="#238">238</a>             @QueryParam(ACCESSOR_PARAM) List&lt;String&gt; accessorIds)
+<a class="jxr_linenumber" name="239" href="#239">239</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, SerializationError {
+<a class="jxr_linenumber" name="240" href="#240">240</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="241" href="#241">241</a>             Accessible item = manager.getEntity(id, Accessible.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="242" href="#242">242</a>             Accessor current = getRequesterUserProfile();
+<a class="jxr_linenumber" name="243" href="#243">243</a>             Set&lt;Accessor&gt; accessors = getAccessors(accessorIds, current);
+<a class="jxr_linenumber" name="244" href="#244">244</a>             aclViews.setAccessors(item, accessors, current);
+<a class="jxr_linenumber" name="245" href="#245">245</a>             Response response = single(item);
+<a class="jxr_linenumber" name="246" href="#246">246</a>             tx.success();
+<a class="jxr_linenumber" name="247" href="#247">247</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="248" href="#248">248</a>         }
+<a class="jxr_linenumber" name="249" href="#249">249</a>     }
+<a class="jxr_linenumber" name="250" href="#250">250</a> 
+<a class="jxr_linenumber" name="251" href="#251">251</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="252" href="#252">252</a> <em class="jxr_javadoccomment">     * Up vote an item.</em>
+<a class="jxr_linenumber" name="253" href="#253">253</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="254" href="#254">254</a> <em class="jxr_javadoccomment">     * @param id the ID of the item to promote.</em>
+<a class="jxr_linenumber" name="255" href="#255">255</a> <em class="jxr_javadoccomment">     * @return 200 response</em>
+<a class="jxr_linenumber" name="256" href="#256">256</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="257" href="#257">257</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="258" href="#258">258</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="259" href="#259">259</a>     @POST
+<a class="jxr_linenumber" name="260" href="#260">260</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="261" href="#261">261</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + PROMOTE)
+<a class="jxr_linenumber" name="262" href="#262">262</a>     <strong class="jxr_keyword">public</strong> Response addPromotion(@PathParam(<span class="jxr_string">"id"</span>) String id)
+<a class="jxr_linenumber" name="263" href="#263">263</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
+<a class="jxr_linenumber" name="264" href="#264">264</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="265" href="#265">265</a>             Promotable item = manager.getEntity(id, Promotable.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="266" href="#266">266</a>             UserProfile currentUser = getCurrentUser();
+<a class="jxr_linenumber" name="267" href="#267">267</a>             pv.upVote(item, currentUser);
+<a class="jxr_linenumber" name="268" href="#268">268</a>             Response response = single(item);
+<a class="jxr_linenumber" name="269" href="#269">269</a>             tx.success();
+<a class="jxr_linenumber" name="270" href="#270">270</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="271" href="#271">271</a>         } <strong class="jxr_keyword">catch</strong> (PromotionViews.NotPromotableError e) {
+<a class="jxr_linenumber" name="272" href="#272">272</a>             <strong class="jxr_keyword">return</strong> Response.status(Response.Status.BAD_REQUEST.getStatusCode())
+<a class="jxr_linenumber" name="273" href="#273">273</a>                     .entity(e.getMessage()).build();
+<a class="jxr_linenumber" name="274" href="#274">274</a>         }
+<a class="jxr_linenumber" name="275" href="#275">275</a>     }
+<a class="jxr_linenumber" name="276" href="#276">276</a> 
+<a class="jxr_linenumber" name="277" href="#277">277</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="278" href="#278">278</a> <em class="jxr_javadoccomment">     * Remove an up vote.</em>
+<a class="jxr_linenumber" name="279" href="#279">279</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="280" href="#280">280</a> <em class="jxr_javadoccomment">     * @param id the ID of the item to remove</em>
+<a class="jxr_linenumber" name="281" href="#281">281</a> <em class="jxr_javadoccomment">     * @return 200 response</em>
+<a class="jxr_linenumber" name="282" href="#282">282</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="283" href="#283">283</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="284" href="#284">284</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="285" href="#285">285</a>     @DELETE
+<a class="jxr_linenumber" name="286" href="#286">286</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="287" href="#287">287</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + PROMOTE)
+<a class="jxr_linenumber" name="288" href="#288">288</a>     <strong class="jxr_keyword">public</strong> Response removePromotion(@PathParam(<span class="jxr_string">"id"</span>) String id)
+<a class="jxr_linenumber" name="289" href="#289">289</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, ValidationError {
+<a class="jxr_linenumber" name="290" href="#290">290</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="291" href="#291">291</a>             Promotable item = manager.getEntity(id, Promotable.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="292" href="#292">292</a>             UserProfile currentUser = getCurrentUser();
+<a class="jxr_linenumber" name="293" href="#293">293</a>             pv.removeUpVote(item, currentUser);
+<a class="jxr_linenumber" name="294" href="#294">294</a>             Response response = single(item);
+<a class="jxr_linenumber" name="295" href="#295">295</a>             tx.success();
+<a class="jxr_linenumber" name="296" href="#296">296</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="297" href="#297">297</a>         }
+<a class="jxr_linenumber" name="298" href="#298">298</a>     }
+<a class="jxr_linenumber" name="299" href="#299">299</a> 
+<a class="jxr_linenumber" name="300" href="#300">300</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="301" href="#301">301</a> <em class="jxr_javadoccomment">     * Down vote an item</em>
+<a class="jxr_linenumber" name="302" href="#302">302</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="303" href="#303">303</a> <em class="jxr_javadoccomment">     * @param id the ID of the item to promote.</em>
+<a class="jxr_linenumber" name="304" href="#304">304</a> <em class="jxr_javadoccomment">     * @return 200 response</em>
+<a class="jxr_linenumber" name="305" href="#305">305</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="306" href="#306">306</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="307" href="#307">307</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="308" href="#308">308</a>     @POST
+<a class="jxr_linenumber" name="309" href="#309">309</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="310" href="#310">310</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DEMOTE)
+<a class="jxr_linenumber" name="311" href="#311">311</a>     <strong class="jxr_keyword">public</strong> Response addDemotion(@PathParam(<span class="jxr_string">"id"</span>) String id)
+<a class="jxr_linenumber" name="312" href="#312">312</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
+<a class="jxr_linenumber" name="313" href="#313">313</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="314" href="#314">314</a>             Promotable item = manager.getEntity(id, Promotable.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="315" href="#315">315</a>             UserProfile currentUser = getCurrentUser();
+<a class="jxr_linenumber" name="316" href="#316">316</a>             pv.downVote(item, currentUser);
+<a class="jxr_linenumber" name="317" href="#317">317</a>             Response response = single(item);
+<a class="jxr_linenumber" name="318" href="#318">318</a>             tx.success();
+<a class="jxr_linenumber" name="319" href="#319">319</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="320" href="#320">320</a>         } <strong class="jxr_keyword">catch</strong> (PromotionViews.NotPromotableError e) {
+<a class="jxr_linenumber" name="321" href="#321">321</a>             <strong class="jxr_keyword">return</strong> Response.status(Response.Status.BAD_REQUEST.getStatusCode())
+<a class="jxr_linenumber" name="322" href="#322">322</a>                     .entity(e.getMessage()).build();
+<a class="jxr_linenumber" name="323" href="#323">323</a>         }
+<a class="jxr_linenumber" name="324" href="#324">324</a>     }
+<a class="jxr_linenumber" name="325" href="#325">325</a> 
+<a class="jxr_linenumber" name="326" href="#326">326</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="327" href="#327">327</a> <em class="jxr_javadoccomment">     * Remove a down vote.</em>
+<a class="jxr_linenumber" name="328" href="#328">328</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="329" href="#329">329</a> <em class="jxr_javadoccomment">     * @param id the ID of the item to remove</em>
+<a class="jxr_linenumber" name="330" href="#330">330</a> <em class="jxr_javadoccomment">     * @return 200 response</em>
+<a class="jxr_linenumber" name="331" href="#331">331</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="332" href="#332">332</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="333" href="#333">333</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="334" href="#334">334</a>     @DELETE
+<a class="jxr_linenumber" name="335" href="#335">335</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="336" href="#336">336</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DEMOTE)
+<a class="jxr_linenumber" name="337" href="#337">337</a>     <strong class="jxr_keyword">public</strong> Response removeDemotion(@PathParam(<span class="jxr_string">"id"</span>) String id)
+<a class="jxr_linenumber" name="338" href="#338">338</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, ValidationError {
+<a class="jxr_linenumber" name="339" href="#339">339</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="340" href="#340">340</a>             Promotable item = manager.getEntity(id, Promotable.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="341" href="#341">341</a>             UserProfile currentUser = getCurrentUser();
+<a class="jxr_linenumber" name="342" href="#342">342</a>             pv.removeDownVote(item, currentUser);
+<a class="jxr_linenumber" name="343" href="#343">343</a>             Response response = single(item);
+<a class="jxr_linenumber" name="344" href="#344">344</a>             tx.success();
+<a class="jxr_linenumber" name="345" href="#345">345</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="346" href="#346">346</a>         }
+<a class="jxr_linenumber" name="347" href="#347">347</a>     }
+<a class="jxr_linenumber" name="348" href="#348">348</a> 
+<a class="jxr_linenumber" name="349" href="#349">349</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="350" href="#350">350</a> <em class="jxr_javadoccomment">     * Lookup and page the history for a given item.</em>
+<a class="jxr_linenumber" name="351" href="#351">351</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="352" href="#352">352</a> <em class="jxr_javadoccomment">     * @param id          the event id</em>
+<a class="jxr_linenumber" name="353" href="#353">353</a> <em class="jxr_javadoccomment">     * @param aggregation the aggregation strategy</em>
+<a class="jxr_linenumber" name="354" href="#354">354</a> <em class="jxr_javadoccomment">     * @return A list of events</em>
+<a class="jxr_linenumber" name="355" href="#355">355</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="356" href="#356">356</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="357" href="#357">357</a>     @GET
+<a class="jxr_linenumber" name="358" href="#358">358</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="359" href="#359">359</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + EVENTS)
+<a class="jxr_linenumber" name="360" href="#360">360</a>     <strong class="jxr_keyword">public</strong> Response events(
+<a class="jxr_linenumber" name="361" href="#361">361</a>             @PathParam(<span class="jxr_string">"id"</span>) String id,
+<a class="jxr_linenumber" name="362" href="#362">362</a>             @QueryParam(AGGREGATION_PARAM) @DefaultValue(<span class="jxr_string">"user"</span>) EventViews.Aggregation aggregation)
+<a class="jxr_linenumber" name="363" href="#363">363</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, AccessDenied {
+<a class="jxr_linenumber" name="364" href="#364">364</a>         Tx tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="365" href="#365">365</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="366" href="#366">366</a>             Accessor accessor = getRequesterUserProfile();
+<a class="jxr_linenumber" name="367" href="#367">367</a>             Accessible item = views
+<a class="jxr_linenumber" name="368" href="#368">368</a>                     .setClass(Accessible.<strong class="jxr_keyword">class</strong>).detail(id, accessor);
+<a class="jxr_linenumber" name="369" href="#369">369</a>             EventViews eventViews = getEventViewsBuilder()
+<a class="jxr_linenumber" name="370" href="#370">370</a>                     .withAggregation(aggregation)
+<a class="jxr_linenumber" name="371" href="#371">371</a>                     .build();
+<a class="jxr_linenumber" name="372" href="#372">372</a>             <strong class="jxr_keyword">return</strong> streamingListOfLists(eventViews.aggregateForItem(item, accessor), tx);
+<a class="jxr_linenumber" name="373" href="#373">373</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="374" href="#374">374</a>             tx.close();
+<a class="jxr_linenumber" name="375" href="#375">375</a>             <strong class="jxr_keyword">throw</strong> e;
+<a class="jxr_linenumber" name="376" href="#376">376</a>         }
+<a class="jxr_linenumber" name="377" href="#377">377</a>     }
+<a class="jxr_linenumber" name="378" href="#378">378</a> 
+<a class="jxr_linenumber" name="379" href="#379">379</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="380" href="#380">380</a> <em class="jxr_javadoccomment">     * Return a (paged) list of annotations for the given item.</em>
+<a class="jxr_linenumber" name="381" href="#381">381</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="382" href="#382">382</a> <em class="jxr_javadoccomment">     * @param id the item ID</em>
+<a class="jxr_linenumber" name="383" href="#383">383</a> <em class="jxr_javadoccomment">     * @return a list of annotations on the item</em>
+<a class="jxr_linenumber" name="384" href="#384">384</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="385" href="#385">385</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="386" href="#386">386</a>     @GET
+<a class="jxr_linenumber" name="387" href="#387">387</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="388" href="#388">388</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + ANNOTATIONS)
+<a class="jxr_linenumber" name="389" href="#389">389</a>     <strong class="jxr_keyword">public</strong> Response annotations(
+<a class="jxr_linenumber" name="390" href="#390">390</a>             @PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
+<a class="jxr_linenumber" name="391" href="#391">391</a>         Tx tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="392" href="#392">392</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="393" href="#393">393</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(Annotation.<strong class="jxr_keyword">class</strong>).page(
+<a class="jxr_linenumber" name="394" href="#394">394</a>                     manager.getEntity(id, Annotatable.<strong class="jxr_keyword">class</strong>).getAnnotations(),
+<a class="jxr_linenumber" name="395" href="#395">395</a>                     getRequesterUserProfile()), tx);
+<a class="jxr_linenumber" name="396" href="#396">396</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="397" href="#397">397</a>             tx.close();
+<a class="jxr_linenumber" name="398" href="#398">398</a>             <strong class="jxr_keyword">throw</strong> e;
+<a class="jxr_linenumber" name="399" href="#399">399</a>         }
+<a class="jxr_linenumber" name="400" href="#400">400</a>     }
+<a class="jxr_linenumber" name="401" href="#401">401</a> 
+<a class="jxr_linenumber" name="402" href="#402">402</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="403" href="#403">403</a> <em class="jxr_javadoccomment">     * Returns a list of items linked to the given description.</em>
+<a class="jxr_linenumber" name="404" href="#404">404</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="405" href="#405">405</a> <em class="jxr_javadoccomment">     * @param id the item ID</em>
+<a class="jxr_linenumber" name="406" href="#406">406</a> <em class="jxr_javadoccomment">     * @return a list of links with the item as a target</em>
+<a class="jxr_linenumber" name="407" href="#407">407</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="408" href="#408">408</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="409" href="#409">409</a>     @GET
+<a class="jxr_linenumber" name="410" href="#410">410</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="411" href="#411">411</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + LINKS)
+<a class="jxr_linenumber" name="412" href="#412">412</a>     <strong class="jxr_keyword">public</strong> Response links(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
+<a class="jxr_linenumber" name="413" href="#413">413</a>         Tx tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="414" href="#414">414</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="415" href="#415">415</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(Link.<strong class="jxr_keyword">class</strong>).page(
+<a class="jxr_linenumber" name="416" href="#416">416</a>                     manager.getEntity(id, Linkable.<strong class="jxr_keyword">class</strong>).getLinks(),
+<a class="jxr_linenumber" name="417" href="#417">417</a>                     getRequesterUserProfile()), tx);
+<a class="jxr_linenumber" name="418" href="#418">418</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="419" href="#419">419</a>             tx.close();
+<a class="jxr_linenumber" name="420" href="#420">420</a>             <strong class="jxr_keyword">throw</strong> e;
+<a class="jxr_linenumber" name="421" href="#421">421</a>         }
+<a class="jxr_linenumber" name="422" href="#422">422</a>     }
+<a class="jxr_linenumber" name="423" href="#423">423</a> 
+<a class="jxr_linenumber" name="424" href="#424">424</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="425" href="#425">425</a> <em class="jxr_javadoccomment">     * List all the permission grants that relate specifically to this item.</em>
+<a class="jxr_linenumber" name="426" href="#426">426</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="427" href="#427">427</a> <em class="jxr_javadoccomment">     * @return a list of grants for this item</em>
+<a class="jxr_linenumber" name="428" href="#428">428</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="429" href="#429">429</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="430" href="#430">430</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="431" href="#431">431</a>     @GET
+<a class="jxr_linenumber" name="432" href="#432">432</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="433" href="#433">433</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + PERMISSION_GRANTS)
+<a class="jxr_linenumber" name="434" href="#434">434</a>     <strong class="jxr_keyword">public</strong> Response permissionGrants(@PathParam(<span class="jxr_string">"id"</span>) String id)
+<a class="jxr_linenumber" name="435" href="#435">435</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
+<a class="jxr_linenumber" name="436" href="#436">436</a>         Tx tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="437" href="#437">437</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="438" href="#438">438</a>             PermissionGrantTarget target = manager.getEntity(id, PermissionGrantTarget.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="439" href="#439">439</a>             Accessor accessor = getRequesterUserProfile();
+<a class="jxr_linenumber" name="440" href="#440">440</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(PermissionGrant.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="441" href="#441">441</a>                     .page(target.getPermissionGrants(), accessor), tx);
+<a class="jxr_linenumber" name="442" href="#442">442</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="443" href="#443">443</a>             tx.close();
+<a class="jxr_linenumber" name="444" href="#444">444</a>             <strong class="jxr_keyword">throw</strong> e;
+<a class="jxr_linenumber" name="445" href="#445">445</a>         }
+<a class="jxr_linenumber" name="446" href="#446">446</a>     }
+<a class="jxr_linenumber" name="447" href="#447">447</a> 
+<a class="jxr_linenumber" name="448" href="#448">448</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="449" href="#449">449</a> <em class="jxr_javadoccomment">     * List all the permission grants that relate specifically to this scope.</em>
+<a class="jxr_linenumber" name="450" href="#450">450</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="451" href="#451">451</a> <em class="jxr_javadoccomment">     * @return a list of grants for which this item is the scope</em>
+<a class="jxr_linenumber" name="452" href="#452">452</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="453" href="#453">453</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="454" href="#454">454</a>     @GET
+<a class="jxr_linenumber" name="455" href="#455">455</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="456" href="#456">456</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + SCOPE_PERMISSION_GRANTS)
+<a class="jxr_linenumber" name="457" href="#457">457</a>     <strong class="jxr_keyword">public</strong> Response permissionGrantsAsScope(@PathParam(<span class="jxr_string">"id"</span>) String id)
+<a class="jxr_linenumber" name="458" href="#458">458</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound {
+<a class="jxr_linenumber" name="459" href="#459">459</a>         Tx tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="460" href="#460">460</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="461" href="#461">461</a>             PermissionScope scope = manager.getEntity(id, PermissionScope.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="462" href="#462">462</a>             Accessor accessor = getRequesterUserProfile();
+<a class="jxr_linenumber" name="463" href="#463">463</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(PermissionGrant.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="464" href="#464">464</a>                     .page(scope.getPermissionGrants(), accessor), tx);
+<a class="jxr_linenumber" name="465" href="#465">465</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="466" href="#466">466</a>             tx.close();
+<a class="jxr_linenumber" name="467" href="#467">467</a>             <strong class="jxr_keyword">throw</strong> e;
+<a class="jxr_linenumber" name="468" href="#468">468</a>         }
+<a class="jxr_linenumber" name="469" href="#469">469</a>     }
+<a class="jxr_linenumber" name="470" href="#470">470</a> 
+<a class="jxr_linenumber" name="471" href="#471">471</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="472" href="#472">472</a> <em class="jxr_javadoccomment">     * Create a new description for this item.</em>
+<a class="jxr_linenumber" name="473" href="#473">473</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="474" href="#474">474</a> <em class="jxr_javadoccomment">     * @param id     the item ID</em>
+<a class="jxr_linenumber" name="475" href="#475">475</a> <em class="jxr_javadoccomment">     * @param bundle the description bundle</em>
+<a class="jxr_linenumber" name="476" href="#476">476</a> <em class="jxr_javadoccomment">     * @return the new description</em>
+<a class="jxr_linenumber" name="477" href="#477">477</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="478" href="#478">478</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
+<a class="jxr_linenumber" name="479" href="#479">479</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
+<a class="jxr_linenumber" name="480" href="#480">480</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="481" href="#481">481</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="482" href="#482">482</a>     @POST
+<a class="jxr_linenumber" name="483" href="#483">483</a>     @Consumes(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="484" href="#484">484</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="485" href="#485">485</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS)
+<a class="jxr_linenumber" name="486" href="#486">486</a>     <strong class="jxr_keyword">public</strong> Response createDescription(@PathParam(<span class="jxr_string">"id"</span>) String id, Bundle bundle)
+<a class="jxr_linenumber" name="487" href="#487">487</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
+<a class="jxr_linenumber" name="488" href="#488">488</a>             DeserializationError, ItemNotFound {
+<a class="jxr_linenumber" name="489" href="#489">489</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="490" href="#490">490</a>             Accessor user = getRequesterUserProfile();
+<a class="jxr_linenumber" name="491" href="#491">491</a>             Described item = views.setClass(Described.<strong class="jxr_keyword">class</strong>).detail(id, user);
+<a class="jxr_linenumber" name="492" href="#492">492</a>             Description desc = dv.create(id, bundle,
+<a class="jxr_linenumber" name="493" href="#493">493</a>                     Description.<strong class="jxr_keyword">class</strong>, user, getLogMessage());
+<a class="jxr_linenumber" name="494" href="#494">494</a>             item.addDescription(desc);
+<a class="jxr_linenumber" name="495" href="#495">495</a>             Response response = buildResponse(item, desc, Response.Status.CREATED);
+<a class="jxr_linenumber" name="496" href="#496">496</a>             tx.success();
+<a class="jxr_linenumber" name="497" href="#497">497</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="498" href="#498">498</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
+<a class="jxr_linenumber" name="499" href="#499">499</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(serializationError);
+<a class="jxr_linenumber" name="500" href="#500">500</a>         }
+<a class="jxr_linenumber" name="501" href="#501">501</a>     }
+<a class="jxr_linenumber" name="502" href="#502">502</a> 
+<a class="jxr_linenumber" name="503" href="#503">503</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="504" href="#504">504</a> <em class="jxr_javadoccomment">     * Update a description belonging to the given item.</em>
+<a class="jxr_linenumber" name="505" href="#505">505</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="506" href="#506">506</a> <em class="jxr_javadoccomment">     * @param id     the item ID</em>
+<a class="jxr_linenumber" name="507" href="#507">507</a> <em class="jxr_javadoccomment">     * @param bundle the description bundle</em>
+<a class="jxr_linenumber" name="508" href="#508">508</a> <em class="jxr_javadoccomment">     * @return the new description</em>
+<a class="jxr_linenumber" name="509" href="#509">509</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="510" href="#510">510</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
+<a class="jxr_linenumber" name="511" href="#511">511</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
+<a class="jxr_linenumber" name="512" href="#512">512</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="513" href="#513">513</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="514" href="#514">514</a>     @PUT
+<a class="jxr_linenumber" name="515" href="#515">515</a>     @Consumes(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="516" href="#516">516</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="517" href="#517">517</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS)
+<a class="jxr_linenumber" name="518" href="#518">518</a>     <strong class="jxr_keyword">public</strong> Response updateDescription(@PathParam(<span class="jxr_string">"id"</span>) String id, Bundle bundle)
+<a class="jxr_linenumber" name="519" href="#519">519</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
+<a class="jxr_linenumber" name="520" href="#520">520</a>             DeserializationError, ItemNotFound, SerializationError {
+<a class="jxr_linenumber" name="521" href="#521">521</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="522" href="#522">522</a>             Accessor userProfile = getRequesterUserProfile();
+<a class="jxr_linenumber" name="523" href="#523">523</a>             Described item = views.setClass(Described.<strong class="jxr_keyword">class</strong>).detail(id, userProfile);
+<a class="jxr_linenumber" name="524" href="#524">524</a>             Mutation&lt;Description&gt; desc = dv.update(id, bundle,
+<a class="jxr_linenumber" name="525" href="#525">525</a>                     Description.<strong class="jxr_keyword">class</strong>, userProfile, getLogMessage());
+<a class="jxr_linenumber" name="526" href="#526">526</a>             Response response = buildResponse(item, desc.getNode(), Response.Status.OK);
+<a class="jxr_linenumber" name="527" href="#527">527</a>             tx.success();
+<a class="jxr_linenumber" name="528" href="#528">528</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="529" href="#529">529</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
+<a class="jxr_linenumber" name="530" href="#530">530</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(serializationError);
+<a class="jxr_linenumber" name="531" href="#531">531</a>         }
+<a class="jxr_linenumber" name="532" href="#532">532</a>     }
+<a class="jxr_linenumber" name="533" href="#533">533</a> 
+<a class="jxr_linenumber" name="534" href="#534">534</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="535" href="#535">535</a> <em class="jxr_javadoccomment">     * Update a description with the given ID, belonging to the given parent item.</em>
+<a class="jxr_linenumber" name="536" href="#536">536</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="537" href="#537">537</a> <em class="jxr_javadoccomment">     * @param id     the item ID</em>
+<a class="jxr_linenumber" name="538" href="#538">538</a> <em class="jxr_javadoccomment">     * @param did    the description ID</em>
+<a class="jxr_linenumber" name="539" href="#539">539</a> <em class="jxr_javadoccomment">     * @param bundle the description bundle</em>
+<a class="jxr_linenumber" name="540" href="#540">540</a> <em class="jxr_javadoccomment">     * @return the new description</em>
+<a class="jxr_linenumber" name="541" href="#541">541</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="542" href="#542">542</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
+<a class="jxr_linenumber" name="543" href="#543">543</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
+<a class="jxr_linenumber" name="544" href="#544">544</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="545" href="#545">545</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="546" href="#546">546</a>     @PUT
+<a class="jxr_linenumber" name="547" href="#547">547</a>     @Consumes(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="548" href="#548">548</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="549" href="#549">549</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS + <span class="jxr_string">"/{did:[^/]+}"</span>)
+<a class="jxr_linenumber" name="550" href="#550">550</a>     <strong class="jxr_keyword">public</strong> Response updateDescriptionWithId(@PathParam(<span class="jxr_string">"id"</span>) String id,
+<a class="jxr_linenumber" name="551" href="#551">551</a>             @PathParam(<span class="jxr_string">"did"</span>) String did, Bundle bundle)
+<a class="jxr_linenumber" name="552" href="#552">552</a>             <strong class="jxr_keyword">throws</strong> AccessDenied, PermissionDenied, ValidationError,
+<a class="jxr_linenumber" name="553" href="#553">553</a>             DeserializationError, ItemNotFound, SerializationError {
+<a class="jxr_linenumber" name="554" href="#554">554</a>         <strong class="jxr_keyword">return</strong> updateDescription(id, bundle.withId(did));
+<a class="jxr_linenumber" name="555" href="#555">555</a>     }
+<a class="jxr_linenumber" name="556" href="#556">556</a> 
+<a class="jxr_linenumber" name="557" href="#557">557</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="558" href="#558">558</a> <em class="jxr_javadoccomment">     * Delete a description with the given ID, belonging to the given parent item.</em>
+<a class="jxr_linenumber" name="559" href="#559">559</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="560" href="#560">560</a> <em class="jxr_javadoccomment">     * @param id  the item ID</em>
+<a class="jxr_linenumber" name="561" href="#561">561</a> <em class="jxr_javadoccomment">     * @param did the description ID</em>
+<a class="jxr_linenumber" name="562" href="#562">562</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="563" href="#563">563</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="564" href="#564">564</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
+<a class="jxr_linenumber" name="565" href="#565">565</a> <em class="jxr_javadoccomment">     * @throws SerializationError</em>
+<a class="jxr_linenumber" name="566" href="#566">566</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="567" href="#567">567</a>     @DELETE
+<a class="jxr_linenumber" name="568" href="#568">568</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS + <span class="jxr_string">"/{did:[^/]+}"</span>)
+<a class="jxr_linenumber" name="569" href="#569">569</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> deleteDescription(
+<a class="jxr_linenumber" name="570" href="#570">570</a>             @PathParam(<span class="jxr_string">"id"</span>) String id, @PathParam(<span class="jxr_string">"did"</span>) String did)
+<a class="jxr_linenumber" name="571" href="#571">571</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound, ValidationError, SerializationError {
+<a class="jxr_linenumber" name="572" href="#572">572</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="573" href="#573">573</a>             Accessor user = getRequesterUserProfile();
+<a class="jxr_linenumber" name="574" href="#574">574</a>             dv.delete(id, did, user, getLogMessage());
+<a class="jxr_linenumber" name="575" href="#575">575</a>             tx.success();
+<a class="jxr_linenumber" name="576" href="#576">576</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
+<a class="jxr_linenumber" name="577" href="#577">577</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(serializationError);
+<a class="jxr_linenumber" name="578" href="#578">578</a>         }
+<a class="jxr_linenumber" name="579" href="#579">579</a>     }
+<a class="jxr_linenumber" name="580" href="#580">580</a> 
+<a class="jxr_linenumber" name="581" href="#581">581</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="582" href="#582">582</a> <em class="jxr_javadoccomment">     * Create an access point on the given description, for the given</em>
+<a class="jxr_linenumber" name="583" href="#583">583</a> <em class="jxr_javadoccomment">     * parent item.</em>
+<a class="jxr_linenumber" name="584" href="#584">584</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="585" href="#585">585</a> <em class="jxr_javadoccomment">     * @param id     the parent item's ID</em>
+<a class="jxr_linenumber" name="586" href="#586">586</a> <em class="jxr_javadoccomment">     * @param did    the description's ID</em>
+<a class="jxr_linenumber" name="587" href="#587">587</a> <em class="jxr_javadoccomment">     * @param bundle the access point data</em>
+<a class="jxr_linenumber" name="588" href="#588">588</a> <em class="jxr_javadoccomment">     * @return the new access point</em>
+<a class="jxr_linenumber" name="589" href="#589">589</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="590" href="#590">590</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
+<a class="jxr_linenumber" name="591" href="#591">591</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
+<a class="jxr_linenumber" name="592" href="#592">592</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="593" href="#593">593</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="594" href="#594">594</a>     @POST
+<a class="jxr_linenumber" name="595" href="#595">595</a>     @Consumes(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="596" href="#596">596</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="597" href="#597">597</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS + <span class="jxr_string">"/{did:[^/]+}/"</span> + ACCESS_POINTS)
+<a class="jxr_linenumber" name="598" href="#598">598</a>     <strong class="jxr_keyword">public</strong> Response createAccessPoint(@PathParam(<span class="jxr_string">"id"</span>) String id,
+<a class="jxr_linenumber" name="599" href="#599">599</a>             @PathParam(<span class="jxr_string">"did"</span>) String did, Bundle bundle)
+<a class="jxr_linenumber" name="600" href="#600">600</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, ValidationError,
+<a class="jxr_linenumber" name="601" href="#601">601</a>             DeserializationError, ItemNotFound {
+<a class="jxr_linenumber" name="602" href="#602">602</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="603" href="#603">603</a>             Accessor user = getRequesterUserProfile();
+<a class="jxr_linenumber" name="604" href="#604">604</a>             Described item = views.setClass(Described.<strong class="jxr_keyword">class</strong>).detail(id, user);
+<a class="jxr_linenumber" name="605" href="#605">605</a>             Description desc = manager.getEntity(did, Description.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="606" href="#606">606</a>             AccessPoint rel = dv.create(id, bundle,
+<a class="jxr_linenumber" name="607" href="#607">607</a>                     AccessPoint.<strong class="jxr_keyword">class</strong>, user, getLogMessage());
+<a class="jxr_linenumber" name="608" href="#608">608</a>             desc.addAccessPoint(rel);
+<a class="jxr_linenumber" name="609" href="#609">609</a>             Response response = buildResponse(item, rel, Response.Status.CREATED);
+<a class="jxr_linenumber" name="610" href="#610">610</a>             tx.success();
+<a class="jxr_linenumber" name="611" href="#611">611</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="612" href="#612">612</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
+<a class="jxr_linenumber" name="613" href="#613">613</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(serializationError);
+<a class="jxr_linenumber" name="614" href="#614">614</a>         }
+<a class="jxr_linenumber" name="615" href="#615">615</a>     }
+<a class="jxr_linenumber" name="616" href="#616">616</a> 
+<a class="jxr_linenumber" name="617" href="#617">617</a> 
+<a class="jxr_linenumber" name="618" href="#618">618</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="619" href="#619">619</a> <em class="jxr_javadoccomment">     * Lookup and page the versions for a given item.</em>
+<a class="jxr_linenumber" name="620" href="#620">620</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="621" href="#621">621</a> <em class="jxr_javadoccomment">     * @param id the event id</em>
+<a class="jxr_linenumber" name="622" href="#622">622</a> <em class="jxr_javadoccomment">     * @return a list of versions</em>
+<a class="jxr_linenumber" name="623" href="#623">623</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="624" href="#624">624</a> <em class="jxr_javadoccomment">     * @throws AccessDenied</em>
+<a class="jxr_linenumber" name="625" href="#625">625</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="626" href="#626">626</a>     @GET
+<a class="jxr_linenumber" name="627" href="#627">627</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + VERSIONS)
+<a class="jxr_linenumber" name="628" href="#628">628</a>     <strong class="jxr_keyword">public</strong> Response listFor(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound, AccessDenied {
+<a class="jxr_linenumber" name="629" href="#629">629</a>         <strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx();
+<a class="jxr_linenumber" name="630" href="#630">630</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="631" href="#631">631</a>             Accessor user = getRequesterUserProfile();
+<a class="jxr_linenumber" name="632" href="#632">632</a>             Versioned item = views.setClass(Versioned.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="633" href="#633">633</a>                     .detail(id, user);
+<a class="jxr_linenumber" name="634" href="#634">634</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery(Version.<strong class="jxr_keyword">class</strong>).setStream(<strong class="jxr_keyword">true</strong>)
+<a class="jxr_linenumber" name="635" href="#635">635</a>                     .page(item.getAllPriorVersions(), user), tx);
+<a class="jxr_linenumber" name="636" href="#636">636</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="637" href="#637">637</a>             tx.close();
+<a class="jxr_linenumber" name="638" href="#638">638</a>             <strong class="jxr_keyword">throw</strong> e;
+<a class="jxr_linenumber" name="639" href="#639">639</a>         }
+<a class="jxr_linenumber" name="640" href="#640">640</a>     }
+<a class="jxr_linenumber" name="641" href="#641">641</a> 
+<a class="jxr_linenumber" name="642" href="#642">642</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="643" href="#643">643</a> <em class="jxr_javadoccomment">     * Delete the access point with the given ID, on the given description,</em>
+<a class="jxr_linenumber" name="644" href="#644">644</a> <em class="jxr_javadoccomment">     * belonging to the given parent item.</em>
+<a class="jxr_linenumber" name="645" href="#645">645</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="646" href="#646">646</a> <em class="jxr_javadoccomment">     * @param id   the parent item's ID</em>
+<a class="jxr_linenumber" name="647" href="#647">647</a> <em class="jxr_javadoccomment">     * @param did  the description's ID</em>
+<a class="jxr_linenumber" name="648" href="#648">648</a> <em class="jxr_javadoccomment">     * @param apid the access point's ID</em>
+<a class="jxr_linenumber" name="649" href="#649">649</a> <em class="jxr_javadoccomment">     * @throws AccessDenied</em>
+<a class="jxr_linenumber" name="650" href="#650">650</a> <em class="jxr_javadoccomment">     * @throws PermissionDenied</em>
+<a class="jxr_linenumber" name="651" href="#651">651</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
+<a class="jxr_linenumber" name="652" href="#652">652</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
+<a class="jxr_linenumber" name="653" href="#653">653</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="654" href="#654">654</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="655" href="#655">655</a>     @DELETE
+<a class="jxr_linenumber" name="656" href="#656">656</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + DESCRIPTIONS + <span class="jxr_string">"/{did:[^/]+}/"</span> + ACCESS_POINTS + <span class="jxr_string">"/{apid:[^/]+}"</span>)
+<a class="jxr_linenumber" name="657" href="#657">657</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> deleteAccessPoint(@PathParam(<span class="jxr_string">"id"</span>) String id,
+<a class="jxr_linenumber" name="658" href="#658">658</a>             @PathParam(<span class="jxr_string">"did"</span>) String did, @PathParam(<span class="jxr_string">"apid"</span>) String apid)
+<a class="jxr_linenumber" name="659" href="#659">659</a>             <strong class="jxr_keyword">throws</strong> AccessDenied, PermissionDenied, ValidationError,
+<a class="jxr_linenumber" name="660" href="#660">660</a>             DeserializationError, ItemNotFound {
+<a class="jxr_linenumber" name="661" href="#661">661</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="662" href="#662">662</a>             UserProfile user = getCurrentUser();
+<a class="jxr_linenumber" name="663" href="#663">663</a>             dv.delete(id, apid, user, getLogMessage());
+<a class="jxr_linenumber" name="664" href="#664">664</a>             tx.success();
+<a class="jxr_linenumber" name="665" href="#665">665</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
+<a class="jxr_linenumber" name="666" href="#666">666</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(serializationError);
+<a class="jxr_linenumber" name="667" href="#667">667</a>         }
+<a class="jxr_linenumber" name="668" href="#668">668</a>     }
+<a class="jxr_linenumber" name="669" href="#669">669</a> 
+<a class="jxr_linenumber" name="670" href="#670">670</a>     <em class="jxr_comment">// Helpers</em>
+<a class="jxr_linenumber" name="671" href="#671">671</a> 
+<a class="jxr_linenumber" name="672" href="#672">672</a>     <strong class="jxr_keyword">private</strong> Response buildResponse(Described item, Entity data, Response.Status status)
+<a class="jxr_linenumber" name="673" href="#673">673</a>             <strong class="jxr_keyword">throws</strong> SerializationError {
+<a class="jxr_linenumber" name="674" href="#674">674</a>         <strong class="jxr_keyword">return</strong> Response.status(status).location(getItemUri(item))
+<a class="jxr_linenumber" name="675" href="#675">675</a>                 .entity((getSerializer().entityToJson(data))
+<a class="jxr_linenumber" name="676" href="#676">676</a>                         .getBytes(Charsets.UTF_8)).build();
 <a class="jxr_linenumber" name="677" href="#677">677</a>     }
 <a class="jxr_linenumber" name="678" href="#678">678</a> 
-<a class="jxr_linenumber" name="679" href="#679">679</a>     <strong class="jxr_keyword">private</strong> <a href="../../../eu/ehri/extension/GenericResource.html">IdSet</a> parseGraphIds(String json) <strong class="jxr_keyword">throws</strong> IOException, DeserializationError {
-<a class="jxr_linenumber" name="680" href="#680">680</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="681" href="#681">681</a>             TypeReference&lt;List&lt;Object&gt;&gt; typeRef = <strong class="jxr_keyword">new</strong> TypeReference&lt;List&lt;Object&gt;&gt;() {
-<a class="jxr_linenumber" name="682" href="#682">682</a>             };
-<a class="jxr_linenumber" name="683" href="#683">683</a>             List&lt;Object&gt; jsonValues = jsonMapper.readValue(json, typeRef);
-<a class="jxr_linenumber" name="684" href="#684">684</a>             List&lt;String&gt; ids = Lists.newArrayList();
-<a class="jxr_linenumber" name="685" href="#685">685</a>             List&lt;Long&gt; gids = Lists.newArrayList();
-<a class="jxr_linenumber" name="686" href="#686">686</a> 
-<a class="jxr_linenumber" name="687" href="#687">687</a>             <strong class="jxr_keyword">for</strong> (Object js : jsonValues) {
-<a class="jxr_linenumber" name="688" href="#688">688</a>                 <strong class="jxr_keyword">if</strong> (js instanceof Integer) {
-<a class="jxr_linenumber" name="689" href="#689">689</a>                     gids.add(Long.valueOf((Integer) js));
-<a class="jxr_linenumber" name="690" href="#690">690</a>                 } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (js instanceof Long) {
-<a class="jxr_linenumber" name="691" href="#691">691</a>                     gids.add((Long) js);
-<a class="jxr_linenumber" name="692" href="#692">692</a>                 } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (js instanceof String) {
-<a class="jxr_linenumber" name="693" href="#693">693</a>                     ids.add((String) js);
-<a class="jxr_linenumber" name="694" href="#694">694</a>                 }
-<a class="jxr_linenumber" name="695" href="#695">695</a>             }
-<a class="jxr_linenumber" name="696" href="#696">696</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/extension/GenericResource.html">IdSet</a>(ids, gids);
-<a class="jxr_linenumber" name="697" href="#697">697</a>         } <strong class="jxr_keyword">catch</strong> (JsonMappingException e) {
-<a class="jxr_linenumber" name="698" href="#698">698</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(e.getMessage());
-<a class="jxr_linenumber" name="699" href="#699">699</a>         }
-<a class="jxr_linenumber" name="700" href="#700">700</a>     }
-<a class="jxr_linenumber" name="701" href="#701">701</a> }
+<a class="jxr_linenumber" name="679" href="#679">679</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">class</strong> <a href="../../../eu/ehri/extension/GenericResource.html">IdSet</a> {
+<a class="jxr_linenumber" name="680" href="#680">680</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> List&lt;String&gt; ids;
+<a class="jxr_linenumber" name="681" href="#681">681</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> List&lt;Long&gt; gids;
+<a class="jxr_linenumber" name="682" href="#682">682</a> 
+<a class="jxr_linenumber" name="683" href="#683">683</a>         <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/extension/GenericResource.html">IdSet</a>(List&lt;String&gt; ids, List&lt;Long&gt; gids) {
+<a class="jxr_linenumber" name="684" href="#684">684</a>             <strong class="jxr_keyword">this</strong>.ids = ids;
+<a class="jxr_linenumber" name="685" href="#685">685</a>             <strong class="jxr_keyword">this</strong>.gids = gids;
+<a class="jxr_linenumber" name="686" href="#686">686</a>         }
+<a class="jxr_linenumber" name="687" href="#687">687</a>     }
+<a class="jxr_linenumber" name="688" href="#688">688</a> 
+<a class="jxr_linenumber" name="689" href="#689">689</a>     <strong class="jxr_keyword">private</strong> <a href="../../../eu/ehri/extension/GenericResource.html">IdSet</a> parseGraphIds(String json) <strong class="jxr_keyword">throws</strong> IOException, DeserializationError {
+<a class="jxr_linenumber" name="690" href="#690">690</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="691" href="#691">691</a>             TypeReference&lt;List&lt;Object&gt;&gt; typeRef = <strong class="jxr_keyword">new</strong> TypeReference&lt;List&lt;Object&gt;&gt;() {
+<a class="jxr_linenumber" name="692" href="#692">692</a>             };
+<a class="jxr_linenumber" name="693" href="#693">693</a>             List&lt;Object&gt; jsonValues = jsonMapper.readValue(json, typeRef);
+<a class="jxr_linenumber" name="694" href="#694">694</a>             List&lt;String&gt; ids = Lists.newArrayList();
+<a class="jxr_linenumber" name="695" href="#695">695</a>             List&lt;Long&gt; gids = Lists.newArrayList();
+<a class="jxr_linenumber" name="696" href="#696">696</a> 
+<a class="jxr_linenumber" name="697" href="#697">697</a>             <strong class="jxr_keyword">for</strong> (Object js : jsonValues) {
+<a class="jxr_linenumber" name="698" href="#698">698</a>                 <strong class="jxr_keyword">if</strong> (js instanceof Integer) {
+<a class="jxr_linenumber" name="699" href="#699">699</a>                     gids.add(Long.valueOf((Integer) js));
+<a class="jxr_linenumber" name="700" href="#700">700</a>                 } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (js instanceof Long) {
+<a class="jxr_linenumber" name="701" href="#701">701</a>                     gids.add((Long) js);
+<a class="jxr_linenumber" name="702" href="#702">702</a>                 } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (js instanceof String) {
+<a class="jxr_linenumber" name="703" href="#703">703</a>                     ids.add((String) js);
+<a class="jxr_linenumber" name="704" href="#704">704</a>                 }
+<a class="jxr_linenumber" name="705" href="#705">705</a>             }
+<a class="jxr_linenumber" name="706" href="#706">706</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/extension/GenericResource.html">IdSet</a>(ids, gids);
+<a class="jxr_linenumber" name="707" href="#707">707</a>         } <strong class="jxr_keyword">catch</strong> (JsonMappingException e) {
+<a class="jxr_linenumber" name="708" href="#708">708</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(e.getMessage());
+<a class="jxr_linenumber" name="709" href="#709">709</a>         }
+<a class="jxr_linenumber" name="710" href="#710">710</a>     }
+<a class="jxr_linenumber" name="711" href="#711">711</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

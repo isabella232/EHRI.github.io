@@ -90,10 +90,10 @@ and general graph-maintenance functionality.</p>
         <a href="#path__admin_create-default-user-profile.html">/admin/create-default-user-profile</a>
         </li>
         <li>
-        <a href="#path__admin_export-json.html">/admin/export-json</a>
+        <a href="#path__admin_export-graphson.html">/admin/export-graphson</a>
         </li>
         <li>
-        <a href="#path__admin_sudo export-graphson.html">/admin/sudo export-graphson</a>
+        <a href="#path__admin_export-json.html">/admin/export-json</a>
         </li>
       </ul>
         <a name="path__admin_create-default-user-profile.html"></a>
@@ -141,15 +141,21 @@ and general graph-maintenance functionality.</p>
         </tr>
         <tr>
           <td align="right">media types:</td>
-          <td>text/xml<br/>application/json</td>
+          <td>application/json</td>
         </tr>
       </table>
       <p>A new user</p>
-        <a name="path__admin_export-json.html"></a>
-      <h1>/admin/export-json</h1>
-      <p class="note">Mount Point: <a href="../admin/export-json">/admin/export-json</a></p>
+        <a name="path__admin_export-graphson.html"></a>
+      <h1>/admin/export-graphson</h1>
+      <p class="note">Mount Point: <a href="../admin/export-graphson">/admin/export-graphson</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
+      <p>
+            Export the DB as a stream of JSON in
+<a href="https://github.com/tinkerpop/blueprints/wiki/GraphSON-Reader-and-Writer-Library">GraphSON</a> format.
+<p/>
+The mode used is EXTENDED.
+          </p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -162,17 +168,11 @@ and general graph-maintenance functionality.</p>
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__admin_sudo export-graphson.html"></a>
-      <h1>/admin/sudo export-graphson</h1>
-      <p class="note">Mount Point: <a href="../admin/sudo export-graphson">/admin/sudo export-graphson</a></p>
+        <a name="path__admin_export-json.html"></a>
+      <h1>/admin/export-json</h1>
+      <p class="note">Mount Point: <a href="../admin/export-json">/admin/export-json</a></p>
       <a name="GET"></a>
       <h2>GET</h2>
-      <p>
-            Export the DB as a stream of JSON in
-<a href="https://github.com/tinkerpop/blueprints/wiki/GraphSON-Reader-and-Writer-Library">GraphSON</a> format.
-<p/>
-The mode used is EXTENDED.
-          </p>
       <h3>Response Body</h3>
       <table>
         <tr>

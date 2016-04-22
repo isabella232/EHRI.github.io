@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>BundleProvider (Web Service 0.13.0-SNAPSHOT API)</title>
+<title>BundleProvider (Web Service 0.13.2-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="BundleProvider (Web Service 0.13.0-SNAPSHOT API)";
+        parent.document.title="BundleProvider (Web Service 0.13.2-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -35,7 +35,7 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../eu/ehri/extension/providers/BooleanXmlProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../eu/ehri/extension/providers/BooleanProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">Prev Class</span></a></li>
 <li><a href="../../../../eu/ehri/extension/providers/GlobalPermissionSetProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -95,14 +95,14 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>javax.ws.rs.ext.MessageBodyReader&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;</dd>
+<dd>javax.ws.rs.ext.MessageBodyReader&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;, javax.ws.rs.ext.MessageBodyWriter&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;</dd>
 </dl>
 <hr>
 <br>
 <pre>@Provider
 public class <span class="strong">BundleProvider</span>
 extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
-implements javax.ws.rs.ext.MessageBodyReader&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;</pre>
+implements javax.ws.rs.ext.MessageBodyReader&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;, javax.ws.rs.ext.MessageBodyWriter&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;</pre>
 </li>
 </ul>
 </div>
@@ -139,11 +139,26 @@ implements javax.ws.rs.ext.MessageBodyReader&lt;<a href="https://github.com/EHRI
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>long</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/extension/providers/BundleProvider.html#getSize(eu.ehri.project.persistence.Bundle,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">getSize</a></strong>(<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;aClass,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Type.html?is-external=true" title="class or interface in java.lang.reflect">Type</a>&nbsp;type,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>[]&nbsp;annotations,
+       javax.ws.rs.core.MediaType&nbsp;mediaType)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../eu/ehri/extension/providers/BundleProvider.html#isReadable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isReadable</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;aClass,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Type.html?is-external=true" title="class or interface in java.lang.reflect">Type</a>&nbsp;type,
           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>[]&nbsp;annotations,
           javax.ws.rs.core.MediaType&nbsp;mediaType)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/extension/providers/BundleProvider.html#isWriteable(java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType)">isWriteable</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;aClass,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Type.html?is-external=true" title="class or interface in java.lang.reflect">Type</a>&nbsp;type,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>[]&nbsp;annotations,
+           javax.ws.rs.core.MediaType&nbsp;mediaType)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a></code></td>
@@ -153,6 +168,16 @@ implements javax.ws.rs.ext.MessageBodyReader&lt;<a href="https://github.com/EHRI
         javax.ws.rs.core.MediaType&nbsp;mediaType,
         javax.ws.rs.core.MultivaluedMap&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;headers,
         <a href="http://docs.oracle.com/javase/7/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="../../../../eu/ehri/extension/providers/BundleProvider.html#writeTo(eu.ehri.project.persistence.Bundle,%20java.lang.Class,%20java.lang.reflect.Type,%20java.lang.annotation.Annotation[],%20javax.ws.rs.core.MediaType,%20javax.ws.rs.core.MultivaluedMap,%20java.io.OutputStream)">writeTo</a></strong>(<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;aClass,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Type.html?is-external=true" title="class or interface in java.lang.reflect">Type</a>&nbsp;type,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>[]&nbsp;annotations,
+       javax.ws.rs.core.MediaType&nbsp;mediaType,
+       javax.ws.rs.core.MultivaluedMap&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;multivaluedMap,
+       <a href="http://docs.oracle.com/javase/7/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a>&nbsp;outputStream)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -212,7 +237,7 @@ implements javax.ws.rs.ext.MessageBodyReader&lt;<a href="https://github.com/EHRI
 <a name="readFrom(java.lang.Class, java.lang.reflect.Type, java.lang.annotation.Annotation[], javax.ws.rs.core.MediaType, javax.ws.rs.core.MultivaluedMap, java.io.InputStream)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>readFrom</h4>
 <pre>public&nbsp;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&nbsp;readFrom(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;&nbsp;bundleClass,
@@ -226,6 +251,62 @@ implements javax.ws.rs.ext.MessageBodyReader&lt;<a href="https://github.com/EHRI
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code>readFrom</code>&nbsp;in interface&nbsp;<code>javax.ws.rs.ext.MessageBodyReader&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;</code></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
+<dd><code>javax.ws.rs.WebApplicationException</code></dd></dl>
+</li>
+</ul>
+<a name="isWriteable(java.lang.Class, java.lang.reflect.Type, java.lang.annotation.Annotation[], javax.ws.rs.core.MediaType)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isWriteable</h4>
+<pre>public&nbsp;boolean&nbsp;isWriteable(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;aClass,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Type.html?is-external=true" title="class or interface in java.lang.reflect">Type</a>&nbsp;type,
+                  <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>[]&nbsp;annotations,
+                  javax.ws.rs.core.MediaType&nbsp;mediaType)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code>isWriteable</code>&nbsp;in interface&nbsp;<code>javax.ws.rs.ext.MessageBodyWriter&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getSize(eu.ehri.project.persistence.Bundle, java.lang.Class, java.lang.reflect.Type, java.lang.annotation.Annotation[], javax.ws.rs.core.MediaType)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSize</h4>
+<pre>public&nbsp;long&nbsp;getSize(<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;aClass,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Type.html?is-external=true" title="class or interface in java.lang.reflect">Type</a>&nbsp;type,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>[]&nbsp;annotations,
+           javax.ws.rs.core.MediaType&nbsp;mediaType)</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code>getSize</code>&nbsp;in interface&nbsp;<code>javax.ws.rs.ext.MessageBodyWriter&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;</code></dd>
+</dl>
+</li>
+</ul>
+<a name="writeTo(eu.ehri.project.persistence.Bundle, java.lang.Class, java.lang.reflect.Type, java.lang.annotation.Annotation[], javax.ws.rs.core.MediaType, javax.ws.rs.core.MultivaluedMap, java.io.OutputStream)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>writeTo</h4>
+<pre>public&nbsp;void&nbsp;writeTo(<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&nbsp;bundle,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&nbsp;aClass,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Type.html?is-external=true" title="class or interface in java.lang.reflect">Type</a>&nbsp;type,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html?is-external=true" title="class or interface in java.lang.annotation">Annotation</a>[]&nbsp;annotations,
+           javax.ws.rs.core.MediaType&nbsp;mediaType,
+           javax.ws.rs.core.MultivaluedMap&lt;<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;multivaluedMap,
+           <a href="http://docs.oracle.com/javase/7/docs/api/java/io/OutputStream.html?is-external=true" title="class or interface in java.io">OutputStream</a>&nbsp;outputStream)
+             throws <a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
+                    javax.ws.rs.WebApplicationException</pre>
+<dl>
+<dt><strong>Specified by:</strong></dt>
+<dd><code>writeTo</code>&nbsp;in interface&nbsp;<code>javax.ws.rs.ext.MessageBodyWriter&lt;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/Bundle.html?is-external=true" title="class or interface in eu.ehri.project.persistence">Bundle</a>&gt;</code></dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="http://docs.oracle.com/javase/7/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></code></dd>
 <dd><code>javax.ws.rs.WebApplicationException</code></dd></dl>
@@ -257,7 +338,7 @@ implements javax.ws.rs.ext.MessageBodyReader&lt;<a href="https://github.com/EHRI
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../eu/ehri/extension/providers/BooleanXmlProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">Prev Class</span></a></li>
+<li><a href="../../../../eu/ehri/extension/providers/BooleanProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">Prev Class</span></a></li>
 <li><a href="../../../../eu/ehri/extension/providers/GlobalPermissionSetProvider.html" title="class in eu.ehri.extension.providers"><span class="strong">Next Class</span></a></li>
 </ul>
 <ul class="navList">

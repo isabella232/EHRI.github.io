@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MapImporter (Import/Export Tools 0.13.0-SNAPSHOT API)</title>
+<title>MapImporter (Import/Export Tools 0.13.2-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="MapImporter (Import/Export Tools 0.13.0-SNAPSHOT API)";
+        parent.document.title="MapImporter (Import/Export Tools 0.13.2-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -137,7 +137,7 @@ extends <a href="../../../../eu/ehri/project/importers/AbstractImporter.html" ti
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;eu.ehri.project.importers.<a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></h3>
-<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#callbacks">callbacks</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#framedGraph">framedGraph</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#log">log</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#manager">manager</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#permissionScope">permissionScope</a></code></li>
+<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#actioner">actioner</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#callbacks">callbacks</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#framedGraph">framedGraph</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#log">log</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#manager">manager</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#permissionScope">permissionScope</a></code></li>
 </ul>
 </li>
 </ul>
@@ -153,8 +153,9 @@ extends <a href="../../../../eu/ehri/project/importers/AbstractImporter.html" ti
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/importers/MapImporter.html#MapImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">MapImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
+<td class="colOne"><code><strong><a href="../../../../eu/ehri/project/importers/MapImporter.html#MapImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">MapImporter</a></strong>(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
            <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+           <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Actioner.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
            <a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>&nbsp;</td>
 </tr>
 </table>
@@ -228,7 +229,7 @@ extends <a href="../../../../eu/ehri/project/importers/AbstractImporter.html" ti
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;eu.ehri.project.importers.<a href="../../../../eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></h3>
-<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#addCallback(eu.ehri.project.importers.ImportCallback)">addCallback</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#flattenNonMultivaluedProperties(java.lang.String,%20java.lang.Object,%20eu.ehri.project.models.EntityClass)">flattenNonMultivaluedProperties</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPermissionScope()">getPermissionScope</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister()">getPersister</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister(java.util.List)">getPersister</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#handleCallbacks(eu.ehri.project.persistence.Mutation)">handleCallbacks</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T)">importItem</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T,%20java.util.List)">importItem</a></code></li>
+<code><a href="../../../../eu/ehri/project/importers/AbstractImporter.html#addCallback(eu.ehri.project.importers.ImportCallback)">addCallback</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#flattenNonMultivaluedProperties(java.lang.String,%20java.lang.Object,%20eu.ehri.project.models.EntityClass)">flattenNonMultivaluedProperties</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getActioner()">getActioner</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPermissionScope()">getPermissionScope</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister()">getPersister</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#getPersister(java.util.List)">getPersister</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#handleCallbacks(eu.ehri.project.persistence.Mutation)">handleCallbacks</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T)">importItem</a>, <a href="../../../../eu/ehri/project/importers/AbstractImporter.html#importItem(T,%20java.util.List)">importItem</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_java.lang.Object">
@@ -269,7 +270,7 @@ extends <a href="../../../../eu/ehri/project/importers/AbstractImporter.html" ti
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="MapImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.importers.ImportLog)">
+<a name="MapImporter(com.tinkerpop.frames.FramedGraph, eu.ehri.project.models.base.PermissionScope, eu.ehri.project.models.base.Actioner, eu.ehri.project.importers.ImportLog)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -277,6 +278,7 @@ extends <a href="../../../../eu/ehri/project/importers/AbstractImporter.html" ti
 <h4>MapImporter</h4>
 <pre>public&nbsp;MapImporter(com.tinkerpop.frames.FramedGraph&lt;?&gt;&nbsp;framedGraph,
            <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/PermissionScope.html?is-external=true" title="class or interface in eu.ehri.project.models.base">PermissionScope</a>&nbsp;permissionScope,
+           <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Actioner.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Actioner</a>&nbsp;actioner,
            <a href="../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</pre>
 </li>
 </ul>

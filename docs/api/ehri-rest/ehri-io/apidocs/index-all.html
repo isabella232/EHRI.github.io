@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Index (Import/Export Tools 0.13.0-SNAPSHOT API)</title>
+<title>Index (Import/Export Tools 0.13.2-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="./stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Index (Import/Export Tools 0.13.0-SNAPSHOT API)";
+        parent.document.title="Index (Import/Export Tools 0.13.2-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -71,7 +71,7 @@
 <div class="block">Base class for importers that import documentary units, historical agents and virtual collections,
  with their constituent logical data, description(s), and date periods.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#AbstractImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">AbstractImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#AbstractImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">AbstractImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
@@ -79,11 +79,13 @@
 <dd>
 <div class="block">Base ImportManager.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#AbstractImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class)">AbstractImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, Class&lt;? extends AbstractImporter&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#AbstractImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class)">AbstractImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends AbstractImporter&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ead/EadImporter.html#ACCESS_POINT">ACCESS_POINT</a></span> - Static variable in class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/EadImporter.html" title="class in eu.ehri.project.importers.ead">EadImporter</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#actioner">actioner</a></span> - Variable in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#actioner">actioner</a></span> - Variable in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
 <dd>&nbsp;</dd>
@@ -101,6 +103,11 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exporters/ead/Ead2002Exporter.html#addEadLevel(org.w3c.dom.Document,%20org.w3c.dom.Element,%20int,%20eu.ehri.project.models.DocumentaryUnit,%20com.google.common.base.Optional,%20java.lang.String)">addEadLevel(Document, Element, int, DocumentaryUnit, Optional&lt;Description&gt;, String)</a></span> - Method in class eu.ehri.project.exporters.ead.<a href="./eu/ehri/project/exporters/ead/Ead2002Exporter.html" title="class in eu.ehri.project.exporters.ead">Ead2002Exporter</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#addError(java.lang.String,%20java.lang.String)">addError(String, String)</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
+<dd>
+<div class="block">Indicate that importing the item with the given id
+ failed with the given error.</div>
+</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ead/EadHandler.html#addOtherIdentifier(java.util.Map,%20java.lang.String)">addOtherIdentifier(Map&lt;String, Object&gt;, String)</a></span> - Method in class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/EadHandler.html" title="class in eu.ehri.project.importers.ead">EadHandler</a></dt>
 <dd>
 <div class="block">Helper method to add identifiers to the list of other identifiers.</div>
@@ -121,11 +128,15 @@
 <dd>
 <div class="block">Increment the update count.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#allowUpdates">allowUpdates</a></span> - Variable in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#allowUpdates(boolean)">allowUpdates(boolean)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/importers/ead/AraEadImporter.html" title="class in eu.ehri.project.importers.ead"><span class="strong">AraEadImporter</span></a> - Class in <a href="./eu/ehri/project/importers/ead/package-summary.html">eu.ehri.project.importers.ead</a></dt>
 <dd>
 <div class="block">Import EAD for a given repository into the database.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/AraEadImporter.html#AraEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">AraEadImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/AraEadImporter.html" title="class in eu.ehri.project.importers.ead">AraEadImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/AraEadImporter.html#AraEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">AraEadImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/AraEadImporter.html" title="class in eu.ehri.project.importers.ead">AraEadImporter</a></dt>
 <dd>
 <div class="block">Construct an EadImporter object.</div>
 </dd>
@@ -178,8 +189,6 @@
  and puts the characters in the current node, unless the input contains only
  whitespace.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/properties/PropertiesChecker.html#check(eu.ehri.project.importers.properties.ImportProperties,%20eu.ehri.project.models.EntityClass)">check(ImportProperties, EntityClass)</a></span> - Method in class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/PropertiesChecker.html" title="class in eu.ehri.project.importers.properties">PropertiesChecker</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ead/EadHandler.html#children">children</a></span> - Variable in class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/EadHandler.html" title="class in eu.ehri.project.importers.ead">EadHandler</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ead/VirtualEadHandler.html#children">children</a></span> - Variable in class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/VirtualEadHandler.html" title="class in eu.ehri.project.importers.ead">VirtualEadHandler</a></dt>
@@ -221,25 +230,25 @@
 <div class="block">Importer of authoritative items such as historical agents and concepts, loaded
  from a CSV file.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.html#CsvAuthoritativeItemImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvAuthoritativeItemImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.html" title="class in eu.ehri.project.importers.csv">CsvAuthoritativeItemImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.html#CsvAuthoritativeItemImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">CsvAuthoritativeItemImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.html" title="class in eu.ehri.project.importers.csv">CsvAuthoritativeItemImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/importers/csv/CsvConceptImporter.html" title="class in eu.ehri.project.importers.csv"><span class="strong">CsvConceptImporter</span></a> - Class in <a href="./eu/ehri/project/importers/csv/package-summary.html">eu.ehri.project.importers.csv</a></dt>
 <dd>
 <div class="block">Importer of concepts loaded from a CSV file.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvConceptImporter.html#CsvConceptImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvConceptImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvConceptImporter.html" title="class in eu.ehri.project.importers.csv">CsvConceptImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvConceptImporter.html#CsvConceptImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">CsvConceptImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvConceptImporter.html" title="class in eu.ehri.project.importers.csv">CsvConceptImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.html" title="class in eu.ehri.project.importers.csv"><span class="strong">CsvHistoricalAgentImporter</span></a> - Class in <a href="./eu/ehri/project/importers/csv/package-summary.html">eu.ehri.project.importers.csv</a></dt>
 <dd>
 <div class="block">Importer of historical agents loaded from a CSV file.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.html#CsvHistoricalAgentImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">CsvHistoricalAgentImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.html" title="class in eu.ehri.project.importers.csv">CsvHistoricalAgentImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.html#CsvHistoricalAgentImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">CsvHistoricalAgentImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.html" title="class in eu.ehri.project.importers.csv">CsvHistoricalAgentImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/importers/managers/CsvImportManager.html" title="class in eu.ehri.project.importers.managers"><span class="strong">CsvImportManager</span></a> - Class in <a href="./eu/ehri/project/importers/managers/package-summary.html">eu.ehri.project.importers.managers</a></dt>
 <dd>
 <div class="block">Import manager to use with CSV files.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/CsvImportManager.html#CsvImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class)">CsvImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, Class&lt;? extends AbstractImporter&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/CsvImportManager.html" title="class in eu.ehri.project.importers.managers">CsvImportManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/CsvImportManager.html#CsvImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class)">CsvImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends AbstractImporter&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/CsvImportManager.html" title="class in eu.ehri.project.importers.managers">CsvImportManager</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/SaxXmlHandler.html#currentEntity">currentEntity</a></span> - Variable in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</a></dt>
 <dd>&nbsp;</dd>
@@ -320,7 +329,7 @@
 <dd>
 <div class="block">Import EAC for a given repository into the database.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/eac/EacImporter.html#EacImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EacImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.eac.<a href="./eu/ehri/project/importers/eac/EacImporter.html" title="class in eu.ehri.project.importers.eac">EacImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/eac/EacImporter.html#EacImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">EacImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.eac.<a href="./eu/ehri/project/importers/eac/EacImporter.html" title="class in eu.ehri.project.importers.eac">EacImporter</a></dt>
 <dd>
 <div class="block">Construct an EacImporter object.</div>
 </dd>
@@ -352,7 +361,7 @@
 <dd>
 <div class="block">Import EAD for a given repository into the database.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/EadImporter.html#EadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EadImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/EadImporter.html" title="class in eu.ehri.project.importers.ead">EadImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/EadImporter.html#EadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">EadImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/EadImporter.html" title="class in eu.ehri.project.importers.ead">EadImporter</a></dt>
 <dd>
 <div class="block">Construct an EadImporter object.</div>
 </dd>
@@ -384,7 +393,7 @@
 <dd>
 <div class="block">Importer of EAG-based descriptions.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/eag/EagImporter.html#EagImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EagImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.eag.<a href="./eu/ehri/project/importers/eag/EagImporter.html" title="class in eu.ehri.project.importers.eag">EagImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/eag/EagImporter.html#EagImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">EagImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.eag.<a href="./eu/ehri/project/importers/eag/EagImporter.html" title="class in eu.ehri.project.importers.eag">EagImporter</a></dt>
 <dd>
 <div class="block">Construct an EagImporter object.</div>
 </dd>
@@ -398,7 +407,7 @@
 <dd>
 <div class="block">Import Map based representations of EAD or EAC for a given repository into the database.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/EaImporter.html#EaImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">EaImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/EaImporter.html#EaImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">EaImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/EaImporter.html" title="class in eu.ehri.project.importers">EaImporter</a></dt>
 <dd>
 <div class="block">Construct an EadImporter object.</div>
 </dd>
@@ -667,9 +676,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/properties/PropertiesRow.html#get(java.lang.String)">get(String)</a></span> - Method in class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/PropertiesRow.html" title="class in eu.ehri.project.importers.properties">PropertiesRow</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#getActioner()">getActioner()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/properties/XmlImportProperties.html#getAllNonAttributeProperties()">getAllNonAttributeProperties()</a></span> - Method in class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#getActioner()">getActioner()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/properties/ImportProperties.html#getAllNonAttributeValues()">getAllNonAttributeValues()</a></span> - Method in interface eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/ImportProperties.html" title="interface in eu.ehri.project.importers.properties">ImportProperties</a></dt>
 <dd>&nbsp;</dd>
@@ -711,8 +718,6 @@
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exporters/eac/Eac2010Exporter.html#getEntityName(eu.ehri.project.models.base.Described,%20java.lang.String)">getEntityName(Described, String)</a></span> - Method in class eu.ehri.project.exporters.eac.<a href="./eu/ehri/project/exporters/eac/Eac2010Exporter.html" title="class in eu.ehri.project.exporters.eac">Eac2010Exporter</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/properties/XmlImportProperties.html#getEntries()">getEntries()</a></span> - Method in class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#getErrored()">getErrored()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#getErrors()">getErrors()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
@@ -732,6 +737,8 @@
 <dt><span class="strong"><a href="./eu/ehri/project/exporters/eac/Eac2010Exporter.html#getLinkEntityId(eu.ehri.project.models.base.Described,%20eu.ehri.project.models.Link)">getLinkEntityId(Described, Link)</a></span> - Method in class eu.ehri.project.exporters.eac.<a href="./eu/ehri/project/exporters/eac/Eac2010Exporter.html" title="class in eu.ehri.project.exporters.eac">Eac2010Exporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exporters/eac/Eac2010Exporter.html#getLinkName(eu.ehri.project.models.base.Described,%20eu.ehri.project.models.base.Description,%20eu.ehri.project.models.Link,%20java.lang.String)">getLinkName(Described, Description, Link, String)</a></span> - Method in class eu.ehri.project.exporters.eac.<a href="./eu/ehri/project/exporters/eac/Eac2010Exporter.html" title="class in eu.ehri.project.exporters.eac">Eac2010Exporter</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#getLogMessage()">getLogMessage()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#getMaintenanceEvent(T)">getMaintenanceEvent(T)</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
 <dd>&nbsp;</dd>
@@ -772,11 +779,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/cvoc/SkosRDFVocabulary.html#getURI()">getURI()</a></span> - Method in enum eu.ehri.project.importers.cvoc.<a href="./eu/ehri/project/importers/cvoc/SkosRDFVocabulary.html" title="enum in eu.ehri.project.importers.cvoc">SkosRDFVocabulary</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/properties/XmlImportProperties.html#getValueForAttributeProperty(java.lang.String,%20java.lang.String)">getValueForAttributeProperty(String, String)</a></span> - Method in class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></dt>
-<dd>
-<div class="block">used to try to find the xml attribute value 'ehri_main_identifier' in
- properties like 'did/unitid/@ehrilabel$ehri_main_identifier=objectIdentifier'</div>
-</dd>
 </dl>
 <a name="_H_">
 <!--   -->
@@ -824,7 +826,7 @@
 <dd>
 <div class="block">Import EAD for a given repository into the database.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/IcaAtomEadImporter.html#IcaAtomEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">IcaAtomEadImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/IcaAtomEadImporter.html" title="class in eu.ehri.project.importers.ead">IcaAtomEadImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/IcaAtomEadImporter.html#IcaAtomEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">IcaAtomEadImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/IcaAtomEadImporter.html" title="class in eu.ehri.project.importers.ead">IcaAtomEadImporter</a></dt>
 <dd>
 <div class="block">Construct an EadImporter object.</div>
 </dd>
@@ -955,10 +957,12 @@
  detailing how many items were created and updated,
  and how many failed.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#ImportLog(eu.ehri.project.persistence.ActionManager.EventContext)">ImportLog(ActionManager.EventContext)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#ImportLog(com.google.common.base.Optional)">ImportLog(Optional&lt;String&gt;)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#ImportLog(java.lang.String,%20int,%20int,%20int,%20java.util.Map)">ImportLog(String, int, int, int, Map&lt;String, String&gt;)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/AbstractImporter.html#importMaintenanceEvent(T)">importMaintenanceEvent(T)</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/AbstractImporter.html" title="class in eu.ehri.project.importers">AbstractImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/MapImporter.html#importMaintenanceEvent(java.util.Map)">importMaintenanceEvent(Map&lt;String, Object&gt;)</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</a></dt>
@@ -1094,7 +1098,7 @@
 <div class="block">Importer of Map based representations of documentary units, historical agents,
  virtual collections and other entities.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/MapImporter.html#MapImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">MapImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/MapImporter.html#MapImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">MapImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/MapImporter.html" title="class in eu.ehri.project.importers">MapImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ead/AraEadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave(Bundle, Bundle, List&lt;String&gt;)</a></span> - Method in class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/AraEadImporter.html" title="class in eu.ehri.project.importers.ead">AraEadImporter</a></dt>
 <dd>
@@ -1107,6 +1111,15 @@
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ead/IcaAtomEadImporter.html#mergeWithPreviousAndSave(eu.ehri.project.persistence.Bundle,%20eu.ehri.project.persistence.Bundle,%20java.util.List)">mergeWithPreviousAndSave(Bundle, Bundle, List&lt;String&gt;)</a></span> - Method in class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/IcaAtomEadImporter.html" title="class in eu.ehri.project.importers.ead">IcaAtomEadImporter</a></dt>
 <dd>
 <div class="block">finds any bundle in the graph with the same ObjectIdentifier.</div>
+</dd>
+<dt><a href="./eu/ehri/project/importers/exceptions/ModeViolation.html" title="class in eu.ehri.project.importers.exceptions"><span class="strong">ModeViolation</span></a> - Exception in <a href="./eu/ehri/project/importers/exceptions/package-summary.html">eu.ehri.project.importers.exceptions</a></dt>
+<dd>
+<div class="block">Input data violates an import/export mode by altering data in
+ a way that was no foreseen.</div>
+</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/exceptions/ModeViolation.html#ModeViolation(java.lang.String)">ModeViolation(String)</a></span> - Constructor for exception eu.ehri.project.importers.exceptions.<a href="./eu/ehri/project/importers/exceptions/ModeViolation.html" title="class in eu.ehri.project.importers.exceptions">ModeViolation</a></dt>
+<dd>
+<div class="block">Constructor.</div>
 </dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/csv/UkrainianUnitImporter.html#MULTIVALUE_SEP">MULTIVALUE_SEP</a></span> - Static variable in class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/UkrainianUnitImporter.html" title="class in eu.ehri.project.importers.csv">UkrainianUnitImporter</a></dt>
 <dd>&nbsp;</dd>
@@ -1190,7 +1203,7 @@
 <dd>
 <div class="block">Importer of historical agents encoded in <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>s.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/PersonalitiesImporter.html#PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">PersonalitiesImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/PersonalitiesImporter.html" title="class in eu.ehri.project.importers.csv">PersonalitiesImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/PersonalitiesImporter.html#PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">PersonalitiesImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/PersonalitiesImporter.html" title="class in eu.ehri.project.importers.csv">PersonalitiesImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/SaxXmlHandler.html#printGraph()">printGraph()</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</a></dt>
 <dd>
@@ -1201,10 +1214,6 @@
 <dt><span class="strong"><a href="./eu/ehri/project/importers/eag/EagImporter.html#PRIORITY">PRIORITY</a></span> - Static variable in class eu.ehri.project.importers.eag.<a href="./eu/ehri/project/importers/eag/EagImporter.html" title="class in eu.ehri.project.importers.eag">EagImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/SaxXmlHandler.html#properties">properties</a></span> - Variable in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/SaxXmlHandler.html" title="class in eu.ehri.project.importers">SaxXmlHandler</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="./eu/ehri/project/importers/properties/PropertiesChecker.html" title="class in eu.ehri.project.importers.properties"><span class="strong">PropertiesChecker</span></a> - Class in <a href="./eu/ehri/project/importers/properties/package-summary.html">eu.ehri.project.importers.properties</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/properties/PropertiesChecker.html#PropertiesChecker(eu.ehri.project.importers.properties.NodeProperties)">PropertiesChecker(NodeProperties)</a></span> - Constructor for class eu.ehri.project.importers.properties.<a href="./eu/ehri/project/importers/properties/PropertiesChecker.html" title="class in eu.ehri.project.importers.properties">PropertiesChecker</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/importers/properties/PropertiesRow.html" title="class in eu.ehri.project.importers.properties"><span class="strong">PropertiesRow</span></a> - Class in <a href="./eu/ehri/project/importers/properties/package-summary.html">eu.ehri.project.importers.properties</a></dt>
 <dd>&nbsp;</dd>
@@ -1276,15 +1285,15 @@
 <div class="block">Class that provides a front-end for importing XML files like EAD and EAC and
  nested lists of EAD documents into the graph.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class,%20java.lang.Class,%20com.google.common.base.Optional,%20java.util.List)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, Optional&lt;XmlImportProperties&gt;, List&lt;ImportCallback&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class,%20java.lang.Class,%20com.google.common.base.Optional,%20java.util.List)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, Optional&lt;XmlImportProperties&gt;, List&lt;ImportCallback&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class,%20java.lang.Class,%20java.util.List)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, List&lt;ImportCallback&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class,%20java.lang.Class,%20java.util.List)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, List&lt;ImportCallback&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20java.lang.Class,%20java.lang.Class,%20eu.ehri.project.importers.properties.XmlImportProperties)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, XmlImportProperties)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20boolean,%20boolean,%20java.lang.Class,%20java.lang.Class,%20eu.ehri.project.importers.properties.XmlImportProperties)">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends AbstractImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, XmlImportProperties)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
@@ -1318,11 +1327,6 @@
 <dd>
 <div class="block">Set default language for literals without a lang suffix.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ImportLog.html#setErrored(java.lang.String,%20java.lang.String)">setErrored(String, String)</a></span> - Method in class eu.ehri.project.importers.<a href="./eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></dt>
-<dd>
-<div class="block">Indicate that importing the item with the given id
- failed with the given error.</div>
-</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exporters/cvoc/JenaSkosExporter.html#setFormat(java.lang.String)">setFormat(String)</a></span> - Method in class eu.ehri.project.exporters.cvoc.<a href="./eu/ehri/project/exporters/cvoc/JenaSkosExporter.html" title="class in eu.ehri.project.exporters.cvoc">JenaSkosExporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/cvoc/JenaSkosImporter.html#setFormat(java.lang.String)">setFormat(String)</a></span> - Method in class eu.ehri.project.importers.cvoc.<a href="./eu/ehri/project/importers/cvoc/JenaSkosImporter.html" title="class in eu.ehri.project.importers.cvoc">JenaSkosImporter</a></dt>
@@ -1349,11 +1353,8 @@
 <div class="block">Toggle tolerant mode, which will prevent the entire batch
  failing if a single item fails to validate.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#setTolerant(boolean)">setTolerant(boolean)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
-<dd>
-<div class="block">Tell the importer to simply skip invalid items rather than throwing an
- exception.</div>
-</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#setTolerant(boolean)">setTolerant(boolean)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/json/BatchOperations.html#setVersioning(boolean)">setVersioning(boolean)</a></span> - Method in class eu.ehri.project.importers.json.<a href="./eu/ehri/project/importers/json/BatchOperations.html" title="class in eu.ehri.project.importers.json">BatchOperations</a></dt>
 <dd>
 <div class="block">Toggle versioning for item updates.</div>
@@ -1408,6 +1409,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exporters/ead/Ead2002Exporter.html#textDidMappings">textDidMappings</a></span> - Static variable in class eu.ehri.project.exporters.ead.<a href="./eu/ehri/project/exporters/ead/Ead2002Exporter.html" title="class in eu.ehri.project.exporters.ead">Ead2002Exporter</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/AbstractImportManager.html#tolerant">tolerant</a></span> - Variable in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/ead/EadHandler.html#topLevel">topLevel</a></span> - Variable in class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/EadHandler.html" title="class in eu.ehri.project.importers.ead">EadHandler</a></dt>
 <dd>
 <div class="block">used to attach the MaintenanceEvents to</div>
@@ -1423,7 +1426,7 @@
 <div class="block">Importer of Ukrainian units, which are encoded in a slightly different way
  than other documentary units.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/UkrainianUnitImporter.html#UkrainianUnitImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">UkrainianUnitImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/UkrainianUnitImporter.html" title="class in eu.ehri.project.importers.csv">UkrainianUnitImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/UkrainianUnitImporter.html#UkrainianUnitImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">UkrainianUnitImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/UkrainianUnitImporter.html" title="class in eu.ehri.project.importers.csv">UkrainianUnitImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exporters/ead/Ead2002Exporter.html#unitDateNormalFormat">unitDateNormalFormat</a></span> - Static variable in class eu.ehri.project.exporters.ead.<a href="./eu/ehri/project/exporters/ead/Ead2002Exporter.html" title="class in eu.ehri.project.exporters.ead">Ead2002Exporter</a></dt>
 <dd>&nbsp;</dd>
@@ -1496,9 +1499,9 @@ the order they are declared.</div>
 <dd>
 <div class="block">Import EAD describing a Virtual Collection.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/VirtualEadImporter.html#VirtualEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">VirtualEadImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/VirtualEadImporter.html" title="class in eu.ehri.project.importers.ead">VirtualEadImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/ead/VirtualEadImporter.html#VirtualEadImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.importers.ImportLog)">VirtualEadImporter(FramedGraph&lt;?&gt;, PermissionScope, Actioner, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.ead.<a href="./eu/ehri/project/importers/ead/VirtualEadImporter.html" title="class in eu.ehri.project.importers.ead">VirtualEadImporter</a></dt>
 <dd>
-<div class="block">Construct an EadImporter object.</div>
+<div class="block">Construct a VirtualEadImporter object.</div>
 </dd>
 </dl>
 <a name="_W_">
@@ -1510,15 +1513,15 @@ the order they are declared.</div>
 <dd>
 <div class="block">Get the element name without namespace prefix.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#withProperties(eu.ehri.project.importers.properties.XmlImportProperties)">withProperties(XmlImportProperties)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#withProperties(java.lang.String)">withProperties(String)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/managers/SaxImportManager.html#withScope(eu.ehri.project.models.base.PermissionScope)">withScope(PermissionScope)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="./eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="./eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.html" title="class in eu.ehri.project.importers.csv"><span class="strong">Wp2PersonalitiesImporter</span></a> - Class in <a href="./eu/ehri/project/importers/csv/package-summary.html">eu.ehri.project.importers.csv</a></dt>
 <dd>
 <div class="block">Importer of historical agents described in WP2.</div>
 </dd>
-<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.html#Wp2PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">Wp2PersonalitiesImporter(FramedGraph&lt;?&gt;, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.html" title="class in eu.ehri.project.importers.csv">Wp2PersonalitiesImporter</a></dt>
+<dt><span class="strong"><a href="./eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.html#Wp2PersonalitiesImporter(com.tinkerpop.frames.FramedGraph,%20eu.ehri.project.models.base.Actioner,%20eu.ehri.project.models.base.PermissionScope,%20eu.ehri.project.importers.ImportLog)">Wp2PersonalitiesImporter(FramedGraph&lt;?&gt;, Actioner, PermissionScope, ImportLog)</a></span> - Constructor for class eu.ehri.project.importers.csv.<a href="./eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.html" title="class in eu.ehri.project.importers.csv">Wp2PersonalitiesImporter</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="./eu/ehri/project/exporters/DocumentWriter.html#write(java.io.OutputStream)">write(OutputStream)</a></span> - Method in class eu.ehri.project.exporters.<a href="./eu/ehri/project/exporters/DocumentWriter.html" title="class in eu.ehri.project.exporters">DocumentWriter</a></dt>
 <dd>&nbsp;</dd>

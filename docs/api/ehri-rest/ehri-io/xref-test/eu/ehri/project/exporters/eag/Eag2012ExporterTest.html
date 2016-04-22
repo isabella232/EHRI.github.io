@@ -37,8 +37,8 @@
 <a class="jxr_linenumber" name="27" href="#27">27</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testImportExport1() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="28" href="#28">28</a>          Country nl = manager.getEntity(<span class="jxr_string">"nl"</span>, Country.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="29" href="#29">29</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(<span class="jxr_string">"eag-2896.xml"</span>);
-<a class="jxr_linenumber" name="30" href="#30">30</a>          SaxImportManager importManager = <strong class="jxr_keyword">new</strong> SaxImportManager(graph, nl, validUser, EagImporter.<strong class="jxr_keyword">class</strong>, EagHandler
-<a class="jxr_linenumber" name="31" href="#31">31</a>                  .<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="30" href="#30">30</a>          SaxImportManager importManager = <strong class="jxr_keyword">new</strong> SaxImportManager(graph, nl, validUser,
+<a class="jxr_linenumber" name="31" href="#31">31</a>                  EagImporter.<strong class="jxr_keyword">class</strong>, EagHandler.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="32" href="#32">32</a>          importManager.importFile(ios, <span class="jxr_string">"Text EAG import/export"</span>);
 <a class="jxr_linenumber" name="33" href="#33">33</a>          Repository repo = graph.frame(getVertexByIdentifier(graph, <span class="jxr_string">"NL-002896"</span>), Repository.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="34" href="#34">34</a>          testExport(repo, <span class="jxr_string">"eng"</span>);

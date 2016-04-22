@@ -36,13 +36,13 @@
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.AbstractAccessibleResource;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.AbstractRestResource;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Entities;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.views.EventViews;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.core.MultivaluedMap;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> java.net.URI;
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> java.util.List;
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.views.EventViews;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.core.MultivaluedMap;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> java.net.URI;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> java.util.List;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  
 <a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> com.sun.jersey.api.client.ClientResponse.Status.CREATED;
 <a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> com.sun.jersey.api.client.ClientResponse.Status.OK;
@@ -63,7 +63,7 @@
 <a class="jxr_linenumber" name="53" href="#53">53</a>          <em class="jxr_comment">// Create a new agent. We're going to test that this creates</em>
 <a class="jxr_linenumber" name="54" href="#54">54</a>          <em class="jxr_comment">// a corresponding action.</em>
 <a class="jxr_linenumber" name="55" href="#55">55</a>          URI uri = entityUri(Entities.SYSTEM_EVENT);
-<a class="jxr_linenumber" name="56" href="#56">56</a>          List&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt; actionsBefore = getItemListOfLists(
+<a class="jxr_linenumber" name="56" href="#56">56</a>          List&lt;List&lt;Bundle&gt;&gt; actionsBefore = getItemListOfLists(
 <a class="jxr_linenumber" name="57" href="#57">57</a>                  uri, getAdminUserProfileId());
 <a class="jxr_linenumber" name="58" href="#58">58</a>  
 <a class="jxr_linenumber" name="59" href="#59">59</a>          ClientResponse response = jsonCallAs(getAdminUserProfileId(),
@@ -73,7 +73,7 @@
 <a class="jxr_linenumber" name="63" href="#63">63</a>  
 <a class="jxr_linenumber" name="64" href="#64">64</a>          assertStatus(CREATED, response);
 <a class="jxr_linenumber" name="65" href="#65">65</a>  
-<a class="jxr_linenumber" name="66" href="#66">66</a>          List&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt; actionsAfter = getItemListOfLists(
+<a class="jxr_linenumber" name="66" href="#66">66</a>          List&lt;List&lt;Bundle&gt;&gt; actionsAfter = getItemListOfLists(
 <a class="jxr_linenumber" name="67" href="#67">67</a>                  uri, getAdminUserProfileId());
 <a class="jxr_linenumber" name="68" href="#68">68</a>          System.out.println(actionsAfter);
 <a class="jxr_linenumber" name="69" href="#69">69</a>  
@@ -100,10 +100,10 @@
 <a class="jxr_linenumber" name="90" href="#90">90</a>          badFilters.add(AbstractAccessibleResource.USER_PARAM, <span class="jxr_string">"nobody"</span>);
 <a class="jxr_linenumber" name="91" href="#91">91</a>  
 <a class="jxr_linenumber" name="92" href="#92">92</a>          URI url = entityUri(Entities.SYSTEM_EVENT);
-<a class="jxr_linenumber" name="93" href="#93">93</a>          List&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt; goodFiltered = getItemListOfLists(
+<a class="jxr_linenumber" name="93" href="#93">93</a>          List&lt;List&lt;Bundle&gt;&gt; goodFiltered = getItemListOfLists(
 <a class="jxr_linenumber" name="94" href="#94">94</a>                  url, getAdminUserProfileId(), goodFilters);
 <a class="jxr_linenumber" name="95" href="#95">95</a>  
-<a class="jxr_linenumber" name="96" href="#96">96</a>          List&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt; badFiltered = getItemListOfLists(
+<a class="jxr_linenumber" name="96" href="#96">96</a>          List&lt;List&lt;Bundle&gt;&gt; badFiltered = getItemListOfLists(
 <a class="jxr_linenumber" name="97" href="#97">97</a>                  url, getAdminUserProfileId(), badFilters);
 <a class="jxr_linenumber" name="98" href="#98">98</a>  
 <a class="jxr_linenumber" name="99" href="#99">99</a>          assertFalse(goodFiltered.isEmpty());
@@ -146,13 +146,13 @@
 <a class="jxr_linenumber" name="136" href="#136">136</a>         <em class="jxr_comment">// contain all the regular events.</em>
 <a class="jxr_linenumber" name="137" href="#137">137</a>         String user = getRegularUserProfileId();
 <a class="jxr_linenumber" name="138" href="#138">138</a>         URI personalisedEventUrl = entityUri(Entities.USER_PROFILE, user, UserProfileResource.EVENTS);
-<a class="jxr_linenumber" name="139" href="#139">139</a>         List&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt; events = getItemListOfLists(personalisedEventUrl, user);
+<a class="jxr_linenumber" name="139" href="#139">139</a>         List&lt;List&lt;Bundle&gt;&gt; events = getItemListOfLists(personalisedEventUrl, user);
 <a class="jxr_linenumber" name="140" href="#140">140</a>         assertEquals(1, events.size());
 <a class="jxr_linenumber" name="141" href="#141">141</a> 
 <a class="jxr_linenumber" name="142" href="#142">142</a>         <em class="jxr_comment">// Now only fetch events related to items we're watching - this list</em>
 <a class="jxr_linenumber" name="143" href="#143">143</a>         <em class="jxr_comment">// should currently be empty...</em>
 <a class="jxr_linenumber" name="144" href="#144">144</a>         URI personalisedEventUrlWatched = entityUriBuilder(
-<a class="jxr_linenumber" name="145" href="#145">145</a>                     Entities.USER_PROFILE, user, UserProfileResource.EVENTS)
+<a class="jxr_linenumber" name="145" href="#145">145</a>                 Entities.USER_PROFILE, user, UserProfileResource.EVENTS)
 <a class="jxr_linenumber" name="146" href="#146">146</a>                 .queryParam(AbstractAccessibleResource.SHOW_PARAM, EventViews.ShowType.watched).build();
 <a class="jxr_linenumber" name="147" href="#147">147</a>         events = getItemListOfLists(personalisedEventUrlWatched, user);
 <a class="jxr_linenumber" name="148" href="#148">148</a>         assertEquals(0, events.size());
@@ -177,7 +177,7 @@
 <a class="jxr_linenumber" name="167" href="#167">167</a>         <em class="jxr_comment">// Only get events for people we follow, excluding those</em>
 <a class="jxr_linenumber" name="168" href="#168">168</a>         <em class="jxr_comment">// for items we watch...</em>
 <a class="jxr_linenumber" name="169" href="#169">169</a>         URI personalisedEventUrlFollowed = entityUriBuilder(
-<a class="jxr_linenumber" name="170" href="#170">170</a>                     Entities.USER_PROFILE, user, UserProfileResource.EVENTS)
+<a class="jxr_linenumber" name="170" href="#170">170</a>                 Entities.USER_PROFILE, user, UserProfileResource.EVENTS)
 <a class="jxr_linenumber" name="171" href="#171">171</a>                 .queryParam(AbstractAccessibleResource.SHOW_PARAM, EventViews.ShowType.followed).build();
 <a class="jxr_linenumber" name="172" href="#172">172</a>         events = getItemListOfLists(personalisedEventUrlFollowed, user);
 <a class="jxr_linenumber" name="173" href="#173">173</a>         assertEquals(0, events.size());

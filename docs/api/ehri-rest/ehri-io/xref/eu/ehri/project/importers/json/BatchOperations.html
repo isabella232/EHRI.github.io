@@ -132,7 +132,7 @@
 <a class="jxr_linenumber" name="122" href="#122">122</a>             <strong class="jxr_keyword">throws</strong> DeserializationError, ItemNotFound, ValidationError {
 <a class="jxr_linenumber" name="123" href="#123">123</a>         ActionManager.EventContext ctx = actionManager.newEventContext(actioner,
 <a class="jxr_linenumber" name="124" href="#124">124</a>                 EventTypes.modification, logMessage);
-<a class="jxr_linenumber" name="125" href="#125">125</a>         <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(ctx);
+<a class="jxr_linenumber" name="125" href="#125">125</a>         <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(logMessage);
 <a class="jxr_linenumber" name="126" href="#126">126</a>         <strong class="jxr_keyword">try</strong> (CloseableIterable&lt;Bundle&gt; bundleIter = Bundle.bundleStream(inputStream)) {
 <a class="jxr_linenumber" name="127" href="#127">127</a>             <strong class="jxr_keyword">for</strong> (Bundle bundle : bundleIter) {
 <a class="jxr_linenumber" name="128" href="#128">128</a>                 <strong class="jxr_keyword">try</strong> {
@@ -155,7 +155,7 @@
 <a class="jxr_linenumber" name="145" href="#145">145</a>                     <strong class="jxr_keyword">if</strong> (!tolerant) {
 <a class="jxr_linenumber" name="146" href="#146">146</a>                         <strong class="jxr_keyword">throw</strong> e;
 <a class="jxr_linenumber" name="147" href="#147">147</a>                     } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="148" href="#148">148</a>                         log.setErrored(bundle.getId(), e.getMessage());
+<a class="jxr_linenumber" name="148" href="#148">148</a>                         log.addError(bundle.getId(), e.getMessage());
 <a class="jxr_linenumber" name="149" href="#149">149</a>                         logger.warn(<span class="jxr_string">"Validation error patching {}: {}"</span>, bundle.getId(), e);
 <a class="jxr_linenumber" name="150" href="#150">150</a>                     }
 <a class="jxr_linenumber" name="151" href="#151">151</a>                 }
@@ -185,7 +185,7 @@
 <a class="jxr_linenumber" name="175" href="#175">175</a>             <strong class="jxr_keyword">throws</strong> DeserializationError, ItemNotFound, ValidationError {
 <a class="jxr_linenumber" name="176" href="#176">176</a>         ActionManager.EventContext ctx = actionManager.newEventContext(actioner,
 <a class="jxr_linenumber" name="177" href="#177">177</a>                 EventTypes.modification, logMessage);
-<a class="jxr_linenumber" name="178" href="#178">178</a>         <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(ctx);
+<a class="jxr_linenumber" name="178" href="#178">178</a>         <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a>(logMessage);
 <a class="jxr_linenumber" name="179" href="#179">179</a>         <strong class="jxr_keyword">try</strong> (CloseableIterable&lt;Bundle&gt; bundleIter = Bundle.bundleStream(inputStream)) {
 <a class="jxr_linenumber" name="180" href="#180">180</a>             <strong class="jxr_keyword">for</strong> (Bundle bundle : bundleIter) {
 <a class="jxr_linenumber" name="181" href="#181">181</a>                 Entity entity = manager.getEntity(bundle.getId(), bundle.getType().getJavaClass());
@@ -211,7 +211,7 @@
 <a class="jxr_linenumber" name="201" href="#201">201</a>                     <strong class="jxr_keyword">if</strong> (!tolerant) {
 <a class="jxr_linenumber" name="202" href="#202">202</a>                         <strong class="jxr_keyword">throw</strong> e;
 <a class="jxr_linenumber" name="203" href="#203">203</a>                     } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="204" href="#204">204</a>                         log.setErrored(entity.getId(), e.getMessage());
+<a class="jxr_linenumber" name="204" href="#204">204</a>                         log.addError(entity.getId(), e.getMessage());
 <a class="jxr_linenumber" name="205" href="#205">205</a>                         logger.warn(<span class="jxr_string">"Validation error patching {}: {}"</span>, entity.getId(), e);
 <a class="jxr_linenumber" name="206" href="#206">206</a>                     }
 <a class="jxr_linenumber" name="207" href="#207">207</a>                 }

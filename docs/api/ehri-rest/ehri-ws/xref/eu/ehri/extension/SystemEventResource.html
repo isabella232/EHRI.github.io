@@ -102,7 +102,7 @@
 <a class="jxr_linenumber" name="92" href="#92">92</a>      }
 <a class="jxr_linenumber" name="93" href="#93">93</a>  
 <a class="jxr_linenumber" name="94" href="#94">94</a>      @GET
-<a class="jxr_linenumber" name="95" href="#95">95</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="95" href="#95">95</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="96" href="#96">96</a>      @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="97" href="#97">97</a>      @Override
 <a class="jxr_linenumber" name="98" href="#98">98</a>      <strong class="jxr_keyword">public</strong> Response get(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
@@ -141,7 +141,7 @@
 <a class="jxr_linenumber" name="131" href="#131">131</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
 <a class="jxr_linenumber" name="132" href="#132">132</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="133" href="#133">133</a>     @GET
-<a class="jxr_linenumber" name="134" href="#134">134</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="134" href="#134">134</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="135" href="#135">135</a>     @Path(<span class="jxr_string">"{id:[^/]+}/subjects"</span>)
 <a class="jxr_linenumber" name="136" href="#136">136</a>     <strong class="jxr_keyword">public</strong> Response pageSubjectsForEvent(@PathParam(<span class="jxr_string">"id"</span>) String id)
 <a class="jxr_linenumber" name="137" href="#137">137</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, AccessDenied {

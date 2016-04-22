@@ -101,18 +101,18 @@
 <a class="jxr_linenumber" name="91" href="#91">91</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String LOG_PARAM = <span class="jxr_string">"log"</span>;
 <a class="jxr_linenumber" name="92" href="#92">92</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String SCOPE_PARAM = <span class="jxr_string">"scope"</span>;
 <a class="jxr_linenumber" name="93" href="#93">93</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String TOLERANT_PARAM = <span class="jxr_string">"tolerant"</span>;
-<a class="jxr_linenumber" name="94" href="#94">94</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String VERSION_PARAM = <span class="jxr_string">"version"</span>;
-<a class="jxr_linenumber" name="95" href="#95">95</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String HANDLER_PARAM = <span class="jxr_string">"handler"</span>;
-<a class="jxr_linenumber" name="96" href="#96">96</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String IMPORTER_PARAM = <span class="jxr_string">"importer"</span>;
-<a class="jxr_linenumber" name="97" href="#97">97</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String PROPERTIES_PARAM = <span class="jxr_string">"properties"</span>;
-<a class="jxr_linenumber" name="98" href="#98">98</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String FORMAT_PARAM = <span class="jxr_string">"format"</span>;
-<a class="jxr_linenumber" name="99" href="#99">99</a>  
-<a class="jxr_linenumber" name="100" href="#100">100</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String CSV_MEDIA_TYPE = <span class="jxr_string">"text/csv"</span>;
-<a class="jxr_linenumber" name="101" href="#101">101</a> 
-<a class="jxr_linenumber" name="102" href="#102">102</a>     <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/extension/ImportResource.html">ImportResource</a>(@Context GraphDatabaseService database) {
-<a class="jxr_linenumber" name="103" href="#103">103</a>         <strong class="jxr_keyword">super</strong>(database);
-<a class="jxr_linenumber" name="104" href="#104">104</a>     }
-<a class="jxr_linenumber" name="105" href="#105">105</a> 
+<a class="jxr_linenumber" name="94" href="#94">94</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String ALLOW_UPDATES_PARAM = <span class="jxr_string">"allow-update"</span>;
+<a class="jxr_linenumber" name="95" href="#95">95</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String VERSION_PARAM = <span class="jxr_string">"version"</span>;
+<a class="jxr_linenumber" name="96" href="#96">96</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String HANDLER_PARAM = <span class="jxr_string">"handler"</span>;
+<a class="jxr_linenumber" name="97" href="#97">97</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String IMPORTER_PARAM = <span class="jxr_string">"importer"</span>;
+<a class="jxr_linenumber" name="98" href="#98">98</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String PROPERTIES_PARAM = <span class="jxr_string">"properties"</span>;
+<a class="jxr_linenumber" name="99" href="#99">99</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String FORMAT_PARAM = <span class="jxr_string">"format"</span>;
+<a class="jxr_linenumber" name="100" href="#100">100</a> 
+<a class="jxr_linenumber" name="101" href="#101">101</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String CSV_MEDIA_TYPE = <span class="jxr_string">"text/csv"</span>;
+<a class="jxr_linenumber" name="102" href="#102">102</a> 
+<a class="jxr_linenumber" name="103" href="#103">103</a>     <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/extension/ImportResource.html">ImportResource</a>(@Context GraphDatabaseService database) {
+<a class="jxr_linenumber" name="104" href="#104">104</a>         <strong class="jxr_keyword">super</strong>(database);
+<a class="jxr_linenumber" name="105" href="#105">105</a>     }
 <a class="jxr_linenumber" name="106" href="#106">106</a> 
 <a class="jxr_linenumber" name="107" href="#107">107</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="108" href="#108">108</a> <em class="jxr_javadoccomment">     * Import a SKOS file, of varying formats, as specified by the &amp;quot;language&amp;quot;</em>
@@ -226,293 +226,302 @@
 <a class="jxr_linenumber" name="216" href="#216">216</a>     <strong class="jxr_keyword">public</strong> ImportLog importEad(
 <a class="jxr_linenumber" name="217" href="#217">217</a>             @QueryParam(SCOPE_PARAM) String scopeId,
 <a class="jxr_linenumber" name="218" href="#218">218</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(TOLERANT_PARAM) Boolean tolerant,
-<a class="jxr_linenumber" name="219" href="#219">219</a>             @QueryParam(LOG_PARAM) String logMessage,
-<a class="jxr_linenumber" name="220" href="#220">220</a>             @QueryParam(PROPERTIES_PARAM) String propertyFile,
-<a class="jxr_linenumber" name="221" href="#221">221</a>             @QueryParam(HANDLER_PARAM) String handlerClass,
-<a class="jxr_linenumber" name="222" href="#222">222</a>             @QueryParam(IMPORTER_PARAM) String importerClass,
-<a class="jxr_linenumber" name="223" href="#223">223</a>             InputStream data)
-<a class="jxr_linenumber" name="224" href="#224">224</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError,
-<a class="jxr_linenumber" name="225" href="#225">225</a>             IOException, DeserializationError {
-<a class="jxr_linenumber" name="226" href="#226">226</a> 
-<a class="jxr_linenumber" name="227" href="#227">227</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="228" href="#228">228</a>             checkPropertyFile(propertyFile);
-<a class="jxr_linenumber" name="229" href="#229">229</a>             Class&lt;? <strong class="jxr_keyword">extends</strong> SaxXmlHandler&gt; handler
-<a class="jxr_linenumber" name="230" href="#230">230</a>                     = getHandlerCls(handlerClass, DEFAULT_EAD_HANDLER);
-<a class="jxr_linenumber" name="231" href="#231">231</a>             Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; importer
-<a class="jxr_linenumber" name="232" href="#232">232</a>                     = getImporterCls(importerClass, DEFAULT_EAD_IMPORTER);
-<a class="jxr_linenumber" name="233" href="#233">233</a> 
-<a class="jxr_linenumber" name="234" href="#234">234</a>             <em class="jxr_comment">// Get the current user from the Authorization header and the scope</em>
-<a class="jxr_linenumber" name="235" href="#235">235</a>             <em class="jxr_comment">// from the query params...</em>
-<a class="jxr_linenumber" name="236" href="#236">236</a>             UserProfile user = getCurrentUser();
-<a class="jxr_linenumber" name="237" href="#237">237</a>             PermissionScope scope = manager.getEntity(scopeId, PermissionScope.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="238" href="#238">238</a> 
-<a class="jxr_linenumber" name="239" href="#239">239</a>             <em class="jxr_comment">// Run the import!</em>
-<a class="jxr_linenumber" name="240" href="#240">240</a>             String message = getLogMessage(logMessage).orNull();
-<a class="jxr_linenumber" name="241" href="#241">241</a>             ImportManager importManager = <strong class="jxr_keyword">new</strong> SaxImportManager(graph, scope, user, importer, handler)
-<a class="jxr_linenumber" name="242" href="#242">242</a>                     .withProperties(propertyFile)
-<a class="jxr_linenumber" name="243" href="#243">243</a>                     .setTolerant(tolerant);
-<a class="jxr_linenumber" name="244" href="#244">244</a>             ImportLog log = importDataStream(importManager, message, data,
-<a class="jxr_linenumber" name="245" href="#245">245</a>                     MediaType.APPLICATION_XML_TYPE, MediaType.TEXT_XML_TYPE);
-<a class="jxr_linenumber" name="246" href="#246">246</a>             tx.success();
-<a class="jxr_linenumber" name="247" href="#247">247</a>             <strong class="jxr_keyword">return</strong> log;
-<a class="jxr_linenumber" name="248" href="#248">248</a>         } <strong class="jxr_keyword">catch</strong> (ClassNotFoundException e) {
-<a class="jxr_linenumber" name="249" href="#249">249</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"Class not found: "</span> + e.getMessage());
-<a class="jxr_linenumber" name="250" href="#250">250</a>         } <strong class="jxr_keyword">catch</strong> (IllegalArgumentException | InputParseError | ArchiveException e) {
-<a class="jxr_linenumber" name="251" href="#251">251</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(e.getMessage());
-<a class="jxr_linenumber" name="252" href="#252">252</a>         }
-<a class="jxr_linenumber" name="253" href="#253">253</a>     }
-<a class="jxr_linenumber" name="254" href="#254">254</a> 
-<a class="jxr_linenumber" name="255" href="#255">255</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="256" href="#256">256</a> <em class="jxr_javadoccomment">     * Import EAG files. See EAD import for details.</em>
-<a class="jxr_linenumber" name="257" href="#257">257</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="258" href="#258">258</a>     @POST
-<a class="jxr_linenumber" name="259" href="#259">259</a>     @Consumes({MediaType.TEXT_PLAIN, MediaType.APPLICATION_XML,
-<a class="jxr_linenumber" name="260" href="#260">260</a>             MediaType.TEXT_XML, MediaType.APPLICATION_OCTET_STREAM})
-<a class="jxr_linenumber" name="261" href="#261">261</a>     @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="262" href="#262">262</a>     @Path(<span class="jxr_string">"eag"</span>)
-<a class="jxr_linenumber" name="263" href="#263">263</a>     <strong class="jxr_keyword">public</strong> ImportLog importEag(
-<a class="jxr_linenumber" name="264" href="#264">264</a>             @QueryParam(SCOPE_PARAM) String scopeId,
-<a class="jxr_linenumber" name="265" href="#265">265</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(TOLERANT_PARAM) Boolean tolerant,
-<a class="jxr_linenumber" name="266" href="#266">266</a>             @QueryParam(LOG_PARAM) String logMessage,
-<a class="jxr_linenumber" name="267" href="#267">267</a>             @QueryParam(PROPERTIES_PARAM) String propertyFile,
-<a class="jxr_linenumber" name="268" href="#268">268</a>             @QueryParam(HANDLER_PARAM) String handlerClass,
-<a class="jxr_linenumber" name="269" href="#269">269</a>             @QueryParam(IMPORTER_PARAM) String importerClass,
-<a class="jxr_linenumber" name="270" href="#270">270</a>             InputStream data)
-<a class="jxr_linenumber" name="271" href="#271">271</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError, IOException, DeserializationError {
-<a class="jxr_linenumber" name="272" href="#272">272</a>         <strong class="jxr_keyword">return</strong> importEad(scopeId, tolerant, logMessage, propertyFile,
-<a class="jxr_linenumber" name="273" href="#273">273</a>                 nameOrDefault(handlerClass, EagHandler.<strong class="jxr_keyword">class</strong>.getName()),
-<a class="jxr_linenumber" name="274" href="#274">274</a>                 nameOrDefault(importerClass, EagImporter.<strong class="jxr_keyword">class</strong>.getName()), data);
-<a class="jxr_linenumber" name="275" href="#275">275</a>     }
-<a class="jxr_linenumber" name="276" href="#276">276</a> 
-<a class="jxr_linenumber" name="277" href="#277">277</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="278" href="#278">278</a> <em class="jxr_javadoccomment">     * Import EAC files. See EAD import for details.</em>
-<a class="jxr_linenumber" name="279" href="#279">279</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="280" href="#280">280</a>     @POST
-<a class="jxr_linenumber" name="281" href="#281">281</a>     @Consumes({MediaType.TEXT_PLAIN, MediaType.APPLICATION_XML,
-<a class="jxr_linenumber" name="282" href="#282">282</a>             MediaType.TEXT_XML, MediaType.APPLICATION_OCTET_STREAM})
-<a class="jxr_linenumber" name="283" href="#283">283</a>     @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="284" href="#284">284</a>     @Path(<span class="jxr_string">"eac"</span>)
-<a class="jxr_linenumber" name="285" href="#285">285</a>     <strong class="jxr_keyword">public</strong> ImportLog importEac(
-<a class="jxr_linenumber" name="286" href="#286">286</a>             @QueryParam(SCOPE_PARAM) String scopeId,
-<a class="jxr_linenumber" name="287" href="#287">287</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(TOLERANT_PARAM) Boolean tolerant,
-<a class="jxr_linenumber" name="288" href="#288">288</a>             @QueryParam(LOG_PARAM) String logMessage,
-<a class="jxr_linenumber" name="289" href="#289">289</a>             @QueryParam(PROPERTIES_PARAM) String propertyFile,
-<a class="jxr_linenumber" name="290" href="#290">290</a>             @QueryParam(HANDLER_PARAM) String handlerClass,
-<a class="jxr_linenumber" name="291" href="#291">291</a>             @QueryParam(IMPORTER_PARAM) String importerClass,
-<a class="jxr_linenumber" name="292" href="#292">292</a>             InputStream data)
-<a class="jxr_linenumber" name="293" href="#293">293</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError, IOException, DeserializationError {
-<a class="jxr_linenumber" name="294" href="#294">294</a>         <strong class="jxr_keyword">return</strong> importEad(scopeId, tolerant, logMessage, propertyFile,
-<a class="jxr_linenumber" name="295" href="#295">295</a>                 nameOrDefault(handlerClass, EacHandler.<strong class="jxr_keyword">class</strong>.getName()),
-<a class="jxr_linenumber" name="296" href="#296">296</a>                 nameOrDefault(importerClass, EacImporter.<strong class="jxr_keyword">class</strong>.getName()), data);
-<a class="jxr_linenumber" name="297" href="#297">297</a>     }
-<a class="jxr_linenumber" name="298" href="#298">298</a> 
-<a class="jxr_linenumber" name="299" href="#299">299</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="300" href="#300">300</a> <em class="jxr_javadoccomment">     * Import a set of CSV files. See EAD handler for options and</em>
-<a class="jxr_linenumber" name="301" href="#301">301</a> <em class="jxr_javadoccomment">     * defaults but substitute text/csv for the input mimetype when</em>
-<a class="jxr_linenumber" name="302" href="#302">302</a> <em class="jxr_javadoccomment">     * a single file is POSTed.</em>
-<a class="jxr_linenumber" name="303" href="#303">303</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
-<a class="jxr_linenumber" name="304" href="#304">304</a> <em class="jxr_javadoccomment">     * Additional note: no handler class is required.</em>
-<a class="jxr_linenumber" name="305" href="#305">305</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="306" href="#306">306</a>     @POST
-<a class="jxr_linenumber" name="307" href="#307">307</a>     @Consumes({MediaType.TEXT_PLAIN, CSV_MEDIA_TYPE,
-<a class="jxr_linenumber" name="308" href="#308">308</a>             MediaType.APPLICATION_OCTET_STREAM})
-<a class="jxr_linenumber" name="309" href="#309">309</a>     @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="310" href="#310">310</a>     @Path(<span class="jxr_string">"csv"</span>)
-<a class="jxr_linenumber" name="311" href="#311">311</a>     <strong class="jxr_keyword">public</strong> ImportLog importCsv(
-<a class="jxr_linenumber" name="312" href="#312">312</a>             @QueryParam(SCOPE_PARAM) String scopeId,
-<a class="jxr_linenumber" name="313" href="#313">313</a>             @QueryParam(LOG_PARAM) String logMessage,
-<a class="jxr_linenumber" name="314" href="#314">314</a>             @QueryParam(IMPORTER_PARAM) String importerClass,
-<a class="jxr_linenumber" name="315" href="#315">315</a>             InputStream data)
-<a class="jxr_linenumber" name="316" href="#316">316</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError,
-<a class="jxr_linenumber" name="317" href="#317">317</a>             IOException, DeserializationError {
-<a class="jxr_linenumber" name="318" href="#318">318</a> 
-<a class="jxr_linenumber" name="319" href="#319">319</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="320" href="#320">320</a>             Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; importer
-<a class="jxr_linenumber" name="321" href="#321">321</a>                     = getImporterCls(importerClass, DEFAULT_EAD_IMPORTER);
-<a class="jxr_linenumber" name="322" href="#322">322</a> 
-<a class="jxr_linenumber" name="323" href="#323">323</a>             <em class="jxr_comment">// Get the current user from the Authorization header and the scope</em>
-<a class="jxr_linenumber" name="324" href="#324">324</a>             <em class="jxr_comment">// from the query params...</em>
-<a class="jxr_linenumber" name="325" href="#325">325</a>             UserProfile user = getCurrentUser();
-<a class="jxr_linenumber" name="326" href="#326">326</a>             PermissionScope scope = manager.getEntity(scopeId, PermissionScope.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="327" href="#327">327</a> 
-<a class="jxr_linenumber" name="328" href="#328">328</a>             <em class="jxr_comment">// Run the import!</em>
-<a class="jxr_linenumber" name="329" href="#329">329</a>             String message = getLogMessage(logMessage).orNull();
-<a class="jxr_linenumber" name="330" href="#330">330</a>             ImportManager importManager = <strong class="jxr_keyword">new</strong> CsvImportManager(graph, scope, user, importer);
-<a class="jxr_linenumber" name="331" href="#331">331</a>             ImportLog log = importDataStream(importManager, message, data,
-<a class="jxr_linenumber" name="332" href="#332">332</a>                     MediaType.valueOf(CSV_MEDIA_TYPE));
-<a class="jxr_linenumber" name="333" href="#333">333</a>             tx.success();
-<a class="jxr_linenumber" name="334" href="#334">334</a>             <strong class="jxr_keyword">return</strong> log;
-<a class="jxr_linenumber" name="335" href="#335">335</a>         } <strong class="jxr_keyword">catch</strong> (InputParseError ex) {
-<a class="jxr_linenumber" name="336" href="#336">336</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"ParseError: "</span> + ex.getMessage());
-<a class="jxr_linenumber" name="337" href="#337">337</a>         } <strong class="jxr_keyword">catch</strong> (ClassNotFoundException e) {
-<a class="jxr_linenumber" name="338" href="#338">338</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"Class not found: "</span> + e.getMessage());
-<a class="jxr_linenumber" name="339" href="#339">339</a>         } <strong class="jxr_keyword">catch</strong> (IllegalArgumentException | ArchiveException e) {
-<a class="jxr_linenumber" name="340" href="#340">340</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(e.getMessage());
-<a class="jxr_linenumber" name="341" href="#341">341</a>         }
-<a class="jxr_linenumber" name="342" href="#342">342</a>     }
-<a class="jxr_linenumber" name="343" href="#343">343</a> 
-<a class="jxr_linenumber" name="344" href="#344">344</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="345" href="#345">345</a> <em class="jxr_javadoccomment">     * Update a batch of items via JSON containing (partial)</em>
-<a class="jxr_linenumber" name="346" href="#346">346</a> <em class="jxr_javadoccomment">     * data bundles.</em>
-<a class="jxr_linenumber" name="347" href="#347">347</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="348" href="#348">348</a> <em class="jxr_javadoccomment">     * @param scopeId     the ID of there item's permission scope</em>
-<a class="jxr_linenumber" name="349" href="#349">349</a> <em class="jxr_javadoccomment">     * @param tolerant    whether to allow individual validation failures</em>
-<a class="jxr_linenumber" name="350" href="#350">350</a> <em class="jxr_javadoccomment">     * @param version     whether to create a version prior to delete</em>
-<a class="jxr_linenumber" name="351" href="#351">351</a> <em class="jxr_javadoccomment">     * @param logMessage  an optional log message</em>
-<a class="jxr_linenumber" name="352" href="#352">352</a> <em class="jxr_javadoccomment">     * @param inputStream a JSON document containing partial bundles containing</em>
-<a class="jxr_linenumber" name="353" href="#353">353</a> <em class="jxr_javadoccomment">     *                    the needed data transformations</em>
-<a class="jxr_linenumber" name="354" href="#354">354</a> <em class="jxr_javadoccomment">     * @return an import log describing the changes committed</em>
-<a class="jxr_linenumber" name="355" href="#355">355</a> <em class="jxr_javadoccomment">     * @throws IOException</em>
-<a class="jxr_linenumber" name="356" href="#356">356</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="357" href="#357">357</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
-<a class="jxr_linenumber" name="358" href="#358">358</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
-<a class="jxr_linenumber" name="359" href="#359">359</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="360" href="#360">360</a>     @PUT
-<a class="jxr_linenumber" name="361" href="#361">361</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="362" href="#362">362</a>     @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="363" href="#363">363</a>     @Path(<span class="jxr_string">"batch"</span>)
-<a class="jxr_linenumber" name="364" href="#364">364</a>     <strong class="jxr_keyword">public</strong> ImportLog batchUpdate(
-<a class="jxr_linenumber" name="365" href="#365">365</a>             @QueryParam(SCOPE_PARAM) String scopeId,
-<a class="jxr_linenumber" name="366" href="#366">366</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(TOLERANT_PARAM) Boolean tolerant,
-<a class="jxr_linenumber" name="367" href="#367">367</a>             @DefaultValue(<span class="jxr_string">"true"</span>) @QueryParam(VERSION_PARAM) Boolean version,
-<a class="jxr_linenumber" name="368" href="#368">368</a>             @QueryParam(LOG_PARAM) String logMessage, InputStream inputStream)
-<a class="jxr_linenumber" name="369" href="#369">369</a>             <strong class="jxr_keyword">throws</strong> IOException, ItemNotFound, ValidationError, DeserializationError {
-<a class="jxr_linenumber" name="370" href="#370">370</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="371" href="#371">371</a>             Accessor accessor = getCurrentUser();
-<a class="jxr_linenumber" name="372" href="#372">372</a>             PermissionScope scope = scopeId != <strong class="jxr_keyword">null</strong>
-<a class="jxr_linenumber" name="373" href="#373">373</a>                     ? manager.getEntity(scopeId, PermissionScope.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="374" href="#374">374</a>                     : <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="375" href="#375">375</a>             ImportLog log = <strong class="jxr_keyword">new</strong> BatchOperations(graph, scope, version, tolerant)
-<a class="jxr_linenumber" name="376" href="#376">376</a>                     .batchUpdate(inputStream,
-<a class="jxr_linenumber" name="377" href="#377">377</a>                             accessor.as(Actioner.<strong class="jxr_keyword">class</strong>), getLogMessage(logMessage));
-<a class="jxr_linenumber" name="378" href="#378">378</a>             tx.success();
-<a class="jxr_linenumber" name="379" href="#379">379</a>             <strong class="jxr_keyword">return</strong> log;
-<a class="jxr_linenumber" name="380" href="#380">380</a>         }
-<a class="jxr_linenumber" name="381" href="#381">381</a>     }
-<a class="jxr_linenumber" name="382" href="#382">382</a> 
-<a class="jxr_linenumber" name="383" href="#383">383</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="384" href="#384">384</a> <em class="jxr_javadoccomment">     * Delete a batch of objects via JSON containing their IDs.</em>
-<a class="jxr_linenumber" name="385" href="#385">385</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="386" href="#386">386</a> <em class="jxr_javadoccomment">     * @param scopeId    the ID of there item's permission scope</em>
-<a class="jxr_linenumber" name="387" href="#387">387</a> <em class="jxr_javadoccomment">     * @param version    whether to create a version prior to delete</em>
-<a class="jxr_linenumber" name="388" href="#388">388</a> <em class="jxr_javadoccomment">     * @param logMessage an optional log message.</em>
-<a class="jxr_linenumber" name="389" href="#389">389</a> <em class="jxr_javadoccomment">     * @param ids        a list of IDs to delete</em>
-<a class="jxr_linenumber" name="390" href="#390">390</a> <em class="jxr_javadoccomment">     * @throws IOException</em>
-<a class="jxr_linenumber" name="391" href="#391">391</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="392" href="#392">392</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
-<a class="jxr_linenumber" name="393" href="#393">393</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="394" href="#394">394</a>     @DELETE
-<a class="jxr_linenumber" name="395" href="#395">395</a>     @Path(<span class="jxr_string">"batch"</span>)
-<a class="jxr_linenumber" name="396" href="#396">396</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> batchDelete(
-<a class="jxr_linenumber" name="397" href="#397">397</a>             @QueryParam(SCOPE_PARAM) String scopeId,
-<a class="jxr_linenumber" name="398" href="#398">398</a>             @DefaultValue(<span class="jxr_string">"true"</span>) @QueryParam(VERSION_PARAM) Boolean version,
-<a class="jxr_linenumber" name="399" href="#399">399</a>             @QueryParam(LOG_PARAM) String logMessage,
-<a class="jxr_linenumber" name="400" href="#400">400</a>             @QueryParam(ID_PARAM) List&lt;String&gt; ids)
-<a class="jxr_linenumber" name="401" href="#401">401</a>             <strong class="jxr_keyword">throws</strong> IOException, ItemNotFound, DeserializationError {
-<a class="jxr_linenumber" name="402" href="#402">402</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
-<a class="jxr_linenumber" name="403" href="#403">403</a>             Accessor accessor = getCurrentUser();
-<a class="jxr_linenumber" name="404" href="#404">404</a>             PermissionScope scope = scopeId != <strong class="jxr_keyword">null</strong>
-<a class="jxr_linenumber" name="405" href="#405">405</a>                     ? manager.getEntity(scopeId, PermissionScope.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="406" href="#406">406</a>                     : <strong class="jxr_keyword">null</strong>;
-<a class="jxr_linenumber" name="407" href="#407">407</a>             <strong class="jxr_keyword">new</strong> BatchOperations(graph, scope, version, false)
-<a class="jxr_linenumber" name="408" href="#408">408</a>                     .batchDelete(ids,
-<a class="jxr_linenumber" name="409" href="#409">409</a>                             accessor.as(Actioner.<strong class="jxr_keyword">class</strong>), getLogMessage(logMessage));
-<a class="jxr_linenumber" name="410" href="#410">410</a>             tx.success();
-<a class="jxr_linenumber" name="411" href="#411">411</a>         }
-<a class="jxr_linenumber" name="412" href="#412">412</a>     }
-<a class="jxr_linenumber" name="413" href="#413">413</a> 
-<a class="jxr_linenumber" name="414" href="#414">414</a>     <em class="jxr_comment">// Helpers</em>
-<a class="jxr_linenumber" name="415" href="#415">415</a> 
-<a class="jxr_linenumber" name="416" href="#416">416</a>     <strong class="jxr_keyword">private</strong> ImportLog importDataStream(ImportManager importManager, String message, InputStream data,
-<a class="jxr_linenumber" name="417" href="#417">417</a>             MediaType... accepts) <strong class="jxr_keyword">throws</strong> IOException, ValidationError, InputParseError, ArchiveException {
-<a class="jxr_linenumber" name="418" href="#418">418</a>         MediaType mediaType = requestHeaders.getMediaType();
-<a class="jxr_linenumber" name="419" href="#419">419</a>         <strong class="jxr_keyword">if</strong> (MediaType.TEXT_PLAIN_TYPE.equals(mediaType)) {
-<a class="jxr_linenumber" name="420" href="#420">420</a>             <em class="jxr_comment">// Extract our list of paths...</em>
-<a class="jxr_linenumber" name="421" href="#421">421</a>             List&lt;String&gt; paths = getFilePaths(IOUtils.toString(data, StandardCharsets.UTF_8));
-<a class="jxr_linenumber" name="422" href="#422">422</a>             <strong class="jxr_keyword">return</strong> importManager
-<a class="jxr_linenumber" name="423" href="#423">423</a>                     .importFiles(paths, message);
-<a class="jxr_linenumber" name="424" href="#424">424</a>         } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (Lists.newArrayList(accepts).contains(mediaType)) {
-<a class="jxr_linenumber" name="425" href="#425">425</a>             <strong class="jxr_keyword">return</strong> importManager.importFile(data, message);
-<a class="jxr_linenumber" name="426" href="#426">426</a>         } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="427" href="#427">427</a>             <strong class="jxr_keyword">return</strong> importArchive(importManager, message, data);
-<a class="jxr_linenumber" name="428" href="#428">428</a>         }
-<a class="jxr_linenumber" name="429" href="#429">429</a>     }
-<a class="jxr_linenumber" name="430" href="#430">430</a> 
-<a class="jxr_linenumber" name="431" href="#431">431</a>     <strong class="jxr_keyword">private</strong> ImportLog importArchive(ImportManager importManager, String logMessage, InputStream data)
-<a class="jxr_linenumber" name="432" href="#432">432</a>             <strong class="jxr_keyword">throws</strong> IOException, ValidationError, ArchiveException, InputParseError {
-<a class="jxr_linenumber" name="433" href="#433">433</a>         logger.info(<span class="jxr_string">"Import via compressed archive..."</span>);
-<a class="jxr_linenumber" name="434" href="#434">434</a>         <strong class="jxr_keyword">try</strong> (BufferedInputStream bis = <strong class="jxr_keyword">new</strong> BufferedInputStream(data);
-<a class="jxr_linenumber" name="435" href="#435">435</a>              ArchiveInputStream archiveInputStream = <strong class="jxr_keyword">new</strong>
-<a class="jxr_linenumber" name="436" href="#436">436</a>                      ArchiveStreamFactory().createArchiveInputStream(bis)) {
-<a class="jxr_linenumber" name="437" href="#437">437</a>             <strong class="jxr_keyword">return</strong> importManager
-<a class="jxr_linenumber" name="438" href="#438">438</a>                     .importFiles(archiveInputStream, logMessage);
-<a class="jxr_linenumber" name="439" href="#439">439</a>         }
-<a class="jxr_linenumber" name="440" href="#440">440</a>     }
-<a class="jxr_linenumber" name="441" href="#441">441</a> 
-<a class="jxr_linenumber" name="442" href="#442">442</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> List&lt;String&gt; getFilePaths(String pathList) {
-<a class="jxr_linenumber" name="443" href="#443">443</a>         List&lt;String&gt; files = Lists.newArrayList();
-<a class="jxr_linenumber" name="444" href="#444">444</a>         <strong class="jxr_keyword">for</strong> (String path : Splitter.on(<span class="jxr_string">"\n"</span>).omitEmptyStrings().trimResults().split(pathList)) {
-<a class="jxr_linenumber" name="445" href="#445">445</a>             <strong class="jxr_keyword">if</strong> (!<strong class="jxr_keyword">new</strong> File(path).exists()) {
-<a class="jxr_linenumber" name="446" href="#446">446</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"File specified in payload not found: "</span> + path);
-<a class="jxr_linenumber" name="447" href="#447">447</a>             }
-<a class="jxr_linenumber" name="448" href="#448">448</a>             files.add(path);
-<a class="jxr_linenumber" name="449" href="#449">449</a>         }
-<a class="jxr_linenumber" name="450" href="#450">450</a>         <strong class="jxr_keyword">return</strong> files;
-<a class="jxr_linenumber" name="451" href="#451">451</a>     }
-<a class="jxr_linenumber" name="452" href="#452">452</a> 
-<a class="jxr_linenumber" name="453" href="#453">453</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> checkPropertyFile(String properties) {
-<a class="jxr_linenumber" name="454" href="#454">454</a>         <em class="jxr_comment">// Null properties are allowed</em>
-<a class="jxr_linenumber" name="455" href="#455">455</a>         <strong class="jxr_keyword">if</strong> (properties != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="456" href="#456">456</a>             File file = <strong class="jxr_keyword">new</strong> File(properties);
-<a class="jxr_linenumber" name="457" href="#457">457</a>             <strong class="jxr_keyword">if</strong> (!(file.isFile() &amp;&amp; file.exists())) {
-<a class="jxr_linenumber" name="458" href="#458">458</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Properties file '"</span> + properties + <span class="jxr_string">"' "</span> +
-<a class="jxr_linenumber" name="459" href="#459">459</a>                         <span class="jxr_string">"either does not exist, or is not a file."</span>);
-<a class="jxr_linenumber" name="460" href="#460">460</a>             }
-<a class="jxr_linenumber" name="461" href="#461">461</a>         }
-<a class="jxr_linenumber" name="462" href="#462">462</a>     }
-<a class="jxr_linenumber" name="463" href="#463">463</a> 
-<a class="jxr_linenumber" name="464" href="#464">464</a>     @SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
-<a class="jxr_linenumber" name="465" href="#465">465</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Class&lt;? <strong class="jxr_keyword">extends</strong> SaxXmlHandler&gt; getHandlerCls(String handlerName, String
-<a class="jxr_linenumber" name="466" href="#466">466</a>             defaultHandler)
-<a class="jxr_linenumber" name="467" href="#467">467</a>             <strong class="jxr_keyword">throws</strong> ClassNotFoundException, DeserializationError {
-<a class="jxr_linenumber" name="468" href="#468">468</a>         String name = nameOrDefault(handlerName, defaultHandler);
-<a class="jxr_linenumber" name="469" href="#469">469</a>         Class&lt;?&gt; handler = Class.forName(name);
-<a class="jxr_linenumber" name="470" href="#470">470</a>         <strong class="jxr_keyword">if</strong> (!SaxXmlHandler.<strong class="jxr_keyword">class</strong>.isAssignableFrom(handler)) {
-<a class="jxr_linenumber" name="471" href="#471">471</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"Class '"</span> + handlerName + <span class="jxr_string">"' is"</span> +
-<a class="jxr_linenumber" name="472" href="#472">472</a>                     <span class="jxr_string">" not an instance of "</span> + SaxXmlHandler.<strong class="jxr_keyword">class</strong>.getSimpleName());
-<a class="jxr_linenumber" name="473" href="#473">473</a>         }
-<a class="jxr_linenumber" name="474" href="#474">474</a>         <strong class="jxr_keyword">return</strong> (Class&lt;? <strong class="jxr_keyword">extends</strong> SaxXmlHandler&gt;) handler;
-<a class="jxr_linenumber" name="475" href="#475">475</a>     }
-<a class="jxr_linenumber" name="476" href="#476">476</a> 
-<a class="jxr_linenumber" name="477" href="#477">477</a>     @SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
-<a class="jxr_linenumber" name="478" href="#478">478</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; getImporterCls(String importerName, String defaultImporter)
-<a class="jxr_linenumber" name="479" href="#479">479</a>             <strong class="jxr_keyword">throws</strong> ClassNotFoundException, DeserializationError {
-<a class="jxr_linenumber" name="480" href="#480">480</a>         String name = nameOrDefault(importerName, defaultImporter);
-<a class="jxr_linenumber" name="481" href="#481">481</a>         Class&lt;?&gt; importer = Class.forName(name);
-<a class="jxr_linenumber" name="482" href="#482">482</a>         <strong class="jxr_keyword">if</strong> (!AbstractImporter.<strong class="jxr_keyword">class</strong>.isAssignableFrom(importer)) {
-<a class="jxr_linenumber" name="483" href="#483">483</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"Class '"</span> + importerName + <span class="jxr_string">"' is"</span> +
-<a class="jxr_linenumber" name="484" href="#484">484</a>                     <span class="jxr_string">" not an instance of "</span> + AbstractImporter.<strong class="jxr_keyword">class</strong>.getSimpleName());
-<a class="jxr_linenumber" name="485" href="#485">485</a>         }
-<a class="jxr_linenumber" name="486" href="#486">486</a>         <strong class="jxr_keyword">return</strong> (Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt;) importer;
-<a class="jxr_linenumber" name="487" href="#487">487</a>     }
-<a class="jxr_linenumber" name="488" href="#488">488</a> 
-<a class="jxr_linenumber" name="489" href="#489">489</a>     <strong class="jxr_keyword">private</strong> Optional&lt;String&gt; getLogMessage(String logMessagePathOrText) <strong class="jxr_keyword">throws</strong> IOException {
-<a class="jxr_linenumber" name="490" href="#490">490</a>         <strong class="jxr_keyword">if</strong> (logMessagePathOrText == <strong class="jxr_keyword">null</strong> || logMessagePathOrText.trim().isEmpty()) {
-<a class="jxr_linenumber" name="491" href="#491">491</a>             <strong class="jxr_keyword">return</strong> getLogMessage();
-<a class="jxr_linenumber" name="492" href="#492">492</a>         } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="493" href="#493">493</a>             File fileTest = <strong class="jxr_keyword">new</strong> File(logMessagePathOrText);
-<a class="jxr_linenumber" name="494" href="#494">494</a>             <strong class="jxr_keyword">if</strong> (fileTest.exists()) {
-<a class="jxr_linenumber" name="495" href="#495">495</a>                 <strong class="jxr_keyword">return</strong> Optional.of(FileUtils.readFileToString(fileTest, <span class="jxr_string">"UTF-8"</span>));
-<a class="jxr_linenumber" name="496" href="#496">496</a>             } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="497" href="#497">497</a>                 <strong class="jxr_keyword">return</strong> Optional.of(logMessagePathOrText);
-<a class="jxr_linenumber" name="498" href="#498">498</a>             }
-<a class="jxr_linenumber" name="499" href="#499">499</a>         }
-<a class="jxr_linenumber" name="500" href="#500">500</a>     }
-<a class="jxr_linenumber" name="501" href="#501">501</a> 
-<a class="jxr_linenumber" name="502" href="#502">502</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String nameOrDefault(String name, String defaultName) {
-<a class="jxr_linenumber" name="503" href="#503">503</a>         <strong class="jxr_keyword">return</strong> (name == <strong class="jxr_keyword">null</strong> || name.trim().isEmpty()) ? defaultName : name;
-<a class="jxr_linenumber" name="504" href="#504">504</a>     }
-<a class="jxr_linenumber" name="505" href="#505">505</a> }
+<a class="jxr_linenumber" name="219" href="#219">219</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(ALLOW_UPDATES_PARAM) Boolean allowUpdates,
+<a class="jxr_linenumber" name="220" href="#220">220</a>             @QueryParam(LOG_PARAM) String logMessage,
+<a class="jxr_linenumber" name="221" href="#221">221</a>             @QueryParam(PROPERTIES_PARAM) String propertyFile,
+<a class="jxr_linenumber" name="222" href="#222">222</a>             @QueryParam(HANDLER_PARAM) String handlerClass,
+<a class="jxr_linenumber" name="223" href="#223">223</a>             @QueryParam(IMPORTER_PARAM) String importerClass,
+<a class="jxr_linenumber" name="224" href="#224">224</a>             InputStream data)
+<a class="jxr_linenumber" name="225" href="#225">225</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError,
+<a class="jxr_linenumber" name="226" href="#226">226</a>             IOException, DeserializationError {
+<a class="jxr_linenumber" name="227" href="#227">227</a> 
+<a class="jxr_linenumber" name="228" href="#228">228</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="229" href="#229">229</a>             checkPropertyFile(propertyFile);
+<a class="jxr_linenumber" name="230" href="#230">230</a>             Class&lt;? <strong class="jxr_keyword">extends</strong> SaxXmlHandler&gt; handler
+<a class="jxr_linenumber" name="231" href="#231">231</a>                     = getHandlerCls(handlerClass, DEFAULT_EAD_HANDLER);
+<a class="jxr_linenumber" name="232" href="#232">232</a>             Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; importer
+<a class="jxr_linenumber" name="233" href="#233">233</a>                     = getImporterCls(importerClass, DEFAULT_EAD_IMPORTER);
+<a class="jxr_linenumber" name="234" href="#234">234</a> 
+<a class="jxr_linenumber" name="235" href="#235">235</a>             <em class="jxr_comment">// Get the current user from the Authorization header and the scope</em>
+<a class="jxr_linenumber" name="236" href="#236">236</a>             <em class="jxr_comment">// from the query params...</em>
+<a class="jxr_linenumber" name="237" href="#237">237</a>             UserProfile user = getCurrentUser();
+<a class="jxr_linenumber" name="238" href="#238">238</a>             PermissionScope scope = manager.getEntity(scopeId, PermissionScope.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="239" href="#239">239</a> 
+<a class="jxr_linenumber" name="240" href="#240">240</a>             <em class="jxr_comment">// Run the import!</em>
+<a class="jxr_linenumber" name="241" href="#241">241</a>             String message = getLogMessage(logMessage).orNull();
+<a class="jxr_linenumber" name="242" href="#242">242</a>             ImportManager importManager = <strong class="jxr_keyword">new</strong> SaxImportManager(
+<a class="jxr_linenumber" name="243" href="#243">243</a>                     graph, scope, user, importer, handler)
+<a class="jxr_linenumber" name="244" href="#244">244</a>                     .allowUpdates(allowUpdates)
+<a class="jxr_linenumber" name="245" href="#245">245</a>                     .setTolerant(tolerant)
+<a class="jxr_linenumber" name="246" href="#246">246</a>                     .withProperties(propertyFile);
+<a class="jxr_linenumber" name="247" href="#247">247</a>             ImportLog log = importDataStream(importManager, message, data,
+<a class="jxr_linenumber" name="248" href="#248">248</a>                     MediaType.APPLICATION_XML_TYPE, MediaType.TEXT_XML_TYPE);
+<a class="jxr_linenumber" name="249" href="#249">249</a>             tx.success();
+<a class="jxr_linenumber" name="250" href="#250">250</a>             <strong class="jxr_keyword">return</strong> log;
+<a class="jxr_linenumber" name="251" href="#251">251</a>         } <strong class="jxr_keyword">catch</strong> (ClassNotFoundException e) {
+<a class="jxr_linenumber" name="252" href="#252">252</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"Class not found: "</span> + e.getMessage());
+<a class="jxr_linenumber" name="253" href="#253">253</a>         } <strong class="jxr_keyword">catch</strong> (IllegalArgumentException | InputParseError | ArchiveException e) {
+<a class="jxr_linenumber" name="254" href="#254">254</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(e.getMessage());
+<a class="jxr_linenumber" name="255" href="#255">255</a>         }
+<a class="jxr_linenumber" name="256" href="#256">256</a>     }
+<a class="jxr_linenumber" name="257" href="#257">257</a> 
+<a class="jxr_linenumber" name="258" href="#258">258</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="259" href="#259">259</a> <em class="jxr_javadoccomment">     * Import EAG files. See EAD import for details.</em>
+<a class="jxr_linenumber" name="260" href="#260">260</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="261" href="#261">261</a>     @POST
+<a class="jxr_linenumber" name="262" href="#262">262</a>     @Consumes({MediaType.TEXT_PLAIN, MediaType.APPLICATION_XML,
+<a class="jxr_linenumber" name="263" href="#263">263</a>             MediaType.TEXT_XML, MediaType.APPLICATION_OCTET_STREAM})
+<a class="jxr_linenumber" name="264" href="#264">264</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="265" href="#265">265</a>     @Path(<span class="jxr_string">"eag"</span>)
+<a class="jxr_linenumber" name="266" href="#266">266</a>     <strong class="jxr_keyword">public</strong> ImportLog importEag(
+<a class="jxr_linenumber" name="267" href="#267">267</a>             @QueryParam(SCOPE_PARAM) String scopeId,
+<a class="jxr_linenumber" name="268" href="#268">268</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(TOLERANT_PARAM) Boolean tolerant,
+<a class="jxr_linenumber" name="269" href="#269">269</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(ALLOW_UPDATES_PARAM) Boolean allowUpdates,
+<a class="jxr_linenumber" name="270" href="#270">270</a>             @QueryParam(LOG_PARAM) String logMessage,
+<a class="jxr_linenumber" name="271" href="#271">271</a>             @QueryParam(PROPERTIES_PARAM) String propertyFile,
+<a class="jxr_linenumber" name="272" href="#272">272</a>             @QueryParam(HANDLER_PARAM) String handlerClass,
+<a class="jxr_linenumber" name="273" href="#273">273</a>             @QueryParam(IMPORTER_PARAM) String importerClass,
+<a class="jxr_linenumber" name="274" href="#274">274</a>             InputStream data)
+<a class="jxr_linenumber" name="275" href="#275">275</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError, IOException, DeserializationError {
+<a class="jxr_linenumber" name="276" href="#276">276</a>         <strong class="jxr_keyword">return</strong> importEad(scopeId, tolerant, allowUpdates, logMessage, propertyFile,
+<a class="jxr_linenumber" name="277" href="#277">277</a>                 nameOrDefault(handlerClass, EagHandler.<strong class="jxr_keyword">class</strong>.getName()),
+<a class="jxr_linenumber" name="278" href="#278">278</a>                 nameOrDefault(importerClass, EagImporter.<strong class="jxr_keyword">class</strong>.getName()), data);
+<a class="jxr_linenumber" name="279" href="#279">279</a>     }
+<a class="jxr_linenumber" name="280" href="#280">280</a> 
+<a class="jxr_linenumber" name="281" href="#281">281</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="282" href="#282">282</a> <em class="jxr_javadoccomment">     * Import EAC files. See EAD import for details.</em>
+<a class="jxr_linenumber" name="283" href="#283">283</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="284" href="#284">284</a>     @POST
+<a class="jxr_linenumber" name="285" href="#285">285</a>     @Consumes({MediaType.TEXT_PLAIN, MediaType.APPLICATION_XML,
+<a class="jxr_linenumber" name="286" href="#286">286</a>             MediaType.TEXT_XML, MediaType.APPLICATION_OCTET_STREAM})
+<a class="jxr_linenumber" name="287" href="#287">287</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="288" href="#288">288</a>     @Path(<span class="jxr_string">"eac"</span>)
+<a class="jxr_linenumber" name="289" href="#289">289</a>     <strong class="jxr_keyword">public</strong> ImportLog importEac(
+<a class="jxr_linenumber" name="290" href="#290">290</a>             @QueryParam(SCOPE_PARAM) String scopeId,
+<a class="jxr_linenumber" name="291" href="#291">291</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(TOLERANT_PARAM) Boolean tolerant,
+<a class="jxr_linenumber" name="292" href="#292">292</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(ALLOW_UPDATES_PARAM) Boolean allowUpdates,
+<a class="jxr_linenumber" name="293" href="#293">293</a>             @QueryParam(LOG_PARAM) String logMessage,
+<a class="jxr_linenumber" name="294" href="#294">294</a>             @QueryParam(PROPERTIES_PARAM) String propertyFile,
+<a class="jxr_linenumber" name="295" href="#295">295</a>             @QueryParam(HANDLER_PARAM) String handlerClass,
+<a class="jxr_linenumber" name="296" href="#296">296</a>             @QueryParam(IMPORTER_PARAM) String importerClass,
+<a class="jxr_linenumber" name="297" href="#297">297</a>             InputStream data)
+<a class="jxr_linenumber" name="298" href="#298">298</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError, IOException, DeserializationError {
+<a class="jxr_linenumber" name="299" href="#299">299</a>         <strong class="jxr_keyword">return</strong> importEad(scopeId, tolerant, allowUpdates, logMessage, propertyFile,
+<a class="jxr_linenumber" name="300" href="#300">300</a>                 nameOrDefault(handlerClass, EacHandler.<strong class="jxr_keyword">class</strong>.getName()),
+<a class="jxr_linenumber" name="301" href="#301">301</a>                 nameOrDefault(importerClass, EacImporter.<strong class="jxr_keyword">class</strong>.getName()), data);
+<a class="jxr_linenumber" name="302" href="#302">302</a>     }
+<a class="jxr_linenumber" name="303" href="#303">303</a> 
+<a class="jxr_linenumber" name="304" href="#304">304</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="305" href="#305">305</a> <em class="jxr_javadoccomment">     * Import a set of CSV files. See EAD handler for options and</em>
+<a class="jxr_linenumber" name="306" href="#306">306</a> <em class="jxr_javadoccomment">     * defaults but substitute text/csv for the input mimetype when</em>
+<a class="jxr_linenumber" name="307" href="#307">307</a> <em class="jxr_javadoccomment">     * a single file is POSTed.</em>
+<a class="jxr_linenumber" name="308" href="#308">308</a> <em class="jxr_javadoccomment">     * &lt;p/&gt;</em>
+<a class="jxr_linenumber" name="309" href="#309">309</a> <em class="jxr_javadoccomment">     * Additional note: no handler class is required.</em>
+<a class="jxr_linenumber" name="310" href="#310">310</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="311" href="#311">311</a>     @POST
+<a class="jxr_linenumber" name="312" href="#312">312</a>     @Consumes({MediaType.TEXT_PLAIN, CSV_MEDIA_TYPE,
+<a class="jxr_linenumber" name="313" href="#313">313</a>             MediaType.APPLICATION_OCTET_STREAM})
+<a class="jxr_linenumber" name="314" href="#314">314</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="315" href="#315">315</a>     @Path(<span class="jxr_string">"csv"</span>)
+<a class="jxr_linenumber" name="316" href="#316">316</a>     <strong class="jxr_keyword">public</strong> ImportLog importCsv(
+<a class="jxr_linenumber" name="317" href="#317">317</a>             @QueryParam(SCOPE_PARAM) String scopeId,
+<a class="jxr_linenumber" name="318" href="#318">318</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(TOLERANT_PARAM) Boolean tolerant,
+<a class="jxr_linenumber" name="319" href="#319">319</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(ALLOW_UPDATES_PARAM) Boolean allowUpdates,
+<a class="jxr_linenumber" name="320" href="#320">320</a>             @QueryParam(LOG_PARAM) String logMessage,
+<a class="jxr_linenumber" name="321" href="#321">321</a>             @QueryParam(IMPORTER_PARAM) String importerClass,
+<a class="jxr_linenumber" name="322" href="#322">322</a>             InputStream data)
+<a class="jxr_linenumber" name="323" href="#323">323</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError,
+<a class="jxr_linenumber" name="324" href="#324">324</a>             IOException, DeserializationError {
+<a class="jxr_linenumber" name="325" href="#325">325</a> 
+<a class="jxr_linenumber" name="326" href="#326">326</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="327" href="#327">327</a>             Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; importer
+<a class="jxr_linenumber" name="328" href="#328">328</a>                     = getImporterCls(importerClass, DEFAULT_EAD_IMPORTER);
+<a class="jxr_linenumber" name="329" href="#329">329</a> 
+<a class="jxr_linenumber" name="330" href="#330">330</a>             <em class="jxr_comment">// Get the current user from the Authorization header and the scope</em>
+<a class="jxr_linenumber" name="331" href="#331">331</a>             <em class="jxr_comment">// from the query params...</em>
+<a class="jxr_linenumber" name="332" href="#332">332</a>             UserProfile user = getCurrentUser();
+<a class="jxr_linenumber" name="333" href="#333">333</a>             PermissionScope scope = manager.getEntity(scopeId, PermissionScope.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="334" href="#334">334</a> 
+<a class="jxr_linenumber" name="335" href="#335">335</a>             <em class="jxr_comment">// Run the import!</em>
+<a class="jxr_linenumber" name="336" href="#336">336</a>             String message = getLogMessage(logMessage).orNull();
+<a class="jxr_linenumber" name="337" href="#337">337</a>             ImportManager importManager = <strong class="jxr_keyword">new</strong> CsvImportManager(
+<a class="jxr_linenumber" name="338" href="#338">338</a>                     graph, scope, user, tolerant, allowUpdates, importer);
+<a class="jxr_linenumber" name="339" href="#339">339</a>             ImportLog log = importDataStream(importManager, message, data,
+<a class="jxr_linenumber" name="340" href="#340">340</a>                     MediaType.valueOf(CSV_MEDIA_TYPE));
+<a class="jxr_linenumber" name="341" href="#341">341</a>             tx.success();
+<a class="jxr_linenumber" name="342" href="#342">342</a>             <strong class="jxr_keyword">return</strong> log;
+<a class="jxr_linenumber" name="343" href="#343">343</a>         } <strong class="jxr_keyword">catch</strong> (InputParseError ex) {
+<a class="jxr_linenumber" name="344" href="#344">344</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"ParseError: "</span> + ex.getMessage());
+<a class="jxr_linenumber" name="345" href="#345">345</a>         } <strong class="jxr_keyword">catch</strong> (ClassNotFoundException e) {
+<a class="jxr_linenumber" name="346" href="#346">346</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"Class not found: "</span> + e.getMessage());
+<a class="jxr_linenumber" name="347" href="#347">347</a>         } <strong class="jxr_keyword">catch</strong> (IllegalArgumentException | ArchiveException e) {
+<a class="jxr_linenumber" name="348" href="#348">348</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(e.getMessage());
+<a class="jxr_linenumber" name="349" href="#349">349</a>         }
+<a class="jxr_linenumber" name="350" href="#350">350</a>     }
+<a class="jxr_linenumber" name="351" href="#351">351</a> 
+<a class="jxr_linenumber" name="352" href="#352">352</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="353" href="#353">353</a> <em class="jxr_javadoccomment">     * Update a batch of items via JSON containing (partial)</em>
+<a class="jxr_linenumber" name="354" href="#354">354</a> <em class="jxr_javadoccomment">     * data bundles.</em>
+<a class="jxr_linenumber" name="355" href="#355">355</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="356" href="#356">356</a> <em class="jxr_javadoccomment">     * @param scopeId     the ID of there item's permission scope</em>
+<a class="jxr_linenumber" name="357" href="#357">357</a> <em class="jxr_javadoccomment">     * @param tolerant    whether to allow individual validation failures</em>
+<a class="jxr_linenumber" name="358" href="#358">358</a> <em class="jxr_javadoccomment">     * @param version     whether to create a version prior to delete</em>
+<a class="jxr_linenumber" name="359" href="#359">359</a> <em class="jxr_javadoccomment">     * @param logMessage  an optional log message</em>
+<a class="jxr_linenumber" name="360" href="#360">360</a> <em class="jxr_javadoccomment">     * @param inputStream a JSON document containing partial bundles containing</em>
+<a class="jxr_linenumber" name="361" href="#361">361</a> <em class="jxr_javadoccomment">     *                    the needed data transformations</em>
+<a class="jxr_linenumber" name="362" href="#362">362</a> <em class="jxr_javadoccomment">     * @return an import log describing the changes committed</em>
+<a class="jxr_linenumber" name="363" href="#363">363</a> <em class="jxr_javadoccomment">     * @throws IOException</em>
+<a class="jxr_linenumber" name="364" href="#364">364</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="365" href="#365">365</a> <em class="jxr_javadoccomment">     * @throws ValidationError</em>
+<a class="jxr_linenumber" name="366" href="#366">366</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
+<a class="jxr_linenumber" name="367" href="#367">367</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="368" href="#368">368</a>     @PUT
+<a class="jxr_linenumber" name="369" href="#369">369</a>     @Consumes(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="370" href="#370">370</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="371" href="#371">371</a>     @Path(<span class="jxr_string">"batch"</span>)
+<a class="jxr_linenumber" name="372" href="#372">372</a>     <strong class="jxr_keyword">public</strong> ImportLog batchUpdate(
+<a class="jxr_linenumber" name="373" href="#373">373</a>             @QueryParam(SCOPE_PARAM) String scopeId,
+<a class="jxr_linenumber" name="374" href="#374">374</a>             @DefaultValue(<span class="jxr_string">"false"</span>) @QueryParam(TOLERANT_PARAM) Boolean tolerant,
+<a class="jxr_linenumber" name="375" href="#375">375</a>             @DefaultValue(<span class="jxr_string">"true"</span>) @QueryParam(VERSION_PARAM) Boolean version,
+<a class="jxr_linenumber" name="376" href="#376">376</a>             @QueryParam(LOG_PARAM) String logMessage, InputStream inputStream)
+<a class="jxr_linenumber" name="377" href="#377">377</a>             <strong class="jxr_keyword">throws</strong> IOException, ItemNotFound, ValidationError, DeserializationError {
+<a class="jxr_linenumber" name="378" href="#378">378</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="379" href="#379">379</a>             Accessor accessor = getCurrentUser();
+<a class="jxr_linenumber" name="380" href="#380">380</a>             PermissionScope scope = scopeId != <strong class="jxr_keyword">null</strong>
+<a class="jxr_linenumber" name="381" href="#381">381</a>                     ? manager.getEntity(scopeId, PermissionScope.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="382" href="#382">382</a>                     : <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="383" href="#383">383</a>             ImportLog log = <strong class="jxr_keyword">new</strong> BatchOperations(graph, scope, version, tolerant)
+<a class="jxr_linenumber" name="384" href="#384">384</a>                     .batchUpdate(inputStream,
+<a class="jxr_linenumber" name="385" href="#385">385</a>                             accessor.as(Actioner.<strong class="jxr_keyword">class</strong>), getLogMessage(logMessage));
+<a class="jxr_linenumber" name="386" href="#386">386</a>             tx.success();
+<a class="jxr_linenumber" name="387" href="#387">387</a>             <strong class="jxr_keyword">return</strong> log;
+<a class="jxr_linenumber" name="388" href="#388">388</a>         }
+<a class="jxr_linenumber" name="389" href="#389">389</a>     }
+<a class="jxr_linenumber" name="390" href="#390">390</a> 
+<a class="jxr_linenumber" name="391" href="#391">391</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="392" href="#392">392</a> <em class="jxr_javadoccomment">     * Delete a batch of objects via JSON containing their IDs.</em>
+<a class="jxr_linenumber" name="393" href="#393">393</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="394" href="#394">394</a> <em class="jxr_javadoccomment">     * @param scopeId    the ID of there item's permission scope</em>
+<a class="jxr_linenumber" name="395" href="#395">395</a> <em class="jxr_javadoccomment">     * @param version    whether to create a version prior to delete</em>
+<a class="jxr_linenumber" name="396" href="#396">396</a> <em class="jxr_javadoccomment">     * @param logMessage an optional log message.</em>
+<a class="jxr_linenumber" name="397" href="#397">397</a> <em class="jxr_javadoccomment">     * @param ids        a list of IDs to delete</em>
+<a class="jxr_linenumber" name="398" href="#398">398</a> <em class="jxr_javadoccomment">     * @throws IOException</em>
+<a class="jxr_linenumber" name="399" href="#399">399</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="400" href="#400">400</a> <em class="jxr_javadoccomment">     * @throws DeserializationError</em>
+<a class="jxr_linenumber" name="401" href="#401">401</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="402" href="#402">402</a>     @DELETE
+<a class="jxr_linenumber" name="403" href="#403">403</a>     @Path(<span class="jxr_string">"batch"</span>)
+<a class="jxr_linenumber" name="404" href="#404">404</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> batchDelete(
+<a class="jxr_linenumber" name="405" href="#405">405</a>             @QueryParam(SCOPE_PARAM) String scopeId,
+<a class="jxr_linenumber" name="406" href="#406">406</a>             @DefaultValue(<span class="jxr_string">"true"</span>) @QueryParam(VERSION_PARAM) Boolean version,
+<a class="jxr_linenumber" name="407" href="#407">407</a>             @QueryParam(LOG_PARAM) String logMessage,
+<a class="jxr_linenumber" name="408" href="#408">408</a>             @QueryParam(ID_PARAM) List&lt;String&gt; ids)
+<a class="jxr_linenumber" name="409" href="#409">409</a>             <strong class="jxr_keyword">throws</strong> IOException, ItemNotFound, DeserializationError {
+<a class="jxr_linenumber" name="410" href="#410">410</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="411" href="#411">411</a>             Accessor accessor = getCurrentUser();
+<a class="jxr_linenumber" name="412" href="#412">412</a>             PermissionScope scope = scopeId != <strong class="jxr_keyword">null</strong>
+<a class="jxr_linenumber" name="413" href="#413">413</a>                     ? manager.getEntity(scopeId, PermissionScope.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="414" href="#414">414</a>                     : <strong class="jxr_keyword">null</strong>;
+<a class="jxr_linenumber" name="415" href="#415">415</a>             <strong class="jxr_keyword">new</strong> BatchOperations(graph, scope, version, false)
+<a class="jxr_linenumber" name="416" href="#416">416</a>                     .batchDelete(ids,
+<a class="jxr_linenumber" name="417" href="#417">417</a>                             accessor.as(Actioner.<strong class="jxr_keyword">class</strong>), getLogMessage(logMessage));
+<a class="jxr_linenumber" name="418" href="#418">418</a>             tx.success();
+<a class="jxr_linenumber" name="419" href="#419">419</a>         }
+<a class="jxr_linenumber" name="420" href="#420">420</a>     }
+<a class="jxr_linenumber" name="421" href="#421">421</a> 
+<a class="jxr_linenumber" name="422" href="#422">422</a>     <em class="jxr_comment">// Helpers</em>
+<a class="jxr_linenumber" name="423" href="#423">423</a> 
+<a class="jxr_linenumber" name="424" href="#424">424</a>     <strong class="jxr_keyword">private</strong> ImportLog importDataStream(ImportManager importManager, String message, InputStream data,
+<a class="jxr_linenumber" name="425" href="#425">425</a>             MediaType... accepts) <strong class="jxr_keyword">throws</strong> IOException, ValidationError, InputParseError, ArchiveException {
+<a class="jxr_linenumber" name="426" href="#426">426</a>         MediaType mediaType = requestHeaders.getMediaType();
+<a class="jxr_linenumber" name="427" href="#427">427</a>         <strong class="jxr_keyword">if</strong> (MediaType.TEXT_PLAIN_TYPE.equals(mediaType)) {
+<a class="jxr_linenumber" name="428" href="#428">428</a>             <em class="jxr_comment">// Extract our list of paths...</em>
+<a class="jxr_linenumber" name="429" href="#429">429</a>             List&lt;String&gt; paths = getFilePaths(IOUtils.toString(data, StandardCharsets.UTF_8));
+<a class="jxr_linenumber" name="430" href="#430">430</a>             <strong class="jxr_keyword">return</strong> importManager
+<a class="jxr_linenumber" name="431" href="#431">431</a>                     .importFiles(paths, message);
+<a class="jxr_linenumber" name="432" href="#432">432</a>         } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (Lists.newArrayList(accepts).contains(mediaType)) {
+<a class="jxr_linenumber" name="433" href="#433">433</a>             <strong class="jxr_keyword">return</strong> importManager.importFile(data, message);
+<a class="jxr_linenumber" name="434" href="#434">434</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="435" href="#435">435</a>             <strong class="jxr_keyword">return</strong> importArchive(importManager, message, data);
+<a class="jxr_linenumber" name="436" href="#436">436</a>         }
+<a class="jxr_linenumber" name="437" href="#437">437</a>     }
+<a class="jxr_linenumber" name="438" href="#438">438</a> 
+<a class="jxr_linenumber" name="439" href="#439">439</a>     <strong class="jxr_keyword">private</strong> ImportLog importArchive(ImportManager importManager, String logMessage, InputStream data)
+<a class="jxr_linenumber" name="440" href="#440">440</a>             <strong class="jxr_keyword">throws</strong> IOException, ValidationError, ArchiveException, InputParseError {
+<a class="jxr_linenumber" name="441" href="#441">441</a>         logger.info(<span class="jxr_string">"Import via compressed archive..."</span>);
+<a class="jxr_linenumber" name="442" href="#442">442</a>         <strong class="jxr_keyword">try</strong> (BufferedInputStream bis = <strong class="jxr_keyword">new</strong> BufferedInputStream(data);
+<a class="jxr_linenumber" name="443" href="#443">443</a>              ArchiveInputStream archiveInputStream = <strong class="jxr_keyword">new</strong>
+<a class="jxr_linenumber" name="444" href="#444">444</a>                      ArchiveStreamFactory(StandardCharsets.UTF_8.displayName())
+<a class="jxr_linenumber" name="445" href="#445">445</a>                      .createArchiveInputStream(bis)) {
+<a class="jxr_linenumber" name="446" href="#446">446</a>             <strong class="jxr_keyword">return</strong> importManager
+<a class="jxr_linenumber" name="447" href="#447">447</a>                     .importFiles(archiveInputStream, logMessage);
+<a class="jxr_linenumber" name="448" href="#448">448</a>         }
+<a class="jxr_linenumber" name="449" href="#449">449</a>     }
+<a class="jxr_linenumber" name="450" href="#450">450</a> 
+<a class="jxr_linenumber" name="451" href="#451">451</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> List&lt;String&gt; getFilePaths(String pathList) {
+<a class="jxr_linenumber" name="452" href="#452">452</a>         List&lt;String&gt; files = Lists.newArrayList();
+<a class="jxr_linenumber" name="453" href="#453">453</a>         <strong class="jxr_keyword">for</strong> (String path : Splitter.on(<span class="jxr_string">"\n"</span>).omitEmptyStrings().trimResults().split(pathList)) {
+<a class="jxr_linenumber" name="454" href="#454">454</a>             <strong class="jxr_keyword">if</strong> (!<strong class="jxr_keyword">new</strong> File(path).exists()) {
+<a class="jxr_linenumber" name="455" href="#455">455</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"File specified in payload not found: "</span> + path);
+<a class="jxr_linenumber" name="456" href="#456">456</a>             }
+<a class="jxr_linenumber" name="457" href="#457">457</a>             files.add(path);
+<a class="jxr_linenumber" name="458" href="#458">458</a>         }
+<a class="jxr_linenumber" name="459" href="#459">459</a>         <strong class="jxr_keyword">return</strong> files;
+<a class="jxr_linenumber" name="460" href="#460">460</a>     }
+<a class="jxr_linenumber" name="461" href="#461">461</a> 
+<a class="jxr_linenumber" name="462" href="#462">462</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> checkPropertyFile(String properties) {
+<a class="jxr_linenumber" name="463" href="#463">463</a>         <em class="jxr_comment">// Null properties are allowed</em>
+<a class="jxr_linenumber" name="464" href="#464">464</a>         <strong class="jxr_keyword">if</strong> (properties != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="465" href="#465">465</a>             File file = <strong class="jxr_keyword">new</strong> File(properties);
+<a class="jxr_linenumber" name="466" href="#466">466</a>             <strong class="jxr_keyword">if</strong> (!(file.isFile() &amp;&amp; file.exists())) {
+<a class="jxr_linenumber" name="467" href="#467">467</a>                 <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> IllegalArgumentException(<span class="jxr_string">"Properties file '"</span> + properties + <span class="jxr_string">"' "</span> +
+<a class="jxr_linenumber" name="468" href="#468">468</a>                         <span class="jxr_string">"either does not exist, or is not a file."</span>);
+<a class="jxr_linenumber" name="469" href="#469">469</a>             }
+<a class="jxr_linenumber" name="470" href="#470">470</a>         }
+<a class="jxr_linenumber" name="471" href="#471">471</a>     }
+<a class="jxr_linenumber" name="472" href="#472">472</a> 
+<a class="jxr_linenumber" name="473" href="#473">473</a>     @SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
+<a class="jxr_linenumber" name="474" href="#474">474</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Class&lt;? <strong class="jxr_keyword">extends</strong> SaxXmlHandler&gt; getHandlerCls(String handlerName, String
+<a class="jxr_linenumber" name="475" href="#475">475</a>             defaultHandler)
+<a class="jxr_linenumber" name="476" href="#476">476</a>             <strong class="jxr_keyword">throws</strong> ClassNotFoundException, DeserializationError {
+<a class="jxr_linenumber" name="477" href="#477">477</a>         String name = nameOrDefault(handlerName, defaultHandler);
+<a class="jxr_linenumber" name="478" href="#478">478</a>         Class&lt;?&gt; handler = Class.forName(name);
+<a class="jxr_linenumber" name="479" href="#479">479</a>         <strong class="jxr_keyword">if</strong> (!SaxXmlHandler.<strong class="jxr_keyword">class</strong>.isAssignableFrom(handler)) {
+<a class="jxr_linenumber" name="480" href="#480">480</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"Class '"</span> + handlerName + <span class="jxr_string">"' is"</span> +
+<a class="jxr_linenumber" name="481" href="#481">481</a>                     <span class="jxr_string">" not an instance of "</span> + SaxXmlHandler.<strong class="jxr_keyword">class</strong>.getSimpleName());
+<a class="jxr_linenumber" name="482" href="#482">482</a>         }
+<a class="jxr_linenumber" name="483" href="#483">483</a>         <strong class="jxr_keyword">return</strong> (Class&lt;? <strong class="jxr_keyword">extends</strong> SaxXmlHandler&gt;) handler;
+<a class="jxr_linenumber" name="484" href="#484">484</a>     }
+<a class="jxr_linenumber" name="485" href="#485">485</a> 
+<a class="jxr_linenumber" name="486" href="#486">486</a>     @SuppressWarnings(<span class="jxr_string">"unchecked"</span>)
+<a class="jxr_linenumber" name="487" href="#487">487</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; getImporterCls(String importerName, String defaultImporter)
+<a class="jxr_linenumber" name="488" href="#488">488</a>             <strong class="jxr_keyword">throws</strong> ClassNotFoundException, DeserializationError {
+<a class="jxr_linenumber" name="489" href="#489">489</a>         String name = nameOrDefault(importerName, defaultImporter);
+<a class="jxr_linenumber" name="490" href="#490">490</a>         Class&lt;?&gt; importer = Class.forName(name);
+<a class="jxr_linenumber" name="491" href="#491">491</a>         <strong class="jxr_keyword">if</strong> (!AbstractImporter.<strong class="jxr_keyword">class</strong>.isAssignableFrom(importer)) {
+<a class="jxr_linenumber" name="492" href="#492">492</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> DeserializationError(<span class="jxr_string">"Class '"</span> + importerName + <span class="jxr_string">"' is"</span> +
+<a class="jxr_linenumber" name="493" href="#493">493</a>                     <span class="jxr_string">" not an instance of "</span> + AbstractImporter.<strong class="jxr_keyword">class</strong>.getSimpleName());
+<a class="jxr_linenumber" name="494" href="#494">494</a>         }
+<a class="jxr_linenumber" name="495" href="#495">495</a>         <strong class="jxr_keyword">return</strong> (Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt;) importer;
+<a class="jxr_linenumber" name="496" href="#496">496</a>     }
+<a class="jxr_linenumber" name="497" href="#497">497</a> 
+<a class="jxr_linenumber" name="498" href="#498">498</a>     <strong class="jxr_keyword">private</strong> Optional&lt;String&gt; getLogMessage(String logMessagePathOrText) <strong class="jxr_keyword">throws</strong> IOException {
+<a class="jxr_linenumber" name="499" href="#499">499</a>         <strong class="jxr_keyword">if</strong> (logMessagePathOrText == <strong class="jxr_keyword">null</strong> || logMessagePathOrText.trim().isEmpty()) {
+<a class="jxr_linenumber" name="500" href="#500">500</a>             <strong class="jxr_keyword">return</strong> getLogMessage();
+<a class="jxr_linenumber" name="501" href="#501">501</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="502" href="#502">502</a>             File fileTest = <strong class="jxr_keyword">new</strong> File(logMessagePathOrText);
+<a class="jxr_linenumber" name="503" href="#503">503</a>             <strong class="jxr_keyword">if</strong> (fileTest.exists()) {
+<a class="jxr_linenumber" name="504" href="#504">504</a>                 <strong class="jxr_keyword">return</strong> Optional.of(FileUtils.readFileToString(fileTest, <span class="jxr_string">"UTF-8"</span>));
+<a class="jxr_linenumber" name="505" href="#505">505</a>             } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="506" href="#506">506</a>                 <strong class="jxr_keyword">return</strong> Optional.of(logMessagePathOrText);
+<a class="jxr_linenumber" name="507" href="#507">507</a>             }
+<a class="jxr_linenumber" name="508" href="#508">508</a>         }
+<a class="jxr_linenumber" name="509" href="#509">509</a>     }
+<a class="jxr_linenumber" name="510" href="#510">510</a> 
+<a class="jxr_linenumber" name="511" href="#511">511</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> String nameOrDefault(String name, String defaultName) {
+<a class="jxr_linenumber" name="512" href="#512">512</a>         <strong class="jxr_keyword">return</strong> (name == <strong class="jxr_keyword">null</strong> || name.trim().isEmpty()) ? defaultName : name;
+<a class="jxr_linenumber" name="513" href="#513">513</a>     }
+<a class="jxr_linenumber" name="514" href="#514">514</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

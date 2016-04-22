@@ -3,13 +3,13 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Linker (EHRI Backend 0.13.0-SNAPSHOT API)</title>
+<title>Linker (EHRI Backend 0.13.2-SNAPSHOT API)</title>
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 </head>
 <body>
 <script type="text/javascript"><!--
     if (location.href.indexOf('is-external=true') == -1) {
-        parent.document.title="Linker (EHRI Backend 0.13.0-SNAPSHOT API)";
+        parent.document.title="Linker (EHRI Backend 0.13.2-SNAPSHOT API)";
     }
 //-->
 </script>
@@ -240,8 +240,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <pre>public&nbsp;long&nbsp;createAndLinkRepositoryVocabulary(<a href="../../../../eu/ehri/project/models/Repository.html" title="interface in eu.ehri.project.models">Repository</a>&nbsp;repository,
                                      <a href="../../../../eu/ehri/project/models/cvoc/Vocabulary.html" title="interface in eu.ehri.project.models.cvoc">Vocabulary</a>&nbsp;vocabulary,
                                      <a href="../../../../eu/ehri/project/models/UserProfile.html" title="interface in eu.ehri.project.models">UserProfile</a>&nbsp;user)
-                                       throws <a href="../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a>,
-                                              <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
+                                       throws <a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a>,
                                               <a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></pre>
 <div class="block">Populate a pre-created vocabulary with concepts created based on
  access points for all collections within a repository, then link
@@ -259,7 +258,6 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>repository</code> - the repository</dd><dd><code>vocabulary</code> - an existing (presumably empty) vocabulary</dd><dd><code>user</code> - the user to whom to attribute the operation</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the number of new links created</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code><a href="../../../../eu/ehri/project/exceptions/ItemNotFound.html" title="class in eu.ehri.project.exceptions">ItemNotFound</a></code></dd>
 <dd><code><a href="../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></code></dd>
 <dd><code><a href="../../../../eu/ehri/project/exceptions/PermissionDenied.html" title="class in eu.ehri.project.exceptions">PermissionDenied</a></code></dd></dl>
 </li>

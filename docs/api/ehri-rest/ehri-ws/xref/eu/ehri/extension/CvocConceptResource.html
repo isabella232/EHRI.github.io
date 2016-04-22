@@ -61,7 +61,7 @@
 <a class="jxr_linenumber" name="51" href="#51">51</a>      }
 <a class="jxr_linenumber" name="52" href="#52">52</a>  
 <a class="jxr_linenumber" name="53" href="#53">53</a>      @GET
-<a class="jxr_linenumber" name="54" href="#54">54</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="54" href="#54">54</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="55" href="#55">55</a>      @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="56" href="#56">56</a>      @Override
 <a class="jxr_linenumber" name="57" href="#57">57</a>      <strong class="jxr_keyword">public</strong> Response get(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
@@ -69,7 +69,7 @@
 <a class="jxr_linenumber" name="59" href="#59">59</a>      }
 <a class="jxr_linenumber" name="60" href="#60">60</a>  
 <a class="jxr_linenumber" name="61" href="#61">61</a>      @GET
-<a class="jxr_linenumber" name="62" href="#62">62</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="62" href="#62">62</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="63" href="#63">63</a>      @Override
 <a class="jxr_linenumber" name="64" href="#64">64</a>      <strong class="jxr_keyword">public</strong> Response list() {
 <a class="jxr_linenumber" name="65" href="#65">65</a>          <strong class="jxr_keyword">return</strong> listItems();
@@ -77,7 +77,7 @@
 <a class="jxr_linenumber" name="67" href="#67">67</a>  
 <a class="jxr_linenumber" name="68" href="#68">68</a>      @PUT
 <a class="jxr_linenumber" name="69" href="#69">69</a>      @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="70" href="#70">70</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="70" href="#70">70</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="71" href="#71">71</a>      @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="72" href="#72">72</a>      @Override
 <a class="jxr_linenumber" name="73" href="#73">73</a>      <strong class="jxr_keyword">public</strong> Response update(@PathParam(<span class="jxr_string">"id"</span>) String id, Bundle bundle)
@@ -102,7 +102,7 @@
 <a class="jxr_linenumber" name="92" href="#92">92</a>      }
 <a class="jxr_linenumber" name="93" href="#93">93</a>  
 <a class="jxr_linenumber" name="94" href="#94">94</a>      @GET
-<a class="jxr_linenumber" name="95" href="#95">95</a>      @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="95" href="#95">95</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="96" href="#96">96</a>      @Path(<span class="jxr_string">"{id:[^/]+}/list"</span>)
 <a class="jxr_linenumber" name="97" href="#97">97</a>      @Override
 <a class="jxr_linenumber" name="98" href="#98">98</a>      <strong class="jxr_keyword">public</strong> Response listChildren(@PathParam(<span class="jxr_string">"id"</span>) String id,
@@ -121,7 +121,7 @@
 <a class="jxr_linenumber" name="111" href="#111">111</a> 
 <a class="jxr_linenumber" name="112" href="#112">112</a>     @POST
 <a class="jxr_linenumber" name="113" href="#113">113</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="114" href="#114">114</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="114" href="#114">114</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="115" href="#115">115</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + Entities.CVOC_CONCEPT)
 <a class="jxr_linenumber" name="116" href="#116">116</a>     @Override
 <a class="jxr_linenumber" name="117" href="#117">117</a>     <strong class="jxr_keyword">public</strong> Response createChild(@PathParam(<span class="jxr_string">"id"</span>) String id,
@@ -205,7 +205,7 @@
 <a class="jxr_linenumber" name="195" href="#195">195</a> <em class="jxr_javadoccomment">     * @throws AccessDenied</em>
 <a class="jxr_linenumber" name="196" href="#196">196</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="197" href="#197">197</a>     @GET
-<a class="jxr_linenumber" name="198" href="#198">198</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="198" href="#198">198</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="199" href="#199">199</a>     @Path(<span class="jxr_string">"{id:[^/]+}/broader/list"</span>)
 <a class="jxr_linenumber" name="200" href="#200">200</a>     <strong class="jxr_keyword">public</strong> Response getCvocBroaderConcepts(@PathParam(<span class="jxr_string">"id"</span>) String id)
 <a class="jxr_linenumber" name="201" href="#201">201</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, AccessDenied {
@@ -227,7 +227,7 @@
 <a class="jxr_linenumber" name="217" href="#217">217</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
 <a class="jxr_linenumber" name="218" href="#218">218</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="219" href="#219">219</a>     @GET
-<a class="jxr_linenumber" name="220" href="#220">220</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="220" href="#220">220</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="221" href="#221">221</a>     @Path(<span class="jxr_string">"{id:[^/]+}/related/list"</span>)
 <a class="jxr_linenumber" name="222" href="#222">222</a>     <strong class="jxr_keyword">public</strong> Response getCvocRelatedConcepts(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="223" href="#223">223</a>         Tx tx = graph.getBaseGraph().beginTx();
@@ -250,7 +250,7 @@
 <a class="jxr_linenumber" name="240" href="#240">240</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
 <a class="jxr_linenumber" name="241" href="#241">241</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="242" href="#242">242</a>     @GET
-<a class="jxr_linenumber" name="243" href="#243">243</a>     @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
+<a class="jxr_linenumber" name="243" href="#243">243</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="244" href="#244">244</a>     @Path(<span class="jxr_string">"{id:[^/]+}/relatedBy/list"</span>)
 <a class="jxr_linenumber" name="245" href="#245">245</a>     <strong class="jxr_keyword">public</strong> Response getCvocRelatedByConcepts(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="246" href="#246">246</a>         Tx tx = graph.getBaseGraph().beginTx();
