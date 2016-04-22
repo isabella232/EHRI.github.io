@@ -88,6 +88,11 @@
         Importing Data</a>
             </li>
                 
+      <li class="active">
+  
+            <a href="#"><i class="none"></i>EAD Ingest</a>
+          </li>
+                
       <li>
   
                           <a href="gotchas.html" title="Gotchas">
@@ -248,14 +253,26 @@
             <h1>Example Ingest</h1>
 <p>The current ingest procedure is somewhat long-winded and technical. This is an example given a single EAD XML file containing a large number (48,000) of individual documentary unit items in a single fonds. The repository is the Internation Tracing Service (ITS), which has EHRI repository ID <tt>de-002409</tt>.</p>
 <p>This ingest covers importing the EAD file into the staging server, at which time it should be ready for verification and if necessary, changes, before the production ingest.</p>
+<div class="section">
+<h2><a name="Before_you_start"></a>Before you start</h2>
 <p>First, log into the EHRI staging server via SSH and open a bunch of shells. In one of them, tail the following file, which will give us some information about what goes wrong, when something inevitably goes wrong the first few times we try:</p>
 
 <div class="source">
 <div class="source">
 <pre>tail -f /opt/webapps/neo4j-version/data/log/console.log
 </pre></div></div>
+<p><b>Next: Back up the database.</b> The Neo4j DB lives in /opt/webapps/data/graph.db. You  can back it up without shutting down the server by running</p>
+
+<div class="source">
+<div class="source">
+<pre>/opt/webapps/neo4j-backup.sh graph.db.BAK
+</pre></div></div>
+<p>(To restore the DB, first shut down Neo4j, then replace /opt/webapps/data/graph.db with the backup directory.)</p></div>
+<div class="section">
+<h2><a name="Procedure"></a>Procedure</h2>
+<p>Onwards with the ingest&#x2026;</p>
 <p>Next, in another shell, copy the file(s) to be ingested to the server and place them in <tt>/opt/webapps/data/import-data/de/de-002409</tt>, the working directory for ITS data.</p>
-<p>Import properties handle cerain mappings between tags (with particular attributes) and EHRI fields. The ITS data has a particular mapping indicating that when the <tt>&lt;unitid&gt;</tt> has a <tt>type=&quot;refcode&quot;</tt> that is the main doc unit identifier, and that the rest are the alternates. This file is, in this case:</p>
+<p>Import properties handle certain mappings between tags (with particular attributes) and EHRI fields. The ITS data has a particular mapping indicating that when the <tt>&lt;unitid&gt;</tt> has a <tt>type=&quot;refcode&quot;</tt> that is the main doc unit identifier, and that the rest are the alternates. This file is, in this case:</p>
 
 <div class="source">
 <div class="source">
@@ -313,7 +330,7 @@ export LOG=`pwd`/LOG.txt
   
 <li>the <tt>properties=$PROPERTIES</tt> parameter tells it to file the import properties  in a local file</li>
 </ul>
-<p><i>Note</i>: when importing a single EAD containing ~50,000 items in a single transaction the staging server might run out of memory. If it does the only option is to increase the Neo4j heap size by uncommenting and setting the <tt>wrapper.java.maxmemory=MORE_MB</tt> (say,  3000) in <tt>$NEO4J_HOME/conf/neo4j-wrapper.conf</tt> and restarting Neo4j by running:</p>
+<p><b>Note</b>: when importing a single EAD containing ~50,000 items in a single transaction the staging server might run out of memory. If it does the only option is to increase the Neo4j heap size by uncommenting and setting the <tt>wrapper.java.maxmemory=MORE_MB</tt> (say,  3000) in <tt>$NEO4J_HOME/conf/neo4j-wrapper.conf</tt> and restarting Neo4j by running:</p>
 
 <div class="source">
 <div class="source">
@@ -331,7 +348,9 @@ export LOG=`pwd`/LOG.txt
 <div class="source">
 <div class="source">
 <pre>{&quot;created&quot;:0,&quot;unchanged&quot;:48430,&quot;message&quot;:&quot;Import ITS 0.4 data using its-pertinence.properties.\n&quot;,&quot;updated&quot;:0,&quot;errors&quot;:{}}
-</pre></div></div>
+</pre></div></div></div>
+<div class="section">
+<h2><a name="Indexing"></a>Indexing</h2>
 <p>The final step is the re-index the ITS repository, making the items searchable. This can be done from the Portal Admin UI, or via the following command:</p>
 
 <div class="source">
@@ -344,7 +363,16 @@ export LOG=`pwd`/LOG.txt
      --rest http://localhost:7474/ehri \
      &quot;Repository|de-002409&quot;
 </pre></div></div>
-<p>(This tool is a library/CLI utility the is used by the portal UI and available on the server: see the <a class="externalLink" href="https://github.com/EHRI/ehri-search-tools">https://github.com/EHRI/ehri-search-tools</a> project for more details.)</p>
+<p>(This tool is a library/CLI utility the is used by the portal UI and available on the server: see the <a class="externalLink" href="https://github.com/EHRI/ehri-search-tools">https://github.com/EHRI/ehri-search-tools</a> project for more details.)</p></div>
+<div class="section">
+<h2><a name="Updating_existing_collections"></a>Updating existing collections</h2>
+<p>To update existing collections, when, for example, adding descriptions in another language, the procedure is exactly the same with one exception: the import Curl command needs an additional parameter:</p>
+
+<div class="source">
+<div class="source">
+<pre>&amp;allow-update=true
+</pre></div></div>
+<p>Without this parameter the importer will throw a mode violation error when it ends up updating an existing collection.</p></div>
                   </div>
             </div>
           </div>
