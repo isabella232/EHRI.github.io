@@ -30,22 +30,22 @@
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers.cvoc;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Description;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> java.util.List;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.api.QueryApi;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.views.Query;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> java.util.List;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  
 <a class="jxr_linenumber" name="37" href="#37">37</a>  
-<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/cvoc/GhettosImporterV20140831Test.html">GhettosImporterV20140831Test</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/cvoc/GhettosImporterV20140831Test.html">GhettosImporterV20140831Test</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="39" href="#39">39</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SKOS_FILE = <span class="jxr_string">"cvoc/ghettos.rdf"</span>;
 <a class="jxr_linenumber" name="40" href="#40">40</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SKOS_V2_FILE = <span class="jxr_string">"cvoc/ghettos-v20140831.rdf.xml"</span>;
 <a class="jxr_linenumber" name="41" href="#41">41</a>  
@@ -76,11 +76,11 @@
 <a class="jxr_linenumber" name="66" href="#66">66</a>  
 <a class="jxr_linenumber" name="67" href="#67">67</a>          <em class="jxr_comment">// get a top concept</em>
 <a class="jxr_linenumber" name="68" href="#68">68</a>          String skosConceptId = <span class="jxr_string">"0"</span>;
-<a class="jxr_linenumber" name="69" href="#69">69</a>          QueryApi query = api(validUser).query();
+<a class="jxr_linenumber" name="69" href="#69">69</a>          Query&lt;Concept&gt; query = <strong class="jxr_keyword">new</strong> Query&lt;&gt;(graph, Concept.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="70" href="#70">70</a>  
 <a class="jxr_linenumber" name="71" href="#71">71</a>          <em class="jxr_comment">// Query for document identifier.</em>
 <a class="jxr_linenumber" name="72" href="#72">72</a>          List&lt;Concept&gt; list = toList(query.setLimit(1).page(
-<a class="jxr_linenumber" name="73" href="#73">73</a>                  Ontology.IDENTIFIER_KEY, skosConceptId, Concept.<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="73" href="#73">73</a>                  Ontology.IDENTIFIER_KEY, skosConceptId, validUser));
 <a class="jxr_linenumber" name="74" href="#74">74</a>  
 <a class="jxr_linenumber" name="75" href="#75">75</a>          Concept ghetto0 = manager.getEntity(<span class="jxr_string">"cvoc1-0"</span>, Concept.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="76" href="#76">76</a>          <em class="jxr_comment">//  &lt;geo:lat&gt;52.43333333333333&lt;/geo:lat&gt;</em>

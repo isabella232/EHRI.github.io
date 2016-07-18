@@ -31,7 +31,7 @@
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.exceptions.InputParseError;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DatePeriod;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
@@ -50,7 +50,7 @@
 <a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="41" href="#41">41</a>  <em class="jxr_javadoccomment"> * Test the import of a memorial de la shoah EAD file.</em>
 <a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/MemShoahTest.html">MemShoahTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/MemShoahTest.html">MemShoahTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="44" href="#44">44</a>  
 <a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String XMLFILE = <span class="jxr_string">"memshoah.xml"</span>;
 <a class="jxr_linenumber" name="46" href="#46">46</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String ARCHDESC = <span class="jxr_string">"II, V, VI, VIa"</span>;
@@ -69,7 +69,7 @@
 <a class="jxr_linenumber" name="59" href="#59">59</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(XMLFILE);
 <a class="jxr_linenumber" name="60" href="#60">60</a>          saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="61" href="#61">61</a>                  .withProperties(<span class="jxr_string">"memshoah.properties"</span>)
-<a class="jxr_linenumber" name="62" href="#62">62</a>                  .importInputStream(ios, logMessage);
+<a class="jxr_linenumber" name="62" href="#62">62</a>                  .importFile(ios, logMessage);
 <a class="jxr_linenumber" name="63" href="#63">63</a>          <em class="jxr_comment">// After...</em>
 <a class="jxr_linenumber" name="64" href="#64">64</a>          List&lt;VertexProxy&gt; graphState2 = getGraphState(graph);
 <a class="jxr_linenumber" name="65" href="#65">65</a>          GraphDiff diff = diffGraph(graphState1, graphState2);

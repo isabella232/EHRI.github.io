@@ -24,28 +24,38 @@
 <a class="jxr_linenumber" name="14" href="#14">14</a>  
 <a class="jxr_linenumber" name="15" href="#15">15</a>      @Test
 <a class="jxr_linenumber" name="16" href="#16">16</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testAggregation() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="17" href="#17">17</a>          Pipe&lt;Integer, List&lt;Integer&gt;&gt; pipe = <strong class="jxr_keyword">new</strong> AggregatorPipe&lt;&gt;((a, b, count) -&gt; a + 1 == b);
-<a class="jxr_linenumber" name="18" href="#18">18</a>  
-<a class="jxr_linenumber" name="19" href="#19">19</a>          pipe.setStarts(Arrays.asList(1, 2, 3, 5, 6, 7));
-<a class="jxr_linenumber" name="20" href="#20">20</a>          List&lt;List&lt;Integer&gt;&gt; ranges = Lists.newArrayList(pipe.iterator());
-<a class="jxr_linenumber" name="21" href="#21">21</a>          assertEquals(2, ranges.size());
-<a class="jxr_linenumber" name="22" href="#22">22</a>          assertEquals(3, ranges.get(0).size());
-<a class="jxr_linenumber" name="23" href="#23">23</a>          assertEquals(3, ranges.get(1).size());
-<a class="jxr_linenumber" name="24" href="#24">24</a>      }
-<a class="jxr_linenumber" name="25" href="#25">25</a>  
-<a class="jxr_linenumber" name="26" href="#26">26</a>      @Test
-<a class="jxr_linenumber" name="27" href="#27">27</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testAggregationWithCount() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="28" href="#28">28</a>          Pipe&lt;Integer, List&lt;Integer&gt;&gt; pipe = <strong class="jxr_keyword">new</strong> AggregatorPipe&lt;&gt;((a, b, count) -&gt; count &lt; 2 &amp;&amp; a + 1 == b);
-<a class="jxr_linenumber" name="29" href="#29">29</a>  
-<a class="jxr_linenumber" name="30" href="#30">30</a>          pipe.setStarts(Arrays.asList(1, 2, 3, 5, 6, 7));
-<a class="jxr_linenumber" name="31" href="#31">31</a>          List&lt;List&lt;Integer&gt;&gt; ranges = Lists.newArrayList(pipe.iterator());
-<a class="jxr_linenumber" name="32" href="#32">32</a>          assertEquals(4, ranges.size());
-<a class="jxr_linenumber" name="33" href="#33">33</a>          assertEquals(2, ranges.get(0).size());
-<a class="jxr_linenumber" name="34" href="#34">34</a>          assertEquals(1, ranges.get(1).size());
-<a class="jxr_linenumber" name="35" href="#35">35</a>          assertEquals(2, ranges.get(2).size());
-<a class="jxr_linenumber" name="36" href="#36">36</a>          assertEquals(1, ranges.get(3).size());
-<a class="jxr_linenumber" name="37" href="#37">37</a>      }
-<a class="jxr_linenumber" name="38" href="#38">38</a>  }
+<a class="jxr_linenumber" name="17" href="#17">17</a>          Pipe&lt;Integer, List&lt;Integer&gt;&gt; pipe = <strong class="jxr_keyword">new</strong> AggregatorPipe&lt;&gt;(<strong class="jxr_keyword">new</strong> AggregatorPipe.AggregatorFunction&lt;Integer&gt;() {
+<a class="jxr_linenumber" name="18" href="#18">18</a>              @Override
+<a class="jxr_linenumber" name="19" href="#19">19</a>              <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> aggregate(Integer a, Integer b, <strong class="jxr_keyword">int</strong> count) {
+<a class="jxr_linenumber" name="20" href="#20">20</a>                  <strong class="jxr_keyword">return</strong> a + 1 == b;
+<a class="jxr_linenumber" name="21" href="#21">21</a>              }
+<a class="jxr_linenumber" name="22" href="#22">22</a>          });
+<a class="jxr_linenumber" name="23" href="#23">23</a>  
+<a class="jxr_linenumber" name="24" href="#24">24</a>          pipe.setStarts(Arrays.asList(1, 2, 3, 5, 6, 7));
+<a class="jxr_linenumber" name="25" href="#25">25</a>          List&lt;List&lt;Integer&gt;&gt; ranges = Lists.newArrayList(pipe.iterator());
+<a class="jxr_linenumber" name="26" href="#26">26</a>          assertEquals(2, ranges.size());
+<a class="jxr_linenumber" name="27" href="#27">27</a>          assertEquals(3, ranges.get(0).size());
+<a class="jxr_linenumber" name="28" href="#28">28</a>          assertEquals(3, ranges.get(1).size());
+<a class="jxr_linenumber" name="29" href="#29">29</a>      }
+<a class="jxr_linenumber" name="30" href="#30">30</a>  
+<a class="jxr_linenumber" name="31" href="#31">31</a>      @Test
+<a class="jxr_linenumber" name="32" href="#32">32</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testAggregationWithCount() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="33" href="#33">33</a>          Pipe&lt;Integer, List&lt;Integer&gt;&gt; pipe = <strong class="jxr_keyword">new</strong> AggregatorPipe&lt;&gt;(<strong class="jxr_keyword">new</strong> AggregatorPipe.AggregatorFunction&lt;Integer&gt;() {
+<a class="jxr_linenumber" name="34" href="#34">34</a>              @Override
+<a class="jxr_linenumber" name="35" href="#35">35</a>              <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> aggregate(Integer a, Integer b, <strong class="jxr_keyword">int</strong> count) {
+<a class="jxr_linenumber" name="36" href="#36">36</a>                  <strong class="jxr_keyword">return</strong> count &lt; 2 &amp;&amp; a + 1 == b;
+<a class="jxr_linenumber" name="37" href="#37">37</a>              }
+<a class="jxr_linenumber" name="38" href="#38">38</a>          });
+<a class="jxr_linenumber" name="39" href="#39">39</a>  
+<a class="jxr_linenumber" name="40" href="#40">40</a>          pipe.setStarts(Arrays.asList(1, 2, 3, 5, 6, 7));
+<a class="jxr_linenumber" name="41" href="#41">41</a>          List&lt;List&lt;Integer&gt;&gt; ranges = Lists.newArrayList(pipe.iterator());
+<a class="jxr_linenumber" name="42" href="#42">42</a>          assertEquals(4, ranges.size());
+<a class="jxr_linenumber" name="43" href="#43">43</a>          assertEquals(2, ranges.get(0).size());
+<a class="jxr_linenumber" name="44" href="#44">44</a>          assertEquals(1, ranges.get(1).size());
+<a class="jxr_linenumber" name="45" href="#45">45</a>          assertEquals(2, ranges.get(2).size());
+<a class="jxr_linenumber" name="46" href="#46">46</a>          assertEquals(1, ranges.get(3).size());
+<a class="jxr_linenumber" name="47" href="#47">47</a>      }
+<a class="jxr_linenumber" name="48" href="#48">48</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

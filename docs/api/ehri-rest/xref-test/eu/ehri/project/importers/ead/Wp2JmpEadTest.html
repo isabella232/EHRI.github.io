@@ -31,7 +31,7 @@
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Vertex;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.SaxImportManager;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
@@ -49,7 +49,7 @@
 <a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
 <a class="jxr_linenumber" name="40" href="#40">40</a>  
 <a class="jxr_linenumber" name="41" href="#41">41</a>  
-<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/Wp2JmpEadTest.html">Wp2JmpEadTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/Wp2JmpEadTest.html">Wp2JmpEadTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="43" href="#43">43</a>  
 <a class="jxr_linenumber" name="44" href="#44">44</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(Wp2JmpEadTest.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SINGLE_EAD = <span class="jxr_string">"wp2_jmp_ead.xml"</span>;
@@ -72,7 +72,7 @@
 <a class="jxr_linenumber" name="62" href="#62">62</a>          SaxImportManager importManager = saxImportManager(
 <a class="jxr_linenumber" name="63" href="#63">63</a>                  EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"wp2ead.properties"</span>);
 <a class="jxr_linenumber" name="64" href="#64">64</a>  
-<a class="jxr_linenumber" name="65" href="#65">65</a>          ImportLog log = importManager.importInputStream(ios, logMessage);
+<a class="jxr_linenumber" name="65" href="#65">65</a>          ImportLog log = importManager.importFile(ios, logMessage);
 <a class="jxr_linenumber" name="66" href="#66">66</a>  
 <a class="jxr_linenumber" name="67" href="#67">67</a>          <em class="jxr_comment">// How many new nodes will have been created? We should have</em>
 <a class="jxr_linenumber" name="68" href="#68">68</a>          <em class="jxr_comment">// - 7 more DocumentaryUnits fonds C1 C2 C3 4,5,6</em>
@@ -134,7 +134,7 @@
 <a class="jxr_linenumber" name="124" href="#124">124</a>         }
 <a class="jxr_linenumber" name="125" href="#125">125</a> 
 <a class="jxr_linenumber" name="126" href="#126">126</a>         <em class="jxr_comment">// Check the importer is Idempotent</em>
-<a class="jxr_linenumber" name="127" href="#127">127</a>         ImportLog log2 = importManager.importInputStream(ClassLoader.getSystemResourceAsStream(SINGLE_EAD), logMessage);
+<a class="jxr_linenumber" name="127" href="#127">127</a>         ImportLog log2 = importManager.importFile(ClassLoader.getSystemResourceAsStream(SINGLE_EAD), logMessage);
 <a class="jxr_linenumber" name="128" href="#128">128</a>         assertEquals(7, log2.getUnchanged());
 <a class="jxr_linenumber" name="129" href="#129">129</a>         assertEquals(newCount, getNodeCount(graph));
 <a class="jxr_linenumber" name="130" href="#130">130</a>     }

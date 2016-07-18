@@ -29,13 +29,13 @@
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers.ead;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
-<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> java.util.List;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/VC_ARAImporterTest.html">VC_ARAImporterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/VC_ARAImporterTest.html">VC_ARAImporterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="29" href="#29">29</a>  
 <a class="jxr_linenumber" name="30" href="#30">30</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SINGLE_EAD = <span class="jxr_string">"araEad.xml"</span>;
 <a class="jxr_linenumber" name="31" href="#31">31</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String VC_EAD = <span class="jxr_string">"araVcEad.xml"</span>;
@@ -52,7 +52,7 @@
 <a class="jxr_linenumber" name="42" href="#42">42</a>          System.out.println(origCount);
 <a class="jxr_linenumber" name="43" href="#43">43</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(SINGLE_EAD);
 <a class="jxr_linenumber" name="44" href="#44">44</a>          saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"ara.properties"</span>)
-<a class="jxr_linenumber" name="45" href="#45">45</a>                  .importInputStream(ios, logMessage);
+<a class="jxr_linenumber" name="45" href="#45">45</a>                  .importFile(ios, logMessage);
 <a class="jxr_linenumber" name="46" href="#46">46</a>  
 <a class="jxr_linenumber" name="47" href="#47">47</a>          <em class="jxr_comment">// Before...</em>
 <a class="jxr_linenumber" name="48" href="#48">48</a>          List&lt;VertexProxy&gt; graphState1 = getGraphState(graph);
@@ -69,7 +69,7 @@
 <a class="jxr_linenumber" name="59" href="#59">59</a>          InputStream ios_vc = ClassLoader.getSystemResourceAsStream(VC_EAD);
 <a class="jxr_linenumber" name="60" href="#60">60</a>          saxImportManager(VirtualEadImporter.<strong class="jxr_keyword">class</strong>, VirtualEadHandler.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="61" href="#61">61</a>                  .withProperties(<span class="jxr_string">"vc_ara.properties"</span>)
-<a class="jxr_linenumber" name="62" href="#62">62</a>                  .importInputStream(ios_vc, logMessage);
+<a class="jxr_linenumber" name="62" href="#62">62</a>                  .importFile(ios_vc, logMessage);
 <a class="jxr_linenumber" name="63" href="#63">63</a>      }
 <a class="jxr_linenumber" name="64" href="#64">64</a>  }
 </pre>

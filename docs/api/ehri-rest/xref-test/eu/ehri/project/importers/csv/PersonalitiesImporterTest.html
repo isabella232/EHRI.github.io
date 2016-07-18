@@ -29,7 +29,7 @@
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers.csv;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
-<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.CsvImportManager;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.XmlImportProperties;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessible;
@@ -45,7 +45,7 @@
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  
 <a class="jxr_linenumber" name="37" href="#37">37</a>  
-<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/csv/PersonalitiesImporterTest.html">PersonalitiesImporterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/csv/PersonalitiesImporterTest.html">PersonalitiesImporterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="39" href="#39">39</a>  
 <a class="jxr_linenumber" name="40" href="#40">40</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(PersonalitiesImporterTest.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="41" href="#41">41</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SINGLE_EAD = <span class="jxr_string">"Personalities_small.csv"</span>;
@@ -66,7 +66,7 @@
 <a class="jxr_linenumber" name="56" href="#56">56</a>          <strong class="jxr_keyword">int</strong> count = getNodeCount(graph);
 <a class="jxr_linenumber" name="57" href="#57">57</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(SINGLE_EAD);
 <a class="jxr_linenumber" name="58" href="#58">58</a>          <strong class="jxr_keyword">new</strong> CsvImportManager(graph, authoritativeSet, validUser, false, false,
-<a class="jxr_linenumber" name="59" href="#59">59</a>                  PersonalitiesImporter.<strong class="jxr_keyword">class</strong>).importInputStream(ios, logMessage);
+<a class="jxr_linenumber" name="59" href="#59">59</a>                  PersonalitiesImporter.<strong class="jxr_keyword">class</strong>).importFile(ios, logMessage);
 <a class="jxr_linenumber" name="60" href="#60">60</a>          SystemEvent ev = actionManager.getLatestGlobalEvent();
 <a class="jxr_linenumber" name="61" href="#61">61</a>  
 <a class="jxr_linenumber" name="62" href="#62">62</a>          <em class="jxr_comment">/*</em>

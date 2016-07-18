@@ -33,7 +33,7 @@
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.acl.SystemScope;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Entities;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.HistoricalAgent;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.HistoricalAgentDescription;
@@ -54,7 +54,7 @@
 <a class="jxr_linenumber" name="44" href="#44">44</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
 <a class="jxr_linenumber" name="45" href="#45">45</a>  
 <a class="jxr_linenumber" name="46" href="#46">46</a>  
-<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/eac/EacImporterTest.html">EacImporterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/eac/EacImporterTest.html">EacImporterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="48" href="#48">48</a>  
 <a class="jxr_linenumber" name="49" href="#49">49</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(EacImporterTest.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="50" href="#50">50</a>  
@@ -69,7 +69,7 @@
 <a class="jxr_linenumber" name="59" href="#59">59</a>          List&lt;VertexProxy&gt; graphState1 = GraphTestBase.getGraphState(graph);
 <a class="jxr_linenumber" name="60" href="#60">60</a>          saxImportManager(EacImporter.<strong class="jxr_keyword">class</strong>, EacHandler.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="61" href="#61">61</a>                  .withScope(SystemScope.getInstance())
-<a class="jxr_linenumber" name="62" href="#62">62</a>                  .importInputStream(ios, logMessage);
+<a class="jxr_linenumber" name="62" href="#62">62</a>                  .importFile(ios, logMessage);
 <a class="jxr_linenumber" name="63" href="#63">63</a>          <em class="jxr_comment">// After...</em>
 <a class="jxr_linenumber" name="64" href="#64">64</a>          List&lt;VertexProxy&gt; graphState2 = GraphTestBase.getGraphState(graph);
 <a class="jxr_linenumber" name="65" href="#65">65</a>          <a href="../../../../../eu/ehri/project/test/GraphTestBase.html">GraphDiff</a> diff = GraphTestBase.diffGraph(graphState1, graphState2);
@@ -109,7 +109,7 @@
 <a class="jxr_linenumber" name="99" href="#99">99</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(eacFile);
 <a class="jxr_linenumber" name="100" href="#100">100</a>         ImportLog log = saxImportManager(EacImporter.<strong class="jxr_keyword">class</strong>, EacHandler.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="101" href="#101">101</a>                 .withScope(SystemScope.getInstance())
-<a class="jxr_linenumber" name="102" href="#102">102</a>                 .importInputStream(ios, logMessage);
+<a class="jxr_linenumber" name="102" href="#102">102</a>                 .importFile(ios, logMessage);
 <a class="jxr_linenumber" name="103" href="#103">103</a> 
 <a class="jxr_linenumber" name="104" href="#104">104</a>         List&lt;VertexProxy&gt; after = GraphTestBase.getGraphState(graph);
 <a class="jxr_linenumber" name="105" href="#105">105</a>         GraphTestBase.diffGraph(before, after).printDebug(System.err);

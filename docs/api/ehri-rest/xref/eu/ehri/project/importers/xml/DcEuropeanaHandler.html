@@ -32,8 +32,8 @@
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.ImmutableMap;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporter;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.SaxXmlHandler;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporter;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.SaxXmlHandler;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ead.EadImporter;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.XmlImportProperties;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.util.Helpers;
@@ -50,7 +50,7 @@
 <a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment"> * Dublin Core files are imported directly beneath the scope provided.</em>
 <a class="jxr_linenumber" name="41" href="#41">41</a>  <em class="jxr_javadoccomment"> * There is NO structure beneath that.</em>
 <a class="jxr_linenumber" name="42" href="#42">42</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/xml/DcEuropeanaHandler.html">DcEuropeanaHandler</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html">SaxXmlHandler</a> {
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/xml/DcEuropeanaHandler.html">DcEuropeanaHandler</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/SaxXmlHandler.html">SaxXmlHandler</a> {
 <a class="jxr_linenumber" name="44" href="#44">44</a>  
 <a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(DcEuropeanaHandler.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> ImmutableMap&lt;String, Class&lt;? <strong class="jxr_keyword">extends</strong> Entity&gt;&gt; possibleSubnodes
@@ -76,8 +76,8 @@
 <a class="jxr_linenumber" name="66" href="#66">66</a>                      extractIdentifier(currentMap);
 <a class="jxr_linenumber" name="67" href="#67">67</a>                      extractName(currentMap);
 <a class="jxr_linenumber" name="68" href="#68">68</a>                      
-<a class="jxr_linenumber" name="69" href="#69">69</a>                      Helpers.putPropertyInGraph(currentMap, <span class="jxr_string">"sourceFileId"</span>, currentMap.get(OBJECT_IDENTIFIER).toString());
-<a class="jxr_linenumber" name="70" href="#70">70</a>                      importer.importItem(currentMap, <strong class="jxr_keyword">new</strong> Stack&lt;&gt;());
+<a class="jxr_linenumber" name="69" href="#69">69</a>                      Helpers.putPropertyInGraph(currentMap, <span class="jxr_string">"sourceFileId"</span>, currentMap.get(<span class="jxr_string">"objectIdentifier"</span>).toString());
+<a class="jxr_linenumber" name="70" href="#70">70</a>                      importer.importItem(currentMap, <strong class="jxr_keyword">new</strong> Stack&lt;String&gt;());
 <a class="jxr_linenumber" name="71" href="#71">71</a>  <em class="jxr_comment">//                importer.importTopLevelExtraNodes(topLevel, current);</em>
 <a class="jxr_linenumber" name="72" href="#72">72</a>                      <em class="jxr_comment">//importer.importItem(currentGraphPath.pop(), Lists.&lt;String&gt;newArrayList());</em>
 <a class="jxr_linenumber" name="73" href="#73">73</a>                  } <strong class="jxr_keyword">catch</strong> (ValidationError ex) {
@@ -140,11 +140,11 @@
 <a class="jxr_linenumber" name="130" href="#130">130</a>     }
 <a class="jxr_linenumber" name="131" href="#131">131</a> 
 <a class="jxr_linenumber" name="132" href="#132">132</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> extractIdentifier(Map&lt;String, Object&gt; currentMap) {
-<a class="jxr_linenumber" name="133" href="#133">133</a>         <strong class="jxr_keyword">if</strong> (currentMap.containsKey(OBJECT_IDENTIFIER)){
-<a class="jxr_linenumber" name="134" href="#134">134</a>         logger.debug(currentMap.get(OBJECT_IDENTIFIER)+<span class="jxr_string">""</span>);
-<a class="jxr_linenumber" name="135" href="#135">135</a>             String id = currentMap.get(OBJECT_IDENTIFIER).toString();
+<a class="jxr_linenumber" name="133" href="#133">133</a>         <strong class="jxr_keyword">if</strong> (currentMap.containsKey(<span class="jxr_string">"objectIdentifier"</span>)){
+<a class="jxr_linenumber" name="134" href="#134">134</a>         logger.debug(currentMap.get(<span class="jxr_string">"objectIdentifier"</span>)+<span class="jxr_string">""</span>);
+<a class="jxr_linenumber" name="135" href="#135">135</a>             String id = currentMap.get(<span class="jxr_string">"objectIdentifier"</span>).toString();
 <a class="jxr_linenumber" name="136" href="#136">136</a>             <strong class="jxr_keyword">if</strong>(id.startsWith(<span class="jxr_string">"http://www.beeldbankwo2.nl/detail_no.jsp?action=detail&amp;imid="</span>)){
-<a class="jxr_linenumber" name="137" href="#137">137</a>                 currentMap.put(OBJECT_IDENTIFIER, id.substring(60));
+<a class="jxr_linenumber" name="137" href="#137">137</a>                 currentMap.put(<span class="jxr_string">"objectIdentifier"</span>, id.substring(60));
 <a class="jxr_linenumber" name="138" href="#138">138</a>             }
 <a class="jxr_linenumber" name="139" href="#139">139</a>         }<strong class="jxr_keyword">else</strong>{
 <a class="jxr_linenumber" name="140" href="#140">140</a>             <strong class="jxr_keyword">for</strong>(String key: currentMap.keySet())

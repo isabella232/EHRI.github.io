@@ -241,157 +241,160 @@
 <a class="jxr_linenumber" name="231" href="#231">231</a>     @Test
 <a class="jxr_linenumber" name="232" href="#232">232</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testFilterRelations() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="233" href="#233">233</a>         <em class="jxr_comment">// Remove descriptions with languageCode = "en"</em>
-<a class="jxr_linenumber" name="234" href="#234">234</a>         Bundle.Filter filter = (relationLabel, bundle1) -&gt; {
-<a class="jxr_linenumber" name="235" href="#235">235</a>             String lang = bundle1.getDataValue(Ontology.LANGUAGE);
-<a class="jxr_linenumber" name="236" href="#236">236</a>             <strong class="jxr_keyword">return</strong> bundle1.getType().equals(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
-<a class="jxr_linenumber" name="237" href="#237">237</a>                     &amp;&amp; (<span class="jxr_string">"en"</span>.equals(lang));
-<a class="jxr_linenumber" name="238" href="#238">238</a>         };
-<a class="jxr_linenumber" name="239" href="#239">239</a>         Bundle filtered = bundle.filterRelations(filter);
-<a class="jxr_linenumber" name="240" href="#240">240</a>         assertFalse((Ontology.DESCRIPTION_FOR_ENTITY).isEmpty());
-<a class="jxr_linenumber" name="241" href="#241">241</a>         assertTrue(filtered.getRelations(Ontology.DESCRIPTION_FOR_ENTITY).isEmpty());
-<a class="jxr_linenumber" name="242" href="#242">242</a>     }
-<a class="jxr_linenumber" name="243" href="#243">243</a> 
-<a class="jxr_linenumber" name="244" href="#244">244</a>     @Test
-<a class="jxr_linenumber" name="245" href="#245">245</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetRelations() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="246" href="#246">246</a>         List&lt;Bundle&gt; relations = bundle.getRelations(Ontology.DESCRIPTION_FOR_ENTITY);
-<a class="jxr_linenumber" name="247" href="#247">247</a>         assertEquals(1L, relations.size());
-<a class="jxr_linenumber" name="248" href="#248">248</a>     }
-<a class="jxr_linenumber" name="249" href="#249">249</a> 
-<a class="jxr_linenumber" name="250" href="#250">250</a>     @Test
-<a class="jxr_linenumber" name="251" href="#251">251</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testReplaceRelations() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="252" href="#252">252</a>         Bundle newDesc = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
-<a class="jxr_linenumber" name="253" href="#253">253</a>                 .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"Foobar"</span>)
-<a class="jxr_linenumber" name="254" href="#254">254</a>                 .withDataValue(Ontology.LANGUAGE, <span class="jxr_string">"en"</span>);
-<a class="jxr_linenumber" name="255" href="#255">255</a>         Multimap&lt;String, Bundle&gt; rels = ImmutableListMultimap
-<a class="jxr_linenumber" name="256" href="#256">256</a>                 .of(Ontology.DESCRIPTION_FOR_ENTITY, newDesc);
-<a class="jxr_linenumber" name="257" href="#257">257</a>         Bundle bundle2 = bundle.replaceRelations(rels);
-<a class="jxr_linenumber" name="258" href="#258">258</a>         assertEquals(1L, bundle2.getRelations(
-<a class="jxr_linenumber" name="259" href="#259">259</a>                 Ontology.DESCRIPTION_FOR_ENTITY).size());
-<a class="jxr_linenumber" name="260" href="#260">260</a>     }
-<a class="jxr_linenumber" name="261" href="#261">261</a> 
-<a class="jxr_linenumber" name="262" href="#262">262</a>     @Test
-<a class="jxr_linenumber" name="263" href="#263">263</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testWithRelationsMap() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="264" href="#264">264</a>         Bundle newDesc = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
-<a class="jxr_linenumber" name="265" href="#265">265</a>                 .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"Foobar"</span>)
-<a class="jxr_linenumber" name="266" href="#266">266</a>                 .withDataValue(Ontology.LANGUAGE, <span class="jxr_string">"en"</span>);
-<a class="jxr_linenumber" name="267" href="#267">267</a>         Multimap&lt;String, Bundle&gt; rels = ImmutableListMultimap
-<a class="jxr_linenumber" name="268" href="#268">268</a>                 .of(Ontology.DESCRIPTION_FOR_ENTITY, newDesc);
-<a class="jxr_linenumber" name="269" href="#269">269</a>         Bundle bundle2 = bundle.withRelations(rels);
-<a class="jxr_linenumber" name="270" href="#270">270</a>         assertEquals(2L, bundle2.getRelations(
-<a class="jxr_linenumber" name="271" href="#271">271</a>                 Ontology.DESCRIPTION_FOR_ENTITY).size());
-<a class="jxr_linenumber" name="272" href="#272">272</a>     }
-<a class="jxr_linenumber" name="273" href="#273">273</a> 
-<a class="jxr_linenumber" name="274" href="#274">274</a>     @Test
-<a class="jxr_linenumber" name="275" href="#275">275</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testWithRelations() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="276" href="#276">276</a>         Bundle newDesc = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
-<a class="jxr_linenumber" name="277" href="#277">277</a>                 .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"Foobar"</span>)
-<a class="jxr_linenumber" name="278" href="#278">278</a>                 .withDataValue(Ontology.LANGUAGE, <span class="jxr_string">"en"</span>);
-<a class="jxr_linenumber" name="279" href="#279">279</a>         Bundle bundle2 = bundle.withRelations(
-<a class="jxr_linenumber" name="280" href="#280">280</a>                 Ontology.DESCRIPTION_FOR_ENTITY, Lists.newArrayList(newDesc));
-<a class="jxr_linenumber" name="281" href="#281">281</a>         assertEquals(2L, bundle2.getRelations(
-<a class="jxr_linenumber" name="282" href="#282">282</a>                 Ontology.DESCRIPTION_FOR_ENTITY).size());
-<a class="jxr_linenumber" name="283" href="#283">283</a>     }
-<a class="jxr_linenumber" name="284" href="#284">284</a> 
-<a class="jxr_linenumber" name="285" href="#285">285</a>     @Test
-<a class="jxr_linenumber" name="286" href="#286">286</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testWithRelation() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="287" href="#287">287</a>         Bundle newDesc = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
-<a class="jxr_linenumber" name="288" href="#288">288</a>                 .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"Foobar"</span>)
-<a class="jxr_linenumber" name="289" href="#289">289</a>                 .withDataValue(Ontology.LANGUAGE, <span class="jxr_string">"en"</span>);
-<a class="jxr_linenumber" name="290" href="#290">290</a>         Bundle bundle2 = bundle.withRelation(Ontology.DESCRIPTION_FOR_ENTITY, newDesc);
-<a class="jxr_linenumber" name="291" href="#291">291</a>         assertEquals(2L, bundle2.getRelations(
-<a class="jxr_linenumber" name="292" href="#292">292</a>                 Ontology.DESCRIPTION_FOR_ENTITY).size());
-<a class="jxr_linenumber" name="293" href="#293">293</a>     }
-<a class="jxr_linenumber" name="294" href="#294">294</a> 
-<a class="jxr_linenumber" name="295" href="#295">295</a>     @Test
-<a class="jxr_linenumber" name="296" href="#296">296</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testWithMetaData() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="297" href="#297">297</a>         Bundle newDesc = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
-<a class="jxr_linenumber" name="298" href="#298">298</a>                 .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"Foobar"</span>)
-<a class="jxr_linenumber" name="299" href="#299">299</a>                 .withDataValue(Ontology.LANGUAGE, <span class="jxr_string">"en"</span>);
-<a class="jxr_linenumber" name="300" href="#300">300</a>         Bundle bundle2 = newDesc.withMetaDataValue(<span class="jxr_string">"key"</span>, <span class="jxr_string">"val"</span>);
-<a class="jxr_linenumber" name="301" href="#301">301</a>         Map&lt;String, Object&gt; meta = bundle2.getMetaData();
-<a class="jxr_linenumber" name="302" href="#302">302</a>         assertTrue(meta.containsKey(<span class="jxr_string">"key"</span>));
-<a class="jxr_linenumber" name="303" href="#303">303</a>         assertEquals(<span class="jxr_string">"val"</span>, meta.get(<span class="jxr_string">"key"</span>));
-<a class="jxr_linenumber" name="304" href="#304">304</a>     }
-<a class="jxr_linenumber" name="305" href="#305">305</a> 
-<a class="jxr_linenumber" name="306" href="#306">306</a>     @Test
-<a class="jxr_linenumber" name="307" href="#307">307</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testHasRelations() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="308" href="#308">308</a>         assertTrue(bundle.hasRelations(Ontology.DESCRIPTION_FOR_ENTITY));
-<a class="jxr_linenumber" name="309" href="#309">309</a>     }
-<a class="jxr_linenumber" name="310" href="#310">310</a> 
-<a class="jxr_linenumber" name="311" href="#311">311</a>     @Test
-<a class="jxr_linenumber" name="312" href="#312">312</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testRemoveRelation() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="313" href="#313">313</a>         List&lt;Bundle&gt; relations = bundle.getRelations(Ontology.DESCRIPTION_FOR_ENTITY);
-<a class="jxr_linenumber" name="314" href="#314">314</a>         assertEquals(1L, relations.size());
-<a class="jxr_linenumber" name="315" href="#315">315</a>         Bundle bundle2 = bundle.removeRelation(
-<a class="jxr_linenumber" name="316" href="#316">316</a>                 Ontology.DESCRIPTION_FOR_ENTITY, relations.get(0));
-<a class="jxr_linenumber" name="317" href="#317">317</a>         assertFalse(bundle2.hasRelations(Ontology.DESCRIPTION_FOR_ENTITY));
-<a class="jxr_linenumber" name="318" href="#318">318</a>     }
-<a class="jxr_linenumber" name="319" href="#319">319</a> 
-<a class="jxr_linenumber" name="320" href="#320">320</a>     @Test
-<a class="jxr_linenumber" name="321" href="#321">321</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testBundleDepth() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="322" href="#322">322</a>         assertEquals(1, bundle.depth());
-<a class="jxr_linenumber" name="323" href="#323">323</a>         Bundle dp = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DATE_PERIOD)
-<a class="jxr_linenumber" name="324" href="#324">324</a>                 .withDataValue(Ontology.DATE_PERIOD_START_DATE, <span class="jxr_string">"1900-01-01"</span>)
-<a class="jxr_linenumber" name="325" href="#325">325</a>                 .withDataValue(Ontology.DATE_PERIOD_END_DATE, <span class="jxr_string">"2000-01-01"</span>);
-<a class="jxr_linenumber" name="326" href="#326">326</a>         Bundle deeperBundle = BundleUtils.setBundle(bundle, <span class="jxr_string">"describes[0]/hasDate[-1]"</span>, dp);
-<a class="jxr_linenumber" name="327" href="#327">327</a>         assertEquals(2, deeperBundle.depth());
-<a class="jxr_linenumber" name="328" href="#328">328</a>     }
-<a class="jxr_linenumber" name="329" href="#329">329</a> 
-<a class="jxr_linenumber" name="330" href="#330">330</a>     @Test
-<a class="jxr_linenumber" name="331" href="#331">331</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetUniquePropertyKeys() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="332" href="#332">332</a>         Collection&lt;String&gt; uniquePropertyKeys = bundle.getUniquePropertyKeys();
-<a class="jxr_linenumber" name="333" href="#333">333</a>         assertEquals(Sets.&lt;String&gt;newHashSet(), uniquePropertyKeys);
-<a class="jxr_linenumber" name="334" href="#334">334</a>     }
-<a class="jxr_linenumber" name="335" href="#335">335</a> 
-<a class="jxr_linenumber" name="336" href="#336">336</a>     @Test(expected = ClassCastException.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="337" href="#337">337</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetDataValueWithBadType() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="338" href="#338">338</a>         Map&lt;String, Object&gt; dataValue = bundle.
-<a class="jxr_linenumber" name="339" href="#339">339</a>                 getDataValue(Ontology.IDENTIFIER_KEY);
-<a class="jxr_linenumber" name="340" href="#340">340</a>         fail(<span class="jxr_string">"Shouldn't be able to see: "</span> + dataValue);
-<a class="jxr_linenumber" name="341" href="#341">341</a>     }
-<a class="jxr_linenumber" name="342" href="#342">342</a> 
-<a class="jxr_linenumber" name="343" href="#343">343</a>     @Test(expected = UnsupportedOperationException.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="344" href="#344">344</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetDataResultIsImmutable() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="345" href="#345">345</a>         Map&lt;String, Object&gt; data = bundle.getData();
-<a class="jxr_linenumber" name="346" href="#346">346</a>         assertNull(bundle.getDataValue(<span class="jxr_string">"test"</span>));
-<a class="jxr_linenumber" name="347" href="#347">347</a>         data.put(<span class="jxr_string">"test"</span>, <span class="jxr_string">"value"</span>);
-<a class="jxr_linenumber" name="348" href="#348">348</a>     }
-<a class="jxr_linenumber" name="349" href="#349">349</a> 
-<a class="jxr_linenumber" name="350" href="#350">350</a>     @Test
-<a class="jxr_linenumber" name="351" href="#351">351</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testImmutability() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="352" href="#352">352</a>         Map&lt;String,Object&gt; m = Maps.newHashMap();
-<a class="jxr_linenumber" name="353" href="#353">353</a>         m.put(<span class="jxr_string">"test"</span>, <span class="jxr_string">"value"</span>);
-<a class="jxr_linenumber" name="354" href="#354">354</a>         Bundle b = bundle.withData(m);
-<a class="jxr_linenumber" name="355" href="#355">355</a>         assertNull(b.getDataValue(<span class="jxr_string">"test2"</span>));
-<a class="jxr_linenumber" name="356" href="#356">356</a>         m.put(<span class="jxr_string">"test2"</span>, <span class="jxr_string">"value"</span>);
-<a class="jxr_linenumber" name="357" href="#357">357</a>         assertNull(b.getDataValue(<span class="jxr_string">"test2"</span>));
-<a class="jxr_linenumber" name="358" href="#358">358</a>     }
-<a class="jxr_linenumber" name="359" href="#359">359</a> 
-<a class="jxr_linenumber" name="360" href="#360">360</a>     @Test
-<a class="jxr_linenumber" name="361" href="#361">361</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testNullValueHandling() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="362" href="#362">362</a>         Map&lt;String,Object&gt; m = Maps.newHashMap();
-<a class="jxr_linenumber" name="363" href="#363">363</a>         m.put(<span class="jxr_string">"test"</span>, <span class="jxr_string">"value"</span>);
-<a class="jxr_linenumber" name="364" href="#364">364</a>         m.put(<span class="jxr_string">"null"</span>, <strong class="jxr_keyword">null</strong>);
-<a class="jxr_linenumber" name="365" href="#365">365</a>         assertTrue(m.containsKey(<span class="jxr_string">"null"</span>));
-<a class="jxr_linenumber" name="366" href="#366">366</a>         Bundle b = bundle.withData(m);
-<a class="jxr_linenumber" name="367" href="#367">367</a>         assertNotNull(b.getDataValue(<span class="jxr_string">"test"</span>));
-<a class="jxr_linenumber" name="368" href="#368">368</a>         assertNull(b.getDataValue(<span class="jxr_string">"null"</span>));
-<a class="jxr_linenumber" name="369" href="#369">369</a>         assertFalse(b.getData().containsKey(<span class="jxr_string">"null"</span>));
-<a class="jxr_linenumber" name="370" href="#370">370</a>     }
-<a class="jxr_linenumber" name="371" href="#371">371</a> 
-<a class="jxr_linenumber" name="372" href="#372">372</a>     @Test
-<a class="jxr_linenumber" name="373" href="#373">373</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGenerateIds() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="374" href="#374">374</a>         assertNull(bundle.getId());
-<a class="jxr_linenumber" name="375" href="#375">375</a>         assertNull(bundle.getRelations(
-<a class="jxr_linenumber" name="376" href="#376">376</a>                 Ontology.DESCRIPTION_FOR_ENTITY).get(0).getId());
-<a class="jxr_linenumber" name="377" href="#377">377</a>         Bundle test = bundle.generateIds(Lists.newArrayList(<span class="jxr_string">"test"</span>));
-<a class="jxr_linenumber" name="378" href="#378">378</a>         assertTrue(test.hasGeneratedId());
-<a class="jxr_linenumber" name="379" href="#379">379</a>         assertEquals(<span class="jxr_string">"test-foobar"</span>, test.getId());
-<a class="jxr_linenumber" name="380" href="#380">380</a>         Bundle desc = test.getRelations(Ontology.DESCRIPTION_FOR_ENTITY).get(0);
-<a class="jxr_linenumber" name="381" href="#381">381</a>         assertNotNull(desc.getId());
-<a class="jxr_linenumber" name="382" href="#382">382</a>         assertEquals(<span class="jxr_string">"test-foobar.en"</span>, desc.getId());
-<a class="jxr_linenumber" name="383" href="#383">383</a>     }
-<a class="jxr_linenumber" name="384" href="#384">384</a> }
+<a class="jxr_linenumber" name="234" href="#234">234</a>         Bundle.Filter filter = <strong class="jxr_keyword">new</strong> Bundle.Filter() {
+<a class="jxr_linenumber" name="235" href="#235">235</a>             @Override
+<a class="jxr_linenumber" name="236" href="#236">236</a>             <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">boolean</strong> remove(String relationLabel, Bundle bundle) {
+<a class="jxr_linenumber" name="237" href="#237">237</a>                 String lang = bundle.getDataValue(Ontology.LANGUAGE);
+<a class="jxr_linenumber" name="238" href="#238">238</a>                 <strong class="jxr_keyword">return</strong> bundle.getType().equals(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
+<a class="jxr_linenumber" name="239" href="#239">239</a>                         &amp;&amp; (<span class="jxr_string">"en"</span>.equals(lang));
+<a class="jxr_linenumber" name="240" href="#240">240</a>             }
+<a class="jxr_linenumber" name="241" href="#241">241</a>         };
+<a class="jxr_linenumber" name="242" href="#242">242</a>         Bundle filtered = bundle.filterRelations(filter);
+<a class="jxr_linenumber" name="243" href="#243">243</a>         assertFalse((Ontology.DESCRIPTION_FOR_ENTITY).isEmpty());
+<a class="jxr_linenumber" name="244" href="#244">244</a>         assertTrue(filtered.getRelations(Ontology.DESCRIPTION_FOR_ENTITY).isEmpty());
+<a class="jxr_linenumber" name="245" href="#245">245</a>     }
+<a class="jxr_linenumber" name="246" href="#246">246</a> 
+<a class="jxr_linenumber" name="247" href="#247">247</a>     @Test
+<a class="jxr_linenumber" name="248" href="#248">248</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetRelations() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="249" href="#249">249</a>         List&lt;Bundle&gt; relations = bundle.getRelations(Ontology.DESCRIPTION_FOR_ENTITY);
+<a class="jxr_linenumber" name="250" href="#250">250</a>         assertEquals(1L, relations.size());
+<a class="jxr_linenumber" name="251" href="#251">251</a>     }
+<a class="jxr_linenumber" name="252" href="#252">252</a> 
+<a class="jxr_linenumber" name="253" href="#253">253</a>     @Test
+<a class="jxr_linenumber" name="254" href="#254">254</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testReplaceRelations() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="255" href="#255">255</a>         Bundle newDesc = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
+<a class="jxr_linenumber" name="256" href="#256">256</a>                 .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"Foobar"</span>)
+<a class="jxr_linenumber" name="257" href="#257">257</a>                 .withDataValue(Ontology.LANGUAGE, <span class="jxr_string">"en"</span>);
+<a class="jxr_linenumber" name="258" href="#258">258</a>         Multimap&lt;String, Bundle&gt; rels = ImmutableListMultimap
+<a class="jxr_linenumber" name="259" href="#259">259</a>                 .of(Ontology.DESCRIPTION_FOR_ENTITY, newDesc);
+<a class="jxr_linenumber" name="260" href="#260">260</a>         Bundle bundle2 = bundle.replaceRelations(rels);
+<a class="jxr_linenumber" name="261" href="#261">261</a>         assertEquals(1L, bundle2.getRelations(
+<a class="jxr_linenumber" name="262" href="#262">262</a>                 Ontology.DESCRIPTION_FOR_ENTITY).size());
+<a class="jxr_linenumber" name="263" href="#263">263</a>     }
+<a class="jxr_linenumber" name="264" href="#264">264</a> 
+<a class="jxr_linenumber" name="265" href="#265">265</a>     @Test
+<a class="jxr_linenumber" name="266" href="#266">266</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testWithRelationsMap() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="267" href="#267">267</a>         Bundle newDesc = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
+<a class="jxr_linenumber" name="268" href="#268">268</a>                 .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"Foobar"</span>)
+<a class="jxr_linenumber" name="269" href="#269">269</a>                 .withDataValue(Ontology.LANGUAGE, <span class="jxr_string">"en"</span>);
+<a class="jxr_linenumber" name="270" href="#270">270</a>         Multimap&lt;String, Bundle&gt; rels = ImmutableListMultimap
+<a class="jxr_linenumber" name="271" href="#271">271</a>                 .of(Ontology.DESCRIPTION_FOR_ENTITY, newDesc);
+<a class="jxr_linenumber" name="272" href="#272">272</a>         Bundle bundle2 = bundle.withRelations(rels);
+<a class="jxr_linenumber" name="273" href="#273">273</a>         assertEquals(2L, bundle2.getRelations(
+<a class="jxr_linenumber" name="274" href="#274">274</a>                 Ontology.DESCRIPTION_FOR_ENTITY).size());
+<a class="jxr_linenumber" name="275" href="#275">275</a>     }
+<a class="jxr_linenumber" name="276" href="#276">276</a> 
+<a class="jxr_linenumber" name="277" href="#277">277</a>     @Test
+<a class="jxr_linenumber" name="278" href="#278">278</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testWithRelations() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="279" href="#279">279</a>         Bundle newDesc = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
+<a class="jxr_linenumber" name="280" href="#280">280</a>                 .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"Foobar"</span>)
+<a class="jxr_linenumber" name="281" href="#281">281</a>                 .withDataValue(Ontology.LANGUAGE, <span class="jxr_string">"en"</span>);
+<a class="jxr_linenumber" name="282" href="#282">282</a>         Bundle bundle2 = bundle.withRelations(
+<a class="jxr_linenumber" name="283" href="#283">283</a>                 Ontology.DESCRIPTION_FOR_ENTITY, Lists.newArrayList(newDesc));
+<a class="jxr_linenumber" name="284" href="#284">284</a>         assertEquals(2L, bundle2.getRelations(
+<a class="jxr_linenumber" name="285" href="#285">285</a>                 Ontology.DESCRIPTION_FOR_ENTITY).size());
+<a class="jxr_linenumber" name="286" href="#286">286</a>     }
+<a class="jxr_linenumber" name="287" href="#287">287</a> 
+<a class="jxr_linenumber" name="288" href="#288">288</a>     @Test
+<a class="jxr_linenumber" name="289" href="#289">289</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testWithRelation() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="290" href="#290">290</a>         Bundle newDesc = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
+<a class="jxr_linenumber" name="291" href="#291">291</a>                 .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"Foobar"</span>)
+<a class="jxr_linenumber" name="292" href="#292">292</a>                 .withDataValue(Ontology.LANGUAGE, <span class="jxr_string">"en"</span>);
+<a class="jxr_linenumber" name="293" href="#293">293</a>         Bundle bundle2 = bundle.withRelation(Ontology.DESCRIPTION_FOR_ENTITY, newDesc);
+<a class="jxr_linenumber" name="294" href="#294">294</a>         assertEquals(2L, bundle2.getRelations(
+<a class="jxr_linenumber" name="295" href="#295">295</a>                 Ontology.DESCRIPTION_FOR_ENTITY).size());
+<a class="jxr_linenumber" name="296" href="#296">296</a>     }
+<a class="jxr_linenumber" name="297" href="#297">297</a> 
+<a class="jxr_linenumber" name="298" href="#298">298</a>     @Test
+<a class="jxr_linenumber" name="299" href="#299">299</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testWithMetaData() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="300" href="#300">300</a>         Bundle newDesc = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DOCUMENTARY_UNIT_DESCRIPTION)
+<a class="jxr_linenumber" name="301" href="#301">301</a>                 .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"Foobar"</span>)
+<a class="jxr_linenumber" name="302" href="#302">302</a>                 .withDataValue(Ontology.LANGUAGE, <span class="jxr_string">"en"</span>);
+<a class="jxr_linenumber" name="303" href="#303">303</a>         Bundle bundle2 = newDesc.withMetaDataValue(<span class="jxr_string">"key"</span>, <span class="jxr_string">"val"</span>);
+<a class="jxr_linenumber" name="304" href="#304">304</a>         Map&lt;String, Object&gt; meta = bundle2.getMetaData();
+<a class="jxr_linenumber" name="305" href="#305">305</a>         assertTrue(meta.containsKey(<span class="jxr_string">"key"</span>));
+<a class="jxr_linenumber" name="306" href="#306">306</a>         assertEquals(<span class="jxr_string">"val"</span>, meta.get(<span class="jxr_string">"key"</span>));
+<a class="jxr_linenumber" name="307" href="#307">307</a>     }
+<a class="jxr_linenumber" name="308" href="#308">308</a> 
+<a class="jxr_linenumber" name="309" href="#309">309</a>     @Test
+<a class="jxr_linenumber" name="310" href="#310">310</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testHasRelations() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="311" href="#311">311</a>         assertTrue(bundle.hasRelations(Ontology.DESCRIPTION_FOR_ENTITY));
+<a class="jxr_linenumber" name="312" href="#312">312</a>     }
+<a class="jxr_linenumber" name="313" href="#313">313</a> 
+<a class="jxr_linenumber" name="314" href="#314">314</a>     @Test
+<a class="jxr_linenumber" name="315" href="#315">315</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testRemoveRelation() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="316" href="#316">316</a>         List&lt;Bundle&gt; relations = bundle.getRelations(Ontology.DESCRIPTION_FOR_ENTITY);
+<a class="jxr_linenumber" name="317" href="#317">317</a>         assertEquals(1L, relations.size());
+<a class="jxr_linenumber" name="318" href="#318">318</a>         Bundle bundle2 = bundle.removeRelation(
+<a class="jxr_linenumber" name="319" href="#319">319</a>                 Ontology.DESCRIPTION_FOR_ENTITY, relations.get(0));
+<a class="jxr_linenumber" name="320" href="#320">320</a>         assertFalse(bundle2.hasRelations(Ontology.DESCRIPTION_FOR_ENTITY));
+<a class="jxr_linenumber" name="321" href="#321">321</a>     }
+<a class="jxr_linenumber" name="322" href="#322">322</a> 
+<a class="jxr_linenumber" name="323" href="#323">323</a>     @Test
+<a class="jxr_linenumber" name="324" href="#324">324</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testBundleDepth() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="325" href="#325">325</a>         assertEquals(1, bundle.depth());
+<a class="jxr_linenumber" name="326" href="#326">326</a>         Bundle dp = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.DATE_PERIOD)
+<a class="jxr_linenumber" name="327" href="#327">327</a>                 .withDataValue(Ontology.DATE_PERIOD_START_DATE, <span class="jxr_string">"1900-01-01"</span>)
+<a class="jxr_linenumber" name="328" href="#328">328</a>                 .withDataValue(Ontology.DATE_PERIOD_END_DATE, <span class="jxr_string">"2000-01-01"</span>);
+<a class="jxr_linenumber" name="329" href="#329">329</a>         Bundle deeperBundle = BundleUtils.setBundle(bundle, <span class="jxr_string">"describes[0]/hasDate[-1]"</span>, dp);
+<a class="jxr_linenumber" name="330" href="#330">330</a>         assertEquals(2, deeperBundle.depth());
+<a class="jxr_linenumber" name="331" href="#331">331</a>     }
+<a class="jxr_linenumber" name="332" href="#332">332</a> 
+<a class="jxr_linenumber" name="333" href="#333">333</a>     @Test
+<a class="jxr_linenumber" name="334" href="#334">334</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetUniquePropertyKeys() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="335" href="#335">335</a>         Collection&lt;String&gt; uniquePropertyKeys = bundle.getUniquePropertyKeys();
+<a class="jxr_linenumber" name="336" href="#336">336</a>         assertEquals(Sets.&lt;String&gt;newHashSet(), uniquePropertyKeys);
+<a class="jxr_linenumber" name="337" href="#337">337</a>     }
+<a class="jxr_linenumber" name="338" href="#338">338</a> 
+<a class="jxr_linenumber" name="339" href="#339">339</a>     @Test(expected = ClassCastException.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="340" href="#340">340</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetDataValueWithBadType() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="341" href="#341">341</a>         Map&lt;String, Object&gt; dataValue = bundle.
+<a class="jxr_linenumber" name="342" href="#342">342</a>                 getDataValue(Ontology.IDENTIFIER_KEY);
+<a class="jxr_linenumber" name="343" href="#343">343</a>         fail(<span class="jxr_string">"Shouldn't be able to see: "</span> + dataValue);
+<a class="jxr_linenumber" name="344" href="#344">344</a>     }
+<a class="jxr_linenumber" name="345" href="#345">345</a> 
+<a class="jxr_linenumber" name="346" href="#346">346</a>     @Test(expected = UnsupportedOperationException.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="347" href="#347">347</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGetDataResultIsImmutable() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="348" href="#348">348</a>         Map&lt;String, Object&gt; data = bundle.getData();
+<a class="jxr_linenumber" name="349" href="#349">349</a>         assertNull(bundle.getDataValue(<span class="jxr_string">"test"</span>));
+<a class="jxr_linenumber" name="350" href="#350">350</a>         data.put(<span class="jxr_string">"test"</span>, <span class="jxr_string">"value"</span>);
+<a class="jxr_linenumber" name="351" href="#351">351</a>     }
+<a class="jxr_linenumber" name="352" href="#352">352</a> 
+<a class="jxr_linenumber" name="353" href="#353">353</a>     @Test
+<a class="jxr_linenumber" name="354" href="#354">354</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testImmutability() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="355" href="#355">355</a>         Map&lt;String,Object&gt; m = Maps.newHashMap();
+<a class="jxr_linenumber" name="356" href="#356">356</a>         m.put(<span class="jxr_string">"test"</span>, <span class="jxr_string">"value"</span>);
+<a class="jxr_linenumber" name="357" href="#357">357</a>         Bundle b = bundle.withData(m);
+<a class="jxr_linenumber" name="358" href="#358">358</a>         assertNull(b.getDataValue(<span class="jxr_string">"test2"</span>));
+<a class="jxr_linenumber" name="359" href="#359">359</a>         m.put(<span class="jxr_string">"test2"</span>, <span class="jxr_string">"value"</span>);
+<a class="jxr_linenumber" name="360" href="#360">360</a>         assertNull(b.getDataValue(<span class="jxr_string">"test2"</span>));
+<a class="jxr_linenumber" name="361" href="#361">361</a>     }
+<a class="jxr_linenumber" name="362" href="#362">362</a> 
+<a class="jxr_linenumber" name="363" href="#363">363</a>     @Test
+<a class="jxr_linenumber" name="364" href="#364">364</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testNullValueHandling() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="365" href="#365">365</a>         Map&lt;String,Object&gt; m = Maps.newHashMap();
+<a class="jxr_linenumber" name="366" href="#366">366</a>         m.put(<span class="jxr_string">"test"</span>, <span class="jxr_string">"value"</span>);
+<a class="jxr_linenumber" name="367" href="#367">367</a>         m.put(<span class="jxr_string">"null"</span>, <strong class="jxr_keyword">null</strong>);
+<a class="jxr_linenumber" name="368" href="#368">368</a>         assertTrue(m.containsKey(<span class="jxr_string">"null"</span>));
+<a class="jxr_linenumber" name="369" href="#369">369</a>         Bundle b = bundle.withData(m);
+<a class="jxr_linenumber" name="370" href="#370">370</a>         assertNotNull(b.getDataValue(<span class="jxr_string">"test"</span>));
+<a class="jxr_linenumber" name="371" href="#371">371</a>         assertNull(b.getDataValue(<span class="jxr_string">"null"</span>));
+<a class="jxr_linenumber" name="372" href="#372">372</a>         assertFalse(b.getData().containsKey(<span class="jxr_string">"null"</span>));
+<a class="jxr_linenumber" name="373" href="#373">373</a>     }
+<a class="jxr_linenumber" name="374" href="#374">374</a> 
+<a class="jxr_linenumber" name="375" href="#375">375</a>     @Test
+<a class="jxr_linenumber" name="376" href="#376">376</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testGenerateIds() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="377" href="#377">377</a>         assertNull(bundle.getId());
+<a class="jxr_linenumber" name="378" href="#378">378</a>         assertNull(bundle.getRelations(
+<a class="jxr_linenumber" name="379" href="#379">379</a>                 Ontology.DESCRIPTION_FOR_ENTITY).get(0).getId());
+<a class="jxr_linenumber" name="380" href="#380">380</a>         Bundle test = bundle.generateIds(Lists.newArrayList(<span class="jxr_string">"test"</span>));
+<a class="jxr_linenumber" name="381" href="#381">381</a>         assertTrue(test.hasGeneratedId());
+<a class="jxr_linenumber" name="382" href="#382">382</a>         assertEquals(<span class="jxr_string">"test-foobar"</span>, test.getId());
+<a class="jxr_linenumber" name="383" href="#383">383</a>         Bundle desc = test.getRelations(Ontology.DESCRIPTION_FOR_ENTITY).get(0);
+<a class="jxr_linenumber" name="384" href="#384">384</a>         assertNotNull(desc.getId());
+<a class="jxr_linenumber" name="385" href="#385">385</a>         assertEquals(<span class="jxr_string">"test-foobar.en"</span>, desc.getId());
+<a class="jxr_linenumber" name="386" href="#386">386</a>     }
+<a class="jxr_linenumber" name="387" href="#387">387</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

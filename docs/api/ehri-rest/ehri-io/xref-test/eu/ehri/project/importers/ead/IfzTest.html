@@ -36,7 +36,7 @@
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
 <a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.exceptions.InputParseError;
 <a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DatePeriod;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
@@ -54,7 +54,7 @@
 <a class="jxr_linenumber" name="44" href="#44">44</a>  <em class="jxr_javadoccomment"> * Test the import of a Ifz EAD file.</em>
 <a class="jxr_linenumber" name="45" href="#45">45</a>  <em class="jxr_javadoccomment"> * This file was based on BundesarchiveTest.java.</em>
 <a class="jxr_linenumber" name="46" href="#46">46</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/IfzTest.html">IfzTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/IfzTest.html">IfzTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="48" href="#48">48</a>  
 <a class="jxr_linenumber" name="49" href="#49">49</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String XMLFILE = <span class="jxr_string">"ifz_ED.xml"</span>;
 <a class="jxr_linenumber" name="50" href="#50">50</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String ARCHDESC = <span class="jxr_string">"G"</span>,
@@ -75,7 +75,7 @@
 <a class="jxr_linenumber" name="65" href="#65">65</a>  
 <a class="jxr_linenumber" name="66" href="#66">66</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(XMLFILE);
 <a class="jxr_linenumber" name="67" href="#67">67</a>          saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"ifz.properties"</span>)
-<a class="jxr_linenumber" name="68" href="#68">68</a>                  .importInputStream(ios, logMessage);
+<a class="jxr_linenumber" name="68" href="#68">68</a>                  .importFile(ios, logMessage);
 <a class="jxr_linenumber" name="69" href="#69">69</a>          <em class="jxr_comment">// After...</em>
 <a class="jxr_linenumber" name="70" href="#70">70</a>          List&lt;VertexProxy&gt; graphState2 = getGraphState(graph);
 <a class="jxr_linenumber" name="71" href="#71">71</a>          GraphDiff diff = diffGraph(graphState1, graphState2);

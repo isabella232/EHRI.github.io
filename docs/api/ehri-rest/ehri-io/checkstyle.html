@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20160718" />
+    <meta name="Date-Revision-yyyymmdd" content="20160427" />
     <meta http-equiv="Content-Language" content="en" />
     <title>Import/Export Tools &#x2013; Checkstyle Results</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2016-07-18
+                  <li id="publishDate">Last Published: 2016-04-27
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.13.4-SNAPSHOT
+                  <li id="projectVersion">Version: 0.13.2-SNAPSHOT
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -103,10 +103,10 @@
 <th><img src="images/icon_warning_sml.gif" alt="" />&#160;Warnings</th>
 <th><img src="images/icon_error_sml.gif" alt="" />&#160;Errors</th></tr>
 <tr class="b">
-<td>99</td>
+<td>98</td>
 <td>0</td>
-<td>50</td>
-<td>38</td></tr></table></div>
+<td>58</td>
+<td>24</td></tr></table></div>
 <div class="section">
 <h2><a name="Files"></a>Files</h2>
 <table border="0" class="table table-striped">
@@ -136,20 +136,10 @@
 <td>1</td>
 <td>1</td></tr>
 <tr class="b">
-<td><a href="#eu.ehri.project.exporters.dc.DublinCore11Exporter.java">eu/ehri/project/exporters/dc/DublinCore11Exporter.java</a></td>
-<td>0</td>
-<td>0</td>
-<td>2</td></tr>
-<tr class="a">
-<td><a href="#eu.ehri.project.exporters.dc.DublinCoreExporter.java">eu/ehri/project/exporters/dc/DublinCoreExporter.java</a></td>
-<td>0</td>
-<td>1</td>
-<td>2</td></tr>
-<tr class="b">
 <td><a href="#eu.ehri.project.exporters.eac.Eac2010Exporter.java">eu/ehri/project/exporters/eac/Eac2010Exporter.java</a></td>
 <td>0</td>
-<td>0</td>
-<td>1</td></tr>
+<td>1</td>
+<td>0</td></tr>
 <tr class="a">
 <td><a href="#eu.ehri.project.exporters.eac.EacExporter.java">eu/ehri/project/exporters/eac/EacExporter.java</a></td>
 <td>0</td>
@@ -176,10 +166,20 @@
 <td>1</td>
 <td>2</td></tr>
 <tr class="b">
-<td><a href="#eu.ehri.project.exporters.xml.XmlExporter.java">eu/ehri/project/exporters/xml/XmlExporter.java</a></td>
+<td><a href="#eu.ehri.project.importers.AbstractImporter.java">eu/ehri/project/importers/AbstractImporter.java</a></td>
 <td>0</td>
 <td>1</td>
-<td>2</td></tr>
+<td>0</td></tr>
+<tr class="a">
+<td><a href="#eu.ehri.project.importers.EaHandler.java">eu/ehri/project/importers/EaHandler.java</a></td>
+<td>0</td>
+<td>1</td>
+<td>0</td></tr>
+<tr class="b">
+<td><a href="#eu.ehri.project.importers.EaImporter.java">eu/ehri/project/importers/EaImporter.java</a></td>
+<td>0</td>
+<td>1</td>
+<td>0</td></tr>
 <tr class="a">
 <td><a href="#eu.ehri.project.importers.ImportCallback.java">eu/ehri/project/importers/ImportCallback.java</a></td>
 <td>0</td>
@@ -191,22 +191,12 @@
 <td>1</td>
 <td>0</td></tr>
 <tr class="a">
-<td><a href="#eu.ehri.project.importers.base.AbstractImporter.java">eu/ehri/project/importers/base/AbstractImporter.java</a></td>
+<td><a href="#eu.ehri.project.importers.MapImporter.java">eu/ehri/project/importers/MapImporter.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
 <tr class="b">
-<td><a href="#eu.ehri.project.importers.base.MapImporter.java">eu/ehri/project/importers/base/MapImporter.java</a></td>
-<td>0</td>
-<td>1</td>
-<td>0</td></tr>
-<tr class="a">
-<td><a href="#eu.ehri.project.importers.base.SaxXmlHandler.java">eu/ehri/project/importers/base/SaxXmlHandler.java</a></td>
-<td>0</td>
-<td>1</td>
-<td>1</td></tr>
-<tr class="b">
-<td><a href="#eu.ehri.project.importers.base.SaxXmlImporter.java">eu/ehri/project/importers/base/SaxXmlImporter.java</a></td>
+<td><a href="#eu.ehri.project.importers.SaxXmlHandler.java">eu/ehri/project/importers/SaxXmlHandler.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
@@ -248,8 +238,8 @@
 <tr class="b">
 <td><a href="#eu.ehri.project.importers.cvoc.JenaSkosImporter.java">eu/ehri/project/importers/cvoc/JenaSkosImporter.java</a></td>
 <td>0</td>
-<td>0</td>
-<td>1</td></tr>
+<td>2</td>
+<td>0</td></tr>
 <tr class="a">
 <td><a href="#eu.ehri.project.importers.cvoc.SkosImporter.java">eu/ehri/project/importers/cvoc/SkosImporter.java</a></td>
 <td>0</td>
@@ -276,182 +266,187 @@
 <td>1</td>
 <td>1</td></tr>
 <tr class="b">
+<td><a href="#eu.ehri.project.importers.ead.AraEadImporter.java">eu/ehri/project/importers/ead/AraEadImporter.java</a></td>
+<td>0</td>
+<td>1</td>
+<td>0</td></tr>
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.ead.EadHandler.java">eu/ehri/project/importers/ead/EadHandler.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.ead.EadImporter.java">eu/ehri/project/importers/ead/EadImporter.java</a></td>
 <td>0</td>
-<td>0</td>
-<td>1</td></tr>
-<tr class="b">
+<td>1</td>
+<td>0</td></tr>
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.ead.IcaAtomEadHandler.java">eu/ehri/project/importers/ead/IcaAtomEadHandler.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.ead.IcaAtomEadImporter.java">eu/ehri/project/importers/ead/IcaAtomEadImporter.java</a></td>
 <td>0</td>
-<td>0</td>
-<td>2</td></tr>
-<tr class="b">
+<td>1</td>
+<td>1</td></tr>
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.ead.UshmmHandler.java">eu/ehri/project/importers/ead/UshmmHandler.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.ead.VirtualEadHandler.java">eu/ehri/project/importers/ead/VirtualEadHandler.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.ead.VirtualEadImporter.java">eu/ehri/project/importers/ead/VirtualEadImporter.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.eag.EagHandler.java">eu/ehri/project/importers/eag/EagHandler.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>1</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.eag.EagImporter.java">eu/ehri/project/importers/eag/EagImporter.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.exceptions.InputParseError.java">eu/ehri/project/importers/exceptions/InputParseError.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.exceptions.InvalidInputFormatError.java">eu/ehri/project/importers/exceptions/InvalidInputFormatError.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.exceptions.InvalidXmlDocument.java">eu/ehri/project/importers/exceptions/InvalidXmlDocument.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.exceptions.ModeViolation.java">eu/ehri/project/importers/exceptions/ModeViolation.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>1</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.json.BatchOperations.java">eu/ehri/project/importers/json/BatchOperations.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>2</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.managers.AbstractImportManager.java">eu/ehri/project/importers/managers/AbstractImportManager.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.managers.CsvImportManager.java">eu/ehri/project/importers/managers/CsvImportManager.java</a></td>
 <td>0</td>
-<td>0</td>
-<td>1</td></tr>
-<tr class="b">
+<td>1</td>
+<td>0</td></tr>
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.managers.ImportManager.java">eu/ehri/project/importers/managers/ImportManager.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.managers.SaxImportManager.java">eu/ehri/project/importers/managers/SaxImportManager.java</a></td>
 <td>0</td>
-<td>0</td>
-<td>2</td></tr>
-<tr class="b">
+<td>1</td>
+<td>1</td></tr>
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.properties.ImportProperties.java">eu/ehri/project/importers/properties/ImportProperties.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.properties.NodeProperties.java">eu/ehri/project/importers/properties/NodeProperties.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.properties.PropertiesRow.java">eu/ehri/project/importers/properties/PropertiesRow.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>0</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.properties.XmlImportProperties.java">eu/ehri/project/importers/properties/XmlImportProperties.java</a></td>
 <td>0</td>
 <td>2</td>
 <td>0</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.util.Helpers.java">eu/ehri/project/importers/util/Helpers.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>1</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.xml.DcEuropeanaHandler.java">eu/ehri/project/importers/xml/DcEuropeanaHandler.java</a></td>
 <td>0</td>
 <td>1</td>
 <td>1</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.utils.LanguageHelpers.java">eu/ehri/project/utils/LanguageHelpers.java</a></td>
 <td>0</td>
-<td>0</td>
-<td>3</td></tr></table></div>
+<td>1</td>
+<td>2</td></tr></table></div>
 <div class="section">
 <h2><a name="Rules"></a>Rules</h2>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Category</th>
 <th>Rule</th>
 <th>Violations</th>
 <th>Severity</th></tr>
-<tr class="b">
+<tr class="a">
 <td>header</td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_header.html#Header">Header</a>
 <ul>
 <li>fileExtensions: <tt>&quot;java&quot;</tt></li>
 <li>headerFile: <tt>&quot;java.header&quot;</tt></li></ul></td>
-<td>12</td>
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td></tr>
-<tr class="a">
-<td>javadoc</td>
-<td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_javadoc.html#JavadocPackage">JavadocPackage</a></td>
-<td>18</td>
+<td>9</td>
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td></tr>
 <tr class="b">
+<td>javadoc</td>
+<td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_javadoc.html#JavadocPackage">JavadocPackage</a></td>
+<td>15</td>
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td></tr>
+<tr class="a">
 <td></td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_javadoc.html#JavadocType">JavadocType</a>
 <ul>
 <li>authorFormat: <tt>&quot;(Mike Bryant \(http(s)?://github.com/mikesname(/)?\)|Ben Companjen \(http(s)?://github.com/bencomp(/)?\)|Linda Reijnhoudt \(http(s)?://github.com/lindareijnhoudt(/)?\)|Paul Boon \(http(s)?://github.com/(paulboon|PaulBoon)(/)?\))&quot;</tt></li></ul></td>
-<td>50</td>
+<td>58</td>
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr></table></div>
 <div class="section">
 <h2><a name="Details"></a>Details</h2>
 <div class="section">
 <h3 id="eu.ehri.project.exporters.DocumentWriter.java">eu/ehri/project/exporters/DocumentWriter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocPackage</td>
 <td>Missing package-info.java file.</td>
 <td></td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>header</td>
 <td>Header</td>
 <td>Line does not match expected header line of '/*'.</td>
 <td><a href="./xref/eu/ehri/project/exporters/DocumentWriter.html#L1">1</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
@@ -460,13 +455,13 @@
 <div class="section">
 <h3 id="eu.ehri.project.exporters.cvoc.JenaSkosExporter.java">eu/ehri/project/exporters/cvoc/JenaSkosExporter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
@@ -475,19 +470,19 @@
 <div class="section">
 <h3 id="eu.ehri.project.exporters.cvoc.SchemaExporter.java">eu/ehri/project/exporters/cvoc/SchemaExporter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>header</td>
 <td>Header</td>
 <td>Line does not match expected header line of '/*'.</td>
 <td><a href="./xref/eu/ehri/project/exporters/cvoc/SchemaExporter.html#L1">1</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
@@ -496,72 +491,24 @@
 <div class="section">
 <h3 id="eu.ehri.project.exporters.cvoc.SkosExporter.java">eu/ehri/project/exporters/cvoc/SkosExporter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocPackage</td>
 <td>Missing package-info.java file.</td>
 <td></td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Missing a Javadoc comment.</td>
 <td><a href="./xref/eu/ehri/project/exporters/cvoc/SkosExporter.html#L26">26</a></td></tr></table></div>
-<div class="section">
-<h3 id="eu.ehri.project.exporters.dc.DublinCore11Exporter.java">eu/ehri/project/exporters/dc/DublinCore11Exporter.java</h3>
-<table border="0" class="table table-striped">
-<tr class="a">
-<th>Severity</th>
-<th>Category</th>
-<th>Rule</th>
-<th>Message</th>
-<th>Line</th></tr>
-<tr class="b">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>header</td>
-<td>Header</td>
-<td>Line does not match expected header line of '/*'.</td>
-<td><a href="./xref/eu/ehri/project/exporters/dc/DublinCore11Exporter.html#L1">1</a></td></tr>
-<tr class="a">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>extension</td>
-<td>TreeWalker</td>
-<td>Got an exception - expecting EOF, found 'this'</td>
-<td><a href="./xref/eu/ehri/project/exporters/dc/DublinCore11Exporter.html#L57">57</a></td></tr></table></div>
-<div class="section">
-<h3 id="eu.ehri.project.exporters.dc.DublinCoreExporter.java">eu/ehri/project/exporters/dc/DublinCoreExporter.java</h3>
-<table border="0" class="table table-striped">
-<tr class="b">
-<th>Severity</th>
-<th>Category</th>
-<th>Rule</th>
-<th>Message</th>
-<th>Line</th></tr>
-<tr class="a">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>javadoc</td>
-<td>JavadocPackage</td>
-<td>Missing package-info.java file.</td>
-<td></td></tr>
-<tr class="b">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>header</td>
-<td>Header</td>
-<td>Line does not match expected header line of '/*'.</td>
-<td><a href="./xref/eu/ehri/project/exporters/dc/DublinCoreExporter.html#L1">1</a></td></tr>
-<tr class="a">
-<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
-<td>javadoc</td>
-<td>JavadocType</td>
-<td>Missing a Javadoc comment.</td>
-<td><a href="./xref/eu/ehri/project/exporters/dc/DublinCoreExporter.html#L11">11</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.exporters.eac.Eac2010Exporter.java">eu/ehri/project/exporters/eac/Eac2010Exporter.java</h3>
 <table border="0" class="table table-striped">
@@ -572,11 +519,11 @@
 <th>Message</th>
 <th>Line</th></tr>
 <tr class="a">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>extension</td>
-<td>TreeWalker</td>
-<td>Got an exception - expecting EOF, found '}'</td>
-<td><a href="./xref/eu/ehri/project/exporters/eac/Eac2010Exporter.html#L545">545</a></td></tr></table></div>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocType</td>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/exporters/eac/Eac2010Exporter.html#L69">69</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.exporters.eac.EacExporter.java">eu/ehri/project/exporters/eac/EacExporter.java</h3>
 <table border="0" class="table table-striped">
@@ -597,7 +544,7 @@
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/exporters/eac/EacExporter.html#L33">33</a></td></tr></table></div>
+<td><a href="./xref/eu/ehri/project/exporters/eac/EacExporter.html#L32">32</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.exporters.ead.Ead2002Exporter.java">eu/ehri/project/exporters/ead/Ead2002Exporter.java</h3>
 <table border="0" class="table table-striped">
@@ -645,7 +592,7 @@
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/exporters/ead/EadExporter.html#L14">14</a></td></tr></table></div>
+<td><a href="./xref/eu/ehri/project/exporters/ead/EadExporter.html#L13">13</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.exporters.eag.Eag2012Exporter.java">eu/ehri/project/exporters/eag/Eag2012Exporter.java</h3>
 <table border="0" class="table table-striped">
@@ -666,7 +613,7 @@
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/exporters/eag/Eag2012Exporter.html#L49">49</a></td></tr></table></div>
+<td><a href="./xref/eu/ehri/project/exporters/eag/Eag2012Exporter.html#L50">50</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.exporters.eag.EagExporter.java">eu/ehri/project/exporters/eag/EagExporter.java</h3>
 <table border="0" class="table table-striped">
@@ -693,9 +640,9 @@
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/exporters/eag/EagExporter.html#L14">14</a></td></tr></table></div>
+<td><a href="./xref/eu/ehri/project/exporters/eag/EagExporter.html#L13">13</a></td></tr></table></div>
 <div class="section">
-<h3 id="eu.ehri.project.exporters.xml.XmlExporter.java">eu/ehri/project/exporters/xml/XmlExporter.java</h3>
+<h3 id="eu.ehri.project.importers.AbstractImporter.java">eu/ehri/project/importers/AbstractImporter.java</h3>
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>Severity</th>
@@ -704,23 +651,41 @@
 <th>Message</th>
 <th>Line</th></tr>
 <tr class="b">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
-<td>JavadocPackage</td>
-<td>Missing package-info.java file.</td>
-<td></td></tr>
+<td>JavadocType</td>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/importers/AbstractImporter.html#L55">55</a></td></tr></table></div>
+<div class="section">
+<h3 id="eu.ehri.project.importers.EaHandler.java">eu/ehri/project/importers/EaHandler.java</h3>
+<table border="0" class="table table-striped">
 <tr class="a">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>header</td>
-<td>Header</td>
-<td>Line does not match expected header line of '/*'.</td>
-<td><a href="./xref/eu/ehri/project/exporters/xml/XmlExporter.html#L1">1</a></td></tr>
+<th>Severity</th>
+<th>Category</th>
+<th>Rule</th>
+<th>Message</th>
+<th>Line</th></tr>
 <tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
-<td>Missing a Javadoc comment.</td>
-<td><a href="./xref/eu/ehri/project/exporters/xml/XmlExporter.html#L11">11</a></td></tr></table></div>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/importers/EaHandler.html#L34">34</a></td></tr></table></div>
+<div class="section">
+<h3 id="eu.ehri.project.importers.EaImporter.java">eu/ehri/project/importers/EaImporter.java</h3>
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>Severity</th>
+<th>Category</th>
+<th>Rule</th>
+<th>Message</th>
+<th>Line</th></tr>
+<tr class="b">
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocType</td>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/importers/EaImporter.html#L41">41</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.ImportCallback.java">eu/ehri/project/importers/ImportCallback.java</h3>
 <table border="0" class="table table-striped">
@@ -752,7 +717,7 @@
 <td>Type Javadoc comment is missing an @author tag.</td>
 <td><a href="./xref/eu/ehri/project/importers/ImportLog.html#L35">35</a></td></tr></table></div>
 <div class="section">
-<h3 id="eu.ehri.project.importers.base.AbstractImporter.java">eu/ehri/project/importers/base/AbstractImporter.java</h3>
+<h3 id="eu.ehri.project.importers.MapImporter.java">eu/ehri/project/importers/MapImporter.java</h3>
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>Severity</th>
@@ -765,9 +730,9 @@
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/importers/base/AbstractImporter.html#L56">56</a></td></tr></table></div>
+<td><a href="./xref/eu/ehri/project/importers/MapImporter.html#L55">55</a></td></tr></table></div>
 <div class="section">
-<h3 id="eu.ehri.project.importers.base.MapImporter.java">eu/ehri/project/importers/base/MapImporter.java</h3>
+<h3 id="eu.ehri.project.importers.SaxXmlHandler.java">eu/ehri/project/importers/SaxXmlHandler.java</h3>
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>Severity</th>
@@ -780,53 +745,17 @@
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/importers/base/MapImporter.html#L52">52</a></td></tr></table></div>
-<div class="section">
-<h3 id="eu.ehri.project.importers.base.SaxXmlHandler.java">eu/ehri/project/importers/base/SaxXmlHandler.java</h3>
-<table border="0" class="table table-striped">
-<tr class="a">
-<th>Severity</th>
-<th>Category</th>
-<th>Rule</th>
-<th>Message</th>
-<th>Line</th></tr>
-<tr class="b">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>javadoc</td>
-<td>JavadocPackage</td>
-<td>Missing package-info.java file.</td>
-<td></td></tr>
-<tr class="a">
-<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
-<td>javadoc</td>
-<td>JavadocType</td>
-<td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/importers/base/SaxXmlHandler.html#L57">57</a></td></tr></table></div>
-<div class="section">
-<h3 id="eu.ehri.project.importers.base.SaxXmlImporter.java">eu/ehri/project/importers/base/SaxXmlImporter.java</h3>
-<table border="0" class="table table-striped">
-<tr class="b">
-<th>Severity</th>
-<th>Category</th>
-<th>Rule</th>
-<th>Message</th>
-<th>Line</th></tr>
-<tr class="a">
-<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
-<td>javadoc</td>
-<td>JavadocType</td>
-<td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/importers/base/SaxXmlImporter.html#L43">43</a></td></tr></table></div>
+<td><a href="./xref/eu/ehri/project/importers/SaxXmlHandler.html#L57">57</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.csv.CsvAuthoritativeItemImporter.java">eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
@@ -835,13 +764,13 @@
 <div class="section">
 <h3 id="eu.ehri.project.importers.csv.CsvConceptImporter.java">eu/ehri/project/importers/csv/CsvConceptImporter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
@@ -850,13 +779,13 @@
 <div class="section">
 <h3 id="eu.ehri.project.importers.csv.CsvHistoricalAgentImporter.java">eu/ehri/project/importers/csv/CsvHistoricalAgentImporter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
@@ -865,13 +794,13 @@
 <div class="section">
 <h3 id="eu.ehri.project.importers.csv.PersonalitiesImporter.java">eu/ehri/project/importers/csv/PersonalitiesImporter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
@@ -880,19 +809,19 @@
 <div class="section">
 <h3 id="eu.ehri.project.importers.csv.TerezinDataConverter.java">eu/ehri/project/importers/csv/TerezinDataConverter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocPackage</td>
 <td>Missing package-info.java file.</td>
 <td></td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
@@ -901,13 +830,13 @@
 <div class="section">
 <h3 id="eu.ehri.project.importers.csv.UkrainianUnitImporter.java">eu/ehri/project/importers/csv/UkrainianUnitImporter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
@@ -916,13 +845,13 @@
 <div class="section">
 <h3 id="eu.ehri.project.importers.csv.Wp2PersonalitiesImporter.java">eu/ehri/project/importers/csv/Wp2PersonalitiesImporter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocType</td>
@@ -931,18 +860,24 @@
 <div class="section">
 <h3 id="eu.ehri.project.importers.cvoc.JenaSkosImporter.java">eu/ehri/project/importers/cvoc/JenaSkosImporter.java</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
+<tr class="a">
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocType</td>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/importers/cvoc/JenaSkosImporter.html#L75">75</a></td></tr>
 <tr class="b">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>extension</td>
-<td>TreeWalker</td>
-<td>Got an exception - expecting EOF, found '}'</td>
-<td><a href="./xref/eu/ehri/project/importers/cvoc/JenaSkosImporter.html#L345">345</a></td></tr></table></div>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocType</td>
+<td>Missing a Javadoc comment.</td>
+<td><a href="./xref/eu/ehri/project/importers/cvoc/JenaSkosImporter.html#L324">324</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.cvoc.SkosImporter.java">eu/ehri/project/importers/cvoc/SkosImporter.java</h3>
 <table border="0" class="table table-striped">
@@ -1008,7 +943,7 @@
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/importers/eac/EacHandler.html#L46">46</a></td></tr></table></div>
+<td><a href="./xref/eu/ehri/project/importers/eac/EacHandler.html#L45">45</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.eac.EacImporter.java">eu/ehri/project/importers/eac/EacImporter.java</h3>
 <table border="0" class="table table-striped">
@@ -1029,7 +964,22 @@
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/importers/eac/EacImporter.html#L62">62</a></td></tr></table></div>
+<td><a href="./xref/eu/ehri/project/importers/eac/EacImporter.html#L59">59</a></td></tr></table></div>
+<div class="section">
+<h3 id="eu.ehri.project.importers.ead.AraEadImporter.java">eu/ehri/project/importers/ead/AraEadImporter.java</h3>
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>Severity</th>
+<th>Category</th>
+<th>Rule</th>
+<th>Message</th>
+<th>Line</th></tr>
+<tr class="b">
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocType</td>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/importers/ead/AraEadImporter.html#L58">58</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.ead.EadHandler.java">eu/ehri/project/importers/ead/EadHandler.java</h3>
 <table border="0" class="table table-striped">
@@ -1055,11 +1005,11 @@
 <th>Message</th>
 <th>Line</th></tr>
 <tr class="b">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>extension</td>
-<td>TreeWalker</td>
-<td>Got an exception - expecting EOF, found 'String'</td>
-<td><a href="./xref/eu/ehri/project/importers/ead/EadImporter.html#L236">236</a></td></tr></table></div>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocType</td>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/importers/ead/EadImporter.html#L70">70</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.ead.IcaAtomEadHandler.java">eu/ehri/project/importers/ead/IcaAtomEadHandler.java</h3>
 <table border="0" class="table table-striped">
@@ -1091,11 +1041,11 @@
 <td>Missing package-info.java file.</td>
 <td></td></tr>
 <tr class="a">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>extension</td>
-<td>TreeWalker</td>
-<td>Got an exception - expecting EOF, found 'return'</td>
-<td><a href="./xref/eu/ehri/project/importers/ead/IcaAtomEadImporter.html#L170">170</a></td></tr></table></div>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocType</td>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/importers/ead/IcaAtomEadImporter.html#L55">55</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.ead.UshmmHandler.java">eu/ehri/project/importers/ead/UshmmHandler.java</h3>
 <table border="0" class="table table-striped">
@@ -1125,7 +1075,7 @@
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/importers/ead/VirtualEadHandler.html#L49">49</a></td></tr></table></div>
+<td><a href="./xref/eu/ehri/project/importers/ead/VirtualEadHandler.html#L50">50</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.ead.VirtualEadImporter.java">eu/ehri/project/importers/ead/VirtualEadImporter.java</h3>
 <table border="0" class="table table-striped">
@@ -1140,7 +1090,7 @@
 <td>javadoc</td>
 <td>JavadocType</td>
 <td>Type Javadoc comment is missing an @author tag.</td>
-<td><a href="./xref/eu/ehri/project/importers/ead/VirtualEadImporter.html#L63">63</a></td></tr></table></div>
+<td><a href="./xref/eu/ehri/project/importers/ead/VirtualEadImporter.html#L65">65</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.eag.EagHandler.java">eu/ehri/project/importers/eag/EagHandler.java</h3>
 <table border="0" class="table table-striped">
@@ -1295,11 +1245,11 @@
 <th>Message</th>
 <th>Line</th></tr>
 <tr class="a">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>extension</td>
-<td>TreeWalker</td>
-<td>Got an exception - expecting EOF, found 'context'</td>
-<td><a href="./xref/eu/ehri/project/importers/managers/CsvImportManager.html#L89">89</a></td></tr></table></div>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocType</td>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/importers/managers/CsvImportManager.html#L53">53</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.managers.ImportManager.java">eu/ehri/project/importers/managers/ImportManager.java</h3>
 <table border="0" class="table table-striped">
@@ -1331,11 +1281,11 @@
 <td>Missing package-info.java file.</td>
 <td></td></tr>
 <tr class="b">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>extension</td>
-<td>TreeWalker</td>
-<td>Got an exception - expecting EOF, found 'context'</td>
-<td><a href="./xref/eu/ehri/project/importers/managers/SaxImportManager.html#L166">166</a></td></tr></table></div>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocType</td>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/importers/managers/SaxImportManager.html#L56">56</a></td></tr></table></div>
 <div class="section">
 <h3 id="eu.ehri.project.importers.properties.ImportProperties.java">eu/ehri/project/importers/properties/ImportProperties.java</h3>
 <table border="0" class="table table-striped">
@@ -1466,11 +1416,11 @@
 <td>Line does not match expected header line of '/*'.</td>
 <td><a href="./xref/eu/ehri/project/utils/LanguageHelpers.html#L1">1</a></td></tr>
 <tr class="a">
-<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
-<td>extension</td>
-<td>TreeWalker</td>
-<td>Got an exception - expecting EOF, found 'Description'</td>
-<td><a href="./xref/eu/ehri/project/utils/LanguageHelpers.html#L363">363</a></td></tr></table></div></div>
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocType</td>
+<td>Type Javadoc comment is missing an @author tag.</td>
+<td><a href="./xref/eu/ehri/project/utils/LanguageHelpers.html#L27">27</a></td></tr></table></div></div>
                   </div>
             </div>
           </div>
