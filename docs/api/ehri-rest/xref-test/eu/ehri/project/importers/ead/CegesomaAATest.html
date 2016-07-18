@@ -32,7 +32,7 @@
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.exceptions.InputParseError;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DatePeriod;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
@@ -55,7 +55,7 @@
 <a class="jxr_linenumber" name="45" href="#45">45</a>  <em class="jxr_javadoccomment"> * Test the import of a Cegesoma AA EAD file.</em>
 <a class="jxr_linenumber" name="46" href="#46">46</a>  <em class="jxr_javadoccomment"> * This file was based on BundesarchiveTest.java.</em>
 <a class="jxr_linenumber" name="47" href="#47">47</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="48" href="#48">48</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/CegesomaAATest.html">CegesomaAATest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="48" href="#48">48</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/CegesomaAATest.html">CegesomaAATest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="49" href="#49">49</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(CegesomaAATest.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="50" href="#50">50</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String XMLFILE = <span class="jxr_string">"CegesomaAA.pxml"</span>;
 <a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String ARCHDESC = <span class="jxr_string">"AA 1134"</span>,
@@ -73,7 +73,7 @@
 <a class="jxr_linenumber" name="63" href="#63">63</a>  
 <a class="jxr_linenumber" name="64" href="#64">64</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(XMLFILE);
 <a class="jxr_linenumber" name="65" href="#65">65</a>          saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"cegesomaAA.properties"</span>)
-<a class="jxr_linenumber" name="66" href="#66">66</a>                  .importFile(ios, logMessage);
+<a class="jxr_linenumber" name="66" href="#66">66</a>                  .importInputStream(ios, logMessage);
 <a class="jxr_linenumber" name="67" href="#67">67</a>  
 <a class="jxr_linenumber" name="68" href="#68">68</a>          <em class="jxr_comment">// How many new nodes will have been created? We should have</em>
 <a class="jxr_linenumber" name="69" href="#69">69</a>          <em class="jxr_javadoccomment">/**</em>

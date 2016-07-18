@@ -31,7 +31,7 @@
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.exceptions.InputParseError;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DatePeriod;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
@@ -49,7 +49,7 @@
 <a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
 <a class="jxr_linenumber" name="40" href="#40">40</a>  
 <a class="jxr_linenumber" name="41" href="#41">41</a>  
-<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/IpnTest.html">IpnTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/IpnTest.html">IpnTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="43" href="#43">43</a>  
 <a class="jxr_linenumber" name="44" href="#44">44</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String BRANCH_1_XMLFILE = <span class="jxr_string">"polishBranch.xml"</span>;
 <a class="jxr_linenumber" name="45" href="#45">45</a>      <em class="jxr_comment">// Identifiers of nodes in the imported documentary units</em>
@@ -72,16 +72,16 @@
 <a class="jxr_linenumber" name="62" href="#62">62</a>  
 <a class="jxr_linenumber" name="63" href="#63">63</a>          InputStream ios1 = ClassLoader.getSystemResourceAsStream(BRANCH_1_XMLFILE);
 <a class="jxr_linenumber" name="64" href="#64">64</a>          saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"polishBranch.properties"</span>)
-<a class="jxr_linenumber" name="65" href="#65">65</a>                  .importFile(ios1, logMessage);
+<a class="jxr_linenumber" name="65" href="#65">65</a>                  .importInputStream(ios1, logMessage);
 <a class="jxr_linenumber" name="66" href="#66">66</a>  
 <a class="jxr_linenumber" name="67" href="#67">67</a>          InputStream ios2 = ClassLoader.getSystemResourceAsStream(BRANCH_2_XMLFILE);
 <a class="jxr_linenumber" name="68" href="#68">68</a>          saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"polishBranch.properties"</span>)
-<a class="jxr_linenumber" name="69" href="#69">69</a>                  .importFile(ios2, logMessage);
+<a class="jxr_linenumber" name="69" href="#69">69</a>                  .importInputStream(ios2, logMessage);
 <a class="jxr_linenumber" name="70" href="#70">70</a>  
 <a class="jxr_linenumber" name="71" href="#71">71</a>          <strong class="jxr_keyword">int</strong> origCount = getNodeCount(graph);
 <a class="jxr_linenumber" name="72" href="#72">72</a>          InputStream iosVc = ClassLoader.getSystemResourceAsStream(VC_XMLFILE);
 <a class="jxr_linenumber" name="73" href="#73">73</a>          saxImportManager(VirtualEadImporter.<strong class="jxr_keyword">class</strong>, VirtualEadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"vc.properties"</span>)
-<a class="jxr_linenumber" name="74" href="#74">74</a>                  .importFile(iosVc, logMessage);
+<a class="jxr_linenumber" name="74" href="#74">74</a>                  .importInputStream(iosVc, logMessage);
 <a class="jxr_linenumber" name="75" href="#75">75</a>  
 <a class="jxr_linenumber" name="76" href="#76">76</a>          printGraph(graph);
 <a class="jxr_linenumber" name="77" href="#77">77</a>          <em class="jxr_comment">// How many new nodes will have been created? We should have</em>
@@ -114,7 +114,7 @@
 <a class="jxr_linenumber" name="104" href="#104">104</a>         <em class="jxr_comment">// Before...</em>
 <a class="jxr_linenumber" name="105" href="#105">105</a>         InputStream ios = ClassLoader.getSystemResourceAsStream(BRANCH_1_XMLFILE);
 <a class="jxr_linenumber" name="106" href="#106">106</a>         saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"polishBranch.properties"</span>)
-<a class="jxr_linenumber" name="107" href="#107">107</a>                 .importFile(ios, logMessage);
+<a class="jxr_linenumber" name="107" href="#107">107</a>                 .importInputStream(ios, logMessage);
 <a class="jxr_linenumber" name="108" href="#108">108</a>         <em class="jxr_comment">// After...</em>
 <a class="jxr_linenumber" name="109" href="#109">109</a> 
 <a class="jxr_linenumber" name="110" href="#110">110</a>         <em class="jxr_comment">// How many new nodes will have been created? We should have</em>
@@ -159,123 +159,122 @@
 <a class="jxr_linenumber" name="149" href="#149">149</a>             <strong class="jxr_keyword">for</strong> (String property : d.getPropertyKeys()) {
 <a class="jxr_linenumber" name="150" href="#150">150</a>                 <strong class="jxr_keyword">if</strong> (property.equals(<span class="jxr_string">"processInfo"</span>)) {
 <a class="jxr_linenumber" name="151" href="#151">151</a>                     hasProvenance = <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="152" href="#152">152</a>                     System.out.println(d.getProperty(property));
-<a class="jxr_linenumber" name="153" href="#153">153</a>                     assertTrue(d.&lt;List&lt;String&gt;&gt;getProperty(property)
-<a class="jxr_linenumber" name="154" href="#154">154</a>                             .get(0).startsWith(<span class="jxr_string">"This selection has been "</span>));
-<a class="jxr_linenumber" name="155" href="#155">155</a>                 }
-<a class="jxr_linenumber" name="156" href="#156">156</a>             }
-<a class="jxr_linenumber" name="157" href="#157">157</a>             assertTrue(hasProvenance);
-<a class="jxr_linenumber" name="158" href="#158">158</a>         }
-<a class="jxr_linenumber" name="159" href="#159">159</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription desc : c1_1.getDocumentDescriptions()) {
-<a class="jxr_linenumber" name="160" href="#160">160</a>             <strong class="jxr_keyword">for</strong> (String p : desc.getPropertyKeys()) {
-<a class="jxr_linenumber" name="161" href="#161">161</a>                 System.out.println(p + <span class="jxr_string">" --&gt; "</span> + desc.getProperty(p));
-<a class="jxr_linenumber" name="162" href="#162">162</a>             }
-<a class="jxr_linenumber" name="163" href="#163">163</a>             assertEquals(<span class="jxr_string">"Cukrownia w Pszennie – August Gross i Synowie [August Gross &amp; Söhne Zuckerfabrik Weizenrodau]"</span>, desc.getName());
-<a class="jxr_linenumber" name="164" href="#164">164</a>             assertFalse(desc.getPropertyKeys().contains(<span class="jxr_string">"unitDates"</span>));
-<a class="jxr_linenumber" name="165" href="#165">165</a>         }
-<a class="jxr_linenumber" name="166" href="#166">166</a>         <em class="jxr_comment">//test hierarchy</em>
-<a class="jxr_linenumber" name="167" href="#167">167</a>         assertEquals(2L, archdesc.getChildCount());
-<a class="jxr_linenumber" name="168" href="#168">168</a> 
-<a class="jxr_linenumber" name="169" href="#169">169</a>         <em class="jxr_comment">//test level-of-desc</em>
-<a class="jxr_linenumber" name="170" href="#170">170</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription d : c1_1.getDocumentDescriptions()) {
-<a class="jxr_linenumber" name="171" href="#171">171</a>             assertEquals(<span class="jxr_string">"collection"</span>, d.getProperty(<span class="jxr_string">"levelOfDescription"</span>));
-<a class="jxr_linenumber" name="172" href="#172">172</a>         }
-<a class="jxr_linenumber" name="173" href="#173">173</a>         <em class="jxr_comment">// test dates</em>
-<a class="jxr_linenumber" name="174" href="#174">174</a>         <strong class="jxr_keyword">boolean</strong> hasDates = false;
-<a class="jxr_linenumber" name="175" href="#175">175</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription d : c1_1.getDocumentDescriptions()) {
-<a class="jxr_linenumber" name="176" href="#176">176</a>             hasDates = d.getDatePeriods().iterator().hasNext();
-<a class="jxr_linenumber" name="177" href="#177">177</a>         }
-<a class="jxr_linenumber" name="178" href="#178">178</a>         assertTrue(hasDates);
-<a class="jxr_linenumber" name="179" href="#179">179</a>     }
-<a class="jxr_linenumber" name="180" href="#180">180</a> 
-<a class="jxr_linenumber" name="181" href="#181">181</a>     @Test
-<a class="jxr_linenumber" name="182" href="#182">182</a>     @Ignore
-<a class="jxr_linenumber" name="183" href="#183">183</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> polishBranch_2_EadTest() <strong class="jxr_keyword">throws</strong> ItemNotFound, IOException, ValidationError, InputParseError {
-<a class="jxr_linenumber" name="184" href="#184">184</a> 
-<a class="jxr_linenumber" name="185" href="#185">185</a>         PermissionScope agent = manager.getEntity(TEST_REPO, PermissionScope.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="186" href="#186">186</a>         <strong class="jxr_keyword">final</strong> String logMessage = <span class="jxr_string">"Importing a part of a the IPN Polish Branches EAD, without preprocessing done"</span>;
-<a class="jxr_linenumber" name="187" href="#187">187</a> 
-<a class="jxr_linenumber" name="188" href="#188">188</a>         <strong class="jxr_keyword">int</strong> origCount = getNodeCount(graph);
-<a class="jxr_linenumber" name="189" href="#189">189</a> 
-<a class="jxr_linenumber" name="190" href="#190">190</a>         <em class="jxr_comment">// Before...</em>
-<a class="jxr_linenumber" name="191" href="#191">191</a>         List&lt;VertexProxy&gt; graphState1 = getGraphState(graph);
-<a class="jxr_linenumber" name="192" href="#192">192</a>         InputStream ios = ClassLoader.getSystemResourceAsStream(BRANCH_2_XMLFILE);
-<a class="jxr_linenumber" name="193" href="#193">193</a>         saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"polishBranch.properties"</span>)
-<a class="jxr_linenumber" name="194" href="#194">194</a>                 .importFile(ios, logMessage);
-<a class="jxr_linenumber" name="195" href="#195">195</a>         <em class="jxr_comment">// After...</em>
-<a class="jxr_linenumber" name="196" href="#196">196</a>         List&lt;VertexProxy&gt; graphState2 = getGraphState(graph);
-<a class="jxr_linenumber" name="197" href="#197">197</a>         GraphDiff diff = diffGraph(graphState1, graphState2);
-<a class="jxr_linenumber" name="198" href="#198">198</a>         diff.printDebug(System.out);
+<a class="jxr_linenumber" name="152" href="#152">152</a>                     assertTrue(d.&lt;List&lt;String&gt;&gt;getProperty(property)
+<a class="jxr_linenumber" name="153" href="#153">153</a>                             .get(0).startsWith(<span class="jxr_string">"This selection has been "</span>));
+<a class="jxr_linenumber" name="154" href="#154">154</a>                 }
+<a class="jxr_linenumber" name="155" href="#155">155</a>             }
+<a class="jxr_linenumber" name="156" href="#156">156</a>             assertTrue(hasProvenance);
+<a class="jxr_linenumber" name="157" href="#157">157</a>         }
+<a class="jxr_linenumber" name="158" href="#158">158</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription desc : c1_1.getDocumentDescriptions()) {
+<a class="jxr_linenumber" name="159" href="#159">159</a>             <strong class="jxr_keyword">for</strong> (String p : desc.getPropertyKeys()) {
+<a class="jxr_linenumber" name="160" href="#160">160</a>                 System.out.println(p + <span class="jxr_string">" --&gt; "</span> + desc.getProperty(p));
+<a class="jxr_linenumber" name="161" href="#161">161</a>             }
+<a class="jxr_linenumber" name="162" href="#162">162</a>             assertEquals(<span class="jxr_string">"Cukrownia w Pszennie – August Gross i Synowie [August Gross &amp; Söhne Zuckerfabrik Weizenrodau]"</span>, desc.getName());
+<a class="jxr_linenumber" name="163" href="#163">163</a>             assertFalse(desc.getPropertyKeys().contains(<span class="jxr_string">"unitDates"</span>));
+<a class="jxr_linenumber" name="164" href="#164">164</a>         }
+<a class="jxr_linenumber" name="165" href="#165">165</a>         <em class="jxr_comment">//test hierarchy</em>
+<a class="jxr_linenumber" name="166" href="#166">166</a>         assertEquals(2L, archdesc.getChildCount());
+<a class="jxr_linenumber" name="167" href="#167">167</a> 
+<a class="jxr_linenumber" name="168" href="#168">168</a>         <em class="jxr_comment">//test level-of-desc</em>
+<a class="jxr_linenumber" name="169" href="#169">169</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription d : c1_1.getDocumentDescriptions()) {
+<a class="jxr_linenumber" name="170" href="#170">170</a>             assertEquals(<span class="jxr_string">"collection"</span>, d.getProperty(<span class="jxr_string">"levelOfDescription"</span>));
+<a class="jxr_linenumber" name="171" href="#171">171</a>         }
+<a class="jxr_linenumber" name="172" href="#172">172</a>         <em class="jxr_comment">// test dates</em>
+<a class="jxr_linenumber" name="173" href="#173">173</a>         <strong class="jxr_keyword">boolean</strong> hasDates = false;
+<a class="jxr_linenumber" name="174" href="#174">174</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription d : c1_1.getDocumentDescriptions()) {
+<a class="jxr_linenumber" name="175" href="#175">175</a>             hasDates = d.getDatePeriods().iterator().hasNext();
+<a class="jxr_linenumber" name="176" href="#176">176</a>         }
+<a class="jxr_linenumber" name="177" href="#177">177</a>         assertTrue(hasDates);
+<a class="jxr_linenumber" name="178" href="#178">178</a>     }
+<a class="jxr_linenumber" name="179" href="#179">179</a> 
+<a class="jxr_linenumber" name="180" href="#180">180</a>     @Test
+<a class="jxr_linenumber" name="181" href="#181">181</a>     @Ignore
+<a class="jxr_linenumber" name="182" href="#182">182</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> polishBranch_2_EadTest() <strong class="jxr_keyword">throws</strong> ItemNotFound, IOException, ValidationError, InputParseError {
+<a class="jxr_linenumber" name="183" href="#183">183</a> 
+<a class="jxr_linenumber" name="184" href="#184">184</a>         PermissionScope agent = manager.getEntity(TEST_REPO, PermissionScope.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="185" href="#185">185</a>         <strong class="jxr_keyword">final</strong> String logMessage = <span class="jxr_string">"Importing a part of a the IPN Polish Branches EAD, without preprocessing done"</span>;
+<a class="jxr_linenumber" name="186" href="#186">186</a> 
+<a class="jxr_linenumber" name="187" href="#187">187</a>         <strong class="jxr_keyword">int</strong> origCount = getNodeCount(graph);
+<a class="jxr_linenumber" name="188" href="#188">188</a> 
+<a class="jxr_linenumber" name="189" href="#189">189</a>         <em class="jxr_comment">// Before...</em>
+<a class="jxr_linenumber" name="190" href="#190">190</a>         List&lt;VertexProxy&gt; graphState1 = getGraphState(graph);
+<a class="jxr_linenumber" name="191" href="#191">191</a>         InputStream ios = ClassLoader.getSystemResourceAsStream(BRANCH_2_XMLFILE);
+<a class="jxr_linenumber" name="192" href="#192">192</a>         saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"polishBranch.properties"</span>)
+<a class="jxr_linenumber" name="193" href="#193">193</a>                 .importInputStream(ios, logMessage);
+<a class="jxr_linenumber" name="194" href="#194">194</a>         <em class="jxr_comment">// After...</em>
+<a class="jxr_linenumber" name="195" href="#195">195</a>         List&lt;VertexProxy&gt; graphState2 = getGraphState(graph);
+<a class="jxr_linenumber" name="196" href="#196">196</a>         GraphDiff diff = diffGraph(graphState1, graphState2);
+<a class="jxr_linenumber" name="197" href="#197">197</a>         diff.printDebug(System.out);
+<a class="jxr_linenumber" name="198" href="#198">198</a> 
 <a class="jxr_linenumber" name="199" href="#199">199</a> 
-<a class="jxr_linenumber" name="200" href="#200">200</a> 
-<a class="jxr_linenumber" name="201" href="#201">201</a> <em class="jxr_comment">//        printGraph(graph);</em>
-<a class="jxr_linenumber" name="202" href="#202">202</a>         <em class="jxr_comment">// How many new nodes will have been created? We should have</em>
-<a class="jxr_linenumber" name="203" href="#203">203</a>         <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="204" href="#204">204</a> <em class="jxr_javadoccomment">         * null: 4</em>
-<a class="jxr_linenumber" name="205" href="#205">205</a> <em class="jxr_javadoccomment">         * relationship: 5</em>
-<a class="jxr_linenumber" name="206" href="#206">206</a> <em class="jxr_javadoccomment">         * documentaryUnit: 3</em>
-<a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">         * documentDescription: 3</em>
-<a class="jxr_linenumber" name="208" href="#208">208</a> <em class="jxr_javadoccomment">         * property: 1</em>
-<a class="jxr_linenumber" name="209" href="#209">209</a> <em class="jxr_javadoccomment">         * maintenanceEvent: 1</em>
-<a class="jxr_linenumber" name="210" href="#210">210</a> <em class="jxr_javadoccomment">         * systemEvent: 1</em>
-<a class="jxr_linenumber" name="211" href="#211">211</a> <em class="jxr_javadoccomment">         * datePeriod: 2</em>
-<a class="jxr_linenumber" name="212" href="#212">212</a> <em class="jxr_javadoccomment">         */</em>
-<a class="jxr_linenumber" name="213" href="#213">213</a> 
-<a class="jxr_linenumber" name="214" href="#214">214</a>         <strong class="jxr_keyword">int</strong> newCount = origCount + 20;
-<a class="jxr_linenumber" name="215" href="#215">215</a>         assertEquals(newCount, getNodeCount(graph));
-<a class="jxr_linenumber" name="216" href="#216">216</a> 
-<a class="jxr_linenumber" name="217" href="#217">217</a>         DocumentaryUnit archdesc = graph.frame(
-<a class="jxr_linenumber" name="218" href="#218">218</a>                 getVertexByIdentifier(graph, BRANCH_2_ARCHDESC),
-<a class="jxr_linenumber" name="219" href="#219">219</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="220" href="#220">220</a>         DocumentaryUnit c1_1 = graph.frame(
-<a class="jxr_linenumber" name="221" href="#221">221</a>                 getVertexByIdentifier(graph, BRANCH_2_C01_1),
-<a class="jxr_linenumber" name="222" href="#222">222</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="223" href="#223">223</a>         DocumentaryUnit c1_2 = graph.frame(
-<a class="jxr_linenumber" name="224" href="#224">224</a>                 getVertexByIdentifier(graph, BRANCH_2_C01_2),
-<a class="jxr_linenumber" name="225" href="#225">225</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="226" href="#226">226</a> 
-<a class="jxr_linenumber" name="227" href="#227">227</a>         <em class="jxr_comment">// Check permission scope and hierarchy</em>
-<a class="jxr_linenumber" name="228" href="#228">228</a>         assertNull(archdesc.getParent());
-<a class="jxr_linenumber" name="229" href="#229">229</a>         assertEquals(agent, archdesc.getRepository());
-<a class="jxr_linenumber" name="230" href="#230">230</a>         assertEquals(agent, archdesc.getPermissionScope());
-<a class="jxr_linenumber" name="231" href="#231">231</a>         assertEquals(archdesc, c1_1.getParent());
-<a class="jxr_linenumber" name="232" href="#232">232</a>         assertEquals(archdesc, c1_1.getPermissionScope());
-<a class="jxr_linenumber" name="233" href="#233">233</a>         assertEquals(archdesc, c1_2.getParent());
-<a class="jxr_linenumber" name="234" href="#234">234</a>         assertEquals(archdesc, c1_2.getPermissionScope());
+<a class="jxr_linenumber" name="200" href="#200">200</a> <em class="jxr_comment">//        printGraph(graph);</em>
+<a class="jxr_linenumber" name="201" href="#201">201</a>         <em class="jxr_comment">// How many new nodes will have been created? We should have</em>
+<a class="jxr_linenumber" name="202" href="#202">202</a>         <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="203" href="#203">203</a> <em class="jxr_javadoccomment">         * null: 4</em>
+<a class="jxr_linenumber" name="204" href="#204">204</a> <em class="jxr_javadoccomment">         * relationship: 5</em>
+<a class="jxr_linenumber" name="205" href="#205">205</a> <em class="jxr_javadoccomment">         * documentaryUnit: 3</em>
+<a class="jxr_linenumber" name="206" href="#206">206</a> <em class="jxr_javadoccomment">         * documentDescription: 3</em>
+<a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">         * property: 1</em>
+<a class="jxr_linenumber" name="208" href="#208">208</a> <em class="jxr_javadoccomment">         * maintenanceEvent: 1</em>
+<a class="jxr_linenumber" name="209" href="#209">209</a> <em class="jxr_javadoccomment">         * systemEvent: 1</em>
+<a class="jxr_linenumber" name="210" href="#210">210</a> <em class="jxr_javadoccomment">         * datePeriod: 2</em>
+<a class="jxr_linenumber" name="211" href="#211">211</a> <em class="jxr_javadoccomment">         */</em>
+<a class="jxr_linenumber" name="212" href="#212">212</a> 
+<a class="jxr_linenumber" name="213" href="#213">213</a>         <strong class="jxr_keyword">int</strong> newCount = origCount + 20;
+<a class="jxr_linenumber" name="214" href="#214">214</a>         assertEquals(newCount, getNodeCount(graph));
+<a class="jxr_linenumber" name="215" href="#215">215</a> 
+<a class="jxr_linenumber" name="216" href="#216">216</a>         DocumentaryUnit archdesc = graph.frame(
+<a class="jxr_linenumber" name="217" href="#217">217</a>                 getVertexByIdentifier(graph, BRANCH_2_ARCHDESC),
+<a class="jxr_linenumber" name="218" href="#218">218</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="219" href="#219">219</a>         DocumentaryUnit c1_1 = graph.frame(
+<a class="jxr_linenumber" name="220" href="#220">220</a>                 getVertexByIdentifier(graph, BRANCH_2_C01_1),
+<a class="jxr_linenumber" name="221" href="#221">221</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="222" href="#222">222</a>         DocumentaryUnit c1_2 = graph.frame(
+<a class="jxr_linenumber" name="223" href="#223">223</a>                 getVertexByIdentifier(graph, BRANCH_2_C01_2),
+<a class="jxr_linenumber" name="224" href="#224">224</a>                 DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="225" href="#225">225</a> 
+<a class="jxr_linenumber" name="226" href="#226">226</a>         <em class="jxr_comment">// Check permission scope and hierarchy</em>
+<a class="jxr_linenumber" name="227" href="#227">227</a>         assertNull(archdesc.getParent());
+<a class="jxr_linenumber" name="228" href="#228">228</a>         assertEquals(agent, archdesc.getRepository());
+<a class="jxr_linenumber" name="229" href="#229">229</a>         assertEquals(agent, archdesc.getPermissionScope());
+<a class="jxr_linenumber" name="230" href="#230">230</a>         assertEquals(archdesc, c1_1.getParent());
+<a class="jxr_linenumber" name="231" href="#231">231</a>         assertEquals(archdesc, c1_1.getPermissionScope());
+<a class="jxr_linenumber" name="232" href="#232">232</a>         assertEquals(archdesc, c1_2.getParent());
+<a class="jxr_linenumber" name="233" href="#233">233</a>         assertEquals(archdesc, c1_2.getPermissionScope());
+<a class="jxr_linenumber" name="234" href="#234">234</a> 
 <a class="jxr_linenumber" name="235" href="#235">235</a> 
-<a class="jxr_linenumber" name="236" href="#236">236</a> 
-<a class="jxr_linenumber" name="237" href="#237">237</a>         <em class="jxr_comment">//test titles</em>
-<a class="jxr_linenumber" name="238" href="#238">238</a>         Iterable&lt;DocumentaryUnitDescription&gt; descriptions = archdesc.getDocumentDescriptions();
-<a class="jxr_linenumber" name="239" href="#239">239</a>         assertTrue(descriptions.iterator().hasNext());
-<a class="jxr_linenumber" name="240" href="#240">240</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription d : descriptions) {
-<a class="jxr_linenumber" name="241" href="#241">241</a>             assertEquals(<span class="jxr_string">"Collections from Biuro Udostępniania i Archiwizacji Dokumentów w Warszawie"</span>, d.getName());
-<a class="jxr_linenumber" name="242" href="#242">242</a>             List&lt;String&gt; provenance = d.getProperty(<span class="jxr_string">"processInfo"</span>);
-<a class="jxr_linenumber" name="243" href="#243">243</a>             assertTrue(!provenance.isEmpty());
-<a class="jxr_linenumber" name="244" href="#244">244</a>             assertThat(provenance.get(0), startsWith(<span class="jxr_string">"This selection has been "</span>));
-<a class="jxr_linenumber" name="245" href="#245">245</a>         }
-<a class="jxr_linenumber" name="246" href="#246">246</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription desc : c1_1.getDocumentDescriptions()) {
-<a class="jxr_linenumber" name="247" href="#247">247</a>             assertEquals(<span class="jxr_string">"Areszt Śledczy Sądowy w Poznaniu [Untersuchungshaftanstalt Posen]"</span>, desc.getName());
-<a class="jxr_linenumber" name="248" href="#248">248</a>         }
-<a class="jxr_linenumber" name="249" href="#249">249</a>         <em class="jxr_comment">//test hierarchy</em>
-<a class="jxr_linenumber" name="250" href="#250">250</a>         assertEquals(2L, archdesc.getChildCount());
-<a class="jxr_linenumber" name="251" href="#251">251</a> 
-<a class="jxr_linenumber" name="252" href="#252">252</a>         <em class="jxr_comment">//test level-of-desc</em>
-<a class="jxr_linenumber" name="253" href="#253">253</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription d : c1_1.getDocumentDescriptions()) {
-<a class="jxr_linenumber" name="254" href="#254">254</a>             assertEquals(<span class="jxr_string">"collection"</span>, d.getProperty(<span class="jxr_string">"levelOfDescription"</span>));
-<a class="jxr_linenumber" name="255" href="#255">255</a>         }
-<a class="jxr_linenumber" name="256" href="#256">256</a>         <em class="jxr_comment">// test dates</em>
-<a class="jxr_linenumber" name="257" href="#257">257</a>         <strong class="jxr_keyword">boolean</strong> hasDates = false;
-<a class="jxr_linenumber" name="258" href="#258">258</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription d : c1_1.getDocumentDescriptions()) {
-<a class="jxr_linenumber" name="259" href="#259">259</a>             <strong class="jxr_keyword">for</strong> (DatePeriod p : d.getDatePeriods()) {
-<a class="jxr_linenumber" name="260" href="#260">260</a>                 hasDates = <strong class="jxr_keyword">true</strong>;
-<a class="jxr_linenumber" name="261" href="#261">261</a>                 assertEquals(<span class="jxr_string">"1940-01-01"</span>, p.getStartDate());
-<a class="jxr_linenumber" name="262" href="#262">262</a>                 assertEquals(<span class="jxr_string">"1943-12-31"</span>, p.getEndDate());
-<a class="jxr_linenumber" name="263" href="#263">263</a>             }
-<a class="jxr_linenumber" name="264" href="#264">264</a>         }
-<a class="jxr_linenumber" name="265" href="#265">265</a>         assertTrue(hasDates);
-<a class="jxr_linenumber" name="266" href="#266">266</a>     }
-<a class="jxr_linenumber" name="267" href="#267">267</a> }
-<a class="jxr_linenumber" name="268" href="#268">268</a>     
+<a class="jxr_linenumber" name="236" href="#236">236</a>         <em class="jxr_comment">//test titles</em>
+<a class="jxr_linenumber" name="237" href="#237">237</a>         Iterable&lt;DocumentaryUnitDescription&gt; descriptions = archdesc.getDocumentDescriptions();
+<a class="jxr_linenumber" name="238" href="#238">238</a>         assertTrue(descriptions.iterator().hasNext());
+<a class="jxr_linenumber" name="239" href="#239">239</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription d : descriptions) {
+<a class="jxr_linenumber" name="240" href="#240">240</a>             assertEquals(<span class="jxr_string">"Collections from Biuro Udostępniania i Archiwizacji Dokumentów w Warszawie"</span>, d.getName());
+<a class="jxr_linenumber" name="241" href="#241">241</a>             List&lt;String&gt; provenance = d.getProperty(<span class="jxr_string">"processInfo"</span>);
+<a class="jxr_linenumber" name="242" href="#242">242</a>             assertTrue(!provenance.isEmpty());
+<a class="jxr_linenumber" name="243" href="#243">243</a>             assertThat(provenance.get(0), startsWith(<span class="jxr_string">"This selection has been "</span>));
+<a class="jxr_linenumber" name="244" href="#244">244</a>         }
+<a class="jxr_linenumber" name="245" href="#245">245</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription desc : c1_1.getDocumentDescriptions()) {
+<a class="jxr_linenumber" name="246" href="#246">246</a>             assertEquals(<span class="jxr_string">"Areszt Śledczy Sądowy w Poznaniu [Untersuchungshaftanstalt Posen]"</span>, desc.getName());
+<a class="jxr_linenumber" name="247" href="#247">247</a>         }
+<a class="jxr_linenumber" name="248" href="#248">248</a>         <em class="jxr_comment">//test hierarchy</em>
+<a class="jxr_linenumber" name="249" href="#249">249</a>         assertEquals(2L, archdesc.getChildCount());
+<a class="jxr_linenumber" name="250" href="#250">250</a> 
+<a class="jxr_linenumber" name="251" href="#251">251</a>         <em class="jxr_comment">//test level-of-desc</em>
+<a class="jxr_linenumber" name="252" href="#252">252</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription d : c1_1.getDocumentDescriptions()) {
+<a class="jxr_linenumber" name="253" href="#253">253</a>             assertEquals(<span class="jxr_string">"collection"</span>, d.getProperty(<span class="jxr_string">"levelOfDescription"</span>));
+<a class="jxr_linenumber" name="254" href="#254">254</a>         }
+<a class="jxr_linenumber" name="255" href="#255">255</a>         <em class="jxr_comment">// test dates</em>
+<a class="jxr_linenumber" name="256" href="#256">256</a>         <strong class="jxr_keyword">boolean</strong> hasDates = false;
+<a class="jxr_linenumber" name="257" href="#257">257</a>         <strong class="jxr_keyword">for</strong> (DocumentaryUnitDescription d : c1_1.getDocumentDescriptions()) {
+<a class="jxr_linenumber" name="258" href="#258">258</a>             <strong class="jxr_keyword">for</strong> (DatePeriod p : d.getDatePeriods()) {
+<a class="jxr_linenumber" name="259" href="#259">259</a>                 hasDates = <strong class="jxr_keyword">true</strong>;
+<a class="jxr_linenumber" name="260" href="#260">260</a>                 assertEquals(<span class="jxr_string">"1940-01-01"</span>, p.getStartDate());
+<a class="jxr_linenumber" name="261" href="#261">261</a>                 assertEquals(<span class="jxr_string">"1943-12-31"</span>, p.getEndDate());
+<a class="jxr_linenumber" name="262" href="#262">262</a>             }
+<a class="jxr_linenumber" name="263" href="#263">263</a>         }
+<a class="jxr_linenumber" name="264" href="#264">264</a>         assertTrue(hasDates);
+<a class="jxr_linenumber" name="265" href="#265">265</a>     }
+<a class="jxr_linenumber" name="266" href="#266">266</a> }
+<a class="jxr_linenumber" name="267" href="#267">267</a>     
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

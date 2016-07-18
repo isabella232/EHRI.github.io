@@ -35,8 +35,8 @@
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.MapImporter;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.SaxXmlHandler;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.MapImporter;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.SaxXmlHandler;
 <a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.XmlImportProperties;
 <a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.util.Helpers;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
@@ -58,7 +58,7 @@
 <a class="jxr_linenumber" name="48" href="#48">48</a>  <em class="jxr_javadoccomment"> * Importer of Ukrainian units, which are encoded in a slightly different way</em>
 <a class="jxr_linenumber" name="49" href="#49">49</a>  <em class="jxr_javadoccomment"> * than other documentary units.</em>
 <a class="jxr_linenumber" name="50" href="#50">50</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="51" href="#51">51</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/csv/UkrainianUnitImporter.html">UkrainianUnitImporter</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/MapImporter.html">MapImporter</a> {
+<a class="jxr_linenumber" name="51" href="#51">51</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/csv/UkrainianUnitImporter.html">UkrainianUnitImporter</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/MapImporter.html">MapImporter</a> {
 <a class="jxr_linenumber" name="52" href="#52">52</a>  
 <a class="jxr_linenumber" name="53" href="#53">53</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> String MULTIVALUE_SEP = <span class="jxr_string">",,"</span>;
 <a class="jxr_linenumber" name="54" href="#54">54</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html">XmlImportProperties</a> p;

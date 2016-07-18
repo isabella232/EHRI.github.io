@@ -32,7 +32,7 @@
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Vertex;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Entities;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.SaxImportManager;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Country;
@@ -52,7 +52,7 @@
 <a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
 <a class="jxr_linenumber" name="43" href="#43">43</a>  
 <a class="jxr_linenumber" name="44" href="#44">44</a>  
-<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/eag/Eag2896Test.html">Eag2896Test</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/eag/Eag2896Test.html">Eag2896Test</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="46" href="#46">46</a>  
 <a class="jxr_linenumber" name="47" href="#47">47</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> org.slf4j.Logger logger = LoggerFactory.getLogger(Eag2896Test.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="48" href="#48">48</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SINGLE_UNIT = <span class="jxr_string">"eag-2896.xml"</span>;
@@ -73,7 +73,7 @@
 <a class="jxr_linenumber" name="63" href="#63">63</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(SINGLE_UNIT);
 <a class="jxr_linenumber" name="64" href="#64">64</a>          SaxImportManager importManager = <strong class="jxr_keyword">new</strong> SaxImportManager(graph, country, validUser,
 <a class="jxr_linenumber" name="65" href="#65">65</a>                  EagImporter.<strong class="jxr_keyword">class</strong>, EagHandler.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="66" href="#66">66</a>          ImportLog log = importManager.importFile(ios, logMessage);
+<a class="jxr_linenumber" name="66" href="#66">66</a>          ImportLog log = importManager.importInputStream(ios, logMessage);
 <a class="jxr_linenumber" name="67" href="#67">67</a>          <em class="jxr_comment">//printGraph(graph);</em>
 <a class="jxr_linenumber" name="68" href="#68">68</a>          <em class="jxr_comment">// How many new nodes will have been created? We should have</em>
 <a class="jxr_linenumber" name="69" href="#69">69</a>          <em class="jxr_comment">// - 1 more Repository</em>
@@ -131,7 +131,7 @@
 <a class="jxr_linenumber" name="121" href="#121">121</a> 
 <a class="jxr_linenumber" name="122" href="#122">122</a>         <em class="jxr_comment">// Test idempotency</em>
 <a class="jxr_linenumber" name="123" href="#123">123</a>         <strong class="jxr_keyword">int</strong> edgeCount = getEdgeCount(graph);
-<a class="jxr_linenumber" name="124" href="#124">124</a>         ImportLog log2 = importManager.importFile(ClassLoader.getSystemResourceAsStream(SINGLE_UNIT), logMessage);
+<a class="jxr_linenumber" name="124" href="#124">124</a>         ImportLog log2 = importManager.importInputStream(ClassLoader.getSystemResourceAsStream(SINGLE_UNIT), logMessage);
 <a class="jxr_linenumber" name="125" href="#125">125</a>         assertFalse(log2.hasDoneWork());
 <a class="jxr_linenumber" name="126" href="#126">126</a>         assertEquals(afterCount, getNodeCount(graph));
 <a class="jxr_linenumber" name="127" href="#127">127</a>         assertEquals(edgeCount, getEdgeCount(graph));

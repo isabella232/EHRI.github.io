@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20160427" />
+    <meta name="Date-Revision-yyyymmdd" content="20160718" />
     <meta http-equiv="Content-Language" content="en" />
     <title>Import/Export Tools &#x2013; FindBugs Bug Detector Report</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2016-04-27
+                  <li id="publishDate">Last Published: 2016-07-18
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.13.2-SNAPSHOT
+                  <li id="projectVersion">Version: 0.13.4-SNAPSHOT
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -106,8 +106,8 @@
 <th>Errors</th>
 <th>Missing Classes</th></tr>
 <tr class="b">
-<td>75</td>
-<td>21</td>
+<td>65</td>
+<td>18</td>
 <td>0</td>
 <td>0</td></tr></table></div>
 <div class="section">
@@ -117,90 +117,72 @@
 <th>Class</th>
 <th>Bugs</th></tr>
 <tr class="b">
-<td><a href="#eu.ehri.project.importers.EaHandler">eu.ehri.project.importers.EaHandler</a></td>
-<td>1</td></tr>
-<tr class="a">
-<td><a href="#eu.ehri.project.importers.MapImporter">eu.ehri.project.importers.MapImporter</a></td>
+<td><a href="#eu.ehri.project.importers.base.MapImporter">eu.ehri.project.importers.base.MapImporter</a></td>
 <td>2</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.csv.CsvAuthoritativeItemImporter">eu.ehri.project.importers.csv.CsvAuthoritativeItemImporter</a></td>
 <td>1</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.csv.PersonalitiesImporter">eu.ehri.project.importers.csv.PersonalitiesImporter</a></td>
 <td>1</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.csv.TerezinDataConverter">eu.ehri.project.importers.csv.TerezinDataConverter</a></td>
 <td>3</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.csv.UkrainianUnitImporter">eu.ehri.project.importers.csv.UkrainianUnitImporter</a></td>
 <td>2</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.csv.Wp2PersonalitiesImporter">eu.ehri.project.importers.csv.Wp2PersonalitiesImporter</a></td>
 <td>1</td></tr>
-<tr class="a">
+<tr class="b">
 <td><a href="#eu.ehri.project.importers.cvoc.JenaSkosImporter">eu.ehri.project.importers.cvoc.JenaSkosImporter</a></td>
+<td>1</td></tr>
+<tr class="a">
+<td><a href="#eu.ehri.project.importers.eac.EacHandler">eu.ehri.project.importers.eac.EacHandler</a></td>
 <td>1</td></tr>
 <tr class="b">
 <td><a href="#eu.ehri.project.importers.eac.EacImporter">eu.ehri.project.importers.eac.EacImporter</a></td>
 <td>3</td></tr>
 <tr class="a">
-<td><a href="#eu.ehri.project.importers.ead.AraEadImporter">eu.ehri.project.importers.ead.AraEadImporter</a></td>
+<td><a href="#eu.ehri.project.importers.ead.EadImporter">eu.ehri.project.importers.ead.EadImporter</a></td>
 <td>1</td></tr>
 <tr class="b">
-<td><a href="#eu.ehri.project.importers.ead.EadImporter">eu.ehri.project.importers.ead.EadImporter</a></td>
-<td>2</td></tr>
-<tr class="a">
 <td><a href="#eu.ehri.project.importers.ead.IcaAtomEadImporter">eu.ehri.project.importers.ead.IcaAtomEadImporter</a></td>
 <td>1</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#eu.ehri.project.importers.ead.VirtualEadImporter">eu.ehri.project.importers.ead.VirtualEadImporter</a></td>
-<td>2</td></tr></table></div><a name="eu.ehri.project.importers.EaHandler"></a>
+<td>1</td></tr></table></div><a name="eu.ehri.project.importers.base.MapImporter"></a>
 <div class="section">
-<h3><a name="eu.ehri.project.importers.EaHandler"></a>eu.ehri.project.importers.EaHandler</h3>
+<h3><a name="eu.ehri.project.importers.base.MapImporter"></a>eu.ehri.project.importers.base.MapImporter</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
-<td>eu.ehri.project.importers.EaHandler.chooseName(Object) concatenates strings using + in a loop</td>
-<td>PERFORMANCE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SBSC_USE_STRINGBUFFER_CONCATENATION">SBSC_USE_STRINGBUFFER_CONCATENATION</a></td>
-<td><a href="./xref/eu/ehri/project/importers/EaHandler.html#L56">56</a></td>
-<td>Medium</td></tr></table></div><a name="eu.ehri.project.importers.MapImporter"></a>
-<div class="section">
-<h3><a name="eu.ehri.project.importers.MapImporter"></a>eu.ehri.project.importers.MapImporter</h3>
-<table border="0" class="table table-striped">
 <tr class="a">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="b">
-<td>eu.ehri.project.importers.MapImporter.extractMaintenanceEvent(Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+<td>eu.ehri.project.importers.base.MapImporter.extractMaintenanceEvent(Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/MapImporter.html#L192">192</a></td>
+<td><a href="./xref/eu/ehri/project/importers/base/MapImporter.html#L182">182</a></td>
 <td>Medium</td></tr>
-<tr class="a">
-<td>eu.ehri.project.importers.MapImporter.replaceDates(Map, List) makes inefficient use of keySet iterator instead of entrySet iterator</td>
+<tr class="b">
+<td>eu.ehri.project.importers.base.MapImporter.replaceDates(Map, List) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/MapImporter.html#L153">153</a></td>
+<td><a href="./xref/eu/ehri/project/importers/base/MapImporter.html#L146">146</a></td>
 <td>Medium</td></tr></table></div><a name="eu.ehri.project.importers.csv.CsvAuthoritativeItemImporter"></a>
 <div class="section">
 <h3><a name="eu.ehri.project.importers.csv.CsvAuthoritativeItemImporter"></a>eu.ehri.project.importers.csv.CsvAuthoritativeItemImporter</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="a">
+<tr class="b">
 <td>eu.ehri.project.importers.csv.CsvAuthoritativeItemImporter.extractUnitDescription(Map, EntityClass) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
@@ -209,13 +191,13 @@
 <div class="section">
 <h3><a name="eu.ehri.project.importers.csv.PersonalitiesImporter"></a>eu.ehri.project.importers.csv.PersonalitiesImporter</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="a">
+<tr class="b">
 <td>eu.ehri.project.importers.csv.PersonalitiesImporter.extractUnitDescription(Map, EntityClass) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
@@ -224,25 +206,25 @@
 <div class="section">
 <h3><a name="eu.ehri.project.importers.csv.TerezinDataConverter"></a>eu.ehri.project.importers.csv.TerezinDataConverter</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="a">
+<tr class="b">
 <td>Boxing/unboxing to parse a primitive eu.ehri.project.importers.csv.TerezinDataConverter.parseDate(String)</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_BOXED_PRIMITIVE_FOR_PARSING">DM_BOXED_PRIMITIVE_FOR_PARSING</a></td>
 <td><a href="./xref/eu/ehri/project/importers/csv/TerezinDataConverter.html#L123">123</a></td>
 <td>High</td></tr>
-<tr class="b">
+<tr class="a">
 <td>Found reliance on default encoding in eu.ehri.project.importers.csv.TerezinDataConverter.readFile(InputStream): new java.util.Scanner(InputStream)</td>
 <td>I18N</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
 <td><a href="./xref/eu/ehri/project/importers/csv/TerezinDataConverter.html#L45">45</a></td>
 <td>High</td></tr>
-<tr class="a">
+<tr class="b">
 <td>eu.ehri.project.importers.csv.TerezinDataConverter.parseDate(String) invokes inefficient new Integer(String) constructor; use Integer.valueOf(String) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
@@ -251,19 +233,19 @@
 <div class="section">
 <h3><a name="eu.ehri.project.importers.csv.UkrainianUnitImporter"></a>eu.ehri.project.importers.csv.UkrainianUnitImporter</h3>
 <table border="0" class="table table-striped">
-<tr class="b">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="a">
+<tr class="b">
 <td>eu.ehri.project.importers.csv.UkrainianUnitImporter.extractUnitDescription(Map, String) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
 <td><a href="./xref/eu/ehri/project/importers/csv/UkrainianUnitImporter.html#L172">172</a></td>
 <td>Medium</td></tr>
-<tr class="b">
+<tr class="a">
 <td>eu.ehri.project.importers.csv.UkrainianUnitImporter.extractUnknownProperties(Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
@@ -272,13 +254,13 @@
 <div class="section">
 <h3><a name="eu.ehri.project.importers.csv.Wp2PersonalitiesImporter"></a>eu.ehri.project.importers.csv.Wp2PersonalitiesImporter</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>eu.ehri.project.importers.csv.Wp2PersonalitiesImporter.extractUnitDescription(Map, EntityClass) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
@@ -287,80 +269,74 @@
 <div class="section">
 <h3><a name="eu.ehri.project.importers.cvoc.JenaSkosImporter"></a>eu.ehri.project.importers.cvoc.JenaSkosImporter</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>eu.ehri.project.importers.cvoc.JenaSkosImporter.solveUndeterminedRelationships(Concept, Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/cvoc/JenaSkosImporter.html#L255">255</a></td>
+<td><a href="./xref/eu/ehri/project/importers/cvoc/JenaSkosImporter.html#L268">268</a></td>
+<td>Medium</td></tr></table></div><a name="eu.ehri.project.importers.eac.EacHandler"></a>
+<div class="section">
+<h3><a name="eu.ehri.project.importers.eac.EacHandler"></a>eu.ehri.project.importers.eac.EacHandler</h3>
+<table border="0" class="table table-striped">
+<tr class="b">
+<th>Bug</th>
+<th>Category</th>
+<th>Details</th>
+<th>Line</th>
+<th>Priority</th></tr>
+<tr class="a">
+<td>eu.ehri.project.importers.eac.EacHandler.chooseName(Object) concatenates strings using + in a loop</td>
+<td>PERFORMANCE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SBSC_USE_STRINGBUFFER_CONCATENATION">SBSC_USE_STRINGBUFFER_CONCATENATION</a></td>
+<td><a href="./xref/eu/ehri/project/importers/eac/EacHandler.html#L126">126</a></td>
 <td>Medium</td></tr></table></div><a name="eu.ehri.project.importers.eac.EacImporter"></a>
 <div class="section">
 <h3><a name="eu.ehri.project.importers.eac.EacImporter"></a>eu.ehri.project.importers.eac.EacImporter</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>eu.ehri.project.importers.eac.EacImporter.extractBooks(Object, Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/eac/EacImporter.html#L265">265</a></td>
+<td><a href="./xref/eu/ehri/project/importers/eac/EacImporter.html#L269">269</a></td>
 <td>Medium</td></tr>
-<tr class="a">
+<tr class="b">
 <td>eu.ehri.project.importers.eac.EacImporter.extractRelations(Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/eac/EacImporter.html#L150">150</a></td>
+<td><a href="./xref/eu/ehri/project/importers/eac/EacImporter.html#L154">154</a></td>
 <td>Medium</td></tr>
-<tr class="b">
+<tr class="a">
 <td>eu.ehri.project.importers.eac.EacImporter.extractUnitDescription(Map, EntityClass) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/eac/EacImporter.html#L184">184</a></td>
-<td>Medium</td></tr></table></div><a name="eu.ehri.project.importers.ead.AraEadImporter"></a>
-<div class="section">
-<h3><a name="eu.ehri.project.importers.ead.AraEadImporter"></a>eu.ehri.project.importers.ead.AraEadImporter</h3>
-<table border="0" class="table table-striped">
-<tr class="a">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="b">
-<td>eu.ehri.project.importers.ead.AraEadImporter.importItem(Map, List) makes inefficient use of keySet iterator instead of entrySet iterator</td>
-<td>PERFORMANCE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/ead/AraEadImporter.html#L125">125</a></td>
+<td><a href="./xref/eu/ehri/project/importers/eac/EacImporter.html#L188">188</a></td>
 <td>Medium</td></tr></table></div><a name="eu.ehri.project.importers.ead.EadImporter"></a>
 <div class="section">
 <h3><a name="eu.ehri.project.importers.ead.EadImporter"></a>eu.ehri.project.importers.ead.EadImporter</h3>
 <table border="0" class="table table-striped">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
-<td>eu.ehri.project.importers.ead.EadImporter.extractDocumentDescription(Map, int) makes inefficient use of keySet iterator instead of entrySet iterator</td>
-<td>PERFORMANCE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/ead/EadImporter.html#L432">432</a></td>
-<td>Medium</td></tr>
 <tr class="a">
 <td>eu.ehri.project.importers.ead.EadImporter.extractRelations(Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/ead/EadImporter.html#L319">319</a></td>
+<td><a href="./xref/eu/ehri/project/importers/ead/EadImporter.html#L330">330</a></td>
 <td>Medium</td></tr></table></div><a name="eu.ehri.project.importers.ead.IcaAtomEadImporter"></a>
 <div class="section">
 <h3><a name="eu.ehri.project.importers.ead.IcaAtomEadImporter"></a>eu.ehri.project.importers.ead.IcaAtomEadImporter</h3>
@@ -375,7 +351,7 @@
 <td>eu.ehri.project.importers.ead.IcaAtomEadImporter.extractRelations(Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/ead/IcaAtomEadImporter.html#L199">199</a></td>
+<td><a href="./xref/eu/ehri/project/importers/ead/IcaAtomEadImporter.html#L196">196</a></td>
 <td>Medium</td></tr></table></div><a name="eu.ehri.project.importers.ead.VirtualEadImporter"></a>
 <div class="section">
 <h3><a name="eu.ehri.project.importers.ead.VirtualEadImporter"></a>eu.ehri.project.importers.ead.VirtualEadImporter</h3>
@@ -387,16 +363,10 @@
 <th>Line</th>
 <th>Priority</th></tr>
 <tr class="a">
-<td>eu.ehri.project.importers.ead.VirtualEadImporter.extractDocumentDescription(Map, int) makes inefficient use of keySet iterator instead of entrySet iterator</td>
-<td>PERFORMANCE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/ead/VirtualEadImporter.html#L229">229</a></td>
-<td>Medium</td></tr>
-<tr class="b">
 <td>eu.ehri.project.importers.ead.VirtualEadImporter.extractRelations(Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/importers/ead/VirtualEadImporter.html#L166">166</a></td>
+<td><a href="./xref/eu/ehri/project/importers/ead/VirtualEadImporter.html#L148">148</a></td>
 <td>Medium</td></tr></table></div>
                   </div>
             </div>

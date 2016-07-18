@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:complexType name="bundle" final="#all">
+ </xs:complexType>
+
+<xs:complexType name="document" abstract="true">
+       <xs:sequence>
+              <xs:element name="strictErrorChecking" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element name="documentURI" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="xmlVersion" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="xmlStandalone" type="xs:boolean" minOccurs="1">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+</xs:schema>
