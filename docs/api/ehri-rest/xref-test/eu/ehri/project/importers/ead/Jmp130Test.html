@@ -31,7 +31,7 @@
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Vertex;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnitDescription;
@@ -46,7 +46,7 @@
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  
 <a class="jxr_linenumber" name="38" href="#38">38</a>  
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/Jmp130Test.html">Jmp130Test</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/Jmp130Test.html">Jmp130Test</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="40" href="#40">40</a>  
 <a class="jxr_linenumber" name="41" href="#41">41</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SINGLE_EAD = <span class="jxr_string">"JMP-130.xml"</span>;
 <a class="jxr_linenumber" name="42" href="#42">42</a>  
@@ -62,7 +62,7 @@
 <a class="jxr_linenumber" name="52" href="#52">52</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(SINGLE_EAD);
 <a class="jxr_linenumber" name="53" href="#53">53</a>          ImportLog log = saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="54" href="#54">54</a>                  .withProperties(<span class="jxr_string">"jmp.properties"</span>)
-<a class="jxr_linenumber" name="55" href="#55">55</a>                  .importFile(ios, logMessage);
+<a class="jxr_linenumber" name="55" href="#55">55</a>                  .importInputStream(ios, logMessage);
 <a class="jxr_linenumber" name="56" href="#56">56</a>  
 <a class="jxr_linenumber" name="57" href="#57">57</a>          List&lt;VertexProxy&gt; graphState1 = getGraphState(graph);
 <a class="jxr_linenumber" name="58" href="#58">58</a>          printGraph(graph);

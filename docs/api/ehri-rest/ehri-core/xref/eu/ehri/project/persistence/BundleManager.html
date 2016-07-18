@@ -147,220 +147,224 @@
 <a class="jxr_linenumber" name="137" href="#137">137</a>         }
 <a class="jxr_linenumber" name="138" href="#138">138</a>     }
 <a class="jxr_linenumber" name="139" href="#139">139</a> 
-<a class="jxr_linenumber" name="140" href="#140">140</a>     <em class="jxr_comment">// Helpers</em>
-<a class="jxr_linenumber" name="141" href="#141">141</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> deleteCount(<a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle, <strong class="jxr_keyword">int</strong> count) <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="142" href="#142">142</a>         Integer c = count;
+<a class="jxr_linenumber" name="140" href="#140">140</a>     <strong class="jxr_keyword">public</strong> <a href="../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a> withScopeIds(Collection&lt;String&gt; scopeIds) {
+<a class="jxr_linenumber" name="141" href="#141">141</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a>(graph, scopeIds);
+<a class="jxr_linenumber" name="142" href="#142">142</a>     }
 <a class="jxr_linenumber" name="143" href="#143">143</a> 
-<a class="jxr_linenumber" name="144" href="#144">144</a>         <strong class="jxr_keyword">for</strong> (Bundle child : bundle.getDependentRelations().values()) {
-<a class="jxr_linenumber" name="145" href="#145">145</a>             c = deleteCount(child, c);
-<a class="jxr_linenumber" name="146" href="#146">146</a>         }
-<a class="jxr_linenumber" name="147" href="#147">147</a>         manager.deleteVertex(bundle.getId());
-<a class="jxr_linenumber" name="148" href="#148">148</a>         <strong class="jxr_keyword">return</strong> c + 1;
-<a class="jxr_linenumber" name="149" href="#149">149</a>     }
-<a class="jxr_linenumber" name="150" href="#150">150</a> 
-<a class="jxr_linenumber" name="151" href="#151">151</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="152" href="#152">152</a> <em class="jxr_javadoccomment">     * Insert or update an item depending on a) whether it has an ID, and b) whether it has an ID and already exists. If</em>
-<a class="jxr_linenumber" name="153" href="#153">153</a> <em class="jxr_javadoccomment">     * import mode is not enabled an error will be thrown.</em>
-<a class="jxr_linenumber" name="154" href="#154">154</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="155" href="#155">155</a> <em class="jxr_javadoccomment">     * @param bundle The bundle to create or update</em>
-<a class="jxr_linenumber" name="156" href="#156">156</a> <em class="jxr_javadoccomment">     * @return A vertex mutation</em>
-<a class="jxr_linenumber" name="157" href="#157">157</a> <em class="jxr_javadoccomment">     * @throws RuntimeException when an item is said to exist, but could not be found</em>
-<a class="jxr_linenumber" name="158" href="#158">158</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="159" href="#159">159</a>     <strong class="jxr_keyword">private</strong> Mutation&lt;Vertex&gt; createOrUpdateInner(<a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle) {
-<a class="jxr_linenumber" name="160" href="#160">160</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="161" href="#161">161</a>             <strong class="jxr_keyword">if</strong> (manager.exists(bundle.getId())) {
-<a class="jxr_linenumber" name="162" href="#162">162</a>                 <strong class="jxr_keyword">return</strong> updateInner(bundle);
-<a class="jxr_linenumber" name="163" href="#163">163</a>             } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="164" href="#164">164</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(createInner(bundle), MutationState.CREATED);
-<a class="jxr_linenumber" name="165" href="#165">165</a>             }
-<a class="jxr_linenumber" name="166" href="#166">166</a>         } <strong class="jxr_keyword">catch</strong> (ItemNotFound e) {
-<a class="jxr_linenumber" name="167" href="#167">167</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(
-<a class="jxr_linenumber" name="168" href="#168">168</a>                     <span class="jxr_string">"Create or update failed because ItemNotFound was thrown even though exists() was true"</span>,
-<a class="jxr_linenumber" name="169" href="#169">169</a>                     e);
-<a class="jxr_linenumber" name="170" href="#170">170</a>         }
-<a class="jxr_linenumber" name="171" href="#171">171</a>     }
-<a class="jxr_linenumber" name="172" href="#172">172</a>     
-<a class="jxr_linenumber" name="173" href="#173">173</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="174" href="#174">174</a> <em class="jxr_javadoccomment">     * Insert a bundle and save its dependent items.</em>
-<a class="jxr_linenumber" name="175" href="#175">175</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="176" href="#176">176</a> <em class="jxr_javadoccomment">     * @param bundle a Bundle to insert in the graph</em>
-<a class="jxr_linenumber" name="177" href="#177">177</a> <em class="jxr_javadoccomment">     * @return the Vertex that was created from this Bundle</em>
-<a class="jxr_linenumber" name="178" href="#178">178</a> <em class="jxr_javadoccomment">     * @throws RuntimeException when an ID generation error was not handled by the IdGenerator class</em>
-<a class="jxr_linenumber" name="179" href="#179">179</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="180" href="#180">180</a>     <strong class="jxr_keyword">private</strong> Vertex createInner(<a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle) {
-<a class="jxr_linenumber" name="181" href="#181">181</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="182" href="#182">182</a>             Vertex node = manager.createVertex(bundle.getId(), bundle.getType(),
-<a class="jxr_linenumber" name="183" href="#183">183</a>                     bundle.getData());
-<a class="jxr_linenumber" name="184" href="#184">184</a>             createDependents(node, bundle.getBundleJavaClass(), bundle.getRelations());
-<a class="jxr_linenumber" name="185" href="#185">185</a>             <strong class="jxr_keyword">return</strong> node;
-<a class="jxr_linenumber" name="186" href="#186">186</a>         } <strong class="jxr_keyword">catch</strong> (IntegrityError e) {
-<a class="jxr_linenumber" name="187" href="#187">187</a>             <em class="jxr_comment">// Mmmn, if we get here, it means that there's been an ID generation error</em>
-<a class="jxr_linenumber" name="188" href="#188">188</a>             <em class="jxr_comment">// which was not handled by an exception.. so throw a runtime error...</em>
-<a class="jxr_linenumber" name="189" href="#189">189</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(
-<a class="jxr_linenumber" name="190" href="#190">190</a>                     <span class="jxr_string">"Unexpected state: ID generation error not handled by IdGenerator class "</span> + e.getMessage());
-<a class="jxr_linenumber" name="191" href="#191">191</a>         }
-<a class="jxr_linenumber" name="192" href="#192">192</a>     }
-<a class="jxr_linenumber" name="193" href="#193">193</a> 
-<a class="jxr_linenumber" name="194" href="#194">194</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="195" href="#195">195</a> <em class="jxr_javadoccomment">     * Update a bundle and save its dependent items.</em>
-<a class="jxr_linenumber" name="196" href="#196">196</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="197" href="#197">197</a> <em class="jxr_javadoccomment">     * @param bundle The bundle to update</em>
-<a class="jxr_linenumber" name="198" href="#198">198</a> <em class="jxr_javadoccomment">     * @return A vertex mutation</em>
-<a class="jxr_linenumber" name="199" href="#199">199</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="200" href="#200">200</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="201" href="#201">201</a>     <strong class="jxr_keyword">private</strong> Mutation&lt;Vertex&gt; updateInner(<a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle) <strong class="jxr_keyword">throws</strong> ItemNotFound {
-<a class="jxr_linenumber" name="202" href="#202">202</a>         Vertex node = manager.getVertex(bundle.getId());
-<a class="jxr_linenumber" name="203" href="#203">203</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="204" href="#204">204</a>             <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> nodeBundle = serializer.vertexToBundle(node);
-<a class="jxr_linenumber" name="205" href="#205">205</a>             <strong class="jxr_keyword">if</strong> (!nodeBundle.equals(bundle)) {
-<a class="jxr_linenumber" name="206" href="#206">206</a>                 logger.trace(<span class="jxr_string">"Bundles differ\nnew:\n{}\nold:\n{}"</span>, bundle.toJson(), nodeBundle.toJson());
-<a class="jxr_linenumber" name="207" href="#207">207</a>                 node = manager.updateVertex(bundle.getId(), bundle.getType(),
-<a class="jxr_linenumber" name="208" href="#208">208</a>                         bundle.getData());
-<a class="jxr_linenumber" name="209" href="#209">209</a>                 updateDependents(node, bundle.getBundleJavaClass(), bundle.getRelations());
-<a class="jxr_linenumber" name="210" href="#210">210</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(node, MutationState.UPDATED, nodeBundle);
-<a class="jxr_linenumber" name="211" href="#211">211</a>             } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="212" href="#212">212</a>                 logger.debug(<span class="jxr_string">"Not updating equivalent bundle {}"</span>, bundle.getId());
-<a class="jxr_linenumber" name="213" href="#213">213</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(node, MutationState.UNCHANGED);
-<a class="jxr_linenumber" name="214" href="#214">214</a>             }
-<a class="jxr_linenumber" name="215" href="#215">215</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
-<a class="jxr_linenumber" name="216" href="#216">216</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Unexpected serialization error "</span> +
-<a class="jxr_linenumber" name="217" href="#217">217</a>                     <span class="jxr_string">"checking bundle for equivalency"</span>, serializationError);
-<a class="jxr_linenumber" name="218" href="#218">218</a>         }
-<a class="jxr_linenumber" name="219" href="#219">219</a>     }
-<a class="jxr_linenumber" name="220" href="#220">220</a> 
-<a class="jxr_linenumber" name="221" href="#221">221</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="222" href="#222">222</a> <em class="jxr_javadoccomment">     * Saves the dependent relations within a given bundle. Relations that are not dependent are ignored.</em>
-<a class="jxr_linenumber" name="223" href="#223">223</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="224" href="#224">224</a> <em class="jxr_javadoccomment">     * @param master The master vertex</em>
-<a class="jxr_linenumber" name="225" href="#225">225</a> <em class="jxr_javadoccomment">     * @param cls The master vertex class</em>
-<a class="jxr_linenumber" name="226" href="#226">226</a> <em class="jxr_javadoccomment">     * @param relations A map of relations</em>
-<a class="jxr_linenumber" name="227" href="#227">227</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="228" href="#228">228</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createDependents(Vertex master,
-<a class="jxr_linenumber" name="229" href="#229">229</a>             Class&lt;?&gt; cls, Multimap&lt;String, Bundle&gt; relations) {
-<a class="jxr_linenumber" name="230" href="#230">230</a>         Map&lt;String, Direction&gt; dependents = <a href="../../../../eu/ehri/project/models/utils/ClassUtils.html">ClassUtils</a>
-<a class="jxr_linenumber" name="231" href="#231">231</a>                 .getDependentRelations(cls);
-<a class="jxr_linenumber" name="232" href="#232">232</a>         <strong class="jxr_keyword">for</strong> (String relation : relations.keySet()) {
-<a class="jxr_linenumber" name="233" href="#233">233</a>             <strong class="jxr_keyword">if</strong> (dependents.containsKey(relation)) {
-<a class="jxr_linenumber" name="234" href="#234">234</a>                 <strong class="jxr_keyword">for</strong> (Bundle bundle : relations.get(relation)) {
-<a class="jxr_linenumber" name="235" href="#235">235</a>                     Vertex child = createInner(bundle);
-<a class="jxr_linenumber" name="236" href="#236">236</a>                     createChildRelationship(master, child, relation,
-<a class="jxr_linenumber" name="237" href="#237">237</a>                             dependents.get(relation));
-<a class="jxr_linenumber" name="238" href="#238">238</a>                 }
-<a class="jxr_linenumber" name="239" href="#239">239</a>             } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="240" href="#240">240</a>                 logger.error(<span class="jxr_string">"Nested data being ignored on creation because it is not a dependent relation: {}: {}"</span>, relation, relations.get(relation));
-<a class="jxr_linenumber" name="241" href="#241">241</a>             }
-<a class="jxr_linenumber" name="242" href="#242">242</a>         }
-<a class="jxr_linenumber" name="243" href="#243">243</a>     }
-<a class="jxr_linenumber" name="244" href="#244">244</a> 
-<a class="jxr_linenumber" name="245" href="#245">245</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="246" href="#246">246</a> <em class="jxr_javadoccomment">     * Saves the dependent relations within a given bundle. Relations that are not dependent are ignored.</em>
-<a class="jxr_linenumber" name="247" href="#247">247</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="248" href="#248">248</a> <em class="jxr_javadoccomment">     * @param master The master vertex</em>
-<a class="jxr_linenumber" name="249" href="#249">249</a> <em class="jxr_javadoccomment">     * @param cls The master vertex class</em>
-<a class="jxr_linenumber" name="250" href="#250">250</a> <em class="jxr_javadoccomment">     * @param relations A map of relations</em>
-<a class="jxr_linenumber" name="251" href="#251">251</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="252" href="#252">252</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> updateDependents(Vertex master, Class&lt;?&gt; cls, Multimap&lt;String, Bundle&gt; relations) {
-<a class="jxr_linenumber" name="253" href="#253">253</a> 
-<a class="jxr_linenumber" name="254" href="#254">254</a>         <em class="jxr_comment">// Get a list of dependent relationships for this class, and their</em>
-<a class="jxr_linenumber" name="255" href="#255">255</a>         <em class="jxr_comment">// directions.</em>
-<a class="jxr_linenumber" name="256" href="#256">256</a>         Map&lt;String, Direction&gt; dependents = <a href="../../../../eu/ehri/project/models/utils/ClassUtils.html">ClassUtils</a>
-<a class="jxr_linenumber" name="257" href="#257">257</a>                 .getDependentRelations(cls);
-<a class="jxr_linenumber" name="258" href="#258">258</a>         <em class="jxr_comment">// Build a list of the IDs of existing dependents we're going to be</em>
-<a class="jxr_linenumber" name="259" href="#259">259</a>         <em class="jxr_comment">// updating.</em>
-<a class="jxr_linenumber" name="260" href="#260">260</a>         Set&lt;String&gt; updating = getUpdateSet(relations);
-<a class="jxr_linenumber" name="261" href="#261">261</a>         <em class="jxr_comment">// Any that we're not going to update can have their subtrees deleted.</em>
-<a class="jxr_linenumber" name="262" href="#262">262</a>         deleteMissingFromUpdateSet(master, dependents, updating);
-<a class="jxr_linenumber" name="263" href="#263">263</a> 
-<a class="jxr_linenumber" name="264" href="#264">264</a>         <em class="jxr_comment">// Now go throw and create or update the new subtrees.</em>
-<a class="jxr_linenumber" name="265" href="#265">265</a>         <strong class="jxr_keyword">for</strong> (String relation : relations.keySet()) {
-<a class="jxr_linenumber" name="266" href="#266">266</a>             <strong class="jxr_keyword">if</strong> (dependents.containsKey(relation)) {
-<a class="jxr_linenumber" name="267" href="#267">267</a>                 Direction direction = dependents.get(relation);
-<a class="jxr_linenumber" name="268" href="#268">268</a> 
-<a class="jxr_linenumber" name="269" href="#269">269</a>                 <em class="jxr_comment">// FIXME: Assuming all dependents have the same direction of</em>
-<a class="jxr_linenumber" name="270" href="#270">270</a>                 <em class="jxr_comment">// relationship. This is *should* be safe, but could easily</em>
-<a class="jxr_linenumber" name="271" href="#271">271</a>                 <em class="jxr_comment">// break if the model ontology is altered without this</em>
-<a class="jxr_linenumber" name="272" href="#272">272</a>                 <em class="jxr_comment">// assumption in mind.</em>
-<a class="jxr_linenumber" name="273" href="#273">273</a>                 Set&lt;Vertex&gt; currentRels = getCurrentRelationships(master,
-<a class="jxr_linenumber" name="274" href="#274">274</a>                         relation, direction);
-<a class="jxr_linenumber" name="275" href="#275">275</a> 
-<a class="jxr_linenumber" name="276" href="#276">276</a>                 <strong class="jxr_keyword">for</strong> (Bundle bundle : relations.get(relation)) {
-<a class="jxr_linenumber" name="277" href="#277">277</a>                     Vertex child = createOrUpdateInner(bundle).getNode();
-<a class="jxr_linenumber" name="278" href="#278">278</a>                     <em class="jxr_comment">// Create a relation if there isn't one already</em>
-<a class="jxr_linenumber" name="279" href="#279">279</a>                     <strong class="jxr_keyword">if</strong> (!currentRels.contains(child)) {
-<a class="jxr_linenumber" name="280" href="#280">280</a>                         createChildRelationship(master, child, relation,
-<a class="jxr_linenumber" name="281" href="#281">281</a>                                 direction);
-<a class="jxr_linenumber" name="282" href="#282">282</a>                     }
-<a class="jxr_linenumber" name="283" href="#283">283</a>                 }
-<a class="jxr_linenumber" name="284" href="#284">284</a>             } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="285" href="#285">285</a>                 logger.warn(<span class="jxr_string">"Nested data being ignored on update because "</span> +
-<a class="jxr_linenumber" name="286" href="#286">286</a>                         <span class="jxr_string">"it is not a dependent relation: {}: {}"</span>,
-<a class="jxr_linenumber" name="287" href="#287">287</a>                         relation, relations.get(relation));
-<a class="jxr_linenumber" name="288" href="#288">288</a>             }
-<a class="jxr_linenumber" name="289" href="#289">289</a>         }
-<a class="jxr_linenumber" name="290" href="#290">290</a>     }
-<a class="jxr_linenumber" name="291" href="#291">291</a> 
-<a class="jxr_linenumber" name="292" href="#292">292</a>     <strong class="jxr_keyword">private</strong> Set&lt;String&gt; getUpdateSet(Multimap&lt;String, Bundle&gt; relations) {
-<a class="jxr_linenumber" name="293" href="#293">293</a>         Set&lt;String&gt; updating = <strong class="jxr_keyword">new</strong> HashSet&lt;&gt;();
-<a class="jxr_linenumber" name="294" href="#294">294</a>         <strong class="jxr_keyword">for</strong> (String relation : relations.keySet()) {
-<a class="jxr_linenumber" name="295" href="#295">295</a>             <strong class="jxr_keyword">for</strong> (Bundle child : relations.get(relation)) {
-<a class="jxr_linenumber" name="296" href="#296">296</a>                 updating.add(child.getId());
-<a class="jxr_linenumber" name="297" href="#297">297</a>             }
-<a class="jxr_linenumber" name="298" href="#298">298</a>         }
-<a class="jxr_linenumber" name="299" href="#299">299</a>         <strong class="jxr_keyword">return</strong> updating;
-<a class="jxr_linenumber" name="300" href="#300">300</a>     }
-<a class="jxr_linenumber" name="301" href="#301">301</a> 
-<a class="jxr_linenumber" name="302" href="#302">302</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> deleteMissingFromUpdateSet(Vertex master,
-<a class="jxr_linenumber" name="303" href="#303">303</a>             Map&lt;String, Direction&gt; dependents, Set&lt;String&gt; updating) {
-<a class="jxr_linenumber" name="304" href="#304">304</a>         <strong class="jxr_keyword">for</strong> (Entry&lt;String, Direction&gt; relEntry : dependents.entrySet()) {
-<a class="jxr_linenumber" name="305" href="#305">305</a>             <strong class="jxr_keyword">for</strong> (Vertex v : getCurrentRelationships(master,
-<a class="jxr_linenumber" name="306" href="#306">306</a>                     relEntry.getKey(), relEntry.getValue())) {
-<a class="jxr_linenumber" name="307" href="#307">307</a>                 <strong class="jxr_keyword">if</strong> (!updating.contains(manager.getId(v))) {
-<a class="jxr_linenumber" name="308" href="#308">308</a>                     <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="309" href="#309">309</a>                         delete(serializer.entityToBundle(graph.frame(v,
-<a class="jxr_linenumber" name="310" href="#310">310</a>                                 manager.getEntityClass(v).getJavaClass())));
-<a class="jxr_linenumber" name="311" href="#311">311</a>                     } <strong class="jxr_keyword">catch</strong> (SerializationError e) {
-<a class="jxr_linenumber" name="312" href="#312">312</a>                         <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(e);
-<a class="jxr_linenumber" name="313" href="#313">313</a>                     }
-<a class="jxr_linenumber" name="314" href="#314">314</a>                 }
-<a class="jxr_linenumber" name="315" href="#315">315</a>             }
-<a class="jxr_linenumber" name="316" href="#316">316</a>         }
-<a class="jxr_linenumber" name="317" href="#317">317</a>     }
-<a class="jxr_linenumber" name="318" href="#318">318</a> 
-<a class="jxr_linenumber" name="319" href="#319">319</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="320" href="#320">320</a> <em class="jxr_javadoccomment">     * Get the nodes that terminate a given relationship from a particular source node.</em>
-<a class="jxr_linenumber" name="321" href="#321">321</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="322" href="#322">322</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="323" href="#323">323</a> <em class="jxr_javadoccomment">     * @param src The source vertex</em>
-<a class="jxr_linenumber" name="324" href="#324">324</a> <em class="jxr_javadoccomment">     * @param label The relationship label</em>
-<a class="jxr_linenumber" name="325" href="#325">325</a> <em class="jxr_javadoccomment">     * @param direction The relationship direction</em>
-<a class="jxr_linenumber" name="326" href="#326">326</a> <em class="jxr_javadoccomment">     * @return A set of related nodes</em>
-<a class="jxr_linenumber" name="327" href="#327">327</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="328" href="#328">328</a>     <strong class="jxr_keyword">private</strong> Set&lt;Vertex&gt; getCurrentRelationships(Vertex src,
-<a class="jxr_linenumber" name="329" href="#329">329</a>             String label, Direction direction) {
-<a class="jxr_linenumber" name="330" href="#330">330</a>         HashSet&lt;Vertex&gt; out = Sets.newHashSet();
-<a class="jxr_linenumber" name="331" href="#331">331</a>         <strong class="jxr_keyword">for</strong> (Vertex end : src.getVertices(direction, label)) {
-<a class="jxr_linenumber" name="332" href="#332">332</a>             out.add(end);
-<a class="jxr_linenumber" name="333" href="#333">333</a>         }
-<a class="jxr_linenumber" name="334" href="#334">334</a>         <strong class="jxr_keyword">return</strong> out;
-<a class="jxr_linenumber" name="335" href="#335">335</a>     }
-<a class="jxr_linenumber" name="336" href="#336">336</a> 
-<a class="jxr_linenumber" name="337" href="#337">337</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="338" href="#338">338</a> <em class="jxr_javadoccomment">     * Create a relationship between a parent and child vertex.</em>
-<a class="jxr_linenumber" name="339" href="#339">339</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="340" href="#340">340</a> <em class="jxr_javadoccomment">     * @param master The master vertex</em>
-<a class="jxr_linenumber" name="341" href="#341">341</a> <em class="jxr_javadoccomment">     * @param child The child vertex</em>
-<a class="jxr_linenumber" name="342" href="#342">342</a> <em class="jxr_javadoccomment">     * @param label The relationship label</em>
-<a class="jxr_linenumber" name="343" href="#343">343</a> <em class="jxr_javadoccomment">     * @param direction The direction of the relationship</em>
-<a class="jxr_linenumber" name="344" href="#344">344</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="345" href="#345">345</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createChildRelationship(Vertex master, Vertex child,
-<a class="jxr_linenumber" name="346" href="#346">346</a>             String label, Direction direction) {
-<a class="jxr_linenumber" name="347" href="#347">347</a>         <strong class="jxr_keyword">if</strong> (direction == Direction.OUT) {
-<a class="jxr_linenumber" name="348" href="#348">348</a>             graph.addEdge(<strong class="jxr_keyword">null</strong>, master, child, label);
-<a class="jxr_linenumber" name="349" href="#349">349</a>         } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="350" href="#350">350</a>             graph.addEdge(<strong class="jxr_keyword">null</strong>, child, master, label);
-<a class="jxr_linenumber" name="351" href="#351">351</a>         }
-<a class="jxr_linenumber" name="352" href="#352">352</a>     }
-<a class="jxr_linenumber" name="353" href="#353">353</a> }
+<a class="jxr_linenumber" name="144" href="#144">144</a>     <em class="jxr_comment">// Helpers</em>
+<a class="jxr_linenumber" name="145" href="#145">145</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">int</strong> deleteCount(<a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle, <strong class="jxr_keyword">int</strong> count) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="146" href="#146">146</a>         Integer c = count;
+<a class="jxr_linenumber" name="147" href="#147">147</a> 
+<a class="jxr_linenumber" name="148" href="#148">148</a>         <strong class="jxr_keyword">for</strong> (Bundle child : bundle.getDependentRelations().values()) {
+<a class="jxr_linenumber" name="149" href="#149">149</a>             c = deleteCount(child, c);
+<a class="jxr_linenumber" name="150" href="#150">150</a>         }
+<a class="jxr_linenumber" name="151" href="#151">151</a>         manager.deleteVertex(bundle.getId());
+<a class="jxr_linenumber" name="152" href="#152">152</a>         <strong class="jxr_keyword">return</strong> c + 1;
+<a class="jxr_linenumber" name="153" href="#153">153</a>     }
+<a class="jxr_linenumber" name="154" href="#154">154</a> 
+<a class="jxr_linenumber" name="155" href="#155">155</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="156" href="#156">156</a> <em class="jxr_javadoccomment">     * Insert or update an item depending on a) whether it has an ID, and b) whether it has an ID and already exists. If</em>
+<a class="jxr_linenumber" name="157" href="#157">157</a> <em class="jxr_javadoccomment">     * import mode is not enabled an error will be thrown.</em>
+<a class="jxr_linenumber" name="158" href="#158">158</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="159" href="#159">159</a> <em class="jxr_javadoccomment">     * @param bundle The bundle to create or update</em>
+<a class="jxr_linenumber" name="160" href="#160">160</a> <em class="jxr_javadoccomment">     * @return A vertex mutation</em>
+<a class="jxr_linenumber" name="161" href="#161">161</a> <em class="jxr_javadoccomment">     * @throws RuntimeException when an item is said to exist, but could not be found</em>
+<a class="jxr_linenumber" name="162" href="#162">162</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="163" href="#163">163</a>     <strong class="jxr_keyword">private</strong> Mutation&lt;Vertex&gt; createOrUpdateInner(<a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle) {
+<a class="jxr_linenumber" name="164" href="#164">164</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="165" href="#165">165</a>             <strong class="jxr_keyword">if</strong> (manager.exists(bundle.getId())) {
+<a class="jxr_linenumber" name="166" href="#166">166</a>                 <strong class="jxr_keyword">return</strong> updateInner(bundle);
+<a class="jxr_linenumber" name="167" href="#167">167</a>             } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="168" href="#168">168</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(createInner(bundle), MutationState.CREATED);
+<a class="jxr_linenumber" name="169" href="#169">169</a>             }
+<a class="jxr_linenumber" name="170" href="#170">170</a>         } <strong class="jxr_keyword">catch</strong> (ItemNotFound e) {
+<a class="jxr_linenumber" name="171" href="#171">171</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(
+<a class="jxr_linenumber" name="172" href="#172">172</a>                     <span class="jxr_string">"Create or update failed because ItemNotFound was thrown even though exists() was true"</span>,
+<a class="jxr_linenumber" name="173" href="#173">173</a>                     e);
+<a class="jxr_linenumber" name="174" href="#174">174</a>         }
+<a class="jxr_linenumber" name="175" href="#175">175</a>     }
+<a class="jxr_linenumber" name="176" href="#176">176</a>     
+<a class="jxr_linenumber" name="177" href="#177">177</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="178" href="#178">178</a> <em class="jxr_javadoccomment">     * Insert a bundle and save its dependent items.</em>
+<a class="jxr_linenumber" name="179" href="#179">179</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="180" href="#180">180</a> <em class="jxr_javadoccomment">     * @param bundle a Bundle to insert in the graph</em>
+<a class="jxr_linenumber" name="181" href="#181">181</a> <em class="jxr_javadoccomment">     * @return the Vertex that was created from this Bundle</em>
+<a class="jxr_linenumber" name="182" href="#182">182</a> <em class="jxr_javadoccomment">     * @throws RuntimeException when an ID generation error was not handled by the IdGenerator class</em>
+<a class="jxr_linenumber" name="183" href="#183">183</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="184" href="#184">184</a>     <strong class="jxr_keyword">private</strong> Vertex createInner(<a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle) {
+<a class="jxr_linenumber" name="185" href="#185">185</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="186" href="#186">186</a>             Vertex node = manager.createVertex(bundle.getId(), bundle.getType(),
+<a class="jxr_linenumber" name="187" href="#187">187</a>                     bundle.getData());
+<a class="jxr_linenumber" name="188" href="#188">188</a>             createDependents(node, bundle.getBundleJavaClass(), bundle.getRelations());
+<a class="jxr_linenumber" name="189" href="#189">189</a>             <strong class="jxr_keyword">return</strong> node;
+<a class="jxr_linenumber" name="190" href="#190">190</a>         } <strong class="jxr_keyword">catch</strong> (IntegrityError e) {
+<a class="jxr_linenumber" name="191" href="#191">191</a>             <em class="jxr_comment">// Mmmn, if we get here, it means that there's been an ID generation error</em>
+<a class="jxr_linenumber" name="192" href="#192">192</a>             <em class="jxr_comment">// which was not handled by an exception.. so throw a runtime error...</em>
+<a class="jxr_linenumber" name="193" href="#193">193</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(
+<a class="jxr_linenumber" name="194" href="#194">194</a>                     <span class="jxr_string">"Unexpected state: ID generation error not handled by IdGenerator class "</span> + e.getMessage());
+<a class="jxr_linenumber" name="195" href="#195">195</a>         }
+<a class="jxr_linenumber" name="196" href="#196">196</a>     }
+<a class="jxr_linenumber" name="197" href="#197">197</a> 
+<a class="jxr_linenumber" name="198" href="#198">198</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="199" href="#199">199</a> <em class="jxr_javadoccomment">     * Update a bundle and save its dependent items.</em>
+<a class="jxr_linenumber" name="200" href="#200">200</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="201" href="#201">201</a> <em class="jxr_javadoccomment">     * @param bundle The bundle to update</em>
+<a class="jxr_linenumber" name="202" href="#202">202</a> <em class="jxr_javadoccomment">     * @return A vertex mutation</em>
+<a class="jxr_linenumber" name="203" href="#203">203</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
+<a class="jxr_linenumber" name="204" href="#204">204</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="205" href="#205">205</a>     <strong class="jxr_keyword">private</strong> Mutation&lt;Vertex&gt; updateInner(<a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> bundle) <strong class="jxr_keyword">throws</strong> ItemNotFound {
+<a class="jxr_linenumber" name="206" href="#206">206</a>         Vertex node = manager.getVertex(bundle.getId());
+<a class="jxr_linenumber" name="207" href="#207">207</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="208" href="#208">208</a>             <a href="../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> nodeBundle = serializer.vertexToBundle(node);
+<a class="jxr_linenumber" name="209" href="#209">209</a>             <strong class="jxr_keyword">if</strong> (!nodeBundle.equals(bundle)) {
+<a class="jxr_linenumber" name="210" href="#210">210</a>                 logger.trace(<span class="jxr_string">"Bundles differ\nnew:\n{}\nold:\n{}"</span>, bundle.toJson(), nodeBundle.toJson());
+<a class="jxr_linenumber" name="211" href="#211">211</a>                 node = manager.updateVertex(bundle.getId(), bundle.getType(),
+<a class="jxr_linenumber" name="212" href="#212">212</a>                         bundle.getData());
+<a class="jxr_linenumber" name="213" href="#213">213</a>                 updateDependents(node, bundle.getBundleJavaClass(), bundle.getRelations());
+<a class="jxr_linenumber" name="214" href="#214">214</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(node, MutationState.UPDATED, nodeBundle);
+<a class="jxr_linenumber" name="215" href="#215">215</a>             } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="216" href="#216">216</a>                 logger.debug(<span class="jxr_string">"Not updating equivalent bundle {}"</span>, bundle.getId());
+<a class="jxr_linenumber" name="217" href="#217">217</a>                 <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> Mutation&lt;&gt;(node, MutationState.UNCHANGED);
+<a class="jxr_linenumber" name="218" href="#218">218</a>             }
+<a class="jxr_linenumber" name="219" href="#219">219</a>         } <strong class="jxr_keyword">catch</strong> (SerializationError serializationError) {
+<a class="jxr_linenumber" name="220" href="#220">220</a>             <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"Unexpected serialization error "</span> +
+<a class="jxr_linenumber" name="221" href="#221">221</a>                     <span class="jxr_string">"checking bundle for equivalency"</span>, serializationError);
+<a class="jxr_linenumber" name="222" href="#222">222</a>         }
+<a class="jxr_linenumber" name="223" href="#223">223</a>     }
+<a class="jxr_linenumber" name="224" href="#224">224</a> 
+<a class="jxr_linenumber" name="225" href="#225">225</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="226" href="#226">226</a> <em class="jxr_javadoccomment">     * Saves the dependent relations within a given bundle. Relations that are not dependent are ignored.</em>
+<a class="jxr_linenumber" name="227" href="#227">227</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="228" href="#228">228</a> <em class="jxr_javadoccomment">     * @param master The master vertex</em>
+<a class="jxr_linenumber" name="229" href="#229">229</a> <em class="jxr_javadoccomment">     * @param cls The master vertex class</em>
+<a class="jxr_linenumber" name="230" href="#230">230</a> <em class="jxr_javadoccomment">     * @param relations A map of relations</em>
+<a class="jxr_linenumber" name="231" href="#231">231</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="232" href="#232">232</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createDependents(Vertex master,
+<a class="jxr_linenumber" name="233" href="#233">233</a>             Class&lt;?&gt; cls, Multimap&lt;String, Bundle&gt; relations) {
+<a class="jxr_linenumber" name="234" href="#234">234</a>         Map&lt;String, Direction&gt; dependents = <a href="../../../../eu/ehri/project/models/utils/ClassUtils.html">ClassUtils</a>
+<a class="jxr_linenumber" name="235" href="#235">235</a>                 .getDependentRelations(cls);
+<a class="jxr_linenumber" name="236" href="#236">236</a>         <strong class="jxr_keyword">for</strong> (String relation : relations.keySet()) {
+<a class="jxr_linenumber" name="237" href="#237">237</a>             <strong class="jxr_keyword">if</strong> (dependents.containsKey(relation)) {
+<a class="jxr_linenumber" name="238" href="#238">238</a>                 <strong class="jxr_keyword">for</strong> (Bundle bundle : relations.get(relation)) {
+<a class="jxr_linenumber" name="239" href="#239">239</a>                     Vertex child = createInner(bundle);
+<a class="jxr_linenumber" name="240" href="#240">240</a>                     createChildRelationship(master, child, relation,
+<a class="jxr_linenumber" name="241" href="#241">241</a>                             dependents.get(relation));
+<a class="jxr_linenumber" name="242" href="#242">242</a>                 }
+<a class="jxr_linenumber" name="243" href="#243">243</a>             } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="244" href="#244">244</a>                 logger.error(<span class="jxr_string">"Nested data being ignored on creation because it is not a dependent relation: {}: {}"</span>, relation, relations.get(relation));
+<a class="jxr_linenumber" name="245" href="#245">245</a>             }
+<a class="jxr_linenumber" name="246" href="#246">246</a>         }
+<a class="jxr_linenumber" name="247" href="#247">247</a>     }
+<a class="jxr_linenumber" name="248" href="#248">248</a> 
+<a class="jxr_linenumber" name="249" href="#249">249</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="250" href="#250">250</a> <em class="jxr_javadoccomment">     * Saves the dependent relations within a given bundle. Relations that are not dependent are ignored.</em>
+<a class="jxr_linenumber" name="251" href="#251">251</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="252" href="#252">252</a> <em class="jxr_javadoccomment">     * @param master The master vertex</em>
+<a class="jxr_linenumber" name="253" href="#253">253</a> <em class="jxr_javadoccomment">     * @param cls The master vertex class</em>
+<a class="jxr_linenumber" name="254" href="#254">254</a> <em class="jxr_javadoccomment">     * @param relations A map of relations</em>
+<a class="jxr_linenumber" name="255" href="#255">255</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="256" href="#256">256</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> updateDependents(Vertex master, Class&lt;?&gt; cls, Multimap&lt;String, Bundle&gt; relations) {
+<a class="jxr_linenumber" name="257" href="#257">257</a> 
+<a class="jxr_linenumber" name="258" href="#258">258</a>         <em class="jxr_comment">// Get a list of dependent relationships for this class, and their</em>
+<a class="jxr_linenumber" name="259" href="#259">259</a>         <em class="jxr_comment">// directions.</em>
+<a class="jxr_linenumber" name="260" href="#260">260</a>         Map&lt;String, Direction&gt; dependents = <a href="../../../../eu/ehri/project/models/utils/ClassUtils.html">ClassUtils</a>
+<a class="jxr_linenumber" name="261" href="#261">261</a>                 .getDependentRelations(cls);
+<a class="jxr_linenumber" name="262" href="#262">262</a>         <em class="jxr_comment">// Build a list of the IDs of existing dependents we're going to be</em>
+<a class="jxr_linenumber" name="263" href="#263">263</a>         <em class="jxr_comment">// updating.</em>
+<a class="jxr_linenumber" name="264" href="#264">264</a>         Set&lt;String&gt; updating = getUpdateSet(relations);
+<a class="jxr_linenumber" name="265" href="#265">265</a>         <em class="jxr_comment">// Any that we're not going to update can have their subtrees deleted.</em>
+<a class="jxr_linenumber" name="266" href="#266">266</a>         deleteMissingFromUpdateSet(master, dependents, updating);
+<a class="jxr_linenumber" name="267" href="#267">267</a> 
+<a class="jxr_linenumber" name="268" href="#268">268</a>         <em class="jxr_comment">// Now go throw and create or update the new subtrees.</em>
+<a class="jxr_linenumber" name="269" href="#269">269</a>         <strong class="jxr_keyword">for</strong> (String relation : relations.keySet()) {
+<a class="jxr_linenumber" name="270" href="#270">270</a>             <strong class="jxr_keyword">if</strong> (dependents.containsKey(relation)) {
+<a class="jxr_linenumber" name="271" href="#271">271</a>                 Direction direction = dependents.get(relation);
+<a class="jxr_linenumber" name="272" href="#272">272</a> 
+<a class="jxr_linenumber" name="273" href="#273">273</a>                 <em class="jxr_comment">// FIXME: Assuming all dependents have the same direction of</em>
+<a class="jxr_linenumber" name="274" href="#274">274</a>                 <em class="jxr_comment">// relationship. This is *should* be safe, but could easily</em>
+<a class="jxr_linenumber" name="275" href="#275">275</a>                 <em class="jxr_comment">// break if the model ontology is altered without this</em>
+<a class="jxr_linenumber" name="276" href="#276">276</a>                 <em class="jxr_comment">// assumption in mind.</em>
+<a class="jxr_linenumber" name="277" href="#277">277</a>                 Set&lt;Vertex&gt; currentRels = getCurrentRelationships(master,
+<a class="jxr_linenumber" name="278" href="#278">278</a>                         relation, direction);
+<a class="jxr_linenumber" name="279" href="#279">279</a> 
+<a class="jxr_linenumber" name="280" href="#280">280</a>                 <strong class="jxr_keyword">for</strong> (Bundle bundle : relations.get(relation)) {
+<a class="jxr_linenumber" name="281" href="#281">281</a>                     Vertex child = createOrUpdateInner(bundle).getNode();
+<a class="jxr_linenumber" name="282" href="#282">282</a>                     <em class="jxr_comment">// Create a relation if there isn't one already</em>
+<a class="jxr_linenumber" name="283" href="#283">283</a>                     <strong class="jxr_keyword">if</strong> (!currentRels.contains(child)) {
+<a class="jxr_linenumber" name="284" href="#284">284</a>                         createChildRelationship(master, child, relation,
+<a class="jxr_linenumber" name="285" href="#285">285</a>                                 direction);
+<a class="jxr_linenumber" name="286" href="#286">286</a>                     }
+<a class="jxr_linenumber" name="287" href="#287">287</a>                 }
+<a class="jxr_linenumber" name="288" href="#288">288</a>             } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="289" href="#289">289</a>                 logger.warn(<span class="jxr_string">"Nested data being ignored on update because "</span> +
+<a class="jxr_linenumber" name="290" href="#290">290</a>                         <span class="jxr_string">"it is not a dependent relation: {}: {}"</span>,
+<a class="jxr_linenumber" name="291" href="#291">291</a>                         relation, relations.get(relation));
+<a class="jxr_linenumber" name="292" href="#292">292</a>             }
+<a class="jxr_linenumber" name="293" href="#293">293</a>         }
+<a class="jxr_linenumber" name="294" href="#294">294</a>     }
+<a class="jxr_linenumber" name="295" href="#295">295</a> 
+<a class="jxr_linenumber" name="296" href="#296">296</a>     <strong class="jxr_keyword">private</strong> Set&lt;String&gt; getUpdateSet(Multimap&lt;String, Bundle&gt; relations) {
+<a class="jxr_linenumber" name="297" href="#297">297</a>         Set&lt;String&gt; updating = <strong class="jxr_keyword">new</strong> HashSet&lt;&gt;();
+<a class="jxr_linenumber" name="298" href="#298">298</a>         <strong class="jxr_keyword">for</strong> (String relation : relations.keySet()) {
+<a class="jxr_linenumber" name="299" href="#299">299</a>             <strong class="jxr_keyword">for</strong> (Bundle child : relations.get(relation)) {
+<a class="jxr_linenumber" name="300" href="#300">300</a>                 updating.add(child.getId());
+<a class="jxr_linenumber" name="301" href="#301">301</a>             }
+<a class="jxr_linenumber" name="302" href="#302">302</a>         }
+<a class="jxr_linenumber" name="303" href="#303">303</a>         <strong class="jxr_keyword">return</strong> updating;
+<a class="jxr_linenumber" name="304" href="#304">304</a>     }
+<a class="jxr_linenumber" name="305" href="#305">305</a> 
+<a class="jxr_linenumber" name="306" href="#306">306</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> deleteMissingFromUpdateSet(Vertex master,
+<a class="jxr_linenumber" name="307" href="#307">307</a>             Map&lt;String, Direction&gt; dependents, Set&lt;String&gt; updating) {
+<a class="jxr_linenumber" name="308" href="#308">308</a>         <strong class="jxr_keyword">for</strong> (Entry&lt;String, Direction&gt; relEntry : dependents.entrySet()) {
+<a class="jxr_linenumber" name="309" href="#309">309</a>             <strong class="jxr_keyword">for</strong> (Vertex v : getCurrentRelationships(master,
+<a class="jxr_linenumber" name="310" href="#310">310</a>                     relEntry.getKey(), relEntry.getValue())) {
+<a class="jxr_linenumber" name="311" href="#311">311</a>                 <strong class="jxr_keyword">if</strong> (!updating.contains(manager.getId(v))) {
+<a class="jxr_linenumber" name="312" href="#312">312</a>                     <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="313" href="#313">313</a>                         delete(serializer.entityToBundle(graph.frame(v,
+<a class="jxr_linenumber" name="314" href="#314">314</a>                                 manager.getEntityClass(v).getJavaClass())));
+<a class="jxr_linenumber" name="315" href="#315">315</a>                     } <strong class="jxr_keyword">catch</strong> (SerializationError e) {
+<a class="jxr_linenumber" name="316" href="#316">316</a>                         <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(e);
+<a class="jxr_linenumber" name="317" href="#317">317</a>                     }
+<a class="jxr_linenumber" name="318" href="#318">318</a>                 }
+<a class="jxr_linenumber" name="319" href="#319">319</a>             }
+<a class="jxr_linenumber" name="320" href="#320">320</a>         }
+<a class="jxr_linenumber" name="321" href="#321">321</a>     }
+<a class="jxr_linenumber" name="322" href="#322">322</a> 
+<a class="jxr_linenumber" name="323" href="#323">323</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="324" href="#324">324</a> <em class="jxr_javadoccomment">     * Get the nodes that terminate a given relationship from a particular source node.</em>
+<a class="jxr_linenumber" name="325" href="#325">325</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="326" href="#326">326</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="327" href="#327">327</a> <em class="jxr_javadoccomment">     * @param src The source vertex</em>
+<a class="jxr_linenumber" name="328" href="#328">328</a> <em class="jxr_javadoccomment">     * @param label The relationship label</em>
+<a class="jxr_linenumber" name="329" href="#329">329</a> <em class="jxr_javadoccomment">     * @param direction The relationship direction</em>
+<a class="jxr_linenumber" name="330" href="#330">330</a> <em class="jxr_javadoccomment">     * @return A set of related nodes</em>
+<a class="jxr_linenumber" name="331" href="#331">331</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="332" href="#332">332</a>     <strong class="jxr_keyword">private</strong> Set&lt;Vertex&gt; getCurrentRelationships(Vertex src,
+<a class="jxr_linenumber" name="333" href="#333">333</a>             String label, Direction direction) {
+<a class="jxr_linenumber" name="334" href="#334">334</a>         HashSet&lt;Vertex&gt; out = Sets.newHashSet();
+<a class="jxr_linenumber" name="335" href="#335">335</a>         <strong class="jxr_keyword">for</strong> (Vertex end : src.getVertices(direction, label)) {
+<a class="jxr_linenumber" name="336" href="#336">336</a>             out.add(end);
+<a class="jxr_linenumber" name="337" href="#337">337</a>         }
+<a class="jxr_linenumber" name="338" href="#338">338</a>         <strong class="jxr_keyword">return</strong> out;
+<a class="jxr_linenumber" name="339" href="#339">339</a>     }
+<a class="jxr_linenumber" name="340" href="#340">340</a> 
+<a class="jxr_linenumber" name="341" href="#341">341</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="342" href="#342">342</a> <em class="jxr_javadoccomment">     * Create a relationship between a parent and child vertex.</em>
+<a class="jxr_linenumber" name="343" href="#343">343</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="344" href="#344">344</a> <em class="jxr_javadoccomment">     * @param master The master vertex</em>
+<a class="jxr_linenumber" name="345" href="#345">345</a> <em class="jxr_javadoccomment">     * @param child The child vertex</em>
+<a class="jxr_linenumber" name="346" href="#346">346</a> <em class="jxr_javadoccomment">     * @param label The relationship label</em>
+<a class="jxr_linenumber" name="347" href="#347">347</a> <em class="jxr_javadoccomment">     * @param direction The direction of the relationship</em>
+<a class="jxr_linenumber" name="348" href="#348">348</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="349" href="#349">349</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> createChildRelationship(Vertex master, Vertex child,
+<a class="jxr_linenumber" name="350" href="#350">350</a>             String label, Direction direction) {
+<a class="jxr_linenumber" name="351" href="#351">351</a>         <strong class="jxr_keyword">if</strong> (direction == Direction.OUT) {
+<a class="jxr_linenumber" name="352" href="#352">352</a>             graph.addEdge(<strong class="jxr_keyword">null</strong>, master, child, label);
+<a class="jxr_linenumber" name="353" href="#353">353</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="354" href="#354">354</a>             graph.addEdge(<strong class="jxr_keyword">null</strong>, child, master, label);
+<a class="jxr_linenumber" name="355" href="#355">355</a>         }
+<a class="jxr_linenumber" name="356" href="#356">356</a>     }
+<a class="jxr_linenumber" name="357" href="#357">357</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

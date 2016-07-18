@@ -30,7 +30,7 @@
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers.csv;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.CsvImportManager;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.XmlImportProperties;
@@ -38,7 +38,7 @@
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
 <a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.views.impl.CrudViews;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
@@ -46,7 +46,7 @@
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  
 <a class="jxr_linenumber" name="38" href="#38">38</a>  
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/csv/UkrainianUnitImporterTest.html">UkrainianUnitImporterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/csv/UkrainianUnitImporterTest.html">UkrainianUnitImporterTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="40" href="#40">40</a>      
 <a class="jxr_linenumber" name="41" href="#41">41</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(PersonalitiesImporterTest.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SINGLE_EAD = <span class="jxr_string">"ukraine_small.csv"</span>;
@@ -62,7 +62,7 @@
 <a class="jxr_linenumber" name="52" href="#52">52</a>                  .withDataValue(Ontology.LANGUAGE_OF_DESCRIPTION, <span class="jxr_string">"uk"</span>);
 <a class="jxr_linenumber" name="53" href="#53">53</a>          repoBundle = repoBundle.withRelation(Ontology.DESCRIPTION_FOR_ENTITY, repoDescBundle);
 <a class="jxr_linenumber" name="54" href="#54">54</a>          repoBundle = repoBundle.withRelation(Ontology.REPOSITORY_HAS_COUNTRY, ukrainianBundle);
-<a class="jxr_linenumber" name="55" href="#55">55</a>          Repository repo = <strong class="jxr_keyword">new</strong> CrudViews&lt;&gt;(graph, Repository.<strong class="jxr_keyword">class</strong>).create(repoBundle, validUser);
+<a class="jxr_linenumber" name="55" href="#55">55</a>          Repository repo = api(validUser).create(repoBundle, Repository.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="56" href="#56">56</a>  
 <a class="jxr_linenumber" name="57" href="#57">57</a>          <strong class="jxr_keyword">int</strong> count = getNodeCount(graph);
 <a class="jxr_linenumber" name="58" href="#58">58</a>          
@@ -75,7 +75,7 @@
 <a class="jxr_linenumber" name="65" href="#65">65</a>          InputStream ios = ClassLoader.getSystemResourceAsStream(SINGLE_EAD);
 <a class="jxr_linenumber" name="66" href="#66">66</a>          ImportLog log = <strong class="jxr_keyword">new</strong> CsvImportManager(graph, repo, validUser, false, false,
 <a class="jxr_linenumber" name="67" href="#67">67</a>                      UkrainianUnitImporter.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="68" href="#68">68</a>                  .importFile(ios, logMessage);
+<a class="jxr_linenumber" name="68" href="#68">68</a>                  .importInputStream(ios, logMessage);
 <a class="jxr_linenumber" name="69" href="#69">69</a>          assertTrue(log.hasDoneWork());
 <a class="jxr_linenumber" name="70" href="#70">70</a>  
 <a class="jxr_linenumber" name="71" href="#71">71</a>          <em class="jxr_comment">/*</em>

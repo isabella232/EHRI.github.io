@@ -33,7 +33,7 @@
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.AbstractImporterTest;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.exceptions.InputParseError;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.SaxImportManager;
@@ -56,7 +56,7 @@
 <a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.hamcrest.CoreMatchers.hasItem;
 <a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
 <a class="jxr_linenumber" name="48" href="#48">48</a>  
-<a class="jxr_linenumber" name="49" href="#49">49</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/ItsTest.html">ItsTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/AbstractImporterTest.html">AbstractImporterTest</a> {
+<a class="jxr_linenumber" name="49" href="#49">49</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/ead/ItsTest.html">ItsTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="50" href="#50">50</a>  
 <a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(ItsTest.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="52" href="#52">52</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String EAD_EN = <span class="jxr_string">"exptestEsterwegen_en.xml"</span>; <em class="jxr_comment">//pertinence</em>
@@ -73,7 +73,7 @@
 <a class="jxr_linenumber" name="63" href="#63">63</a>          <strong class="jxr_keyword">final</strong> String logMessage = <span class="jxr_string">"Importing a single EAD by ItsTest"</span>;
 <a class="jxr_linenumber" name="64" href="#64">64</a>          saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="65" href="#65">65</a>                  .withProperties(<span class="jxr_string">"its-pertinence.properties"</span>)
-<a class="jxr_linenumber" name="66" href="#66">66</a>                  .importFile(ios, logMessage);
+<a class="jxr_linenumber" name="66" href="#66">66</a>                  .importInputStream(ios, logMessage);
 <a class="jxr_linenumber" name="67" href="#67">67</a>          DocumentaryUnit unit = graph.frame(
 <a class="jxr_linenumber" name="68" href="#68">68</a>                  getVertexByIdentifier(graph, IMPORTED_ITEM_ID),
 <a class="jxr_linenumber" name="69" href="#69">69</a>                  DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
@@ -99,8 +99,8 @@
 <a class="jxr_linenumber" name="89" href="#89">89</a>  
 <a class="jxr_linenumber" name="90" href="#90">90</a>          SaxImportManager importManager = saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>, <span class="jxr_string">"its-pertinence"</span> +
 <a class="jxr_linenumber" name="91" href="#91">91</a>                  <span class="jxr_string">".properties"</span>).allowUpdates(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="92" href="#92">92</a>          ImportLog log_en = importManager.importFile(ios, logMessage);
-<a class="jxr_linenumber" name="93" href="#93">93</a>          ImportLog log_de = importManager.importFile(ios2, logMessage);
+<a class="jxr_linenumber" name="92" href="#92">92</a>          ImportLog log_en = importManager.importInputStream(ios, logMessage);
+<a class="jxr_linenumber" name="93" href="#93">93</a>          ImportLog log_de = importManager.importInputStream(ios2, logMessage);
 <a class="jxr_linenumber" name="94" href="#94">94</a>  
 <a class="jxr_linenumber" name="95" href="#95">95</a>          <em class="jxr_comment">// After...</em>
 <a class="jxr_linenumber" name="96" href="#96">96</a>          List&lt;VertexProxy&gt; graphState2 = getGraphState(graph);
@@ -180,7 +180,7 @@
 <a class="jxr_linenumber" name="170" href="#170">170</a> 
 <a class="jxr_linenumber" name="171" href="#171">171</a>         saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="172" href="#172">172</a>                 .withProperties(<span class="jxr_string">"its-provenance.properties"</span>)
-<a class="jxr_linenumber" name="173" href="#173">173</a>                 .importFile(ios, logMessage);
+<a class="jxr_linenumber" name="173" href="#173">173</a>                 .importInputStream(ios, logMessage);
 <a class="jxr_linenumber" name="174" href="#174">174</a> 
 <a class="jxr_linenumber" name="175" href="#175">175</a>         <em class="jxr_comment">// After...</em>
 <a class="jxr_linenumber" name="176" href="#176">176</a>         List&lt;VertexProxy&gt; graphState2 = getGraphState(graph);
@@ -247,7 +247,7 @@
 <a class="jxr_linenumber" name="237" href="#237">237</a> 
 <a class="jxr_linenumber" name="238" href="#238">238</a>         saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="239" href="#239">239</a>                 .withProperties(<span class="jxr_string">"its-provenance.properties"</span>)
-<a class="jxr_linenumber" name="240" href="#240">240</a>                 .importFile(ios, logMessage);
+<a class="jxr_linenumber" name="240" href="#240">240</a>                 .importInputStream(ios, logMessage);
 <a class="jxr_linenumber" name="241" href="#241">241</a> 
 <a class="jxr_linenumber" name="242" href="#242">242</a>         <em class="jxr_comment">// After...</em>
 <a class="jxr_linenumber" name="243" href="#243">243</a>         List&lt;VertexProxy&gt; graphState2 = getGraphState(graph);
@@ -279,7 +279,7 @@
 <a class="jxr_linenumber" name="269" href="#269">269</a> 
 <a class="jxr_linenumber" name="270" href="#270">270</a>         saxImportManager(EadImporter.<strong class="jxr_keyword">class</strong>, EadHandler.<strong class="jxr_keyword">class</strong>)
 <a class="jxr_linenumber" name="271" href="#271">271</a>                 .withProperties(<span class="jxr_string">"its-pertinence.properties"</span>)
-<a class="jxr_linenumber" name="272" href="#272">272</a>                 .importFile(ios, logMessage);
+<a class="jxr_linenumber" name="272" href="#272">272</a>                 .importInputStream(ios, logMessage);
 <a class="jxr_linenumber" name="273" href="#273">273</a> 
 <a class="jxr_linenumber" name="274" href="#274">274</a>         <em class="jxr_comment">// After...</em>
 <a class="jxr_linenumber" name="275" href="#275">275</a>         List&lt;VertexProxy&gt; graphState2 = getGraphState(graph);
