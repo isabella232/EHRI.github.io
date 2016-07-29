@@ -154,7 +154,7 @@
 <a class="jxr_linenumber" name="144" href="#144">144</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError,
 <a class="jxr_linenumber" name="145" href="#145">145</a>             IOException, <a href="../../../eu/ehri/project/exceptions/DeserializationError.html">DeserializationError</a> {
 <a class="jxr_linenumber" name="146" href="#146">146</a> 
-<a class="jxr_linenumber" name="147" href="#147">147</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="147" href="#147">147</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="148" href="#148">148</a>             <em class="jxr_comment">// Get the current user from the Authorization header and the scope</em>
 <a class="jxr_linenumber" name="149" href="#149">149</a>             <em class="jxr_comment">// from the query params...</em>
 <a class="jxr_linenumber" name="150" href="#150">150</a>             <a href="../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = getCurrentUser();
@@ -242,7 +242,7 @@
 <a class="jxr_linenumber" name="232" href="#232">232</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError,
 <a class="jxr_linenumber" name="233" href="#233">233</a>             IOException, <a href="../../../eu/ehri/project/exceptions/DeserializationError.html">DeserializationError</a> {
 <a class="jxr_linenumber" name="234" href="#234">234</a> 
-<a class="jxr_linenumber" name="235" href="#235">235</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="235" href="#235">235</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="236" href="#236">236</a>             checkPropertyFile(propertyFile);
 <a class="jxr_linenumber" name="237" href="#237">237</a>             Class&lt;? <strong class="jxr_keyword">extends</strong> SaxXmlHandler&gt; handler
 <a class="jxr_linenumber" name="238" href="#238">238</a>                     = getHandlerCls(handlerClass, DEFAULT_EAD_HANDLER);
@@ -341,7 +341,7 @@
 <a class="jxr_linenumber" name="331" href="#331">331</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, ValidationError,
 <a class="jxr_linenumber" name="332" href="#332">332</a>             IOException, <a href="../../../eu/ehri/project/exceptions/DeserializationError.html">DeserializationError</a> {
 <a class="jxr_linenumber" name="333" href="#333">333</a> 
-<a class="jxr_linenumber" name="334" href="#334">334</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="334" href="#334">334</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="335" href="#335">335</a>             Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; importer
 <a class="jxr_linenumber" name="336" href="#336">336</a>                     = getImporterCls(importerClass, DEFAULT_EAD_IMPORTER);
 <a class="jxr_linenumber" name="337" href="#337">337</a> 
@@ -394,7 +394,7 @@
 <a class="jxr_linenumber" name="384" href="#384">384</a>             @DefaultValue(<span class="jxr_string">"true"</span>) @QueryParam(VERSION_PARAM) Boolean version,
 <a class="jxr_linenumber" name="385" href="#385">385</a>             @QueryParam(LOG_PARAM) String logMessage, InputStream inputStream)
 <a class="jxr_linenumber" name="386" href="#386">386</a>             <strong class="jxr_keyword">throws</strong> IOException, ItemNotFound, ValidationError, <a href="../../../eu/ehri/project/exceptions/DeserializationError.html">DeserializationError</a> {
-<a class="jxr_linenumber" name="387" href="#387">387</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="387" href="#387">387</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="388" href="#388">388</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = getCurrentUser();
 <a class="jxr_linenumber" name="389" href="#389">389</a>             <a href="../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope = scopeId != <strong class="jxr_keyword">null</strong>
 <a class="jxr_linenumber" name="390" href="#390">390</a>                     ? manager.getEntity(scopeId, PermissionScope.<strong class="jxr_keyword">class</strong>)
@@ -427,7 +427,7 @@
 <a class="jxr_linenumber" name="417" href="#417">417</a>             @QueryParam(LOG_PARAM) String logMessage,
 <a class="jxr_linenumber" name="418" href="#418">418</a>             @QueryParam(ID_PARAM) List&lt;String&gt; ids)
 <a class="jxr_linenumber" name="419" href="#419">419</a>             <strong class="jxr_keyword">throws</strong> IOException, ItemNotFound, <a href="../../../eu/ehri/project/exceptions/DeserializationError.html">DeserializationError</a> {
-<a class="jxr_linenumber" name="420" href="#420">420</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="420" href="#420">420</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="421" href="#421">421</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = getCurrentUser();
 <a class="jxr_linenumber" name="422" href="#422">422</a>             <a href="../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope = scopeId != <strong class="jxr_keyword">null</strong>
 <a class="jxr_linenumber" name="423" href="#423">423</a>                     ? manager.getEntity(scopeId, PermissionScope.<strong class="jxr_keyword">class</strong>)

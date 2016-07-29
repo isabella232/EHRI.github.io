@@ -91,7 +91,7 @@
 <a class="jxr_linenumber" name="81" href="#81">81</a>      @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="82" href="#82">82</a>      <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">InheritedGlobalPermissionSet</a> getGlobalMatrix() <strong class="jxr_keyword">throws</strong> PermissionDenied,
 <a class="jxr_linenumber" name="83" href="#83">83</a>              <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a> {
-<a class="jxr_linenumber" name="84" href="#84">84</a>          <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="84" href="#84">84</a>          <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="85" href="#85">85</a>              <a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">InheritedGlobalPermissionSet</a> matrix = getGlobalMatrix(getRequesterUserProfile().getId());
 <a class="jxr_linenumber" name="86" href="#86">86</a>              tx.success();
 <a class="jxr_linenumber" name="87" href="#87">87</a>              <strong class="jxr_keyword">return</strong> matrix;
@@ -111,7 +111,7 @@
 <a class="jxr_linenumber" name="101" href="#101">101</a>     @Path(<span class="jxr_string">"{userOrGroup:[^/]+}"</span>)
 <a class="jxr_linenumber" name="102" href="#102">102</a>     <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">InheritedGlobalPermissionSet</a> getGlobalMatrix(@PathParam(<span class="jxr_string">"userOrGroup"</span>) String userId)
 <a class="jxr_linenumber" name="103" href="#103">103</a>             <strong class="jxr_keyword">throws</strong> PermissionDenied, <a href="../../../eu/ehri/project/exceptions/ItemNotFound.html">ItemNotFound</a> {
-<a class="jxr_linenumber" name="104" href="#104">104</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="104" href="#104">104</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="105" href="#105">105</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = manager.getEntity(userId, Accessor.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="106" href="#106">106</a>             <a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">InheritedGlobalPermissionSet</a> set = api()
 <a class="jxr_linenumber" name="107" href="#107">107</a>                     .aclManager()
@@ -137,7 +137,7 @@
 <a class="jxr_linenumber" name="127" href="#127">127</a>     <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">InheritedGlobalPermissionSet</a> setGlobalMatrix(
 <a class="jxr_linenumber" name="128" href="#128">128</a>             @PathParam(<span class="jxr_string">"userOrGroup"</span>) String userId,
 <a class="jxr_linenumber" name="129" href="#129">129</a>             <a href="../../../eu/ehri/project/acl/GlobalPermissionSet.html">GlobalPermissionSet</a> globals) <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
-<a class="jxr_linenumber" name="130" href="#130">130</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="130" href="#130">130</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="131" href="#131">131</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = manager.getEntity(userId, Accessor.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="132" href="#132">132</a>             <a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">InheritedGlobalPermissionSet</a> newPerms
 <a class="jxr_linenumber" name="133" href="#133">133</a>                     = api().acl().setGlobalPermissionMatrix(accessor, globals);
@@ -161,7 +161,7 @@
 <a class="jxr_linenumber" name="151" href="#151">151</a>     <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/project/acl/InheritedItemPermissionSet.html">InheritedItemPermissionSet</a> getEntityMatrix(
 <a class="jxr_linenumber" name="152" href="#152">152</a>             @PathParam(<span class="jxr_string">"userOrGroup"</span>) String userId,
 <a class="jxr_linenumber" name="153" href="#153">153</a>             @PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
-<a class="jxr_linenumber" name="154" href="#154">154</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="154" href="#154">154</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="155" href="#155">155</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = manager.getEntity(userId, Accessor.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="156" href="#156">156</a>             <a href="../../../eu/ehri/project/models/base/Accessible.html">Accessible</a> entity = manager.getEntity(id, Accessible.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="157" href="#157">157</a>             <a href="../../../eu/ehri/project/acl/AclManager.html">AclManager</a> acl = api().withScope(entity.getPermissionScope()).aclManager();
@@ -188,7 +188,7 @@
 <a class="jxr_linenumber" name="178" href="#178">178</a>             @PathParam(<span class="jxr_string">"userOrGroup"</span>) String userId,
 <a class="jxr_linenumber" name="179" href="#179">179</a>             @PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="180" href="#180">180</a>             <a href="../../../eu/ehri/project/acl/ItemPermissionSet.html">ItemPermissionSet</a> itemPerms) <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
-<a class="jxr_linenumber" name="181" href="#181">181</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="181" href="#181">181</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="182" href="#182">182</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = manager.getEntity(userId, Accessor.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="183" href="#183">183</a>             <a href="../../../eu/ehri/project/models/base/Accessible.html">Accessible</a> item = manager.getEntity(id, Accessible.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="184" href="#184">184</a>             <a href="../../../eu/ehri/project/acl/InheritedItemPermissionSet.html">InheritedItemPermissionSet</a> set = api().acl()
@@ -211,7 +211,7 @@
 <a class="jxr_linenumber" name="201" href="#201">201</a>     @Path(<span class="jxr_string">"{userOrGroup:[^/]+}/scope/{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="202" href="#202">202</a>     <strong class="jxr_keyword">public</strong> <a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">InheritedGlobalPermissionSet</a> getScopedMatrix(@PathParam(<span class="jxr_string">"userOrGroup"</span>) String userId,
 <a class="jxr_linenumber" name="203" href="#203">203</a>             @PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
-<a class="jxr_linenumber" name="204" href="#204">204</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="204" href="#204">204</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="205" href="#205">205</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = manager.getEntity(userId, Accessor.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="206" href="#206">206</a>             <a href="../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope = manager.getEntity(id, PermissionScope.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="207" href="#207">207</a>             <a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">InheritedGlobalPermissionSet</a> set = api()
@@ -241,7 +241,7 @@
 <a class="jxr_linenumber" name="231" href="#231">231</a>             @PathParam(<span class="jxr_string">"userOrGroup"</span>) String userId,
 <a class="jxr_linenumber" name="232" href="#232">232</a>             @PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="233" href="#233">233</a>             <a href="../../../eu/ehri/project/acl/GlobalPermissionSet.html">GlobalPermissionSet</a> globals) <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
-<a class="jxr_linenumber" name="234" href="#234">234</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="234" href="#234">234</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="235" href="#235">235</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> accessor = manager.getEntity(userId, Accessor.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="236" href="#236">236</a>             <a href="../../../eu/ehri/project/models/base/PermissionScope.html">PermissionScope</a> scope = manager.getEntity(id, PermissionScope.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="237" href="#237">237</a>             <a href="../../../eu/ehri/project/acl/InheritedGlobalPermissionSet.html">InheritedGlobalPermissionSet</a> matrix = api()
@@ -264,17 +264,15 @@
 <a class="jxr_linenumber" name="254" href="#254">254</a>     @Produces(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="255" href="#255">255</a>     @Path(<span class="jxr_string">"{userOrGroup:[^/]+}/"</span> + GenericResource.PERMISSION_GRANTS)
 <a class="jxr_linenumber" name="256" href="#256">256</a>     <strong class="jxr_keyword">public</strong> Response listPermissionGrants(@PathParam(<span class="jxr_string">"userOrGroup"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
-<a class="jxr_linenumber" name="257" href="#257">257</a>         <strong class="jxr_keyword">final</strong> <a href="../../../eu/ehri/project/core/Tx.html">Tx</a> tx = graph.getBaseGraph().beginTx();
-<a class="jxr_linenumber" name="258" href="#258">258</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="259" href="#259">259</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = manager.getEntity(id, Accessor.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="260" href="#260">260</a>             <strong class="jxr_keyword">return</strong> streamingPage(getQuery()
-<a class="jxr_linenumber" name="261" href="#261">261</a>                     .page(user.getPermissionGrants(), PermissionGrant.<strong class="jxr_keyword">class</strong>), tx);
-<a class="jxr_linenumber" name="262" href="#262">262</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="263" href="#263">263</a>             tx.close();
-<a class="jxr_linenumber" name="264" href="#264">264</a>             <strong class="jxr_keyword">throw</strong> e;
-<a class="jxr_linenumber" name="265" href="#265">265</a>         }
-<a class="jxr_linenumber" name="266" href="#266">266</a>     }
-<a class="jxr_linenumber" name="267" href="#267">267</a> }
+<a class="jxr_linenumber" name="257" href="#257">257</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
+<a class="jxr_linenumber" name="258" href="#258">258</a>             <a href="../../../eu/ehri/project/models/base/Accessor.html">Accessor</a> user = manager.getEntity(id, Accessor.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="259" href="#259">259</a>             Response response = streamingPage(getQuery()
+<a class="jxr_linenumber" name="260" href="#260">260</a>                     .page(user.getPermissionGrants(), PermissionGrant.<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="261" href="#261">261</a>             tx.success();
+<a class="jxr_linenumber" name="262" href="#262">262</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="263" href="#263">263</a>         }
+<a class="jxr_linenumber" name="264" href="#264">264</a>     }
+<a class="jxr_linenumber" name="265" href="#265">265</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

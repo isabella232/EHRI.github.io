@@ -71,7 +71,7 @@
 <a class="jxr_linenumber" name="61" href="#61">61</a>      @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="62" href="#62">62</a>      @Override
 <a class="jxr_linenumber" name="63" href="#63">63</a>      <strong class="jxr_keyword">public</strong> Response get(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
-<a class="jxr_linenumber" name="64" href="#64">64</a>          <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="64" href="#64">64</a>          <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="65" href="#65">65</a>              PermissionGrant grant = manager.getEntity(id,
 <a class="jxr_linenumber" name="66" href="#66">66</a>                      EntityClass.PERMISSION_GRANT, PermissionGrant.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="67" href="#67">67</a>              Response response = single(grant);
@@ -91,7 +91,7 @@
 <a class="jxr_linenumber" name="81" href="#81">81</a>      @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="82" href="#82">82</a>      @Override
 <a class="jxr_linenumber" name="83" href="#83">83</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> delete(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound, PermissionDenied {
-<a class="jxr_linenumber" name="84" href="#84">84</a>          <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = graph.getBaseGraph().beginTx()) {
+<a class="jxr_linenumber" name="84" href="#84">84</a>          <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="85" href="#85">85</a>              api().acl().revokePermissionGrant(manager.getEntity(id,
 <a class="jxr_linenumber" name="86" href="#86">86</a>                      EntityClass.PERMISSION_GRANT, PermissionGrant.<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="87" href="#87">87</a>              tx.success();

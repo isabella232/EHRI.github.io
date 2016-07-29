@@ -766,6 +766,10 @@
 <dd>
 <div class="block">Update a batch of items.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#beginTx--">beginTx()</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
+<dd>
+<div class="block">Open a transaction on the graph.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/core/impl/TxNeo4jGraph.html#beginTx--">beginTx()</a></span> - Method in class eu.ehri.project.core.impl.<a href="eu/ehri/project/core/impl/TxNeo4jGraph.html" title="class in eu.ehri.project.core.impl">TxNeo4jGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/core/TxGraph.html#beginTx--">beginTx()</a></span> - Method in interface eu.ehri.project.core.<a href="eu/ehri/project/core/TxGraph.html" title="interface in eu.ehri.project.core">TxGraph</a></dt>
@@ -2313,7 +2317,7 @@
 <dd>
 <div class="block">Export the given repository as an EAG file.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractAccessibleResource.html#exportItemsAsZip-eu.ehri.project.exporters.xml.XmlExporter-java.lang.Iterable-java.lang.String-eu.ehri.project.core.Tx-">exportItemsAsZip(XmlExporter&lt;T&gt;, Iterable&lt;T&gt;, String, Tx)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractAccessibleResource.html" title="class in eu.ehri.extension.base">AbstractAccessibleResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractAccessibleResource.html#exportItemsAsZip-eu.ehri.project.exporters.xml.XmlExporter-java.lang.Iterable-java.lang.String-">exportItemsAsZip(XmlExporter&lt;T&gt;, Iterable&lt;T&gt;, String)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractAccessibleResource.html" title="class in eu.ehri.extension.base">AbstractAccessibleResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/extension/AdminResource.html#exportNodes--">exportNodes()</a></span> - Method in class eu.ehri.extension.<a href="eu/ehri/extension/AdminResource.html" title="class in eu.ehri.extension">AdminResource</a></dt>
 <dd>&nbsp;</dd>
@@ -4675,8 +4679,6 @@
 <dd>
 <div class="block">Ascertain whether this user is following another user.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#isHeadRequest--">isHeadRequest()</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/core/impl/TxNeo4jGraph.html#isInTransaction--">isInTransaction()</a></span> - Method in class eu.ehri.project.core.impl.<a href="eu/ehri/project/core/impl/TxNeo4jGraph.html" title="class in eu.ehri.project.core.impl">TxNeo4jGraph</a></dt>
 <dd>
 <div class="block">Checks if the graph is currently in a transaction.</div>
@@ -6452,32 +6454,35 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/models/events/SystemEventQueue.html#STREAM_START">STREAM_START</a></span> - Static variable in interface eu.ehri.project.models.events.<a href="eu/ehri/project/models/events/SystemEventQueue.html" title="interface in eu.ehri.project.models.events">SystemEventQueue</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingList-java.lang.Iterable-eu.ehri.project.core.Tx-">streamingList(Iterable&lt;T&gt;, Tx)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingList-java.lang.Iterable-">streamingList(Iterable&lt;T&gt;)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>
 <div class="block">Return a streaming response from an iterable.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingList-java.lang.Iterable-eu.ehri.project.persistence.Serializer-eu.ehri.project.core.Tx-">streamingList(Iterable&lt;T&gt;, Serializer, Tx)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingList-java.lang.Iterable-eu.ehri.project.persistence.Serializer-">streamingList(Iterable&lt;T&gt;, Serializer)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>
 <div class="block">Return a streaming response from an iterable, using the given
  entity converter.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingListOfLists-java.lang.Iterable-eu.ehri.project.core.Tx-">streamingListOfLists(Iterable&lt;? extends Collection&lt;T&gt;&gt;, Tx)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingListOfLists-java.lang.Iterable-">streamingListOfLists(Iterable&lt;? extends Collection&lt;T&gt;&gt;)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>
 <div class="block">Return a streaming response from an iterable of item lists.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingPage-eu.ehri.project.api.QueryApi.Page-eu.ehri.project.core.Tx-">streamingPage(QueryApi.Page&lt;T&gt;, Tx)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingPage-eu.ehri.project.api.QueryApi.Page-">streamingPage(QueryApi.Page&lt;T&gt;)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>
 <div class="block">Stream a single page with total, limit, and offset info.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingPage-eu.ehri.project.api.QueryApi.Page-eu.ehri.project.persistence.Serializer-eu.ehri.project.core.Tx-">streamingPage(QueryApi.Page&lt;T&gt;, Serializer, Tx)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingPage-eu.ehri.project.api.QueryApi.Page-eu.ehri.project.persistence.Serializer-">streamingPage(QueryApi.Page&lt;T&gt;, Serializer)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>
 <div class="block">Stream a single page with total, limit, and offset info, using
  the given entity converter.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingVertexList-java.lang.Iterable-eu.ehri.project.persistence.Serializer-eu.ehri.project.core.Tx-">streamingVertexList(Iterable&lt;Vertex&gt;, Serializer, Tx)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingVertexList-java.lang.Iterable-">streamingVertexList(Iterable&lt;Vertex&gt;)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>
-<div class="block">Return a streaming response from an iterable, using the given
- entity converter.</div>
+<div class="block">Stream an iterable of vertices.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#streamingVertexList-java.lang.Iterable-eu.ehri.project.persistence.Serializer-">streamingVertexList(Iterable&lt;Vertex&gt;, Serializer)</a></span> - Method in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
+<dd>
+<div class="block">Stream an iterable of vertices.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/models/events/SystemEvent.Impl.html#subjectCount--">subjectCount()</a></span> - Method in class eu.ehri.project.models.events.<a href="eu/ehri/project/models/events/SystemEvent.Impl.html" title="class in eu.ehri.project.models.events">SystemEvent.Impl</a></dt>
 <dd>&nbsp;</dd>
