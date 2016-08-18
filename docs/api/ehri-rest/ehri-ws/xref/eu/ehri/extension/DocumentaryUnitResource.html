@@ -143,7 +143,7 @@
 <a class="jxr_linenumber" name="133" href="#133">133</a>     @POST
 <a class="jxr_linenumber" name="134" href="#134">134</a>     @Consumes(MediaType.APPLICATION_JSON)
 <a class="jxr_linenumber" name="135" href="#135">135</a>     @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="136" href="#136">136</a>     @Path(<span class="jxr_string">"{id:[^/]+}/"</span> + Entities.DOCUMENTARY_UNIT)
+<a class="jxr_linenumber" name="136" href="#136">136</a>     @Path(<span class="jxr_string">"{id:[^/]+}"</span>)
 <a class="jxr_linenumber" name="137" href="#137">137</a>     @Override
 <a class="jxr_linenumber" name="138" href="#138">138</a>     <strong class="jxr_keyword">public</strong> Response createChild(@PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="139" href="#139">139</a>             Bundle bundle, @QueryParam(ACCESSOR_PARAM) List&lt;String&gt; accessors)
@@ -165,30 +165,28 @@
 <a class="jxr_linenumber" name="155" href="#155">155</a> <em class="jxr_javadoccomment">     * @param id   the unit id</em>
 <a class="jxr_linenumber" name="156" href="#156">156</a> <em class="jxr_javadoccomment">     * @param lang a three-letter ISO639-2 code</em>
 <a class="jxr_linenumber" name="157" href="#157">157</a> <em class="jxr_javadoccomment">     * @return an EAD XML Document</em>
-<a class="jxr_linenumber" name="158" href="#158">158</a> <em class="jxr_javadoccomment">     * @throws IOException</em>
-<a class="jxr_linenumber" name="159" href="#159">159</a> <em class="jxr_javadoccomment">     * @throws ItemNotFound</em>
-<a class="jxr_linenumber" name="160" href="#160">160</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="161" href="#161">161</a>     @GET
-<a class="jxr_linenumber" name="162" href="#162">162</a>     @Path(<span class="jxr_string">"{id:[^/]+}/ead"</span>)
-<a class="jxr_linenumber" name="163" href="#163">163</a>     @Produces(MediaType.TEXT_XML)
-<a class="jxr_linenumber" name="164" href="#164">164</a>     <strong class="jxr_keyword">public</strong> Response exportEad(@PathParam(<span class="jxr_string">"id"</span>) String id,
-<a class="jxr_linenumber" name="165" href="#165">165</a>             <strong class="jxr_keyword">final</strong> @QueryParam(<span class="jxr_string">"lang"</span>) @DefaultValue(<span class="jxr_string">"eng"</span>) String lang)
-<a class="jxr_linenumber" name="166" href="#166">166</a>             <strong class="jxr_keyword">throws</strong> IOException, ItemNotFound {
-<a class="jxr_linenumber" name="167" href="#167">167</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
-<a class="jxr_linenumber" name="168" href="#168">168</a>             DocumentaryUnit unit = api().detail(id, cls);
-<a class="jxr_linenumber" name="169" href="#169">169</a>             EadExporter eadExporter = <strong class="jxr_keyword">new</strong> Ead2002Exporter(graph, api());
-<a class="jxr_linenumber" name="170" href="#170">170</a>             <strong class="jxr_keyword">final</strong> Document document = eadExporter.export(unit, lang);
-<a class="jxr_linenumber" name="171" href="#171">171</a>             tx.success();
-<a class="jxr_linenumber" name="172" href="#172">172</a>             <strong class="jxr_keyword">return</strong> Response.ok((StreamingOutput) outputStream -&gt; {
-<a class="jxr_linenumber" name="173" href="#173">173</a>                 <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="174" href="#174">174</a>                     <strong class="jxr_keyword">new</strong> DocumentWriter(document).write(outputStream);
-<a class="jxr_linenumber" name="175" href="#175">175</a>                 } <strong class="jxr_keyword">catch</strong> (TransformerException e) {
-<a class="jxr_linenumber" name="176" href="#176">176</a>                     <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> WebApplicationException(e);
-<a class="jxr_linenumber" name="177" href="#177">177</a>                 }
-<a class="jxr_linenumber" name="178" href="#178">178</a>             }).type(MediaType.TEXT_XML + <span class="jxr_string">"; charset=utf-8"</span>).build();
-<a class="jxr_linenumber" name="179" href="#179">179</a>         }
-<a class="jxr_linenumber" name="180" href="#180">180</a>     }
-<a class="jxr_linenumber" name="181" href="#181">181</a> }
+<a class="jxr_linenumber" name="158" href="#158">158</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="159" href="#159">159</a>     @GET
+<a class="jxr_linenumber" name="160" href="#160">160</a>     @Path(<span class="jxr_string">"{id:[^/]+}/ead"</span>)
+<a class="jxr_linenumber" name="161" href="#161">161</a>     @Produces(MediaType.TEXT_XML)
+<a class="jxr_linenumber" name="162" href="#162">162</a>     <strong class="jxr_keyword">public</strong> Response exportEad(@PathParam(<span class="jxr_string">"id"</span>) String id,
+<a class="jxr_linenumber" name="163" href="#163">163</a>             <strong class="jxr_keyword">final</strong> @QueryParam(<span class="jxr_string">"lang"</span>) @DefaultValue(<span class="jxr_string">"eng"</span>) String lang)
+<a class="jxr_linenumber" name="164" href="#164">164</a>             <strong class="jxr_keyword">throws</strong> IOException, ItemNotFound {
+<a class="jxr_linenumber" name="165" href="#165">165</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
+<a class="jxr_linenumber" name="166" href="#166">166</a>             DocumentaryUnit unit = api().detail(id, cls);
+<a class="jxr_linenumber" name="167" href="#167">167</a>             EadExporter eadExporter = <strong class="jxr_keyword">new</strong> Ead2002Exporter(graph, api());
+<a class="jxr_linenumber" name="168" href="#168">168</a>             <strong class="jxr_keyword">final</strong> Document document = eadExporter.export(unit, lang);
+<a class="jxr_linenumber" name="169" href="#169">169</a>             tx.success();
+<a class="jxr_linenumber" name="170" href="#170">170</a>             <strong class="jxr_keyword">return</strong> Response.ok((StreamingOutput) outputStream -&gt; {
+<a class="jxr_linenumber" name="171" href="#171">171</a>                 <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="172" href="#172">172</a>                     <strong class="jxr_keyword">new</strong> DocumentWriter(document).write(outputStream);
+<a class="jxr_linenumber" name="173" href="#173">173</a>                 } <strong class="jxr_keyword">catch</strong> (TransformerException e) {
+<a class="jxr_linenumber" name="174" href="#174">174</a>                     <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> WebApplicationException(e);
+<a class="jxr_linenumber" name="175" href="#175">175</a>                 }
+<a class="jxr_linenumber" name="176" href="#176">176</a>             }).type(MediaType.TEXT_XML + <span class="jxr_string">"; charset=utf-8"</span>).build();
+<a class="jxr_linenumber" name="177" href="#177">177</a>         }
+<a class="jxr_linenumber" name="178" href="#178">178</a>     }
+<a class="jxr_linenumber" name="179" href="#179">179</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

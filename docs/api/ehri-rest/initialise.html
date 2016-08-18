@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20160729" />
+    <meta name="Date-Revision-yyyymmdd" content="20160818" />
     <meta http-equiv="Content-Language" content="en" />
     <title>EHRI Backend &#x2013; Initialising a fresh Neo4j database and importing some data</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2016-07-29
+                  <li id="publishDate">Last Published: 2016-08-18
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.13.4-SNAPSHOT
+                  <li id="projectVersion">Version: 0.13.5-SNAPSHOT
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -257,7 +257,7 @@
 <div class="section">
 <h2><a name="Set_Vital_Environment_vars"></a>Set Vital Environment var(s)</h2>
 <p>The <b>NEO4J_HOME</b> env var must be set and point to the Neo4j instance with the EHRI libs <a href="INSTALL.md">installed</a>.</p>
-<p>A second var that <i>may</i> be set is <b>NEO4J_DB</b>, which should point to the actual database directory. If not set, this will default to <tt>$NEO4J_HOME/data/graph.db</tt>.</p></div>
+<p>A second var that <i>may</i> be set is <b>NEO4J_DB</b>, which should point to the actual database directory. If not set, this will default to <tt>$NEO4J_HOME/data/databases/graph.db</tt>.</p></div>
 <div class="section">
 <h2><a name="Make_sure_the_Neo4j_Server_is_stopped"></a>Make sure the Neo4j Server is stopped</h2>
 <p>At present, the various commands all use Neo4j in embedded mode. This will not work if the server is running, because only one process can write to a graph DB at once. So before running anything, make sure the server is stopped:</p>

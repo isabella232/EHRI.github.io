@@ -30,25 +30,25 @@
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.api;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.base.Optional;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.PermissionDenied;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnitDescription;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.RepositoryDescription;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Description;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.events.SystemEvent;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.ActionManager;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Mutation;
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Serializer;
-<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.AbstractFixtureTest;
-<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.TestData;
-<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> org.junit.Assert;
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> org.junit.Before;
-<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="41" href="#41">41</a>  <strong class="jxr_keyword">import</strong> org.neo4j.helpers.collection.Iterables;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Iterables;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.PermissionDenied;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnitDescription;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.RepositoryDescription;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Description;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.events.SystemEvent;
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.ActionManager;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Mutation;
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Serializer;
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.AbstractFixtureTest;
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.TestData;
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> org.junit.Assert;
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> org.junit.Before;
+<a class="jxr_linenumber" name="41" href="#41">41</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
 <a class="jxr_linenumber" name="42" href="#42">42</a>  
 <a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.*;
 <a class="jxr_linenumber" name="44" href="#44">44</a>  
@@ -113,7 +113,7 @@
 <a class="jxr_linenumber" name="103" href="#103">103</a>         DocumentaryUnit unit = api(validUser).create(bundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="104" href="#104">104</a>         assertEquals(TestData.TEST_COLLECTION_NAME, unit.getProperty(<span class="jxr_string">"name"</span>));
 <a class="jxr_linenumber" name="105" href="#105">105</a> 
-<a class="jxr_linenumber" name="106" href="#106">106</a>         <strong class="jxr_keyword">long</strong> descCount = Iterables.count(unit.getDocumentDescriptions());
+<a class="jxr_linenumber" name="106" href="#106">106</a>         <strong class="jxr_keyword">long</strong> descCount = Iterables.size(unit.getDocumentDescriptions());
 <a class="jxr_linenumber" name="107" href="#107">107</a>         Bundle descBundle = <strong class="jxr_keyword">new</strong> Serializer(graph).entityToBundle(unit)
 <a class="jxr_linenumber" name="108" href="#108">108</a>                 .getRelations(Ontology.DESCRIPTION_FOR_ENTITY)
 <a class="jxr_linenumber" name="109" href="#109">109</a>                 .get(0).withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"some-new-title"</span>);
@@ -122,7 +122,7 @@
 <a class="jxr_linenumber" name="112" href="#112">112</a>                 .updateDependent(unit.getId(), descBundle,
 <a class="jxr_linenumber" name="113" href="#113">113</a>                         DocumentaryUnitDescription.<strong class="jxr_keyword">class</strong>, Optional.&lt;String&gt;absent())
 <a class="jxr_linenumber" name="114" href="#114">114</a>                 .getNode();
-<a class="jxr_linenumber" name="115" href="#115">115</a>         assertEquals(descCount, Iterables.count(unit.getDocumentDescriptions()));
+<a class="jxr_linenumber" name="115" href="#115">115</a>         assertEquals(descCount, Iterables.size(unit.getDocumentDescriptions()));
 <a class="jxr_linenumber" name="116" href="#116">116</a>         assertEquals(<span class="jxr_string">"some-new-title"</span>, changedDesc.getName());
 <a class="jxr_linenumber" name="117" href="#117">117</a>     }
 <a class="jxr_linenumber" name="118" href="#118">118</a> 
@@ -147,14 +147,14 @@
 <a class="jxr_linenumber" name="137" href="#137">137</a>         DocumentaryUnit unit = api(validUser).create(bundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="138" href="#138">138</a>         assertEquals(TestData.TEST_COLLECTION_NAME, unit.getProperty(<span class="jxr_string">"name"</span>));
 <a class="jxr_linenumber" name="139" href="#139">139</a> 
-<a class="jxr_linenumber" name="140" href="#140">140</a>         <strong class="jxr_keyword">long</strong> descCount = Iterables.count(unit.getDocumentDescriptions());
+<a class="jxr_linenumber" name="140" href="#140">140</a>         <strong class="jxr_keyword">long</strong> descCount = Iterables.size(unit.getDocumentDescriptions());
 <a class="jxr_linenumber" name="141" href="#141">141</a> 
-<a class="jxr_linenumber" name="142" href="#142">142</a>         DocumentaryUnitDescription d = Iterables.first(unit.getDocumentDescriptions());
+<a class="jxr_linenumber" name="142" href="#142">142</a>         DocumentaryUnitDescription d = Iterables.getFirst(unit.getDocumentDescriptions(), <strong class="jxr_keyword">null</strong>);
 <a class="jxr_linenumber" name="143" href="#143">143</a>         assertNotNull(d);
 <a class="jxr_linenumber" name="144" href="#144">144</a>         <strong class="jxr_keyword">int</strong> delCount = api(validUser).deleteDependent(unit.getId(), d.getId(),
 <a class="jxr_linenumber" name="145" href="#145">145</a>                 Optional.&lt;String&gt;absent());
 <a class="jxr_linenumber" name="146" href="#146">146</a>         Assert.assertTrue(delCount &gt;= 1);
-<a class="jxr_linenumber" name="147" href="#147">147</a>         assertEquals(descCount - 1, Iterables.count(unit.getDocumentDescriptions()));
+<a class="jxr_linenumber" name="147" href="#147">147</a>         assertEquals(descCount - 1, Iterables.size(unit.getDocumentDescriptions()));
 <a class="jxr_linenumber" name="148" href="#148">148</a>     }
 <a class="jxr_linenumber" name="149" href="#149">149</a> 
 <a class="jxr_linenumber" name="150" href="#150">150</a>     @Test

@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20160729" />
+    <meta name="Date-Revision-yyyymmdd" content="20160818" />
     <meta http-equiv="Content-Language" content="en" />
     <title>EHRI Backend &#x2013; Example Ingest</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2016-07-29
+                  <li id="publishDate">Last Published: 2016-08-18
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.13.4-SNAPSHOT
+                  <li id="projectVersion">Version: 0.13.5-SNAPSHOT
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -259,17 +259,17 @@
 
 <div class="source">
 <div class="source">
-<pre>tail -f /opt/webapps/neo4j-version/data/log/console.log
+<pre>tail -f /opt/webapps/neo4j-version/logs/log/neo4j.log
 </pre></div></div>
 <div class="section">
 <h3><a name="Back_up_the_database"></a>Back up the database</h3>
-<p>The Neo4j DB lives in /opt/webapps/data/graph.db. You can back it up without shutting down the server by running:</p>
+<p>The Neo4j DB lives in /opt/webapps/data/neo4j/databases/graph.db. You can back it up without shutting down the server by running:</p>
 
 <div class="source">
 <div class="source">
 <pre>/opt/webapps/neo4j-backup.sh graph.db.BAK
 </pre></div></div>
-<p>To restore the DB the procedure is:  - shut down Neo4j  - replace /opt/webapps/data/graph.db with backup directory you specified previously  - ensure all files in the graph.db directory are owned and writable by the <tt>webadm</tt> group:  - chgrp -R webadm graph.db  - chmod -R g+rw graph.db  - restart Neo4j</p></div></div>
+<p>To restore the DB the procedure is:  - shut down Neo4j  - replace /opt/webapps/data/neo4j/databases/graph.db with backup directory you specified previously  - ensure all files in the graph.db directory are owned and writable by the <tt>webadm</tt> group:  - chgrp -R webadm graph.db  - chmod -R g+rw graph.db  - restart Neo4j</p></div></div>
 <div class="section">
 <h2><a name="Procedure"></a>Procedure</h2>
 <p>Onwards with the ingest&#x2026;</p>
@@ -332,7 +332,7 @@ export LOG=`pwd`/LOG.txt
   
 <li>the <tt>properties=$PROPERTIES</tt> parameter tells it to file the import properties  in a local file</li>
 </ul>
-<p><b>Note</b>: when importing a single EAD containing ~50,000 items in a single transaction the staging server might run out of memory. If it does the only option is to increase the Neo4j heap size by uncommenting and setting the <tt>wrapper.java.maxmemory=MORE_MB</tt> (say,  3500) in <tt>$NEO4J_HOME/conf/neo4j-wrapper.conf</tt> and restarting Neo4j by running:</p>
+<p><b>Note</b>: when importing a single EAD containing ~50,000 items in a single transaction the staging server might run out of memory. If it does the only option is to increase the Neo4j heap size by uncommenting and setting the <tt>dbms.memory.heap.max_size=MORE_MB</tt> (say,  3500) in <tt>$NEO4J_HOME/conf/neo4j-wrapper.conf</tt> and restarting Neo4j by running:</p>
 
 <div class="source">
 <div class="source">

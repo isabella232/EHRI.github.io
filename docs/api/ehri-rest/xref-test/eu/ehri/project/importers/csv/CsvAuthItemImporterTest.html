@@ -34,12 +34,12 @@
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers.csv;
 <a class="jxr_linenumber" name="25" href="#25">25</a>  
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.CsvImportManager;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessible;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.AuthoritativeSet;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> org.neo4j.helpers.collection.Iterables;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.CsvImportManager;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessible;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.AuthoritativeSet;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  
@@ -76,7 +76,7 @@
 <a class="jxr_linenumber" name="66" href="#66">66</a>          List&lt;VertexProxy&gt; graphState2 = getGraphState(graph);
 <a class="jxr_linenumber" name="67" href="#67">67</a>          GraphDiff diff = diffGraph(graphState1, graphState2);
 <a class="jxr_linenumber" name="68" href="#68">68</a>          diff.printDebug(System.out);
-<a class="jxr_linenumber" name="69" href="#69">69</a>          System.out.println(Iterables.toList(authoritativeSet.getAuthoritativeItems()));
+<a class="jxr_linenumber" name="69" href="#69">69</a>          System.out.println(Lists.newArrayList(authoritativeSet.getAuthoritativeItems()));
 <a class="jxr_linenumber" name="70" href="#70">70</a>          <em class="jxr_comment">/*</em>
 <a class="jxr_linenumber" name="71" href="#71">71</a>  <em class="jxr_comment">         * 9 Item</em>
 <a class="jxr_linenumber" name="72" href="#72">72</a>  <em class="jxr_comment">         * 9 ItemDesc</em>

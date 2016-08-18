@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20160729" />
+    <meta name="Date-Revision-yyyymmdd" content="20160818" />
     <meta http-equiv="Content-Language" content="en" />
     <title>EHRI Backend &#x2013; Setup of development environment</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2016-07-29
+                  <li id="publishDate">Last Published: 2016-08-18
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.13.4-SNAPSHOT
+                  <li id="projectVersion">Version: 0.13.5-SNAPSHOT
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -253,13 +253,13 @@
             <h1>Setup of development environment</h1>
 <div class="section">
 <h2><a name="Prerequisites"></a>Prerequisites</h2>
-<p>Install Oracle JDK 7. For Ubuntu this can be done via the Webupd8team PPA:</p>
+<p>Install Oracle JDK 8. For Ubuntu this can be done via the Webupd8team PPA:</p>
 
 <div class="source">
 <div class="source">
 <pre>sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get install oracle-java7-installer 
+sudo apt-get install oracle-java8-installer
 </pre></div></div>
 <p>Install Git:</p>
 
@@ -315,13 +315,13 @@ mvn install
 
 <div class="source">
 <div class="source">
-<pre>curl -L -0 http://neo4j.com/artifact.php?name=neo4j-community-2.3.2-unix.tar.gz | tar zx
+<pre>curl -L -0 http://neo4j.com/artifact.php?name=neo4j-community-3.0.4-unix.tar.gz | tar zx
 </pre></div></div>
 <p>We&#x2019;ll need to refer to the installation location a lot so save it as an environment variable:</p>
 
 <div class="source">
 <div class="source">
-<pre>export NEO4J_HOME=neo4j-community-2.3.2
+<pre>export NEO4J_HOME=neo4j-community-3.0.4
 </pre></div></div>
 <p>Once both the EHRI server code has been compiled and Neo4j standalone has been downloaded and extracted, we can install the former into the latter. The following script ensures the code is packaged and then installs the EHRI jars and various other dependencies into the <tt>$NEO4J_HOME/plugin/ehri</tt> directory:</p>
 
@@ -332,7 +332,7 @@ mvn install
 <p>Once that has completed the script will warn us that we have to make one configuation change manually:</p>
 
 <blockquote>
-<p><b>IMPORTANT</b>: You must manually ensure the $NEO4J_HOME/conf/neo4j-server.properties configuration contains the line:  org.neo4j.server.thirdparty_jaxrs_classes=eu.ehri.extension=/ehri</p>
+<p><b>IMPORTANT</b>: You must manually ensure the $NEO4J_HOME/conf/neo4j.conf configuration contains the line:  dmbs.unmanaged_extension_classes=eu.ehri.extension=/ehri</p>
 </blockquote>
 <p>Open that file and add that line below the point where a similar example config is commented out. This step is vital so Neo4j knows to load our EHRI extension code.</p>
 <p>At this point, if we go to <a class="externalLink" href="http://localhost:7474">http://localhost:7474</a> we should be able to see the Neo4j server admin console. However, the EHRI Rest server endpoints will error at the moment because we have not yet initialised the graph database properly. We can do this using one of the EHRI administration commands that can be run from the code root. First, make sure the Neo4j database server isn&#x2019;t running:</p>
