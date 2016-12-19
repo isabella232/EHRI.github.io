@@ -29,15 +29,15 @@
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.api.impl;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
-<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.base.Optional;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Iterables;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Sets;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Vertex;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.gremlin.java.GremlinPipeline;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.pipes.PipeFunction;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.acl.AclManager;
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Iterables;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Sets;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Vertex;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.gremlin.java.GremlinPipeline;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.pipes.PipeFunction;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.acl.AclManager;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.api.EventsApi;
 <a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManager;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManagerFactory;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.EventTypes;
@@ -52,18 +52,18 @@
 <a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.events.SystemEvent;
 <a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.ActionManager;
 <a class="jxr_linenumber" name="44" href="#44">44</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.utils.pipes.AggregatorPipe;
-<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.api.EventsApi;
-<a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
-<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
-<a class="jxr_linenumber" name="48" href="#48">48</a>  
-<a class="jxr_linenumber" name="49" href="#49">49</a>  <strong class="jxr_keyword">import</strong> java.util.Collection;
-<a class="jxr_linenumber" name="50" href="#50">50</a>  <strong class="jxr_keyword">import</strong> java.util.List;
+<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
+<a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
+<a class="jxr_linenumber" name="47" href="#47">47</a>  
+<a class="jxr_linenumber" name="48" href="#48">48</a>  <strong class="jxr_keyword">import</strong> java.util.Collection;
+<a class="jxr_linenumber" name="49" href="#49">49</a>  <strong class="jxr_keyword">import</strong> java.util.List;
+<a class="jxr_linenumber" name="50" href="#50">50</a>  <strong class="jxr_keyword">import</strong> java.util.Optional;
 <a class="jxr_linenumber" name="51" href="#51">51</a>  <strong class="jxr_keyword">import</strong> java.util.Set;
 <a class="jxr_linenumber" name="52" href="#52">52</a>  
 <a class="jxr_linenumber" name="53" href="#53">53</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="54" href="#54">54</a>  <em class="jxr_javadoccomment"> * View class for handling event streams.</em>
 <a class="jxr_linenumber" name="55" href="#55">55</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="56" href="#56">56</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/api/impl/EventsApiImpl.html">EventsApiImpl</a> <strong class="jxr_keyword">implements</strong> eu.ehri.project.api.EventsApi {
+<a class="jxr_linenumber" name="56" href="#56">56</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/api/impl/EventsApiImpl.html">EventsApiImpl</a> <strong class="jxr_keyword">implements</strong> <a href="../../../../../eu/ehri/project/api/EventsApi.html">EventsApi</a> {
 <a class="jxr_linenumber" name="57" href="#57">57</a>  
 <a class="jxr_linenumber" name="58" href="#58">58</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(EventsApiImpl.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="59" href="#59">59</a>  
@@ -107,8 +107,8 @@
 <a class="jxr_linenumber" name="97" href="#97">97</a>          <strong class="jxr_keyword">private</strong> Set&lt;String&gt; ids = Sets.newHashSet();
 <a class="jxr_linenumber" name="98" href="#98">98</a>          <strong class="jxr_keyword">private</strong> Set&lt;EntityClass&gt; entityTypes = Sets.newHashSet();
 <a class="jxr_linenumber" name="99" href="#99">99</a>          <strong class="jxr_keyword">private</strong> Set&lt;EventTypes&gt; eventTypes = Sets.newHashSet();
-<a class="jxr_linenumber" name="100" href="#100">100</a>         <strong class="jxr_keyword">private</strong> Optional&lt;String&gt; from = Optional.absent();
-<a class="jxr_linenumber" name="101" href="#101">101</a>         <strong class="jxr_keyword">private</strong> Optional&lt;String&gt; to = Optional.absent();
+<a class="jxr_linenumber" name="100" href="#100">100</a>         <strong class="jxr_keyword">private</strong> Optional&lt;String&gt; from = Optional.empty();
+<a class="jxr_linenumber" name="101" href="#101">101</a>         <strong class="jxr_keyword">private</strong> Optional&lt;String&gt; to = Optional.empty();
 <a class="jxr_linenumber" name="102" href="#102">102</a>         <strong class="jxr_keyword">private</strong> Set&lt;ShowType&gt; showType = Sets.newHashSet();
 <a class="jxr_linenumber" name="103" href="#103">103</a>         <strong class="jxr_keyword">private</strong> <a href="../../../../../eu/ehri/project/api/EventsApi.html">Aggregation</a> aggregation = Aggregation.strict;
 <a class="jxr_linenumber" name="104" href="#104">104</a> 
@@ -159,12 +159,12 @@
 <a class="jxr_linenumber" name="149" href="#149">149</a>         }
 <a class="jxr_linenumber" name="150" href="#150">150</a> 
 <a class="jxr_linenumber" name="151" href="#151">151</a>         <strong class="jxr_keyword">public</strong> <a href="../../../../../eu/ehri/project/acl/GlobalPermissionSet.html">Builder</a> from(String from) {
-<a class="jxr_linenumber" name="152" href="#152">152</a>             <strong class="jxr_keyword">this</strong>.from = Optional.fromNullable(from);
+<a class="jxr_linenumber" name="152" href="#152">152</a>             <strong class="jxr_keyword">this</strong>.from = Optional.ofNullable(from);
 <a class="jxr_linenumber" name="153" href="#153">153</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="154" href="#154">154</a>         }
 <a class="jxr_linenumber" name="155" href="#155">155</a> 
 <a class="jxr_linenumber" name="156" href="#156">156</a>         <strong class="jxr_keyword">public</strong> <a href="../../../../../eu/ehri/project/acl/GlobalPermissionSet.html">Builder</a> to(String to) {
-<a class="jxr_linenumber" name="157" href="#157">157</a>             <strong class="jxr_keyword">this</strong>.to = Optional.fromNullable(to);
+<a class="jxr_linenumber" name="157" href="#157">157</a>             <strong class="jxr_keyword">this</strong>.to = Optional.ofNullable(to);
 <a class="jxr_linenumber" name="158" href="#158">158</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">this</strong>;
 <a class="jxr_linenumber" name="159" href="#159">159</a>         }
 <a class="jxr_linenumber" name="160" href="#160">160</a> 
@@ -234,8 +234,8 @@
 <a class="jxr_linenumber" name="224" href="#224">224</a>                 Lists.&lt;String&gt;newArrayList(),
 <a class="jxr_linenumber" name="225" href="#225">225</a>                 Lists.&lt;EntityClass&gt;newArrayList(),
 <a class="jxr_linenumber" name="226" href="#226">226</a>                 Lists.&lt;EventTypes&gt;newArrayList(),
-<a class="jxr_linenumber" name="227" href="#227">227</a>                 Optional.&lt;String&gt;absent(),
-<a class="jxr_linenumber" name="228" href="#228">228</a>                 Optional.&lt;String&gt;absent(),
+<a class="jxr_linenumber" name="227" href="#227">227</a>                 Optional.empty(),
+<a class="jxr_linenumber" name="228" href="#228">228</a>                 Optional.empty(),
 <a class="jxr_linenumber" name="229" href="#229">229</a>                 Lists.&lt;ShowType&gt;newArrayList(),
 <a class="jxr_linenumber" name="230" href="#230">230</a>                 Aggregation.strict);
 <a class="jxr_linenumber" name="231" href="#231">231</a>     }
@@ -306,7 +306,7 @@
 <a class="jxr_linenumber" name="296" href="#296">296</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="297" href="#297">297</a> <em class="jxr_javadoccomment">     * Aggregate a user's actions.</em>
 <a class="jxr_linenumber" name="298" href="#298">298</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="299" href="#299">299</a> <em class="jxr_javadoccomment">     * @param byUser   the user</em>
+<a class="jxr_linenumber" name="299" href="#299">299</a> <em class="jxr_javadoccomment">     * @param byUser the user</em>
 <a class="jxr_linenumber" name="300" href="#300">300</a> <em class="jxr_javadoccomment">     * @return an event stream</em>
 <a class="jxr_linenumber" name="301" href="#301">301</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="302" href="#302">302</a>     @Override
@@ -323,7 +323,7 @@
 <a class="jxr_linenumber" name="313" href="#313">313</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="314" href="#314">314</a> <em class="jxr_javadoccomment">     * List a user's actions.</em>
 <a class="jxr_linenumber" name="315" href="#315">315</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="316" href="#316">316</a> <em class="jxr_javadoccomment">     * @param byUser   the user</em>
+<a class="jxr_linenumber" name="316" href="#316">316</a> <em class="jxr_javadoccomment">     * @param byUser the user</em>
 <a class="jxr_linenumber" name="317" href="#317">317</a> <em class="jxr_javadoccomment">     * @return an event stream</em>
 <a class="jxr_linenumber" name="318" href="#318">318</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="319" href="#319">319</a>     @Override
@@ -559,43 +559,37 @@
 <a class="jxr_linenumber" name="549" href="#549">549</a>                 <strong class="jxr_keyword">return</strong> pipeline.add(<strong class="jxr_keyword">new</strong> AggregatorPipe&lt;&gt;(userAggregator));
 <a class="jxr_linenumber" name="550" href="#550">550</a>             <strong class="jxr_keyword">default</strong>:
 <a class="jxr_linenumber" name="551" href="#551">551</a>                 <em class="jxr_comment">// Default case: no aggregation, so simply wrap each event in a list</em>
-<a class="jxr_linenumber" name="552" href="#552">552</a>                 <strong class="jxr_keyword">return</strong> pipeline.transform(<strong class="jxr_keyword">new</strong> PipeFunction&lt;SystemEvent, List&lt;SystemEvent&gt;&gt;() {
-<a class="jxr_linenumber" name="553" href="#553">553</a>                     @Override
-<a class="jxr_linenumber" name="554" href="#554">554</a>                     <strong class="jxr_keyword">public</strong> List&lt;SystemEvent&gt; compute(<a href="../../../../../eu/ehri/project/models/events/SystemEvent.html">SystemEvent</a> event) {
-<a class="jxr_linenumber" name="555" href="#555">555</a>                         <strong class="jxr_keyword">return</strong> Lists.newArrayList(event);
-<a class="jxr_linenumber" name="556" href="#556">556</a>                     }
-<a class="jxr_linenumber" name="557" href="#557">557</a>                 });
-<a class="jxr_linenumber" name="558" href="#558">558</a>         }
-<a class="jxr_linenumber" name="559" href="#559">559</a>     }
-<a class="jxr_linenumber" name="560" href="#560">560</a> 
-<a class="jxr_linenumber" name="561" href="#561">561</a>     <strong class="jxr_keyword">private</strong> &lt;E, S&gt; GremlinPipeline&lt;E, S&gt; setPipelineRange(
-<a class="jxr_linenumber" name="562" href="#562">562</a>             GremlinPipeline&lt;E, S&gt; filter) {
-<a class="jxr_linenumber" name="563" href="#563">563</a>         <strong class="jxr_keyword">int</strong> low = Math.max(0, offset);
-<a class="jxr_linenumber" name="564" href="#564">564</a>         <strong class="jxr_keyword">if</strong> (limit &lt; 0) {
-<a class="jxr_linenumber" name="565" href="#565">565</a>             <em class="jxr_comment">// No way to skip a bunch of items in Gremlin without</em>
-<a class="jxr_linenumber" name="566" href="#566">566</a>             <em class="jxr_comment">// applying an end range... I guess this will break if</em>
-<a class="jxr_linenumber" name="567" href="#567">567</a>             <em class="jxr_comment">// we have more than 2147483647 items to traverse...</em>
-<a class="jxr_linenumber" name="568" href="#568">568</a>             <strong class="jxr_keyword">return</strong> filter.range(low, Integer.MAX_VALUE); <em class="jxr_comment">// No filtering</em>
-<a class="jxr_linenumber" name="569" href="#569">569</a>         } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (limit == 0) {
-<a class="jxr_linenumber" name="570" href="#570">570</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> GremlinPipeline&lt;&gt;(Lists.newArrayList());
-<a class="jxr_linenumber" name="571" href="#571">571</a>         } <strong class="jxr_keyword">else</strong> {
-<a class="jxr_linenumber" name="572" href="#572">572</a>             <em class="jxr_comment">// NB: The high range is inclusive, oddly.</em>
-<a class="jxr_linenumber" name="573" href="#573">573</a>             <strong class="jxr_keyword">return</strong> filter.range(low, low + (limit - 1));
-<a class="jxr_linenumber" name="574" href="#574">574</a>         }
-<a class="jxr_linenumber" name="575" href="#575">575</a>     }
-<a class="jxr_linenumber" name="576" href="#576">576</a> 
-<a class="jxr_linenumber" name="577" href="#577">577</a>     <strong class="jxr_keyword">private</strong> &lt;T&gt; List&lt;T&gt; getItems(Collection&lt;String&gt; itemIds, Class&lt;T&gt; cls) {
-<a class="jxr_linenumber" name="578" href="#578">578</a>         List&lt;T&gt; items = Lists.newArrayList();
-<a class="jxr_linenumber" name="579" href="#579">579</a>         <strong class="jxr_keyword">for</strong> (String itemId : itemIds) {
-<a class="jxr_linenumber" name="580" href="#580">580</a>             <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="581" href="#581">581</a>                 items.add(manager.getEntity(itemId, cls));
-<a class="jxr_linenumber" name="582" href="#582">582</a>             } <strong class="jxr_keyword">catch</strong> (ItemNotFound itemNotFound) {
-<a class="jxr_linenumber" name="583" href="#583">583</a>                 logger.warn(<span class="jxr_string">"Invalid event filter item: "</span> + itemId);
-<a class="jxr_linenumber" name="584" href="#584">584</a>             }
-<a class="jxr_linenumber" name="585" href="#585">585</a>         }
-<a class="jxr_linenumber" name="586" href="#586">586</a>         <strong class="jxr_keyword">return</strong> items;
-<a class="jxr_linenumber" name="587" href="#587">587</a>     }
-<a class="jxr_linenumber" name="588" href="#588">588</a> }
+<a class="jxr_linenumber" name="552" href="#552">552</a>                 <strong class="jxr_keyword">return</strong> pipeline.transform(Lists::newArrayList);
+<a class="jxr_linenumber" name="553" href="#553">553</a>         }
+<a class="jxr_linenumber" name="554" href="#554">554</a>     }
+<a class="jxr_linenumber" name="555" href="#555">555</a> 
+<a class="jxr_linenumber" name="556" href="#556">556</a>     <strong class="jxr_keyword">private</strong> &lt;E, S&gt; GremlinPipeline&lt;E, S&gt; setPipelineRange(GremlinPipeline&lt;E, S&gt; filter) {
+<a class="jxr_linenumber" name="557" href="#557">557</a>         <strong class="jxr_keyword">int</strong> low = Math.max(0, offset);
+<a class="jxr_linenumber" name="558" href="#558">558</a>         <strong class="jxr_keyword">if</strong> (limit &lt; 0) {
+<a class="jxr_linenumber" name="559" href="#559">559</a>             <em class="jxr_comment">// No way to skip a bunch of items in Gremlin without</em>
+<a class="jxr_linenumber" name="560" href="#560">560</a>             <em class="jxr_comment">// applying an end range... I guess this will break if</em>
+<a class="jxr_linenumber" name="561" href="#561">561</a>             <em class="jxr_comment">// we have more than 2147483647 items to traverse...</em>
+<a class="jxr_linenumber" name="562" href="#562">562</a>             <strong class="jxr_keyword">return</strong> filter.range(low, Integer.MAX_VALUE); <em class="jxr_comment">// No filtering</em>
+<a class="jxr_linenumber" name="563" href="#563">563</a>         } <strong class="jxr_keyword">else</strong> <strong class="jxr_keyword">if</strong> (limit == 0) {
+<a class="jxr_linenumber" name="564" href="#564">564</a>             <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> GremlinPipeline&lt;&gt;(Lists.newArrayList());
+<a class="jxr_linenumber" name="565" href="#565">565</a>         } <strong class="jxr_keyword">else</strong> {
+<a class="jxr_linenumber" name="566" href="#566">566</a>             <em class="jxr_comment">// NB: The high range is inclusive, oddly.</em>
+<a class="jxr_linenumber" name="567" href="#567">567</a>             <strong class="jxr_keyword">return</strong> filter.range(low, low + (limit - 1));
+<a class="jxr_linenumber" name="568" href="#568">568</a>         }
+<a class="jxr_linenumber" name="569" href="#569">569</a>     }
+<a class="jxr_linenumber" name="570" href="#570">570</a> 
+<a class="jxr_linenumber" name="571" href="#571">571</a>     <strong class="jxr_keyword">private</strong> &lt;T&gt; List&lt;T&gt; getItems(Collection&lt;String&gt; itemIds, Class&lt;T&gt; cls) {
+<a class="jxr_linenumber" name="572" href="#572">572</a>         List&lt;T&gt; items = Lists.newArrayList();
+<a class="jxr_linenumber" name="573" href="#573">573</a>         <strong class="jxr_keyword">for</strong> (String itemId : itemIds) {
+<a class="jxr_linenumber" name="574" href="#574">574</a>             <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="575" href="#575">575</a>                 items.add(manager.getEntity(itemId, cls));
+<a class="jxr_linenumber" name="576" href="#576">576</a>             } <strong class="jxr_keyword">catch</strong> (ItemNotFound itemNotFound) {
+<a class="jxr_linenumber" name="577" href="#577">577</a>                 logger.warn(<span class="jxr_string">"Invalid event filter item: "</span> + itemId);
+<a class="jxr_linenumber" name="578" href="#578">578</a>             }
+<a class="jxr_linenumber" name="579" href="#579">579</a>         }
+<a class="jxr_linenumber" name="580" href="#580">580</a>         <strong class="jxr_keyword">return</strong> items;
+<a class="jxr_linenumber" name="581" href="#581">581</a>     }
+<a class="jxr_linenumber" name="582" href="#582">582</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

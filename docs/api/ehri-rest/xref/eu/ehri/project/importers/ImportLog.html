@@ -32,10 +32,10 @@
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.fasterxml.jackson.annotation.JsonCreator;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.fasterxml.jackson.annotation.JsonProperty;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> com.fasterxml.jackson.annotation.JsonValue;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> com.google.common.base.Optional;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Maps;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Maps;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> java.util.Optional;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  
 <a class="jxr_linenumber" name="30" href="#30">30</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="31" href="#31">31</a>  <em class="jxr_javadoccomment"> * Class that serves as a manifest for an import batch,</em>
@@ -67,7 +67,7 @@
 <a class="jxr_linenumber" name="57" href="#57">57</a>              @JsonProperty(<span class="jxr_string">"updated"</span>) <strong class="jxr_keyword">int</strong> updated,
 <a class="jxr_linenumber" name="58" href="#58">58</a>              @JsonProperty(<span class="jxr_string">"unchanged"</span>) <strong class="jxr_keyword">int</strong> unchanged,
 <a class="jxr_linenumber" name="59" href="#59">59</a>              @JsonProperty(<span class="jxr_string">"errors"</span>) Map&lt;String, String&gt; errors) {
-<a class="jxr_linenumber" name="60" href="#60">60</a>          <strong class="jxr_keyword">this</strong>(Optional.fromNullable(logMessage));
+<a class="jxr_linenumber" name="60" href="#60">60</a>          <strong class="jxr_keyword">this</strong>(Optional.ofNullable(logMessage));
 <a class="jxr_linenumber" name="61" href="#61">61</a>          <strong class="jxr_keyword">this</strong>.created = created;
 <a class="jxr_linenumber" name="62" href="#62">62</a>          <strong class="jxr_keyword">this</strong>.unchanged = unchanged;
 <a class="jxr_linenumber" name="63" href="#63">63</a>          <strong class="jxr_keyword">this</strong>.updated = updated;
@@ -165,7 +165,7 @@
 <a class="jxr_linenumber" name="155" href="#155">155</a>         data.put(<span class="jxr_string">"updated"</span>, updated);
 <a class="jxr_linenumber" name="156" href="#156">156</a>         data.put(<span class="jxr_string">"unchanged"</span>, unchanged);
 <a class="jxr_linenumber" name="157" href="#157">157</a>         data.put(<span class="jxr_string">"errors"</span>, errors);
-<a class="jxr_linenumber" name="158" href="#158">158</a>         data.put(<span class="jxr_string">"message"</span>, logMessage.orNull());
+<a class="jxr_linenumber" name="158" href="#158">158</a>         data.put(<span class="jxr_string">"message"</span>, logMessage.orElse(<strong class="jxr_keyword">null</strong>));
 <a class="jxr_linenumber" name="159" href="#159">159</a>         <strong class="jxr_keyword">return</strong> data;
 <a class="jxr_linenumber" name="160" href="#160">160</a>     }
 <a class="jxr_linenumber" name="161" href="#161">161</a> 

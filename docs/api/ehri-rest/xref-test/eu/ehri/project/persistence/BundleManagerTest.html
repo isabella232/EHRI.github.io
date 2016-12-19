@@ -37,14 +37,14 @@
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.SerializationError;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DatePeriod;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnitDescription;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnitDescription;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.RepositoryDescription;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.annotations.EntityType;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Description;
-<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.utils.BundleUtils;
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.utils.DataUtils;
 <a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.ModelTestBase;
 <a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.TestData;
 <a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> org.junit.Before;
@@ -152,108 +152,102 @@
 <a class="jxr_linenumber" name="142" href="#142">142</a>         assertEquals(2, Iterables.size(c1.getDocumentDescriptions()));
 <a class="jxr_linenumber" name="143" href="#143">143</a>         assertEquals(2, Iterables.size(cd1.getDatePeriods()));
 <a class="jxr_linenumber" name="144" href="#144">144</a> 
-<a class="jxr_linenumber" name="145" href="#145">145</a>         System.out.println(<span class="jxr_string">"Orig bundle: "</span> + bundle);
-<a class="jxr_linenumber" name="146" href="#146">146</a> 
-<a class="jxr_linenumber" name="147" href="#147">147</a>         String deletePath = <span class="jxr_string">"hasDate[0]"</span>;
-<a class="jxr_linenumber" name="148" href="#148">148</a>         String dpid = BundleUtils
-<a class="jxr_linenumber" name="149" href="#149">149</a>                 .getBundle(bundle, deletePath).getId();
-<a class="jxr_linenumber" name="150" href="#150">150</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="151" href="#151">151</a>             manager.getEntity(dpid, DatePeriod.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="152" href="#152">152</a>         } <strong class="jxr_keyword">catch</strong> (ItemNotFound e) {
-<a class="jxr_linenumber" name="153" href="#153">153</a>             fail(<span class="jxr_string">"Date period '"</span> + dpid
-<a class="jxr_linenumber" name="154" href="#154">154</a>                     + <span class="jxr_string">"' not found in index before delete test."</span>);
-<a class="jxr_linenumber" name="155" href="#155">155</a>         }
-<a class="jxr_linenumber" name="156" href="#156">156</a> 
-<a class="jxr_linenumber" name="157" href="#157">157</a>         <em class="jxr_comment">// Delete the *second* date period from the first description...</em>
-<a class="jxr_linenumber" name="158" href="#158">158</a>         Bundle newBundle = BundleUtils.deleteBundle(
-<a class="jxr_linenumber" name="159" href="#159">159</a>                 bundle, deletePath);
-<a class="jxr_linenumber" name="160" href="#160">160</a>         System.out.println(<span class="jxr_string">"Delete bundle: "</span> + newBundle);
-<a class="jxr_linenumber" name="161" href="#161">161</a>         BundleManager persister = <strong class="jxr_keyword">new</strong> BundleManager(graph);
-<a class="jxr_linenumber" name="162" href="#162">162</a>         Mutation&lt;DocumentaryUnit&gt; mutation
-<a class="jxr_linenumber" name="163" href="#163">163</a>                 = persister.update(newBundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="145" href="#145">145</a>         String deletePath = <span class="jxr_string">"hasDate[0]"</span>;
+<a class="jxr_linenumber" name="146" href="#146">146</a>         String dpid = DataUtils
+<a class="jxr_linenumber" name="147" href="#147">147</a>                 .getItem(bundle, deletePath).getId();
+<a class="jxr_linenumber" name="148" href="#148">148</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="149" href="#149">149</a>             manager.getEntity(dpid, DatePeriod.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="150" href="#150">150</a>         } <strong class="jxr_keyword">catch</strong> (ItemNotFound e) {
+<a class="jxr_linenumber" name="151" href="#151">151</a>             fail(<span class="jxr_string">"Date period '"</span> + dpid
+<a class="jxr_linenumber" name="152" href="#152">152</a>                     + <span class="jxr_string">"' not found in index before delete test."</span>);
+<a class="jxr_linenumber" name="153" href="#153">153</a>         }
+<a class="jxr_linenumber" name="154" href="#154">154</a> 
+<a class="jxr_linenumber" name="155" href="#155">155</a>         <em class="jxr_comment">// Delete the *second* date period from the first description...</em>
+<a class="jxr_linenumber" name="156" href="#156">156</a>         Bundle newBundle = DataUtils.deleteItem(
+<a class="jxr_linenumber" name="157" href="#157">157</a>                 bundle, deletePath);
+<a class="jxr_linenumber" name="158" href="#158">158</a>         System.out.println(<span class="jxr_string">"Delete bundle: "</span> + newBundle);
+<a class="jxr_linenumber" name="159" href="#159">159</a>         BundleManager persister = <strong class="jxr_keyword">new</strong> BundleManager(graph);
+<a class="jxr_linenumber" name="160" href="#160">160</a>         Mutation&lt;DocumentaryUnit&gt; mutation
+<a class="jxr_linenumber" name="161" href="#161">161</a>                 = persister.update(newBundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="162" href="#162">162</a> 
+<a class="jxr_linenumber" name="163" href="#163">163</a>         assertEquals(MutationState.UPDATED, mutation.getState());
 <a class="jxr_linenumber" name="164" href="#164">164</a> 
-<a class="jxr_linenumber" name="165" href="#165">165</a>         assertEquals(MutationState.UPDATED, mutation.getState());
+<a class="jxr_linenumber" name="165" href="#165">165</a>         assertEquals(2, Iterables.size(c1.getDocumentDescriptions()));
 <a class="jxr_linenumber" name="166" href="#166">166</a> 
-<a class="jxr_linenumber" name="167" href="#167">167</a>         assertEquals(2, Iterables.size(c1.getDocumentDescriptions()));
-<a class="jxr_linenumber" name="168" href="#168">168</a> 
-<a class="jxr_linenumber" name="169" href="#169">169</a>         <strong class="jxr_keyword">for</strong> (DatePeriod dp : manager.getEntity(<span class="jxr_string">"cd1"</span>, DocumentaryUnitDescription.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="170" href="#170">170</a>                 .getDatePeriods()) {
-<a class="jxr_linenumber" name="171" href="#171">171</a>             System.out.println(<span class="jxr_string">"Got dp: "</span> + dp.getId());
-<a class="jxr_linenumber" name="172" href="#172">172</a>         }
-<a class="jxr_linenumber" name="173" href="#173">173</a>         assertEquals(1, Iterables.size(manager.getEntity(<span class="jxr_string">"cd1"</span>, DocumentaryUnitDescription.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="174" href="#174">174</a>                 .getDatePeriods()));
-<a class="jxr_linenumber" name="175" href="#175">175</a> 
-<a class="jxr_linenumber" name="176" href="#176">176</a>         <em class="jxr_comment">// The second date period should be gone from the index</em>
-<a class="jxr_linenumber" name="177" href="#177">177</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="178" href="#178">178</a>             manager.getEntity(dpid, DatePeriod.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="179" href="#179">179</a>             fail(<span class="jxr_string">"Date period '"</span> + dpid + <span class="jxr_string">"' found in index AFTER delete test."</span>);
-<a class="jxr_linenumber" name="180" href="#180">180</a>         } <strong class="jxr_keyword">catch</strong> (ItemNotFound e) {
-<a class="jxr_linenumber" name="181" href="#181">181</a>             <em class="jxr_comment">// No problem</em>
-<a class="jxr_linenumber" name="182" href="#182">182</a>         }
-<a class="jxr_linenumber" name="183" href="#183">183</a> 
-<a class="jxr_linenumber" name="184" href="#184">184</a>         <em class="jxr_comment">// It should also not exist as a node...</em>
-<a class="jxr_linenumber" name="185" href="#185">185</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="186" href="#186">186</a>             graph.getVertices(EntityType.ID_KEY, dpid).iterator().next();
-<a class="jxr_linenumber" name="187" href="#187">187</a>             fail(<span class="jxr_string">"Date period '"</span> + dpid + <span class="jxr_string">"' found in index AFTER delete test."</span>);
-<a class="jxr_linenumber" name="188" href="#188">188</a>         } <strong class="jxr_keyword">catch</strong> (NoSuchElementException e) {
-<a class="jxr_linenumber" name="189" href="#189">189</a>             <em class="jxr_comment">// No problem</em>
-<a class="jxr_linenumber" name="190" href="#190">190</a>         }
-<a class="jxr_linenumber" name="191" href="#191">191</a>     }
-<a class="jxr_linenumber" name="192" href="#192">192</a> 
-<a class="jxr_linenumber" name="193" href="#193">193</a>     @Test(expected = ItemNotFound.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="194" href="#194">194</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testDeletingWholeBundle() <strong class="jxr_keyword">throws</strong> SerializationError,
-<a class="jxr_linenumber" name="195" href="#195">195</a>             ValidationError, ItemNotFound {
-<a class="jxr_linenumber" name="196" href="#196">196</a>         DocumentaryUnit c1 = manager.getEntity(ID, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="197" href="#197">197</a>         DocumentaryUnitDescription cd1 = manager.getEntity(<span class="jxr_string">"cd1"</span>, DocumentaryUnitDescription.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="198" href="#198">198</a>         Bundle bundle = serializer.entityToBundle(c1);
-<a class="jxr_linenumber" name="199" href="#199">199</a>         assertEquals(2, toList(cd1.getDatePeriods()).size());
-<a class="jxr_linenumber" name="200" href="#200">200</a>         List&lt;DatePeriod&gt; dates = toList(manager.getEntities(
-<a class="jxr_linenumber" name="201" href="#201">201</a>                 EntityClass.DATE_PERIOD, DatePeriod.<strong class="jxr_keyword">class</strong>));
-<a class="jxr_linenumber" name="202" href="#202">202</a> 
-<a class="jxr_linenumber" name="203" href="#203">203</a>         BundleManager persister = <strong class="jxr_keyword">new</strong> BundleManager(graph);
-<a class="jxr_linenumber" name="204" href="#204">204</a>         Integer numDeleted = persister.delete(bundle);
-<a class="jxr_linenumber" name="205" href="#205">205</a>         assertTrue(numDeleted &gt; 0);
-<a class="jxr_linenumber" name="206" href="#206">206</a>         assertEquals(
-<a class="jxr_linenumber" name="207" href="#207">207</a>                 dates.size() - 2,
-<a class="jxr_linenumber" name="208" href="#208">208</a>                 toList(
-<a class="jxr_linenumber" name="209" href="#209">209</a>                         manager.getEntities(EntityClass.DATE_PERIOD,
-<a class="jxr_linenumber" name="210" href="#210">210</a>                                 DatePeriod.<strong class="jxr_keyword">class</strong>)).size());
-<a class="jxr_linenumber" name="211" href="#211">211</a>         <em class="jxr_comment">// Should raise NoSuchElementException</em>
-<a class="jxr_linenumber" name="212" href="#212">212</a>         manager.getEntity(ID, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="213" href="#213">213</a>     }
-<a class="jxr_linenumber" name="214" href="#214">214</a> 
-<a class="jxr_linenumber" name="215" href="#215">215</a>     @Test(expected = ValidationError.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="216" href="#216">216</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testValidationError() <strong class="jxr_keyword">throws</strong> SerializationError,
-<a class="jxr_linenumber" name="217" href="#217">217</a>             ValidationError, ItemNotFound, IntegrityError {
-<a class="jxr_linenumber" name="218" href="#218">218</a>         DocumentaryUnit c1 = manager.getEntity(ID, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="219" href="#219">219</a>         Bundle bundle = serializer.entityToBundle(c1);
-<a class="jxr_linenumber" name="220" href="#220">220</a>         Bundle desc = BundleUtils.getBundle(bundle, <span class="jxr_string">"describes[0]"</span>);
-<a class="jxr_linenumber" name="221" href="#221">221</a>         Bundle newBundle = desc.removeDataValue(Ontology.NAME_KEY);
-<a class="jxr_linenumber" name="222" href="#222">222</a> 
-<a class="jxr_linenumber" name="223" href="#223">223</a>         BundleManager persister = <strong class="jxr_keyword">new</strong> BundleManager(graph);
-<a class="jxr_linenumber" name="224" href="#224">224</a>         persister.update(newBundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="225" href="#225">225</a>         fail(<span class="jxr_string">"Bundle with no description name did not throw a ValidationError"</span>);
-<a class="jxr_linenumber" name="226" href="#226">226</a>     }
+<a class="jxr_linenumber" name="167" href="#167">167</a>         assertEquals(1, Iterables.size(manager.getEntity(<span class="jxr_string">"cd1"</span>, DocumentaryUnitDescription.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="168" href="#168">168</a>                 .getDatePeriods()));
+<a class="jxr_linenumber" name="169" href="#169">169</a> 
+<a class="jxr_linenumber" name="170" href="#170">170</a>         <em class="jxr_comment">// The second date period should be gone from the index</em>
+<a class="jxr_linenumber" name="171" href="#171">171</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="172" href="#172">172</a>             manager.getEntity(dpid, DatePeriod.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="173" href="#173">173</a>             fail(<span class="jxr_string">"Date period '"</span> + dpid + <span class="jxr_string">"' found in index AFTER delete test."</span>);
+<a class="jxr_linenumber" name="174" href="#174">174</a>         } <strong class="jxr_keyword">catch</strong> (ItemNotFound e) {
+<a class="jxr_linenumber" name="175" href="#175">175</a>             <em class="jxr_comment">// No problem</em>
+<a class="jxr_linenumber" name="176" href="#176">176</a>         }
+<a class="jxr_linenumber" name="177" href="#177">177</a> 
+<a class="jxr_linenumber" name="178" href="#178">178</a>         <em class="jxr_comment">// It should also not exist as a node...</em>
+<a class="jxr_linenumber" name="179" href="#179">179</a>         <strong class="jxr_keyword">try</strong> {
+<a class="jxr_linenumber" name="180" href="#180">180</a>             graph.getVertices(EntityType.ID_KEY, dpid).iterator().next();
+<a class="jxr_linenumber" name="181" href="#181">181</a>             fail(<span class="jxr_string">"Date period '"</span> + dpid + <span class="jxr_string">"' found in index AFTER delete test."</span>);
+<a class="jxr_linenumber" name="182" href="#182">182</a>         } <strong class="jxr_keyword">catch</strong> (NoSuchElementException e) {
+<a class="jxr_linenumber" name="183" href="#183">183</a>             <em class="jxr_comment">// No problem</em>
+<a class="jxr_linenumber" name="184" href="#184">184</a>         }
+<a class="jxr_linenumber" name="185" href="#185">185</a>     }
+<a class="jxr_linenumber" name="186" href="#186">186</a> 
+<a class="jxr_linenumber" name="187" href="#187">187</a>     @Test(expected = ItemNotFound.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="188" href="#188">188</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testDeletingWholeBundle() <strong class="jxr_keyword">throws</strong> SerializationError,
+<a class="jxr_linenumber" name="189" href="#189">189</a>             ValidationError, ItemNotFound {
+<a class="jxr_linenumber" name="190" href="#190">190</a>         DocumentaryUnit c1 = manager.getEntity(ID, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="191" href="#191">191</a>         DocumentaryUnitDescription cd1 = manager.getEntity(<span class="jxr_string">"cd1"</span>, DocumentaryUnitDescription.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="192" href="#192">192</a>         Bundle bundle = serializer.entityToBundle(c1);
+<a class="jxr_linenumber" name="193" href="#193">193</a>         assertEquals(2, toList(cd1.getDatePeriods()).size());
+<a class="jxr_linenumber" name="194" href="#194">194</a>         List&lt;DatePeriod&gt; dates = toList(manager.getEntities(
+<a class="jxr_linenumber" name="195" href="#195">195</a>                 EntityClass.DATE_PERIOD, DatePeriod.<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="196" href="#196">196</a> 
+<a class="jxr_linenumber" name="197" href="#197">197</a>         BundleManager persister = <strong class="jxr_keyword">new</strong> BundleManager(graph);
+<a class="jxr_linenumber" name="198" href="#198">198</a>         Integer numDeleted = persister.delete(bundle);
+<a class="jxr_linenumber" name="199" href="#199">199</a>         assertTrue(numDeleted &gt; 0);
+<a class="jxr_linenumber" name="200" href="#200">200</a>         assertEquals(
+<a class="jxr_linenumber" name="201" href="#201">201</a>                 dates.size() - 2,
+<a class="jxr_linenumber" name="202" href="#202">202</a>                 toList(
+<a class="jxr_linenumber" name="203" href="#203">203</a>                         manager.getEntities(EntityClass.DATE_PERIOD,
+<a class="jxr_linenumber" name="204" href="#204">204</a>                                 DatePeriod.<strong class="jxr_keyword">class</strong>)).size());
+<a class="jxr_linenumber" name="205" href="#205">205</a>         <em class="jxr_comment">// Should raise NoSuchElementException</em>
+<a class="jxr_linenumber" name="206" href="#206">206</a>         manager.getEntity(ID, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="207" href="#207">207</a>     }
+<a class="jxr_linenumber" name="208" href="#208">208</a> 
+<a class="jxr_linenumber" name="209" href="#209">209</a>     @Test(expected = ValidationError.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="210" href="#210">210</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testValidationError() <strong class="jxr_keyword">throws</strong> SerializationError,
+<a class="jxr_linenumber" name="211" href="#211">211</a>             ValidationError, ItemNotFound, IntegrityError {
+<a class="jxr_linenumber" name="212" href="#212">212</a>         DocumentaryUnit c1 = manager.getEntity(ID, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="213" href="#213">213</a>         Bundle bundle = serializer.entityToBundle(c1);
+<a class="jxr_linenumber" name="214" href="#214">214</a>         Bundle desc = DataUtils.getItem(bundle, <span class="jxr_string">"describes[0]"</span>);
+<a class="jxr_linenumber" name="215" href="#215">215</a>         Bundle newBundle = desc.removeDataValue(Ontology.NAME_KEY);
+<a class="jxr_linenumber" name="216" href="#216">216</a> 
+<a class="jxr_linenumber" name="217" href="#217">217</a>         BundleManager persister = <strong class="jxr_keyword">new</strong> BundleManager(graph);
+<a class="jxr_linenumber" name="218" href="#218">218</a>         persister.update(newBundle, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="219" href="#219">219</a>         fail(<span class="jxr_string">"Bundle with no description name did not throw a ValidationError"</span>);
+<a class="jxr_linenumber" name="220" href="#220">220</a>     }
+<a class="jxr_linenumber" name="221" href="#221">221</a> 
+<a class="jxr_linenumber" name="222" href="#222">222</a>     @Test(expected = ValidationError.<strong class="jxr_keyword">class</strong>)
+<a class="jxr_linenumber" name="223" href="#223">223</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testUpdateWithNoIdentifier() <strong class="jxr_keyword">throws</strong> SerializationError,
+<a class="jxr_linenumber" name="224" href="#224">224</a>             ValidationError, ItemNotFound, IntegrityError, DeserializationError {
+<a class="jxr_linenumber" name="225" href="#225">225</a>         Bundle b1 = Bundle.fromData(TestData.getTestAgentBundle())
+<a class="jxr_linenumber" name="226" href="#226">226</a>                 .removeDataValue(Ontology.IDENTIFIER_KEY);
 <a class="jxr_linenumber" name="227" href="#227">227</a> 
-<a class="jxr_linenumber" name="228" href="#228">228</a>     @Test(expected = ValidationError.<strong class="jxr_keyword">class</strong>)
-<a class="jxr_linenumber" name="229" href="#229">229</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testUpdateWithNoIdentifier() <strong class="jxr_keyword">throws</strong> SerializationError,
-<a class="jxr_linenumber" name="230" href="#230">230</a>             ValidationError, ItemNotFound, IntegrityError, DeserializationError {
-<a class="jxr_linenumber" name="231" href="#231">231</a>         Bundle b1 = Bundle.fromData(TestData.getTestAgentBundle())
-<a class="jxr_linenumber" name="232" href="#232">232</a>                 .removeDataValue(Ontology.IDENTIFIER_KEY);
-<a class="jxr_linenumber" name="233" href="#233">233</a> 
-<a class="jxr_linenumber" name="234" href="#234">234</a>         BundleManager persister = <strong class="jxr_keyword">new</strong> BundleManager(graph);
-<a class="jxr_linenumber" name="235" href="#235">235</a>         persister.update(b1, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="236" href="#236">236</a>         fail(<span class="jxr_string">"Attempting to update a non-existent bundle did not throw an error"</span>);
-<a class="jxr_linenumber" name="237" href="#237">237</a>     }
-<a class="jxr_linenumber" name="238" href="#238">238</a> 
-<a class="jxr_linenumber" name="239" href="#239">239</a>     @Test
-<a class="jxr_linenumber" name="240" href="#240">240</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCreationWithUnicodeIdentifier() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="241" href="#241">241</a>         Bundle b1 = Bundle.fromData(TestData.getTestDocBundle())
-<a class="jxr_linenumber" name="242" href="#242">242</a>                 .withDataValue(Ontology.IDENTIFIER_KEY, <span class="jxr_string">"foo /?&amp;% ארכיו bar"</span>);
-<a class="jxr_linenumber" name="243" href="#243">243</a>         DocumentaryUnit doc = <strong class="jxr_keyword">new</strong> BundleManager(graph).create(b1, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="244" href="#244">244</a>         assertEquals(<span class="jxr_string">"foo_ארכיו_bar"</span>, doc.getId());
-<a class="jxr_linenumber" name="245" href="#245">245</a>     }
-<a class="jxr_linenumber" name="246" href="#246">246</a> }
+<a class="jxr_linenumber" name="228" href="#228">228</a>         BundleManager persister = <strong class="jxr_keyword">new</strong> BundleManager(graph);
+<a class="jxr_linenumber" name="229" href="#229">229</a>         persister.update(b1, Repository.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="230" href="#230">230</a>         fail(<span class="jxr_string">"Attempting to update a non-existent bundle did not throw an error"</span>);
+<a class="jxr_linenumber" name="231" href="#231">231</a>     }
+<a class="jxr_linenumber" name="232" href="#232">232</a> 
+<a class="jxr_linenumber" name="233" href="#233">233</a>     @Test
+<a class="jxr_linenumber" name="234" href="#234">234</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCreationWithUnicodeIdentifier() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="235" href="#235">235</a>         Bundle b1 = Bundle.fromData(TestData.getTestDocBundle())
+<a class="jxr_linenumber" name="236" href="#236">236</a>                 .withDataValue(Ontology.IDENTIFIER_KEY, <span class="jxr_string">"foo /?&amp;% ארכיו bar"</span>);
+<a class="jxr_linenumber" name="237" href="#237">237</a>         DocumentaryUnit doc = <strong class="jxr_keyword">new</strong> BundleManager(graph).create(b1, DocumentaryUnit.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="238" href="#238">238</a>         assertEquals(<span class="jxr_string">"foo_ארכיו_bar"</span>, doc.getId());
+<a class="jxr_linenumber" name="239" href="#239">239</a>     }
+<a class="jxr_linenumber" name="240" href="#240">240</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

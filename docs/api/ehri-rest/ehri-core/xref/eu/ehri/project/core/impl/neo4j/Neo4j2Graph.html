@@ -23,12 +23,12 @@
 <a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.util.StringFactory;
 <a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.configuration.Configuration;
 <a class="jxr_linenumber" name="15" href="#15">15</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.configuration.ConfigurationConverter;
-<a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.DynamicLabel;
-<a class="jxr_linenumber" name="17" href="#17">17</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.DynamicRelationshipType;
-<a class="jxr_linenumber" name="18" href="#18">18</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.GraphDatabaseService;
-<a class="jxr_linenumber" name="19" href="#19">19</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.Node;
-<a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.NotFoundException;
-<a class="jxr_linenumber" name="21" href="#21">21</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.Relationship;
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.GraphDatabaseService;
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.Label;
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.Node;
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.NotFoundException;
+<a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.Relationship;
+<a class="jxr_linenumber" name="21" href="#21">21</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.RelationshipType;
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.ResourceIterable;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.ResourceIterator;
 <a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.Transaction;
@@ -194,7 +194,7 @@
 <a class="jxr_linenumber" name="184" href="#184">184</a>         ResourceIterable&lt;Node&gt; wrap = <strong class="jxr_keyword">new</strong> ResourceIterable&lt;Node&gt;() {
 <a class="jxr_linenumber" name="185" href="#185">185</a>             @Override
 <a class="jxr_linenumber" name="186" href="#186">186</a>             <strong class="jxr_keyword">public</strong> ResourceIterator&lt;Node&gt; iterator() {
-<a class="jxr_linenumber" name="187" href="#187">187</a>                 <strong class="jxr_keyword">return</strong> rawGraph.&lt;Node&gt;findNodes(DynamicLabel.label(label));
+<a class="jxr_linenumber" name="187" href="#187">187</a>                 <strong class="jxr_keyword">return</strong> rawGraph.&lt;Node&gt;findNodes(Label.label(label));
 <a class="jxr_linenumber" name="188" href="#188">188</a>             }
 <a class="jxr_linenumber" name="189" href="#189">189</a>         };
 <a class="jxr_linenumber" name="190" href="#190">190</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2VertexIterable.html">Neo4j2VertexIterable</a>(wrap, <strong class="jxr_keyword">this</strong>);
@@ -206,7 +206,7 @@
 <a class="jxr_linenumber" name="196" href="#196">196</a>             @Override
 <a class="jxr_linenumber" name="197" href="#197">197</a>             <strong class="jxr_keyword">public</strong> ResourceIterator&lt;Node&gt; iterator() {
 <a class="jxr_linenumber" name="198" href="#198">198</a>                 autoStartTransaction(false);
-<a class="jxr_linenumber" name="199" href="#199">199</a>                 <strong class="jxr_keyword">return</strong> rawGraph.&lt;Node&gt;findNodes(DynamicLabel.label(label), key, value);
+<a class="jxr_linenumber" name="199" href="#199">199</a>                 <strong class="jxr_keyword">return</strong> rawGraph.&lt;Node&gt;findNodes(Label.label(label), key, value);
 <a class="jxr_linenumber" name="200" href="#200">200</a>             }
 <a class="jxr_linenumber" name="201" href="#201">201</a>         };
 <a class="jxr_linenumber" name="202" href="#202">202</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2VertexIterable.html">Neo4j2VertexIterable</a>(wrap, <strong class="jxr_keyword">this</strong>);
@@ -264,7 +264,7 @@
 <a class="jxr_linenumber" name="254" href="#254">254</a> 
 <a class="jxr_linenumber" name="255" href="#255">255</a>         <strong class="jxr_keyword">this</strong>.autoStartTransaction(<strong class="jxr_keyword">true</strong>);
 <a class="jxr_linenumber" name="256" href="#256">256</a>         <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../eu/ehri/project/core/impl/neo4j/Neo4j2Edge.html">Neo4j2Edge</a>(((Neo4j2Vertex) outVertex).getRawVertex().createRelationshipTo(((Neo4j2Vertex) inVertex).getRawVertex(),
-<a class="jxr_linenumber" name="257" href="#257">257</a>                 DynamicRelationshipType.withName(label)), <strong class="jxr_keyword">this</strong>);
+<a class="jxr_linenumber" name="257" href="#257">257</a>                 RelationshipType.withName(label)), <strong class="jxr_keyword">this</strong>);
 <a class="jxr_linenumber" name="258" href="#258">258</a>     }
 <a class="jxr_linenumber" name="259" href="#259">259</a> 
 <a class="jxr_linenumber" name="260" href="#260">260</a>     @Override

@@ -37,9 +37,9 @@
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.cli.CommandLine;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.cli.Option;
 <a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> org.apache.commons.cli.Options;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.DynamicRelationshipType;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.GraphDatabaseService;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.Node;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.GraphDatabaseService;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.Node;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.RelationshipType;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> org.neo4j.visualization.graphviz.GraphvizWriter;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> org.neo4j.walk.Walker;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  
@@ -96,12 +96,12 @@
 <a class="jxr_linenumber" name="86" href="#86">86</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> RuntimeException(<span class="jxr_string">"No --relationship arguments given"</span>);
 <a class="jxr_linenumber" name="87" href="#87">87</a>          }
 <a class="jxr_linenumber" name="88" href="#88">88</a>  
-<a class="jxr_linenumber" name="89" href="#89">89</a>          DynamicRelationshipType[] rels = <strong class="jxr_keyword">new</strong> DynamicRelationshipType[
+<a class="jxr_linenumber" name="89" href="#89">89</a>          RelationshipType[] rels = <strong class="jxr_keyword">new</strong> RelationshipType[
 <a class="jxr_linenumber" name="90" href="#90">90</a>                  cmdLine.getOptionValues(<span class="jxr_string">"relationship"</span>).length];
 <a class="jxr_linenumber" name="91" href="#91">91</a>          <strong class="jxr_keyword">if</strong> (cmdLine.hasOption(<span class="jxr_string">"relationship"</span>)) {
 <a class="jxr_linenumber" name="92" href="#92">92</a>              <strong class="jxr_keyword">int</strong> i = 0;
 <a class="jxr_linenumber" name="93" href="#93">93</a>              <strong class="jxr_keyword">for</strong> (String rel : cmdLine.getOptionValues(<span class="jxr_string">"relationship"</span>)) {
-<a class="jxr_linenumber" name="94" href="#94">94</a>                  rels[i++] = DynamicRelationshipType.withName(rel);
+<a class="jxr_linenumber" name="94" href="#94">94</a>                  rels[i++] = RelationshipType.withName(rel);
 <a class="jxr_linenumber" name="95" href="#95">95</a>              }
 <a class="jxr_linenumber" name="96" href="#96">96</a>          }
 <a class="jxr_linenumber" name="97" href="#97">97</a>  

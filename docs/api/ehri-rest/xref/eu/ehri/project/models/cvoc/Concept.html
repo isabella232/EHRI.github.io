@@ -70,7 +70,7 @@
 <a class="jxr_linenumber" name="60" href="#60">60</a>      <strong class="jxr_keyword">void</strong> setVocabulary(<a href="../../../../../eu/ehri/project/models/cvoc/Vocabulary.html">Vocabulary</a> vocabulary);
 <a class="jxr_linenumber" name="61" href="#61">61</a>  
 <a class="jxr_linenumber" name="62" href="#62">62</a>      @Property(CHILD_COUNT)
-<a class="jxr_linenumber" name="63" href="#63">63</a>      <strong class="jxr_keyword">long</strong> getChildCount();
+<a class="jxr_linenumber" name="63" href="#63">63</a>      <strong class="jxr_keyword">int</strong> getChildCount();
 <a class="jxr_linenumber" name="64" href="#64">64</a>  
 <a class="jxr_linenumber" name="65" href="#65">65</a>      <em class="jxr_comment">// relations to other concepts</em>
 <a class="jxr_linenumber" name="66" href="#66">66</a>      
@@ -110,8 +110,8 @@
 <a class="jxr_linenumber" name="100" href="#100">100</a>     <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/models/UserProfile.html">Impl</a>  <strong class="jxr_keyword">implements</strong> JavaHandlerContext&lt;Vertex&gt;, Concept {
 <a class="jxr_linenumber" name="101" href="#101">101</a> 
 <a class="jxr_linenumber" name="102" href="#102">102</a>         @Override
-<a class="jxr_linenumber" name="103" href="#103">103</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">long</strong> getChildCount() {
-<a class="jxr_linenumber" name="104" href="#104">104</a>             <strong class="jxr_keyword">return</strong> gremlin().outE(Ontology.CONCEPT_HAS_NARROWER).count();
+<a class="jxr_linenumber" name="103" href="#103">103</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> getChildCount() {
+<a class="jxr_linenumber" name="104" href="#104">104</a>             <strong class="jxr_keyword">return</strong> Math.toIntExact(gremlin().outE(Ontology.CONCEPT_HAS_NARROWER).count());
 <a class="jxr_linenumber" name="105" href="#105">105</a>         }
 <a class="jxr_linenumber" name="106" href="#106">106</a> 
 <a class="jxr_linenumber" name="107" href="#107">107</a>         @Override

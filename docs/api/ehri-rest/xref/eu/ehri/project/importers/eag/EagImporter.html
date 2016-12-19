@@ -103,52 +103,51 @@
 <a class="jxr_linenumber" name="93" href="#93">93</a>  
 <a class="jxr_linenumber" name="94" href="#94">94</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="95" href="#95">95</a>  <em class="jxr_javadoccomment">     * @param itemData A data tree</em>
-<a class="jxr_linenumber" name="96" href="#96">96</a>  <em class="jxr_javadoccomment">     * @throws ValidationError</em>
-<a class="jxr_linenumber" name="97" href="#97">97</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="98" href="#98">98</a>      @Override
-<a class="jxr_linenumber" name="99" href="#99">99</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../eu/ehri/project/models/Repository.html">Repository</a> importItem(Map&lt;String, Object&gt; itemData) <strong class="jxr_keyword">throws</strong> ValidationError {
-<a class="jxr_linenumber" name="100" href="#100">100</a> 
-<a class="jxr_linenumber" name="101" href="#101">101</a>         <a href="../../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a> persister = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a>(framedGraph, permissionScope.idPath());
-<a class="jxr_linenumber" name="102" href="#102">102</a> 
-<a class="jxr_linenumber" name="103" href="#103">103</a>         Map&lt;String, Object&gt; descmap = extractUnitDescription(itemData, EntityClass.REPOSITORY_DESCRIPTION);
-<a class="jxr_linenumber" name="104" href="#104">104</a>         descmap.put(Ontology.IDENTIFIER_KEY, descmap.get(Ontology.IDENTIFIER_KEY) + <span class="jxr_string">"#desc"</span>);
-<a class="jxr_linenumber" name="105" href="#105">105</a>         <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> descBundle = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.REPOSITORY_DESCRIPTION, descmap);
-<a class="jxr_linenumber" name="106" href="#106">106</a> 
-<a class="jxr_linenumber" name="107" href="#107">107</a>         <em class="jxr_comment">// Add dates and descriptions to the bundle since they're @Dependent</em>
-<a class="jxr_linenumber" name="108" href="#108">108</a>         <em class="jxr_comment">// relations.</em>
-<a class="jxr_linenumber" name="109" href="#109">109</a>         <strong class="jxr_keyword">for</strong> (Map&lt;String, Object&gt; dpb : extractDates(itemData)) {
-<a class="jxr_linenumber" name="110" href="#110">110</a>             descBundle = descBundle.withRelation(Ontology.ENTITY_HAS_DATE, <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.DATE_PERIOD, dpb));
-<a class="jxr_linenumber" name="111" href="#111">111</a>         }
-<a class="jxr_linenumber" name="112" href="#112">112</a> 
-<a class="jxr_linenumber" name="113" href="#113">113</a>         <em class="jxr_comment">//add the address to the description bundle</em>
-<a class="jxr_linenumber" name="114" href="#114">114</a>         Map&lt;String, Object&gt; address = extractAddress(itemData);
-<a class="jxr_linenumber" name="115" href="#115">115</a>         <strong class="jxr_keyword">if</strong> (!address.isEmpty()) {
-<a class="jxr_linenumber" name="116" href="#116">116</a>             descBundle = descBundle.withRelation(Ontology.ENTITY_HAS_ADDRESS, <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.ADDRESS, address));
-<a class="jxr_linenumber" name="117" href="#117">117</a>         }
-<a class="jxr_linenumber" name="118" href="#118">118</a>         Map&lt;String, Object&gt; unknowns = extractUnknownProperties(itemData);
-<a class="jxr_linenumber" name="119" href="#119">119</a>         <strong class="jxr_keyword">if</strong> (!unknowns.isEmpty()) {
-<a class="jxr_linenumber" name="120" href="#120">120</a>             logger.debug(<span class="jxr_string">"Unknown Properties found"</span>);
-<a class="jxr_linenumber" name="121" href="#121">121</a>             descBundle = descBundle.withRelation(Ontology.HAS_UNKNOWN_PROPERTY, <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.UNKNOWN_PROPERTY, unknowns));
-<a class="jxr_linenumber" name="122" href="#122">122</a>         }
-<a class="jxr_linenumber" name="123" href="#123">123</a>         <strong class="jxr_keyword">for</strong> (Map&lt;String, Object&gt; dpb : extractMaintenanceEvent(itemData)) {
-<a class="jxr_linenumber" name="124" href="#124">124</a>             logger.debug(<span class="jxr_string">"maintenance event found"</span>);
-<a class="jxr_linenumber" name="125" href="#125">125</a>             <em class="jxr_comment">//dates in maintenanceEvents are no DatePeriods, they are not something to search on</em>
-<a class="jxr_linenumber" name="126" href="#126">126</a>             descBundle = descBundle.withRelation(Ontology.HAS_MAINTENANCE_EVENT, <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.MAINTENANCE_EVENT, dpb));
-<a class="jxr_linenumber" name="127" href="#127">127</a>         }
-<a class="jxr_linenumber" name="128" href="#128">128</a> 
-<a class="jxr_linenumber" name="129" href="#129">129</a>         <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> unit = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.REPOSITORY, extractUnit(itemData))
-<a class="jxr_linenumber" name="130" href="#130">130</a>                 .withRelation(Ontology.DESCRIPTION_FOR_ENTITY, descBundle);
-<a class="jxr_linenumber" name="131" href="#131">131</a> 
-<a class="jxr_linenumber" name="132" href="#132">132</a>         Mutation&lt;Repository&gt; mutation = persister.createOrUpdate(unit, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="133" href="#133">133</a>         handleCallbacks(mutation);
-<a class="jxr_linenumber" name="134" href="#134">134</a> 
-<a class="jxr_linenumber" name="135" href="#135">135</a>         <strong class="jxr_keyword">if</strong> (mutation.created()) {
-<a class="jxr_linenumber" name="136" href="#136">136</a>             mutation.getNode().setCountry(framedGraph.frame(permissionScope.asVertex(), Country.<strong class="jxr_keyword">class</strong>));
-<a class="jxr_linenumber" name="137" href="#137">137</a>             mutation.getNode().setPermissionScope(permissionScope);
-<a class="jxr_linenumber" name="138" href="#138">138</a>         }
-<a class="jxr_linenumber" name="139" href="#139">139</a>         <strong class="jxr_keyword">return</strong> mutation.getNode();
-<a class="jxr_linenumber" name="140" href="#140">140</a>     }
-<a class="jxr_linenumber" name="141" href="#141">141</a> }
+<a class="jxr_linenumber" name="96" href="#96">96</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="97" href="#97">97</a>      @Override
+<a class="jxr_linenumber" name="98" href="#98">98</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../eu/ehri/project/models/Repository.html">Repository</a> importItem(Map&lt;String, Object&gt; itemData) <strong class="jxr_keyword">throws</strong> ValidationError {
+<a class="jxr_linenumber" name="99" href="#99">99</a>  
+<a class="jxr_linenumber" name="100" href="#100">100</a>         <a href="../../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a> persister = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a>(framedGraph, permissionScope.idPath());
+<a class="jxr_linenumber" name="101" href="#101">101</a> 
+<a class="jxr_linenumber" name="102" href="#102">102</a>         Map&lt;String, Object&gt; descmap = extractUnitDescription(itemData, EntityClass.REPOSITORY_DESCRIPTION);
+<a class="jxr_linenumber" name="103" href="#103">103</a>         descmap.put(Ontology.IDENTIFIER_KEY, descmap.get(Ontology.IDENTIFIER_KEY) + <span class="jxr_string">"#desc"</span>);
+<a class="jxr_linenumber" name="104" href="#104">104</a>         <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> descBundle = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.REPOSITORY_DESCRIPTION, descmap);
+<a class="jxr_linenumber" name="105" href="#105">105</a> 
+<a class="jxr_linenumber" name="106" href="#106">106</a>         <em class="jxr_comment">// Add dates and descriptions to the bundle since they're @Dependent</em>
+<a class="jxr_linenumber" name="107" href="#107">107</a>         <em class="jxr_comment">// relations.</em>
+<a class="jxr_linenumber" name="108" href="#108">108</a>         <strong class="jxr_keyword">for</strong> (Map&lt;String, Object&gt; dpb : extractDates(itemData)) {
+<a class="jxr_linenumber" name="109" href="#109">109</a>             descBundle = descBundle.withRelation(Ontology.ENTITY_HAS_DATE, <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.DATE_PERIOD, dpb));
+<a class="jxr_linenumber" name="110" href="#110">110</a>         }
+<a class="jxr_linenumber" name="111" href="#111">111</a> 
+<a class="jxr_linenumber" name="112" href="#112">112</a>         <em class="jxr_comment">//add the address to the description bundle</em>
+<a class="jxr_linenumber" name="113" href="#113">113</a>         Map&lt;String, Object&gt; address = extractAddress(itemData);
+<a class="jxr_linenumber" name="114" href="#114">114</a>         <strong class="jxr_keyword">if</strong> (!address.isEmpty()) {
+<a class="jxr_linenumber" name="115" href="#115">115</a>             descBundle = descBundle.withRelation(Ontology.ENTITY_HAS_ADDRESS, <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.ADDRESS, address));
+<a class="jxr_linenumber" name="116" href="#116">116</a>         }
+<a class="jxr_linenumber" name="117" href="#117">117</a>         Map&lt;String, Object&gt; unknowns = extractUnknownProperties(itemData);
+<a class="jxr_linenumber" name="118" href="#118">118</a>         <strong class="jxr_keyword">if</strong> (!unknowns.isEmpty()) {
+<a class="jxr_linenumber" name="119" href="#119">119</a>             logger.debug(<span class="jxr_string">"Unknown Properties found"</span>);
+<a class="jxr_linenumber" name="120" href="#120">120</a>             descBundle = descBundle.withRelation(Ontology.HAS_UNKNOWN_PROPERTY, <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.UNKNOWN_PROPERTY, unknowns));
+<a class="jxr_linenumber" name="121" href="#121">121</a>         }
+<a class="jxr_linenumber" name="122" href="#122">122</a>         <strong class="jxr_keyword">for</strong> (Map&lt;String, Object&gt; dpb : extractMaintenanceEvent(itemData)) {
+<a class="jxr_linenumber" name="123" href="#123">123</a>             logger.debug(<span class="jxr_string">"maintenance event found"</span>);
+<a class="jxr_linenumber" name="124" href="#124">124</a>             <em class="jxr_comment">//dates in maintenanceEvents are no DatePeriods, they are not something to search on</em>
+<a class="jxr_linenumber" name="125" href="#125">125</a>             descBundle = descBundle.withRelation(Ontology.HAS_MAINTENANCE_EVENT, <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.MAINTENANCE_EVENT, dpb));
+<a class="jxr_linenumber" name="126" href="#126">126</a>         }
+<a class="jxr_linenumber" name="127" href="#127">127</a> 
+<a class="jxr_linenumber" name="128" href="#128">128</a>         <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a> unit = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/Bundle.html">Bundle</a>(EntityClass.REPOSITORY, extractUnit(itemData))
+<a class="jxr_linenumber" name="129" href="#129">129</a>                 .withRelation(Ontology.DESCRIPTION_FOR_ENTITY, descBundle);
+<a class="jxr_linenumber" name="130" href="#130">130</a> 
+<a class="jxr_linenumber" name="131" href="#131">131</a>         Mutation&lt;Repository&gt; mutation = persister.createOrUpdate(unit, Repository.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="132" href="#132">132</a>         handleCallbacks(mutation);
+<a class="jxr_linenumber" name="133" href="#133">133</a> 
+<a class="jxr_linenumber" name="134" href="#134">134</a>         <strong class="jxr_keyword">if</strong> (mutation.created()) {
+<a class="jxr_linenumber" name="135" href="#135">135</a>             mutation.getNode().setCountry(framedGraph.frame(permissionScope.asVertex(), Country.<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="136" href="#136">136</a>             mutation.getNode().setPermissionScope(permissionScope);
+<a class="jxr_linenumber" name="137" href="#137">137</a>         }
+<a class="jxr_linenumber" name="138" href="#138">138</a>         <strong class="jxr_keyword">return</strong> mutation.getNode();
+<a class="jxr_linenumber" name="139" href="#139">139</a>     }
+<a class="jxr_linenumber" name="140" href="#140">140</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

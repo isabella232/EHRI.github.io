@@ -109,7 +109,7 @@
 <a class="jxr_linenumber" name="99" href="#99">99</a>              @PathParam(<span class="jxr_string">"id"</span>) String id,
 <a class="jxr_linenumber" name="100" href="#100">100</a>             @QueryParam(ALL_PARAM) @DefaultValue(<span class="jxr_string">"false"</span>) <strong class="jxr_keyword">boolean</strong> all) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="101" href="#101">101</a> 
-<a class="jxr_linenumber" name="102" href="#102">102</a>         <strong class="jxr_keyword">try</strong>(<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
+<a class="jxr_linenumber" name="102" href="#102">102</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="103" href="#103">103</a>             AuthoritativeSet set = api().detail(id, cls);
 <a class="jxr_linenumber" name="104" href="#104">104</a>             Response response = streamingPage(getQuery().page(set.getAuthoritativeItems(),
 <a class="jxr_linenumber" name="105" href="#105">105</a>                     AuthoritativeItem.<strong class="jxr_keyword">class</strong>));
@@ -214,7 +214,7 @@
 <a class="jxr_linenumber" name="204" href="#204">204</a>             <strong class="jxr_keyword">throws</strong> IOException, ItemNotFound {
 <a class="jxr_linenumber" name="205" href="#205">205</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="206" href="#206">206</a>             <strong class="jxr_keyword">final</strong> AuthoritativeSet set = api().detail(id, cls);
-<a class="jxr_linenumber" name="207" href="#207">207</a>             <strong class="jxr_keyword">final</strong> EacExporter eacExporter = <strong class="jxr_keyword">new</strong> Eac2010Exporter(graph, api());
+<a class="jxr_linenumber" name="207" href="#207">207</a>             <strong class="jxr_keyword">final</strong> EacExporter eacExporter = <strong class="jxr_keyword">new</strong> Eac2010Exporter(api());
 <a class="jxr_linenumber" name="208" href="#208">208</a>             Iterable&lt;HistoricalAgent&gt; agents = Iterables
 <a class="jxr_linenumber" name="209" href="#209">209</a>                     .transform(set.getAuthoritativeItems(), a -&gt; a.as(HistoricalAgent.<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="210" href="#210">210</a>             Response response = exportItemsAsZip(eacExporter, agents, lang);

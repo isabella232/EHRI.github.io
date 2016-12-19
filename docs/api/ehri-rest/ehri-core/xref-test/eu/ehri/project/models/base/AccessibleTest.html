@@ -51,7 +51,7 @@
 <a class="jxr_linenumber" name="41" href="#41">41</a>          Accessible c1 = manager.getEntity(<span class="jxr_string">"c1"</span>, Accessible.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="42" href="#42">42</a>          Accessible admin = manager.getEntity(Group.ADMIN_GROUP_IDENTIFIER, Accessible.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="43" href="#43">43</a>          List&lt;Accessor&gt; accessors = Lists.newArrayList(c1.getAccessors());
-<a class="jxr_linenumber" name="44" href="#44">44</a>          assertEquals(2L, accessors.size());
+<a class="jxr_linenumber" name="44" href="#44">44</a>          assertEquals(2, accessors.size());
 <a class="jxr_linenumber" name="45" href="#45">45</a>          assertTrue(accessors.contains(validUser)); <em class="jxr_comment">// mike</em>
 <a class="jxr_linenumber" name="46" href="#46">46</a>          assertTrue(accessors.contains(admin));
 <a class="jxr_linenumber" name="47" href="#47">47</a>      }
@@ -61,11 +61,11 @@
 <a class="jxr_linenumber" name="51" href="#51">51</a>          Accessible c1 = manager.getEntity(<span class="jxr_string">"c1"</span>, Accessible.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="52" href="#52">52</a>          Accessor admin = manager.getEntity(Group.ADMIN_GROUP_IDENTIFIER, Accessor.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="53" href="#53">53</a>          List&lt;Accessor&gt; accessors = Lists.newArrayList(c1.getAccessors());
-<a class="jxr_linenumber" name="54" href="#54">54</a>          assertEquals(2L, accessors.size());
+<a class="jxr_linenumber" name="54" href="#54">54</a>          assertEquals(2, accessors.size());
 <a class="jxr_linenumber" name="55" href="#55">55</a>          c1.addAccessor(admin);
-<a class="jxr_linenumber" name="56" href="#56">56</a>          assertEquals(2L, Iterables.size(c1.getAccessors())); <em class="jxr_comment">// same size</em>
+<a class="jxr_linenumber" name="56" href="#56">56</a>          assertEquals(2, Iterables.size(c1.getAccessors())); <em class="jxr_comment">// same size</em>
 <a class="jxr_linenumber" name="57" href="#57">57</a>          c1.addAccessor(invalidUser);
-<a class="jxr_linenumber" name="58" href="#58">58</a>          assertEquals(3L, Iterables.size(c1.getAccessors()));
+<a class="jxr_linenumber" name="58" href="#58">58</a>          assertEquals(3, Iterables.size(c1.getAccessors()));
 <a class="jxr_linenumber" name="59" href="#59">59</a>      }
 <a class="jxr_linenumber" name="60" href="#60">60</a>  
 <a class="jxr_linenumber" name="61" href="#61">61</a>      @Test
@@ -74,7 +74,7 @@
 <a class="jxr_linenumber" name="64" href="#64">64</a>          Accessor admin = manager.getEntity(Group.ADMIN_GROUP_IDENTIFIER, Accessor.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="65" href="#65">65</a>          c1.removeAccessor(admin);
 <a class="jxr_linenumber" name="66" href="#66">66</a>          List&lt;Accessor&gt; accessors = Lists.newArrayList(c1.getAccessors());
-<a class="jxr_linenumber" name="67" href="#67">67</a>          assertEquals(1L, accessors.size());
+<a class="jxr_linenumber" name="67" href="#67">67</a>          assertEquals(1, accessors.size());
 <a class="jxr_linenumber" name="68" href="#68">68</a>          assertTrue(accessors.contains(validUser));
 <a class="jxr_linenumber" name="69" href="#69">69</a>      }
 <a class="jxr_linenumber" name="70" href="#70">70</a>  
@@ -103,7 +103,7 @@
 <a class="jxr_linenumber" name="93" href="#93">93</a>          PermissionScope nl = manager.getEntity(<span class="jxr_string">"nl"</span>, PermissionScope.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="94" href="#94">94</a>          assertEquals(r1, c1.getPermissionScope());
 <a class="jxr_linenumber" name="95" href="#95">95</a>          List&lt;PermissionScope&gt; scopes = Lists.newArrayList(c2.getPermissionScopes());
-<a class="jxr_linenumber" name="96" href="#96">96</a>          assertEquals(3L, scopes.size());
+<a class="jxr_linenumber" name="96" href="#96">96</a>          assertEquals(3, scopes.size());
 <a class="jxr_linenumber" name="97" href="#97">97</a>          assertTrue(scopes.contains(c1));
 <a class="jxr_linenumber" name="98" href="#98">98</a>          assertTrue(scopes.contains(r1));
 <a class="jxr_linenumber" name="99" href="#99">99</a>          assertTrue(scopes.contains(nl));
@@ -115,7 +115,7 @@
 <a class="jxr_linenumber" name="105" href="#105">105</a>         Mutation&lt;DocumentaryUnit&gt; update = doUpdate(c1);
 <a class="jxr_linenumber" name="106" href="#106">106</a>         assertTrue(update.updated());
 <a class="jxr_linenumber" name="107" href="#107">107</a>         Iterable&lt;SystemEvent&gt; history = c1.getHistory();
-<a class="jxr_linenumber" name="108" href="#108">108</a>         assertEquals(1L, Iterables.size(history));
+<a class="jxr_linenumber" name="108" href="#108">108</a>         assertEquals(1, Iterables.size(history));
 <a class="jxr_linenumber" name="109" href="#109">109</a>     }
 <a class="jxr_linenumber" name="110" href="#110">110</a> 
 <a class="jxr_linenumber" name="111" href="#111">111</a>     @Test

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>XmlTestHelpers xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../testapidocs/eu/ehri/project/test/XmlTestHelpers.html">View Javadoc</a></div><pre>
+
+<a class="jxr_linenumber" name="1" href="#1">1</a>   <strong class="jxr_keyword">package</strong> eu.ehri.project.test;
+<a class="jxr_linenumber" name="2" href="#2">2</a>   
+<a class="jxr_linenumber" name="3" href="#3">3</a>   <strong class="jxr_keyword">import</strong> com.google.common.io.Resources;
+<a class="jxr_linenumber" name="4" href="#4">4</a>   <strong class="jxr_keyword">import</strong> org.w3c.dom.Document;
+<a class="jxr_linenumber" name="5" href="#5">5</a>   <strong class="jxr_keyword">import</strong> org.xml.sax.SAXException;
+<a class="jxr_linenumber" name="6" href="#6">6</a>   
+<a class="jxr_linenumber" name="7" href="#7">7</a>   <strong class="jxr_keyword">import</strong> javax.xml.XMLConstants;
+<a class="jxr_linenumber" name="8" href="#8">8</a>   <strong class="jxr_keyword">import</strong> javax.xml.parsers.DocumentBuilder;
+<a class="jxr_linenumber" name="9" href="#9">9</a>   <strong class="jxr_keyword">import</strong> javax.xml.parsers.DocumentBuilderFactory;
+<a class="jxr_linenumber" name="10" href="#10">10</a>  <strong class="jxr_keyword">import</strong> javax.xml.transform.stream.StreamSource;
+<a class="jxr_linenumber" name="11" href="#11">11</a>  <strong class="jxr_keyword">import</strong> javax.xml.validation.Schema;
+<a class="jxr_linenumber" name="12" href="#12">12</a>  <strong class="jxr_keyword">import</strong> javax.xml.validation.SchemaFactory;
+<a class="jxr_linenumber" name="13" href="#13">13</a>  <strong class="jxr_keyword">import</strong> javax.xml.validation.Validator;
+<a class="jxr_linenumber" name="14" href="#14">14</a>  <strong class="jxr_keyword">import</strong> javax.xml.xpath.XPath;
+<a class="jxr_linenumber" name="15" href="#15">15</a>  <strong class="jxr_keyword">import</strong> javax.xml.xpath.XPathConstants;
+<a class="jxr_linenumber" name="16" href="#16">16</a>  <strong class="jxr_keyword">import</strong> javax.xml.xpath.XPathExpression;
+<a class="jxr_linenumber" name="17" href="#17">17</a>  <strong class="jxr_keyword">import</strong> javax.xml.xpath.XPathFactory;
+<a class="jxr_linenumber" name="18" href="#18">18</a>  <strong class="jxr_keyword">import</strong> java.io.ByteArrayInputStream;
+<a class="jxr_linenumber" name="19" href="#19">19</a>  <strong class="jxr_keyword">import</strong> java.io.IOException;
+<a class="jxr_linenumber" name="20" href="#20">20</a>  
+<a class="jxr_linenumber" name="21" href="#21">21</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
+<a class="jxr_linenumber" name="22" href="#22">22</a>  
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/test/XmlTestHelpers.html">XmlTestHelpers</a> {
+<a class="jxr_linenumber" name="24" href="#24">24</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> XPathFactory factory = XPathFactory.newInstance();
+<a class="jxr_linenumber" name="25" href="#25">25</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> XPath xPath = factory.newXPath();
+<a class="jxr_linenumber" name="26" href="#26">26</a>  
+<a class="jxr_linenumber" name="27" href="#27">27</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Document parseDocument(String xml) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="28" href="#28">28</a>          DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+<a class="jxr_linenumber" name="29" href="#29">29</a>          factory.setValidating(false);
+<a class="jxr_linenumber" name="30" href="#30">30</a>          factory.setFeature(<span class="jxr_string">"http://apache.org/xml/features/nonvalidating/load-dtd-grammar"</span>, false);
+<a class="jxr_linenumber" name="31" href="#31">31</a>          factory.setFeature(<span class="jxr_string">"http://apache.org/xml/features/nonvalidating/load-external-dtd"</span>, false);
+<a class="jxr_linenumber" name="32" href="#32">32</a>          DocumentBuilder documentBuilder = factory.newDocumentBuilder();
+<a class="jxr_linenumber" name="33" href="#33">33</a>          <strong class="jxr_keyword">return</strong> documentBuilder.parse(<strong class="jxr_keyword">new</strong> ByteArrayInputStream(xml.getBytes(<span class="jxr_string">"UTF-8"</span>)));
+<a class="jxr_linenumber" name="34" href="#34">34</a>      }
+<a class="jxr_linenumber" name="35" href="#35">35</a>  
+<a class="jxr_linenumber" name="36" href="#36">36</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> validatesSchema(String xml, String schemaResourceName) <strong class="jxr_keyword">throws</strong> IOException, SAXException {
+<a class="jxr_linenumber" name="37" href="#37">37</a>          SchemaFactory factory = SchemaFactory
+<a class="jxr_linenumber" name="38" href="#38">38</a>                  .newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+<a class="jxr_linenumber" name="39" href="#39">39</a>          factory.setResourceResolver(<strong class="jxr_keyword">new</strong> <a href="../../../../eu/ehri/project/test/LocalResourceResolver.html">LocalResourceResolver</a>());
+<a class="jxr_linenumber" name="40" href="#40">40</a>  
+<a class="jxr_linenumber" name="41" href="#41">41</a>          Schema schema = factory.newSchema(Resources.getResource(schemaResourceName));
+<a class="jxr_linenumber" name="42" href="#42">42</a>          Validator validator = schema.newValidator();
+<a class="jxr_linenumber" name="43" href="#43">43</a>          validator.validate(<strong class="jxr_keyword">new</strong> StreamSource(<strong class="jxr_keyword">new</strong> ByteArrayInputStream(xml.getBytes(<span class="jxr_string">"UTF-8"</span>))));
+<a class="jxr_linenumber" name="44" href="#44">44</a>      }
+<a class="jxr_linenumber" name="45" href="#45">45</a>  
+<a class="jxr_linenumber" name="46" href="#46">46</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> assertXPath(Document doc, String value, String path) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="47" href="#47">47</a>          XPathExpression expr = xPath.compile(path);
+<a class="jxr_linenumber" name="48" href="#48">48</a>          Object out = expr.evaluate(doc, XPathConstants.STRING);
+<a class="jxr_linenumber" name="49" href="#49">49</a>          assertEquals(value, out);
+<a class="jxr_linenumber" name="50" href="#50">50</a>      }
+<a class="jxr_linenumber" name="51" href="#51">51</a>  
+<a class="jxr_linenumber" name="52" href="#52">52</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> Object xPath(Document doc, String path) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="53" href="#53">53</a>          XPath xPath = factory.newXPath();
+<a class="jxr_linenumber" name="54" href="#54">54</a>          XPathExpression expr = xPath.compile(path);
+<a class="jxr_linenumber" name="55" href="#55">55</a>          <strong class="jxr_keyword">return</strong> expr.evaluate(doc, XPathConstants.STRING);
+<a class="jxr_linenumber" name="56" href="#56">56</a>      }
+<a class="jxr_linenumber" name="57" href="#57">57</a>  }
+</pre>
+<hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
+</html>
+

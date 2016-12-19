@@ -40,8 +40,8 @@
 <a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
 <a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.annotations.EntityType;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.utils.ClassUtils;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.DynamicLabel;
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.GraphDatabaseService;
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.GraphDatabaseService;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.Label;
 <a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.schema.ConstraintDefinition;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.schema.IndexDefinition;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.schema.Schema;
@@ -145,10 +145,10 @@
 <a class="jxr_linenumber" name="135" href="#135">135</a>             indexDefinition.drop();
 <a class="jxr_linenumber" name="136" href="#136">136</a>         }
 <a class="jxr_linenumber" name="137" href="#137">137</a> 
-<a class="jxr_linenumber" name="138" href="#138">138</a>         schema.constraintFor(DynamicLabel.label(BASE_LABEL))
+<a class="jxr_linenumber" name="138" href="#138">138</a>         schema.constraintFor(Label.label(BASE_LABEL))
 <a class="jxr_linenumber" name="139" href="#139">139</a>                 .assertPropertyIsUnique(EntityType.ID_KEY)
 <a class="jxr_linenumber" name="140" href="#140">140</a>                 .create();
-<a class="jxr_linenumber" name="141" href="#141">141</a>         schema.indexFor(DynamicLabel.label(BASE_LABEL))
+<a class="jxr_linenumber" name="141" href="#141">141</a>         schema.indexFor(Label.label(BASE_LABEL))
 <a class="jxr_linenumber" name="142" href="#142">142</a>                 .on(EntityType.TYPE_KEY)
 <a class="jxr_linenumber" name="143" href="#143">143</a>                 .create();
 <a class="jxr_linenumber" name="144" href="#144">144</a> 
@@ -159,7 +159,7 @@
 <a class="jxr_linenumber" name="149" href="#149">149</a>             <strong class="jxr_keyword">for</strong> (String prop : mandPropertyKeys) {
 <a class="jxr_linenumber" name="150" href="#150">150</a>                 logger.trace(<span class="jxr_string">"Creating index on mandatory property: {} -&gt; {}"</span>,
 <a class="jxr_linenumber" name="151" href="#151">151</a>                         cls.getName(), prop);
-<a class="jxr_linenumber" name="152" href="#152">152</a>                 schema.indexFor(DynamicLabel.label(cls.getName()))
+<a class="jxr_linenumber" name="152" href="#152">152</a>                 schema.indexFor(Label.label(cls.getName()))
 <a class="jxr_linenumber" name="153" href="#153">153</a>                         .on(prop)
 <a class="jxr_linenumber" name="154" href="#154">154</a>                         .create();
 <a class="jxr_linenumber" name="155" href="#155">155</a>             }
@@ -168,7 +168,7 @@
 <a class="jxr_linenumber" name="158" href="#158">158</a>             <strong class="jxr_keyword">for</strong> (String unique : uniquePropertyKeys) {
 <a class="jxr_linenumber" name="159" href="#159">159</a>                 logger.trace(<span class="jxr_string">"Creating constraint on unique property: {} -&gt; {}"</span>,
 <a class="jxr_linenumber" name="160" href="#160">160</a>                         cls.getName(), unique);
-<a class="jxr_linenumber" name="161" href="#161">161</a>                 schema.constraintFor(DynamicLabel.label(cls.getName()))
+<a class="jxr_linenumber" name="161" href="#161">161</a>                 schema.constraintFor(Label.label(cls.getName()))
 <a class="jxr_linenumber" name="162" href="#162">162</a>                         .assertPropertyIsUnique(unique)
 <a class="jxr_linenumber" name="163" href="#163">163</a>                         .create();
 <a class="jxr_linenumber" name="164" href="#164">164</a>             }

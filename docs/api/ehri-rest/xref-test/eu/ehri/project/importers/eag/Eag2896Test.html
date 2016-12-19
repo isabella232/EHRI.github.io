@@ -55,12 +55,12 @@
 <a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/eag/Eag2896Test.html">Eag2896Test</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> {
 <a class="jxr_linenumber" name="46" href="#46">46</a>  
 <a class="jxr_linenumber" name="47" href="#47">47</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> org.slf4j.Logger logger = LoggerFactory.getLogger(Eag2896Test.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="48" href="#48">48</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String SINGLE_UNIT = <span class="jxr_string">"eag-2896.xml"</span>;
+<a class="jxr_linenumber" name="48" href="#48">48</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> String SINGLE_UNIT = <span class="jxr_string">"eag-2896.xml"</span>;
 <a class="jxr_linenumber" name="49" href="#49">49</a>      <em class="jxr_comment">// Depends on fixtures</em>
-<a class="jxr_linenumber" name="50" href="#50">50</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String TEST_COUNTRY = <span class="jxr_string">"nl"</span>;
+<a class="jxr_linenumber" name="50" href="#50">50</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> String TEST_COUNTRY = <span class="jxr_string">"nl"</span>;
 <a class="jxr_linenumber" name="51" href="#51">51</a>      <em class="jxr_comment">// Depends on SINGLE_UNIT</em>
-<a class="jxr_linenumber" name="52" href="#52">52</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String IMPORTED_ITEM_ID = <span class="jxr_string">"NL-002896"</span>;
-<a class="jxr_linenumber" name="53" href="#53">53</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> String AGENT_DESC_ID = <span class="jxr_string">"NL-002896#desc"</span>;
+<a class="jxr_linenumber" name="52" href="#52">52</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> String IMPORTED_ITEM_ID = <span class="jxr_string">"NL-002896"</span>;
+<a class="jxr_linenumber" name="53" href="#53">53</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> String AGENT_DESC_ID = <span class="jxr_string">"NL-002896#desc"</span>;
 <a class="jxr_linenumber" name="54" href="#54">54</a>  
 <a class="jxr_linenumber" name="55" href="#55">55</a>      @Test
 <a class="jxr_linenumber" name="56" href="#56">56</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testImportItemsT() <strong class="jxr_keyword">throws</strong> Exception {
@@ -122,21 +122,22 @@
 <a class="jxr_linenumber" name="112" href="#112">112</a>         <em class="jxr_comment">// Check we've only got one action</em>
 <a class="jxr_linenumber" name="113" href="#113">113</a>         assertEquals(1, log.getCreated());
 <a class="jxr_linenumber" name="114" href="#114">114</a>         SystemEvent ev = actionManager.getLatestGlobalEvent();
-<a class="jxr_linenumber" name="115" href="#115">115</a>         assertEquals(logMessage, ev.getLogMessage());
-<a class="jxr_linenumber" name="116" href="#116">116</a> 
-<a class="jxr_linenumber" name="117" href="#117">117</a>         <em class="jxr_comment">// Ensure the import action has the right number of subjects.</em>
-<a class="jxr_linenumber" name="118" href="#118">118</a>         List&lt;Accessible&gt; subjects = toList(ev.getSubjects());
-<a class="jxr_linenumber" name="119" href="#119">119</a>         assertEquals(1, subjects.size());
-<a class="jxr_linenumber" name="120" href="#120">120</a>         assertEquals(log.getChanged(), subjects.size());
-<a class="jxr_linenumber" name="121" href="#121">121</a> 
-<a class="jxr_linenumber" name="122" href="#122">122</a>         <em class="jxr_comment">// Test idempotency</em>
-<a class="jxr_linenumber" name="123" href="#123">123</a>         <strong class="jxr_keyword">int</strong> edgeCount = getEdgeCount(graph);
-<a class="jxr_linenumber" name="124" href="#124">124</a>         ImportLog log2 = importManager.importInputStream(ClassLoader.getSystemResourceAsStream(SINGLE_UNIT), logMessage);
-<a class="jxr_linenumber" name="125" href="#125">125</a>         assertFalse(log2.hasDoneWork());
-<a class="jxr_linenumber" name="126" href="#126">126</a>         assertEquals(afterCount, getNodeCount(graph));
-<a class="jxr_linenumber" name="127" href="#127">127</a>         assertEquals(edgeCount, getEdgeCount(graph));
-<a class="jxr_linenumber" name="128" href="#128">128</a>     }
-<a class="jxr_linenumber" name="129" href="#129">129</a> }
+<a class="jxr_linenumber" name="115" href="#115">115</a>         assertNotNull(ev);
+<a class="jxr_linenumber" name="116" href="#116">116</a>         assertEquals(logMessage, ev.getLogMessage());
+<a class="jxr_linenumber" name="117" href="#117">117</a> 
+<a class="jxr_linenumber" name="118" href="#118">118</a>         <em class="jxr_comment">// Ensure the import action has the right number of subjects.</em>
+<a class="jxr_linenumber" name="119" href="#119">119</a>         List&lt;Accessible&gt; subjects = toList(ev.getSubjects());
+<a class="jxr_linenumber" name="120" href="#120">120</a>         assertEquals(1, subjects.size());
+<a class="jxr_linenumber" name="121" href="#121">121</a>         assertEquals(log.getChanged(), subjects.size());
+<a class="jxr_linenumber" name="122" href="#122">122</a> 
+<a class="jxr_linenumber" name="123" href="#123">123</a>         <em class="jxr_comment">// Test idempotency</em>
+<a class="jxr_linenumber" name="124" href="#124">124</a>         <strong class="jxr_keyword">int</strong> edgeCount = getEdgeCount(graph);
+<a class="jxr_linenumber" name="125" href="#125">125</a>         ImportLog log2 = importManager.importInputStream(ClassLoader.getSystemResourceAsStream(SINGLE_UNIT), logMessage);
+<a class="jxr_linenumber" name="126" href="#126">126</a>         assertFalse(log2.hasDoneWork());
+<a class="jxr_linenumber" name="127" href="#127">127</a>         assertEquals(afterCount, getNodeCount(graph));
+<a class="jxr_linenumber" name="128" href="#128">128</a>         assertEquals(edgeCount, getEdgeCount(graph));
+<a class="jxr_linenumber" name="129" href="#129">129</a>     }
+<a class="jxr_linenumber" name="130" href="#130">130</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

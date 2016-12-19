@@ -239,7 +239,7 @@
 <a class="jxr_linenumber" name="229" href="#229">229</a>         GremlinPipeline&lt;Vertex, Vertex&gt; pipeline = <strong class="jxr_keyword">new</strong> GremlinPipeline&lt;&gt;(frames);
 <a class="jxr_linenumber" name="230" href="#230">230</a>         List&lt;Vertex&gt; filtered = pipeline
 <a class="jxr_linenumber" name="231" href="#231">231</a>                 .filter(acl.getContentTypeFilterFunction()).toList();
-<a class="jxr_linenumber" name="232" href="#232">232</a>         assertEquals(2L, filtered.size());
+<a class="jxr_linenumber" name="232" href="#232">232</a>         assertEquals(2, filtered.size());
 <a class="jxr_linenumber" name="233" href="#233">233</a>         assertFalse(filtered.contains(cd1));
 <a class="jxr_linenumber" name="234" href="#234">234</a>     }
 <a class="jxr_linenumber" name="235" href="#235">235</a> 
@@ -258,7 +258,7 @@
 <a class="jxr_linenumber" name="248" href="#248">248</a>         PipeFunction&lt;Vertex,Boolean&gt; aclFilter = AclManager.getAclFilterFunction(user);
 <a class="jxr_linenumber" name="249" href="#249">249</a>         List&lt;Vertex&gt; filtered = <strong class="jxr_keyword">new</strong> GremlinPipeline&lt;Vertex,Vertex&gt;(
 <a class="jxr_linenumber" name="250" href="#250">250</a>                 Lists.newArrayList(ann3v.asVertex(), ann4v.asVertex())).filter(aclFilter).toList();
-<a class="jxr_linenumber" name="251" href="#251">251</a>         assertEquals(1L, filtered.size());
+<a class="jxr_linenumber" name="251" href="#251">251</a>         assertEquals(1, filtered.size());
 <a class="jxr_linenumber" name="252" href="#252">252</a>         assertFalse(filtered.contains(ann3v.asVertex()));
 <a class="jxr_linenumber" name="253" href="#253">253</a>     }
 <a class="jxr_linenumber" name="254" href="#254">254</a> 

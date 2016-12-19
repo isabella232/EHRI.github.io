@@ -29,30 +29,30 @@
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers.base;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
-<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.base.Joiner;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Iterables;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManager;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManagerFactory;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportCallback;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.NodeProperties;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessible;
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Actioner;
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.PermissionScope;
-<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.BundleManager;
-<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Mutation;
-<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
-<a class="jxr_linenumber" name="40" href="#40">40</a>  
-<a class="jxr_linenumber" name="41" href="#41">41</a>  <strong class="jxr_keyword">import</strong> java.io.BufferedReader;
-<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> java.io.IOException;
-<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
-<a class="jxr_linenumber" name="44" href="#44">44</a>  <strong class="jxr_keyword">import</strong> java.io.InputStreamReader;
-<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> java.nio.charset.Charset;
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.base.Charsets;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.google.common.base.Joiner;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Iterables;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.frames.FramedGraph;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManager;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManagerFactory;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportCallback;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.NodeProperties;
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.EntityClass;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessible;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Actioner;
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.PermissionScope;
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.BundleManager;
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Mutation;
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
+<a class="jxr_linenumber" name="41" href="#41">41</a>  
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> java.io.BufferedReader;
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> java.io.IOException;
+<a class="jxr_linenumber" name="44" href="#44">44</a>  <strong class="jxr_keyword">import</strong> java.io.InputStream;
+<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> java.io.InputStreamReader;
 <a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">import</strong> java.util.List;
 <a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
 <a class="jxr_linenumber" name="48" href="#48">48</a>  
@@ -76,7 +76,7 @@
 <a class="jxr_linenumber" name="66" href="#66">66</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> FramedGraph&lt;?&gt; framedGraph;
 <a class="jxr_linenumber" name="67" href="#67">67</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/core/GraphManager.html">GraphManager</a> manager;
 <a class="jxr_linenumber" name="68" href="#68">68</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log;
-<a class="jxr_linenumber" name="69" href="#69">69</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> List&lt;ImportCallback&gt; callbacks = Lists.newArrayList();
+<a class="jxr_linenumber" name="69" href="#69">69</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> List&lt;ImportCallback&gt; callbacks = Lists.newArrayList();
 <a class="jxr_linenumber" name="70" href="#70">70</a>  
 <a class="jxr_linenumber" name="71" href="#71">71</a>      <strong class="jxr_keyword">private</strong> <a href="../../../../../eu/ehri/project/importers/properties/NodeProperties.html">NodeProperties</a> pc;
 <a class="jxr_linenumber" name="72" href="#72">72</a>  
@@ -99,7 +99,7 @@
 <a class="jxr_linenumber" name="89" href="#89">89</a>          <strong class="jxr_keyword">return</strong> actioner;
 <a class="jxr_linenumber" name="90" href="#90">90</a>      }
 <a class="jxr_linenumber" name="91" href="#91">91</a>  
-<a class="jxr_linenumber" name="92" href="#92">92</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a> getPersister(List&lt;String&gt; scopeIds) {
+<a class="jxr_linenumber" name="92" href="#92">92</a>      <strong class="jxr_keyword">protected</strong> <a href="../../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a> getPersister(List&lt;String&gt; scopeIds) {
 <a class="jxr_linenumber" name="93" href="#93">93</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/persistence/BundleManager.html">BundleManager</a>(framedGraph,
 <a class="jxr_linenumber" name="94" href="#94">94</a>                  Lists.newArrayList(Iterables.concat(permissionScope.idPath(), scopeIds)));
 <a class="jxr_linenumber" name="95" href="#95">95</a>      }
@@ -152,7 +152,7 @@
 <a class="jxr_linenumber" name="142" href="#142">142</a> <em class="jxr_javadoccomment">     * @throws ValidationError when the item representation does not validate</em>
 <a class="jxr_linenumber" name="143" href="#143">143</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="144" href="#144">144</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">abstract</strong> <a href="../../../../../eu/ehri/project/models/base/Accessible.html">Accessible</a> importItem(T itemData,
-<a class="jxr_linenumber" name="145" href="#145">145</a>                                           List&lt;String&gt; scopeIds) <strong class="jxr_keyword">throws</strong> ValidationError;
+<a class="jxr_linenumber" name="145" href="#145">145</a>             List&lt;String&gt; scopeIds) <strong class="jxr_keyword">throws</strong> ValidationError;
 <a class="jxr_linenumber" name="146" href="#146">146</a> 
 <a class="jxr_linenumber" name="147" href="#147">147</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="148" href="#148">148</a> <em class="jxr_javadoccomment">     * Extract a list of DatePeriod bundles from an item's data.</em>
@@ -192,7 +192,7 @@
 <a class="jxr_linenumber" name="182" href="#182">182</a> 
 <a class="jxr_linenumber" name="183" href="#183">183</a>     <strong class="jxr_keyword">private</strong> <a href="../../../../../eu/ehri/project/importers/properties/NodeProperties.html">NodeProperties</a> loadNodeProperties() {
 <a class="jxr_linenumber" name="184" href="#184">184</a>         <strong class="jxr_keyword">try</strong> (InputStream fis = getClass().getClassLoader().getResourceAsStream(NODE_PROPERTIES);
-<a class="jxr_linenumber" name="185" href="#185">185</a>              BufferedReader br = <strong class="jxr_keyword">new</strong> BufferedReader(<strong class="jxr_keyword">new</strong> InputStreamReader(fis, Charset.forName(<span class="jxr_string">"UTF-8"</span>)))) {
+<a class="jxr_linenumber" name="185" href="#185">185</a>              BufferedReader br = <strong class="jxr_keyword">new</strong> BufferedReader(<strong class="jxr_keyword">new</strong> InputStreamReader(fis, Charsets.UTF_8))) {
 <a class="jxr_linenumber" name="186" href="#186">186</a>             <a href="../../../../../eu/ehri/project/importers/properties/NodeProperties.html">NodeProperties</a> nodeProperties = <strong class="jxr_keyword">new</strong> <a href="../../../../../eu/ehri/project/importers/properties/NodeProperties.html">NodeProperties</a>();
 <a class="jxr_linenumber" name="187" href="#187">187</a>             String headers = br.readLine();
 <a class="jxr_linenumber" name="188" href="#188">188</a>             nodeProperties.setTitles(headers);

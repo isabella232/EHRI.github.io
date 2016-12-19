@@ -29,20 +29,20 @@
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.importers.base;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
-<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.base.Optional;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Maps;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.XmlImportProperties;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.util.Helpers;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> org.xml.sax.Attributes;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> org.xml.sax.SAXException;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> org.xml.sax.ext.LexicalHandler;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> org.xml.sax.helpers.DefaultHandler;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> java.util.List;
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Maps;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.properties.XmlImportProperties;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.util.Helpers;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.xml.sax.Attributes;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> org.xml.sax.SAXException;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> org.xml.sax.ext.LexicalHandler;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> org.xml.sax.helpers.DefaultHandler;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> java.util.List;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> java.util.Map;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> java.util.Optional;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> java.util.Stack;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  
 <a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> eu.ehri.project.definitions.Ontology.LANGUAGE_OF_DESCRIPTION;
@@ -246,7 +246,7 @@
 <a class="jxr_linenumber" name="236" href="#236">236</a>                 <strong class="jxr_keyword">return</strong> Optional.of(attributes.getValue(attr));
 <a class="jxr_linenumber" name="237" href="#237">237</a>             }
 <a class="jxr_linenumber" name="238" href="#238">238</a>         }
-<a class="jxr_linenumber" name="239" href="#239">239</a>         <strong class="jxr_keyword">return</strong> Optional.absent();
+<a class="jxr_linenumber" name="239" href="#239">239</a>         <strong class="jxr_keyword">return</strong> Optional.empty();
 <a class="jxr_linenumber" name="240" href="#240">240</a>     }
 <a class="jxr_linenumber" name="241" href="#241">241</a> 
 <a class="jxr_linenumber" name="242" href="#242">242</a>     <em class="jxr_javadoccomment">/**</em>

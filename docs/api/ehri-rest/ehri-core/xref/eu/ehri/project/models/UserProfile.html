@@ -62,15 +62,15 @@
 <a class="jxr_linenumber" name="52" href="#52">52</a>  
 <a class="jxr_linenumber" name="53" href="#53">53</a>      @Meta(FOLLOWER_COUNT)
 <a class="jxr_linenumber" name="54" href="#54">54</a>      @JavaHandler
-<a class="jxr_linenumber" name="55" href="#55">55</a>      <strong class="jxr_keyword">long</strong> getFollowerCount();
+<a class="jxr_linenumber" name="55" href="#55">55</a>      <strong class="jxr_keyword">int</strong> getFollowerCount();
 <a class="jxr_linenumber" name="56" href="#56">56</a>  
 <a class="jxr_linenumber" name="57" href="#57">57</a>      @Meta(FOLLOWING_COUNT)
 <a class="jxr_linenumber" name="58" href="#58">58</a>      @JavaHandler
-<a class="jxr_linenumber" name="59" href="#59">59</a>      <strong class="jxr_keyword">long</strong> getFollowingCount();
+<a class="jxr_linenumber" name="59" href="#59">59</a>      <strong class="jxr_keyword">int</strong> getFollowingCount();
 <a class="jxr_linenumber" name="60" href="#60">60</a>  
 <a class="jxr_linenumber" name="61" href="#61">61</a>      @Meta(WATCHING_COUNT)
 <a class="jxr_linenumber" name="62" href="#62">62</a>      @JavaHandler
-<a class="jxr_linenumber" name="63" href="#63">63</a>      <strong class="jxr_keyword">long</strong> getWatchingCount();
+<a class="jxr_linenumber" name="63" href="#63">63</a>      <strong class="jxr_keyword">int</strong> getWatchingCount();
 <a class="jxr_linenumber" name="64" href="#64">64</a>  
 <a class="jxr_linenumber" name="65" href="#65">65</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="66" href="#66">66</a>  <em class="jxr_javadoccomment">     * Get the groups to which this user belongs.</em>
@@ -233,18 +233,18 @@
 <a class="jxr_linenumber" name="223" href="#223">223</a>     <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/models/base/Versioned.html">Impl</a> <strong class="jxr_keyword">implements</strong> JavaHandlerContext&lt;Vertex&gt;, <a href="../../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> {
 <a class="jxr_linenumber" name="224" href="#224">224</a> 
 <a class="jxr_linenumber" name="225" href="#225">225</a>         @Override
-<a class="jxr_linenumber" name="226" href="#226">226</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">long</strong> getFollowerCount() {
-<a class="jxr_linenumber" name="227" href="#227">227</a>             <strong class="jxr_keyword">return</strong> gremlin().inE(USER_FOLLOWS_USER).count();
+<a class="jxr_linenumber" name="226" href="#226">226</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> getFollowerCount() {
+<a class="jxr_linenumber" name="227" href="#227">227</a>             <strong class="jxr_keyword">return</strong> Math.toIntExact(gremlin().inE(USER_FOLLOWS_USER).count());
 <a class="jxr_linenumber" name="228" href="#228">228</a>         }
 <a class="jxr_linenumber" name="229" href="#229">229</a> 
 <a class="jxr_linenumber" name="230" href="#230">230</a>         @Override
-<a class="jxr_linenumber" name="231" href="#231">231</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">long</strong> getFollowingCount() {
-<a class="jxr_linenumber" name="232" href="#232">232</a>             <strong class="jxr_keyword">return</strong> gremlin().outE(USER_FOLLOWS_USER).count();
+<a class="jxr_linenumber" name="231" href="#231">231</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> getFollowingCount() {
+<a class="jxr_linenumber" name="232" href="#232">232</a>             <strong class="jxr_keyword">return</strong> Math.toIntExact(gremlin().outE(USER_FOLLOWS_USER).count());
 <a class="jxr_linenumber" name="233" href="#233">233</a>         }
 <a class="jxr_linenumber" name="234" href="#234">234</a> 
 <a class="jxr_linenumber" name="235" href="#235">235</a>         @Override
-<a class="jxr_linenumber" name="236" href="#236">236</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">long</strong> getWatchingCount() {
-<a class="jxr_linenumber" name="237" href="#237">237</a>             <strong class="jxr_keyword">return</strong> gremlin().outE(USER_WATCHING_ITEM).count();
+<a class="jxr_linenumber" name="236" href="#236">236</a>         <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> getWatchingCount() {
+<a class="jxr_linenumber" name="237" href="#237">237</a>             <strong class="jxr_keyword">return</strong> Math.toIntExact(gremlin().outE(USER_WATCHING_ITEM).count());
 <a class="jxr_linenumber" name="238" href="#238">238</a>         }
 <a class="jxr_linenumber" name="239" href="#239">239</a> 
 <a class="jxr_linenumber" name="240" href="#240">240</a>         @Override

@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20160818" />
+    <meta name="Date-Revision-yyyymmdd" content="20161219" />
     <meta http-equiv="Content-Language" content="en" />
     <title>EHRI Backend &#x2013; Loading JSON Data Dumps</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2016-08-18
+                  <li id="publishDate">Last Published: 2016-12-19
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.13.5-SNAPSHOT
+                  <li id="projectVersion">Version: 0.13.6-SNAPSHOT
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -283,7 +283,16 @@
   
 <li><tt>--buffer-size 10000</tt> (flush the TX every 100000 primitives loaded, to avoid running out of memory)</li>
 </ul>
-<p>The follow on command <tt>./scripts/cmd gen-schema</tt> is necessary to instantiate the Neo4j indexes and constraints.</p></div>
+<p>The follow on command <tt>./scripts/cmd gen-schema</tt> is necessary to instantiate the Neo4j indexes and constraints.</p>
+<div class="section">
+<h3><a name="WARNING"></a>WARNING!</h3>
+<p>Neo4j&#x2019;s lax read isolation can cause problems with GraphSON dumps, since it&#x2019;s possible for edges to exist in the GraphSON that refer to non-existent nodes (this can happen if the data changes while the export is taking place.) In this case, loading the dump will subsequently fail with the following error:</p>
+
+<div class="source">
+<div class="source">
+<pre>Error: Given element was not created in this baseGraph
+</pre></div></div>
+<p>If in doubt, prevent graph modification from taking place, or use online backup instead.</p></div></div>
                   </div>
             </div>
           </div>

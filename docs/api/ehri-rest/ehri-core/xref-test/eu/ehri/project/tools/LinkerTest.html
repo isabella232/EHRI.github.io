@@ -30,81 +30,82 @@
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.project.tools;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Iterables;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.ActionManager;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.AbstractFixtureTest;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> org.junit.Before;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.AccessPointType;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Repository;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.ActionManager;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.test.AbstractFixtureTest;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> org.junit.Before;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertEquals;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/tools/LinkerTest.html">LinkerTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/test/AbstractFixtureTest.html">AbstractFixtureTest</a> {
-<a class="jxr_linenumber" name="34" href="#34">34</a>  
-<a class="jxr_linenumber" name="35" href="#35">35</a>      <strong class="jxr_keyword">private</strong> Linker linker;
-<a class="jxr_linenumber" name="36" href="#36">36</a>      <strong class="jxr_keyword">private</strong> ActionManager actionManager;
-<a class="jxr_linenumber" name="37" href="#37">37</a>  
-<a class="jxr_linenumber" name="38" href="#38">38</a>      @Before
-<a class="jxr_linenumber" name="39" href="#39">39</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setUp() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="40" href="#40">40</a>          <strong class="jxr_keyword">super</strong>.setUp();
-<a class="jxr_linenumber" name="41" href="#41">41</a>          linker = <strong class="jxr_keyword">new</strong> Linker(graph);
-<a class="jxr_linenumber" name="42" href="#42">42</a>          actionManager = <strong class="jxr_keyword">new</strong> ActionManager(graph);
-<a class="jxr_linenumber" name="43" href="#43">43</a>      }
-<a class="jxr_linenumber" name="44" href="#44">44</a>  
-<a class="jxr_linenumber" name="45" href="#45">45</a>      @Test
-<a class="jxr_linenumber" name="46" href="#46">46</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCreateConceptsForRepository() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="47" href="#47">47</a>          Repository repository = manager.getEntity(<span class="jxr_string">"r1"</span>, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="48" href="#48">48</a>          Vocabulary vocabulary = manager.getEntity(<span class="jxr_string">"cvoc2"</span>, Vocabulary.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="49" href="#49">49</a>          <strong class="jxr_keyword">int</strong> eventCount = Iterables.size(actionManager.getLatestGlobalEvents());
-<a class="jxr_linenumber" name="50" href="#50">50</a>          <em class="jxr_comment">// The doc c1 contains two access point nodes which should be made</em>
-<a class="jxr_linenumber" name="51" href="#51">51</a>          <em class="jxr_comment">// into links</em>
-<a class="jxr_linenumber" name="52" href="#52">52</a>          String logMessage = <span class="jxr_string">"This is a test!"</span>;
-<a class="jxr_linenumber" name="53" href="#53">53</a>          <strong class="jxr_keyword">long</strong> newLinkCount = linker
-<a class="jxr_linenumber" name="54" href="#54">54</a>                  .withExcludeSingles(false)
-<a class="jxr_linenumber" name="55" href="#55">55</a>                  .withLogMessage(logMessage)
-<a class="jxr_linenumber" name="56" href="#56">56</a>                  .createAndLinkRepositoryVocabulary(repository, vocabulary, validUser);
-<a class="jxr_linenumber" name="57" href="#57">57</a>          assertEquals(2, newLinkCount);
-<a class="jxr_linenumber" name="58" href="#58">58</a>          assertEquals(eventCount + 2,
-<a class="jxr_linenumber" name="59" href="#59">59</a>                  Iterables.size(actionManager.getLatestGlobalEvents()));
-<a class="jxr_linenumber" name="60" href="#60">60</a>          assertEquals(actionManager.getLatestGlobalEvent().getLogMessage(), logMessage);
-<a class="jxr_linenumber" name="61" href="#61">61</a>      }
-<a class="jxr_linenumber" name="62" href="#62">62</a>  
-<a class="jxr_linenumber" name="63" href="#63">63</a>      @Test
-<a class="jxr_linenumber" name="64" href="#64">64</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCreateConceptsForRepositoryWithBadAccessPointTypes() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="65" href="#65">65</a>          Repository repository = manager.getEntity(<span class="jxr_string">"r1"</span>, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="66" href="#66">66</a>          Vocabulary vocabulary = manager.getEntity(<span class="jxr_string">"cvoc2"</span>, Vocabulary.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="67" href="#67">67</a>          <strong class="jxr_keyword">int</strong> eventCount = Iterables.size(actionManager.getLatestGlobalEvents());
-<a class="jxr_linenumber" name="68" href="#68">68</a>  
-<a class="jxr_linenumber" name="69" href="#69">69</a>          <em class="jxr_comment">// This won't create any links because the access point type</em>
-<a class="jxr_linenumber" name="70" href="#70">70</a>          <em class="jxr_comment">// won't match any existing access points.</em>
-<a class="jxr_linenumber" name="71" href="#71">71</a>          <strong class="jxr_keyword">long</strong> newLinkCount = linker
-<a class="jxr_linenumber" name="72" href="#72">72</a>                  .withExcludeSingles(false)
-<a class="jxr_linenumber" name="73" href="#73">73</a>                  .withAccessPointType(<span class="jxr_string">"IDontExist"</span>)
-<a class="jxr_linenumber" name="74" href="#74">74</a>                  .createAndLinkRepositoryVocabulary(repository, vocabulary, validUser);
-<a class="jxr_linenumber" name="75" href="#75">75</a>          assertEquals(0, newLinkCount);
-<a class="jxr_linenumber" name="76" href="#76">76</a>          <em class="jxr_comment">// No new events should have been created...</em>
-<a class="jxr_linenumber" name="77" href="#77">77</a>          assertEquals(eventCount,
-<a class="jxr_linenumber" name="78" href="#78">78</a>                  Iterables.size(actionManager.getLatestGlobalEvents()));
-<a class="jxr_linenumber" name="79" href="#79">79</a>      }
-<a class="jxr_linenumber" name="80" href="#80">80</a>  
-<a class="jxr_linenumber" name="81" href="#81">81</a>      @Test
-<a class="jxr_linenumber" name="82" href="#82">82</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCreateConceptsForRepositoryExcludingSingles() <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="83" href="#83">83</a>          Repository repository = manager.getEntity(<span class="jxr_string">"r1"</span>, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="84" href="#84">84</a>          Vocabulary vocabulary = manager.getEntity(<span class="jxr_string">"cvoc2"</span>, Vocabulary.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="85" href="#85">85</a>          <strong class="jxr_keyword">int</strong> eventCount = Iterables.size(actionManager.getLatestGlobalEvents());
-<a class="jxr_linenumber" name="86" href="#86">86</a>  
-<a class="jxr_linenumber" name="87" href="#87">87</a>          <em class="jxr_comment">// This won't create any links because all of the access points only point</em>
-<a class="jxr_linenumber" name="88" href="#88">88</a>          <em class="jxr_comment">// to single items</em>
-<a class="jxr_linenumber" name="89" href="#89">89</a>          <strong class="jxr_keyword">long</strong> newLinkCount = linker.withExcludeSingles(<strong class="jxr_keyword">true</strong>)
-<a class="jxr_linenumber" name="90" href="#90">90</a>              .createAndLinkRepositoryVocabulary(repository, vocabulary,
-<a class="jxr_linenumber" name="91" href="#91">91</a>                      validUser);
-<a class="jxr_linenumber" name="92" href="#92">92</a>          assertEquals(0, newLinkCount);
-<a class="jxr_linenumber" name="93" href="#93">93</a>          <em class="jxr_comment">// No new events should have been created...</em>
-<a class="jxr_linenumber" name="94" href="#94">94</a>          assertEquals(eventCount,
-<a class="jxr_linenumber" name="95" href="#95">95</a>                  Iterables.size(actionManager.getLatestGlobalEvents()));
-<a class="jxr_linenumber" name="96" href="#96">96</a>      }
-<a class="jxr_linenumber" name="97" href="#97">97</a>  }
+<a class="jxr_linenumber" name="33" href="#33">33</a>  
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../eu/ehri/project/tools/LinkerTest.html">LinkerTest</a> <strong class="jxr_keyword">extends</strong> <a href="../../../../eu/ehri/project/test/AbstractFixtureTest.html">AbstractFixtureTest</a> {
+<a class="jxr_linenumber" name="35" href="#35">35</a>  
+<a class="jxr_linenumber" name="36" href="#36">36</a>      <strong class="jxr_keyword">private</strong> Linker linker;
+<a class="jxr_linenumber" name="37" href="#37">37</a>      <strong class="jxr_keyword">private</strong> ActionManager actionManager;
+<a class="jxr_linenumber" name="38" href="#38">38</a>  
+<a class="jxr_linenumber" name="39" href="#39">39</a>      @Before
+<a class="jxr_linenumber" name="40" href="#40">40</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setUp() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="41" href="#41">41</a>          <strong class="jxr_keyword">super</strong>.setUp();
+<a class="jxr_linenumber" name="42" href="#42">42</a>          linker = <strong class="jxr_keyword">new</strong> Linker(graph);
+<a class="jxr_linenumber" name="43" href="#43">43</a>          actionManager = <strong class="jxr_keyword">new</strong> ActionManager(graph);
+<a class="jxr_linenumber" name="44" href="#44">44</a>      }
+<a class="jxr_linenumber" name="45" href="#45">45</a>  
+<a class="jxr_linenumber" name="46" href="#46">46</a>      @Test
+<a class="jxr_linenumber" name="47" href="#47">47</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCreateConceptsForRepository() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="48" href="#48">48</a>          Repository repository = manager.getEntity(<span class="jxr_string">"r1"</span>, Repository.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="49" href="#49">49</a>          Vocabulary vocabulary = manager.getEntity(<span class="jxr_string">"cvoc2"</span>, Vocabulary.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="50" href="#50">50</a>          <strong class="jxr_keyword">int</strong> eventCount = Iterables.size(actionManager.getLatestGlobalEvents());
+<a class="jxr_linenumber" name="51" href="#51">51</a>          <em class="jxr_comment">// The doc c1 contains two access point nodes which should be made</em>
+<a class="jxr_linenumber" name="52" href="#52">52</a>          <em class="jxr_comment">// into links</em>
+<a class="jxr_linenumber" name="53" href="#53">53</a>          String logMessage = <span class="jxr_string">"This is a test!"</span>;
+<a class="jxr_linenumber" name="54" href="#54">54</a>          <strong class="jxr_keyword">int</strong> newLinkCount = linker
+<a class="jxr_linenumber" name="55" href="#55">55</a>                  .withExcludeSingles(false)
+<a class="jxr_linenumber" name="56" href="#56">56</a>                  .withLogMessage(logMessage)
+<a class="jxr_linenumber" name="57" href="#57">57</a>                  .createAndLinkRepositoryVocabulary(repository, vocabulary, validUser);
+<a class="jxr_linenumber" name="58" href="#58">58</a>          assertEquals(2, newLinkCount);
+<a class="jxr_linenumber" name="59" href="#59">59</a>          assertEquals(eventCount + 2,
+<a class="jxr_linenumber" name="60" href="#60">60</a>                  Iterables.size(actionManager.getLatestGlobalEvents()));
+<a class="jxr_linenumber" name="61" href="#61">61</a>          assertEquals(actionManager.getLatestGlobalEvent().getLogMessage(), logMessage);
+<a class="jxr_linenumber" name="62" href="#62">62</a>      }
+<a class="jxr_linenumber" name="63" href="#63">63</a>  
+<a class="jxr_linenumber" name="64" href="#64">64</a>      @Test
+<a class="jxr_linenumber" name="65" href="#65">65</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCreateConceptsForRepositoryWithBadAccessPointTypes() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="66" href="#66">66</a>          Repository repository = manager.getEntity(<span class="jxr_string">"r1"</span>, Repository.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="67" href="#67">67</a>          Vocabulary vocabulary = manager.getEntity(<span class="jxr_string">"cvoc2"</span>, Vocabulary.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="68" href="#68">68</a>          <strong class="jxr_keyword">int</strong> eventCount = Iterables.size(actionManager.getLatestGlobalEvents());
+<a class="jxr_linenumber" name="69" href="#69">69</a>  
+<a class="jxr_linenumber" name="70" href="#70">70</a>          <em class="jxr_comment">// This won't create any links because the access point type</em>
+<a class="jxr_linenumber" name="71" href="#71">71</a>          <em class="jxr_comment">// won't match any existing access points.</em>
+<a class="jxr_linenumber" name="72" href="#72">72</a>          <strong class="jxr_keyword">int</strong> newLinkCount = linker
+<a class="jxr_linenumber" name="73" href="#73">73</a>                  .withExcludeSingles(false)
+<a class="jxr_linenumber" name="74" href="#74">74</a>                  .withAccessPointType(AccessPointType.genre)
+<a class="jxr_linenumber" name="75" href="#75">75</a>                  .createAndLinkRepositoryVocabulary(repository, vocabulary, validUser);
+<a class="jxr_linenumber" name="76" href="#76">76</a>          assertEquals(0, newLinkCount);
+<a class="jxr_linenumber" name="77" href="#77">77</a>          <em class="jxr_comment">// No new events should have been created...</em>
+<a class="jxr_linenumber" name="78" href="#78">78</a>          assertEquals(eventCount,
+<a class="jxr_linenumber" name="79" href="#79">79</a>                  Iterables.size(actionManager.getLatestGlobalEvents()));
+<a class="jxr_linenumber" name="80" href="#80">80</a>      }
+<a class="jxr_linenumber" name="81" href="#81">81</a>  
+<a class="jxr_linenumber" name="82" href="#82">82</a>      @Test
+<a class="jxr_linenumber" name="83" href="#83">83</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testCreateConceptsForRepositoryExcludingSingles() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="84" href="#84">84</a>          Repository repository = manager.getEntity(<span class="jxr_string">"r1"</span>, Repository.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="85" href="#85">85</a>          Vocabulary vocabulary = manager.getEntity(<span class="jxr_string">"cvoc2"</span>, Vocabulary.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="86" href="#86">86</a>          <strong class="jxr_keyword">int</strong> eventCount = Iterables.size(actionManager.getLatestGlobalEvents());
+<a class="jxr_linenumber" name="87" href="#87">87</a>  
+<a class="jxr_linenumber" name="88" href="#88">88</a>          <em class="jxr_comment">// This won't create any links because all of the access points only point</em>
+<a class="jxr_linenumber" name="89" href="#89">89</a>          <em class="jxr_comment">// to single items</em>
+<a class="jxr_linenumber" name="90" href="#90">90</a>          <strong class="jxr_keyword">int</strong> newLinkCount = linker.withExcludeSingles(<strong class="jxr_keyword">true</strong>)
+<a class="jxr_linenumber" name="91" href="#91">91</a>              .createAndLinkRepositoryVocabulary(repository, vocabulary,
+<a class="jxr_linenumber" name="92" href="#92">92</a>                      validUser);
+<a class="jxr_linenumber" name="93" href="#93">93</a>          assertEquals(0, newLinkCount);
+<a class="jxr_linenumber" name="94" href="#94">94</a>          <em class="jxr_comment">// No new events should have been created...</em>
+<a class="jxr_linenumber" name="95" href="#95">95</a>          assertEquals(eventCount,
+<a class="jxr_linenumber" name="96" href="#96">96</a>                  Iterables.size(actionManager.getLatestGlobalEvents()));
+<a class="jxr_linenumber" name="97" href="#97">97</a>      }
+<a class="jxr_linenumber" name="98" href="#98">98</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

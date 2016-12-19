@@ -17,8 +17,6 @@
   <!--custom css for these pages-->
   <link rel="stylesheet" href="css/style.css">
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css">
-
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -116,6 +114,31 @@
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /classes/HistoricalAgent/{id}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_HistoricalAgentResource_list_GET">
@@ -163,6 +186,31 @@ Example:
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /classes/HistoricalAgent
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_HistoricalAgentResource_create_POST">
@@ -227,6 +275,35 @@ Example:
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /classes/HistoricalAgent
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_HistoricalAgentResource_update_PUT">
@@ -291,6 +368,35 @@ Example:
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /classes/HistoricalAgent/{id}
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_HistoricalAgentResource_delete_DELETE">
@@ -317,6 +423,26 @@ Example:
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /classes/HistoricalAgent/{id}
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="resource_HistoricalAgentResource_exportEac_GET">
@@ -371,6 +497,31 @@ Example:
           </tr>
           </tbody>
         </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /classes/HistoricalAgent/{id}/eac
+Accept: text/xml
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: text/xml
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
 
         <footer class="footer">
@@ -385,14 +536,14 @@ Example:
 
 
   <!-- JavaScript placed at the end of the document so the pages load faster. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
   <script>
     $(function() {
       $(".clickable-row").click(function() {
