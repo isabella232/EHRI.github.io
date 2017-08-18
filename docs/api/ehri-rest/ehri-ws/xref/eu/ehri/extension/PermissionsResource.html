@@ -197,69 +197,68 @@
 <a class="jxr_linenumber" name="187" href="#187">187</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="188" href="#188">188</a>     @GET
 <a class="jxr_linenumber" name="189" href="#189">189</a>     @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="190" href="#190">190</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="191" href="#191">191</a>     @Path(<span class="jxr_string">"{userOrGroup:[^/]+}/scope/{id:[^/]+}"</span>)
-<a class="jxr_linenumber" name="192" href="#192">192</a>     <strong class="jxr_keyword">public</strong> InheritedGlobalPermissionSet getScopedMatrix(@PathParam(<span class="jxr_string">"userOrGroup"</span>) String userId,
-<a class="jxr_linenumber" name="193" href="#193">193</a>             @PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
-<a class="jxr_linenumber" name="194" href="#194">194</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
-<a class="jxr_linenumber" name="195" href="#195">195</a>             Accessor accessor = manager.getEntity(userId, Accessor.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="196" href="#196">196</a>             PermissionScope scope = manager.getEntity(id, PermissionScope.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="197" href="#197">197</a>             InheritedGlobalPermissionSet set = api()
-<a class="jxr_linenumber" name="198" href="#198">198</a>                     .withScope(scope)
-<a class="jxr_linenumber" name="199" href="#199">199</a>                     .aclManager()
-<a class="jxr_linenumber" name="200" href="#200">200</a>                     .getInheritedGlobalPermissions(accessor);
-<a class="jxr_linenumber" name="201" href="#201">201</a>             tx.success();
-<a class="jxr_linenumber" name="202" href="#202">202</a>             <strong class="jxr_keyword">return</strong> set;
-<a class="jxr_linenumber" name="203" href="#203">203</a>         }
-<a class="jxr_linenumber" name="204" href="#204">204</a>     }
-<a class="jxr_linenumber" name="205" href="#205">205</a> 
-<a class="jxr_linenumber" name="206" href="#206">206</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">     * Set a user's permissions on a content type with a given scope.</em>
-<a class="jxr_linenumber" name="208" href="#208">208</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="209" href="#209">209</a> <em class="jxr_javadoccomment">     * @param userId  the user</em>
-<a class="jxr_linenumber" name="210" href="#210">210</a> <em class="jxr_javadoccomment">     * @param id      the scope id</em>
-<a class="jxr_linenumber" name="211" href="#211">211</a> <em class="jxr_javadoccomment">     * @param globals the serialized permission list</em>
-<a class="jxr_linenumber" name="212" href="#212">212</a> <em class="jxr_javadoccomment">     * @return The new permission matrix</em>
-<a class="jxr_linenumber" name="213" href="#213">213</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="214" href="#214">214</a>     @POST
-<a class="jxr_linenumber" name="215" href="#215">215</a>     @Consumes(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="216" href="#216">216</a>     @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="217" href="#217">217</a>     @Path(<span class="jxr_string">"{userOrGroup:[^/]+}/scope/{id:[^/]+}"</span>)
-<a class="jxr_linenumber" name="218" href="#218">218</a>     <strong class="jxr_keyword">public</strong> InheritedGlobalPermissionSet setScopedPermissions(
-<a class="jxr_linenumber" name="219" href="#219">219</a>             @PathParam(<span class="jxr_string">"userOrGroup"</span>) String userId,
-<a class="jxr_linenumber" name="220" href="#220">220</a>             @PathParam(<span class="jxr_string">"id"</span>) String id,
-<a class="jxr_linenumber" name="221" href="#221">221</a>             GlobalPermissionSet globals) <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
-<a class="jxr_linenumber" name="222" href="#222">222</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
-<a class="jxr_linenumber" name="223" href="#223">223</a>             Accessor accessor = manager.getEntity(userId, Accessor.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="224" href="#224">224</a>             PermissionScope scope = manager.getEntity(id, PermissionScope.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="225" href="#225">225</a>             InheritedGlobalPermissionSet matrix = api()
-<a class="jxr_linenumber" name="226" href="#226">226</a>                     .withScope(scope)
-<a class="jxr_linenumber" name="227" href="#227">227</a>                     .acl()
-<a class="jxr_linenumber" name="228" href="#228">228</a>                     .setGlobalPermissionMatrix(accessor, globals);
-<a class="jxr_linenumber" name="229" href="#229">229</a>             tx.success();
-<a class="jxr_linenumber" name="230" href="#230">230</a>             <strong class="jxr_keyword">return</strong> matrix;
-<a class="jxr_linenumber" name="231" href="#231">231</a>         }
-<a class="jxr_linenumber" name="232" href="#232">232</a>     }
-<a class="jxr_linenumber" name="233" href="#233">233</a> 
-<a class="jxr_linenumber" name="234" href="#234">234</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="235" href="#235">235</a> <em class="jxr_javadoccomment">     * Get a list of permission grants for the given user</em>
-<a class="jxr_linenumber" name="236" href="#236">236</a> <em class="jxr_javadoccomment">     *</em>
-<a class="jxr_linenumber" name="237" href="#237">237</a> <em class="jxr_javadoccomment">     * @param id the user's id</em>
-<a class="jxr_linenumber" name="238" href="#238">238</a> <em class="jxr_javadoccomment">     * @return a list of permission grants for the user</em>
-<a class="jxr_linenumber" name="239" href="#239">239</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="240" href="#240">240</a>     @GET
-<a class="jxr_linenumber" name="241" href="#241">241</a>     @Produces(MediaType.APPLICATION_JSON)
-<a class="jxr_linenumber" name="242" href="#242">242</a>     @Path(<span class="jxr_string">"{userOrGroup:[^/]+}/"</span> + GenericResource.PERMISSION_GRANTS)
-<a class="jxr_linenumber" name="243" href="#243">243</a>     <strong class="jxr_keyword">public</strong> Response listPermissionGrants(@PathParam(<span class="jxr_string">"userOrGroup"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
-<a class="jxr_linenumber" name="244" href="#244">244</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
-<a class="jxr_linenumber" name="245" href="#245">245</a>             Accessor user = manager.getEntity(id, Accessor.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="246" href="#246">246</a>             Response response = streamingPage(getQuery()
-<a class="jxr_linenumber" name="247" href="#247">247</a>                     .page(user.getPermissionGrants(), PermissionGrant.<strong class="jxr_keyword">class</strong>));
-<a class="jxr_linenumber" name="248" href="#248">248</a>             tx.success();
-<a class="jxr_linenumber" name="249" href="#249">249</a>             <strong class="jxr_keyword">return</strong> response;
-<a class="jxr_linenumber" name="250" href="#250">250</a>         }
-<a class="jxr_linenumber" name="251" href="#251">251</a>     }
-<a class="jxr_linenumber" name="252" href="#252">252</a> }
+<a class="jxr_linenumber" name="190" href="#190">190</a>     @Path(<span class="jxr_string">"{userOrGroup:[^/]+}/scope/{id:[^/]+}"</span>)
+<a class="jxr_linenumber" name="191" href="#191">191</a>     <strong class="jxr_keyword">public</strong> InheritedGlobalPermissionSet getScopedMatrix(@PathParam(<span class="jxr_string">"userOrGroup"</span>) String userId,
+<a class="jxr_linenumber" name="192" href="#192">192</a>             @PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
+<a class="jxr_linenumber" name="193" href="#193">193</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
+<a class="jxr_linenumber" name="194" href="#194">194</a>             Accessor accessor = manager.getEntity(userId, Accessor.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="195" href="#195">195</a>             PermissionScope scope = manager.getEntity(id, PermissionScope.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="196" href="#196">196</a>             InheritedGlobalPermissionSet set = api()
+<a class="jxr_linenumber" name="197" href="#197">197</a>                     .withScope(scope)
+<a class="jxr_linenumber" name="198" href="#198">198</a>                     .aclManager()
+<a class="jxr_linenumber" name="199" href="#199">199</a>                     .getInheritedGlobalPermissions(accessor);
+<a class="jxr_linenumber" name="200" href="#200">200</a>             tx.success();
+<a class="jxr_linenumber" name="201" href="#201">201</a>             <strong class="jxr_keyword">return</strong> set;
+<a class="jxr_linenumber" name="202" href="#202">202</a>         }
+<a class="jxr_linenumber" name="203" href="#203">203</a>     }
+<a class="jxr_linenumber" name="204" href="#204">204</a> 
+<a class="jxr_linenumber" name="205" href="#205">205</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="206" href="#206">206</a> <em class="jxr_javadoccomment">     * Set a user's permissions on a content type with a given scope.</em>
+<a class="jxr_linenumber" name="207" href="#207">207</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="208" href="#208">208</a> <em class="jxr_javadoccomment">     * @param userId  the user</em>
+<a class="jxr_linenumber" name="209" href="#209">209</a> <em class="jxr_javadoccomment">     * @param id      the scope id</em>
+<a class="jxr_linenumber" name="210" href="#210">210</a> <em class="jxr_javadoccomment">     * @param globals the serialized permission list</em>
+<a class="jxr_linenumber" name="211" href="#211">211</a> <em class="jxr_javadoccomment">     * @return The new permission matrix</em>
+<a class="jxr_linenumber" name="212" href="#212">212</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="213" href="#213">213</a>     @POST
+<a class="jxr_linenumber" name="214" href="#214">214</a>     @Consumes(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="215" href="#215">215</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="216" href="#216">216</a>     @Path(<span class="jxr_string">"{userOrGroup:[^/]+}/scope/{id:[^/]+}"</span>)
+<a class="jxr_linenumber" name="217" href="#217">217</a>     <strong class="jxr_keyword">public</strong> InheritedGlobalPermissionSet setScopedPermissions(
+<a class="jxr_linenumber" name="218" href="#218">218</a>             @PathParam(<span class="jxr_string">"userOrGroup"</span>) String userId,
+<a class="jxr_linenumber" name="219" href="#219">219</a>             @PathParam(<span class="jxr_string">"id"</span>) String id,
+<a class="jxr_linenumber" name="220" href="#220">220</a>             GlobalPermissionSet globals) <strong class="jxr_keyword">throws</strong> PermissionDenied, ItemNotFound {
+<a class="jxr_linenumber" name="221" href="#221">221</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
+<a class="jxr_linenumber" name="222" href="#222">222</a>             Accessor accessor = manager.getEntity(userId, Accessor.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="223" href="#223">223</a>             PermissionScope scope = manager.getEntity(id, PermissionScope.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="224" href="#224">224</a>             InheritedGlobalPermissionSet matrix = api()
+<a class="jxr_linenumber" name="225" href="#225">225</a>                     .withScope(scope)
+<a class="jxr_linenumber" name="226" href="#226">226</a>                     .acl()
+<a class="jxr_linenumber" name="227" href="#227">227</a>                     .setGlobalPermissionMatrix(accessor, globals);
+<a class="jxr_linenumber" name="228" href="#228">228</a>             tx.success();
+<a class="jxr_linenumber" name="229" href="#229">229</a>             <strong class="jxr_keyword">return</strong> matrix;
+<a class="jxr_linenumber" name="230" href="#230">230</a>         }
+<a class="jxr_linenumber" name="231" href="#231">231</a>     }
+<a class="jxr_linenumber" name="232" href="#232">232</a> 
+<a class="jxr_linenumber" name="233" href="#233">233</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="234" href="#234">234</a> <em class="jxr_javadoccomment">     * Get a list of permission grants for the given user</em>
+<a class="jxr_linenumber" name="235" href="#235">235</a> <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="236" href="#236">236</a> <em class="jxr_javadoccomment">     * @param id the user's id</em>
+<a class="jxr_linenumber" name="237" href="#237">237</a> <em class="jxr_javadoccomment">     * @return a list of permission grants for the user</em>
+<a class="jxr_linenumber" name="238" href="#238">238</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="239" href="#239">239</a>     @GET
+<a class="jxr_linenumber" name="240" href="#240">240</a>     @Produces(MediaType.APPLICATION_JSON)
+<a class="jxr_linenumber" name="241" href="#241">241</a>     @Path(<span class="jxr_string">"{userOrGroup:[^/]+}/permission-grants"</span>)
+<a class="jxr_linenumber" name="242" href="#242">242</a>     <strong class="jxr_keyword">public</strong> Response listPermissionGrants(@PathParam(<span class="jxr_string">"userOrGroup"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
+<a class="jxr_linenumber" name="243" href="#243">243</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
+<a class="jxr_linenumber" name="244" href="#244">244</a>             Accessor user = manager.getEntity(id, Accessor.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="245" href="#245">245</a>             Response response = streamingPage(() -&gt; getQuery()
+<a class="jxr_linenumber" name="246" href="#246">246</a>                     .page(user.getPermissionGrants(), PermissionGrant.<strong class="jxr_keyword">class</strong>));
+<a class="jxr_linenumber" name="247" href="#247">247</a>             tx.success();
+<a class="jxr_linenumber" name="248" href="#248">248</a>             <strong class="jxr_keyword">return</strong> response;
+<a class="jxr_linenumber" name="249" href="#249">249</a>         }
+<a class="jxr_linenumber" name="250" href="#250">250</a>     }
+<a class="jxr_linenumber" name="251" href="#251">251</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

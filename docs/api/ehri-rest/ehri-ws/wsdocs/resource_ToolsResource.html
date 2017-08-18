@@ -49,6 +49,7 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#resource_ToolsResource_version_GET">GET /tools/version</a></li>
           <li><a href="#resource_ToolsResource_findReplace_POST">POST /tools/find-replace</a></li>
           <li><a href="#resource_ToolsResource_exportSchema_GET">GET /tools/schema</a></li>
           <li><a href="#resource_ToolsResource_autoLinkRepositoryDocs_POST"><abbr title="POST /tools/generate-concepts/{repositoryId}/{vocabularyId}">POST /tools/generate-concepts/...</abbr></a></li>
@@ -61,6 +62,8 @@
           <li><a href="#resource_ToolsResource_upgradeDb1to2_POST">POST /tools/upgrade-1to2</a></li>
           <li><a href="#resource_ToolsResource_fullUpgradeDb1to2_POST">POST /tools/full-upgrade-1to2</a></li>
           <li><a href="#resource_ToolsResource_relink_POST">POST /tools/relink-targets</a></li>
+          <li><a href="#resource_ToolsResource_rename_POST">POST /tools/rename</a></li>
+          <li><a href="#resource_ToolsResource_initialize_POST">POST /tools/__INITIALISE</a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -77,6 +80,54 @@
 
       <p>Miscellaneous additional functionality that doesn't
 fit anywhere else.</p>
+
+      <div id="resource_ToolsResource_version_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/tools/version <a href="../tools/version" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/plain&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/plain</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /tools/version
+Accept: text/plain
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: text/plain
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div id="resource_ToolsResource_findReplace_POST">
         <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/tools/find-replace <a href="../tools/find-replace" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
@@ -179,10 +230,15 @@ Changes will be logged to the audit log.</p>
           </thead>
           <tbody>
           <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">a list of item IDs for those items changed</span></td>
+          </tr>
+          <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/csv&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/csv</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">a list of item IDs for those items changed</span></td>
           </tr>
           </tbody>
         </table>
@@ -194,7 +250,7 @@ Changes will be logged to the audit log.</p>
               <h5>Request</h5>
               <pre>
 POST /tools/find-replace
-Accept: text/csv
+Accept: application/json
 
               </pre>
             </div>
@@ -202,7 +258,7 @@ Accept: text/csv
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: text/csv
+Content-Type: application/json
 
                 <code class="prettyprint language-txt">
 ...
@@ -477,6 +533,28 @@ then throwing an error</span></td>
         </table>
 
         <table class="table">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/csv&quot; HTTP header to specify this media type to the server."><span class="request-type">text/csv</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
           <caption>Response Body</caption>
           <thead>
           <tr>
@@ -487,11 +565,16 @@ then throwing an error</span></td>
           </thead>
           <tbody>
           <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">a tab old-to-new mapping, or an empty
+body if nothing was changed</span></td>
+          </tr>
+          <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/csv&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/csv</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">a tab old-to-new mapping, or an empty
-body if nothing was changed</span></td>
           </tr>
           </tbody>
         </table>
@@ -503,15 +586,19 @@ body if nothing was changed</span></td>
               <h5>Request</h5>
               <pre>
 POST /tools/regenerate-ids
-Accept: text/csv
+Content-Type: application/json
+Accept: application/json
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: text/csv
+Content-Type: application/json
 
                 <code class="prettyprint language-txt">
 ...
@@ -591,11 +678,16 @@ then throwing an error</span></td>
           </thead>
           <tbody>
           <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">a tab list old-to-new mappings, or an empty
+body if nothing was changed</span></td>
+          </tr>
+          <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/csv&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/csv</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">a tab list old-to-new mappings, or an empty
-body if nothing was changed</span></td>
           </tr>
           </tbody>
         </table>
@@ -607,7 +699,7 @@ body if nothing was changed</span></td>
               <h5>Request</h5>
               <pre>
 POST /tools/regenerate-ids-for-type/{type}
-Accept: text/csv
+Accept: application/json
 
               </pre>
             </div>
@@ -615,7 +707,7 @@ Accept: text/csv
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: text/csv
+Content-Type: application/json
 
                 <code class="prettyprint language-txt">
 ...
@@ -695,11 +787,16 @@ then throwing an error</span></td>
           </thead>
           <tbody>
           <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">a tab list old-to-new mappings, or an empty
+body if nothing was changed</span></td>
+          </tr>
+          <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/csv&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/csv</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">a tab list old-to-new mappings, or an empty
-body if nothing was changed</span></td>
           </tr>
           </tbody>
         </table>
@@ -711,7 +808,7 @@ body if nothing was changed</span></td>
               <h5>Request</h5>
               <pre>
 POST /tools/regenerate-ids-for-scope/{scope}
-Accept: text/csv
+Accept: application/json
 
               </pre>
             </div>
@@ -719,7 +816,7 @@ Accept: text/csv
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: text/csv
+Content-Type: application/json
 
                 <code class="prettyprint language-txt">
 ...
@@ -973,11 +1070,15 @@ to <code>from</code> to <code>to</code>.</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: */*&quot; HTTP header to specify this media type to the server."><span class="request-type">*/*</span></abbr></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="request-description">a comma-separated TSV file, including headers, with
-the first headers being 'from' and 'to'.</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">a comma-separated TSV file, excluding headers</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/csv&quot; HTTP header to specify this media type to the server."><span class="request-type">text/csv</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
           </tr>
           </tbody>
         </table>
@@ -993,11 +1094,16 @@ the first headers being 'from' and 'to'.</span></td>
           </thead>
           <tbody>
           <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">CSV data with each row indicating the source, target, and how many items
+were relinked for each</span></td>
+          </tr>
+          <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/csv&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/csv</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">CSV data with each row indicating the source, target, and how many items
-were relinked for each</span></td>
           </tr>
           </tbody>
         </table>
@@ -1009,8 +1115,8 @@ were relinked for each</span></td>
               <h5>Request</h5>
               <pre>
 POST /tools/relink-targets
-Content-Type: */*
-Accept: text/csv
+Content-Type: application/json
+Accept: application/json
 
                 <code class="prettyprint language-txt">
 ...
@@ -1021,11 +1127,168 @@ Accept: text/csv
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: text/csv
+Content-Type: application/json
 
                 <code class="prettyprint language-txt">
 ...
                 </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_ToolsResource_rename_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/tools/rename <a href="../tools/rename" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Takes a CSV file containing two columns: the global id, and a new local
+identifier to rename an item to. A new global ID will be regenerated.</p>
+
+        <table class="table">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">a comma-separated CSV file, including headers, with
+the headers being 'id' and 'local'.</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/csv&quot; HTTP header to specify this media type to the server."><span class="request-type">text/csv</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">CSV data containing two columns: the old global ID, and
+a newly generated global ID, derived from the new local identifier.</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/csv&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/csv</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /tools/rename
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_ToolsResource_initialize_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/tools/__INITIALISE <a href="../tools/__INITIALISE" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Extremely lossy helper method for cleaning a test instance</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">yes-i-am-sure</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: */*&quot; HTTP header to specify this media type to the server."><span class="request-type">*/*</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">YAML fixture data to be loaded into the fresh graph</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /tools/__INITIALISE
+Content-Type: */*
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+
               </pre>
             </div>
           </div>

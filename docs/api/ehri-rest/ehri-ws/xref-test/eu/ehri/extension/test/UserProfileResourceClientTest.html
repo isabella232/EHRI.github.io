@@ -219,18 +219,18 @@
 <a class="jxr_linenumber" name="209" href="#209">209</a>         String user2 = <span class="jxr_string">"mike"</span>;
 <a class="jxr_linenumber" name="210" href="#210">210</a>         String user3 = <span class="jxr_string">"linda"</span>;
 <a class="jxr_linenumber" name="211" href="#211">211</a> 
-<a class="jxr_linenumber" name="212" href="#212">212</a>         URI followingUrl = entityUri(Entities.USER_PROFILE, user1, FOLLOWING);
+<a class="jxr_linenumber" name="212" href="#212">212</a>         URI followingUrl = entityUri(Entities.USER_PROFILE, user1, <span class="jxr_string">"following"</span>);
 <a class="jxr_linenumber" name="213" href="#213">213</a>         List&lt;Bundle&gt; followers = getItemList(followingUrl, user1);
 <a class="jxr_linenumber" name="214" href="#214">214</a>         assertTrue(followers.isEmpty());
 <a class="jxr_linenumber" name="215" href="#215">215</a> 
-<a class="jxr_linenumber" name="216" href="#216">216</a>         URI followUrl1 = entityUriBuilder(Entities.USER_PROFILE, user1, FOLLOWING)
+<a class="jxr_linenumber" name="216" href="#216">216</a>         URI followUrl1 = entityUriBuilder(Entities.USER_PROFILE, user1, <span class="jxr_string">"following"</span>)
 <a class="jxr_linenumber" name="217" href="#217">217</a>                 .queryParam(ID_PARAM, user2).build();
 <a class="jxr_linenumber" name="218" href="#218">218</a>         ClientResponse response = jsonCallAs(user1, followUrl1).post(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="219" href="#219">219</a>         assertStatus(NO_CONTENT, response);
 <a class="jxr_linenumber" name="220" href="#220">220</a>         followers = getItemList(followingUrl, user1);
 <a class="jxr_linenumber" name="221" href="#221">221</a>         assertEquals(1, followers.size());
 <a class="jxr_linenumber" name="222" href="#222">222</a> 
-<a class="jxr_linenumber" name="223" href="#223">223</a>         URI followUrl2 = entityUriBuilder(Entities.USER_PROFILE, user1, FOLLOWING)
+<a class="jxr_linenumber" name="223" href="#223">223</a>         URI followUrl2 = entityUriBuilder(Entities.USER_PROFILE, user1, <span class="jxr_string">"following"</span>)
 <a class="jxr_linenumber" name="224" href="#224">224</a>                 .queryParam(ID_PARAM, user3).build();
 <a class="jxr_linenumber" name="225" href="#225">225</a>         response = jsonCallAs(user1, followUrl2).post(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="226" href="#226">226</a>         assertStatus(NO_CONTENT, response);
@@ -238,12 +238,12 @@
 <a class="jxr_linenumber" name="228" href="#228">228</a>         assertEquals(2, followers.size());
 <a class="jxr_linenumber" name="229" href="#229">229</a> 
 <a class="jxr_linenumber" name="230" href="#230">230</a>         <em class="jxr_comment">// Hitting the same URL as a GET should give us a boolean...</em>
-<a class="jxr_linenumber" name="231" href="#231">231</a>         URI isFollowingUrl = entityUri(Entities.USER_PROFILE, user1, IS_FOLLOWING, user2);
+<a class="jxr_linenumber" name="231" href="#231">231</a>         URI isFollowingUrl = entityUri(Entities.USER_PROFILE, user1, <span class="jxr_string">"is-following"</span>, user2);
 <a class="jxr_linenumber" name="232" href="#232">232</a>         response = jsonCallAs(user1, isFollowingUrl).get(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="233" href="#233">233</a>         assertStatus(OK, response);
 <a class="jxr_linenumber" name="234" href="#234">234</a>         assertEquals(<span class="jxr_string">"true"</span>, response.getEntity(String.<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="235" href="#235">235</a> 
-<a class="jxr_linenumber" name="236" href="#236">236</a>         URI hasFollowerUrl = entityUri(Entities.USER_PROFILE, user2, IS_FOLLOWER, user1);
+<a class="jxr_linenumber" name="236" href="#236">236</a>         URI hasFollowerUrl = entityUri(Entities.USER_PROFILE, user2, <span class="jxr_string">"is-follower"</span>, user1);
 <a class="jxr_linenumber" name="237" href="#237">237</a>         response = jsonCallAs(user2, hasFollowerUrl).get(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="238" href="#238">238</a>         assertStatus(OK, response);
 <a class="jxr_linenumber" name="239" href="#239">239</a>         assertEquals(<span class="jxr_string">"true"</span>, response.getEntity(String.<strong class="jxr_keyword">class</strong>));
@@ -258,11 +258,11 @@
 <a class="jxr_linenumber" name="248" href="#248">248</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testBlockAndUnblock() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="249" href="#249">249</a>         String user1 = getRegularUserProfileId();
 <a class="jxr_linenumber" name="250" href="#250">250</a>         String user2 = getAdminUserProfileId();
-<a class="jxr_linenumber" name="251" href="#251">251</a>         URI blockedUrl = entityUri(Entities.USER_PROFILE, user1, BLOCKED);
+<a class="jxr_linenumber" name="251" href="#251">251</a>         URI blockedUrl = entityUri(Entities.USER_PROFILE, user1, <span class="jxr_string">"blocked"</span>);
 <a class="jxr_linenumber" name="252" href="#252">252</a>         List&lt;Bundle&gt; blocked = getItemList(blockedUrl, user1);
 <a class="jxr_linenumber" name="253" href="#253">253</a>         assertTrue(blocked.isEmpty());
 <a class="jxr_linenumber" name="254" href="#254">254</a> 
-<a class="jxr_linenumber" name="255" href="#255">255</a>         URI blockUrl = entityUriBuilder(Entities.USER_PROFILE, user1, BLOCKED)
+<a class="jxr_linenumber" name="255" href="#255">255</a>         URI blockUrl = entityUriBuilder(Entities.USER_PROFILE, user1, <span class="jxr_string">"blocked"</span>)
 <a class="jxr_linenumber" name="256" href="#256">256</a>                 .queryParam(ID_PARAM, user2).build();
 <a class="jxr_linenumber" name="257" href="#257">257</a>         ClientResponse response = jsonCallAs(user1, blockUrl)
 <a class="jxr_linenumber" name="258" href="#258">258</a>                 .post(ClientResponse.<strong class="jxr_keyword">class</strong>);
@@ -271,7 +271,7 @@
 <a class="jxr_linenumber" name="261" href="#261">261</a>         assertFalse(blocked.isEmpty());
 <a class="jxr_linenumber" name="262" href="#262">262</a> 
 <a class="jxr_linenumber" name="263" href="#263">263</a>         <em class="jxr_comment">// Hitting the same URL as a GET should give us a boolean...</em>
-<a class="jxr_linenumber" name="264" href="#264">264</a>         URI isBlockingUrl = entityUri(Entities.USER_PROFILE, user1, IS_BLOCKING, user2);
+<a class="jxr_linenumber" name="264" href="#264">264</a>         URI isBlockingUrl = entityUri(Entities.USER_PROFILE, user1, <span class="jxr_string">"is-blocking"</span>, user2);
 <a class="jxr_linenumber" name="265" href="#265">265</a>         response = jsonCallAs(user1, isBlockingUrl).get(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="266" href="#266">266</a>         assertStatus(OK, response);
 <a class="jxr_linenumber" name="267" href="#267">267</a>         assertEquals(<span class="jxr_string">"true"</span>, response.getEntity(String.<strong class="jxr_keyword">class</strong>));
@@ -287,18 +287,18 @@
 <a class="jxr_linenumber" name="277" href="#277">277</a>         String user1 = getAdminUserProfileId();
 <a class="jxr_linenumber" name="278" href="#278">278</a>         String item1 = <span class="jxr_string">"c1"</span>;
 <a class="jxr_linenumber" name="279" href="#279">279</a>         String item2 = <span class="jxr_string">"c2"</span>;
-<a class="jxr_linenumber" name="280" href="#280">280</a>         URI watchersUrl = entityUri(Entities.USER_PROFILE, user1, WATCHING);
+<a class="jxr_linenumber" name="280" href="#280">280</a>         URI watchersUrl = entityUri(Entities.USER_PROFILE, user1, <span class="jxr_string">"watching"</span>);
 <a class="jxr_linenumber" name="281" href="#281">281</a>         List&lt;Bundle&gt; watching = getItemList(watchersUrl, user1);
 <a class="jxr_linenumber" name="282" href="#282">282</a>         assertTrue(watching.isEmpty());
 <a class="jxr_linenumber" name="283" href="#283">283</a> 
-<a class="jxr_linenumber" name="284" href="#284">284</a>         URI watchUrl1 = entityUriBuilder(Entities.USER_PROFILE, user1, WATCHING)
+<a class="jxr_linenumber" name="284" href="#284">284</a>         URI watchUrl1 = entityUriBuilder(Entities.USER_PROFILE, user1, <span class="jxr_string">"watching"</span>)
 <a class="jxr_linenumber" name="285" href="#285">285</a>                 .queryParam(ID_PARAM, item1).build();
 <a class="jxr_linenumber" name="286" href="#286">286</a>         ClientResponse response = jsonCallAs(user1, watchUrl1).post(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="287" href="#287">287</a>         assertStatus(NO_CONTENT, response);
 <a class="jxr_linenumber" name="288" href="#288">288</a>         watching = getItemList(watchersUrl, user1);
 <a class="jxr_linenumber" name="289" href="#289">289</a>         assertEquals(1, watching.size());
 <a class="jxr_linenumber" name="290" href="#290">290</a> 
-<a class="jxr_linenumber" name="291" href="#291">291</a>         URI watchUrl2 = entityUriBuilder(Entities.USER_PROFILE, user1, WATCHING)
+<a class="jxr_linenumber" name="291" href="#291">291</a>         URI watchUrl2 = entityUriBuilder(Entities.USER_PROFILE, user1, <span class="jxr_string">"watching"</span>)
 <a class="jxr_linenumber" name="292" href="#292">292</a>                 .queryParam(ID_PARAM, item2).build();
 <a class="jxr_linenumber" name="293" href="#293">293</a>         response = jsonCallAs(user1, watchUrl2).post(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="294" href="#294">294</a>         assertStatus(NO_CONTENT, response);
@@ -306,7 +306,7 @@
 <a class="jxr_linenumber" name="296" href="#296">296</a>         assertEquals(2, watching.size());
 <a class="jxr_linenumber" name="297" href="#297">297</a> 
 <a class="jxr_linenumber" name="298" href="#298">298</a>         <em class="jxr_comment">// Hitting the same URL as a GET should give us a boolean...</em>
-<a class="jxr_linenumber" name="299" href="#299">299</a>         URI isWatchingUrl = entityUri(Entities.USER_PROFILE, user1, IS_WATCHING, item1);
+<a class="jxr_linenumber" name="299" href="#299">299</a>         URI isWatchingUrl = entityUri(Entities.USER_PROFILE, user1, <span class="jxr_string">"is-watching"</span>, item1);
 <a class="jxr_linenumber" name="300" href="#300">300</a>         response = jsonCallAs(user1, isWatchingUrl).get(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="301" href="#301">301</a>         assertStatus(OK, response);
 <a class="jxr_linenumber" name="302" href="#302">302</a>         assertEquals(<span class="jxr_string">"true"</span>, response.getEntity(String.<strong class="jxr_keyword">class</strong>));

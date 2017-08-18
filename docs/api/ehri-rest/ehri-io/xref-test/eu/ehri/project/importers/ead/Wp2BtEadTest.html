@@ -31,8 +31,8 @@
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.google.common.collect.Lists;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.ImportLog;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
 <a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.managers.SaxImportManager;
 <a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnit;
 <a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.DocumentaryUnitDescription;
@@ -74,10 +74,10 @@
 <a class="jxr_linenumber" name="64" href="#64">64</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testImportItemsT() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="65" href="#65">65</a>  
 <a class="jxr_linenumber" name="66" href="#66">66</a>          Repository agent = manager.getEntity(TEST_REPO, Repository.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="67" href="#67">67</a>          Bundle vocabularyBundle = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.CVOC_VOCABULARY)
+<a class="jxr_linenumber" name="67" href="#67">67</a>          Bundle vocabularyBundle = Bundle.of(EntityClass.CVOC_VOCABULARY)
 <a class="jxr_linenumber" name="68" href="#68">68</a>                  .withDataValue(Ontology.IDENTIFIER_KEY, <span class="jxr_string">"WP2_keywords"</span>)
 <a class="jxr_linenumber" name="69" href="#69">69</a>                  .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"WP2 Keywords"</span>);
-<a class="jxr_linenumber" name="70" href="#70">70</a>          Bundle conceptBundle = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.CVOC_CONCEPT)
+<a class="jxr_linenumber" name="70" href="#70">70</a>          Bundle conceptBundle = Bundle.of(EntityClass.CVOC_CONCEPT)
 <a class="jxr_linenumber" name="71" href="#71">71</a>                  .withDataValue(Ontology.IDENTIFIER_KEY, <span class="jxr_string">"KEYWORD.JMP.716"</span>);
 <a class="jxr_linenumber" name="72" href="#72">72</a>          Vocabulary vocabulary = api(validUser).create(vocabularyBundle, Vocabulary.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="73" href="#73">73</a>          logger.debug(vocabulary.getId());

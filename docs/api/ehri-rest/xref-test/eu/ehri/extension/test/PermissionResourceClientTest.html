@@ -54,7 +54,7 @@
 <a class="jxr_linenumber" name="44" href="#44">44</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> com.sun.jersey.api.client.ClientResponse.Status.CREATED;
 <a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> com.sun.jersey.api.client.ClientResponse.Status.NO_CONTENT;
 <a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> com.sun.jersey.api.client.ClientResponse.Status.OK;
-<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> com.sun.jersey.api.client.ClientResponse.Status.UNAUTHORIZED;
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> com.sun.jersey.api.client.ClientResponse.Status.FORBIDDEN;
 <a class="jxr_linenumber" name="48" href="#48">48</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertNull;
 <a class="jxr_linenumber" name="49" href="#49">49</a>  <strong class="jxr_keyword">import</strong> <strong class="jxr_keyword">static</strong> org.junit.Assert.assertTrue;
 <a class="jxr_linenumber" name="50" href="#50">50</a>  
@@ -129,7 +129,7 @@
 <a class="jxr_linenumber" name="119" href="#119">119</a>         ClientResponse response = jsonCallAs(LIMITED_USER_NAME,
 <a class="jxr_linenumber" name="120" href="#120">120</a>                 ehriUri(ENDPOINT, LIMITED_USER_NAME))
 <a class="jxr_linenumber" name="121" href="#121">121</a>                 .post(ClientResponse.<strong class="jxr_keyword">class</strong>, bytes);
-<a class="jxr_linenumber" name="122" href="#122">122</a>         assertStatus(UNAUTHORIZED, response);
+<a class="jxr_linenumber" name="122" href="#122">122</a>         assertStatus(FORBIDDEN, response);
 <a class="jxr_linenumber" name="123" href="#123">123</a>         <em class="jxr_comment">// TODO: Figure out why no content ever seems to be returned here?</em>
 <a class="jxr_linenumber" name="124" href="#124">124</a>     }
 <a class="jxr_linenumber" name="125" href="#125">125</a> 
@@ -159,7 +159,7 @@
 <a class="jxr_linenumber" name="149" href="#149">149</a>         ClientResponse response = jsonCallAs(LIMITED_USER_NAME, uri)
 <a class="jxr_linenumber" name="150" href="#150">150</a>                 .entity(jsonDocumentaryUnitTestStr)
 <a class="jxr_linenumber" name="151" href="#151">151</a>                 .post(ClientResponse.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="152" href="#152">152</a>         assertStatus(UNAUTHORIZED, response);
+<a class="jxr_linenumber" name="152" href="#152">152</a>         assertStatus(FORBIDDEN, response);
 <a class="jxr_linenumber" name="153" href="#153">153</a> 
 <a class="jxr_linenumber" name="154" href="#154">154</a>         <em class="jxr_comment">// Set the permission</em>
 <a class="jxr_linenumber" name="155" href="#155">155</a>         byte[] bytes = jsonMapper.writeValueAsBytes(getTestMatrix());
@@ -196,13 +196,13 @@
 <a class="jxr_linenumber" name="186" href="#186">186</a>         ClientResponse response = jsonCallAs(LIMITED_USER_NAME,
 <a class="jxr_linenumber" name="187" href="#187">187</a>                 getCreationUriFor(r2)).entity(jsonDocumentaryUnitTestStr)
 <a class="jxr_linenumber" name="188" href="#188">188</a>                 .post(ClientResponse.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="189" href="#189">189</a>         assertStatus(UNAUTHORIZED, response);
+<a class="jxr_linenumber" name="189" href="#189">189</a>         assertStatus(FORBIDDEN, response);
 <a class="jxr_linenumber" name="190" href="#190">190</a> 
 <a class="jxr_linenumber" name="191" href="#191">191</a>         <em class="jxr_comment">// Or r3...</em>
 <a class="jxr_linenumber" name="192" href="#192">192</a>         response = jsonCallAs(LIMITED_USER_NAME, getCreationUriFor(r3))
 <a class="jxr_linenumber" name="193" href="#193">193</a>                 .entity(jsonDocumentaryUnitTestStr)
 <a class="jxr_linenumber" name="194" href="#194">194</a>                 .post(ClientResponse.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="195" href="#195">195</a>         assertStatus(UNAUTHORIZED, response);
+<a class="jxr_linenumber" name="195" href="#195">195</a>         assertStatus(FORBIDDEN, response);
 <a class="jxr_linenumber" name="196" href="#196">196</a> 
 <a class="jxr_linenumber" name="197" href="#197">197</a>         <em class="jxr_comment">// Now grant the user permissions to create just within</em>
 <a class="jxr_linenumber" name="198" href="#198">198</a>         <em class="jxr_comment">// the scope of r2</em>
@@ -227,7 +227,7 @@
 <a class="jxr_linenumber" name="217" href="#217">217</a>         response = jsonCallAs(LIMITED_USER_NAME, getCreationUriFor(r3))
 <a class="jxr_linenumber" name="218" href="#218">218</a>                 .entity(jsonDocumentaryUnitTestStr)
 <a class="jxr_linenumber" name="219" href="#219">219</a>                 .post(ClientResponse.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="220" href="#220">220</a>         assertStatus(UNAUTHORIZED, response);
+<a class="jxr_linenumber" name="220" href="#220">220</a>         assertStatus(FORBIDDEN, response);
 <a class="jxr_linenumber" name="221" href="#221">221</a> 
 <a class="jxr_linenumber" name="222" href="#222">222</a>         <em class="jxr_comment">// And the user himself should not be able to grant</em>
 <a class="jxr_linenumber" name="223" href="#223">223</a>         <em class="jxr_comment">// others the ability to create within that scope.</em>
@@ -238,7 +238,7 @@
 <a class="jxr_linenumber" name="228" href="#228">228</a>         response = jsonCallAs(LIMITED_USER_NAME, otherGrantUri).entity(grantPermData)
 <a class="jxr_linenumber" name="229" href="#229">229</a>                 .post(ClientResponse.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="230" href="#230">230</a> 
-<a class="jxr_linenumber" name="231" href="#231">231</a>         assertStatus(UNAUTHORIZED, response);
+<a class="jxr_linenumber" name="231" href="#231">231</a>         assertStatus(FORBIDDEN, response);
 <a class="jxr_linenumber" name="232" href="#232">232</a> 
 <a class="jxr_linenumber" name="233" href="#233">233</a>     }
 <a class="jxr_linenumber" name="234" href="#234">234</a> 
@@ -261,7 +261,7 @@
 <a class="jxr_linenumber" name="251" href="#251">251</a>         response = jsonCallAs(LIMITED_USER_NAME, targetResourceUri)
 <a class="jxr_linenumber" name="252" href="#252">252</a>                 .entity(testUpdateString)
 <a class="jxr_linenumber" name="253" href="#253">253</a>                 .put(ClientResponse.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="254" href="#254">254</a>         assertStatus(UNAUTHORIZED, response);
+<a class="jxr_linenumber" name="254" href="#254">254</a>         assertStatus(FORBIDDEN, response);
 <a class="jxr_linenumber" name="255" href="#255">255</a> 
 <a class="jxr_linenumber" name="256" href="#256">256</a>         <em class="jxr_comment">// Now grant the user permissions to update and delete just on this item</em>
 <a class="jxr_linenumber" name="257" href="#257">257</a>         String permData = <span class="jxr_string">"[\&quot;update\&quot;, \&quot;delete\&quot;]"</span>;

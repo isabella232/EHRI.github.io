@@ -29,32 +29,32 @@
 <a class="jxr_linenumber" name="19" href="#19">19</a>  
 <a class="jxr_linenumber" name="20" href="#20">20</a>  <strong class="jxr_keyword">package</strong> eu.ehri.extension;
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
-<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> org.apache.jena.rdf.model.Model;
-<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.AbstractAccessibleResource;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.AbstractResource;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.CreateResource;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.DeleteResource;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.GetResource;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.ListResource;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.ParentResource;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.UpdateResource;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.api.Api;
-<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.Tx;
-<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Entities;
-<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.EventTypes;
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.AccessDenied;
-<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.DeserializationError;
-<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
-<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.PermissionDenied;
-<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.SerializationError;
-<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
-<a class="jxr_linenumber" name="41" href="#41">41</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exporters.cvoc.JenaSkosExporter;
-<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.cvoc.SkosRDFVocabulary;
-<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.UserProfile;
-<a class="jxr_linenumber" name="44" href="#44">44</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
-<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
-<a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.ActionManager;
-<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
+<a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.AbstractAccessibleResource;
+<a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.AbstractResource;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.CreateResource;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.DeleteResource;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.GetResource;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.ListResource;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.ParentResource;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.extension.base.UpdateResource;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.api.Api;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.Tx;
+<a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Entities;
+<a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.EventTypes;
+<a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.AccessDenied;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.DeserializationError;
+<a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
+<a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.PermissionDenied;
+<a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.SerializationError;
+<a class="jxr_linenumber" name="39" href="#39">39</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ValidationError;
+<a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exporters.cvoc.JenaSkosExporter;
+<a class="jxr_linenumber" name="41" href="#41">41</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.cvoc.SkosRDFVocabulary;
+<a class="jxr_linenumber" name="42" href="#42">42</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Actioner;
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
+<a class="jxr_linenumber" name="44" href="#44">44</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
+<a class="jxr_linenumber" name="45" href="#45">45</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.ActionManager;
+<a class="jxr_linenumber" name="46" href="#46">46</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.persistence.Bundle;
+<a class="jxr_linenumber" name="47" href="#47">47</a>  <strong class="jxr_keyword">import</strong> org.apache.jena.rdf.model.Model;
 <a class="jxr_linenumber" name="48" href="#48">48</a>  <strong class="jxr_keyword">import</strong> org.neo4j.graphdb.GraphDatabaseService;
 <a class="jxr_linenumber" name="49" href="#49">49</a>  
 <a class="jxr_linenumber" name="50" href="#50">50</a>  <strong class="jxr_keyword">import</strong> javax.ws.rs.Consumes;
@@ -110,7 +110,7 @@
 <a class="jxr_linenumber" name="100" href="#100">100</a>             @QueryParam(ALL_PARAM) @DefaultValue(<span class="jxr_string">"false"</span>) <strong class="jxr_keyword">boolean</strong> all) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="101" href="#101">101</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="102" href="#102">102</a>             <a href="../../../eu/ehri/project/models/cvoc/Vocabulary.html">Vocabulary</a> vocabulary = api().detail(id, cls);
-<a class="jxr_linenumber" name="103" href="#103">103</a>             Response response = streamingPage(getQuery()
+<a class="jxr_linenumber" name="103" href="#103">103</a>             Response response = streamingPage(() -&gt; getQuery()
 <a class="jxr_linenumber" name="104" href="#104">104</a>                     .page(vocabulary.getConcepts(), Concept.<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="105" href="#105">105</a>             tx.success();
 <a class="jxr_linenumber" name="106" href="#106">106</a>             <strong class="jxr_keyword">return</strong> response;
@@ -162,10 +162,10 @@
 <a class="jxr_linenumber" name="152" href="#152">152</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> deleteAllVocabularyConcepts(@PathParam(<span class="jxr_string">"id"</span>) String id)
 <a class="jxr_linenumber" name="153" href="#153">153</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, AccessDenied, <a href="../../../eu/ehri/project/exceptions/PermissionDenied.html">PermissionDenied</a> {
 <a class="jxr_linenumber" name="154" href="#154">154</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
-<a class="jxr_linenumber" name="155" href="#155">155</a>             <a href="../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = getCurrentUser();
+<a class="jxr_linenumber" name="155" href="#155">155</a>             <a href="../../../eu/ehri/project/models/base/Actioner.html">Actioner</a> user = getCurrentActioner();
 <a class="jxr_linenumber" name="156" href="#156">156</a>             <a href="../../../eu/ehri/project/api/Api.html">Api</a> api = api().enableLogging(false);
 <a class="jxr_linenumber" name="157" href="#157">157</a>             <a href="../../../eu/ehri/project/models/cvoc/Vocabulary.html">Vocabulary</a> vocabulary = api.detail(id, cls);
-<a class="jxr_linenumber" name="158" href="#158">158</a>             <a href="../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a> actionManager = <strong class="jxr_keyword">new</strong> <a href="../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a>(graph, vocabulary);
+<a class="jxr_linenumber" name="158" href="#158">158</a>             <a href="../../../eu/ehri/project/persistence/ActionManager.html">ActionManager</a> actionManager = api.actionManager().setScope(vocabulary);
 <a class="jxr_linenumber" name="159" href="#159">159</a>             Iterable&lt;Concept&gt; concepts = vocabulary.getConcepts();
 <a class="jxr_linenumber" name="160" href="#160">160</a>             <strong class="jxr_keyword">if</strong> (concepts.iterator().hasNext()) {
 <a class="jxr_linenumber" name="161" href="#161">161</a>                 ActionManager.EventContext context = actionManager
@@ -229,7 +229,7 @@
 <a class="jxr_linenumber" name="219" href="#219">219</a>             <strong class="jxr_keyword">final</strong> Model model = skosImporter.export(base);
 <a class="jxr_linenumber" name="220" href="#220">220</a>             tx.success();
 <a class="jxr_linenumber" name="221" href="#221">221</a>             <strong class="jxr_keyword">return</strong> Response.ok((StreamingOutput) outputStream -&gt;
-<a class="jxr_linenumber" name="222" href="#222">222</a>                         model.getWriter(rdfFormat).write(model, outputStream, base))
+<a class="jxr_linenumber" name="222" href="#222">222</a>                     model.getWriter(rdfFormat).write(model, outputStream, base))
 <a class="jxr_linenumber" name="223" href="#223">223</a>                     .type(mediaType + <span class="jxr_string">"; charset=utf-8"</span>).build();
 <a class="jxr_linenumber" name="224" href="#224">224</a>         }
 <a class="jxr_linenumber" name="225" href="#225">225</a>     }

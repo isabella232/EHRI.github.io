@@ -65,10 +65,10 @@
 <a class="jxr_linenumber" name="55" href="#55">55</a>          <strong class="jxr_keyword">final</strong> String logMessage = <span class="jxr_string">"Importing an example BBWO2 DC"</span>;
 <a class="jxr_linenumber" name="56" href="#56">56</a>  
 <a class="jxr_linenumber" name="57" href="#57">57</a>          <em class="jxr_comment">//id="joodse-raad" source="niod-trefwoorden" term="Kinderen"</em>
-<a class="jxr_linenumber" name="58" href="#58">58</a>          Bundle vocabularyBundle = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.CVOC_VOCABULARY)
+<a class="jxr_linenumber" name="58" href="#58">58</a>          Bundle vocabularyBundle = Bundle.of(EntityClass.CVOC_VOCABULARY)
 <a class="jxr_linenumber" name="59" href="#59">59</a>                  .withDataValue(Ontology.IDENTIFIER_KEY, <span class="jxr_string">"niod-trefwoorden"</span>)
 <a class="jxr_linenumber" name="60" href="#60">60</a>                  .withDataValue(Ontology.NAME_KEY, <span class="jxr_string">"NIOD Keywords"</span>);
-<a class="jxr_linenumber" name="61" href="#61">61</a>          Bundle conceptBundle = <strong class="jxr_keyword">new</strong> Bundle(EntityClass.CVOC_CONCEPT)
+<a class="jxr_linenumber" name="61" href="#61">61</a>          Bundle conceptBundle = Bundle.of(EntityClass.CVOC_CONCEPT)
 <a class="jxr_linenumber" name="62" href="#62">62</a>                  .withDataValue(Ontology.IDENTIFIER_KEY, <span class="jxr_string">"joodse-raad"</span>);
 <a class="jxr_linenumber" name="63" href="#63">63</a>          Vocabulary vocabulary = api(validUser).create(vocabularyBundle, Vocabulary.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="64" href="#64">64</a>          Concept concept_716 = api(validUser).create(conceptBundle, Concept.<strong class="jxr_keyword">class</strong>);

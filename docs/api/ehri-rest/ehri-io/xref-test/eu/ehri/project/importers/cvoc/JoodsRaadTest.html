@@ -31,14 +31,14 @@
 <a class="jxr_linenumber" name="21" href="#21">21</a>  
 <a class="jxr_linenumber" name="22" href="#22">22</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Direction;
 <a class="jxr_linenumber" name="23" href="#23">23</a>  <strong class="jxr_keyword">import</strong> com.tinkerpop.blueprints.Edge;
-<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
-<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Link;
-<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessible;
-<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Linkable;
-<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
-<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
-<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.api.QueryApi;
+<a class="jxr_linenumber" name="24" href="#24">24</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.api.QueryApi;
+<a class="jxr_linenumber" name="25" href="#25">25</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
+<a class="jxr_linenumber" name="26" href="#26">26</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.importers.base.AbstractImporterTest;
+<a class="jxr_linenumber" name="27" href="#27">27</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.Link;
+<a class="jxr_linenumber" name="28" href="#28">28</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Accessible;
+<a class="jxr_linenumber" name="29" href="#29">29</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.base.Linkable;
+<a class="jxr_linenumber" name="30" href="#30">30</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Concept;
+<a class="jxr_linenumber" name="31" href="#31">31</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.models.cvoc.Vocabulary;
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> org.junit.Test;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> org.slf4j.Logger;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> org.slf4j.LoggerFactory;
@@ -164,7 +164,7 @@
 <a class="jxr_linenumber" name="154" href="#154">154</a> 
 <a class="jxr_linenumber" name="155" href="#155">155</a>         <strong class="jxr_keyword">for</strong> (Link desc : termJR.getLinks()) {
 <a class="jxr_linenumber" name="156" href="#156">156</a>             assertTrue(desc.getPropertyKeys().contains(<span class="jxr_string">"type"</span>));
-<a class="jxr_linenumber" name="157" href="#157">157</a>             assertEquals(<span class="jxr_string">"associate"</span>, desc.getProperty(<span class="jxr_string">"type"</span>));
+<a class="jxr_linenumber" name="157" href="#157">157</a>             assertEquals(<span class="jxr_string">"associative"</span>, desc.getProperty(<span class="jxr_string">"type"</span>));
 <a class="jxr_linenumber" name="158" href="#158">158</a>             assertTrue(desc.getPropertyKeys().contains(<span class="jxr_string">"skos"</span>));
 <a class="jxr_linenumber" name="159" href="#159">159</a>             assertEquals(<span class="jxr_string">"exactMatch"</span>, desc.getProperty(<span class="jxr_string">"skos"</span>));
 <a class="jxr_linenumber" name="160" href="#160">160</a>         }

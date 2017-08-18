@@ -109,35 +109,31 @@
 <a class="jxr_linenumber" name="99" href="#99">99</a>          String filePath = cmdLine.getArgList().get(0);
 <a class="jxr_linenumber" name="100" href="#100">100</a> 
 <a class="jxr_linenumber" name="101" href="#101">101</a>         <strong class="jxr_keyword">try</strong> {
-<a class="jxr_linenumber" name="102" href="#102">102</a> 
+<a class="jxr_linenumber" name="102" href="#102">102</a>             <em class="jxr_comment">// Find the vocabulary and user</em>
 <a class="jxr_linenumber" name="103" href="#103">103</a>             <a href="../../../../eu/ehri/project/models/cvoc/Vocabulary.html">Vocabulary</a> vocabulary = manager.getEntity(
 <a class="jxr_linenumber" name="104" href="#104">104</a>                     cmdLine.getOptionValue(<span class="jxr_string">"scope"</span>), Vocabulary.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="105" href="#105">105</a>             <em class="jxr_comment">// Find the user</em>
-<a class="jxr_linenumber" name="106" href="#106">106</a>             <a href="../../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = manager.getEntity(cmdLine.getOptionValue(<span class="jxr_string">"user"</span>),
-<a class="jxr_linenumber" name="107" href="#107">107</a>                     UserProfile.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="108" href="#108">108</a> 
-<a class="jxr_linenumber" name="109" href="#109">109</a>             <em class="jxr_comment">// FIXME: Casting the graph shouldn't be necessary here, but it is</em>
-<a class="jxr_linenumber" name="110" href="#110">110</a>             <em class="jxr_comment">// because the import managers do transactional stuff that they</em>
-<a class="jxr_linenumber" name="111" href="#111">111</a>             <em class="jxr_comment">// probably should not do.</em>
-<a class="jxr_linenumber" name="112" href="#112">112</a>             <a href="../../../../eu/ehri/project/importers/cvoc/SkosImporter.html">SkosImporter</a> importer = SkosImporterFactory.newSkosImporter(graph, user, vocabulary);
-<a class="jxr_linenumber" name="113" href="#113">113</a>             <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = importer
-<a class="jxr_linenumber" name="114" href="#114">114</a>                     .setTolerant(cmdLine.hasOption(<span class="jxr_string">"tolerant"</span>))
-<a class="jxr_linenumber" name="115" href="#115">115</a>                     .importFile(filePath, logMessage);
-<a class="jxr_linenumber" name="116" href="#116">116</a>             log.printReport();
-<a class="jxr_linenumber" name="117" href="#117">117</a>             <strong class="jxr_keyword">if</strong> (log.getErrored() &gt; 0) {
-<a class="jxr_linenumber" name="118" href="#118">118</a>                 System.out.println(<span class="jxr_string">"Errors:"</span>);
-<a class="jxr_linenumber" name="119" href="#119">119</a>                 <strong class="jxr_keyword">for</strong> (Entry&lt;String, String&gt; entry : log.getErrors().entrySet()) {
-<a class="jxr_linenumber" name="120" href="#120">120</a>                     System.out.printf(<span class="jxr_string">" - %-20s : %s%n"</span>, entry.getKey(),
-<a class="jxr_linenumber" name="121" href="#121">121</a>                             entry.getValue());
-<a class="jxr_linenumber" name="122" href="#122">122</a>                 }
-<a class="jxr_linenumber" name="123" href="#123">123</a>             }
-<a class="jxr_linenumber" name="124" href="#124">124</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
-<a class="jxr_linenumber" name="125" href="#125">125</a>             e.printStackTrace();
-<a class="jxr_linenumber" name="126" href="#126">126</a>             <strong class="jxr_keyword">return</strong> 1;
-<a class="jxr_linenumber" name="127" href="#127">127</a>         }
-<a class="jxr_linenumber" name="128" href="#128">128</a>         <strong class="jxr_keyword">return</strong> 0;
-<a class="jxr_linenumber" name="129" href="#129">129</a>     }
-<a class="jxr_linenumber" name="130" href="#130">130</a> }
+<a class="jxr_linenumber" name="105" href="#105">105</a>             <a href="../../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> user = manager.getEntity(
+<a class="jxr_linenumber" name="106" href="#106">106</a>                     cmdLine.getOptionValue(<span class="jxr_string">"user"</span>), UserProfile.<strong class="jxr_keyword">class</strong>);
+<a class="jxr_linenumber" name="107" href="#107">107</a> 
+<a class="jxr_linenumber" name="108" href="#108">108</a>             <a href="../../../../eu/ehri/project/importers/cvoc/SkosImporter.html">SkosImporter</a> importer = SkosImporterFactory.newSkosImporter(graph, user, vocabulary);
+<a class="jxr_linenumber" name="109" href="#109">109</a>             <a href="../../../../eu/ehri/project/importers/ImportLog.html">ImportLog</a> log = importer
+<a class="jxr_linenumber" name="110" href="#110">110</a>                     .setTolerant(cmdLine.hasOption(<span class="jxr_string">"tolerant"</span>))
+<a class="jxr_linenumber" name="111" href="#111">111</a>                     .importFile(filePath, logMessage);
+<a class="jxr_linenumber" name="112" href="#112">112</a>             System.out.println(log);
+<a class="jxr_linenumber" name="113" href="#113">113</a>             <strong class="jxr_keyword">if</strong> (log.getErrored() &gt; 0) {
+<a class="jxr_linenumber" name="114" href="#114">114</a>                 System.out.println(<span class="jxr_string">"Errors:"</span>);
+<a class="jxr_linenumber" name="115" href="#115">115</a>                 <strong class="jxr_keyword">for</strong> (Entry&lt;String, String&gt; entry : log.getErrors().entrySet()) {
+<a class="jxr_linenumber" name="116" href="#116">116</a>                     System.out.printf(<span class="jxr_string">" - %-20s : %s%n"</span>, entry.getKey(),
+<a class="jxr_linenumber" name="117" href="#117">117</a>                             entry.getValue());
+<a class="jxr_linenumber" name="118" href="#118">118</a>                 }
+<a class="jxr_linenumber" name="119" href="#119">119</a>             }
+<a class="jxr_linenumber" name="120" href="#120">120</a>         } <strong class="jxr_keyword">catch</strong> (Exception e) {
+<a class="jxr_linenumber" name="121" href="#121">121</a>             e.printStackTrace();
+<a class="jxr_linenumber" name="122" href="#122">122</a>             <strong class="jxr_keyword">return</strong> 1;
+<a class="jxr_linenumber" name="123" href="#123">123</a>         }
+<a class="jxr_linenumber" name="124" href="#124">124</a>         <strong class="jxr_keyword">return</strong> 0;
+<a class="jxr_linenumber" name="125" href="#125">125</a>     }
+<a class="jxr_linenumber" name="126" href="#126">126</a> }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

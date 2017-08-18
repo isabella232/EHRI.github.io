@@ -310,10 +310,10 @@
 <a class="jxr_linenumber" name="300" href="#300">300</a> <em class="jxr_javadoccomment">     * @return an event stream</em>
 <a class="jxr_linenumber" name="301" href="#301">301</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="302" href="#302">302</a>     @Override
-<a class="jxr_linenumber" name="303" href="#303">303</a>     <strong class="jxr_keyword">public</strong> Iterable&lt;List&lt;SystemEvent&gt;&gt; aggregateUserActions(<a href="../../../../../eu/ehri/project/models/UserProfile.html">UserProfile</a> byUser) {
+<a class="jxr_linenumber" name="303" href="#303">303</a>     <strong class="jxr_keyword">public</strong> Iterable&lt;List&lt;SystemEvent&gt;&gt; aggregateActions(<a href="../../../../../eu/ehri/project/models/base/Actioner.html">Actioner</a> byUser) {
 <a class="jxr_linenumber" name="304" href="#304">304</a>         <em class="jxr_comment">// Add optional filters for event type, item type, and asUser...</em>
 <a class="jxr_linenumber" name="305" href="#305">305</a>         GremlinPipeline&lt;SystemEvent, SystemEvent&gt; pipe = <strong class="jxr_keyword">new</strong> GremlinPipeline&lt;&gt;(
-<a class="jxr_linenumber" name="306" href="#306">306</a>                 byUser.as(Actioner.<strong class="jxr_keyword">class</strong>).getActions());
+<a class="jxr_linenumber" name="306" href="#306">306</a>                 byUser.getActions());
 <a class="jxr_linenumber" name="307" href="#307">307</a> 
 <a class="jxr_linenumber" name="308" href="#308">308</a>         <em class="jxr_comment">// Add additional generic filters</em>
 <a class="jxr_linenumber" name="309" href="#309">309</a>         GremlinPipeline&lt;SystemEvent, SystemEvent&gt; acl = applyAclFilter(filterEvents(pipe), accessor);

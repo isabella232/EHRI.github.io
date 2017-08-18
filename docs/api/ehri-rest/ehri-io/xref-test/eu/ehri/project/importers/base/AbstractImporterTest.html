@@ -50,7 +50,7 @@
 <a class="jxr_linenumber" name="40" href="#40">40</a>  <strong class="jxr_keyword">import</strong> java.util.NoSuchElementException;
 <a class="jxr_linenumber" name="41" href="#41">41</a>  
 <a class="jxr_linenumber" name="42" href="#42">42</a>  
-<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> <strong class="jxr_keyword">extends</strong> AbstractFixtureTest {
+<a class="jxr_linenumber" name="43" href="#43">43</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../eu/ehri/project/importers/base/AbstractImporterTest.html">AbstractImporterTest</a> <strong class="jxr_keyword">extends</strong> AbstractFixtureTest {
 <a class="jxr_linenumber" name="44" href="#44">44</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Logger logger = LoggerFactory.getLogger(AbstractImporterTest.<strong class="jxr_keyword">class</strong>);
 <a class="jxr_linenumber" name="45" href="#45">45</a>  
 <a class="jxr_linenumber" name="46" href="#46">46</a>      <em class="jxr_javadoccomment">/**</em>
@@ -70,12 +70,12 @@
 <a class="jxr_linenumber" name="60" href="#60">60</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="61" href="#61">61</a>  <em class="jxr_javadoccomment">     * Convenience method for creating a Sax import manager.</em>
 <a class="jxr_linenumber" name="62" href="#62">62</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="63" href="#63">63</a>      <strong class="jxr_keyword">protected</strong> SaxImportManager saxImportManager(Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; importerClass, Class&lt;? <strong class="jxr_keyword">extends</strong>
+<a class="jxr_linenumber" name="63" href="#63">63</a>      <strong class="jxr_keyword">protected</strong> SaxImportManager saxImportManager(Class&lt;? <strong class="jxr_keyword">extends</strong> ItemImporter&gt; importerClass, Class&lt;? <strong class="jxr_keyword">extends</strong>
 <a class="jxr_linenumber" name="64" href="#64">64</a>              SaxXmlHandler&gt; handlerClass) {
 <a class="jxr_linenumber" name="65" href="#65">65</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> SaxImportManager(graph, repository, validUser, importerClass, handlerClass);
 <a class="jxr_linenumber" name="66" href="#66">66</a>      }
 <a class="jxr_linenumber" name="67" href="#67">67</a>  
-<a class="jxr_linenumber" name="68" href="#68">68</a>      <strong class="jxr_keyword">protected</strong> SaxImportManager saxImportManager(Class&lt;? <strong class="jxr_keyword">extends</strong> AbstractImporter&gt; importerClass, Class&lt;? <strong class="jxr_keyword">extends</strong>
+<a class="jxr_linenumber" name="68" href="#68">68</a>      <strong class="jxr_keyword">protected</strong> SaxImportManager saxImportManager(Class&lt;? <strong class="jxr_keyword">extends</strong> ItemImporter&gt; importerClass, Class&lt;? <strong class="jxr_keyword">extends</strong>
 <a class="jxr_linenumber" name="69" href="#69">69</a>              SaxXmlHandler&gt; handlerClass, String propertiesResource) {
 <a class="jxr_linenumber" name="70" href="#70">70</a>          <strong class="jxr_keyword">return</strong> saxImportManager(importerClass, handlerClass).withProperties(propertiesResource);
 <a class="jxr_linenumber" name="71" href="#71">71</a>      }

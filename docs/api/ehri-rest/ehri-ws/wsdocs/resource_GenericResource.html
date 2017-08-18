@@ -91,7 +91,10 @@ regardless of their specific type.</p>
       <div id="resource_GenericResource_list_GET">
         <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/entities <a href="../entities" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Fetch a list of items by their ID.</p>
+        <p>Fetch a list of items by their ID.
+
+Note: if <i>both</i> global IDs and graph IDs (GIDs) are given as query
+parameters, GIDs will be returned at the head of the response list.</p>
 
         <table class="table">
           <caption>Request Parameters</caption>
@@ -136,7 +139,8 @@ regardless of their specific type.</p>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">A serialized list of items</span></td>
+            <td><span class="response-description">A serialized list of items, with nulls for items that are not
+found or inaccessible.</span></td>
           </tr>
           </tbody>
         </table>
@@ -170,7 +174,10 @@ Content-Type: application/json
       <div id="resource_GenericResource_listFromJson_POST">
         <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/entities <a href="../entities" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Fetch a list of items by their ID.</p>
+        <p>Fetch a list of items by their ID.
+
+Note: if <i>both</i> global IDs and graph IDs (GIDs) are given as query
+parameters, GIDs will be returned at the head of the response list.</p>
 
         <table class="table">
           <caption>Request Body</caption>
@@ -206,7 +213,8 @@ either strings or (if a number) graph (long) ids.</span></td>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">A serialized list of items</span></td>
+            <td><span class="response-description">A serialized list of items, with nulls for items that are not
+found or inaccessible.</span></td>
           </tr>
           </tbody>
         </table>

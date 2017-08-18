@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20161219" />
+    <meta name="Date-Revision-yyyymmdd" content="20170818" />
     <meta http-equiv="Content-Language" content="en" />
     <title>Command Line Tools &#x2013; FindBugs Bug Detector Report</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2016-12-19
+                  <li id="publishDate">Last Published: 2017-08-18
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.13.6-SNAPSHOT
+                  <li id="projectVersion">Version: 0.13.10
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -106,8 +106,8 @@
 <th>Errors</th>
 <th>Missing Classes</th></tr>
 <tr class="b">
-<td>34</td>
-<td>0</td>
+<td>32</td>
+<td>2</td>
 <td>0</td>
 <td>0</td></tr></table></div>
 <div class="section">
@@ -115,7 +115,31 @@
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>Class</th>
-<th>Bugs</th></tr></table></div>
+<th>Bugs</th></tr>
+<tr class="b">
+<td><a href="#eu.ehri.project.commands.Check">eu.ehri.project.commands.Check</a></td>
+<td>2</td></tr></table></div><a name="eu.ehri.project.commands.Check"></a>
+<div class="section">
+<h3><a name="eu.ehri.project.commands.Check"></a>eu.ehri.project.commands.Check</h3>
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>Bug</th>
+<th>Category</th>
+<th>Details</th>
+<th>Line</th>
+<th>Priority</th></tr>
+<tr class="b">
+<td>Switch statement found in eu.ehri.project.commands.Check.checkPermissionScopes(FramedGraph, GraphManager) where one case falls through to the next case</td>
+<td>STYLE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SF_SWITCH_FALLTHROUGH">SF_SWITCH_FALLTHROUGH</a></td>
+<td><a href="./xref/eu/ehri/project/commands/Check.html#L158">158-160</a></td>
+<td>Medium</td></tr>
+<tr class="a">
+<td>Switch statement found in eu.ehri.project.commands.Check.checkPermissionScopes(FramedGraph, GraphManager) where default case is missing</td>
+<td>STYLE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT</a></td>
+<td><a href="./xref/eu/ehri/project/commands/Check.html#L150">150-160</a></td>
+<td>Medium</td></tr></table></div>
                   </div>
             </div>
           </div>
@@ -125,7 +149,7 @@
     <footer>
             <div class="container-fluid">
                       <div class="row-fluid">
-                              <p >Copyright &copy;                    2016
+                              <p >Copyright &copy;                    2017
                         <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>.
             All rights reserved.      
                     

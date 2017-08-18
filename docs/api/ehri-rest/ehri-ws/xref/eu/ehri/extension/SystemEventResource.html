@@ -122,7 +122,7 @@
 <a class="jxr_linenumber" name="112" href="#112">112</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="113" href="#113">113</a>             EventsApi eventsApi = getEventsApi()
 <a class="jxr_linenumber" name="114" href="#114">114</a>                     .withAggregation(aggregation);
-<a class="jxr_linenumber" name="115" href="#115">115</a>             Response response = streamingListOfLists(eventsApi.aggregate());
+<a class="jxr_linenumber" name="115" href="#115">115</a>             Response response = streamingListOfLists(eventsApi::aggregate);
 <a class="jxr_linenumber" name="116" href="#116">116</a>             tx.success();
 <a class="jxr_linenumber" name="117" href="#117">117</a>             <strong class="jxr_keyword">return</strong> response;
 <a class="jxr_linenumber" name="118" href="#118">118</a>         }
@@ -142,7 +142,7 @@
 <a class="jxr_linenumber" name="132" href="#132">132</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="133" href="#133">133</a>             SystemEvent event = api().detail(id, cls);
 <a class="jxr_linenumber" name="134" href="#134">134</a>             <em class="jxr_comment">// Subjects are only serialized to depth 1 for efficiency...</em>
-<a class="jxr_linenumber" name="135" href="#135">135</a>             Response response = streamingPage(getQuery()
+<a class="jxr_linenumber" name="135" href="#135">135</a>             Response response = streamingPage(() -&gt; getQuery()
 <a class="jxr_linenumber" name="136" href="#136">136</a>                             .page(event.getSubjects(), Accessible.<strong class="jxr_keyword">class</strong>),
 <a class="jxr_linenumber" name="137" href="#137">137</a>                     getSerializer().withDepth(1).withCache());
 <a class="jxr_linenumber" name="138" href="#138">138</a>             tx.success();

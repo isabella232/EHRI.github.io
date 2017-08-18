@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20161219" />
+    <meta name="Date-Revision-yyyymmdd" content="20170818" />
     <meta http-equiv="Content-Language" content="en" />
     <title>EHRI Backend &#x2013; Setup of development environment</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2016-12-19
+                  <li id="publishDate">Last Published: 2017-08-18
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.13.6-SNAPSHOT
+                  <li id="projectVersion">Version: 0.13.10
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -315,13 +315,13 @@ mvn install
 
 <div class="source">
 <div class="source">
-<pre>curl -L -0 http://neo4j.com/artifact.php?name=neo4j-community-3.0.4-unix.tar.gz | tar zx
+<pre>curl -L -0 http://neo4j.com/artifact.php?name=neo4j-community-3.2.3-unix.tar.gz | tar zx
 </pre></div></div>
 <p>We&#x2019;ll need to refer to the installation location a lot so save it as an environment variable:</p>
 
 <div class="source">
 <div class="source">
-<pre>export NEO4J_HOME=neo4j-community-3.0.4
+<pre>export NEO4J_HOME=neo4j-community-3.2.3
 </pre></div></div>
 <p>Once both the EHRI server code has been compiled and Neo4j standalone has been downloaded and extracted, we can install the former into the latter. The following script ensures the code is packaged and then installs the EHRI jars and various other dependencies into the <tt>$NEO4J_HOME/plugin/ehri</tt> directory:</p>
 
@@ -415,7 +415,7 @@ curl -H &quot;X-User:$USER&quot; localhost:7474/ehri/classes/UserProfile/$USER
     <footer>
             <div class="container-fluid">
                       <div class="row-fluid">
-                              <p >Copyright &copy;                    2016
+                              <p >Copyright &copy;                    2017
                         <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>.
             All rights reserved.      
                     

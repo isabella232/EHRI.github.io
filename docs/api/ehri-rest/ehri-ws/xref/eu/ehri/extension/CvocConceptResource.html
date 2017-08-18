@@ -125,7 +125,7 @@
 <a class="jxr_linenumber" name="115" href="#115">115</a>             @QueryParam(ALL_PARAM) @DefaultValue(<span class="jxr_string">"false"</span>) <strong class="jxr_keyword">boolean</strong> all) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="116" href="#116">116</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="117" href="#117">117</a>             Concept concept = api().detail(id, cls);
-<a class="jxr_linenumber" name="118" href="#118">118</a>             Response response = streamingPage(getQuery()
+<a class="jxr_linenumber" name="118" href="#118">118</a>             Response response = streamingPage(() -&gt; getQuery()
 <a class="jxr_linenumber" name="119" href="#119">119</a>                     .page(concept.getNarrowerConcepts(), Concept.<strong class="jxr_keyword">class</strong>));
 <a class="jxr_linenumber" name="120" href="#120">120</a>             tx.success();
 <a class="jxr_linenumber" name="121" href="#121">121</a>             <strong class="jxr_keyword">return</strong> response;
@@ -205,7 +205,7 @@
 <a class="jxr_linenumber" name="195" href="#195">195</a>             <strong class="jxr_keyword">throws</strong> ItemNotFound, AccessDenied {
 <a class="jxr_linenumber" name="196" href="#196">196</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="197" href="#197">197</a>             Concept concept = api().detail(id, cls);
-<a class="jxr_linenumber" name="198" href="#198">198</a>             Response response = streamingList(concept.getBroaderConcepts());
+<a class="jxr_linenumber" name="198" href="#198">198</a>             Response response = streamingList(concept::getBroaderConcepts);
 <a class="jxr_linenumber" name="199" href="#199">199</a>             tx.success();
 <a class="jxr_linenumber" name="200" href="#200">200</a>             <strong class="jxr_keyword">return</strong> response;
 <a class="jxr_linenumber" name="201" href="#201">201</a>         }
@@ -223,7 +223,7 @@
 <a class="jxr_linenumber" name="213" href="#213">213</a>     <strong class="jxr_keyword">public</strong> Response getCvocRelatedConcepts(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="214" href="#214">214</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="215" href="#215">215</a>             Concept concept = api().detail(id, cls);
-<a class="jxr_linenumber" name="216" href="#216">216</a>             Response response = streamingList(concept.getRelatedConcepts());
+<a class="jxr_linenumber" name="216" href="#216">216</a>             Response response = streamingList(concept::getRelatedConcepts);
 <a class="jxr_linenumber" name="217" href="#217">217</a>             tx.success();
 <a class="jxr_linenumber" name="218" href="#218">218</a>             <strong class="jxr_keyword">return</strong> response;
 <a class="jxr_linenumber" name="219" href="#219">219</a>         }
@@ -243,7 +243,7 @@
 <a class="jxr_linenumber" name="233" href="#233">233</a>     <strong class="jxr_keyword">public</strong> Response getCvocRelatedByConcepts(@PathParam(<span class="jxr_string">"id"</span>) String id) <strong class="jxr_keyword">throws</strong> ItemNotFound {
 <a class="jxr_linenumber" name="234" href="#234">234</a>         <strong class="jxr_keyword">try</strong> (<strong class="jxr_keyword">final</strong> Tx tx = beginTx()) {
 <a class="jxr_linenumber" name="235" href="#235">235</a>             Concept concept = api().detail(id, cls);
-<a class="jxr_linenumber" name="236" href="#236">236</a>             Response response = streamingList(concept.getRelatedByConcepts());
+<a class="jxr_linenumber" name="236" href="#236">236</a>             Response response = streamingList(concept::getRelatedByConcepts);
 <a class="jxr_linenumber" name="237" href="#237">237</a>             tx.success();
 <a class="jxr_linenumber" name="238" href="#238">238</a>             <strong class="jxr_keyword">return</strong> response;
 <a class="jxr_linenumber" name="239" href="#239">239</a>         }

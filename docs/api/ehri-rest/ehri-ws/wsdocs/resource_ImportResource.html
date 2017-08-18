@@ -51,11 +51,13 @@
         <ul class="nav nav-sidebar">
           <li><a href="#resource_ImportResource_importSkos_POST">POST /import/skos</a></li>
           <li><a href="#resource_ImportResource_importEad_POST">POST /import/ead</a></li>
+          <li><a href="#resource_ImportResource_syncEad_POST">POST /import/ead-sync</a></li>
           <li><a href="#resource_ImportResource_importEag_POST">POST /import/eag</a></li>
           <li><a href="#resource_ImportResource_importEac_POST">POST /import/eac</a></li>
           <li><a href="#resource_ImportResource_importCsv_POST">POST /import/csv</a></li>
           <li><a href="#resource_ImportResource_batchUpdate_PUT">PUT /import/batch</a></li>
           <li><a href="#resource_ImportResource_batchDelete_DELETE">DELETE /import/batch</a></li>
+          <li><a href="#resource_ImportResource_importLinks_POST">POST /import/links</a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -104,9 +106,18 @@ Example:
           <tr>
             <td><span class="parameter-name">baseURI</span></td>
             <td>query</td>
-            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-description">a URI prefix common to ingested items that will be removed
+from each item's URI to obtain the local identifier.</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">commit the operation to the database. The default
+mode is to operate as a dry-run</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">format</span></td>
@@ -127,6 +138,14 @@ its contents will be used.</span></td>
             <td><span class="parameter-name">scope</span></td>
             <td>query</td>
             <td><span class="parameter-description">the id of the import scope (i.e. repository)</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">suffix</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">a URI suffix common to ingested items that will be removed
+from each item's URI to obtain the local identifier.</span></td>
             <td><span class="parameter-default-value">&nbsp;</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
           </tr>
@@ -170,7 +189,7 @@ its contents will be used.</span></td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: */*&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">*/*</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
             <td><span class="response-description">a JSON object showing how many records were created,
@@ -187,7 +206,7 @@ updated, or unchanged.</span></td>
               <pre>
 POST /import/skos
 Content-Type: */*
-Accept: application/json
+Accept: */*
 
                 <code class="prettyprint language-txt">
 ...
@@ -198,7 +217,7 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: application/json
+Content-Type: */*
 
                 <code class="prettyprint language-txt">
 ...
@@ -258,6 +277,14 @@ The way you would run with would typically be:
             <td><span class="parameter-description">allow the importer to update items that already exist. If it
 attempts to do so without this option enabled an error will
 be thrown</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">commit the operation to the database. The default
+mode is to operate as a dry-run</span></td>
             <td><span class="parameter-default-value">false</span></td>
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
@@ -358,7 +385,7 @@ the contents.</span></td>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: */*&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">*/*</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
             <td><span class="response-description">a JSON object showing how many records were created,
@@ -375,7 +402,7 @@ updated, or unchanged.</span></td>
               <pre>
 POST /import/ead
 Content-Type: application/octet-stream
-Accept: application/json
+Accept: */*
 
                 <code class="prettyprint language-txt">
 ...
@@ -386,7 +413,195 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: application/json
+Content-Type: */*
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_ImportResource_syncEad_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/import/ead-sync <a href="../import/ead-sync" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Synchronise a repository or fonds via EAD data, removing
+items which are not present in the incoming data. Parameters
+are the same as /ead with the addition of `ex={id}`, which
+allows specifying items to ignore, and fondsId, which allows
+synchronising just within a specific item.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+            <th>multivalued</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">allow-update</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">ex</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">the ID of an item to be excluded from the sync operation</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">fonds</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">the ID of a specific fonds within the repository
+scope to synchronise. If missing the scope will be
+used</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">handler</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">importer</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">log</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">properties</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">scope</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">tolerant</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/octet-stream&quot; HTTP header to specify this media type to the server."><span class="request-type">application/octet-stream</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">application/xml</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/plain&quot; HTTP header to specify this media type to the server."><span class="request-type">text/plain</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/xml&quot; HTTP header to specify this media type to the server."><span class="request-type">text/xml</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: */*&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">*/*</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">a SyncLog instance.</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /import/ead-sync
+Content-Type: application/octet-stream
+Accept: */*
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: */*
 
                 <code class="prettyprint language-txt">
 ...
@@ -422,6 +637,13 @@ Content-Type: application/json
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
             <td><span class="parameter-name">handler</span></td>
             <td>query</td>
             <td><span class="parameter-description"></span></td>
@@ -508,7 +730,7 @@ Content-Type: application/json
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: */*&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">*/*</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
           </tr>
@@ -523,7 +745,7 @@ Content-Type: application/json
               <pre>
 POST /import/eag
 Content-Type: application/octet-stream
-Accept: application/json
+Accept: */*
 
                 <code class="prettyprint language-txt">
 ...
@@ -534,7 +756,7 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: application/json
+Content-Type: */*
 
                 <code class="prettyprint language-txt">
 ...
@@ -570,6 +792,13 @@ Content-Type: application/json
             <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
             <td><span class="parameter-name">handler</span></td>
             <td>query</td>
             <td><span class="parameter-description"></span></td>
@@ -656,7 +885,7 @@ Content-Type: application/json
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: */*&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">*/*</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
           </tr>
@@ -671,7 +900,7 @@ Content-Type: application/json
               <pre>
 POST /import/eac
 Content-Type: application/octet-stream
-Accept: application/json
+Accept: */*
 
                 <code class="prettyprint language-txt">
 ...
@@ -682,7 +911,7 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: application/json
+Content-Type: */*
 
                 <code class="prettyprint language-txt">
 ...
@@ -716,6 +945,13 @@ Additional note: no handler class is required.</p>
           <tbody>
           <tr>
             <td><span class="parameter-name">allow-update</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">commit</span></td>
             <td>query</td>
             <td><span class="parameter-description"></span></td>
             <td><span class="parameter-default-value">false</span></td>
@@ -845,6 +1081,13 @@ data bundles.</p>
           </thead>
           <tbody>
           <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
             <td><span class="parameter-name">log</span></td>
             <td>query</td>
             <td><span class="parameter-description">an optional log message</span></td>
@@ -963,6 +1206,14 @@ Content-Type: application/json
           </thead>
           <tbody>
           <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
+          </tr>
+          <tr>
             <td><span class="parameter-name">id</span></td>
             <td>query</td>
             <td><span class="parameter-description">a list of IDs to delete</span></td>
@@ -1012,6 +1263,124 @@ DELETE /import/batch
               <pre>
 HTTP/1.1 204 No Content
 
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_ImportResource_importLinks_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/import/links <a href="../import/links" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Create multiple links via CSV or JSON tabular upload.
+<p>
+Each data row must consist of 5 columns:
+<ol>
+<li>the source item
+<li>the target item
+<li>the link type, e.g. associative, hierarchical
+<li>the link field (if applicable) e.g. relatedUnitsOfDescription
+<li>the link description
+</ol>
+<p>
+A separate log item will be created for each row.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">tolerant</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">the tabular data</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/csv&quot; HTTP header to specify this media type to the server."><span class="request-type">text/csv</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">a single column table of link IDs</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /import/links
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
           </div>

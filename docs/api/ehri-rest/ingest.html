@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20161219" />
+    <meta name="Date-Revision-yyyymmdd" content="20170818" />
     <meta http-equiv="Content-Language" content="en" />
     <title>EHRI Backend &#x2013; Example Ingest</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,10 +39,10 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2016-12-19
+                  <li id="publishDate">Last Published: 2017-08-18
                       <span class="divider">|</span>
                    </li>
-                  <li id="projectVersion">Version: 0.13.6-SNAPSHOT
+                  <li id="projectVersion">Version: 0.13.10
                           <span class="divider">|</span>
                       </li>
                                       <li class="">
@@ -316,21 +316,23 @@ export LOG=`pwd`/LOG.txt
     -H &quot;X-User:mike&quot; \
     -H &quot;Content-type: text/xml&quot; \
     --data-binary @KHSK_GER.xml \
-    &quot;http://localhost:7474/ehri/import/ead?scope=de-002409&amp;log=$LOG&amp;properties=$PROPERTIES&quot;
+    &quot;http://localhost:7474/ehri/import/ead?scope=de-002409&amp;log=$LOG&amp;properties=$PROPERTIES&amp;commit=true&quot;
 </pre></div></div>
 <p>These parameters are:</p>
 
 <ul>
   
-<li>the <tt>X-User</tt> header tells the web service which user is responsible for the ingest</li>
+<li>the <tt>X-User</tt> header tells the web service which user is responsible for the ingest.</li>
   
-<li>the <tt>Content-type</tt> header tells it to expect XML data</li>
+<li>the <tt>Content-type</tt> header tells it to expect XML data.</li>
   
-<li>the <tt>scope=de-002409</tt> query parameter tells it we&#x2019;re importing this EAD into  the ITS repository</li>
+<li>the <tt>scope=de-002409</tt> query parameter tells it we&#x2019;re importing this EAD into  the ITS repository.</li>
   
-<li>the <tt>log=$LOG</tt> parameter tells it to find the log text in a local file</li>
+<li>the <tt>log=$LOG</tt> parameter tells it to find the log text in a local file.</li>
   
-<li>the <tt>properties=$PROPERTIES</tt> parameter tells it to file the import properties  in a local file</li>
+<li>the <tt>properties=$PROPERTIES</tt> parameter tells it to file the import properties in a local file.</li>
+  
+<li>the <tt>commit=true|false</tt> parameter tells the web service to actually commit the transaction. By default it will not, which provides a way of doing &#x201c;dry run&#x201d; ingests.</li>
 </ul>
 <p><b>Note</b>: when importing a single EAD containing ~50,000 items in a single transaction the staging server might run out of memory. If it does the only option is to increase the Neo4j heap size by uncommenting and setting the <tt>dbms.memory.heap.max_size=MORE_MB</tt> (say,  3500) in <tt>$NEO4J_HOME/conf/neo4j-wrapper.conf</tt> and restarting Neo4j by running:</p>
 
@@ -398,7 +400,7 @@ export LOG=`pwd`/LOG.txt
     <footer>
             <div class="container-fluid">
                       <div class="row-fluid">
-                              <p >Copyright &copy;                    2016
+                              <p >Copyright &copy;                    2017
                         <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>.
             All rights reserved.      
                     

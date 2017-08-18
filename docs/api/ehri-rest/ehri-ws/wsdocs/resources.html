@@ -235,11 +235,13 @@ regardless of their specific type.</span>
 </td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/classes/Group</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/Group/{id}</span>
+</samp></li><li><samp>  <span class="resource-path">/classes/Group/{id}/actions</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/Group/{id}/list</span>
 </samp></li><li><samp>  <span class="resource-path">/classes/Group/{id}/{aid}</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">POST</span> 
 </samp></li></ul></td>
@@ -267,10 +269,14 @@ regardless of their specific type.</span>
 </samp></li><li><samp>  <span class="resource-path">/import/csv</span>
 </samp></li><li><samp>  <span class="resource-path">/import/eac</span>
 </samp></li><li><samp>  <span class="resource-path">/import/ead</span>
+</samp></li><li><samp>  <span class="resource-path">/import/ead-sync</span>
 </samp></li><li><samp>  <span class="resource-path">/import/eag</span>
+</samp></li><li><samp>  <span class="resource-path">/import/links</span>
 </samp></li><li><samp>  <span class="resource-path">/import/skos</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
@@ -333,7 +339,7 @@ regardless of their specific type.</span>
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li></ul></td>
       <td>  <span class="resource-description">Provides a web service interface for the Repository.</span>
 </td>
@@ -392,15 +398,18 @@ Standard paging parameters apply to all end-points.</span>
     <tr class="clickable-row" data-href="resource_ToolsResource.html">
       <td>  <span class="resource-name">ToolsResource</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/tools/find-replace</span>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/tools/__INITIALISE</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/find-replace</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/full-upgrade-1to2</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/regenerate-description-ids</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/regenerate-ids</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/relink-targets</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/rename</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/schema</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/set-constraints</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/set-labels</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/upgrade-1to2</span>
+</samp></li><li><samp>  <span class="resource-path">/tools/version</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/regenerate-ids-for-scope/{scope}</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/regenerate-ids-for-type/{type}</span>
 </samp></li><li><samp>  <span class="resource-path">/tools/generate-concepts/{repositoryId}/{vocabularyId}</span>
@@ -410,10 +419,13 @@ Standard paging parameters apply to all end-points.</span>
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
