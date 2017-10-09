@@ -103,9 +103,7 @@
 <div class="block">only add key value pair if value is no empty String</div>
 </dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/AbstractImporter.html#addCallback-eu.ehri.project.importers.ImportCallback-">addCallback(ImportCallback)</a></span> - Method in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/AbstractImporter.html" title="class in eu.ehri.project.importers.base">AbstractImporter</a></dt>
-<dd>
-<div class="block">Add a callback to run when an item is created.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/ItemImporter.html#addCallback-eu.ehri.project.importers.ImportCallback-">addCallback(ImportCallback)</a></span> - Method in interface eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/ItemImporter.html" title="interface in eu.ehri.project.importers.base">ItemImporter</a></dt>
 <dd>
 <div class="block">Add a callback to run when an item is created.</div>
@@ -118,6 +116,12 @@
 <dd>
 <div class="block">Indicate that importing the item with the given id
  failed with the given error.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/AbstractImporter.html#addErrorCallback-eu.ehri.project.importers.ErrorCallback-">addErrorCallback(ErrorCallback)</a></span> - Method in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/AbstractImporter.html" title="class in eu.ehri.project.importers.base">AbstractImporter</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/ItemImporter.html#addErrorCallback-eu.ehri.project.importers.ErrorCallback-">addErrorCallback(ErrorCallback)</a></span> - Method in interface eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/ItemImporter.html" title="interface in eu.ehri.project.importers.base">ItemImporter</a></dt>
+<dd>
+<div class="block">Add a callback to run when an item errors.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/ead/EadHandler.html#addOtherIdentifier-java.util.Map-java.lang.String-">addOtherIdentifier(Map&lt;String, Object&gt;, String)</a></span> - Method in class eu.ehri.project.importers.ead.<a href="eu/ehri/project/importers/ead/EadHandler.html" title="class in eu.ehri.project.importers.ead">EadHandler</a></dt>
 <dd>
@@ -453,6 +457,11 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/SaxXmlHandler.html#endEntity-java.lang.String-">endEntity(String)</a></span> - Method in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/SaxXmlHandler.html" title="class in eu.ehri.project.importers.base">SaxXmlHandler</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="eu/ehri/project/importers/ErrorCallback.html" title="interface in eu.ehri.project.importers"><span class="typeNameLink">ErrorCallback</span></a> - Interface in <a href="eu/ehri/project/importers/package-summary.html">eu.ehri.project.importers</a></dt>
+<dd>
+<div class="block">Implementing classes do things after an item import threw
+ a validation error.</div>
+</dd>
 <dt><a href="eu/ehri/project/definitions/package-summary.html">eu.ehri.project.definitions</a> - package eu.ehri.project.definitions</dt>
 <dd>&nbsp;</dd>
 <dt><a href="eu/ehri/project/exporters/cvoc/package-summary.html">eu.ehri.project.exporters.cvoc</a> - package eu.ehri.project.exporters.cvoc</dt>
@@ -584,6 +593,10 @@
 <div class="block">Extract a list of entity bundles for DatePeriods from the data,
  attempting to parse the unitdate attribute.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/util/ImportHelpers.html#extractDescription-java.util.Map-eu.ehri.project.models.EntityClass-">extractDescription(Map&lt;String, Object&gt;, EntityClass)</a></span> - Static method in class eu.ehri.project.importers.util.<a href="eu/ehri/project/importers/util/ImportHelpers.html" title="class in eu.ehri.project.importers.util">ImportHelpers</a></dt>
+<dd>
+<div class="block">Extract a Map containing the properties of a generic description.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/ead/EadHandler.html#extractIdentifier-java.util.Map-">extractIdentifier(Map&lt;String, Object&gt;)</a></span> - Method in class eu.ehri.project.importers.ead.<a href="eu/ehri/project/importers/ead/EadHandler.html" title="class in eu.ehri.project.importers.ead">EadHandler</a></dt>
 <dd>
 <div class="block">Handler-specific code for extraction or generation of unit IDs.</div>
@@ -620,10 +633,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/eac/EacImporter.html#extractUnitDescription-java.util.Map-eu.ehri.project.models.EntityClass-">extractUnitDescription(Map&lt;String, Object&gt;, EntityClass)</a></span> - Method in class eu.ehri.project.importers.eac.<a href="eu/ehri/project/importers/eac/EacImporter.html" title="class in eu.ehri.project.importers.eac">EacImporter</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/util/ImportHelpers.html#extractUnitDescription-java.util.Map-eu.ehri.project.models.EntityClass-">extractUnitDescription(Map&lt;String, Object&gt;, EntityClass)</a></span> - Static method in class eu.ehri.project.importers.util.<a href="eu/ehri/project/importers/util/ImportHelpers.html" title="class in eu.ehri.project.importers.util">ImportHelpers</a></dt>
-<dd>
-<div class="block">Extract a Map containing the properties of a documentary unit's description.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/util/ImportHelpers.html#extractUnknownProperties-java.util.Map-">extractUnknownProperties(Map&lt;String, Object&gt;)</a></span> - Static method in class eu.ehri.project.importers.util.<a href="eu/ehri/project/importers/util/ImportHelpers.html" title="class in eu.ehri.project.importers.util">ImportHelpers</a></dt>
 <dd>
 <div class="block">Extract properties from the itemData Map that are marked as unknown, and return them in a new Map.</div>
@@ -768,6 +777,13 @@
 <dd>
 <div class="block">Call all registered ImportCallbacks for the given mutation.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/AbstractImporter.html#handleError-java.lang.Exception-">handleError(Exception)</a></span> - Method in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/AbstractImporter.html" title="class in eu.ehri.project.importers.base">AbstractImporter</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/ItemImporter.html#handleError-java.lang.Exception-">handleError(Exception)</a></span> - Method in interface eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/ItemImporter.html" title="interface in eu.ehri.project.importers.base">ItemImporter</a></dt>
+<dd>
+<div class="block">Used to indicate a validation error in the
+ handler for a given element.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/properties/NodeProperties.html#HANDLERNAME">HANDLERNAME</a></span> - Static variable in class eu.ehri.project.importers.properties.<a href="eu/ehri/project/importers/properties/NodeProperties.html" title="class in eu.ehri.project.importers.properties">NodeProperties</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/properties/ImportProperties.html#hasAttributeProperty-java.lang.String-">hasAttributeProperty(String)</a></span> - Method in interface eu.ehri.project.importers.properties.<a href="eu/ehri/project/importers/properties/ImportProperties.html" title="interface in eu.ehri.project.importers.properties">ImportProperties</a></dt>
@@ -840,13 +856,13 @@
 </dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/util/ImportHelpers.html#ImportHelpers--">ImportHelpers()</a></span> - Constructor for class eu.ehri.project.importers.util.<a href="eu/ehri/project/importers/util/ImportHelpers.html" title="class in eu.ehri.project.importers.util">ImportHelpers</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-java.lang.String-">importInputStream(InputStream, String)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-java.lang.String-java.lang.String-">importInputStream(InputStream, String, String)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream(InputStream, ActionManager.EventContext, ImportLog)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-java.lang.String-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream(InputStream, String, ActionManager.EventContext, ImportLog)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
 <dd>
 <div class="block">Import an InputStream with an event context.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/CsvImportManager.html#importInputStream-java.io.InputStream-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream(InputStream, ActionManager.EventContext, ImportLog)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/CsvImportManager.html" title="class in eu.ehri.project.importers.managers">CsvImportManager</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/CsvImportManager.html#importInputStream-java.io.InputStream-java.lang.String-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream(InputStream, String, ActionManager.EventContext, ImportLog)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/CsvImportManager.html" title="class in eu.ehri.project.importers.managers">CsvImportManager</a></dt>
 <dd>
 <div class="block">Import CSV from the given InputStream, as part of the given action.</div>
 </dd>
@@ -854,7 +870,11 @@
 <dd>
 <div class="block">Import an item via an input stream.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/SaxImportManager.html#importInputStream-java.io.InputStream-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream(InputStream, ActionManager.EventContext, ImportLog)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/ImportManager.html#importInputStream-java.io.InputStream-java.lang.String-java.lang.String-">importInputStream(InputStream, String, String)</a></span> - Method in interface eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/ImportManager.html" title="interface in eu.ehri.project.importers.managers">ImportManager</a></dt>
+<dd>
+<div class="block">Import an item via an input stream.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/SaxImportManager.html#importInputStream-java.io.InputStream-java.lang.String-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream(InputStream, String, ActionManager.EventContext, ImportLog)</a></span> - Method in class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
 <dd>
 <div class="block">Import XML from the given InputStream, as part of the given action.</div>
 </dd>
@@ -1010,6 +1030,8 @@
 <dd>
 <div class="block">Determine if the element represents a unit delimiter</div>
 </dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/ErrorCallback.html#itemError-java.lang.Exception-">itemError(Exception)</a></span> - Method in interface eu.ehri.project.importers.<a href="eu/ehri/project/importers/ErrorCallback.html" title="interface in eu.ehri.project.importers">ErrorCallback</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/ImportCallback.html#itemImported-eu.ehri.project.persistence.Mutation-">itemImported(Mutation&lt;? extends Accessible&gt;)</a></span> - Method in interface eu.ehri.project.importers.<a href="eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="eu/ehri/project/importers/base/ItemImporter.html" title="interface in eu.ehri.project.importers.base"><span class="typeNameLink">ItemImporter</span></a>&lt;<a href="eu/ehri/project/importers/base/ItemImporter.html" title="type parameter in ItemImporter">I</a>,<a href="eu/ehri/project/importers/base/ItemImporter.html" title="type parameter in ItemImporter">T</a> extends <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/base/Accessible.html?is-external=true" title="class or interface in eu.ehri.project.models.base">Accessible</a>&gt; - Interface in <a href="eu/ehri/project/importers/base/package-summary.html">eu.ehri.project.importers.base</a></dt>
@@ -1064,6 +1086,12 @@
 <dt><a href="eu/ehri/project/importers/links/LinkImporter.html" title="class in eu.ehri.project.importers.links"><span class="typeNameLink">LinkImporter</span></a> - Class in <a href="eu/ehri/project/importers/links/package-summary.html">eu.ehri.project.importers.links</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/links/LinkImporter.html#LinkImporter-com.tinkerpop.frames.FramedGraph-eu.ehri.project.models.base.Actioner-boolean-">LinkImporter(FramedGraph&lt;?&gt;, Actioner, boolean)</a></span> - Constructor for class eu.ehri.project.importers.links.<a href="eu/ehri/project/importers/links/LinkImporter.html" title="class in eu.ehri.project.importers.links">LinkImporter</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="eu/ehri/project/importers/links/LinkResolver.html" title="class in eu.ehri.project.importers.links"><span class="typeNameLink">LinkResolver</span></a> - Class in <a href="eu/ehri/project/importers/links/package-summary.html">eu.ehri.project.importers.links</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/links/LinkResolver.html#LinkResolver-com.tinkerpop.frames.FramedGraph-eu.ehri.project.models.base.Accessor-">LinkResolver(FramedGraph&lt;?&gt;, Accessor)</a></span> - Constructor for class eu.ehri.project.importers.links.<a href="eu/ehri/project/importers/links/LinkResolver.html" title="class in eu.ehri.project.importers.links">LinkResolver</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/SaxXmlHandler.html#locator">locator</a></span> - Variable in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/SaxXmlHandler.html" title="class in eu.ehri.project.importers.base">SaxXmlHandler</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/AbstractImporter.html#log">log</a></span> - Variable in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/AbstractImporter.html" title="class in eu.ehri.project.importers.base">AbstractImporter</a></dt>
 <dd>&nbsp;</dd>
@@ -1217,13 +1245,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/cvoc/SkosRDFVocabulary.html#RELATION_PROPS">RELATION_PROPS</a></span> - Static variable in enum eu.ehri.project.importers.cvoc.<a href="eu/ehri/project/importers/cvoc/SkosRDFVocabulary.html" title="enum in eu.ehri.project.importers.cvoc">SkosRDFVocabulary</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/util/ImportHelpers.html#replaceDates-java.util.Map-java.util.List-">replaceDates(Map&lt;String, Object&gt;, List&lt;Map&lt;String, Object&gt;&gt;)</a></span> - Static method in class eu.ehri.project.importers.util.<a href="eu/ehri/project/importers/util/ImportHelpers.html" title="class in eu.ehri.project.importers.util">ImportHelpers</a></dt>
-<dd>
-<div class="block">The dates that have been extracted to the extractedDates will be removed from the data map</div>
-</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/properties/NodeProperties.html#REQUIRED">REQUIRED</a></span> - Static variable in class eu.ehri.project.importers.properties.<a href="eu/ehri/project/importers/properties/NodeProperties.html" title="class in eu.ehri.project.importers.properties">NodeProperties</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/util/ImportHelpers.html#RESOLVED_LINK_DESC">RESOLVED_LINK_DESC</a></span> - Static variable in class eu.ehri.project.importers.util.<a href="eu/ehri/project/importers/util/ImportHelpers.html" title="class in eu.ehri.project.importers.util">ImportHelpers</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/ead/EadHandler.html#resolveEntity-java.lang.String-java.lang.String-">resolveEntity(String, String)</a></span> - Method in class eu.ehri.project.importers.ead.<a href="eu/ehri/project/importers/ead/EadHandler.html" title="class in eu.ehri.project.importers.ead">EadHandler</a></dt>
 <dd>
@@ -1252,7 +1274,7 @@
 <div class="block">Class that provides a front-end for importing XML files like EAD and EAC and
  nested lists of EAD documents into the graph.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager-com.tinkerpop.frames.FramedGraph-eu.ehri.project.models.base.PermissionScope-eu.ehri.project.models.base.Actioner-boolean-boolean-java.lang.Class-java.lang.Class-java.util.Optional-java.util.List-">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends ItemImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, Optional&lt;XmlImportProperties&gt;, List&lt;ImportCallback&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/SaxImportManager.html#SaxImportManager-com.tinkerpop.frames.FramedGraph-eu.ehri.project.models.base.PermissionScope-eu.ehri.project.models.base.Actioner-boolean-boolean-java.lang.Class-java.lang.Class-eu.ehri.project.importers.properties.XmlImportProperties-java.util.List-">SaxImportManager(FramedGraph&lt;?&gt;, PermissionScope, Actioner, boolean, boolean, Class&lt;? extends ItemImporter&gt;, Class&lt;? extends SaxXmlHandler&gt;, XmlImportProperties, List&lt;ImportCallback&gt;)</a></span> - Constructor for class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/SaxImportManager.html" title="class in eu.ehri.project.importers.managers">SaxImportManager</a></dt>
 <dd>
 <div class="block">Constructor.</div>
 </dd>
@@ -1272,6 +1294,8 @@
 <dd>
 <div class="block">Reader of XML files, creator of <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>-based representations of EA* files.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/SaxXmlHandler.html#SaxXmlHandler-eu.ehri.project.importers.base.ItemImporter-">SaxXmlHandler(ItemImporter&lt;Map&lt;String, Object&gt;, ?&gt;)</a></span> - Constructor for class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/SaxXmlHandler.html" title="class in eu.ehri.project.importers.base">SaxXmlHandler</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/SaxXmlHandler.html#SaxXmlHandler-eu.ehri.project.importers.base.ItemImporter-eu.ehri.project.importers.properties.XmlImportProperties-">SaxXmlHandler(ItemImporter&lt;Map&lt;String, Object&gt;, ?&gt;, XmlImportProperties)</a></span> - Constructor for class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/SaxXmlHandler.html" title="class in eu.ehri.project.importers.base">SaxXmlHandler</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="eu/ehri/project/exporters/cvoc/SchemaExporter.html" title="class in eu.ehri.project.exporters.cvoc"><span class="typeNameLink">SchemaExporter</span></a> - Class in <a href="eu/ehri/project/exporters/cvoc/package-summary.html">eu.ehri.project.exporters.cvoc</a></dt>
@@ -1295,6 +1319,8 @@
 <div class="block">Set default language for literals without a lang suffix.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/exporters/xml/IndentingXMLStreamWriter.html#setDefaultNamespace-java.lang.String-">setDefaultNamespace(String)</a></span> - Method in class eu.ehri.project.exporters.xml.<a href="eu/ehri/project/exporters/xml/IndentingXMLStreamWriter.html" title="class in eu.ehri.project.exporters.xml">IndentingXMLStreamWriter</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/SaxXmlHandler.html#setDocumentLocator-org.xml.sax.Locator-">setDocumentLocator(Locator)</a></span> - Method in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/SaxXmlHandler.html" title="class in eu.ehri.project.importers.base">SaxXmlHandler</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/exporters/cvoc/JenaSkosExporter.html#setFormat-java.lang.String-">setFormat(String)</a></span> - Method in class eu.ehri.project.exporters.cvoc.<a href="eu/ehri/project/exporters/cvoc/JenaSkosExporter.html" title="class in eu.ehri.project.exporters.cvoc">JenaSkosExporter</a></dt>
 <dd>&nbsp;</dd>
@@ -1350,11 +1376,8 @@
 <dd>&nbsp;</dd>
 <dt><a href="eu/ehri/project/importers/cvoc/SkosRDFVocabulary.html" title="enum in eu.ehri.project.importers.cvoc"><span class="typeNameLink">SkosRDFVocabulary</span></a> - Enum in <a href="eu/ehri/project/importers/cvoc/package-summary.html">eu.ehri.project.importers.cvoc</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/ead/EadImporter.html#solveUndeterminedRelationships-eu.ehri.project.models.DocumentaryUnit-">solveUndeterminedRelationships(DocumentaryUnit)</a></span> - Method in class eu.ehri.project.importers.ead.<a href="eu/ehri/project/importers/ead/EadImporter.html" title="class in eu.ehri.project.importers.ead">EadImporter</a></dt>
-<dd>
-<div class="block">Subclasses can override this method to cater to their special needs for UndeterminedRelationships
- by default, it expects something like this in the original EAD:</div>
-</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/importers/links/LinkResolver.html#solveUndeterminedRelationships-eu.ehri.project.models.base.Described-">solveUndeterminedRelationships(Described)</a></span> - Method in class eu.ehri.project.importers.links.<a href="eu/ehri/project/importers/links/LinkResolver.html" title="class in eu.ehri.project.importers.links">LinkResolver</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/SaxXmlHandler.html#startCDATA--">startCDATA()</a></span> - Method in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/SaxXmlHandler.html" title="class in eu.ehri.project.importers.base">SaxXmlHandler</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/SaxXmlHandler.html#startDTD-java.lang.String-java.lang.String-java.lang.String-">startDTD(String, String, String)</a></span> - Method in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/SaxXmlHandler.html" title="class in eu.ehri.project.importers.base">SaxXmlHandler</a></dt>

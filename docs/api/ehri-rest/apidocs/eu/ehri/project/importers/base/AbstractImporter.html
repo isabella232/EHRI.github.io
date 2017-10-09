@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -202,25 +202,38 @@ implements <a href="../../../../../eu/ehri/project/importers/base/ItemImporter.h
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#addErrorCallback-eu.ehri.project.importers.ErrorCallback-">addErrorCallback</a></span>(<a href="../../../../../eu/ehri/project/importers/ErrorCallback.html" title="interface in eu.ehri.project.importers">ErrorCallback</a>&nbsp;errorCallback)</code>
+<div class="block">Add a callback to run when an item errors.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/base/Actioner.html" title="interface in eu.ehri.project.models.base">Actioner</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getActioner--">getActioner</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/models/base/PermissionScope.html" title="interface in eu.ehri.project.models.base">PermissionScope</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getPermissionScope--">getPermissionScope</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/persistence/BundleManager.html" title="class in eu.ehri.project.persistence">BundleManager</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getPersister--">getPersister</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../../../eu/ehri/project/persistence/BundleManager.html" title="class in eu.ehri.project.persistence">BundleManager</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getPersister-java.util.List-">getPersister</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;scopeIds)</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#handleCallbacks-eu.ehri.project.persistence.Mutation-">handleCallbacks</a></span>(<a href="../../../../../eu/ehri/project/persistence/Mutation.html" title="class in eu.ehri.project.persistence">Mutation</a>&lt;? extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;&nbsp;mutation)</code>
 <div class="block">Call all registered ImportCallbacks for the given mutation.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#handleError-java.lang.Exception-">handleError</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a>&nbsp;ex)</code>
+<div class="block">Used to indicate a validation error in the
+ handler for a given element.</div>
 </td>
 </tr>
 </table>
@@ -386,16 +399,52 @@ implements <a href="../../../../../eu/ehri/project/importers/base/ItemImporter.h
 <a name="addCallback-eu.ehri.project.importers.ImportCallback-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>addCallback</h4>
 <pre>public&nbsp;void&nbsp;addCallback(<a href="../../../../../eu/ehri/project/importers/ImportCallback.html" title="interface in eu.ehri.project.importers">ImportCallback</a>&nbsp;callback)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html#addCallback-eu.ehri.project.importers.ImportCallback-">ItemImporter</a></code></span></div>
 <div class="block">Add a callback to run when an item is created.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html#addCallback-eu.ehri.project.importers.ImportCallback-">addCallback</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html" title="interface in eu.ehri.project.importers.base">ItemImporter</a>&lt;<a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html" title="type parameter in AbstractImporter">I</a>,<a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html" title="type parameter in AbstractImporter">T</a> extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>callback</code> - a callback function object</dd>
+</dl>
+</li>
+</ul>
+<a name="addErrorCallback-eu.ehri.project.importers.ErrorCallback-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addErrorCallback</h4>
+<pre>public&nbsp;void&nbsp;addErrorCallback(<a href="../../../../../eu/ehri/project/importers/ErrorCallback.html" title="interface in eu.ehri.project.importers">ErrorCallback</a>&nbsp;errorCallback)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html#addErrorCallback-eu.ehri.project.importers.ErrorCallback-">ItemImporter</a></code></span></div>
+<div class="block">Add a callback to run when an item errors.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html#addErrorCallback-eu.ehri.project.importers.ErrorCallback-">addErrorCallback</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html" title="interface in eu.ehri.project.importers.base">ItemImporter</a>&lt;<a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html" title="type parameter in AbstractImporter">I</a>,<a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html" title="type parameter in AbstractImporter">T</a> extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>errorCallback</code> - a callback function object</dd>
+</dl>
+</li>
+</ul>
+<a name="handleError-java.lang.Exception-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>handleError</h4>
+<pre>public&nbsp;void&nbsp;handleError(<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html?is-external=true" title="class or interface in java.lang">Exception</a>&nbsp;ex)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html#handleError-java.lang.Exception-">ItemImporter</a></code></span></div>
+<div class="block">Used to indicate a validation error in the
+ handler for a given element.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html#handleError-java.lang.Exception-">handleError</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html" title="interface in eu.ehri.project.importers.base">ItemImporter</a>&lt;<a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html" title="type parameter in AbstractImporter">I</a>,<a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html" title="type parameter in AbstractImporter">T</a> extends <a href="../../../../../eu/ehri/project/models/base/Accessible.html" title="interface in eu.ehri.project.models.base">Accessible</a>&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>ex</code> - a validation exception</dd>
 </dl>
 </li>
 </ul>

@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -227,20 +227,13 @@ extends <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.
 <div class="block">Finds any bundle in the graph with the same ObjectIdentifier.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/ead/EadImporter.html#solveUndeterminedRelationships-eu.ehri.project.models.DocumentaryUnit-">solveUndeterminedRelationships</a></span>(<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/DocumentaryUnit.html?is-external=true" title="class or interface in eu.ehri.project.models">DocumentaryUnit</a>&nbsp;unit)</code>
-<div class="block">Subclasses can override this method to cater to their special needs for UndeterminedRelationships
- by default, it expects something like this in the original EAD:</div>
-</td>
-</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.eu.ehri.project.importers.base.AbstractImporter">
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;eu.ehri.project.importers.base.<a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html" title="class in eu.ehri.project.importers.base">AbstractImporter</a></h3>
-<code><a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#addCallback-eu.ehri.project.importers.ImportCallback-">addCallback</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getActioner--">getActioner</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getPermissionScope--">getPermissionScope</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getPersister--">getPersister</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getPersister-java.util.List-">getPersister</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#handleCallbacks-eu.ehri.project.persistence.Mutation-">handleCallbacks</a></code></li>
+<code><a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#addCallback-eu.ehri.project.importers.ImportCallback-">addCallback</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#addErrorCallback-eu.ehri.project.importers.ErrorCallback-">addErrorCallback</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getActioner--">getActioner</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getPermissionScope--">getPermissionScope</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getPersister--">getPersister</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#getPersister-java.util.List-">getPersister</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#handleCallbacks-eu.ehri.project.persistence.Mutation-">handleCallbacks</a>, <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.html#handleError-java.lang.Exception-">handleError</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -376,33 +369,6 @@ extends <a href="../../../../../eu/ehri/project/importers/base/AbstractImporter.
 <dd><code>idPath</code> - the ID path of this bundle (will be relative to the ID path of the permission scope)</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>A bundle with description relationships merged.</dd>
-<dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code></dd>
-</dl>
-</li>
-</ul>
-<a name="solveUndeterminedRelationships-eu.ehri.project.models.DocumentaryUnit-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>solveUndeterminedRelationships</h4>
-<pre>protected&nbsp;void&nbsp;solveUndeterminedRelationships(<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/models/DocumentaryUnit.html?is-external=true" title="class or interface in eu.ehri.project.models">DocumentaryUnit</a>&nbsp;unit)
-                                       throws <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></pre>
-<div class="block">Subclasses can override this method to cater to their special needs for UndeterminedRelationships
- by default, it expects something like this in the original EAD:
- <p>
- <pre>
- <code>
- &lt;persname source="terezin-victims" authfilenumber="PERSON.ITI.1514982"&gt;Kien,
- Leonhard (* 11.5.1886)&lt;/persname&gt;
- </code>
- </pre>
- <p>
- it works in unison with the extractRelations() method.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>unit</code> - the current unit</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></code></dd>
 </dl>

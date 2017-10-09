@@ -151,21 +151,25 @@
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="#eu.ehri.project.importers.managers">eu.ehri.project.importers.managers</a></td>
+<td class="colFirst"><a href="#eu.ehri.project.importers.links">eu.ehri.project.importers.links</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="#eu.ehri.project.importers.util">eu.ehri.project.importers.util</a></td>
+<td class="colFirst"><a href="#eu.ehri.project.importers.managers">eu.ehri.project.importers.managers</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="#eu.ehri.project.importers.util">eu.ehri.project.importers.util</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="#eu.ehri.project.persistence">eu.ehri.project.persistence</a></td>
 <td class="colLast">
 <div class="block">Classes dealing with persistence of
  relational item data in sub-tree format.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#eu.ehri.project.tools">eu.ehri.project.tools</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -1173,13 +1177,6 @@
 <td class="colLast"><span class="typeNameLabel">EadSync.EadIngestOperation.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/ead/EadSync.EadIngestOperation.html#runIngest-eu.ehri.project.importers.managers.ImportManager-">runIngest</a></span>(<a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html" title="interface in eu.ehri.project.importers.managers">ImportManager</a>&nbsp;manager)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><span class="typeNameLabel">EadImporter.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/ead/EadImporter.html#solveUndeterminedRelationships-eu.ehri.project.models.DocumentaryUnit-">solveUndeterminedRelationships</a></span>(<a href="../../../../../eu/ehri/project/models/DocumentaryUnit.html" title="interface in eu.ehri.project.models">DocumentaryUnit</a>&nbsp;unit)</code>
-<div class="block">Subclasses can override this method to cater to their special needs for UndeterminedRelationships
- by default, it expects something like this in the original EAD:</div>
-</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ead/SyncLog.html" title="class in eu.ehri.project.importers.ead">SyncLog</a></code></td>
 <td class="colLast"><span class="typeNameLabel">EadSync.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/ead/EadSync.html#sync-eu.ehri.project.importers.ead.EadSync.EadIngestOperation-java.util.Set-java.lang.String-">sync</a></span>(<a href="../../../../../eu/ehri/project/importers/ead/EadSync.EadIngestOperation.html" title="interface in eu.ehri.project.importers.ead">EadSync.EadIngestOperation</a>&nbsp;op,
     <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;excludes,
@@ -1247,6 +1244,24 @@
 </tbody>
 </table>
 </li>
+<li class="blockList"><a name="eu.ehri.project.importers.links">
+<!--   -->
+</a>
+<h3>Uses of <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a> in <a href="../../../../../eu/ehri/project/importers/links/package-summary.html">eu.ehri.project.importers.links</a></h3>
+<table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation">
+<caption><span>Methods in <a href="../../../../../eu/ehri/project/importers/links/package-summary.html">eu.ehri.project.importers.links</a> that throw <a href="../../../../../eu/ehri/project/exceptions/ValidationError.html" title="class in eu.ehri.project.exceptions">ValidationError</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><code>int</code></td>
+<td class="colLast"><span class="typeNameLabel">LinkResolver.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/links/LinkResolver.html#solveUndeterminedRelationships-eu.ehri.project.models.base.Described-">solveUndeterminedRelationships</a></span>(<a href="../../../../../eu/ehri/project/models/base/Described.html" title="interface in eu.ehri.project.models.base">Described</a>&nbsp;unit)</code>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</li>
 <li class="blockList"><a name="eu.ehri.project.importers.managers">
 <!--   -->
 </a>
@@ -1295,37 +1310,49 @@
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>default <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="typeNameLabel">ImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importInputStream-java.io.InputStream-java.lang.String-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+                 <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
+<div class="block">Import an item via an input stream.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><span class="typeNameLabel">SaxImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/SaxImportManager.html#importInputStream-java.io.InputStream-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+<td class="colLast"><span class="typeNameLabel">SaxImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/SaxImportManager.html#importInputStream-java.io.InputStream-java.lang.String-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+                 <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
                  <a href="../../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;context,
                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
 <div class="block">Import XML from the given InputStream, as part of the given action.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected abstract void</code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+<td class="colLast"><span class="typeNameLabel">AbstractImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-java.lang.String-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+                 <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
                  <a href="../../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;context,
                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
 <div class="block">Import an InputStream with an event context.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><span class="typeNameLabel">CsvImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/CsvImportManager.html#importInputStream-java.io.InputStream-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+<td class="colLast"><span class="typeNameLabel">CsvImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/CsvImportManager.html#importInputStream-java.io.InputStream-java.lang.String-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+                 <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
                  <a href="../../../../../eu/ehri/project/persistence/ActionManager.EventContext.html" title="class in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;context,
                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
 <div class="block">Import CSV from the given InputStream, as part of the given action.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><span class="typeNameLabel">AbstractImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-java.lang.String-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
-                 <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
-</tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importInputStream-java.io.InputStream-java.lang.String-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+<td class="colLast"><span class="typeNameLabel">AbstractImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-java.lang.String-java.lang.String-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+                 <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
+                 <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
+<td class="colLast"><span class="typeNameLabel">ImportManager.</span><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importInputStream-java.io.InputStream-java.lang.String-java.lang.String-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+                 <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
                  <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
 <div class="block">Import an item via an input stream.</div>
 </td>

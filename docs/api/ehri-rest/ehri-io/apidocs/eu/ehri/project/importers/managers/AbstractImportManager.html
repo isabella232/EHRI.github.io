@@ -229,7 +229,8 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected abstract void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-java.lang.String-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+                 <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
                  <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/ActionManager.EventContext.html?is-external=true" title="class or interface in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;context,
                  <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)</code>
 <div class="block">Import an InputStream with an event context.</div>
@@ -237,7 +238,8 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-java.lang.String-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/managers/AbstractImportManager.html#importInputStream-java.io.InputStream-java.lang.String-java.lang.String-">importInputStream</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+                 <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
                  <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)</code>
 <div class="block">Import an item via an input stream.</div>
 </td>
@@ -255,6 +257,13 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
 <code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.eu.ehri.project.importers.managers.ImportManager">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;eu.ehri.project.importers.managers.<a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html" title="interface in eu.ehri.project.importers.managers">ImportManager</a></h3>
+<code><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importInputStream-java.io.InputStream-java.lang.String-">importInputStream</a></code></li>
 </ul>
 </li>
 </ul>
@@ -417,24 +426,26 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 </dl>
 </li>
 </ul>
-<a name="importInputStream-java.io.InputStream-java.lang.String-">
+<a name="importInputStream-java.io.InputStream-java.lang.String-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>importInputStream</h4>
 <pre>public&nbsp;<a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;importInputStream(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+                                   <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
                                    <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;logMessage)
                             throws <a href="http://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
                                    <a href="../../../../../eu/ehri/project/importers/exceptions/InputParseError.html" title="class in eu.ehri.project.importers.exceptions">InputParseError</a>,
                                    <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/ValidationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">ValidationError</a></pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importInputStream-java.io.InputStream-java.lang.String-">ImportManager</a></code></span></div>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importInputStream-java.io.InputStream-java.lang.String-java.lang.String-">ImportManager</a></code></span></div>
 <div class="block">Import an item via an input stream.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importInputStream-java.io.InputStream-java.lang.String-">importInputStream</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html" title="interface in eu.ehri.project.importers.managers">ImportManager</a></code></dd>
+<dd><code><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html#importInputStream-java.io.InputStream-java.lang.String-java.lang.String-">importInputStream</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../eu/ehri/project/importers/managers/ImportManager.html" title="interface in eu.ehri.project.importers.managers">ImportManager</a></code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>stream</code> - the input stream</dd>
+<dd><code>tag</code> - an optional tag identifying the source of the stream</dd>
 <dd><code>logMessage</code> - an optional log message to describe the import</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>an ImportLog for the given stream</dd>
@@ -501,13 +512,14 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 </dl>
 </li>
 </ul>
-<a name="importInputStream-java.io.InputStream-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">
+<a name="importInputStream-java.io.InputStream-java.lang.String-eu.ehri.project.persistence.ActionManager.EventContext-eu.ehri.project.importers.ImportLog-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>importInputStream</h4>
 <pre>protected abstract&nbsp;void&nbsp;importInputStream(<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html?is-external=true" title="class or interface in java.io">InputStream</a>&nbsp;stream,
+                                          <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
                                           <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/persistence/ActionManager.EventContext.html?is-external=true" title="class or interface in eu.ehri.project.persistence">ActionManager.EventContext</a>&nbsp;context,
                                           <a href="../../../../../eu/ehri/project/importers/ImportLog.html" title="class in eu.ehri.project.importers">ImportLog</a>&nbsp;log)
                                    throws <a href="http://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a>,
@@ -517,6 +529,7 @@ implements <a href="../../../../../eu/ehri/project/importers/managers/ImportMana
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>stream</code> - the InputStream to import</dd>
+<dd><code>tag</code> - an optional tag identifying the source of the stream</dd>
 <dd><code>context</code> - the event that this import is part of</dd>
 <dd><code>log</code> - an import log to write to</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>

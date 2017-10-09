@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":6,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":6,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -124,7 +124,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public abstract class <span class="typeNameLabel">SaxXmlHandler</span>
 extends <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/helpers.DefaultHandler.html?is-external=true" title="class or interface in org.xml.sax">org.xml.sax.helpers.DefaultHandler</a>
-implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/LexicalHandler.html?is-external=true" title="class or interface in org.xml.sax.ext">LexicalHandler</a></pre>
+implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/LexicalHandler.html?is-external=true" title="class or interface in org.xml.sax.ext">LexicalHandler</a>, <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true" title="class or interface in org.xml.sax">ContentHandler</a></pre>
 <div class="block">Reader of XML files, creator of <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a>-based representations of EA* files.
  Makes use of properties file with format:
  <p>
@@ -189,6 +189,10 @@ implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/Lex
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#languageMap">languageMap</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>protected <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/Locator.html?is-external=true" title="class or interface in org.xml.sax">Locator</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#locator">locator</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#properties">properties</a></span></code>&nbsp;</td>
 </tr>
@@ -207,6 +211,9 @@ implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/Lex
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#SaxXmlHandler-eu.ehri.project.importers.base.ItemImporter-">SaxXmlHandler</a></span>(<a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html" title="interface in eu.ehri.project.importers.base">ItemImporter</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;,?&gt;&nbsp;importer)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#SaxXmlHandler-eu.ehri.project.importers.base.ItemImporter-eu.ehri.project.importers.properties.XmlImportProperties-">SaxXmlHandler</a></span>(<a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html" title="interface in eu.ehri.project.importers.base">ItemImporter</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;,?&gt;&nbsp;importer,
              <a href="../../../../../eu/ehri/project/importers/properties/XmlImportProperties.html" title="class in eu.ehri.project.importers.properties">XmlImportProperties</a>&nbsp;properties)</code>&nbsp;</td>
 </tr>
@@ -303,15 +310,19 @@ implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/Lex
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#startCDATA--">startCDATA</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#setDocumentLocator-org.xml.sax.Locator-">setDocumentLocator</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/Locator.html?is-external=true" title="class or interface in org.xml.sax">Locator</a>&nbsp;locator)</code>&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#startCDATA--">startCDATA</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#startDTD-java.lang.String-java.lang.String-java.lang.String-">startDTD</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
         <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;publicId,
         <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;systemId)</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#startElement-java.lang.String-java.lang.String-java.lang.String-org.xml.sax.Attributes-">startElement</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;uri,
             <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;localName,
@@ -320,7 +331,7 @@ implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/Lex
 <div class="block">Receive an opening tag.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../eu/ehri/project/importers/base/SaxXmlHandler.html#startEntity-java.lang.String-">startEntity</a></span>(<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</code>&nbsp;</td>
 </tr>
@@ -330,7 +341,7 @@ implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/Lex
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;org.xml.sax.helpers.<a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/helpers.DefaultHandler.html?is-external=true" title="class or interface in org.xml.sax">DefaultHandler</a></h3>
-<code>endDocument, endPrefixMapping, error, fatalError, ignorableWhitespace, notationDecl, processingInstruction, resolveEntity, setDocumentLocator, skippedEntity, startDocument, startPrefixMapping, unparsedEntityDecl, warning</code></li>
+<code>endDocument, endPrefixMapping, error, fatalError, ignorableWhitespace, notationDecl, processingInstruction, resolveEntity, skippedEntity, startDocument, startPrefixMapping, unparsedEntityDecl, warning</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -338,6 +349,13 @@ implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/Lex
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
 <code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#clone--" title="class or interface in java.lang">clone</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#finalize--" title="class or interface in java.lang">finalize</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#getClass--" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notify--" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#notifyAll--" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait--" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#wait-long-int-" title="class or interface in java.lang">wait</a></code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.org.xml.sax.ContentHandler">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;org.xml.sax.<a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true" title="class or interface in org.xml.sax">ContentHandler</a></h3>
+<code><a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true#endDocument--" title="class or interface in org.xml.sax">endDocument</a>, <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true#endPrefixMapping-java.lang.String-" title="class or interface in org.xml.sax">endPrefixMapping</a>, <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true#ignorableWhitespace-char:A-int-int-" title="class or interface in org.xml.sax">ignorableWhitespace</a>, <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true#processingInstruction-java.lang.String-java.lang.String-" title="class or interface in org.xml.sax">processingInstruction</a>, <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true#skippedEntity-java.lang.String-" title="class or interface in org.xml.sax">skippedEntity</a>, <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true#startDocument--" title="class or interface in org.xml.sax">startDocument</a>, <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true#startPrefixMapping-java.lang.String-java.lang.String-" title="class or interface in org.xml.sax">startPrefixMapping</a></code></li>
 </ul>
 </li>
 </ul>
@@ -353,6 +371,15 @@ implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/Lex
 <!--   -->
 </a>
 <h3>Field Detail</h3>
+<a name="locator">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>locator</h4>
+<pre>protected&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/Locator.html?is-external=true" title="class or interface in org.xml.sax">Locator</a> locator</pre>
+</li>
+</ul>
 <a name="currentGraphPath">
 <!--   -->
 </a>
@@ -434,6 +461,15 @@ implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/Lex
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
+<a name="SaxXmlHandler-eu.ehri.project.importers.base.ItemImporter-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SaxXmlHandler</h4>
+<pre>public&nbsp;SaxXmlHandler(<a href="../../../../../eu/ehri/project/importers/base/ItemImporter.html" title="interface in eu.ehri.project.importers.base">ItemImporter</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;,?&gt;&nbsp;importer)</pre>
+</li>
+</ul>
 <a name="SaxXmlHandler-eu.ehri.project.importers.base.ItemImporter-eu.ehri.project.importers.properties.XmlImportProperties-">
 <!--   -->
 </a>
@@ -507,6 +543,21 @@ implements <a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/Lex
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/LexicalHandler.html?is-external=true#startDTD-java.lang.String-java.lang.String-java.lang.String-" title="class or interface in org.xml.sax.ext">startDTD</a></code>&nbsp;in interface&nbsp;<code><a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ext/LexicalHandler.html?is-external=true" title="class or interface in org.xml.sax.ext">LexicalHandler</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setDocumentLocator-org.xml.sax.Locator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDocumentLocator</h4>
+<pre>public&nbsp;void&nbsp;setDocumentLocator(<a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/Locator.html?is-external=true" title="class or interface in org.xml.sax">Locator</a>&nbsp;locator)</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true#setDocumentLocator-org.xml.sax.Locator-" title="class or interface in org.xml.sax">setDocumentLocator</a></code>&nbsp;in interface&nbsp;<code><a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/ContentHandler.html?is-external=true" title="class or interface in org.xml.sax">ContentHandler</a></code></dd>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/helpers.DefaultHandler.html?is-external=true#setDocumentLocator-org.xml.sax.Locator-" title="class or interface in org.xml.sax">setDocumentLocator</a></code>&nbsp;in class&nbsp;<code><a href="http://docs.oracle.com/javase/8/docs/api/org/xml/sax/helpers.DefaultHandler.html?is-external=true" title="class or interface in org.xml.sax">org.xml.sax.helpers.DefaultHandler</a></code></dd>
 </dl>
 </li>
 </ul>
