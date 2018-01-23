@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20171009" />
+    <meta name="Date-Revision-yyyymmdd" content="20180123" />
     <meta http-equiv="Content-Language" content="en" />
     <title>EHRI Backend &#x2013; Example Ingest</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,7 +39,7 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2017-10-09
+                  <li id="publishDate">Last Published: 2018-01-23
                       <span class="divider">|</span>
                    </li>
                   <li id="projectVersion">Version: 0.13.10
@@ -376,7 +376,13 @@ export LOG=`pwd`/LOG.txt
 <div class="source">
 <pre>&amp;allow-update=true
 </pre></div></div>
-<p>Without this parameter the importer will throw a mode violation error when it ends up updating an existing collection.</p></div>
+<p>Without this parameter the importer will throw a mode violation error when it ends up updating an existing collection.</p>
+<div class="section">
+<h3><a name="Overwriting_existing_descriptions"></a>Overwriting existing descriptions</h3>
+<p>If you want to overwrite existing item description with data from a new EAD the EAD must have the same <tt>sourceFileId</tt> value as exists on the current description. The <tt>sourceFileId</tt> is a property computed from two aspects of the EAD file: the <tt>eadheader/eadid</tt> value and the <tt>eadheader/profiledesc/langusage/language/@langcode</tt> value combined thus: <tt>[EADID]#[UPPER-CASE-LANGCODE]</tt>.</p>
+<p>For example, if the <tt>eadid</tt> is <tt>100</tt> and the language code is <tt>eng</tt>, the <tt>sourceFileId</tt> will be <tt>100#ENG</tt>.</p>
+<p>Only documentary unit descriptions created via the EAD ingest process will have a <tt>sourceFileId</tt>; those created using the portal interface will not. For descriptions that have the property it is visible (but not editable) on the portal admin pages.</p>
+<p><b>Note:</b> the consequence of the above is that the <tt>eadid</tt> value should <b>not</b> contain the language code, since this is redundant and will result in a <tt>sourceFileId</tt> like <tt>eng#ENG</tt>.</p></div></div>
 <div class="section">
 <h2><a name="Ingesting_multiple_files_in_an_archive"></a>Ingesting multiple files in an archive</h2>
 <p>It is possible to ingest multiple EAD files in a single transaction by providing the importer with an archive file (containing multiple XML files) instead of a single XML file. Currently the following formats are supported:</p>
@@ -400,7 +406,7 @@ export LOG=`pwd`/LOG.txt
     <footer>
             <div class="container-fluid">
                       <div class="row-fluid">
-                              <p >Copyright &copy;                    2017
+                              <p >Copyright &copy;                    2018
                         <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>.
             All rights reserved.      
                     

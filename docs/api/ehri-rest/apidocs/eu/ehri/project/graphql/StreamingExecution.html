@@ -134,7 +134,10 @@ extends graphql.execution.Execution</pre>
 <th class="colOne" scope="col">Constructor and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../../eu/ehri/project/graphql/StreamingExecution.html#StreamingExecution-graphql.execution.ExecutionStrategy-">StreamingExecution</a></span>(graphql.execution.ExecutionStrategy&nbsp;strategy)</code>&nbsp;</td>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../eu/ehri/project/graphql/StreamingExecution.html#StreamingExecution-graphql.execution.ExecutionStrategy-graphql.execution.ExecutionStrategy-graphql.execution.ExecutionStrategy-graphql.execution.instrumentation.Instrumentation-">StreamingExecution</a></span>(graphql.execution.ExecutionStrategy&nbsp;queryStrategy,
+                  graphql.execution.ExecutionStrategy&nbsp;mutationStrategy,
+                  graphql.execution.ExecutionStrategy&nbsp;subscriptionStrategy,
+                  graphql.execution.instrumentation.Instrumentation&nbsp;instrumentation)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -153,12 +156,11 @@ extends graphql.execution.Execution</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/project/graphql/StreamingExecution.html#execute-com.fasterxml.jackson.core.JsonGenerator-graphql.schema.GraphQLSchema-java.lang.Object-graphql.language.Document-java.lang.String-java.util.Map-">execute</a></span>(com.fasterxml.jackson.core.JsonGenerator&nbsp;generator,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/project/graphql/StreamingExecution.html#execute-com.fasterxml.jackson.core.JsonGenerator-graphql.schema.GraphQLSchema-graphql.language.Document-graphql.execution.ExecutionId-graphql.ExecutionInput-">execute</a></span>(com.fasterxml.jackson.core.JsonGenerator&nbsp;generator,
        graphql.schema.GraphQLSchema&nbsp;graphQLSchema,
-       <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;root,
        graphql.language.Document&nbsp;document,
-       <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;operationName,
-       <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;arguments)</code>&nbsp;</td>
+       graphql.execution.ExecutionId&nbsp;executionId,
+       graphql.ExecutionInput&nbsp;executionInput)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -189,13 +191,16 @@ extends graphql.execution.Execution</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="StreamingExecution-graphql.execution.ExecutionStrategy-">
+<a name="StreamingExecution-graphql.execution.ExecutionStrategy-graphql.execution.ExecutionStrategy-graphql.execution.ExecutionStrategy-graphql.execution.instrumentation.Instrumentation-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>StreamingExecution</h4>
-<pre>public&nbsp;StreamingExecution(graphql.execution.ExecutionStrategy&nbsp;strategy)</pre>
+<pre>public&nbsp;StreamingExecution(graphql.execution.ExecutionStrategy&nbsp;queryStrategy,
+                          graphql.execution.ExecutionStrategy&nbsp;mutationStrategy,
+                          graphql.execution.ExecutionStrategy&nbsp;subscriptionStrategy,
+                          graphql.execution.instrumentation.Instrumentation&nbsp;instrumentation)</pre>
 </li>
 </ul>
 </li>
@@ -206,7 +211,7 @@ extends graphql.execution.Execution</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="execute-com.fasterxml.jackson.core.JsonGenerator-graphql.schema.GraphQLSchema-java.lang.Object-graphql.language.Document-java.lang.String-java.util.Map-">
+<a name="execute-com.fasterxml.jackson.core.JsonGenerator-graphql.schema.GraphQLSchema-graphql.language.Document-graphql.execution.ExecutionId-graphql.ExecutionInput-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -214,10 +219,9 @@ extends graphql.execution.Execution</pre>
 <h4>execute</h4>
 <pre>public&nbsp;void&nbsp;execute(com.fasterxml.jackson.core.JsonGenerator&nbsp;generator,
                     graphql.schema.GraphQLSchema&nbsp;graphQLSchema,
-                    <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;root,
                     graphql.language.Document&nbsp;document,
-                    <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;operationName,
-                    <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;arguments)
+                    graphql.execution.ExecutionId&nbsp;executionId,
+                    graphql.ExecutionInput&nbsp;executionInput)
              throws <a href="http://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -294,6 +298,6 @@ extends graphql.execution.Execution</pre>
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2017 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2018 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>

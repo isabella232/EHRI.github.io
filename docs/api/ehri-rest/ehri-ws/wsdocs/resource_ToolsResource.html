@@ -62,6 +62,7 @@
           <li><a href="#resource_ToolsResource_upgradeDb1to2_POST">POST /tools/upgrade-1to2</a></li>
           <li><a href="#resource_ToolsResource_fullUpgradeDb1to2_POST">POST /tools/full-upgrade-1to2</a></li>
           <li><a href="#resource_ToolsResource_relink_POST">POST /tools/relink-targets</a></li>
+          <li><a href="#resource_ToolsResource_reparent_POST">POST /tools/reparent</a></li>
           <li><a href="#resource_ToolsResource_rename_POST">POST /tools/rename</a></li>
           <li><a href="#resource_ToolsResource_initialize_POST">POST /tools/__INITIALISE</a></li>
           <li class="divider"></li>
@@ -1138,11 +1139,33 @@ Content-Type: application/json
         </div>
       </div>
 
-      <div id="resource_ToolsResource_rename_POST">
-        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/tools/rename <a href="../tools/rename" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+      <div id="resource_ToolsResource_reparent_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/tools/reparent <a href="../tools/reparent" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Takes a CSV file containing two columns: the global id, and a new local
-identifier to rename an item to. A new global ID will be regenerated.</p>
+        <p>Takes a CSV file containing two columns: an item global id, and a new parent
+ID. The item will be re-parented and a new global ID regenerated.</p>
+
+        <table class="table">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">commit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">actually commit changes</span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
+          </tbody>
+        </table>
 
         <table class="table">
           <caption>Request Body</caption>
@@ -1158,8 +1181,7 @@ identifier to rename an item to. A new global ID will be regenerated.</p>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td rowspan="2" class="multi-row-description"><span class="request-description">a comma-separated CSV file, including headers, with
-the headers being 'id' and 'local'.</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">a comma-separated CSV file, exluding headers.</span></td>
           </tr>
           <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/csv&quot; HTTP header to specify this media type to the server."><span class="request-type">text/csv</span></abbr></td>
@@ -1184,7 +1206,97 @@ the headers being 'id' and 'local'.</span></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
             <td rowspan="2" class="multi-row-description"><span class="response-description">CSV data containing two columns: the old global ID, and
-a newly generated global ID, derived from the new local identifier.</span></td>
+a newly generated global ID, derived from the new hierarchy.</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/csv&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/csv</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /tools/reparent
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_ToolsResource_rename_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/tools/rename <a href="../tools/rename" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Takes a CSV file containing two columns: the global id, and a new local
+identifier to rename an item to. A new global ID will be regenerated.
+<p>
+Input rows will be re-sorted lexically to ensure correct generation
+of dependent parent/child hierarchical IDs and output order will
+reflect this.</p>
+
+        <table class="table">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="request-description">a comma-separated CSV file, exluding headers.</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: text/csv&quot; HTTP header to specify this media type to the server."><span class="request-type">text/csv</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">CSV data containing two columns: the old global ID, and
+a newly generated global ID, derived from the new local identifier,
+with ordering corresponding to lexically-ordered input data.</span></td>
           </tr>
           <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: text/csv&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">text/csv</span></abbr></td>

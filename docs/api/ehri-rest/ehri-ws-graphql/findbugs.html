@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Date-Revision-yyyymmdd" content="20171009" />
+    <meta name="Date-Revision-yyyymmdd" content="20180123" />
     <meta http-equiv="Content-Language" content="en" />
     <title>Web Service GraphQL Extension &#x2013; FindBugs Bug Detector Report</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.1.min.css" />
@@ -39,7 +39,7 @@
         <ul class="breadcrumb">
                 
                     
-                  <li id="publishDate">Last Published: 2017-10-09
+                  <li id="publishDate">Last Published: 2018-01-23
                       <span class="divider">|</span>
                    </li>
                   <li id="projectVersion">Version: 0.13.10
@@ -106,8 +106,8 @@
 <th>Errors</th>
 <th>Missing Classes</th></tr>
 <tr class="b">
-<td>15</td>
-<td>1</td>
+<td>12</td>
+<td>2</td>
 <td>0</td>
 <td>0</td></tr></table></div>
 <div class="section">
@@ -117,10 +117,10 @@
 <th>Class</th>
 <th>Bugs</th></tr>
 <tr class="b">
-<td><a href="#eu.ehri.project.graphql.StreamingExecutionStrategy">eu.ehri.project.graphql.StreamingExecutionStrategy</a></td>
-<td>1</td></tr></table></div><a name="eu.ehri.project.graphql.StreamingExecutionStrategy"></a>
+<td><a href="#eu.ehri.project.graphql.GraphQLImpl">eu.ehri.project.graphql.GraphQLImpl</a></td>
+<td>2</td></tr></table></div><a name="eu.ehri.project.graphql.GraphQLImpl"></a>
 <div class="section">
-<h3><a name="eu.ehri.project.graphql.StreamingExecutionStrategy"></a>eu.ehri.project.graphql.StreamingExecutionStrategy</h3>
+<h3><a name="eu.ehri.project.graphql.GraphQLImpl"></a>eu.ehri.project.graphql.GraphQLImpl</h3>
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>Bug</th>
@@ -129,11 +129,17 @@
 <th>Line</th>
 <th>Priority</th></tr>
 <tr class="b">
-<td>eu.ehri.project.graphql.StreamingExecutionStrategy.execute(JsonGenerator, ExecutionContext, GraphQLObjectType, Object, Map) makes inefficient use of keySet iterator instead of entrySet iterator</td>
-<td>PERFORMANCE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#WMI_WRONG_MAP_ITERATOR">WMI_WRONG_MAP_ITERATOR</a></td>
-<td><a href="./xref/eu/ehri/project/graphql/StreamingExecutionStrategy.html#L58">58</a></td>
-<td>Medium</td></tr></table></div>
+<td>Found reliance on default encoding in eu.ehri.project.graphql.GraphQLImpl.fromBase64(String): new String(byte[])</td>
+<td>I18N</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
+<td><a href="./xref/eu/ehri/project/graphql/GraphQLImpl.html#L201">201</a></td>
+<td>High</td></tr>
+<tr class="a">
+<td>Found reliance on default encoding in eu.ehri.project.graphql.GraphQLImpl.toBase64(String): String.getBytes()</td>
+<td>I18N</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
+<td><a href="./xref/eu/ehri/project/graphql/GraphQLImpl.html#L197">197</a></td>
+<td>High</td></tr></table></div>
                   </div>
             </div>
           </div>
@@ -143,7 +149,7 @@
     <footer>
             <div class="container-fluid">
                       <div class="row-fluid">
-                              <p >Copyright &copy;                    2017
+                              <p >Copyright &copy;                    2018
                         <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>.
             All rights reserved.      
                     

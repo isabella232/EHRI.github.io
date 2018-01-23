@@ -42,7 +42,7 @@
 <a class="jxr_linenumber" name="32" href="#32">32</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.core.GraphManagerFactory;
 <a class="jxr_linenumber" name="33" href="#33">33</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.EventTypes;
 <a class="jxr_linenumber" name="34" href="#34">34</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Ontology;
-<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.Skos;
+<a class="jxr_linenumber" name="35" href="#35">35</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.definitions.SkosMultilingual;
 <a class="jxr_linenumber" name="36" href="#36">36</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.DeserializationError;
 <a class="jxr_linenumber" name="37" href="#37">37</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.ItemNotFound;
 <a class="jxr_linenumber" name="38" href="#38">38</a>  <strong class="jxr_keyword">import</strong> eu.ehri.project.exceptions.PermissionDenied;
@@ -553,7 +553,7 @@
 <a class="jxr_linenumber" name="543" href="#543">543</a>                     .sorted()
 <a class="jxr_linenumber" name="544" href="#544">544</a>                     .collect(Collectors.toList());
 <a class="jxr_linenumber" name="545" href="#545">545</a>             <strong class="jxr_keyword">if</strong> (!all.isEmpty()) {
-<a class="jxr_linenumber" name="546" href="#546">546</a>                 descriptions.set(0, descriptions.get(0).withDataValue(Skos.altLabel.toString(), all));
+<a class="jxr_linenumber" name="546" href="#546">546</a>                 descriptions.set(0, descriptions.get(0).withDataValue(SkosMultilingual.altLabel.toString(), all));
 <a class="jxr_linenumber" name="547" href="#547">547</a>             }
 <a class="jxr_linenumber" name="548" href="#548">548</a>         }
 <a class="jxr_linenumber" name="549" href="#549">549</a> 

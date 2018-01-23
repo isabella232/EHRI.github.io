@@ -18,7 +18,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -280,18 +280,26 @@ extends <a href="../../../eu/ehri/extension/base/AbstractResource.html" title="c
 </td>
 </tr>
 <tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/utils/Table.html?is-external=true" title="class or interface in eu.ehri.project.utils">Table</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../eu/ehri/extension/ToolsResource.html#reparent-boolean-eu.ehri.project.utils.Table-">reparent</a></span>(boolean&nbsp;commit,
+        <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/utils/Table.html?is-external=true" title="class or interface in eu.ehri.project.utils">Table</a>&nbsp;mapping)</code>
+<div class="block">Takes a CSV file containing two columns: an item global id, and a new parent
+ ID.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../eu/ehri/extension/ToolsResource.html#setConstraints--">setConstraints</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../eu/ehri/extension/ToolsResource.html#setLabels--">setLabels</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../eu/ehri/extension/ToolsResource.html#upgradeDb1to2--">upgradeDb1to2</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../eu/ehri/extension/ToolsResource.html#version--">version</a></span>()</code>&nbsp;</td>
 </tr>
@@ -686,6 +694,29 @@ extends <a href="../../../eu/ehri/extension/base/AbstractResource.html" title="c
 </dl>
 </li>
 </ul>
+<a name="reparent-boolean-eu.ehri.project.utils.Table-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>reparent</h4>
+<pre>public&nbsp;<a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/utils/Table.html?is-external=true" title="class or interface in eu.ehri.project.utils">Table</a>&nbsp;reparent(boolean&nbsp;commit,
+                      <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/utils/Table.html?is-external=true" title="class or interface in eu.ehri.project.utils">Table</a>&nbsp;mapping)
+               throws <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a></pre>
+<div class="block">Takes a CSV file containing two columns: an item global id, and a new parent
+ ID. The item will be re-parented and a new global ID regenerated.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>commit</code> - actually commit changes</dd>
+<dd><code>mapping</code> - a comma-separated CSV file, exluding headers.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>CSV data containing two columns: the old global ID, and
+ a newly generated global ID, derived from the new hierarchy.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="rename-eu.ehri.project.utils.Table-">
 <!--   -->
 </a>
@@ -696,14 +727,18 @@ extends <a href="../../../eu/ehri/extension/base/AbstractResource.html" title="c
              throws <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/tools/IdRegenerator.IdCollisionError.html?is-external=true" title="class or interface in eu.ehri.project.tools">IdRegenerator.IdCollisionError</a>,
                     <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a></pre>
 <div class="block">Takes a CSV file containing two columns: the global id, and a new local
- identifier to rename an item to. A new global ID will be regenerated.</div>
+ identifier to rename an item to. A new global ID will be regenerated.
+ <p>
+ Input rows will be re-sorted lexically to ensure correct generation
+ of dependent parent/child hierarchical IDs and output order will
+ reflect this.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>mapping</code> - a comma-separated CSV file, including headers, with
-                the headers being 'id' and 'local'.</dd>
+<dd><code>mapping</code> - a comma-separated CSV file, exluding headers.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>CSV data containing two columns: the old global ID, and
- a newly generated global ID, derived from the new local identifier.</dd>
+ a newly generated global ID, derived from the new local identifier,
+ with ordering corresponding to lexically-ordered input data.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/tools/IdRegenerator.IdCollisionError.html?is-external=true" title="class or interface in eu.ehri.project.tools">IdRegenerator.IdCollisionError</a></code></dd>
 <dd><code><a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/exceptions/DeserializationError.html?is-external=true" title="class or interface in eu.ehri.project.exceptions">DeserializationError</a></code></dd>
@@ -797,6 +832,6 @@ extends <a href="../../../eu/ehri/extension/base/AbstractResource.html" title="c
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2017 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright &#169; 2018 <a href="http://ehri-project.eu">The European Holocaust Research Infrastructure (EHRI)</a>. All rights reserved.</small></p>
 </body>
 </html>
