@@ -745,7 +745,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/acl/wrapper/AclGraph.html#baseGraph">baseGraph</a></span> - Variable in class eu.ehri.project.acl.wrapper.<a href="eu/ehri/project/acl/wrapper/AclGraph.html" title="class in eu.ehri.project.acl.wrapper">AclGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/ImportResource.html#batchDelete-java.lang.String-java.lang.Boolean-java.lang.String-boolean-java.util.List-">batchDelete(String, Boolean, String, boolean, List&lt;String&gt;)</a></span> - Method in class eu.ehri.extension.<a href="eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/BatchResource.html#batchDelete-java.lang.String-java.lang.Boolean-java.lang.String-boolean-eu.ehri.project.utils.Table-">batchDelete(String, Boolean, String, boolean, Table)</a></span> - Method in class eu.ehri.extension.<a href="eu/ehri/extension/BatchResource.html" title="class in eu.ehri.extension">BatchResource</a></dt>
 <dd>
 <div class="block">Delete a batch of objects via JSON containing their IDs.</div>
 </dd>
@@ -770,7 +770,13 @@
 <div class="block">Simple constructor, with system scope, version creation
  activated and tolerant mode off.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/ImportResource.html#batchUpdate-java.lang.String-java.lang.Boolean-java.lang.Boolean-java.lang.String-boolean-java.io.InputStream-">batchUpdate(String, Boolean, Boolean, String, boolean, InputStream)</a></span> - Method in class eu.ehri.extension.<a href="eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><a href="eu/ehri/extension/BatchResource.html" title="class in eu.ehri.extension"><span class="typeNameLink">BatchResource</span></a> - Class in <a href="eu/ehri/extension/package-summary.html">eu.ehri.extension</a></dt>
+<dd>
+<div class="block">Resource class for import endpoints.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/BatchResource.html#BatchResource-org.neo4j.graphdb.GraphDatabaseService-">BatchResource(GraphDatabaseService)</a></span> - Constructor for class eu.ehri.extension.<a href="eu/ehri/extension/BatchResource.html" title="class in eu.ehri.extension">BatchResource</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/BatchResource.html#batchUpdate-java.lang.String-java.lang.Boolean-java.lang.Boolean-java.lang.String-boolean-java.io.InputStream-">batchUpdate(String, Boolean, Boolean, String, boolean, InputStream)</a></span> - Method in class eu.ehri.extension.<a href="eu/ehri/extension/BatchResource.html" title="class in eu.ehri.extension">BatchResource</a></dt>
 <dd>
 <div class="block">Update a batch of items via JSON containing (partial)
  data bundles.</div>
@@ -1000,6 +1006,8 @@
 <div class="block">Obtain a re-generator that only outputs items with IDs that if renamed
  would collide with another item's ID.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/utils/Table.html#column-int-">column(int)</a></span> - Method in class eu.ehri.project.utils.<a href="eu/ehri/project/utils/Table.html" title="class in eu.ehri.project.utils">Table</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="eu/ehri/project/commands/Command.html" title="interface in eu.ehri.project.commands"><span class="typeNameLink">Command</span></a> - Interface in <a href="eu/ehri/project/commands/package-summary.html">eu.ehri.project.commands</a></dt>
 <dd>
 <div class="block">Command-line tools to perform actions on the graph database need
@@ -1010,8 +1018,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/SaxXmlHandler.html#comment-char:A-int-int-">comment(char[], int, int)</a></span> - Method in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/SaxXmlHandler.html" title="class in eu.ehri.project.importers.base">SaxXmlHandler</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/ImportResource.html#COMMIT">COMMIT</a></span> - Static variable in class eu.ehri.extension.<a href="eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html#commit--">commit()</a></span> - Method in class eu.ehri.project.core.impl.neo4j.<a href="eu/ehri/project/core/impl/neo4j/Neo4j2Graph.html" title="class in eu.ehri.project.core.impl.neo4j">Neo4j2Graph</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/core/impl/TxNeo4jGraph.html#commit--">commit()</a></span> - Method in class eu.ehri.project.core.impl.<a href="eu/ehri/project/core/impl/TxNeo4jGraph.html" title="class in eu.ehri.project.core.impl">TxNeo4jGraph</a></dt>
@@ -1020,6 +1026,8 @@
 <dd>
 <div class="block">Flush this event log to the graph.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#COMMIT_PARAM">COMMIT_PARAM</a></span> - Static variable in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="eu/ehri/project/models/cvoc/Concept.html" title="interface in eu.ehri.project.models.cvoc"><span class="typeNameLink">Concept</span></a> - Interface in <a href="eu/ehri/project/models/cvoc/package-summary.html">eu.ehri.project.models.cvoc</a></dt>
 <dd>
 <div class="block">This models the thesaurus terms or keywords in a way that is better managing multi-linguality.</div>
@@ -1306,7 +1314,7 @@
 <dd>
 <div class="block">Return a response from a new item with a 201 CREATED status.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/ImportResource.html#CSV_MEDIA_TYPE">CSV_MEDIA_TYPE</a></span> - Static variable in class eu.ehri.extension.<a href="eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#CSV_MEDIA_TYPE">CSV_MEDIA_TYPE</a></span> - Static variable in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="eu/ehri/project/importers/csv/CsvAuthoritativeItemImporter.html" title="class in eu.ehri.project.importers.csv"><span class="typeNameLink">CsvAuthoritativeItemImporter</span></a> - Class in <a href="eu/ehri/project/importers/csv/package-summary.html">eu.ehri.project.importers.csv</a></dt>
 <dd>
@@ -1634,6 +1642,11 @@
 </dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/api/impl/ApiImpl.html#detail-java.lang.String-java.lang.Class-">detail(String, Class&lt;E&gt;)</a></span> - Method in class eu.ehri.project.api.impl.<a href="eu/ehri/project/api/impl/ApiImpl.html" title="class in eu.ehri.project.api.impl">ApiImpl</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/project/persistence/Bundle.html#diff-eu.ehri.project.persistence.Bundle-">diff(Bundle)</a></span> - Method in class eu.ehri.project.persistence.<a href="eu/ehri/project/persistence/Bundle.html" title="class in eu.ehri.project.persistence">Bundle</a></dt>
+<dd>
+<div class="block">Return a JSON-Patch representation of the difference between
+ this bundle and another.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/exporters/xml/StreamingXmlDsl.html#doc-javax.xml.stream.XMLStreamWriter-java.lang.Runnable-">doc(XMLStreamWriter, Runnable)</a></span> - Method in class eu.ehri.project.exporters.xml.<a href="eu/ehri/project/exporters/xml/StreamingXmlDsl.html" title="class in eu.ehri.project.exporters.xml">StreamingXmlDsl</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/definitions/Ontology.html#DOC_HELD_BY_REPOSITORY">DOC_HELD_BY_REPOSITORY</a></span> - Static variable in class eu.ehri.project.definitions.<a href="eu/ehri/project/definitions/Ontology.html" title="class in eu.ehri.project.definitions">Ontology</a></dt>
@@ -1848,6 +1861,8 @@
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/base/SaxXmlHandler.html#endEntity-java.lang.String-">endEntity(String)</a></span> - Method in class eu.ehri.project.importers.base.<a href="eu/ehri/project/importers/base/SaxXmlHandler.html" title="class in eu.ehri.project.importers.base">SaxXmlHandler</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/extension/AdminResource.html#ENDPOINT">ENDPOINT</a></span> - Static variable in class eu.ehri.extension.<a href="eu/ehri/extension/AdminResource.html" title="class in eu.ehri.extension">AdminResource</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/BatchResource.html#ENDPOINT">ENDPOINT</a></span> - Static variable in class eu.ehri.extension.<a href="eu/ehri/extension/BatchResource.html" title="class in eu.ehri.extension">BatchResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/extension/GenericResource.html#ENDPOINT">ENDPOINT</a></span> - Static variable in class eu.ehri.extension.<a href="eu/ehri/extension/GenericResource.html" title="class in eu.ehri.extension">GenericResource</a></dt>
 <dd>&nbsp;</dd>
@@ -5215,7 +5230,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a></span> - Static variable in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/ImportResource.html#LOG_PARAM">LOG_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#LOG_PARAM">LOG_PARAM</a></span> - Static variable in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#logger">logger</a></span> - Static variable in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>&nbsp;</dd>
@@ -6258,7 +6273,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/exporters/cvoc/SchemaExporter.html#SchemaExporter-java.lang.String-">SchemaExporter(String)</a></span> - Constructor for class eu.ehri.project.exporters.cvoc.<a href="eu/ehri/project/exporters/cvoc/SchemaExporter.html" title="class in eu.ehri.project.exporters.cvoc">SchemaExporter</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/ImportResource.html#SCOPE_PARAM">SCOPE_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#SCOPE_PARAM">SCOPE_PARAM</a></span> - Static variable in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/properties/NodeProperties.html#SEP">SEP</a></span> - Static variable in class eu.ehri.project.importers.properties.<a href="eu/ehri/project/importers/properties/NodeProperties.html" title="class in eu.ehri.project.importers.properties">NodeProperties</a></dt>
 <dd>&nbsp;</dd>
@@ -6824,7 +6839,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/importers/managers/AbstractImportManager.html#tolerant">tolerant</a></span> - Variable in class eu.ehri.project.importers.managers.<a href="eu/ehri/project/importers/managers/AbstractImportManager.html" title="class in eu.ehri.project.importers.managers">AbstractImportManager</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/ImportResource.html#TOLERANT_PARAM">TOLERANT_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#TOLERANT_PARAM">TOLERANT_PARAM</a></span> - Static variable in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/cypher/Procedures.html#toList-java.lang.Object-">toList(Object)</a></span> - Method in class eu.ehri.project.cypher.<a href="eu/ehri/project/cypher/Procedures.html" title="class in eu.ehri.project.cypher">Procedures</a></dt>
 <dd>&nbsp;</dd>
@@ -7474,7 +7489,7 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/definitions/Ontology.html#VERSION_HAS_EVENT">VERSION_HAS_EVENT</a></span> - Static variable in class eu.ehri.project.definitions.<a href="eu/ehri/project/definitions/Ontology.html" title="class in eu.ehri.project.definitions">Ontology</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="eu/ehri/extension/ImportResource.html#VERSION_PARAM">VERSION_PARAM</a></span> - Static variable in class eu.ehri.extension.<a href="eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a></dt>
+<dt><span class="memberNameLink"><a href="eu/ehri/extension/base/AbstractResource.html#VERSION_PARAM">VERSION_PARAM</a></span> - Static variable in class eu.ehri.extension.base.<a href="eu/ehri/extension/base/AbstractResource.html" title="class in eu.ehri.extension.base">AbstractResource</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="eu/ehri/project/persistence/VersionManager.html#versionAtDeletion-java.lang.String-">versionAtDeletion(String)</a></span> - Method in class eu.ehri.project.persistence.<a href="eu/ehri/project/persistence/VersionManager.html" title="class in eu.ehri.project.persistence">VersionManager</a></dt>
 <dd>

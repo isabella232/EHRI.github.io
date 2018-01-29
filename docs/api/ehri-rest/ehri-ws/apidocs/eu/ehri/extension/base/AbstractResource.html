@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../eu/ehri/extension/base/AbstractAccessibleResource.html" title="class in eu.ehri.extension.base">AbstractAccessibleResource</a>, <a href="../../../../eu/ehri/extension/AdminResource.html" title="class in eu.ehri.extension">AdminResource</a>, <a href="../../../../eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a>, <a href="../../../../eu/ehri/extension/PermissionGrantResource.html" title="class in eu.ehri.extension">PermissionGrantResource</a>, <a href="../../../../eu/ehri/extension/PermissionsResource.html" title="class in eu.ehri.extension">PermissionsResource</a>, <a href="../../../../eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</a></dd>
+<dd><a href="../../../../eu/ehri/extension/base/AbstractAccessibleResource.html" title="class in eu.ehri.extension.base">AbstractAccessibleResource</a>, <a href="../../../../eu/ehri/extension/AdminResource.html" title="class in eu.ehri.extension">AdminResource</a>, <a href="../../../../eu/ehri/extension/BatchResource.html" title="class in eu.ehri.extension">BatchResource</a>, <a href="../../../../eu/ehri/extension/ImportResource.html" title="class in eu.ehri.extension">ImportResource</a>, <a href="../../../../eu/ehri/extension/PermissionGrantResource.html" title="class in eu.ehri.extension">PermissionGrantResource</a>, <a href="../../../../eu/ehri/extension/PermissionsResource.html" title="class in eu.ehri.extension">PermissionsResource</a>, <a href="../../../../eu/ehri/extension/ToolsResource.html" title="class in eu.ehri.extension">ToolsResource</a></dd>
 </dl>
 <hr>
 <br>
@@ -150,6 +150,14 @@ implements <a href="../../../../eu/ehri/extension/base/TxCheckedResource.html" t
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#AUTH_HEADER_NAME">AUTH_HEADER_NAME</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#COMMIT_PARAM">COMMIT_PARAM</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#CSV_MEDIA_TYPE">CSV_MEDIA_TYPE</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static int</code></td>
@@ -198,53 +206,61 @@ implements <a href="../../../../eu/ehri/extension/base/TxCheckedResource.html" t
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#LOG_MESSAGE_HEADER_NAME">LOG_MESSAGE_HEADER_NAME</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#LOG_PARAM">LOG_PARAM</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>protected static org.slf4j.Logger</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#logger">logger</a></span></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected <a href="https://github.com/EHRI/ehri-core/apidocs/eu/ehri/project/core/GraphManager.html?is-external=true" title="class or interface in eu.ehri.project.core">GraphManager</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#manager">manager</a></span></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#N3_MIMETYPE">N3_MIMETYPE</a></span></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#OFFSET_PARAM">OFFSET_PARAM</a></span></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#PATCH_HEADER_NAME">PATCH_HEADER_NAME</a></span></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#RANGE_HEADER_NAME">RANGE_HEADER_NAME</a></span></code>
 <div class="block">Header names</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected com.google.common.collect.BiMap&lt;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#RDF_MIMETYPE_FORMATS">RDF_MIMETYPE_FORMATS</a></span></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#RDF_XML_MIMETYPE">RDF_XML_MIMETYPE</a></span></code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected javax.ws.rs.core.Request</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#request">request</a></span></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>protected javax.ws.rs.core.HttpHeaders</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#requestHeaders">requestHeaders</a></span></code>
 <div class="block">With each request the headers of that request are injected into the
  requestHeaders parameter.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#RESOURCE_ENDPOINT_PREFIX">RESOURCE_ENDPOINT_PREFIX</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#SCOPE_PARAM">SCOPE_PARAM</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
@@ -258,15 +274,23 @@ implements <a href="../../../../eu/ehri/extension/base/TxCheckedResource.html" t
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#TOLERANT_PARAM">TOLERANT_PARAM</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#TURTLE_MIMETYPE">TURTLE_MIMETYPE</a></span></code>
 <div class="block">RDF Mimetypes and formatting mappings</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>protected javax.ws.rs.core.UriInfo</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#uriInfo">uriInfo</a></span></code>
 <div class="block">With each request URI info is injected into the uriInfo parameter.</div>
 </td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../eu/ehri/extension/base/AbstractResource.html#VERSION_PARAM">VERSION_PARAM</a></span></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -558,6 +582,19 @@ implements <a href="../../../../eu/ehri/extension/base/TxCheckedResource.html" t
 <pre>protected static final&nbsp;org.slf4j.Logger logger</pre>
 </li>
 </ul>
+<a name="CSV_MEDIA_TYPE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>CSV_MEDIA_TYPE</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> CSV_MEDIA_TYPE</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../constant-values.html#eu.ehri.extension.base.AbstractResource.CSV_MEDIA_TYPE">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
 <a name="TURTLE_MIMETYPE">
 <!--   -->
 </a>
@@ -709,6 +746,71 @@ implements <a href="../../../../eu/ehri/extension/base/TxCheckedResource.html" t
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../constant-values.html#eu.ehri.extension.base.AbstractResource.ID_PARAM">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="LOG_PARAM">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LOG_PARAM</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> LOG_PARAM</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../constant-values.html#eu.ehri.extension.base.AbstractResource.LOG_PARAM">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="VERSION_PARAM">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>VERSION_PARAM</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> VERSION_PARAM</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../constant-values.html#eu.ehri.extension.base.AbstractResource.VERSION_PARAM">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="SCOPE_PARAM">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SCOPE_PARAM</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> SCOPE_PARAM</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../constant-values.html#eu.ehri.extension.base.AbstractResource.SCOPE_PARAM">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="TOLERANT_PARAM">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TOLERANT_PARAM</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> TOLERANT_PARAM</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../constant-values.html#eu.ehri.extension.base.AbstractResource.TOLERANT_PARAM">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="COMMIT_PARAM">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMMIT_PARAM</h4>
+<pre>public static final&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> COMMIT_PARAM</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../constant-values.html#eu.ehri.extension.base.AbstractResource.COMMIT_PARAM">Constant Field Values</a></dd>
 </dl>
 </li>
 </ul>
